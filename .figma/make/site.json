@@ -1,0 +1,10 @@
+{
+  "description": "This interactive web platform facilitates access to government planning resources, offering users a clear and formal interface for exploring territorial data.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

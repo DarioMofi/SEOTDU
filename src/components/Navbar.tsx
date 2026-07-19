@@ -35,15 +35,24 @@ export default function Navbar() {
           <label htmlFor="site-search" className="sr-only" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0,0,0,0)' }}>
             Buscar en el sitio
           </label>
-          <input
-            id="site-search"
-            type="search"
-            className="navbar__search-input"
-            placeholder=" Buscar..."
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-            aria-label="Buscar en el sitio"
-          />
+          <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+            <input
+              id="site-search"
+              type="search"
+              className="navbar__search-input"
+              placeholder="Buscar..."
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              aria-label="Buscar en el sitio"
+              style={{ paddingRight: '36px' }}
+            />
+            <span style={{ position: 'absolute', right: '12px', display: 'flex', color: 'var(--c-gray-dk)', pointerEvents: 'none' }}>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+            </span>
+          </div>
         </div>
       </div>
     </nav>

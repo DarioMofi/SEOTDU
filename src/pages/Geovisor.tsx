@@ -10,7 +10,6 @@ export default function Geovisor() {
       <Navbar />
 
       <main id="main-content" className="construction" aria-live="polite">
-        <div className="construction__icon" aria-hidden="true">🗺️</div>
         <h1 className="construction__title">Geovisor Territorial</h1>
         <p
           style={{

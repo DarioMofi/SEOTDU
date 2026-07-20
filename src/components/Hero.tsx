@@ -1,7 +1,5 @@
-import { useNavigate } from 'react-router-dom'
 
 export default function Hero() {
-  const navigate = useNavigate()
 
   return (
     <section className="hero" aria-label="Presentación principal">

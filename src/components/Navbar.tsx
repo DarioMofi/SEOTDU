@@ -6,12 +6,12 @@ export default function Navbar() {
   const location = useLocation()
   const [searchValue, setSearchValue] = useState('')
 
-  const isActive = (path) => location.pathname === path
+  const isActive = (path: string) => location.pathname === path
 
   const navItems = [
     { label: 'Inicio', path: '/' },
-    { label: 'Catálogo de Instrumentos', path: '/catalogo' },
     { label: 'Geovisor', path: '/geovisor' },
+    { label: 'Catálogo de Instrumentos', path: '/catalogo' },
   ]
 
   return (

@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom'
 export default function Header() {
   const navigate = useNavigate()
 
-  const handleImgError = (e) => {
+  const handleImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
     e.currentTarget.style.display = 'none'
-    const placeholder = e.currentTarget.nextElementSibling
+    const placeholder = e.currentTarget.nextElementSibling as HTMLElement | null
     if (placeholder) placeholder.style.display = 'flex'
   }
 

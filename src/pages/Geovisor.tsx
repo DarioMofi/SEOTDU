@@ -1,57 +1,84 @@
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import Underfooter from '../components/Underfooter'
+import MapViewer from '../components/Geovisor/MapViewer'
+import SidebarControl from '../components/Geovisor/SidebarControl'
+import ModuleLayerSelector from '../components/Geovisor/ModuleLayerSelector'
+import MapLegend from '../components/Geovisor/MapLegend'
+import { MunicipioProperties } from '../data/campecheData'
+
+const CAPAS_POR_DEFECTO: Record<string, string[]> = {
+  ambiental: ['anp', 'manglares'],
+  social: ['poblacion'],
+  infraestructura: ['linea-trans', 'via-ferrea', 'educacion'],
+  aptitud: ['zonificacion']
+}
 
 export default function Geovisor() {
+  const [searchParams] = useSearchParams()
+  const moduloInicial = searchParams.get('modulo') || 'ambiental'
+
+  // Hacer scroll hacia arriba al cargar la página
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [])
+
+  const [activeLayers, setActiveLayers] = useState<string[]>(() => {
+    return CAPAS_POR_DEFECTO[moduloInicial] || CAPAS_POR_DEFECTO.ambiental
+  })
+  const [selectedFeature, setSelectedFeature] = useState<MunicipioProperties | null>(null)
+  const [activeTab, setActiveTab] = useState<'capas' | 'info'>('capas')
+  const [layerOpacity, setLayerOpacity] = useState<Record<string, number>>({})
+  const [layerOrder, setLayerOrder] = useState<string[]>(() => {
+    return CAPAS_POR_DEFECTO[moduloInicial] || CAPAS_POR_DEFECTO.ambiental
+  })
+
+  const handleOpacityChange = (layerId: string, opacity: number) => {
+    setLayerOpacity((prev) => ({ ...prev, [layerId]: opacity }))
+  }
+
   return (
     <div className="page-shell">
       <Header />
       <Navbar />
 
-      <main id="main-content" className="construction" aria-live="polite">
-        <h1 className="construction__title">Geovisor Territorial</h1>
-        <p
-          style={{
-            fontSize: 15,
-            color: 'var(--c-guinda)',
-            fontWeight: 700,
-            margin: '4px 0 0',
-            letterSpacing: '0.04em',
-            textTransform: 'uppercase',
-          }}
+      <main id="main-content" className="geovisor-layout">
+        <SidebarControl
+          activeTab={activeTab}
+          onChangeTab={setActiveTab}
+          selectedFeature={selectedFeature}
+          onSelectFeature={setSelectedFeature}
         >
-          Se encuentra en construcción
-        </p>
-        <p className="construction__subtitle">
-          El visualizador geográfico interactivo del estado de Campeche se encuentra en etapa de
-          desarrollo. Próximamente podrá consultar capas temáticas y zonificaciones territoriales.
-        </p>
-        <div
-          style={{
-            display: 'flex',
-            gap: 8,
-            alignItems: 'center',
-            marginTop: 8,
-            fontSize: 13,
-            color: 'var(--c-gray-md)',
-          }}
-        >
-          <span
-            style={{
-              display: 'inline-block',
-              width: 8,
-              height: 8,
-              borderRadius: '50%',
-              background: 'var(--c-verde)',
-            }}
-            aria-hidden="true"
+          <ModuleLayerSelector
+            activeLayers={activeLayers}
+            onChangeLayers={setActiveLayers}
+            initialModule={moduloInicial}
+            layerOpacity={layerOpacity}
+            onChangeOpacity={handleOpacityChange}
+            layerOrder={layerOrder}
+            onChangeOrder={setLayerOrder}
           />
-          Uso de suelo
-          <span style={{ color: '#ccc' }}>·</span>
-          Zonificación
-          <span style={{ color: '#ccc' }}>·</span>
-          Áreas naturales protegidas
+        </SidebarControl>
+
+        <div className="flex-1 relative h-full">
+          <MapViewer
+            activeLayers={activeLayers}
+            selectedFeature={selectedFeature}
+            layerOpacity={layerOpacity}
+            layerOrder={layerOrder}
+            onSelectFeature={(feat) => {
+              setSelectedFeature(feat)
+              if (feat) {
+                setActiveTab('info')
+              } else {
+                setActiveTab('capas')
+              }
+            }}
+          />
+          <MapLegend activeLayers={activeLayers} />
         </div>
       </main>
 
@@ -60,3 +87,5 @@ export default function Geovisor() {
     </div>
   )
 }
+
+

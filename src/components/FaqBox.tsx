@@ -23,9 +23,9 @@ const FAQ_ITEMS = [
 ]
 
 export default function FaqBox() {
-  const [openId, setOpenId] = useState('faq-1')
+  const [openId, setOpenId] = useState<string | null>('faq-1')
 
-  const toggle = (id) => setOpenId(openId === id ? null : id)
+  const toggle = (id: string) => setOpenId(openId === id ? null : id)
 
   return (
     <aside className="faq-box" aria-label="Preguntas frecuentes">

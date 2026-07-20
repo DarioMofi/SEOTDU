@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'
+
 const MODULES = [
   {
     id: 'mod-1',
@@ -11,7 +13,7 @@ const MODULES = [
     title: 'Monitoreo Ambiental y Territorial',
     description: 'Indicadores y métricas del entorno natural del estado.',
   },
- {
+  {
     id: 'mod-2',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -24,7 +26,7 @@ const MODULES = [
     title: 'Bienestar Social y Demografía',
     description: 'Datos de población y desarrollo social municipal.',
   },
- {
+  {
     id: 'mod-3',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -39,7 +41,7 @@ const MODULES = [
     description: 'Red vial, servicios y equipamiento urbano-regional.',
   },
   {
-   id: 'mod-4',
+    id: 'mod-4',
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <line x1="18" y1="20" x2="18" y2="10"></line>
@@ -64,6 +66,8 @@ const MODULES = [
 ]
 
 export default function ModulesGrid() {
+  const navigate = useNavigate()
+
   return (
     <section className="modules" aria-labelledby="modules-heading">
       <div className="modules__inner">
@@ -76,6 +80,17 @@ export default function ModulesGrid() {
               role="listitem"
               tabIndex={0}
               aria-label={mod.title}
+              onClick={() => {
+                let targetId = ''
+                if (mod.id === 'mod-1') targetId = 'ambiental'
+                else if (mod.id === 'mod-2') targetId = 'social'
+                else if (mod.id === 'mod-3') targetId = 'infraestructura'
+                else if (mod.id === 'mod-4') targetId = 'aptitud'
+
+                if (targetId) {
+                  navigate(`/geovisor?modulo=${targetId}`)
+                }
+              }}
               onKeyDown={(e) => { if (e.key === 'Enter') e.currentTarget.click() }}
             >
               <div className="module-card__icon" aria-hidden="true">{mod.icon}</div>

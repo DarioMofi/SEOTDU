@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { CAMPECHE_GEOJSON, MunicipioProperties } from '../../data/campecheData'
 
 interface Props {
@@ -142,9 +143,8 @@ export default function SidebarControl({
                   <p className="text-xs text-gray-400 mt-0.5">Escala de Referencia: {selectedFeature.escalaReferencia}</p>
                 </div>
 
-                {/* Instrumento Normativo */}
-                <a
-                  href="/catalogo"
+                <Link
+                  to="/catalogo"
                   className="block bg-gray-50/80 p-3.5 rounded-lg border border-gray-100 hover:border-[var(--c-guinda)] hover:bg-[rgba(159,34,65,0.02)] transition-all group"
                 >
                   <h5 className="text-[10px] font-bold text-gray-400 uppercase group-hover:text-[var(--c-guinda)] transition-colors">Instrumento Normativo</h5>
@@ -154,7 +154,7 @@ export default function SidebarControl({
                       <path d="M7 17L17 7" /><path d="M7 7h10v10" />
                     </svg>
                   </p>
-                </a>
+                </Link>
 
                 {/* Responsable / Fecha / Vigencia */}
                 <div className="flex flex-col gap-2">

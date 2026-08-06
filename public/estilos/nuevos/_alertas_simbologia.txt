@@ -1,0 +1,4 @@
+[02_SOCIODEMOGRAFICO — C04_Localidades_ITER_INEGI_2020] NOMBRE_CON_ESPACIO — corregir antes de entregar
+[C04_Modelo_Ordenamiento_Territorial_OP_PG_2023_CP copiar] NOMBRE_CON_ESPACIO — corregir antes de entregar
+[Carto Dark] NOMBRE_CON_ESPACIO — corregir antes de entregar
+[Carto Light] NOMBRE_CON_ESPACIO — corregir antes de entregar

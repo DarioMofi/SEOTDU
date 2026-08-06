@@ -9,36 +9,36 @@ import SidebarControl from '../components/Geovisor/SidebarControl'
 import ModuleLayerSelector from '../components/Geovisor/ModuleLayerSelector'
 import MapLegend from '../components/Geovisor/MapLegend'
 import { MunicipioProperties } from '../data/campecheData'
-
-const CAPAS_POR_DEFECTO: Record<string, string[]> = {
-  ambiental: ['anp', 'manglares'],
-  social: ['poblacion'],
-  infraestructura: ['linea-trans', 'via-ferrea', 'educacion'],
-  aptitud: ['zonificacion']
-}
+import { appConfig } from '../config/appConfig'
 
 export default function Geovisor() {
   const [searchParams] = useSearchParams()
-  const moduloInicial = searchParams.get('modulo') || 'ambiental'
+  const moduloInicial = searchParams.get('modulo') || appConfig.DEFAULT_MODULE
 
   // Hacer scroll hacia arriba al cargar la página
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
   }, [])
 
-  const [activeLayers, setActiveLayers] = useState<string[]>(() => {
-    return CAPAS_POR_DEFECTO[moduloInicial] || CAPAS_POR_DEFECTO.ambiental
-  })
+  // Las capas activas las fija el módulo seleccionado, que se resuelve hasta
+  // que ModuleLayerSelector termina de leer los estilos.
+  const [activeLayers, setActiveLayers] = useState<string[]>([])
   const [selectedFeature, setSelectedFeature] = useState<MunicipioProperties | null>(null)
   const [activeTab, setActiveTab] = useState<'capas' | 'info'>('capas')
   const [layerOpacity, setLayerOpacity] = useState<Record<string, number>>({})
-  const [layerOrder, setLayerOrder] = useState<string[]>(() => {
-    return CAPAS_POR_DEFECTO[moduloInicial] || CAPAS_POR_DEFECTO.ambiental
-  })
+  const [layerStyles, setLayerStyles] = useState<Record<string, any>>({})
+  const [layerLabels, setLayerLabels] = useState<Record<string, string>>({})
+  const [layerOrder, setLayerOrder] = useState<string[]>([])
 
   const handleOpacityChange = (layerId: string, opacity: number) => {
     setLayerOpacity((prev) => ({ ...prev, [layerId]: opacity }))
   }
+
+  // La leyenda enumera lo que el mapa está dibujando, en su mismo orden de
+  // apilado: la capa de encima aparece primero.
+  const legendLayers = layerOrder
+    .filter((id) => activeLayers.includes(id))
+    .map((id) => ({ id, label: layerLabels[id] ?? id }))
 
   return (
     <div className="page-shell">
@@ -60,6 +60,10 @@ export default function Geovisor() {
             onChangeOpacity={handleOpacityChange}
             layerOrder={layerOrder}
             onChangeOrder={setLayerOrder}
+            onStylesLoaded={(styles, labels) => {
+              setLayerStyles(styles)
+              setLayerLabels(labels)
+            }}
           />
         </SidebarControl>
 
@@ -68,6 +72,7 @@ export default function Geovisor() {
             activeLayers={activeLayers}
             selectedFeature={selectedFeature}
             layerOpacity={layerOpacity}
+            layerStyles={layerStyles}
             layerOrder={layerOrder}
             onSelectFeature={(feat) => {
               setSelectedFeature(feat)
@@ -78,7 +83,7 @@ export default function Geovisor() {
               }
             }}
           />
-          <MapLegend activeLayers={activeLayers} />
+          <MapLegend layers={legendLayers} styles={layerStyles} />
         </div>
       </main>
 

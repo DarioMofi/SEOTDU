@@ -1,0 +1,1430 @@
+{
+  "tipo": "grupo",
+  "nombre": "Mapa-Base",
+  "capas": [
+    {
+      "tipo": "capa",
+      "nombre": "Municipios",
+      "id": "Municipios_4cc95c90_f12f_4ecf_816e_174f018e67d7",
+      "tipo_capa": "Vector",
+      "visible": true,
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "simbolo": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "capas_simbolo": [
+            {
+              "tipo": "QgsSimpleFillSymbolLayer",
+              "propiedades": {
+                "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                "color": "125,139,143,0,rgb:0.4901961,0.545098,0.5607843,0",
+                "joinstyle": "bevel",
+                "offset": "0,0",
+                "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                "offset_unit": "MM",
+                "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                "outline_style": "solid",
+                "outline_width": "0.26",
+                "outline_width_unit": "MM",
+                "style": "solid"
+              }
+            }
+          ]
+        }
+      },
+      "tipo_geometria": "Polygon",
+      "campos": [
+        "CVEGEO",
+        "NOMGEO",
+        "AREA",
+        "PERIMETER"
+      ]
+    },
+    {
+      "tipo": "grupo",
+      "nombre": "Puntos",
+      "capas": [
+        {
+          "tipo": "capa",
+          "nombre": "Aeropuertos_2012",
+          "id": "Aeropuertos_2012_e22cc7a3_d9a8_4cb8_8453_a1e7bcb2c172",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "categorizedSymbol",
+            "campo_clasificacion": "tipo",
+            "categorias": [
+              {
+                "valor": "Aeropuerto 1",
+                "etiqueta": "Aeropuerto ",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 0,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSvgMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "8,48,107,255,rgb:0.0313725,0.1882353,0.4196078,1",
+                        "fixedAspectRatio": "0",
+                        "horizontal_anchor_point": "1",
+                        "name": "C:/PROGRA~1/QGIS34~1.7/apps/qgis/svg/backgrounds/background_square_rounded.svg",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                        "outline_width": "0.4",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "parameters": "{}",
+                        "scale_method": "diameter",
+                        "size": "3",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    },
+                    {
+                      "tipo": "QgsSvgMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "255,255,255,255,rgb:1,1,1,1",
+                        "fixedAspectRatio": "0",
+                        "horizontal_anchor_point": "1",
+                        "name": "C:/PROGRA~1/QGIS34~1.7/apps/qgis/svg/transport/transport_airport.svg",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                        "outline_width": "0.1",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "parameters": "{}",
+                        "scale_method": "diameter",
+                        "size": "2.11765",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Civil terrestre (Mayor)",
+                "etiqueta": "Civil terrestre (Mayor)",
+                "renderizado": false,
+                "simbolo": {
+                  "tipo_geometria": 0,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSvgMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "31,120,180,255,rgb:0.1215686,0.4705882,0.7058824,1",
+                        "fixedAspectRatio": "0",
+                        "horizontal_anchor_point": "1",
+                        "name": "C:/PROGRA~1/QGIS34~1.7/apps/qgis/svg/backgrounds/background_square_rounded.svg",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                        "outline_width": "0.4",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "parameters": "{}",
+                        "scale_method": "diameter",
+                        "size": "2.8",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    },
+                    {
+                      "tipo": "QgsSvgMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "255,255,255,255,rgb:1,1,1,1",
+                        "fixedAspectRatio": "0",
+                        "horizontal_anchor_point": "1",
+                        "name": "C:/PROGRA~1/QGIS34~1.7/apps/qgis/svg/transport/transport_airport.svg",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                        "outline_width": "0.1",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "parameters": "{}",
+                        "scale_method": "diameter",
+                        "size": "1.97647",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "gid",
+            "tipo",
+            "clase",
+            "tam_pista",
+            "nom_aerop",
+            "eleva_pies",
+            "l",
+            "h",
+            "log_pista",
+            "pista_mts",
+            "num_pistas"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "Puertos_reg",
+          "id": "Puertos_reg_3315cdf1_89a3_4569_8536_7bd9029dc65a",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "categorizedSymbol",
+            "campo_clasificacion": "Vocación",
+            "categorias": [
+              {
+                "valor": "Comercio",
+                "etiqueta": "Comercio",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 0,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsFilledMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "72,29,111,255,rgb:0.2823529,0.1137255,0.4352941,1",
+                        "horizontal_anchor_point": "1",
+                        "name": "circle",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "scale_method": "diameter",
+                        "size": "3",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    },
+                    {
+                      "tipo": "QgsSvgMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "255,255,255,255,rgb:1,1,1,1",
+                        "fixedAspectRatio": "0",
+                        "horizontal_anchor_point": "1",
+                        "name": "C:/PROGRA~1/QGIS34~1.7/apps/qgis/svg/transport/amenity=ferry_terminal.svg",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                        "outline_width": "0.2",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "parameters": "{}",
+                        "scale_method": "diameter",
+                        "size": "2.2",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Petróleo",
+                "etiqueta": "Petróleo",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 0,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsFilledMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "0,0,0,255,rgb:0,0,0,1",
+                        "horizontal_anchor_point": "1",
+                        "name": "circle",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "scale_method": "diameter",
+                        "size": "3",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    },
+                    {
+                      "tipo": "QgsSvgMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "255,255,255,255,rgb:1,1,1,1",
+                        "fixedAspectRatio": "0",
+                        "horizontal_anchor_point": "1",
+                        "name": "C:/PROGRA~1/QGIS34~1.7/apps/qgis/svg/transport/amenity=ferry_terminal.svg",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                        "outline_width": "0.2",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "parameters": "{}",
+                        "scale_method": "diameter",
+                        "size": "2.2",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Turismo",
+                "etiqueta": "Turismo",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 0,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsFilledMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "215,165,119,255,hsv:0.08055555555555556,0.44705882352941179,0.84313725490196079,1",
+                        "horizontal_anchor_point": "1",
+                        "name": "circle",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "scale_method": "diameter",
+                        "size": "3",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    },
+                    {
+                      "tipo": "QgsSvgMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "255,255,255,255,rgb:1,1,1,1",
+                        "fixedAspectRatio": "0",
+                        "horizontal_anchor_point": "1",
+                        "name": "C:/PROGRA~1/QGIS34~1.7/apps/qgis/svg/transport/amenity=ferry_terminal.svg",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                        "outline_width": "0.2",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "parameters": "{}",
+                        "scale_method": "diameter",
+                        "size": "2.2",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "None",
+                "etiqueta": "",
+                "renderizado": false,
+                "simbolo": {
+                  "tipo_geometria": 0,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsFilledMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "134,232,132,255,hsv:0.33055555555555555,0.43137254901960786,0.90980392156862744,1",
+                        "horizontal_anchor_point": "1",
+                        "name": "circle",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "scale_method": "diameter",
+                        "size": "3",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    },
+                    {
+                      "tipo": "QgsSvgMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "134,232,132,255,hsv:0.33055555555555555,0.43137254901960786,0.90980392156862744,1",
+                        "fixedAspectRatio": "0",
+                        "horizontal_anchor_point": "1",
+                        "name": "C:/PROGRA~1/QGIS34~1.7/apps/qgis/svg/transport/amenity=ferry_terminal.svg",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                        "outline_width": "0.2",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "parameters": "{}",
+                        "scale_method": "diameter",
+                        "size": "2.6",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "id",
+            "Nombre",
+            "Vocación",
+            "Politica"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "estaciones_RFN25",
+          "id": "estaciones_RFN25_f1c91e13_6038_49f5_863e_e308c7cb671e",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "categorizedSymbol",
+            "campo_clasificacion": "TIPO_OD",
+            "categorias": [
+              {
+                "valor": "Estación de pasajeros",
+                "etiqueta": "Estación de pasajeros",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 0,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSvgMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "74,74,74,255,hsv:0,0,0.29019607843137257,1",
+                        "fixedAspectRatio": "0",
+                        "horizontal_anchor_point": "1",
+                        "name": "C:/PROGRA~1/QGIS34~1.7/apps/qgis/svg/backgrounds/background_square_rounded.svg",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                        "outline_width": "0.4",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "parameters": "{}",
+                        "scale_method": "diameter",
+                        "size": "3",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    },
+                    {
+                      "tipo": "QgsSvgMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "255,255,255,255,hsv:0,0,1,1",
+                        "fixedAspectRatio": "0",
+                        "horizontal_anchor_point": "1",
+                        "name": "C:/PROGRA~1/QGIS34~1.7/apps/qgis/svg/transport/transport_train_station2.svg",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                        "outline_width": "0.1",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "parameters": "{}",
+                        "scale_method": "diameter",
+                        "size": "2.11764",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Patio",
+                "etiqueta": "Patio",
+                "renderizado": false,
+                "simbolo": {
+                  "tipo_geometria": 0,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSvgMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "106,157,239,255,hsv:0.60277777777777775,0.55686274509803924,0.93725490196078431,1",
+                        "fixedAspectRatio": "0",
+                        "horizontal_anchor_point": "1",
+                        "name": "C:/PROGRA~1/QGIS34~1.7/apps/qgis/svg/backgrounds/background_square_rounded.svg",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                        "outline_width": "0.4",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "parameters": "{}",
+                        "scale_method": "diameter",
+                        "size": "3",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    },
+                    {
+                      "tipo": "QgsSvgMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "color": "106,157,239,255,hsv:0.60277777777777775,0.55686274509803924,0.93725490196078431,1",
+                        "fixedAspectRatio": "0",
+                        "horizontal_anchor_point": "1",
+                        "name": "C:/PROGRA~1/QGIS34~1.7/apps/qgis/svg/transport/transport_train_station2.svg",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                        "outline_width": "0.1",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "parameters": "{}",
+                        "scale_method": "diameter",
+                        "size": "2.11764",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "IDOD",
+            "TIPO_OD",
+            "Jurisdicc",
+            "Nombre"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "Loc_rur",
+          "id": "Loc_rur_c84739da_cfe5_4c19_88ea_8ee7b7dc135a",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "graduatedSymbol",
+            "campo_clasificacion": "POB1",
+            "metodo_clasificacion": "Quantile",
+            "rangos": [
+              {
+                "etiqueta": "1 - 50",
+                "valor_min": 1.0,
+                "valor_max": 50.0,
+                "simbolo": {
+                  "tipo_geometria": 0,
+                  "opacidad": 0.7,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "cap_style": "square",
+                        "color": "255,245,240,255,rgb:1,0.9607843,0.9411765,1",
+                        "horizontal_anchor_point": "1",
+                        "joinstyle": "bevel",
+                        "name": "circle",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "scale_method": "diameter",
+                        "size": "2",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "etiqueta": "50 - 100",
+                "valor_min": 50.0,
+                "valor_max": 100.0,
+                "simbolo": {
+                  "tipo_geometria": 0,
+                  "opacidad": 0.7,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "cap_style": "square",
+                        "color": "252,164,134,255,rgb:0.9882353,0.6426337,0.5273976,1",
+                        "horizontal_anchor_point": "1",
+                        "joinstyle": "bevel",
+                        "name": "circle",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "scale_method": "diameter",
+                        "size": "1",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "etiqueta": "100 - 500",
+                "valor_min": 100.0,
+                "valor_max": 500.0,
+                "simbolo": {
+                  "tipo_geometria": 0,
+                  "opacidad": 0.7,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "cap_style": "square",
+                        "color": "234,55,42,255,rgb:0.9191577,0.2137789,0.1650111,1",
+                        "horizontal_anchor_point": "1",
+                        "joinstyle": "bevel",
+                        "name": "circle",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "scale_method": "diameter",
+                        "size": "0.6",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "etiqueta": "500 - 2416",
+                "valor_min": 500.0,
+                "valor_max": 2416.0,
+                "simbolo": {
+                  "tipo_geometria": 0,
+                  "opacidad": 0.7,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleMarkerSymbolLayer",
+                      "propiedades": {
+                        "angle": "0",
+                        "cap_style": "square",
+                        "color": "103,0,13,255,rgb:0.4039216,0,0.0509804,1",
+                        "horizontal_anchor_point": "1",
+                        "joinstyle": "bevel",
+                        "name": "circle",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0",
+                        "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "outline_width_unit": "MM",
+                        "scale_method": "diameter",
+                        "size": "0.8",
+                        "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "size_unit": "MM",
+                        "vertical_anchor_point": "1"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "CVEGEO",
+            "NOM_MUN",
+            "NOMGEO",
+            "CVE_AGEB",
+            "POB1",
+            "POB8",
+            "POB12",
+            "POB24",
+            "POB42",
+            "POB84",
+            "POB125_R",
+            "POB126_R",
+            "POB127_R",
+            "POB128_R",
+            "POB129_R",
+            "OID"
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "grupo",
+      "nombre": "Líneas",
+      "capas": [
+        {
+          "tipo": "capa",
+          "nombre": "RFN_2024",
+          "id": "RFN_2024_9402a60c_14f6_47a8_995e_54c07983143a",
+          "tipo_capa": "Vector",
+          "visible": true,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 0.8,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "round",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "round",
+                    "line_color": "0,0,0,255,rgb:0,0,0,1",
+                    "line_style": "solid",
+                    "line_width": "0.15",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                },
+                {
+                  "tipo": "QgsMarkerLineSymbolLayer",
+                  "propiedades": {
+                    "average_angle_length": "4",
+                    "average_angle_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "average_angle_unit": "MM",
+                    "interval": "2",
+                    "interval_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "interval_unit": "MM",
+                    "offset": "0",
+                    "offset_along_line": "0",
+                    "offset_along_line_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_along_line_unit": "MM",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "place_on_every_part": "True",
+                    "placements": "Interval",
+                    "ring_filter": "0",
+                    "rotate": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "LINEA",
+            "SERVICIO",
+            "ID",
+            "ENTIDAD",
+            "CNDICON",
+            "VIA",
+            "LONG"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "RNC_2025_SURESTE",
+          "id": "RNC_2025_SURESTE_3ed97d70_ae98_40fc_a627_8ba200c16783",
+          "tipo_capa": "Vector",
+          "visible": true,
+          "simbologia": {
+            "tipo": "categorizedSymbol",
+            "campo_clasificacion": "ADMINISTRA",
+            "categorias": [
+              {
+                "valor": "Federal",
+                "etiqueta": "Federal",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 1,
+                  "opacidad": 0.5,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleLineSymbolLayer",
+                      "propiedades": {
+                        "align_dash_pattern": "0",
+                        "capstyle": "square",
+                        "customdash": "5;2",
+                        "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "customdash_unit": "MM",
+                        "dash_pattern_offset": "0",
+                        "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "dash_pattern_offset_unit": "MM",
+                        "draw_inside_polygon": "0",
+                        "joinstyle": "bevel",
+                        "line_color": "168,0,0,255,rgb:0.6588235,0,0,1",
+                        "line_style": "solid",
+                        "line_width": "0.25",
+                        "line_width_unit": "MM",
+                        "offset": "0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "ring_filter": "0",
+                        "trim_distance_end": "0",
+                        "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_end_unit": "MM",
+                        "trim_distance_start": "0",
+                        "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_start_unit": "MM",
+                        "tweak_dash_pattern_on_corners": "0",
+                        "use_custom_dash": "0",
+                        "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Estatal",
+                "etiqueta": "Estatal",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 1,
+                  "opacidad": 0.5,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleLineSymbolLayer",
+                      "propiedades": {
+                        "align_dash_pattern": "0",
+                        "capstyle": "square",
+                        "customdash": "5;2",
+                        "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "customdash_unit": "MM",
+                        "dash_pattern_offset": "0",
+                        "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "dash_pattern_offset_unit": "MM",
+                        "draw_inside_polygon": "0",
+                        "joinstyle": "bevel",
+                        "line_color": "255,127,0,255,rgb:1,0.4980392,0,1",
+                        "line_style": "solid",
+                        "line_width": "0.2",
+                        "line_width_unit": "MM",
+                        "offset": "0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "ring_filter": "0",
+                        "trim_distance_end": "0",
+                        "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_end_unit": "MM",
+                        "trim_distance_start": "0",
+                        "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_start_unit": "MM",
+                        "tweak_dash_pattern_on_corners": "0",
+                        "use_custom_dash": "0",
+                        "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Municipal",
+                "etiqueta": "Municipal",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 1,
+                  "opacidad": 0.5,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleLineSymbolLayer",
+                      "propiedades": {
+                        "align_dash_pattern": "0",
+                        "capstyle": "square",
+                        "customdash": "5;2",
+                        "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "customdash_unit": "MM",
+                        "dash_pattern_offset": "0",
+                        "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "dash_pattern_offset_unit": "MM",
+                        "draw_inside_polygon": "0",
+                        "joinstyle": "bevel",
+                        "line_color": "253,191,111,255,rgb:0.9921569,0.7490196,0.4352941,1",
+                        "line_style": "solid",
+                        "line_width": "0.15",
+                        "line_width_unit": "MM",
+                        "offset": "0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "ring_filter": "0",
+                        "trim_distance_end": "0",
+                        "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_end_unit": "MM",
+                        "trim_distance_start": "0",
+                        "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_start_unit": "MM",
+                        "tweak_dash_pattern_on_corners": "0",
+                        "use_custom_dash": "0",
+                        "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "N/A",
+                "etiqueta": "N/A",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 1,
+                  "opacidad": 0.3,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleLineSymbolLayer",
+                      "propiedades": {
+                        "align_dash_pattern": "0",
+                        "capstyle": "square",
+                        "customdash": "5;2",
+                        "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "customdash_unit": "MM",
+                        "dash_pattern_offset": "0",
+                        "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "dash_pattern_offset_unit": "MM",
+                        "draw_inside_polygon": "0",
+                        "joinstyle": "bevel",
+                        "line_color": "253,191,111,255,rgb:0.9921569,0.7490196,0.4352941,1",
+                        "line_style": "solid",
+                        "line_width": "0.15",
+                        "line_width_unit": "MM",
+                        "offset": "0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "ring_filter": "0",
+                        "trim_distance_end": "0",
+                        "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_end_unit": "MM",
+                        "trim_distance_start": "0",
+                        "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_start_unit": "MM",
+                        "tweak_dash_pattern_on_corners": "0",
+                        "use_custom_dash": "0",
+                        "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "N/D",
+                "etiqueta": "N/D",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 1,
+                  "opacidad": 0.3,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleLineSymbolLayer",
+                      "propiedades": {
+                        "align_dash_pattern": "0",
+                        "capstyle": "square",
+                        "customdash": "5;2",
+                        "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "customdash_unit": "MM",
+                        "dash_pattern_offset": "0",
+                        "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "dash_pattern_offset_unit": "MM",
+                        "draw_inside_polygon": "0",
+                        "joinstyle": "bevel",
+                        "line_color": "253,191,111,255,rgb:0.9921569,0.7490196,0.4352941,1",
+                        "line_style": "solid",
+                        "line_width": "0.15",
+                        "line_width_unit": "MM",
+                        "offset": "0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "ring_filter": "0",
+                        "trim_distance_end": "0",
+                        "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_end_unit": "MM",
+                        "trim_distance_start": "0",
+                        "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_start_unit": "MM",
+                        "tweak_dash_pattern_on_corners": "0",
+                        "use_custom_dash": "0",
+                        "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Otro",
+                "etiqueta": "Otro",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 1,
+                  "opacidad": 0.3,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleLineSymbolLayer",
+                      "propiedades": {
+                        "align_dash_pattern": "0",
+                        "capstyle": "square",
+                        "customdash": "5;2",
+                        "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "customdash_unit": "MM",
+                        "dash_pattern_offset": "0",
+                        "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "dash_pattern_offset_unit": "MM",
+                        "draw_inside_polygon": "0",
+                        "joinstyle": "bevel",
+                        "line_color": "253,191,111,255,rgb:0.9921569,0.7490196,0.4352941,1",
+                        "line_style": "solid",
+                        "line_width": "0.15",
+                        "line_width_unit": "MM",
+                        "offset": "0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "ring_filter": "0",
+                        "trim_distance_end": "0",
+                        "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_end_unit": "MM",
+                        "trim_distance_start": "0",
+                        "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_start_unit": "MM",
+                        "tweak_dash_pattern_on_corners": "0",
+                        "use_custom_dash": "0",
+                        "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Particular",
+                "etiqueta": "Particular",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 1,
+                  "opacidad": 0.3,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleLineSymbolLayer",
+                      "propiedades": {
+                        "align_dash_pattern": "0",
+                        "capstyle": "square",
+                        "customdash": "5;2",
+                        "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "customdash_unit": "MM",
+                        "dash_pattern_offset": "0",
+                        "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "dash_pattern_offset_unit": "MM",
+                        "draw_inside_polygon": "0",
+                        "joinstyle": "bevel",
+                        "line_color": "253,191,111,255,rgb:0.9921569,0.7490196,0.4352941,1",
+                        "line_style": "solid",
+                        "line_width": "0.15",
+                        "line_width_unit": "MM",
+                        "offset": "0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "ring_filter": "0",
+                        "trim_distance_end": "0",
+                        "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_end_unit": "MM",
+                        "trim_distance_start": "0",
+                        "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_start_unit": "MM",
+                        "tweak_dash_pattern_on_corners": "0",
+                        "use_custom_dash": "0",
+                        "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "None",
+                "etiqueta": "",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 1,
+                  "opacidad": 0.3,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleLineSymbolLayer",
+                      "propiedades": {
+                        "align_dash_pattern": "0",
+                        "capstyle": "square",
+                        "customdash": "5;2",
+                        "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "customdash_unit": "MM",
+                        "dash_pattern_offset": "0",
+                        "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "dash_pattern_offset_unit": "MM",
+                        "draw_inside_polygon": "0",
+                        "joinstyle": "bevel",
+                        "line_color": "253,191,111,255,rgb:0.9921569,0.7490196,0.4352941,1",
+                        "line_style": "solid",
+                        "line_width": "0.15",
+                        "line_width_unit": "MM",
+                        "offset": "0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "ring_filter": "0",
+                        "trim_distance_end": "0",
+                        "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_end_unit": "MM",
+                        "trim_distance_start": "0",
+                        "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "trim_distance_start_unit": "MM",
+                        "tweak_dash_pattern_on_corners": "0",
+                        "use_custom_dash": "0",
+                        "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "ID_RED",
+            "TIPO_VIAL",
+            "NOMBRE",
+            "CODIGO",
+            "CONDICION",
+            "PEAJE",
+            "ADMINISTRA",
+            "VELOCIDAD",
+            "LONGITUD",
+            "ANCHO"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "corr_agua_2003",
+          "id": "corr_agua_2003_8c9c3adf_aecf_4621_b720_018e47f7e9c4",
+          "tipo_capa": "Vector",
+          "visible": true,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "166,206,227,255,rgb:0.6509804,0.8078431,0.8901961,1",
+                    "line_style": "solid",
+                    "line_width": "0.12",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "gid",
+            "tipo",
+            "longitud"
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "grupo",
+      "nombre": "Polígonos",
+      "capas": [
+        {
+          "tipo": "capa",
+          "nombre": "Loc_urb",
+          "id": "Loc_urb_94553798_031a_4226_a142_c4126950b7b8",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 0.7,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleFillSymbolLayer",
+                  "propiedades": {
+                    "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "color": "168,0,0,255,rgb:0.6588235,0,0,1",
+                    "joinstyle": "bevel",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                    "outline_style": "solid",
+                    "outline_width": "0.26",
+                    "outline_width_unit": "MM",
+                    "style": "solid"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Polygon",
+          "campos": [
+            "CVEGEO",
+            "NOM_MUN",
+            "NOMGEO",
+            "POB1",
+            "POB8",
+            "POB12",
+            "POB24",
+            "POB42",
+            "POB84",
+            "POB125_R",
+            "POB126_R",
+            "POB127_R",
+            "POB128_R",
+            "POB129_R",
+            "OID"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "ANP_2024",
+          "id": "ANP_2024_518903f1_1220_44ef_a341_5f7e51c2f061",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 0.5,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsLinePatternFillSymbolLayer",
+                  "propiedades": {
+                    "angle": "45",
+                    "clip_mode": "during_render",
+                    "color": "51,160,44,255,rgb:0.2,0.627451,0.172549,1",
+                    "coordinate_reference": "feature",
+                    "distance": "2",
+                    "distance_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "distance_unit": "MM",
+                    "line_width": "0.26",
+                    "line_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM"
+                  }
+                },
+                {
+                  "tipo": "QgsLinePatternFillSymbolLayer",
+                  "propiedades": {
+                    "angle": "135",
+                    "clip_mode": "during_render",
+                    "color": "51,160,44,255,rgb:0.2,0.627451,0.172549,1",
+                    "coordinate_reference": "feature",
+                    "distance": "2",
+                    "distance_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "distance_unit": "MM",
+                    "line_width": "0.26",
+                    "line_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM"
+                  }
+                },
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "51,160,44,255,rgb:0.2,0.627451,0.172549,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Polygon",
+          "campos": [
+            "ID_ANP",
+            "ID_DOF",
+            "NOMBRE",
+            "CAT_MANEJO",
+            "ESTADOS",
+            "SUPERFICIE",
+            "COV_ID",
+            "cita"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "ZonasMetropolitanas",
+          "id": "ZonasMetropolitanas_0f0c79d8_c063_45d5_9ff9_055f51854602",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 0.5,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleFillSymbolLayer",
+                  "propiedades": {
+                    "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "color": "253,191,111,255,rgb:0.9921569,0.7490196,0.4352941,1",
+                    "joinstyle": "bevel",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                    "outline_style": "solid",
+                    "outline_width": "0.26",
+                    "outline_width_unit": "MM",
+                    "style": "solid"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Polygon",
+          "campos": [
+            "CVEGEO",
+            "CVE_ENT",
+            "CVE_MUN",
+            "NOMGEO",
+            "CVE_MET",
+            "NOM_MET",
+            "TIPO_MET"
+          ]
+        }
+      ]
+    }
+  ]
+}

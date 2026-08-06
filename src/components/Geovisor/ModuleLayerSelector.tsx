@@ -1,9 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect, useRef } from 'react'
 
 interface Layer {
   id: string
   label: string
   desc: string
+  simbologia?: any
+  isFixed?: boolean
 }
 
 interface Module {
@@ -12,113 +14,169 @@ interface Module {
   icon: React.ReactNode
   colorClass: string
   layers: Layer[]
+  /** Capas que se encienden al activar el módulo. Sin lista, se encienden todas. */
+  defaultLayers?: string[]
 }
 
-const MODULES: Module[] = [
-  {
-    id: 'ambiental',
-    title: 'Monitoreo Ambiental y Territorial',
-    colorClass: 'text-emerald-700 bg-emerald-50 border-emerald-200',
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-        <path d="M2 12h20" />
-      </svg>
-    ),
-    layers: [
-      {
-        id: 'anp',
-        label: 'Áreas Naturales Protegidas (ANP)',
-        desc: 'Delimitación jurídica y zonas núcleo de conservación de reservas naturales.'
-      },
-      {
-        id: 'manglares',
-        label: 'Manglares y Zonas Costeras',
-        desc: 'Ecosistemas de manglar y zonas pantanosas con restricciones de uso.'
-      }
-    ]
-  },
-  {
-    id: 'social',
-    title: 'Bienestar Social y Demografía',
-    colorClass: 'text-amber-700 bg-amber-50 border-amber-200',
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
-    layers: [
-      {
-        id: 'poblacion',
-        label: 'Densidad de Población por Municipio',
-        desc: 'Mapa coroplético indicando concentración demográfica por habitante.'
-      }
-    ]
-  },
-  {
-    id: 'infraestructura',
-    title: 'Infraestructura y Conectividad',
-    colorClass: 'text-sky-700 bg-sky-50 border-sky-200',
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <circle cx="18" cy="5" r="3" />
-        <circle cx="6" cy="12" r="3" />
-        <circle cx="18" cy="19" r="3" />
-        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
-      </svg>
-    ),
-    layers: [
-      {
-        id: 'linea-trans',
-        label: 'Líneas de Transmisión Eléctrica',
-        desc: 'Trazado cartográfico de líneas de alta y media tensión en el estado.'
-      },
-      {
-        id: 'via-ferrea',
-        label: 'Vías Férreas y Tren Maya',
-        desc: 'Derechos de vía e infraestructura del sistema ferroviario y Tren Maya.'
-      },
-      {
-        id: 'educacion',
-        label: 'Equipamientos Educativos',
-        desc: 'Ubicación cartográfica de planteles de educación superior, media superior, secundaria, primaria y preescolar.'
-      }
-    ]
-  },
-  {
-    id: 'aptitud',
-    title: 'Aptitud Territorial y Desarrollo Económico',
-    colorClass: 'text-rose-700 bg-rose-50 border-rose-200',
-    icon: (
-      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <line x1="18" y1="20" x2="18" y2="10" />
-        <line x1="12" y1="20" x2="12" y2="4" />
-        <line x1="6" y1="20" x2="6" y2="14" />
-      </svg>
-    ),
-    layers: [
-      {
-        id: 'zonificacion',
-        label: 'Zonificación Primaria y Uso de Suelo',
-        desc: 'Delimitaciones cartográficas de uso del suelo primario y zonificación del territorio estatal.'
-      }
-    ]
+import { appConfig } from '../../config/appConfig'
+
+function getModuleIcon(iconName: string) {
+  switch(iconName) {
+    case 'mapa_base':
+      return (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+          <line x1="8" y1="2" x2="8" y2="18"></line>
+          <line x1="16" y1="6" x2="16" y2="22"></line>
+        </svg>
+      )
+    case 'ambiental':
+      return (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          <path d="M2 12h20" />
+        </svg>
+      )
+    case 'social':
+      return (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        </svg>
+      )
+    case 'infraestructura':
+      return (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="18" cy="5" r="3" />
+          <circle cx="6" cy="12" r="3" />
+          <circle cx="18" cy="19" r="3" />
+          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+        </svg>
+      )
+    case 'aptitud':
+      return (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10" />
+          <line x1="12" y1="20" x2="12" y2="4" />
+          <line x1="6" y1="20" x2="6" y2="14" />
+        </svg>
+      )
+    case 'normatividad':
+      return (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+          <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+        </svg>
+      )
+    default:
+      return <div />
   }
-]
+}
+
+interface StyleNode {
+  tipo: string
+  nombre: string
+  capas?: StyleNode[]
+  simbologia?: any
+}
+
+/**
+ * El volcado nuevo de QGIS es plano —`{modulo, total_capas, capas[]}`— en vez
+ * del árbol de grupos del viejo, y cada capa declara su `nombre_tabla`, que es
+ * exactamente el nombre del GeoJSON. Eso elimina la adivinación de nombres que
+ * hace falta con el formato viejo.
+ */
+function esFormatoNuevo(json: any): boolean {
+  return Array.isArray(json?.capas) && typeof json?.modulo === 'string'
+}
+
+function extractLayersFromNewStyle(json: any, availableLayers: string[]): Layer[] {
+  return (json.capas as any[]).flatMap((capa) => {
+    // Los rásteres del proyecto QGIS (mapas base de Carto) no son capas
+    // vectoriales del visor: no tienen GeoJSON ni pila de símbolos.
+    if (capa?.tipo === 'raster') return []
+
+    // `nombre_tabla` debería ser el nombre real de la tabla, pero en el módulo
+    // Mapa Base el volcado nuevo pone ahí el nombre del árbol de QGIS, que va
+    // sin el prefijo `C04_`. Se prueba el prefijo antes de descartar la capa.
+    const bruto = capa?.nombre_tabla || capa?.nombre
+    if (!bruto) return []
+    const declarado = appConfig.TABLE_ALIASES[bruto] ?? bruto
+    const id = availableLayers.includes(declarado)
+      ? declarado
+      : availableLayers.includes(`C04_${declarado}`)
+        ? `C04_${declarado}`
+        : declarado
+    if (availableLayers.length > 0 && !availableLayers.includes(id)) return []
+
+    const cleanLabel = String(capa.nombre ?? id).replace(/^C\d+_/, '').replace(/_/g, ' ')
+    return [{
+      id,
+      label: appConfig.LAYER_ALIASES[id] || cleanLabel,
+      desc: 'Capa dinámica',
+      simbologia: capa.simbologia,
+      isFixed: appConfig.FIXED_LAYERS.includes(id)
+    }]
+  })
+}
+
+function extractLayersFromStyle(node: StyleNode, availableLayers: string[] = []): Layer[] {
+  let result: Layer[] = []
+  if (node.tipo === 'capa') {
+    // Resolver la id real que coincide con el archivo GeoJSON disponible
+    let realId = appConfig.TABLE_ALIASES[node.nombre] ?? node.nombre
+    if (availableLayers.length > 0) {
+      if (availableLayers.includes(realId)) {
+        // ya resuelto por alias o por coincidencia exacta
+      } else if (availableLayers.includes(node.nombre)) {
+        realId = node.nombre
+      } else if (availableLayers.includes(`C04_${node.nombre}`)) {
+        realId = `C04_${node.nombre}`
+      } else {
+        const matched = availableLayers.find(avail => 
+          avail.toLowerCase().endsWith(node.nombre.toLowerCase()) || 
+          node.nombre.toLowerCase().endsWith(avail.toLowerCase())
+        )
+        if (matched) realId = matched
+      }
+    }
+
+    // Identificar capas fijas
+    const isFixed = appConfig.FIXED_LAYERS.includes(realId) || appConfig.FIXED_LAYERS.includes(node.nombre)
+
+    // Formatear etiqueta limpia para la UI y aplicar ALIAS de configuración si existe
+    const cleanLabel = node.nombre.replace(/^C\d+_/, '').replace(/_/g, ' ')
+    const label = appConfig.LAYER_ALIASES[realId] || appConfig.LAYER_ALIASES[node.nombre] || cleanLabel
+    
+    result.push({
+      id: realId,
+      label,
+      desc: 'Capa dinámica',
+      simbologia: node.simbologia,
+      isFixed
+    })
+  } else if (node.tipo === 'grupo' && node.capas) {
+    for (const child of node.capas) {
+      result = result.concat(extractLayersFromStyle(child, availableLayers))
+    }
+  }
+  return result
+}
 
 interface Props {
   activeLayers: string[]
   onChangeLayers: (layers: string[]) => void
-  initialModule?: string
+  initialModule?: string | null
   layerOpacity: Record<string, number>
   onChangeOpacity: (layerId: string, opacity: number) => void
   layerOrder: string[]
   onChangeOrder: (order: string[]) => void
+  /** Emite la simbología y las etiquetas de todas las capas, indexadas por id. */
+  onStylesLoaded?: (styles: Record<string, any>, labels: Record<string, string>) => void
 }
 
 export default function ModuleLayerSelector({
@@ -128,40 +186,153 @@ export default function ModuleLayerSelector({
   layerOpacity,
   onChangeOpacity,
   layerOrder,
-  onChangeOrder
+  onChangeOrder,
+  onStylesLoaded
 }: Props) {
-  const [expandedModule, setExpandedModule] = useState<string | null>(initialModule ?? 'ambiental')
+  // Módulo activo: sus capas son las que están dibujadas. Solo uno a la vez.
+  // Es independiente del acordeón, que arranca cerrado.
+  const [activeModule, setActiveModule] = useState<string>(initialModule ?? appConfig.DEFAULT_MODULE)
+  const [expandedModule, setExpandedModule] = useState<string | null>(null)
+  const [modules, setModules] = useState<Module[]>([])
 
-  // Auto-expandir el módulo que contenga la(s) capa(s) activa(s) al navegar o montar la pestaña
+  const itemRefs = useRef<Map<string, HTMLDivElement | null>>(new Map())
+  const prevPositions = useRef<Map<string, number>>(new Map())
+
+  /**
+   * Capas que se encienden al activar un módulo: las declaradas en
+   * `defaultLayers` que además tengan datos, o todas si no hay lista.
+   *
+   * El orden sale del árbol de QGIS (`module.layers`), no del orden en que se
+   * escribió la configuración: la primera capa del árbol se dibuja encima.
+   */
+  const capasEncendidas = (modulo: Module): string[] => {
+    const ids = modulo.layers.map((l) => l.id)
+    if (!modulo.defaultLayers) return ids
+    const encendidas = modulo.defaultLayers
+    return ids.filter((id) => encendidas.includes(id))
+  }
+
+  // Cargar las capas dinámicamente desde los archivos JSON
   useEffect(() => {
-    if (activeLayers.length > 0) {
-      const activeModule = MODULES.find((m) =>
-        m.layers.some((l) => activeLayers.includes(l.id))
-      )
-      if (activeModule) {
-        setExpandedModule(activeModule.id)
+    async function fetchModules() {
+      let availableLayers: string[] = []
+      try {
+        const resAvail = await fetch('/layers/available.json')
+        if (resAvail.ok) {
+          availableLayers = await resAvail.json()
+        }
+      } catch (e) {
+        console.error('No se pudo cargar la lista de capas disponibles', e)
       }
-    }
-  }, [activeLayers])
 
-  const toggleModuleExpand = (moduleId: string) => {
-    if (expandedModule === moduleId) {
-      setExpandedModule(null)
-      onChangeLayers([])
-    } else {
-      setExpandedModule(moduleId)
-      const targetModule = MODULES.find((m) => m.id === moduleId)
-      if (targetModule) {
-        const newLayers = targetModule.layers.map((l) => l.id)
-        onChangeLayers(newLayers)
-        // Inicializar orden: mantener las que ya están + agregar nuevas
-        const merged = [...layerOrder.filter((id) => newLayers.includes(id))]
-        newLayers.forEach((id) => {
-          if (!merged.includes(id)) merged.push(id)
+      const allStyles: Record<string, any> = {}
+      const allLabels: Record<string, string> = {}
+
+      const loadedModules = await Promise.all(
+        appConfig.MODULES_CONFIG.map(async (modConfig) => {
+          try {
+            const res = await fetch(`/estilos/${modConfig.file}`)
+            if (!res.ok) throw new Error('File not found')
+            const json = await res.json()
+            const extractedLayers = esFormatoNuevo(json)
+              ? extractLayersFromNewStyle(json, availableLayers)
+              : extractLayersFromStyle(json as StyleNode, availableLayers).filter(
+                  l => availableLayers.length === 0 || availableLayers.includes(l.id)
+                )
+            
+            extractedLayers.forEach(l => {
+              if (l.simbologia) allStyles[l.id] = l.simbologia
+              allLabels[l.id] = l.label
+            })
+            
+            return {
+              id: modConfig.id,
+              title: modConfig.title,
+              colorClass: modConfig.colorClass,
+              icon: getModuleIcon(modConfig.icon),
+              layers: extractedLayers,
+              defaultLayers: (modConfig as { defaultLayers?: string[] }).defaultLayers
+            }
+          } catch (error) {
+            console.error(`Error loading styles for ${modConfig.id}:`, error)
+            return {
+              id: modConfig.id,
+              title: modConfig.title,
+              colorClass: modConfig.colorClass,
+              icon: getModuleIcon(modConfig.icon),
+              layers: [],
+              defaultLayers: (modConfig as { defaultLayers?: string[] }).defaultLayers
+            }
+          }
         })
-        onChangeOrder(merged)
+      )
+
+      setModules(loadedModules)
+      if (onStylesLoaded) {
+        onStylesLoaded(allStyles, allLabels)
+      }
+
+      // Encender el módulo inicial: hasta aquí no se conocían sus capas.
+      const inicial = loadedModules.find((m) => m.id === activeModule)
+      if (inicial) {
+        const ids = capasEncendidas(inicial)
+        onChangeLayers(ids)
+        onChangeOrder(ids)
       }
     }
+    fetchModules()
+  }, [])
+
+  // Animación FLIP (First, Last, Invert, Play) para deslizamiento y descenso continuo al apagar o reordenar capas
+  useLayoutEffect(() => {
+    itemRefs.current.forEach((el, id) => {
+      if (!el) return
+      const currentTop = el.getBoundingClientRect().top
+      const prevTop = prevPositions.current.get(id)
+
+      if (prevTop !== undefined) {
+        const deltaY = prevTop - currentTop
+        if (deltaY !== 0) {
+          el.style.transform = `translateY(${deltaY}px)`
+          el.style.transition = 'none'
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              el.style.transform = 'translateY(0px)'
+              el.style.transition = 'transform 450ms cubic-bezier(0.16, 1, 0.3, 1)'
+            })
+          })
+        }
+      }
+      prevPositions.current.set(id, currentTop)
+    })
+  }, [activeLayers, layerOrder, expandedModule])
+
+  // Removido auto-expandir el módulo para permitir que inicie cerrado
+
+  /**
+   * Clic en el encabezado de un módulo.
+   *
+   * Si es otro módulo, se vuelve el activo: se encienden todas sus capas y se
+   * apagan las del anterior, porque cada módulo es el mapa base de su tema y
+   * solo puede haber uno a la vez. Si ya era el activo, el clic solo abre o
+   * cierra el acordeón y no toca las capas.
+   */
+  const selectModule = (moduleId: string) => {
+    if (moduleId === activeModule) {
+      setExpandedModule(expandedModule === moduleId ? null : moduleId)
+      return
+    }
+
+    const modulo = modules.find((m) => m.id === moduleId)
+    if (!modulo) return
+
+    // El orden del árbol de QGIS es el orden de dibujo: el primero va encima.
+    const ids = capasEncendidas(modulo)
+    setActiveModule(moduleId)
+    setExpandedModule(moduleId)
+    onChangeLayers(ids)
+    onChangeOrder(ids)
   }
 
   const toggleLayer = (layerId: string) => {
@@ -184,41 +355,39 @@ export default function ModuleLayerSelector({
     onChangeOrder(next)
   }
 
-  // Obtener las capas del módulo expandido, ordenadas según layerOrder
+  // Obtener las capas del módulo expandido, ordenadas según layerOrder (activas primero)
   const getOrderedLayers = (moduleLayers: Layer[]) => {
     const ids = moduleLayers.map((l) => l.id)
     const ordered = layerOrder.filter((id) => ids.includes(id))
-    // Agregar capas que no están en el orden aún
     ids.forEach((id) => {
       if (!ordered.includes(id)) ordered.push(id)
     })
     return ordered.map((id) => moduleLayers.find((l) => l.id === id)!).filter(Boolean)
   }
 
-  return (
-    <div className="flex flex-col gap-3 p-4 overflow-y-auto">
-      <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">
-        Módulos Temáticos
-      </h3>
+  const mapaBaseModule = modules.find(m => m.id === 'mapa_base')
+  const tematicosModules = modules.filter(m => m.id !== 'mapa_base')
 
-      <div className="flex flex-col gap-2">
-        {MODULES.map((module) => {
-          const isExpanded = expandedModule === module.id
-          const activeCount = module.layers.filter((l) => activeLayers.includes(l.id)).length
+  const renderModule = (module: Module) => {
+    const isExpanded = expandedModule === module.id
+    const isActive = activeModule === module.id
+    const activeCount = module.layers.filter((l) => activeLayers.includes(l.id)).length
 
-          return (
-            <div
-              key={module.id}
-              className={`border border-gray-100 rounded-lg overflow-hidden transition-all duration-200 ${
-                isExpanded ? 'shadow-sm bg-white' : 'bg-gray-50/50 hover:bg-gray-50'
-              }`}
-            >
-              {/* Encabezado Módulo */}
-              <button
-                onClick={() => toggleModuleExpand(module.id)}
-                className="w-full flex items-center justify-between p-3.5 text-left cursor-pointer transition-colors"
-                aria-expanded={isExpanded}
-              >
+    return (
+      <div
+        key={module.id}
+        className={`border rounded-lg overflow-hidden transition-all duration-200 ${
+          isActive ? 'border-[var(--c-guinda)] bg-white shadow-sm' : 'border-gray-100'
+        } ${isExpanded ? 'shadow-sm bg-white' : isActive ? '' : 'bg-gray-50/50 hover:bg-gray-50'}`}
+      >
+        {/* Encabezado Módulo */}
+        <button
+          onClick={() => selectModule(module.id)}
+          className={`mapas w-full flex items-center justify-between p-3.5 text-left cursor-pointer transition-colors`}
+          aria-expanded={isExpanded}
+          aria-current={isActive ? 'true' : undefined}
+          title={isActive ? 'Módulo activo' : `Mostrar ${module.title}`}
+        >
                 <div className="flex items-center gap-3">
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center border ${module.colorClass}`}>
                     {module.icon}
@@ -253,8 +422,8 @@ export default function ModuleLayerSelector({
 
               {/* Capas del Módulo */}
               {isExpanded && (
-                <div className="border-t border-gray-100 p-3 flex flex-col gap-2.5 bg-white">
-                  {getOrderedLayers(module.layers).map((layer) => {
+                <div className="border-t border-gray-100 p-2.5 flex flex-col gap-2 bg-white">
+                  {getOrderedLayers(module.layers).filter(layer => !layer.isFixed).map((layer) => {
                     const isLayerActive = activeLayers.includes(layer.id)
                     const opacity = layerOpacity[layer.id] ?? 1
                     const activeInModule = module.layers.filter((l) => activeLayers.includes(l.id))
@@ -265,39 +434,44 @@ export default function ModuleLayerSelector({
                     return (
                       <div
                         key={layer.id}
-                        className={`layer-card ${isLayerActive ? 'layer-card--active' : ''}`}
+                        ref={(el) => {
+                          if (el) itemRefs.current.set(layer.id, el)
+                          else itemRefs.current.delete(layer.id)
+                        }}
+                        className={`capas layer-card transition-colors duration-300 ease-in-out ${
+                          isLayerActive ? 'layer-card--active' : 'layer-card--inactive opacity-90'
+                        }`}
                       >
                         <div className="flex items-start gap-3">
-                          {/* Columna izquierda: ojo + flechas */}
-                          <div className="flex flex-col items-center gap-1 mt-0.5">
-                            {/* Ojo toggle */}
+                          {/* Columna izquierda: switch + flechas. Es la que fija
+                              el alto del card, así que va apretada. */}
+                          <div className="flex flex-col items-center gap-0.5 mt-0.5">
+                            {/* Switch toggle para encender/apagar capa */}
                             <button
+                              type="button"
+                              role="switch"
+                              aria-checked={isLayerActive}
                               onClick={() => toggleLayer(layer.id)}
-                              className="cursor-pointer p-0 bg-transparent border-none outline-none"
-                              aria-label={isLayerActive ? 'Ocultar capa' : 'Mostrar capa'}
+                              className={`relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                                isLayerActive ? 'bg-[var(--c-guinda)]' : 'bg-gray-200'
+                              }`}
+                              aria-label={isLayerActive ? `Desactivar ${layer.label}` : `Activar ${layer.label}`}
                             >
-                              {isLayerActive ? (
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--c-guinda)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="transition-all">
-                                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                  <circle cx="12" cy="12" r="3" />
-                                </svg>
-                              ) : (
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="transition-all opacity-25">
-                                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94" />
-                                  <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19" />
-                                  <path d="M14.12 14.12a3 3 0 1 1-4.24-4.24" />
-                                  <line x1="1" y1="1" x2="23" y2="23" />
-                                </svg>
-                              )}
+                              <span
+                                aria-hidden="true"
+                                className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
+                                  isLayerActive ? 'translate-x-4' : 'translate-x-0'
+                                }`}
+                              />
                             </button>
 
-                            {/* Flechas de orden (debajo del ojo, solo si activa y >1 capa) */}
+                            {/* Flechas de orden (debajo del switch, solo si activa y >1 capa) */}
                             {isLayerActive && activeInModule.length > 1 && (
-                              <div className="flex flex-col gap-0.5">
+                              <div className="flex flex-col gap-0.5 transition-all duration-300">
                                 <button
                                   onClick={(e) => { e.stopPropagation(); moveLayer(layer.id, -1) }}
                                   disabled={!canMoveUp}
-                                  className={`w-8 h-6 rounded flex items-center justify-center transition-all cursor-pointer ${
+                                  className={`w-7 h-5 rounded flex items-center justify-center transition-all cursor-pointer ${
                                     canMoveUp
                                       ? 'text-gray-400 hover:text-[var(--c-guinda)] hover:bg-gray-100'
                                       : 'text-gray-200 cursor-not-allowed'
@@ -312,7 +486,7 @@ export default function ModuleLayerSelector({
                                 <button
                                   onClick={(e) => { e.stopPropagation(); moveLayer(layer.id, 1) }}
                                   disabled={!canMoveDown}
-                                  className={`w-8 h-6 rounded flex items-center justify-center transition-all cursor-pointer ${
+                                  className={`w-7 h-5 rounded flex items-center justify-center transition-all cursor-pointer ${
                                     canMoveDown
                                       ? 'text-gray-400 hover:text-[var(--c-guinda)] hover:bg-gray-100'
                                       : 'text-gray-200 cursor-not-allowed'
@@ -341,27 +515,29 @@ export default function ModuleLayerSelector({
                               {layer.desc}
                             </p>
 
-                            {/* Opacidad */}
-                            {isLayerActive && (
-                              <div className="mt-2">
-                                <div className="flex items-center gap-2">
-                                  <span className="text-[10px] font-semibold text-gray-400 uppercase w-16 flex-shrink-0">Opacidad</span>
-                                  <input
-                                    type="range"
-                                    min="0"
-                                    max="1"
-                                    step="0.05"
-                                    value={opacity}
-                                    onChange={(e) => {
-                                      e.stopPropagation()
-                                      onChangeOpacity(layer.id, parseFloat(e.target.value))
-                                    }}
-                                    onClick={(e) => e.stopPropagation()}
-                                    className="layer-opacity-slider flex-1"
-                                  />
-                                </div>
+                            {/* Opacidad (con animación suave de despliegue/colapso) */}
+                            <div
+                              className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                                isLayerActive ? 'max-h-12 opacity-100 mt-2' : 'max-h-0 opacity-0 mt-0 pointer-events-none'
+                              }`}
+                            >
+                              <div className="flex items-center gap-2 pt-0.5">
+                                <span className="text-[10px] font-semibold text-gray-400 uppercase w-16 flex-shrink-0">Opacidad</span>
+                                <input
+                                  type="range"
+                                  min="0"
+                                  max="1"
+                                  step="0.05"
+                                  value={opacity}
+                                  onChange={(e) => {
+                                    e.stopPropagation()
+                                    onChangeOpacity(layer.id, parseFloat(e.target.value))
+                                  }}
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="layer-opacity-slider flex-1 cursor-pointer"
+                                />
                               </div>
-                            )}
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -371,7 +547,37 @@ export default function ModuleLayerSelector({
               )}
             </div>
           )
-        })}
+        }
+
+  return (
+    <div className="flex flex-col h-full bg-white relative">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden p-2 space-y-2 relative pb-20 custom-scrollbar">
+        
+        {modules.length === 0 ? (
+          <div className="text-center p-4 text-xs text-gray-500">Cargando capas...</div>
+        ) : (
+          <>
+            {/* Sección Mapa Base */}
+            {mapaBaseModule && (
+              <div className="mb-4">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2 mt-2 px-1">
+                  Mapa Base
+                </h3>
+                {renderModule(mapaBaseModule)}
+              </div>
+            )}
+
+            {/* Sección Módulos Temáticos */}
+            {tematicosModules.length > 0 && (
+              <div className="flex flex-col gap-2">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1 mt-2 px-1">
+                  Módulos Temáticos
+                </h3>
+                {tematicosModules.map(renderModule)}
+              </div>
+            )}
+          </>
+        )}
       </div>
     </div>
   )

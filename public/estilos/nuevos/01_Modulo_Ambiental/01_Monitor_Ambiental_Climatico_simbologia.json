@@ -1,0 +1,3473 @@
+{
+  "modulo": "Monitor Ambiental y Climático",
+  "total_capas": 25,
+  "capas": [
+    {
+      "nombre": "C04_Programa_proteccion_tortugas_SEMABICCE_OPMATPG_2023",
+      "nombre_tabla": "C04_Programa_proteccion_tortugas_SEMABICCE_OPMATPG_2023",
+      "grupo": "POT/Monitor_Ambiental_Climático/E1_Selva, tierra y agua",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#FFFFFF",
+            "rgba": "rgba(255,255,255,0.00)",
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 0
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,255,255,0,rgb:1,1,1,0",
+                "outline_color": "38,122,9,255,rgb:0.14901960784313725,0.47843137254901963,0.03529411764705882,1",
+                "size": "14.7272",
+                "outline_width": "0.416667",
+                "size_unit": "Point",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FFFFFF",
+                "rgba": "rgba(255,255,255,0.00)",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 0
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "38,122,9,255,rgb:0.14901960784313725,0.47843137254901963,0.03529411764705882,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "4.95285",
+                "outline_width": "0",
+                "size_unit": "Point",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#267A09",
+                "rgba": "rgba(38,122,9,1.00)",
+                "r": 38,
+                "g": 122,
+                "b": 9,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_ADVC_CONANP_CONABIO_2022",
+      "nombre_tabla": "C04_ADVC_CONANP_CONABIO_2022",
+      "grupo": "POT/Monitor_Ambiental_Climático/E1_Selva, tierra y agua",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "OBJECTID",
+        "NOM_PREDIO",
+        "MUNICIPIO_",
+        "CERT_1",
+        "INSTRUME_1",
+        "FECHA_1",
+        "VIGENCIA_1",
+        "FUENTE_1",
+        "SUP_INSTR_",
+        "TIPO_1"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#B4D79E",
+            "rgba": "rgba(180,215,158,1.00)",
+            "r": 180,
+            "g": 215,
+            "b": 158,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "180,215,158,255,rgb:0.70588235294117652,0.84313725490196079,0.61960784313725492,1",
+                "outline_color": "240,240,240,0,rgb:0.94117647058823528,0.94117647058823528,0.94117647058823528,0",
+                "outline_width": "0",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#B4D79E",
+                "rgba": "rgba(180,215,158,1.00)",
+                "r": 180,
+                "g": 215,
+                "b": 158,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_Red_monitoreo_calidad_aguas_superficiales_CONABIO_2008",
+      "nombre_tabla": "C04_Red_monitoreo_calidad_aguas_superficiales_CONABIO_2008",
+      "grupo": "POT/Monitor_Ambiental_Climático/E1_Selva, tierra y agua",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "NOMBRES"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#446589",
+            "rgba": "rgba(68,101,137,1.00)",
+            "r": 68,
+            "g": 101,
+            "b": 137,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "68,101,137,255,rgb:0.26666666666666666,0.396078431372549,0.53725490196078429,1",
+                "line_width": "0.48",
+                "line_width_unit": "Point"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#446589",
+                "rgba": "rgba(68,101,137,1.00)",
+                "r": 68,
+                "g": 101,
+                "b": 137,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsMarkerLineSymbolLayer",
+              "enabled": true,
+              "props": {},
+              "alertas": [],
+              "sub_simbolo": {
+                "tipo_geometria": 0,
+                "opacidad": 1.0,
+                "color": {
+                  "hex": "#446589",
+                  "rgba": "rgba(68,101,137,1.00)",
+                  "r": 68,
+                  "g": 101,
+                  "b": 137,
+                  "a": 255
+                },
+                "capas_simbolo": [
+                  {
+                    "clase": "QgsSimpleMarkerSymbolLayer",
+                    "enabled": true,
+                    "props": {
+                      "color": "68,101,137,255,rgb:0.26666666666666666,0.396078431372549,0.53725490196078429,1",
+                      "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                      "size": "4.41816",
+                      "outline_width": "0",
+                      "size_unit": "Point",
+                      "outline_style": "no"
+                    },
+                    "alertas": [],
+                    "color_parsed": {
+                      "hex": "#446589",
+                      "rgba": "rgba(68,101,137,1.00)",
+                      "r": 68,
+                      "g": 101,
+                      "b": 137,
+                      "a": 255
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C04_ANP_Estatal_BalamKin_BalamKu_CONABIO_2020",
+      "nombre_tabla": "C04_ANP_Estatal_BalamKin_BalamKu_CONABIO_2020",
+      "grupo": "POT/Monitor_Ambiental_Climático/E1_Selva, tierra y agua",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "NOMBRE",
+        "ULT_DEC",
+        "CAT_DEC"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#8CCCCA",
+            "rgba": "rgba(140,204,202,1.00)",
+            "r": 140,
+            "g": 204,
+            "b": 202,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "140,204,202,255,rgb:0.5490196078431373,0.80000000000000004,0.792156862745098,1",
+                "line_width": "3",
+                "line_width_unit": "Point"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#8CCCCA",
+                "rgba": "rgba(140,204,202,1.00)",
+                "r": 140,
+                "g": 204,
+                "b": 202,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "68,137,112,255,rgb:0.26666666666666666,0.53725490196078429,0.4392156862745098,1",
+                "line_width": "1",
+                "line_width_unit": "Point"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#448970",
+                "rgba": "rgba(68,137,112,1.00)",
+                "r": 68,
+                "g": 137,
+                "b": 112,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_ANP_Río_Candelaria_OPMATPG_2023",
+      "nombre_tabla": "C04_ANP_Río_Candelaria_OPMATPG_2023",
+      "grupo": "POT/Monitor_Ambiental_Climático/E1_Selva, tierra y agua",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "NOMBRE"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#64966A",
+            "rgba": "rgba(100,150,106,1.00)",
+            "r": 100,
+            "g": 150,
+            "b": 106,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "100,150,106,255,rgb:0.39215686274509803,0.58823529411764708,0.41568627450980394,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "outline_width": "0.26",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#64966A",
+                "rgba": "rgba(100,150,106,1.00)",
+                "r": 100,
+                "g": 150,
+                "b": 106,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "100,150,106,255,rgb:0.39215686274509803,0.58823529411764708,0.41568627450980394,1",
+                "line_width": "0",
+                "line_width_unit": "Point"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#64966A",
+                "rgba": "rgba(100,150,106,1.00)",
+                "r": 100,
+                "g": 150,
+                "b": 106,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_Conservación_y_Restauracion_humedales_CONABIO_2020",
+      "nombre_tabla": "C04_Conservación_y_Restauracion_humedales_CONABIO_2020",
+      "grupo": "POT/Monitor_Ambiental_Climático/E1_Selva, tierra y agua",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVE_SUBCUE",
+        "CLASE",
+        "COMB_ELEME",
+        "ID_HUM"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#B8DCE3",
+            "rgba": "rgba(184,220,227,1.00)",
+            "r": 184,
+            "g": 220,
+            "b": 227,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "184,220,227,255,rgb:0.72156862745098038,0.86274509803921573,0.8901960784313725,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "outline_width": "0.26",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#B8DCE3",
+                "rgba": "rgba(184,220,227,1.00)",
+                "r": 184,
+                "g": 220,
+                "b": 227,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "184,220,227,255,rgb:0.72156862745098038,0.86274509803921573,0.8901960784313725,1",
+                "line_width": "0",
+                "line_width_unit": "Point"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#B8DCE3",
+                "rgba": "rgba(184,220,227,1.00)",
+                "r": 184,
+                "g": 220,
+                "b": 227,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_Pasos_de_fauna_FTM_2023",
+      "nombre_tabla": "C04_Pasos_de_fauna_FTM_2023",
+      "grupo": "POT/Monitor_Ambiental_Climático/E1_Selva, tierra y agua",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "TRAMO"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#669C7D",
+            "rgba": "rgba(102,156,125,1.00)",
+            "r": 102,
+            "g": 156,
+            "b": 125,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "102,156,125,255,rgb:0.40000000000000002,0.61176470588235299,0.49019607843137253,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "4",
+                "outline_width": "0",
+                "size_unit": "Point",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#669C7D",
+                "rgba": "rgba(102,156,125,1.00)",
+                "r": 102,
+                "g": 156,
+                "b": 125,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Playas_anidación_tortugas_OPMATPG_2023",
+      "nombre_tabla": "C04_Playas_anidación_tortugas_OPMATPG_2023",
+      "grupo": "POT/Monitor_Ambiental_Climático/E1_Selva, tierra y agua",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#65000D",
+            "rgba": "rgba(101,0,13,1.00)",
+            "r": 101,
+            "g": 0,
+            "b": 13,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "101,0,13,255,rgb:0.396078431372549,0,0.05098039215686274,1",
+                "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                "size": "1.6",
+                "outline_width": "0",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#65000D",
+                "rgba": "rgba(101,0,13,1.00)",
+                "r": 101,
+                "g": 0,
+                "b": 13,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Programa_Captacion_lluvia_Xpujil_INEGI_2020",
+      "nombre_tabla": "C04_Programa_Captacion_lluvia_Xpujil_INEGI_2020",
+      "grupo": "POT/Monitor_Ambiental_Climático/E1_Selva, tierra y agua",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "NOM_ENT",
+        "NOM_MUN",
+        "NOMGEO"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#005CE6",
+            "rgba": "rgba(0,92,230,1.00)",
+            "r": 0,
+            "g": 92,
+            "b": 230,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "240,240,240,0,rgb:0.94117647058823528,0.94117647058823528,0.94117647058823528,0",
+                "outline_color": "0,92,230,255,rgb:0,0.36078431372549019,0.90196078431372551,1",
+                "size": "29",
+                "outline_width": "0.01",
+                "size_unit": "Point",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#F0F0F0",
+                "rgba": "rgba(240,240,240,0.00)",
+                "r": 240,
+                "g": 240,
+                "b": 240,
+                "a": 0
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "240,240,240,0,rgb:0.94117647058823528,0.94117647058823528,0.94117647058823528,0",
+                "outline_color": "0,92,230,255,rgb:0,0.36078431372549019,0.90196078431372551,1",
+                "size": "19",
+                "outline_width": "0.8",
+                "size_unit": "Point",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#F0F0F0",
+                "rgba": "rgba(240,240,240,0.00)",
+                "r": 240,
+                "g": 240,
+                "b": 240,
+                "a": 0
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "240,240,240,0,rgb:0.94117647058823528,0.94117647058823528,0.94117647058823528,0",
+                "outline_color": "0,92,230,255,rgb:0,0.36078431372549019,0.90196078431372551,1",
+                "size": "10",
+                "outline_width": "0.5",
+                "size_unit": "Point",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#F0F0F0",
+                "rgba": "rgba(240,240,240,0.00)",
+                "r": 240,
+                "g": 240,
+                "b": 240,
+                "a": 0
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "0,92,230,255,rgb:0,0.36078431372549019,0.90196078431372551,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "4",
+                "outline_width": "0",
+                "size_unit": "Point",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#005CE6",
+                "rgba": "rgba(0,92,230,1.00)",
+                "r": 0,
+                "g": 92,
+                "b": 230,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Programa_saneamiento_cuencas_CONAGUA_2016",
+      "nombre_tabla": "C04_Programa_saneamiento_cuencas_CONAGUA_2016",
+      "grupo": "POT/Monitor_Ambiental_Climático/E1_Selva, tierra y agua",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "OBJECTID_1",
+        "CVE_ENT",
+        "NOMGEO",
+        "MacReg",
+        "ID_Geo_N",
+        "id_cuenca",
+        "nom_cuenca",
+        "id_rha",
+        "nom_rha",
+        "vol_disp",
+        "nota",
+        "año",
+        "Id_DOF",
+        "Nombre",
+        "Importanci",
+        "Presión_d",
+        "Estado_de",
+        "Objetivo_a"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#00A884",
+            "rgba": "rgba(0,168,132,1.00)",
+            "r": 0,
+            "g": 168,
+            "b": 132,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsLinePatternFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "NULL",
+                "line_width": "0",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "sub_simbolo": {
+                "tipo_geometria": 1,
+                "opacidad": 1.0,
+                "color": {
+                  "hex": "#00A884",
+                  "rgba": "rgba(0,168,132,1.00)",
+                  "r": 0,
+                  "g": 168,
+                  "b": 132,
+                  "a": 255
+                },
+                "capas_simbolo": [
+                  {
+                    "clase": "QgsSimpleLineSymbolLayer",
+                    "enabled": true,
+                    "props": {
+                      "line_color": "0,168,132,255,rgb:0,0.6588235294117647,0.51764705882352946,1",
+                      "line_width": "1.5",
+                      "line_width_unit": "Point"
+                    },
+                    "alertas": [],
+                    "color_parsed": {
+                      "hex": "#00A884",
+                      "rgba": "rgba(0,168,132,1.00)",
+                      "r": 0,
+                      "g": 168,
+                      "b": 132,
+                      "a": 255
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "0,168,132,255,rgb:0,0.6588235294117647,0.51764705882352946,1",
+                "line_width": "0",
+                "line_width_unit": "Point"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#00A884",
+                "rgba": "rgba(0,168,132,1.00)",
+                "r": 0,
+                "g": 168,
+                "b": 132,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_Propuesta_Corredor_Balam_Beh_SEMABICCE_2023",
+      "nombre_tabla": "C04_Propuesta_Corredor_Balam_Beh_SEMABICCE_2023",
+      "grupo": "POT/Monitor_Ambiental_Climático/E1_Selva, tierra y agua",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "nombre"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#267300",
+            "rgba": "rgba(38,115,0,1.00)",
+            "r": 38,
+            "g": 115,
+            "b": 0,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsRasterFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "width": "63"
+              },
+              "alertas": []
+            },
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "38,115,0,255,rgb:0.14901960784313725,0.45098039215686275,0,1",
+                "line_width": "0.5",
+                "line_width_unit": "Point"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#267300",
+                "rgba": "rgba(38,115,0,1.00)",
+                "r": 38,
+                "g": 115,
+                "b": 0,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_Propuesta_Corredor_Norte_SEMABICCE_2023",
+      "nombre_tabla": "C04_Propuesta_Corredor_Norte_SEMABICCE_2023",
+      "grupo": "POT/Monitor_Ambiental_Climático/E1_Selva, tierra y agua",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "OID_",
+        "Name"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#898944",
+            "rgba": "rgba(137,137,68,1.00)",
+            "r": 137,
+            "g": 137,
+            "b": 68,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsRasterFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "width": "63"
+              },
+              "alertas": []
+            },
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "137,137,68,255,rgb:0.53725490196078429,0.53725490196078429,0.26666666666666666,1",
+                "line_width": "0.5",
+                "line_width_unit": "Point"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#898944",
+                "rgba": "rgba(137,137,68,1.00)",
+                "r": 137,
+                "g": 137,
+                "b": 68,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_Propuesta_Corredor_Palizada_SEMABICCE_2023",
+      "nombre_tabla": "C04_Propuesta_Corredor_Palizada_SEMABICCE_2023",
+      "grupo": "POT/Monitor_Ambiental_Climático/E1_Selva, tierra y agua",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "nombre"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#228B22",
+            "rgba": "rgba(34,139,34,1.00)",
+            "r": 34,
+            "g": 139,
+            "b": 34,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsRasterFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "width": "63"
+              },
+              "alertas": []
+            },
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "34,139,34,255,rgb:0.13333333333333333,0.54509803921568623,0.13333333333333333,1",
+                "line_width": "0.5",
+                "line_width_unit": "Point"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#228B22",
+                "rgba": "rgba(34,139,34,1.00)",
+                "r": 34,
+                "g": 139,
+                "b": 34,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_Río_Candelaria_INEGI_2008_OPMATPG_2023",
+      "nombre_tabla": "C04_Río_Candelaria_INEGI_2008_OPMATPG_2023",
+      "grupo": "POT/Monitor_Ambiental_Climático/E1_Selva, tierra y agua",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "NOMBRE",
+        "ORDEN",
+        "TIPO",
+        "CVE_ENT",
+        "NOMGEO",
+        "MacReg",
+        "ID_Geo_N"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#A6CEE3",
+            "rgba": "rgba(166,206,227,1.00)",
+            "r": 166,
+            "g": 206,
+            "b": 227,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "166,206,227,255,rgb:0.65098039215686276,0.80784313725490198,0.8901960784313725,1",
+                "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                "outline_width": "0.26",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#A6CEE3",
+                "rgba": "rgba(166,206,227,1.00)",
+                "r": 166,
+                "g": 206,
+                "b": 227,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "02_SOCIODEMOGRAFICO — C04_Localidades_ITER_INEGI_2020",
+      "nombre_tabla": "02_SOCIODEMOGRAFICO — C04_Localidades_ITER_INEGI_2020",
+      "grupo": "POT/Monitor_Ambiental_Climático/01_MEDIO_FISICO_NATURAL",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "NOMGEO",
+        "AMBITO",
+        "nom_loc",
+        "nom_mun",
+        "Pobtot"
+      ],
+      "simbologia": {
+        "tipo": "graduatedSymbol",
+        "campo": "Pobtot",
+        "rangos": [
+          {
+            "etiqueta": "0 - 0",
+            "valor_min": 0.0,
+            "valor_max": 0.0,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 0.7,
+              "color": {
+                "hex": "#FFF5F0",
+                "rgba": "rgba(255,245,240,1.00)",
+                "r": 255,
+                "g": 245,
+                "b": 240,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "255,245,240,255,rgb:1,0.96078431372549022,0.94117647058823528,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFF5F0",
+                    "rgba": "rgba(255,245,240,1.00)",
+                    "r": 255,
+                    "g": 245,
+                    "b": 240,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "0 - 100",
+            "valor_min": 0.0,
+            "valor_max": 100.0,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 0.7,
+              "color": {
+                "hex": "#FCA486",
+                "rgba": "rgba(252,164,134,1.00)",
+                "r": 252,
+                "g": 164,
+                "b": 134,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "252,164,134,255,rgb:0.9882352941176471,0.64263370717936985,0.52739757381551844,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "0.6",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FCA486",
+                    "rgba": "rgba(252,164,134,1.00)",
+                    "r": 252,
+                    "g": 164,
+                    "b": 134,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "100 - 500",
+            "valor_min": 100.0,
+            "valor_max": 500.0,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 0.7,
+              "color": {
+                "hex": "#EA372A",
+                "rgba": "rgba(234,55,42,1.00)",
+                "r": 234,
+                "g": 55,
+                "b": 42,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "234,55,42,255,rgb:0.91915770199130231,0.21377889677271686,0.1650110627908751,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "0.8",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#EA372A",
+                    "rgba": "rgba(234,55,42,1.00)",
+                    "r": 234,
+                    "g": 55,
+                    "b": 42,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "500 - 249623",
+            "valor_min": 500.0,
+            "valor_max": 249623.0,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 0.7,
+              "color": {
+                "hex": "#67000D",
+                "rgba": "rgba(103,0,13,1.00)",
+                "r": 103,
+                "g": 0,
+                "b": 13,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "103,0,13,255,rgb:0.40392156862745099,0,0.05098039215686274,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "1",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#67000D",
+                    "rgba": "rgba(103,0,13,1.00)",
+                    "r": 103,
+                    "g": 0,
+                    "b": 13,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [
+        "NOMBRE_CON_ESPACIO — corregir antes de entregar"
+      ],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_IndustriaTratamientoResiduos_INEGI_DENUE_2023",
+      "nombre_tabla": "C04_IndustriaTratamientoResiduos_INEGI_DENUE_2023",
+      "grupo": "POT/Monitor_Ambiental_Climático/01_MEDIO_FISICO_NATURAL",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "nom_estab",
+        "codigo_act",
+        "nombre_act",
+        "per_ocu",
+        "nomb_asent",
+        "cod_postal",
+        "municipio",
+        "localidad",
+        "latitud",
+        "longitud",
+        "fecha_alta"
+      ],
+      "simbologia": {
+        "tipo": "categorizedSymbol",
+        "campo": "per_ocu",
+        "categorias": [
+          {
+            "valor": "0 a 5 personas",
+            "etiqueta": "0 a 5 personas",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#CD3B69",
+                "rgba": "rgba(205,59,105,1.00)",
+                "r": 205,
+                "g": 59,
+                "b": 105,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "205,59,105,255,hsv:0.94722222222222219,0.71372549019607845,0.80392156862745101,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#CD3B69",
+                    "rgba": "rgba(205,59,105,1.00)",
+                    "r": 205,
+                    "g": 59,
+                    "b": 105,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "6 a 10 personas",
+            "etiqueta": "6 a 10 personas",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#431EE7",
+                "rgba": "rgba(67,30,231,1.00)",
+                "r": 67,
+                "g": 30,
+                "b": 231,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "67,30,231,255,hsv:0.69722222222222219,0.87058823529411766,0.90588235294117647,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#431EE7",
+                    "rgba": "rgba(67,30,231,1.00)",
+                    "r": 67,
+                    "g": 30,
+                    "b": 231,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "11 a 30 personas",
+            "etiqueta": "11 a 30 personas",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#B6C963",
+                "rgba": "rgba(182,201,99,1.00)",
+                "r": 182,
+                "g": 201,
+                "b": 99,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "182,201,99,255,hsv:0.19722222222222222,0.50588235294117645,0.78823529411764703,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#B6C963",
+                    "rgba": "rgba(182,201,99,1.00)",
+                    "r": 182,
+                    "g": 201,
+                    "b": 99,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_SitiosDispResiduos__INEGI_PEPGIRSSU_2020",
+      "nombre_tabla": "C04_SitiosDispResiduos__INEGI_PEPGIRSSU_2020",
+      "grupo": "POT/Monitor_Ambiental_Climático/01_MEDIO_FISICO_NATURAL",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id_sdfn",
+        "folio",
+        "cve_geo",
+        "sdf_nom",
+        "sd_demun",
+        "latitud",
+        "longitud"
+      ],
+      "simbologia": {
+        "tipo": "categorizedSymbol",
+        "campo": "sd_demun",
+        "categorias": [
+          {
+            "valor": "CALAKMUL",
+            "etiqueta": "CALAKMUL",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#D97C3D",
+                "rgba": "rgba(217,124,61,1.00)",
+                "r": 217,
+                "g": 124,
+                "b": 61,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "217,124,61,255,hsv:0.06666666666666667,0.71764705882352942,0.85098039215686272,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#D97C3D",
+                    "rgba": "rgba(217,124,61,1.00)",
+                    "r": 217,
+                    "g": 124,
+                    "b": 61,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "CALKINI",
+            "etiqueta": "CALKINI",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#7493D4",
+                "rgba": "rgba(116,147,212,1.00)",
+                "r": 116,
+                "g": 147,
+                "b": 212,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "116,147,212,255,hsv:0.61388888888888893,0.45098039215686275,0.83137254901960789,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#7493D4",
+                    "rgba": "rgba(116,147,212,1.00)",
+                    "r": 116,
+                    "g": 147,
+                    "b": 212,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "CAMPECHE",
+            "etiqueta": "CAMPECHE",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#E8677A",
+                "rgba": "rgba(232,103,122,1.00)",
+                "r": 232,
+                "g": 103,
+                "b": 122,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "232,103,122,255,hsv:0.97499999999999998,0.55686274509803924,0.90980392156862744,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#E8677A",
+                    "rgba": "rgba(232,103,122,1.00)",
+                    "r": 232,
+                    "g": 103,
+                    "b": 122,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "CANDELARIA",
+            "etiqueta": "CANDELARIA",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#BF7CD3",
+                "rgba": "rgba(191,124,211,1.00)",
+                "r": 191,
+                "g": 124,
+                "b": 211,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "191,124,211,255,hsv:0.7944444444444444,0.41176470588235292,0.82745098039215681,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#BF7CD3",
+                    "rgba": "rgba(191,124,211,1.00)",
+                    "r": 191,
+                    "g": 124,
+                    "b": 211,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "CARMEN",
+            "etiqueta": "CARMEN",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#CE6DAF",
+                "rgba": "rgba(206,109,175,1.00)",
+                "r": 206,
+                "g": 109,
+                "b": 175,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "206,109,175,255,hsv:0.88611111111111107,0.47058823529411764,0.80784313725490198,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#CE6DAF",
+                    "rgba": "rgba(206,109,175,1.00)",
+                    "r": 206,
+                    "g": 109,
+                    "b": 175,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "CHAMPOTON",
+            "etiqueta": "CHAMPOTON",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#2AE798",
+                "rgba": "rgba(42,231,152,1.00)",
+                "r": 42,
+                "g": 231,
+                "b": 152,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "42,231,152,255,hsv:0.43055555555555558,0.81960784313725488,0.90588235294117647,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#2AE798",
+                    "rgba": "rgba(42,231,152,1.00)",
+                    "r": 42,
+                    "g": 231,
+                    "b": 152,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "ESCARCEGA",
+            "etiqueta": "ESCARCEGA",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#52E859",
+                "rgba": "rgba(82,232,89,1.00)",
+                "r": 82,
+                "g": 232,
+                "b": 89,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "82,232,89,255,hsv:0.34166666666666667,0.6470588235294118,0.90980392156862744,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#52E859",
+                    "rgba": "rgba(82,232,89,1.00)",
+                    "r": 82,
+                    "g": 232,
+                    "b": 89,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "HECELCHAKAN",
+            "etiqueta": "HECELCHAKAN",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#9C87EA",
+                "rgba": "rgba(156,135,234,1.00)",
+                "r": 156,
+                "g": 135,
+                "b": 234,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "156,135,234,255,hsv:0.70277777777777772,0.42352941176470588,0.91764705882352937,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#9C87EA",
+                    "rgba": "rgba(156,135,234,1.00)",
+                    "r": 156,
+                    "g": 135,
+                    "b": 234,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "HOPELCHEN",
+            "etiqueta": "HOPELCHEN",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#AADF74",
+                "rgba": "rgba(170,223,116,1.00)",
+                "r": 170,
+                "g": 223,
+                "b": 116,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "170,223,116,255,hsv:0.25,0.47843137254901963,0.87450980392156863,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#AADF74",
+                    "rgba": "rgba(170,223,116,1.00)",
+                    "r": 170,
+                    "g": 223,
+                    "b": 116,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "TENABO",
+            "etiqueta": "TENABO",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#DFD10F",
+                "rgba": "rgba(223,209,15,1.00)",
+                "r": 223,
+                "g": 209,
+                "b": 15,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "223,209,15,255,hsv:0.15555555555555556,0.93333333333333335,0.87450980392156863,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#DFD10F",
+                    "rgba": "rgba(223,209,15,1.00)",
+                    "r": 223,
+                    "g": 209,
+                    "b": 15,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_ConcentraciónGeneraciónResiduos_INEGI_PEPGIRSSU_2020",
+      "nombre_tabla": "C04_ConcentraciónGeneraciónResiduos_INEGI_PEPGIRSSU_2020",
+      "grupo": "POT/Monitor_Ambiental_Climático/01_MEDIO_FISICO_NATURAL",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "NOM_ENT",
+        "NOM_MUN",
+        "NOM_LOC",
+        "POBTOT",
+        "POBFEM",
+        "POBMAS",
+        "GEN__kg_d"
+      ],
+      "simbologia": {
+        "tipo": "graduatedSymbol",
+        "campo": "GEN__kg_d",
+        "rangos": [
+          {
+            "etiqueta": "0 - 50",
+            "valor_min": 0.0,
+            "valor_max": 50.0,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FAFAFA",
+                "rgba": "rgba(250,250,250,1.00)",
+                "r": 250,
+                "g": 250,
+                "b": 250,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "250,250,250,255,rgb:0.98039215686274506,0.98039215686274506,0.98039215686274506,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "1.2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FAFAFA",
+                    "rgba": "rgba(250,250,250,1.00)",
+                    "r": 250,
+                    "g": 250,
+                    "b": 250,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "50 - 150",
+            "valor_min": 50.0,
+            "valor_max": 150.0,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#BDBDBD",
+                "rgba": "rgba(189,189,189,1.00)",
+                "r": 189,
+                "g": 189,
+                "b": 189,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "189,189,189,255,rgb:0.74019989318684676,0.74019989318684676,0.74019989318684676,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "0.4",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#BDBDBD",
+                    "rgba": "rgba(189,189,189,1.00)",
+                    "r": 189,
+                    "g": 189,
+                    "b": 189,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "150 - 150",
+            "valor_min": 150.0,
+            "valor_max": 150.0,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#808080",
+                "rgba": "rgba(128,128,128,1.00)",
+                "r": 128,
+                "g": 128,
+                "b": 128,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "128,128,128,255,rgb:0.50000762951094835,0.50000762951094835,0.50000762951094835,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "0.6",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#808080",
+                    "rgba": "rgba(128,128,128,1.00)",
+                    "r": 128,
+                    "g": 128,
+                    "b": 128,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "150 - 300",
+            "valor_min": 150.0,
+            "valor_max": 300.0,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#424242",
+                "rgba": "rgba(66,66,66,1.00)",
+                "r": 66,
+                "g": 66,
+                "b": 66,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "66,66,66,255,rgb:0.2598001068131533,0.2598001068131533,0.2598001068131533,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "0.8",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#424242",
+                    "rgba": "rgba(66,66,66,1.00)",
+                    "r": 66,
+                    "g": 66,
+                    "b": 66,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "300 - 244630.54",
+            "valor_min": 300.0,
+            "valor_max": 244630.54,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#050505",
+                "rgba": "rgba(5,5,5,1.00)",
+                "r": 5,
+                "g": 5,
+                "b": 5,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "5,5,5,255,rgb:0.0196078431372549,0.0196078431372549,0.0196078431372549,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "1.2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#050505",
+                    "rgba": "rgba(5,5,5,1.00)",
+                    "r": 5,
+                    "g": 5,
+                    "b": 5,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_TTROP_NOAA_2023",
+      "nombre_tabla": "C04_TTROP_NOAA_2023",
+      "grupo": "POT/Monitor_Ambiental_Climático/01_MEDIO_FISICO_NATURAL",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "SEASON",
+        "NAME",
+        "NATURE",
+        "CVEGEO"
+      ],
+      "simbologia": {
+        "tipo": "categorizedSymbol",
+        "campo": "NATURE",
+        "categorias": [
+          {
+            "valor": "DS",
+            "etiqueta": "DS",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#30123B",
+                "rgba": "rgba(48,18,59,1.00)",
+                "r": 48,
+                "g": 18,
+                "b": 59,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleLineSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "line_color": "48,18,59,255,rgb:0.18823529411764706,0.07058823529411765,0.23137254901960785,1",
+                    "line_width": "0.66",
+                    "line_width_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#30123B",
+                    "rgba": "rgba(48,18,59,1.00)",
+                    "r": 48,
+                    "g": 18,
+                    "b": 59,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "TS",
+            "etiqueta": "TS",
+            "activo": false,
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FF7F00",
+                "rgba": "rgba(255,127,0,1.00)",
+                "r": 255,
+                "g": 127,
+                "b": 0,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleLineSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "line_color": "255,127,0,255,rgb:1,0.49803921568627452,0,1",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FF7F00",
+                    "rgba": "rgba(255,127,0,1.00)",
+                    "r": 255,
+                    "g": 127,
+                    "b": 0,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "None",
+            "etiqueta": "",
+            "activo": false,
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#7A0403",
+                "rgba": "rgba(122,4,3,1.00)",
+                "r": 122,
+                "g": 4,
+                "b": 3,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleLineSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "line_color": "122,4,3,255,rgb:0.47843137254901963,0.01568627450980392,0.01176470588235294,1",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#7A0403",
+                    "rgba": "rgba(122,4,3,1.00)",
+                    "r": 122,
+                    "g": 4,
+                    "b": 3,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C04_EROSIONSUELO_INEGI_2014",
+      "nombre_tabla": "C04_EROSIONSUELO_INEGI_2014",
+      "grupo": "POT/Monitor_Ambiental_Climático/01_MEDIO_FISICO_NATURAL",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "T_ero_d",
+        "G_ero_d"
+      ],
+      "simbologia": {
+        "tipo": "categorizedSymbol",
+        "campo": "G_ero_d",
+        "categorias": [
+          {
+            "valor": "N/A",
+            "etiqueta": "N/A",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FFF5F0",
+                "rgba": "rgba(255,245,240,1.00)",
+                "r": 255,
+                "g": 245,
+                "b": 240,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "255,245,240,255,rgb:1,0.96078431372549022,0.94117647058823528,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFF5F0",
+                    "rgba": "rgba(255,245,240,1.00)",
+                    "r": 255,
+                    "g": 245,
+                    "b": 240,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "LEVE",
+            "etiqueta": "LEVE",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FCBEA5",
+                "rgba": "rgba(252,190,165,1.00)",
+                "r": 252,
+                "g": 190,
+                "b": 165,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "252,190,165,255,rgb:0.98884565499351496,0.74448767833981844,0.64615854123750671,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FCBEA5",
+                    "rgba": "rgba(252,190,165,1.00)",
+                    "r": 252,
+                    "g": 190,
+                    "b": 165,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "MODERADO",
+            "etiqueta": "MODERADO",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FB7050",
+                "rgba": "rgba(251,112,80,1.00)",
+                "r": 251,
+                "g": 112,
+                "b": 80,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "251,112,80,255,rgb:0.98492408636606399,0.43982604715037765,0.31433585107194628,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FB7050",
+                    "rgba": "rgba(251,112,80,1.00)",
+                    "r": 251,
+                    "g": 112,
+                    "b": 80,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "FUERTE",
+            "etiqueta": "FUERTE",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#D32020",
+                "rgba": "rgba(211,32,32,1.00)",
+                "r": 211,
+                "g": 32,
+                "b": 32,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "211,32,32,255,rgb:0.82865644312199593,0.1257953765163653,0.12730601968413824,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#D32020",
+                    "rgba": "rgba(211,32,32,1.00)",
+                    "r": 211,
+                    "g": 32,
+                    "b": 32,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_KARST_CENAPRED_2023",
+      "nombre_tabla": "C04_KARST_CENAPRED_2023",
+      "grupo": "POT/Monitor_Ambiental_Climático/01_MEDIO_FISICO_NATURAL",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#000000",
+            "rgba": "rgba(0,0,0,1.00)",
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsLinePatternFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "55,126,184,255,rgb:0.21568627450980393,0.49411764705882355,0.72156862745098038,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#377EB8",
+                "rgba": "rgba(55,126,184,1.00)",
+                "r": 55,
+                "g": 126,
+                "b": 184,
+                "a": 255
+              },
+              "sub_simbolo": {
+                "tipo_geometria": 1,
+                "opacidad": 1.0,
+                "color": {
+                  "hex": "#000000",
+                  "rgba": "rgba(0,0,0,1.00)",
+                  "r": 0,
+                  "g": 0,
+                  "b": 0,
+                  "a": 255
+                },
+                "capas_simbolo": [
+                  {
+                    "clase": "QgsSimpleLineSymbolLayer",
+                    "enabled": true,
+                    "props": {
+                      "line_color": "0,0,0,255,rgb:0,0,0,1",
+                      "line_width": "0.1",
+                      "line_width_unit": "MM"
+                    },
+                    "alertas": [],
+                    "color_parsed": {
+                      "hex": "#000000",
+                      "rgba": "rgba(0,0,0,1.00)",
+                      "r": 0,
+                      "g": 0,
+                      "b": 0,
+                      "a": 255
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "clase": "QgsLinePatternFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "55,126,184,255,rgb:0.21568627450980393,0.49411764705882355,0.72156862745098038,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#377EB8",
+                "rgba": "rgba(55,126,184,1.00)",
+                "r": 55,
+                "g": 126,
+                "b": 184,
+                "a": 255
+              },
+              "sub_simbolo": {
+                "tipo_geometria": 1,
+                "opacidad": 1.0,
+                "color": {
+                  "hex": "#000000",
+                  "rgba": "rgba(0,0,0,1.00)",
+                  "r": 0,
+                  "g": 0,
+                  "b": 0,
+                  "a": 255
+                },
+                "capas_simbolo": [
+                  {
+                    "clase": "QgsSimpleLineSymbolLayer",
+                    "enabled": true,
+                    "props": {
+                      "line_color": "0,0,0,255,rgb:0,0,0,1",
+                      "line_width": "0.1",
+                      "line_width_unit": "MM"
+                    },
+                    "alertas": [],
+                    "color_parsed": {
+                      "hex": "#000000",
+                      "rgba": "rgba(0,0,0,1.00)",
+                      "r": 0,
+                      "g": 0,
+                      "b": 0,
+                      "a": 255
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "0,0,0,255,rgb:0,0,0,1",
+                "line_width": "0.2",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#000000",
+                "rgba": "rgba(0,0,0,1.00)",
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_IRESILIENCIACAMBIOCLIMATICO_OPMATPG_2023",
+      "nombre_tabla": "C04_IRESILIENCIACAMBIOCLIMATICO_OPMATPG_2023",
+      "grupo": "POT/Monitor_Ambiental_Climático/01_MEDIO_FISICO_NATURAL",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "NOMGEO",
+        "DECL",
+        "CAP",
+        "ICC"
+      ],
+      "simbologia": {
+        "tipo": "categorizedSymbol",
+        "campo": "ICC",
+        "categorias": [
+          {
+            "valor": "Alto",
+            "etiqueta": "Alto",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#67000D",
+                "rgba": "rgba(103,0,13,1.00)",
+                "r": 103,
+                "g": 0,
+                "b": 13,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "103,0,13,255,rgb:0.40392156862745099,0,0.05098039215686274,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#67000D",
+                    "rgba": "rgba(103,0,13,1.00)",
+                    "r": 103,
+                    "g": 0,
+                    "b": 13,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Medio",
+            "etiqueta": "Medio",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#EA372A",
+                "rgba": "rgba(234,55,42,1.00)",
+                "r": 234,
+                "g": 55,
+                "b": 42,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "234,55,42,255,rgb:0.91915770199130231,0.21377889677271686,0.1650110627908751,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#EA372A",
+                    "rgba": "rgba(234,55,42,1.00)",
+                    "r": 234,
+                    "g": 55,
+                    "b": 42,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Bajo",
+            "etiqueta": "Bajo",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FCA486",
+                "rgba": "rgba(252,164,134,1.00)",
+                "r": 252,
+                "g": 164,
+                "b": 134,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "252,164,134,255,rgb:0.9882352941176471,0.64263370717936985,0.52739757381551844,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FCA486",
+                    "rgba": "rgba(252,164,134,1.00)",
+                    "r": 252,
+                    "g": 164,
+                    "b": 134,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Muy bajo",
+            "etiqueta": "Muy bajo",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FFF5F0",
+                "rgba": "rgba(255,245,240,1.00)",
+                "r": 255,
+                "g": 245,
+                "b": 240,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "255,245,240,255,rgb:1,0.96078431372549022,0.94117647058823528,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFF5F0",
+                    "rgba": "rgba(255,245,240,1.00)",
+                    "r": 255,
+                    "g": 245,
+                    "b": 240,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_SEQUIALX_OPMATPG_2023",
+      "nombre_tabla": "C04_SEQUIALX_OPMATPG_2023",
+      "grupo": "POT/Monitor_Ambiental_Climático/01_MEDIO_FISICO_NATURAL",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "INTENSIDAD",
+        "CVEGEO"
+      ],
+      "simbologia": {
+        "tipo": "categorizedSymbol",
+        "campo": "INTENSIDAD",
+        "categorias": [
+          {
+            "valor": "Muy alta",
+            "etiqueta": "Muy alta",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#67000D",
+                "rgba": "rgba(103,0,13,1.00)",
+                "r": 103,
+                "g": 0,
+                "b": 13,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "103,0,13,255,rgb:0.40392156862745099,0,0.05098039215686274,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#67000D",
+                    "rgba": "rgba(103,0,13,1.00)",
+                    "r": 103,
+                    "g": 0,
+                    "b": 13,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Alta",
+            "etiqueta": "Alta",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#EA372A",
+                "rgba": "rgba(234,55,42,1.00)",
+                "r": 234,
+                "g": 55,
+                "b": 42,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "234,55,42,255,rgb:0.91915770199130231,0.21377889677271686,0.1650110627908751,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#EA372A",
+                    "rgba": "rgba(234,55,42,1.00)",
+                    "r": 234,
+                    "g": 55,
+                    "b": 42,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Media",
+            "etiqueta": "Media",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FCA486",
+                "rgba": "rgba(252,164,134,1.00)",
+                "r": 252,
+                "g": 164,
+                "b": 134,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "252,164,134,255,rgb:0.9882352941176471,0.64263370717936985,0.52739757381551844,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FCA486",
+                    "rgba": "rgba(252,164,134,1.00)",
+                    "r": 252,
+                    "g": 164,
+                    "b": 134,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "None",
+            "etiqueta": "",
+            "activo": false,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FFF5F0",
+                "rgba": "rgba(255,245,240,1.00)",
+                "r": 255,
+                "g": 245,
+                "b": 240,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "255,245,240,255,rgb:1,0.96078431372549022,0.94117647058823528,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFF5F0",
+                    "rgba": "rgba(255,245,240,1.00)",
+                    "r": 255,
+                    "g": 245,
+                    "b": 240,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_SEQUIAMX_OPMATPG_2023",
+      "nombre_tabla": "C04_SEQUIAMX_OPMATPG_2023",
+      "grupo": "POT/Monitor_Ambiental_Climático/01_MEDIO_FISICO_NATURAL",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "INTENSIDAD",
+        "CVEGEO"
+      ],
+      "simbologia": {
+        "tipo": "categorizedSymbol",
+        "campo": "INTENSIDAD",
+        "categorias": [
+          {
+            "valor": "Muy alta",
+            "etiqueta": "Muy alta",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#67000D",
+                "rgba": "rgba(103,0,13,1.00)",
+                "r": 103,
+                "g": 0,
+                "b": 13,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "103,0,13,255,rgb:0.40392156862745099,0,0.05098039215686274,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#67000D",
+                    "rgba": "rgba(103,0,13,1.00)",
+                    "r": 103,
+                    "g": 0,
+                    "b": 13,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Alta",
+            "etiqueta": "Alta",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#EA372A",
+                "rgba": "rgba(234,55,42,1.00)",
+                "r": 234,
+                "g": 55,
+                "b": 42,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "234,55,42,255,rgb:0.91915770199130231,0.21377889677271686,0.1650110627908751,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#EA372A",
+                    "rgba": "rgba(234,55,42,1.00)",
+                    "r": 234,
+                    "g": 55,
+                    "b": 42,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Media",
+            "etiqueta": "Media",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FCA486",
+                "rgba": "rgba(252,164,134,1.00)",
+                "r": 252,
+                "g": 164,
+                "b": 134,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "252,164,134,255,rgb:0.9882352941176471,0.64263370717936985,0.52739757381551844,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FCA486",
+                    "rgba": "rgba(252,164,134,1.00)",
+                    "r": 252,
+                    "g": 164,
+                    "b": 134,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "None",
+            "etiqueta": "",
+            "activo": false,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FFF5F0",
+                "rgba": "rgba(255,245,240,1.00)",
+                "r": 255,
+                "g": 245,
+                "b": 240,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "255,245,240,255,rgb:1,0.96078431372549022,0.94117647058823528,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFF5F0",
+                    "rgba": "rgba(255,245,240,1.00)",
+                    "r": 255,
+                    "g": 245,
+                    "b": 240,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_GeneraciónResiduosMun_INEGI_PEPGIRSSU_2020",
+      "nombre_tabla": "C04_GeneraciónResiduosMun_INEGI_PEPGIRSSU_2020",
+      "grupo": "POT/Monitor_Ambiental_Climático/01_MEDIO_FISICO_NATURAL",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "NOMGEO",
+        "POBTOT",
+        "POBFEM",
+        "POBMAS",
+        "gem_res_kg",
+        "gem_res_to"
+      ],
+      "simbologia": {
+        "tipo": "graduatedSymbol",
+        "campo": "gem_res_to",
+        "rangos": [
+          {
+            "etiqueta": "0 - 7.9",
+            "valor_min": 0.0,
+            "valor_max": 7.854775384615385,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FFF5F0",
+                "rgba": "rgba(255,245,240,1.00)",
+                "r": 255,
+                "g": 245,
+                "b": 240,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "255,245,240,255,rgb:1,0.96078431372549022,0.94117647058823528,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFF5F0",
+                    "rgba": "rgba(255,245,240,1.00)",
+                    "r": 255,
+                    "g": 245,
+                    "b": 240,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "7.9 - 10.8",
+            "valor_min": 7.854775384615385,
+            "valor_max": 10.80548,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FEE8DD",
+                "rgba": "rgba(254,232,221,1.00)",
+                "r": 254,
+                "g": 232,
+                "b": 221,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "254,232,221,255,rgb:0.9974822613870451,0.90798809796292057,0.86576638437476161,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FEE8DD",
+                    "rgba": "rgba(254,232,221,1.00)",
+                    "r": 254,
+                    "g": 232,
+                    "b": 221,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "10.8 - 14.1",
+            "valor_min": 10.80548,
+            "valor_max": 14.12149846153846,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FDD6C4",
+                "rgba": "rgba(253,214,196,1.00)",
+                "r": 253,
+                "g": 214,
+                "b": 196,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "253,214,196,255,rgb:0.99386587319752806,0.83750667582207983,0.76932936598764023,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FDD6C4",
+                    "rgba": "rgba(253,214,196,1.00)",
+                    "r": 253,
+                    "g": 214,
+                    "b": 196,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "14.1 - 26.1",
+            "valor_min": 14.12149846153846,
+            "valor_max": 26.129363076923077,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FCBEA5",
+                "rgba": "rgba(252,190,165,1.00)",
+                "r": 252,
+                "g": 190,
+                "b": 165,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "252,190,165,255,rgb:0.98884565499351496,0.74448767833981844,0.64615854123750671,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FCBEA5",
+                    "rgba": "rgba(252,190,165,1.00)",
+                    "r": 252,
+                    "g": 190,
+                    "b": 165,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "26.1 - 31.2",
+            "valor_min": 26.129363076923077,
+            "valor_max": 31.202144615384615,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FCA486",
+                "rgba": "rgba(252,164,134,1.00)",
+                "r": 252,
+                "g": 164,
+                "b": 134,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "252,164,134,255,rgb:0.9882352941176471,0.64263370717936985,0.52739757381551844,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FCA486",
+                    "rgba": "rgba(252,164,134,1.00)",
+                    "r": 252,
+                    "g": 164,
+                    "b": 134,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "31.2 - 36.7",
+            "valor_min": 31.202144615384615,
+            "valor_max": 36.67325846153846,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FC8A6A",
+                "rgba": "rgba(252,138,106,1.00)",
+                "r": 252,
+                "g": 138,
+                "b": 106,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "252,138,106,255,rgb:0.98742656595712219,0.54036774242771035,0.41487754634927904,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FC8A6A",
+                    "rgba": "rgba(252,138,106,1.00)",
+                    "r": 252,
+                    "g": 138,
+                    "b": 106,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "36.7 - 43.5",
+            "valor_min": 36.67325846153846,
+            "valor_max": 43.45606461538461,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FB7050",
+                "rgba": "rgba(251,112,80,1.00)",
+                "r": 251,
+                "g": 112,
+                "b": 80,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "251,112,80,255,rgb:0.98492408636606399,0.43982604715037765,0.31433585107194628,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FB7050",
+                    "rgba": "rgba(251,112,80,1.00)",
+                    "r": 251,
+                    "g": 112,
+                    "b": 80,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "43.5 - 50.6",
+            "valor_min": 43.45606461538461,
+            "valor_max": 50.61805538461539,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#F5533B",
+                "rgba": "rgba(245,83,59,1.00)",
+                "r": 245,
+                "g": 83,
+                "b": 59,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "245,83,59,255,rgb:0.96139467460135808,0.32588693064774549,0.23288319218738079,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#F5533B",
+                    "rgba": "rgba(245,83,59,1.00)",
+                    "r": 245,
+                    "g": 83,
+                    "b": 59,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "50.6 - 58.3",
+            "valor_min": 50.61805538461539,
+            "valor_max": 58.255723076923076,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#EA372A",
+                "rgba": "rgba(234,55,42,1.00)",
+                "r": 234,
+                "g": 55,
+                "b": 42,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "234,55,42,255,rgb:0.91915770199130231,0.21377889677271686,0.1650110627908751,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#EA372A",
+                    "rgba": "rgba(234,55,42,1.00)",
+                    "r": 234,
+                    "g": 55,
+                    "b": 42,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "58.3 - 62.9",
+            "valor_min": 58.255723076923076,
+            "valor_max": 62.851169230769244,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#D32020",
+                "rgba": "rgba(211,32,32,1.00)",
+                "r": 211,
+                "g": 32,
+                "b": 32,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "211,32,32,255,rgb:0.82865644312199593,0.1257953765163653,0.12730601968413824,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#D32020",
+                    "rgba": "rgba(211,32,32,1.00)",
+                    "r": 211,
+                    "g": 32,
+                    "b": 32,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "62.9 - 102.3",
+            "valor_min": 62.851169230769244,
+            "valor_max": 102.33913846153837,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#BA1419",
+                "rgba": "rgba(186,20,25,1.00)",
+                "r": 186,
+                "g": 20,
+                "b": 25,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "186,20,25,255,rgb:0.72985427634088651,0.07843137254901961,0.09977874418249791,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#BA1419",
+                    "rgba": "rgba(186,20,25,1.00)",
+                    "r": 186,
+                    "g": 20,
+                    "b": 25,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "102.3 - 247.3",
+            "valor_min": 102.33913846153837,
+            "valor_max": 247.27789692307692,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#9B0D14",
+                "rgba": "rgba(155,13,20,1.00)",
+                "r": 155,
+                "g": 13,
+                "b": 20,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "155,13,20,255,rgb:0.60653086137178602,0.0490272373540856,0.07711909666590372,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#9B0D14",
+                    "rgba": "rgba(155,13,20,1.00)",
+                    "r": 155,
+                    "g": 13,
+                    "b": 20,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "247.3 - 288.2",
+            "valor_min": 247.27789692307692,
+            "valor_max": 288.19546,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#67000D",
+                "rgba": "rgba(103,0,13,1.00)",
+                "r": 103,
+                "g": 0,
+                "b": 13,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "103,0,13,255,rgb:0.40392156862745099,0,0.05098039215686274,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#67000D",
+                    "rgba": "rgba(103,0,13,1.00)",
+                    "r": 103,
+                    "g": 0,
+                    "b": 13,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "2"
+    }
+  ]
+}

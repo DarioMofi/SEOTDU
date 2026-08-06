@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <g fill="%%COLOR%%" stroke="#ffffff" stroke-width="0.5" stroke-linejoin="round">
+    <!-- Barco / Barcaza frontal -->
+    <path d="M12 2a1 1 0 0 1 1 1v1.5h1.5a1 1 0 0 1 1 1V7h1.5a1 1 0 0 1 1 1v1.8l-1.2 5.2a2 2 0 0 1-1.9 1.5H8.1a2 2 0 0 1-1.9-1.5L5 9.8V8a1 1 0 0 1 1-1H7.5V5.5a1 1 0 0 1 1-1H10V3a1 1 0 0 1 1-1z"/>
+    <!-- Olas superiores -->
+    <path fill="none" stroke="%%COLOR%%" stroke-width="1.8" stroke-linecap="round" d="M3 18c1.5 0 2.5-.8 4-.8s2.5.8 4 .8 2.5-.8 4-.8 2.5.8 4 .8"/>
+    <!-- Olas inferiores -->
+    <path fill="none" stroke="%%COLOR%%" stroke-width="1.8" stroke-linecap="round" d="M3 21c1.5 0 2.5-.8 4-.8s2.5.8 4 .8 2.5-.8 4-.8 2.5.8 4 .8"/>
+  </g>
+</svg>

@@ -1,0 +1,36 @@
+{
+  "modulo": "Sin módulo",
+  "total_capas": 2,
+  "capas": [
+    {
+      "nombre": "Carto Dark",
+      "nombre_tabla": "Carto Dark",
+      "grupo": "",
+      "tipo": "raster",
+      "visible_qgis": false,
+      "campos": [],
+      "simbologia": {
+        "tipo": "raster",
+        "nota": "Ráster: usar .qml completo (spec §4.3)"
+      },
+      "alertas": [
+        "NOMBRE_CON_ESPACIO — corregir antes de entregar"
+      ]
+    },
+    {
+      "nombre": "Carto Light",
+      "nombre_tabla": "Carto Light",
+      "grupo": "",
+      "tipo": "raster",
+      "visible_qgis": true,
+      "campos": [],
+      "simbologia": {
+        "tipo": "raster",
+        "nota": "Ráster: usar .qml completo (spec §4.3)"
+      },
+      "alertas": [
+        "NOMBRE_CON_ESPACIO — corregir antes de entregar"
+      ]
+    }
+  ]
+}

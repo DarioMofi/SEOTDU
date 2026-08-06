@@ -86,6 +86,7 @@ export default function ModulesGrid() {
                 else if (mod.id === 'mod-2') targetId = 'social'
                 else if (mod.id === 'mod-3') targetId = 'infraestructura'
                 else if (mod.id === 'mod-4') targetId = 'aptitud'
+                else if (mod.id === 'mod-5') targetId = 'normatividad'
 
                 if (targetId) {
                   navigate(`/geovisor?modulo=${targetId}`)

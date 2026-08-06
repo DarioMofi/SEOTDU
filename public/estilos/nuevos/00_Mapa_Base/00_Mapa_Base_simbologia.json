@@ -1,0 +1,2173 @@
+{
+  "modulo": "Mapa Base",
+  "total_capas": 15,
+  "capas": [
+    {
+      "nombre": "estatal",
+      "nombre_tabla": "estatal",
+      "grupo": "Mapa-Base",
+      "tipo": "vector",
+      "visible_qgis": true,
+      "campos": [
+        "CVEGEO",
+        "NOMGEO",
+        "POB1",
+        "POB2",
+        "POB2_R",
+        "POB4",
+        "POB4_R",
+        "POB5",
+        "POB5_R",
+        "POB6",
+        "POB6_R",
+        "POB7",
+        "POB7_R",
+        "POB8",
+        "POB8_R",
+        "POB9",
+        "POB9_R",
+        "POB10",
+        "POB10_R",
+        "POB11",
+        "POB11_R",
+        "POB12",
+        "POB12_R",
+        "POB13",
+        "POB13_R",
+        "POB14",
+        "POB14_R",
+        "POB15",
+        "POB15_R",
+        "POB17",
+        "POB17_R",
+        "POB18",
+        "POB18_R",
+        "POB19",
+        "POB19_R",
+        "POB20",
+        "POB20_R",
+        "POB21",
+        "POB21_R",
+        "POB22",
+        "POB22_R",
+        "POB23",
+        "POB23_R",
+        "POB24",
+        "POB24_R",
+        "POB25",
+        "POB25_R",
+        "POB42",
+        "POB42_R",
+        "POB43",
+        "POB43_R",
+        "POB45",
+        "POB45_R",
+        "POB46",
+        "POB46_R",
+        "POB47",
+        "POB47_R",
+        "POB48",
+        "POB48_R",
+        "POB49",
+        "POB49_R",
+        "POB50",
+        "POB50_R",
+        "POB51",
+        "POB51_R",
+        "POB52",
+        "POB52_R",
+        "POB53",
+        "POB53_R",
+        "POB54",
+        "POB54_R",
+        "POB55",
+        "POB55_R",
+        "POB56",
+        "POB56_R",
+        "POB57",
+        "POB57_R",
+        "POB59",
+        "POB59_R",
+        "POB60",
+        "POB60_R",
+        "POB61",
+        "POB61_R",
+        "POB62",
+        "POB62_R",
+        "POB63",
+        "POB63_R",
+        "POB64",
+        "POB64_R",
+        "POB65",
+        "POB65_R",
+        "POB66",
+        "POB66_R",
+        "POB67",
+        "POB67_R",
+        "POB84",
+        "POB84_R",
+        "POB85",
+        "POB85_R",
+        "POB87",
+        "POB87_R",
+        "POB88",
+        "POB88_R",
+        "POB89",
+        "POB89_R",
+        "POB90",
+        "POB90_R",
+        "POB91",
+        "POB91_R",
+        "POB92",
+        "POB92_R",
+        "POB93",
+        "POB93_R",
+        "POB94",
+        "POB94_R",
+        "POB95",
+        "POB95_R",
+        "POB96",
+        "POB96_R",
+        "POB97",
+        "POB97_R",
+        "POB98",
+        "POB98_R",
+        "POB100",
+        "POB100_R",
+        "POB101",
+        "POB101_R",
+        "POB102",
+        "POB102_R",
+        "POB103",
+        "POB103_R",
+        "POB104",
+        "POB104_R",
+        "POB105",
+        "POB105_R",
+        "POB106",
+        "POB106_R",
+        "POB107",
+        "POB107_R",
+        "POB108",
+        "POB108_R",
+        "POB125_R",
+        "POB126_R",
+        "POB127_R",
+        "POB128_R",
+        "POB129_R",
+        "POB130_R",
+        "POB131_R",
+        "POB132_R",
+        "POB133_R",
+        "POB134_R",
+        "POB3",
+        "POB3_R",
+        "POB16",
+        "POB16_R",
+        "POB26",
+        "POB26_R",
+        "POB27",
+        "POB27_R",
+        "POB28",
+        "POB28_R",
+        "POB29",
+        "POB29_R",
+        "POB30",
+        "POB30_R",
+        "POB31",
+        "POB31_R",
+        "POB32",
+        "POB32_R",
+        "POB33",
+        "POB33_R",
+        "POB34",
+        "POB34_R",
+        "POB35",
+        "POB35_R",
+        "POB36",
+        "POB36_R",
+        "POB37",
+        "POB37_R",
+        "POB38",
+        "POB38_R",
+        "POB39",
+        "POB39_R",
+        "POB40",
+        "POB40_R",
+        "POB41",
+        "POB41_R",
+        "POB44",
+        "POB44_R",
+        "POB58",
+        "POB58_R",
+        "POB68",
+        "POB68_R",
+        "POB69",
+        "POB69_R",
+        "POB70",
+        "POB70_R",
+        "POB71",
+        "POB71_R",
+        "POB72",
+        "POB72_R",
+        "POB73",
+        "POB73_R",
+        "POB74",
+        "POB74_R",
+        "POB75",
+        "POB75_R",
+        "POB76",
+        "POB76_R",
+        "POB77",
+        "POB77_R",
+        "POB78",
+        "POB78_R",
+        "POB79",
+        "POB79_R",
+        "POB80",
+        "POB80_R",
+        "POB81",
+        "POB81_R",
+        "POB82",
+        "POB82_R",
+        "POB83",
+        "POB83_R",
+        "POB86",
+        "POB86_R",
+        "POB99",
+        "POB99_R",
+        "POB109",
+        "POB109_R",
+        "POB110",
+        "POB110_R",
+        "POB111",
+        "POB111_R",
+        "POB112",
+        "POB112_R",
+        "POB113",
+        "POB113_R",
+        "POB114",
+        "POB114_R",
+        "POB115",
+        "POB115_R",
+        "POB116",
+        "POB116_R",
+        "POB117",
+        "POB117_R",
+        "POB118",
+        "POB118_R",
+        "POB119",
+        "POB119_R",
+        "POB120",
+        "POB120_R",
+        "POB121",
+        "POB121_R",
+        "POB122",
+        "POB122_R",
+        "POB123",
+        "POB123_R",
+        "POB124",
+        "POB124_R",
+        "OID"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#E31A1C",
+            "rgba": "rgba(227,26,28,0.00)",
+            "r": 227,
+            "g": 26,
+            "b": 28,
+            "a": 0
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "227,26,28,0,rgb:0.8901960784313725,0.10196078431372549,0.10980392156862745,0",
+                "outline_color": "0,0,0,255,rgb:0,0,0,1",
+                "outline_width": "0.4",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#E31A1C",
+                "rgba": "rgba(227,26,28,0.00)",
+                "r": 227,
+                "g": 26,
+                "b": 28,
+                "a": 0
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "Municipios",
+      "nombre_tabla": "Municipios",
+      "grupo": "Mapa-Base",
+      "tipo": "vector",
+      "visible_qgis": true,
+      "campos": [
+        "CVEGEO",
+        "NOMGEO",
+        "AREA",
+        "PERIMETER"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#7D8B8F",
+            "rgba": "rgba(125,139,143,0.00)",
+            "r": 125,
+            "g": 139,
+            "b": 143,
+            "a": 0
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "125,139,143,0,rgb:0.49019607843137253,0.54509803921568623,0.5607843137254902,0",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "outline_width": "0.2",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#7D8B8F",
+                "rgba": "rgba(125,139,143,0.00)",
+                "r": 125,
+                "g": 139,
+                "b": 143,
+                "a": 0
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_CESC_OPMATPG_2023",
+      "nombre_tabla": "C04_CESC_OPMATPG_2023",
+      "grupo": "Mapa-Base",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 0.05,
+          "color": {
+            "hex": "#729B6F",
+            "rgba": "rgba(114,155,111,0.00)",
+            "r": 114,
+            "g": 155,
+            "b": 111,
+            "a": 0
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "114,155,111,0,rgb:0.44705882352941179,0.60784313725490191,0.43529411764705883,0",
+                "outline_color": "101,0,13,255,rgb:0.396078431372549,0,0.05098039215686274,1",
+                "outline_width": "0.06",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#729B6F",
+                "rgba": "rgba(114,155,111,0.00)",
+                "r": 114,
+                "g": 155,
+                "b": 111,
+                "a": 0
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "BUFER_ESTATAL",
+      "nombre_tabla": "BUFER_ESTATAL",
+      "grupo": "Mapa-Base",
+      "tipo": "vector",
+      "visible_qgis": true,
+      "campos": [
+        "CVEGEO",
+        "NOMGEO",
+        "POB1",
+        "POB4",
+        "POB8",
+        "POB24",
+        "POB42",
+        "POB84",
+        "OID"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 0.8,
+          "color": {
+            "hex": "#FFFFFF",
+            "rgba": "rgba(255,255,255,1.00)",
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,255,255,255,hsv:0,0,1,1",
+                "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                "outline_width": "0.26",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FFFFFF",
+                "rgba": "rgba(255,255,255,1.00)",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "Puertos_reg",
+      "nombre_tabla": "Puertos_reg",
+      "grupo": "Mapa-Base/Puntos",
+      "tipo": "vector",
+      "visible_qgis": true,
+      "campos": [
+        "id",
+        "Nombre",
+        "Vocación",
+        "Politica"
+      ],
+      "simbologia": {
+        "tipo": "categorizedSymbol",
+        "campo": "Vocación",
+        "categorias": [
+          {
+            "valor": "Comercio",
+            "etiqueta": "Comercio",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#481D6F",
+                "rgba": "rgba(72,29,111,1.00)",
+                "r": 72,
+                "g": 29,
+                "b": 111,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsFilledMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "72,29,111,255,rgb:0.28235294117647058,0.11372549019607843,0.43529411764705883,1",
+                    "size": "3",
+                    "size_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#481D6F",
+                    "rgba": "rgba(72,29,111,1.00)",
+                    "r": 72,
+                    "g": 29,
+                    "b": 111,
+                    "a": 255
+                  },
+                  "sub_simbolo": {
+                    "tipo_geometria": 2,
+                    "opacidad": 1.0,
+                    "color": {
+                      "hex": "#481D6F",
+                      "rgba": "rgba(72,29,111,1.00)",
+                      "r": 72,
+                      "g": 29,
+                      "b": 111,
+                      "a": 255
+                    },
+                    "capas_simbolo": [
+                      {
+                        "clase": "QgsSimpleFillSymbolLayer",
+                        "enabled": true,
+                        "props": {
+                          "color": "72,29,111,255,rgb:0.28235294117647058,0.11372549019607843,0.43529411764705883,1",
+                          "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                          "outline_width": "0",
+                          "outline_style": "solid"
+                        },
+                        "alertas": [],
+                        "color_parsed": {
+                          "hex": "#481D6F",
+                          "rgba": "rgba(72,29,111,1.00)",
+                          "r": 72,
+                          "g": 29,
+                          "b": 111,
+                          "a": 255
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "clase": "QgsSvgMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "255,255,255,255,rgb:1,1,1,1",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "size": "2.2",
+                    "outline_width": "0.2",
+                    "size_unit": "MM",
+                    "name": "amenity=ferry_terminal.svg"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFFFFF",
+                    "rgba": "rgba(255,255,255,1.00)",
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 255
+                  },
+                  "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1NzkuOTk3IDU3OS45OTciIGhlaWdodD0iNTc5Ljk5NyIgdmlld0JveD0iMCAwIDU3OS45OTcgNTc5Ljk5NyIgd2lkdGg9IjU3OS45OTciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im0xNjAuNzcgNDUwLjU1YzguOTM3LTUuNzkzIDE2LjI2LTE0LjIyNSAyMC44MjYtMjQuODI5aDEuMTI4Yy41NjMtMy4xNzQgMS4wMjEtNi42NjIgMi4yNTYtOS4wMjMgMS40NjMtMi44MiA0LjA1My00LjQ0MSA2Ljc2OC02Ljc2OHYtMS4xMjljMy4zMzEtMy40NTMgNy4wNDktNi41MiAxMi40MDctNy44OTUgMTAuNzY4LTIuODIgMjAuNzc4IDIuMjU2IDI3LjA2OSAxMC4xNSAzLjM2NiA0LjE5NSA0LjEwNiA4LjgxMyA0LjUxMiAxMy41MzVoMS4xMjhjNi41OTIgMTYuNzQyIDE2LjEyNiAyNS41MiAzMy44MzggMzEuNTgyIDI5LjUwMyAxMC4wOCA2MC44MzgtMy40MTggNzIuMTg4LTMxLjU4Mi4wNy0uMTQxIDEuMDIyLS43NzUgMS4xMjgtMS4xMjcuMTc2LTEuMDU5LS4yNDctMS41MTYgMC0yLjI1Ni4zODgtMS4xOTkuOTUxLTIuODkxIDEuMTI4LTMuMzg1LjM1MS0uNDIuNzAyLS43NzEgMS4xMjItMS4xMjEuMDU0LS4xMzYuNTUzLTEuMjI0IDEuMTM0LTIuMjYyLjQ5My0uOTE4LjYzNS0uNDk0IDEuMTI4LTEuMTI5IDEuNzk4LTIuMzI2IDMuMzEzLTQuNDc3IDMuMzg0LTQuNTEyIDIuMDQ0LTIuMDQ1IDUuNjc1LTYuMTY4IDEyLjQwNy03Ljg5NSAxMC43ODUtMi44MiAyMC43OTYgMi4yNTYgMjcuMDcgMTAuMTUgMCAwIC43NzUuNDI0IDEuMTI4IDEuMTI5cy44ODEuNTk4IDEuMTI4IDEuMTI3Yy4yMTEuMzU0IDAgMS4xMjkgMCAxLjEyOSAwLS4wMzUtLjEwNi41OTggMCAxLjEyNy40MjMuNzQuNzc1IDEuNDggMS4xMjggMi4yNTYuMjgxLjIxMS0uNDI0LjcwNSAwIDEuMTI5LjUyOCAxLjIzMiAxLjkwMyAyLjA3OCAyLjI1NiAzLjM4M2gxLjEyOGMuMjgxLjcwNS0uMTA2LjU2NCAwIDEuMTI5LjEwNS40MjItLjA3MS42NyAwIDEuMTI3IDQuMjg3IDEwLjg5IDkuOTA0IDE4LjQyNyAxOC4xMjYgMjQuMDIzIDEuMDkzLTExLjE1NCAzLjE3LTI2LjM0NCA3LjEyNS00NC4yMjEgNy43NzgtMzUuMTYgMjQuNjMxLTg4LjI3MiA2MC43NTItMTQxLjYyM2wxNC41MTUtMjEuNDQyLTI1LjE0Mi02LjE5N2MtLjIzOC0uMDU5LTE2LjU0Ny00LjEtMzkuMjA1LTEwLjgxNHYtMTE1LjExaC03My42di03Mi41ODdsLTE0My43OTcgMS4zNDYtMS4xMjYgNzEuMjQyaC02OS4yMzh2MTE0LjkyNmMtMTcuNjUxIDUuMzY3LTMzLjIzNyA5LjYzMS00My44MTMgMTIuMjg4bC0yNC40OTQgNi4xNTUgMTMuNzU3IDIxLjE3OGM1MC4wNjUgNzcuMDc2IDY0LjU4MyAxNTIuNjA1IDY4Ljc1MSAxODYuNzk2em03LjQ1Ni0zMTkuNjg3aDY4Ljg5OGwxLjEzLTcxLjQ0MSAxMDAuODItLjk0M3Y3Mi4zODVoNzMuNTk4djg2Ljc4M2MtNC41NzMtMS40NjQtOS4yNTYtMy4wMDEtMTMuOTk2LTQuNjA0LTY2LjI0Ni0yMi40MTItODguMzY5LTM4Ljc1MS05NS42NTktNDYuNDk2bC0xMi45NjItMTMuNzY5LTEzLjE0OCAxMy41OWMtMTcuMTcxIDE3Ljc0OC02NS4zNDEgMzYuNzUtMTA4LjY4MSA1MC45MzV6IiBmaWxsPSJwYXJhbShmaWxsKSIgZmlsbC1vcGFjaXR5PSJwYXJhbShmaWxsLW9wYWNpdHkpIiBzdHJva2U9InBhcmFtKG91dGxpbmUpIiBzdHJva2Utb3BhY2l0eT0icGFyYW0ob3V0bGluZS1vcGFjaXR5KSIgc3Ryb2tlLXdpZHRoPSJwYXJhbShvdXRsaW5lLXdpZHRoKSIvPgo8cGF0aCBkPSJtNTM2Ljg4NSA0MDguOTk4Yy05LjQyOS0zLjIyOC0xOS42OSAxLjgtMjIuOTE5IDExLjIyOS0xMS45NCAzNC44OC01MC4wNDggNTMuNTU3LTg0LjkzMSA0MS42NDUtMTkuNTg2LTYuNzE1LTM0LjcyOS0yMS43NjUtNDEuNTQ1LTQxLjI4OS0xLjUwNy00LjMxNy00LjQ5Ny03LjY4My04LjE5MS05Ljc2MS0xLjE2NC0uNzMzLTIuNDE5LTEuMzU5LTMuNzc3LTEuODI0LTkuNDMxLTMuMjI4LTE5LjY5IDEuOC0yMi45MTkgMTEuMjI5LTExLjk0IDM0Ljg3OC01MC4wNDYgNTMuNTU2LTg0LjkzMSA0MS42NDUtMTguNTYzLTYuMzY1LTMzLjExNS0yMC4yMzEtNDAuMzcxLTM4LjI5NC0uOTE2LTYuNTIxLTUuMzYzLTEyLjMwNi0xMi4wMjEtMTQuNTgyLTcuODA2LTIuNjY4LTE2LjE2My4zMjctMjAuNjQ2IDYuNzgtMS40NSAxLjk1Ny0yLjQ4MSA0LjE5NC0zLjA1IDYuNTY1LTEyLjcyIDMzLjUwOS00OS45NTcgNTEuMTk5LTg0LjEzNSAzOS41MjktMTkuNTg1LTYuNzEtMzQuNzE4LTIxLjc1NS00MS41Mi00MS4yNzctMy4yNzktOS40MTMtMTMuNTY5LTE0LjM4My0yMi45NzktMTEuMTA0LTkuNDEyIDMuMjc5LTE0LjM4NCAxMy41NjctMTEuMTA0IDIyLjk3OSAxMC40NzIgMzAuMDU5IDMzLjc2NSA1My4yMjEgNjMuOTIyIDYzLjU1MyAxMC45OTYgMy43NTYgMjIuMTkzIDUuNTM4IDMzLjIxNSA1LjUzOCAzMS4wNjEgMCA2MC42NzQtMTQuMTc0IDgwLjE4LTM4LjI0NyAxMi4wMDYgMTQuOTA2IDI4LjA4OCAyNi4yODUgNDYuODI0IDMyLjcwOSAxMC45OTQgMy43NTUgMjIuMTg4IDUuNTM2IDMzLjIwOSA1LjUzNiAzMS4zNiAwIDYxLjI0Ny0xNC40NTQgODAuNzUxLTM4Ljk1MyAxMi4wNzMgMTUuMjUyIDI4LjM3IDI2Ljg5MiA0Ny40MDMgMzMuNDE3IDEwLjk5NCAzLjc1NSAyMi4xODggNS41MzYgMzMuMjA5IDUuNTM2IDQyLjgyOSAwIDgyLjkzNi0yNi45MzQgOTcuNTU2LTY5LjY0MSAzLjIyNy05LjQyOS0xLjgwMS0xOS42ODktMTEuMjMtMjIuOTE4eiIgZmlsbD0icGFyYW0oZmlsbCkiIGZpbGwtb3BhY2l0eT0icGFyYW0oZmlsbC1vcGFjaXR5KSIgc3Ryb2tlPSJwYXJhbShvdXRsaW5lKSIgc3Ryb2tlLW9wYWNpdHk9InBhcmFtKG91dGxpbmUtb3BhY2l0eSkiIHN0cm9rZS13aWR0aD0icGFyYW0ob3V0bGluZS13aWR0aCkiLz4KPC9zdmc+Cg=="
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Petróleo",
+            "etiqueta": "Petróleo",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#000000",
+                "rgba": "rgba(0,0,0,1.00)",
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsFilledMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "0,0,0,255,rgb:0,0,0,1",
+                    "size": "3",
+                    "size_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#000000",
+                    "rgba": "rgba(0,0,0,1.00)",
+                    "r": 0,
+                    "g": 0,
+                    "b": 0,
+                    "a": 255
+                  },
+                  "sub_simbolo": {
+                    "tipo_geometria": 2,
+                    "opacidad": 1.0,
+                    "color": {
+                      "hex": "#000000",
+                      "rgba": "rgba(0,0,0,1.00)",
+                      "r": 0,
+                      "g": 0,
+                      "b": 0,
+                      "a": 255
+                    },
+                    "capas_simbolo": [
+                      {
+                        "clase": "QgsSimpleFillSymbolLayer",
+                        "enabled": true,
+                        "props": {
+                          "color": "0,0,0,255,rgb:0,0,0,1",
+                          "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                          "outline_width": "0",
+                          "outline_style": "solid"
+                        },
+                        "alertas": [],
+                        "color_parsed": {
+                          "hex": "#000000",
+                          "rgba": "rgba(0,0,0,1.00)",
+                          "r": 0,
+                          "g": 0,
+                          "b": 0,
+                          "a": 255
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "clase": "QgsSvgMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "255,255,255,255,rgb:1,1,1,1",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "size": "2.2",
+                    "outline_width": "0.2",
+                    "size_unit": "MM",
+                    "name": "amenity=ferry_terminal.svg"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFFFFF",
+                    "rgba": "rgba(255,255,255,1.00)",
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 255
+                  },
+                  "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1NzkuOTk3IDU3OS45OTciIGhlaWdodD0iNTc5Ljk5NyIgdmlld0JveD0iMCAwIDU3OS45OTcgNTc5Ljk5NyIgd2lkdGg9IjU3OS45OTciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im0xNjAuNzcgNDUwLjU1YzguOTM3LTUuNzkzIDE2LjI2LTE0LjIyNSAyMC44MjYtMjQuODI5aDEuMTI4Yy41NjMtMy4xNzQgMS4wMjEtNi42NjIgMi4yNTYtOS4wMjMgMS40NjMtMi44MiA0LjA1My00LjQ0MSA2Ljc2OC02Ljc2OHYtMS4xMjljMy4zMzEtMy40NTMgNy4wNDktNi41MiAxMi40MDctNy44OTUgMTAuNzY4LTIuODIgMjAuNzc4IDIuMjU2IDI3LjA2OSAxMC4xNSAzLjM2NiA0LjE5NSA0LjEwNiA4LjgxMyA0LjUxMiAxMy41MzVoMS4xMjhjNi41OTIgMTYuNzQyIDE2LjEyNiAyNS41MiAzMy44MzggMzEuNTgyIDI5LjUwMyAxMC4wOCA2MC44MzgtMy40MTggNzIuMTg4LTMxLjU4Mi4wNy0uMTQxIDEuMDIyLS43NzUgMS4xMjgtMS4xMjcuMTc2LTEuMDU5LS4yNDctMS41MTYgMC0yLjI1Ni4zODgtMS4xOTkuOTUxLTIuODkxIDEuMTI4LTMuMzg1LjM1MS0uNDIuNzAyLS43NzEgMS4xMjItMS4xMjEuMDU0LS4xMzYuNTUzLTEuMjI0IDEuMTM0LTIuMjYyLjQ5My0uOTE4LjYzNS0uNDk0IDEuMTI4LTEuMTI5IDEuNzk4LTIuMzI2IDMuMzEzLTQuNDc3IDMuMzg0LTQuNTEyIDIuMDQ0LTIuMDQ1IDUuNjc1LTYuMTY4IDEyLjQwNy03Ljg5NSAxMC43ODUtMi44MiAyMC43OTYgMi4yNTYgMjcuMDcgMTAuMTUgMCAwIC43NzUuNDI0IDEuMTI4IDEuMTI5cy44ODEuNTk4IDEuMTI4IDEuMTI3Yy4yMTEuMzU0IDAgMS4xMjkgMCAxLjEyOSAwLS4wMzUtLjEwNi41OTggMCAxLjEyNy40MjMuNzQuNzc1IDEuNDggMS4xMjggMi4yNTYuMjgxLjIxMS0uNDI0LjcwNSAwIDEuMTI5LjUyOCAxLjIzMiAxLjkwMyAyLjA3OCAyLjI1NiAzLjM4M2gxLjEyOGMuMjgxLjcwNS0uMTA2LjU2NCAwIDEuMTI5LjEwNS40MjItLjA3MS42NyAwIDEuMTI3IDQuMjg3IDEwLjg5IDkuOTA0IDE4LjQyNyAxOC4xMjYgMjQuMDIzIDEuMDkzLTExLjE1NCAzLjE3LTI2LjM0NCA3LjEyNS00NC4yMjEgNy43NzgtMzUuMTYgMjQuNjMxLTg4LjI3MiA2MC43NTItMTQxLjYyM2wxNC41MTUtMjEuNDQyLTI1LjE0Mi02LjE5N2MtLjIzOC0uMDU5LTE2LjU0Ny00LjEtMzkuMjA1LTEwLjgxNHYtMTE1LjExaC03My42di03Mi41ODdsLTE0My43OTcgMS4zNDYtMS4xMjYgNzEuMjQyaC02OS4yMzh2MTE0LjkyNmMtMTcuNjUxIDUuMzY3LTMzLjIzNyA5LjYzMS00My44MTMgMTIuMjg4bC0yNC40OTQgNi4xNTUgMTMuNzU3IDIxLjE3OGM1MC4wNjUgNzcuMDc2IDY0LjU4MyAxNTIuNjA1IDY4Ljc1MSAxODYuNzk2em03LjQ1Ni0zMTkuNjg3aDY4Ljg5OGwxLjEzLTcxLjQ0MSAxMDAuODItLjk0M3Y3Mi4zODVoNzMuNTk4djg2Ljc4M2MtNC41NzMtMS40NjQtOS4yNTYtMy4wMDEtMTMuOTk2LTQuNjA0LTY2LjI0Ni0yMi40MTItODguMzY5LTM4Ljc1MS05NS42NTktNDYuNDk2bC0xMi45NjItMTMuNzY5LTEzLjE0OCAxMy41OWMtMTcuMTcxIDE3Ljc0OC02NS4zNDEgMzYuNzUtMTA4LjY4MSA1MC45MzV6IiBmaWxsPSJwYXJhbShmaWxsKSIgZmlsbC1vcGFjaXR5PSJwYXJhbShmaWxsLW9wYWNpdHkpIiBzdHJva2U9InBhcmFtKG91dGxpbmUpIiBzdHJva2Utb3BhY2l0eT0icGFyYW0ob3V0bGluZS1vcGFjaXR5KSIgc3Ryb2tlLXdpZHRoPSJwYXJhbShvdXRsaW5lLXdpZHRoKSIvPgo8cGF0aCBkPSJtNTM2Ljg4NSA0MDguOTk4Yy05LjQyOS0zLjIyOC0xOS42OSAxLjgtMjIuOTE5IDExLjIyOS0xMS45NCAzNC44OC01MC4wNDggNTMuNTU3LTg0LjkzMSA0MS42NDUtMTkuNTg2LTYuNzE1LTM0LjcyOS0yMS43NjUtNDEuNTQ1LTQxLjI4OS0xLjUwNy00LjMxNy00LjQ5Ny03LjY4My04LjE5MS05Ljc2MS0xLjE2NC0uNzMzLTIuNDE5LTEuMzU5LTMuNzc3LTEuODI0LTkuNDMxLTMuMjI4LTE5LjY5IDEuOC0yMi45MTkgMTEuMjI5LTExLjk0IDM0Ljg3OC01MC4wNDYgNTMuNTU2LTg0LjkzMSA0MS42NDUtMTguNTYzLTYuMzY1LTMzLjExNS0yMC4yMzEtNDAuMzcxLTM4LjI5NC0uOTE2LTYuNTIxLTUuMzYzLTEyLjMwNi0xMi4wMjEtMTQuNTgyLTcuODA2LTIuNjY4LTE2LjE2My4zMjctMjAuNjQ2IDYuNzgtMS40NSAxLjk1Ny0yLjQ4MSA0LjE5NC0zLjA1IDYuNTY1LTEyLjcyIDMzLjUwOS00OS45NTcgNTEuMTk5LTg0LjEzNSAzOS41MjktMTkuNTg1LTYuNzEtMzQuNzE4LTIxLjc1NS00MS41Mi00MS4yNzctMy4yNzktOS40MTMtMTMuNTY5LTE0LjM4My0yMi45NzktMTEuMTA0LTkuNDEyIDMuMjc5LTE0LjM4NCAxMy41NjctMTEuMTA0IDIyLjk3OSAxMC40NzIgMzAuMDU5IDMzLjc2NSA1My4yMjEgNjMuOTIyIDYzLjU1MyAxMC45OTYgMy43NTYgMjIuMTkzIDUuNTM4IDMzLjIxNSA1LjUzOCAzMS4wNjEgMCA2MC42NzQtMTQuMTc0IDgwLjE4LTM4LjI0NyAxMi4wMDYgMTQuOTA2IDI4LjA4OCAyNi4yODUgNDYuODI0IDMyLjcwOSAxMC45OTQgMy43NTUgMjIuMTg4IDUuNTM2IDMzLjIwOSA1LjUzNiAzMS4zNiAwIDYxLjI0Ny0xNC40NTQgODAuNzUxLTM4Ljk1MyAxMi4wNzMgMTUuMjUyIDI4LjM3IDI2Ljg5MiA0Ny40MDMgMzMuNDE3IDEwLjk5NCAzLjc1NSAyMi4xODggNS41MzYgMzMuMjA5IDUuNTM2IDQyLjgyOSAwIDgyLjkzNi0yNi45MzQgOTcuNTU2LTY5LjY0MSAzLjIyNy05LjQyOS0xLjgwMS0xOS42ODktMTEuMjMtMjIuOTE4eiIgZmlsbD0icGFyYW0oZmlsbCkiIGZpbGwtb3BhY2l0eT0icGFyYW0oZmlsbC1vcGFjaXR5KSIgc3Ryb2tlPSJwYXJhbShvdXRsaW5lKSIgc3Ryb2tlLW9wYWNpdHk9InBhcmFtKG91dGxpbmUtb3BhY2l0eSkiIHN0cm9rZS13aWR0aD0icGFyYW0ob3V0bGluZS13aWR0aCkiLz4KPC9zdmc+Cg=="
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Turismo",
+            "etiqueta": "Turismo",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#D7A577",
+                "rgba": "rgba(215,165,119,1.00)",
+                "r": 215,
+                "g": 165,
+                "b": 119,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsFilledMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "215,165,119,255,hsv:0.08055555555555556,0.44705882352941179,0.84313725490196079,1",
+                    "size": "3",
+                    "size_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#D7A577",
+                    "rgba": "rgba(215,165,119,1.00)",
+                    "r": 215,
+                    "g": 165,
+                    "b": 119,
+                    "a": 255
+                  },
+                  "sub_simbolo": {
+                    "tipo_geometria": 2,
+                    "opacidad": 1.0,
+                    "color": {
+                      "hex": "#D7A577",
+                      "rgba": "rgba(215,165,119,1.00)",
+                      "r": 215,
+                      "g": 165,
+                      "b": 119,
+                      "a": 255
+                    },
+                    "capas_simbolo": [
+                      {
+                        "clase": "QgsSimpleFillSymbolLayer",
+                        "enabled": true,
+                        "props": {
+                          "color": "215,165,119,255,hsv:0.08055555555555556,0.44705882352941179,0.84313725490196079,1",
+                          "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                          "outline_width": "0",
+                          "outline_style": "solid"
+                        },
+                        "alertas": [],
+                        "color_parsed": {
+                          "hex": "#D7A577",
+                          "rgba": "rgba(215,165,119,1.00)",
+                          "r": 215,
+                          "g": 165,
+                          "b": 119,
+                          "a": 255
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "clase": "QgsSvgMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "255,255,255,255,rgb:1,1,1,1",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "size": "2.2",
+                    "outline_width": "0.2",
+                    "size_unit": "MM",
+                    "name": "amenity=ferry_terminal.svg"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFFFFF",
+                    "rgba": "rgba(255,255,255,1.00)",
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 255
+                  },
+                  "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1NzkuOTk3IDU3OS45OTciIGhlaWdodD0iNTc5Ljk5NyIgdmlld0JveD0iMCAwIDU3OS45OTcgNTc5Ljk5NyIgd2lkdGg9IjU3OS45OTciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im0xNjAuNzcgNDUwLjU1YzguOTM3LTUuNzkzIDE2LjI2LTE0LjIyNSAyMC44MjYtMjQuODI5aDEuMTI4Yy41NjMtMy4xNzQgMS4wMjEtNi42NjIgMi4yNTYtOS4wMjMgMS40NjMtMi44MiA0LjA1My00LjQ0MSA2Ljc2OC02Ljc2OHYtMS4xMjljMy4zMzEtMy40NTMgNy4wNDktNi41MiAxMi40MDctNy44OTUgMTAuNzY4LTIuODIgMjAuNzc4IDIuMjU2IDI3LjA2OSAxMC4xNSAzLjM2NiA0LjE5NSA0LjEwNiA4LjgxMyA0LjUxMiAxMy41MzVoMS4xMjhjNi41OTIgMTYuNzQyIDE2LjEyNiAyNS41MiAzMy44MzggMzEuNTgyIDI5LjUwMyAxMC4wOCA2MC44MzgtMy40MTggNzIuMTg4LTMxLjU4Mi4wNy0uMTQxIDEuMDIyLS43NzUgMS4xMjgtMS4xMjcuMTc2LTEuMDU5LS4yNDctMS41MTYgMC0yLjI1Ni4zODgtMS4xOTkuOTUxLTIuODkxIDEuMTI4LTMuMzg1LjM1MS0uNDIuNzAyLS43NzEgMS4xMjItMS4xMjEuMDU0LS4xMzYuNTUzLTEuMjI0IDEuMTM0LTIuMjYyLjQ5My0uOTE4LjYzNS0uNDk0IDEuMTI4LTEuMTI5IDEuNzk4LTIuMzI2IDMuMzEzLTQuNDc3IDMuMzg0LTQuNTEyIDIuMDQ0LTIuMDQ1IDUuNjc1LTYuMTY4IDEyLjQwNy03Ljg5NSAxMC43ODUtMi44MiAyMC43OTYgMi4yNTYgMjcuMDcgMTAuMTUgMCAwIC43NzUuNDI0IDEuMTI4IDEuMTI5cy44ODEuNTk4IDEuMTI4IDEuMTI3Yy4yMTEuMzU0IDAgMS4xMjkgMCAxLjEyOSAwLS4wMzUtLjEwNi41OTggMCAxLjEyNy40MjMuNzQuNzc1IDEuNDggMS4xMjggMi4yNTYuMjgxLjIxMS0uNDI0LjcwNSAwIDEuMTI5LjUyOCAxLjIzMiAxLjkwMyAyLjA3OCAyLjI1NiAzLjM4M2gxLjEyOGMuMjgxLjcwNS0uMTA2LjU2NCAwIDEuMTI5LjEwNS40MjItLjA3MS42NyAwIDEuMTI3IDQuMjg3IDEwLjg5IDkuOTA0IDE4LjQyNyAxOC4xMjYgMjQuMDIzIDEuMDkzLTExLjE1NCAzLjE3LTI2LjM0NCA3LjEyNS00NC4yMjEgNy43NzgtMzUuMTYgMjQuNjMxLTg4LjI3MiA2MC43NTItMTQxLjYyM2wxNC41MTUtMjEuNDQyLTI1LjE0Mi02LjE5N2MtLjIzOC0uMDU5LTE2LjU0Ny00LjEtMzkuMjA1LTEwLjgxNHYtMTE1LjExaC03My42di03Mi41ODdsLTE0My43OTcgMS4zNDYtMS4xMjYgNzEuMjQyaC02OS4yMzh2MTE0LjkyNmMtMTcuNjUxIDUuMzY3LTMzLjIzNyA5LjYzMS00My44MTMgMTIuMjg4bC0yNC40OTQgNi4xNTUgMTMuNzU3IDIxLjE3OGM1MC4wNjUgNzcuMDc2IDY0LjU4MyAxNTIuNjA1IDY4Ljc1MSAxODYuNzk2em03LjQ1Ni0zMTkuNjg3aDY4Ljg5OGwxLjEzLTcxLjQ0MSAxMDAuODItLjk0M3Y3Mi4zODVoNzMuNTk4djg2Ljc4M2MtNC41NzMtMS40NjQtOS4yNTYtMy4wMDEtMTMuOTk2LTQuNjA0LTY2LjI0Ni0yMi40MTItODguMzY5LTM4Ljc1MS05NS42NTktNDYuNDk2bC0xMi45NjItMTMuNzY5LTEzLjE0OCAxMy41OWMtMTcuMTcxIDE3Ljc0OC02NS4zNDEgMzYuNzUtMTA4LjY4MSA1MC45MzV6IiBmaWxsPSJwYXJhbShmaWxsKSIgZmlsbC1vcGFjaXR5PSJwYXJhbShmaWxsLW9wYWNpdHkpIiBzdHJva2U9InBhcmFtKG91dGxpbmUpIiBzdHJva2Utb3BhY2l0eT0icGFyYW0ob3V0bGluZS1vcGFjaXR5KSIgc3Ryb2tlLXdpZHRoPSJwYXJhbShvdXRsaW5lLXdpZHRoKSIvPgo8cGF0aCBkPSJtNTM2Ljg4NSA0MDguOTk4Yy05LjQyOS0zLjIyOC0xOS42OSAxLjgtMjIuOTE5IDExLjIyOS0xMS45NCAzNC44OC01MC4wNDggNTMuNTU3LTg0LjkzMSA0MS42NDUtMTkuNTg2LTYuNzE1LTM0LjcyOS0yMS43NjUtNDEuNTQ1LTQxLjI4OS0xLjUwNy00LjMxNy00LjQ5Ny03LjY4My04LjE5MS05Ljc2MS0xLjE2NC0uNzMzLTIuNDE5LTEuMzU5LTMuNzc3LTEuODI0LTkuNDMxLTMuMjI4LTE5LjY5IDEuOC0yMi45MTkgMTEuMjI5LTExLjk0IDM0Ljg3OC01MC4wNDYgNTMuNTU2LTg0LjkzMSA0MS42NDUtMTguNTYzLTYuMzY1LTMzLjExNS0yMC4yMzEtNDAuMzcxLTM4LjI5NC0uOTE2LTYuNTIxLTUuMzYzLTEyLjMwNi0xMi4wMjEtMTQuNTgyLTcuODA2LTIuNjY4LTE2LjE2My4zMjctMjAuNjQ2IDYuNzgtMS40NSAxLjk1Ny0yLjQ4MSA0LjE5NC0zLjA1IDYuNTY1LTEyLjcyIDMzLjUwOS00OS45NTcgNTEuMTk5LTg0LjEzNSAzOS41MjktMTkuNTg1LTYuNzEtMzQuNzE4LTIxLjc1NS00MS41Mi00MS4yNzctMy4yNzktOS40MTMtMTMuNTY5LTE0LjM4My0yMi45NzktMTEuMTA0LTkuNDEyIDMuMjc5LTE0LjM4NCAxMy41NjctMTEuMTA0IDIyLjk3OSAxMC40NzIgMzAuMDU5IDMzLjc2NSA1My4yMjEgNjMuOTIyIDYzLjU1MyAxMC45OTYgMy43NTYgMjIuMTkzIDUuNTM4IDMzLjIxNSA1LjUzOCAzMS4wNjEgMCA2MC42NzQtMTQuMTc0IDgwLjE4LTM4LjI0NyAxMi4wMDYgMTQuOTA2IDI4LjA4OCAyNi4yODUgNDYuODI0IDMyLjcwOSAxMC45OTQgMy43NTUgMjIuMTg4IDUuNTM2IDMzLjIwOSA1LjUzNiAzMS4zNiAwIDYxLjI0Ny0xNC40NTQgODAuNzUxLTM4Ljk1MyAxMi4wNzMgMTUuMjUyIDI4LjM3IDI2Ljg5MiA0Ny40MDMgMzMuNDE3IDEwLjk5NCAzLjc1NSAyMi4xODggNS41MzYgMzMuMjA5IDUuNTM2IDQyLjgyOSAwIDgyLjkzNi0yNi45MzQgOTcuNTU2LTY5LjY0MSAzLjIyNy05LjQyOS0xLjgwMS0xOS42ODktMTEuMjMtMjIuOTE4eiIgZmlsbD0icGFyYW0oZmlsbCkiIGZpbGwtb3BhY2l0eT0icGFyYW0oZmlsbC1vcGFjaXR5KSIgc3Ryb2tlPSJwYXJhbShvdXRsaW5lKSIgc3Ryb2tlLW9wYWNpdHk9InBhcmFtKG91dGxpbmUtb3BhY2l0eSkiIHN0cm9rZS13aWR0aD0icGFyYW0ob3V0bGluZS13aWR0aCkiLz4KPC9zdmc+Cg=="
+                }
+              ]
+            }
+          },
+          {
+            "valor": "None",
+            "etiqueta": "",
+            "activo": false,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#86E884",
+                "rgba": "rgba(134,232,132,1.00)",
+                "r": 134,
+                "g": 232,
+                "b": 132,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsFilledMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "134,232,132,255,hsv:0.33055555555555555,0.43137254901960786,0.90980392156862744,1",
+                    "size": "3",
+                    "size_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#86E884",
+                    "rgba": "rgba(134,232,132,1.00)",
+                    "r": 134,
+                    "g": 232,
+                    "b": 132,
+                    "a": 255
+                  },
+                  "sub_simbolo": {
+                    "tipo_geometria": 2,
+                    "opacidad": 1.0,
+                    "color": {
+                      "hex": "#86E884",
+                      "rgba": "rgba(134,232,132,1.00)",
+                      "r": 134,
+                      "g": 232,
+                      "b": 132,
+                      "a": 255
+                    },
+                    "capas_simbolo": [
+                      {
+                        "clase": "QgsSimpleFillSymbolLayer",
+                        "enabled": true,
+                        "props": {
+                          "color": "134,232,132,255,hsv:0.33055555555555555,0.43137254901960786,0.90980392156862744,1",
+                          "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                          "outline_width": "0",
+                          "outline_style": "solid"
+                        },
+                        "alertas": [],
+                        "color_parsed": {
+                          "hex": "#86E884",
+                          "rgba": "rgba(134,232,132,1.00)",
+                          "r": 134,
+                          "g": 232,
+                          "b": 132,
+                          "a": 255
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "clase": "QgsSvgMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "134,232,132,255,hsv:0.33055555555555555,0.43137254901960786,0.90980392156862744,1",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "size": "2.6",
+                    "outline_width": "0.2",
+                    "size_unit": "MM",
+                    "name": "amenity=ferry_terminal.svg"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#86E884",
+                    "rgba": "rgba(134,232,132,1.00)",
+                    "r": 134,
+                    "g": 232,
+                    "b": 132,
+                    "a": 255
+                  },
+                  "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1NzkuOTk3IDU3OS45OTciIGhlaWdodD0iNTc5Ljk5NyIgdmlld0JveD0iMCAwIDU3OS45OTcgNTc5Ljk5NyIgd2lkdGg9IjU3OS45OTciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im0xNjAuNzcgNDUwLjU1YzguOTM3LTUuNzkzIDE2LjI2LTE0LjIyNSAyMC44MjYtMjQuODI5aDEuMTI4Yy41NjMtMy4xNzQgMS4wMjEtNi42NjIgMi4yNTYtOS4wMjMgMS40NjMtMi44MiA0LjA1My00LjQ0MSA2Ljc2OC02Ljc2OHYtMS4xMjljMy4zMzEtMy40NTMgNy4wNDktNi41MiAxMi40MDctNy44OTUgMTAuNzY4LTIuODIgMjAuNzc4IDIuMjU2IDI3LjA2OSAxMC4xNSAzLjM2NiA0LjE5NSA0LjEwNiA4LjgxMyA0LjUxMiAxMy41MzVoMS4xMjhjNi41OTIgMTYuNzQyIDE2LjEyNiAyNS41MiAzMy44MzggMzEuNTgyIDI5LjUwMyAxMC4wOCA2MC44MzgtMy40MTggNzIuMTg4LTMxLjU4Mi4wNy0uMTQxIDEuMDIyLS43NzUgMS4xMjgtMS4xMjcuMTc2LTEuMDU5LS4yNDctMS41MTYgMC0yLjI1Ni4zODgtMS4xOTkuOTUxLTIuODkxIDEuMTI4LTMuMzg1LjM1MS0uNDIuNzAyLS43NzEgMS4xMjItMS4xMjEuMDU0LS4xMzYuNTUzLTEuMjI0IDEuMTM0LTIuMjYyLjQ5My0uOTE4LjYzNS0uNDk0IDEuMTI4LTEuMTI5IDEuNzk4LTIuMzI2IDMuMzEzLTQuNDc3IDMuMzg0LTQuNTEyIDIuMDQ0LTIuMDQ1IDUuNjc1LTYuMTY4IDEyLjQwNy03Ljg5NSAxMC43ODUtMi44MiAyMC43OTYgMi4yNTYgMjcuMDcgMTAuMTUgMCAwIC43NzUuNDI0IDEuMTI4IDEuMTI5cy44ODEuNTk4IDEuMTI4IDEuMTI3Yy4yMTEuMzU0IDAgMS4xMjkgMCAxLjEyOSAwLS4wMzUtLjEwNi41OTggMCAxLjEyNy40MjMuNzQuNzc1IDEuNDggMS4xMjggMi4yNTYuMjgxLjIxMS0uNDI0LjcwNSAwIDEuMTI5LjUyOCAxLjIzMiAxLjkwMyAyLjA3OCAyLjI1NiAzLjM4M2gxLjEyOGMuMjgxLjcwNS0uMTA2LjU2NCAwIDEuMTI5LjEwNS40MjItLjA3MS42NyAwIDEuMTI3IDQuMjg3IDEwLjg5IDkuOTA0IDE4LjQyNyAxOC4xMjYgMjQuMDIzIDEuMDkzLTExLjE1NCAzLjE3LTI2LjM0NCA3LjEyNS00NC4yMjEgNy43NzgtMzUuMTYgMjQuNjMxLTg4LjI3MiA2MC43NTItMTQxLjYyM2wxNC41MTUtMjEuNDQyLTI1LjE0Mi02LjE5N2MtLjIzOC0uMDU5LTE2LjU0Ny00LjEtMzkuMjA1LTEwLjgxNHYtMTE1LjExaC03My42di03Mi41ODdsLTE0My43OTcgMS4zNDYtMS4xMjYgNzEuMjQyaC02OS4yMzh2MTE0LjkyNmMtMTcuNjUxIDUuMzY3LTMzLjIzNyA5LjYzMS00My44MTMgMTIuMjg4bC0yNC40OTQgNi4xNTUgMTMuNzU3IDIxLjE3OGM1MC4wNjUgNzcuMDc2IDY0LjU4MyAxNTIuNjA1IDY4Ljc1MSAxODYuNzk2em03LjQ1Ni0zMTkuNjg3aDY4Ljg5OGwxLjEzLTcxLjQ0MSAxMDAuODItLjk0M3Y3Mi4zODVoNzMuNTk4djg2Ljc4M2MtNC41NzMtMS40NjQtOS4yNTYtMy4wMDEtMTMuOTk2LTQuNjA0LTY2LjI0Ni0yMi40MTItODguMzY5LTM4Ljc1MS05NS42NTktNDYuNDk2bC0xMi45NjItMTMuNzY5LTEzLjE0OCAxMy41OWMtMTcuMTcxIDE3Ljc0OC02NS4zNDEgMzYuNzUtMTA4LjY4MSA1MC45MzV6IiBmaWxsPSJwYXJhbShmaWxsKSIgZmlsbC1vcGFjaXR5PSJwYXJhbShmaWxsLW9wYWNpdHkpIiBzdHJva2U9InBhcmFtKG91dGxpbmUpIiBzdHJva2Utb3BhY2l0eT0icGFyYW0ob3V0bGluZS1vcGFjaXR5KSIgc3Ryb2tlLXdpZHRoPSJwYXJhbShvdXRsaW5lLXdpZHRoKSIvPgo8cGF0aCBkPSJtNTM2Ljg4NSA0MDguOTk4Yy05LjQyOS0zLjIyOC0xOS42OSAxLjgtMjIuOTE5IDExLjIyOS0xMS45NCAzNC44OC01MC4wNDggNTMuNTU3LTg0LjkzMSA0MS42NDUtMTkuNTg2LTYuNzE1LTM0LjcyOS0yMS43NjUtNDEuNTQ1LTQxLjI4OS0xLjUwNy00LjMxNy00LjQ5Ny03LjY4My04LjE5MS05Ljc2MS0xLjE2NC0uNzMzLTIuNDE5LTEuMzU5LTMuNzc3LTEuODI0LTkuNDMxLTMuMjI4LTE5LjY5IDEuOC0yMi45MTkgMTEuMjI5LTExLjk0IDM0Ljg3OC01MC4wNDYgNTMuNTU2LTg0LjkzMSA0MS42NDUtMTguNTYzLTYuMzY1LTMzLjExNS0yMC4yMzEtNDAuMzcxLTM4LjI5NC0uOTE2LTYuNTIxLTUuMzYzLTEyLjMwNi0xMi4wMjEtMTQuNTgyLTcuODA2LTIuNjY4LTE2LjE2My4zMjctMjAuNjQ2IDYuNzgtMS40NSAxLjk1Ny0yLjQ4MSA0LjE5NC0zLjA1IDYuNTY1LTEyLjcyIDMzLjUwOS00OS45NTcgNTEuMTk5LTg0LjEzNSAzOS41MjktMTkuNTg1LTYuNzEtMzQuNzE4LTIxLjc1NS00MS41Mi00MS4yNzctMy4yNzktOS40MTMtMTMuNTY5LTE0LjM4My0yMi45NzktMTEuMTA0LTkuNDEyIDMuMjc5LTE0LjM4NCAxMy41NjctMTEuMTA0IDIyLjk3OSAxMC40NzIgMzAuMDU5IDMzLjc2NSA1My4yMjEgNjMuOTIyIDYzLjU1MyAxMC45OTYgMy43NTYgMjIuMTkzIDUuNTM4IDMzLjIxNSA1LjUzOCAzMS4wNjEgMCA2MC42NzQtMTQuMTc0IDgwLjE4LTM4LjI0NyAxMi4wMDYgMTQuOTA2IDI4LjA4OCAyNi4yODUgNDYuODI0IDMyLjcwOSAxMC45OTQgMy43NTUgMjIuMTg4IDUuNTM2IDMzLjIwOSA1LjUzNiAzMS4zNiAwIDYxLjI0Ny0xNC40NTQgODAuNzUxLTM4Ljk1MyAxMi4wNzMgMTUuMjUyIDI4LjM3IDI2Ljg5MiA0Ny40MDMgMzMuNDE3IDEwLjk5NCAzLjc1NSAyMi4xODggNS41MzYgMzMuMjA5IDUuNTM2IDQyLjgyOSAwIDgyLjkzNi0yNi45MzQgOTcuNTU2LTY5LjY0MSAzLjIyNy05LjQyOS0xLjgwMS0xOS42ODktMTEuMjMtMjIuOTE4eiIgZmlsbD0icGFyYW0oZmlsbCkiIGZpbGwtb3BhY2l0eT0icGFyYW0oZmlsbC1vcGFjaXR5KSIgc3Ryb2tlPSJwYXJhbShvdXRsaW5lKSIgc3Ryb2tlLW9wYWNpdHk9InBhcmFtKG91dGxpbmUtb3BhY2l0eSkiIHN0cm9rZS13aWR0aD0icGFyYW0ob3V0bGluZS13aWR0aCkiLz4KPC9zdmc+Cg=="
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "Aeropuertos_2012",
+      "nombre_tabla": "Aeropuertos_2012",
+      "grupo": "Mapa-Base/Puntos",
+      "tipo": "vector",
+      "visible_qgis": true,
+      "campos": [
+        "gid",
+        "tipo",
+        "clase",
+        "tam_pista",
+        "nom_aerop",
+        "eleva_pies",
+        "l",
+        "h",
+        "log_pista",
+        "pista_mts",
+        "num_pistas"
+      ],
+      "simbologia": {
+        "tipo": "categorizedSymbol",
+        "campo": "tipo",
+        "categorias": [
+          {
+            "valor": "Aeropuerto 1",
+            "etiqueta": "Aeropuerto ",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#08306B",
+                "rgba": "rgba(8,48,107,1.00)",
+                "r": 8,
+                "g": 48,
+                "b": 107,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSvgMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "8,48,107,255,rgb:0.03137254901960784,0.18823529411764706,0.41960784313725491,1",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "size": "3",
+                    "outline_width": "0.4",
+                    "size_unit": "MM",
+                    "name": "background_square_rounded.svg"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#08306B",
+                    "rgba": "rgba(8,48,107,1.00)",
+                    "r": 8,
+                    "g": 48,
+                    "b": 107,
+                    "a": 255
+                  },
+                  "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1ODAgNTgwIiBoZWlnaHQ9IjU4MCIgdmlld0JveD0iMCAwIDU4MCA1ODAiIHdpZHRoPSI1ODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im01NDIuOTM2IDQ4Ni4yNDJjMCAzMS4zMTItMjUuMzgzIDU2LjY5My01Ni42OTMgNTYuNjkzaC0zOTIuNDg2Yy0zMS4zMTEgMC01Ni42OTMtMjUuMzgyLTU2LjY5My01Ni42OTN2LTM5Mi40ODVjMC0zMS4zMTEgMjUuMzgyLTU2LjY5MyA1Ni42OTMtNTYuNjkzaDM5Mi40ODVjMzEuMzExIDAgNTYuNjkzIDI1LjM4MiA1Ni42OTMgNTYuNjkzdjM5Mi40ODV6IiBmaWxsPSJwYXJhbShmaWxsKSIgZmlsbC1vcGFjaXR5PSJwYXJhbShmaWxsLW9wYWNpdHkpIiBzdHJva2U9InBhcmFtKG91dGxpbmUpIiBzdHJva2Utb3BhY2l0eT0icGFyYW0ob3V0bGluZS1vcGFjaXR5KSIgc3Ryb2tlLXdpZHRoPSJwYXJhbShvdXRsaW5lLXdpZHRoKSIvPgo8L3N2Zz4K"
+                },
+                {
+                  "clase": "QgsSvgMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "255,255,255,255,rgb:1,1,1,1",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "size": "2.11765",
+                    "outline_width": "0.1",
+                    "size_unit": "MM",
+                    "name": "transport_airport.svg"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFFFFF",
+                    "rgba": "rgba(255,255,255,1.00)",
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 255
+                  },
+                  "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1ODAgNTgwIiBoZWlnaHQ9IjU4MCIgdmlld0JveD0iMCAwIDU4MCA1ODAiIHdpZHRoPSI1ODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im01MTYuNzQ5IDQwMC4zNjR2LTUyLjcxN2wtMTk5Ljc2NS0xMjAuMDYzdi0xNDIuNjkyYy4wMzQtMzQuOTU4LTUxLjIxNS0zNC45NTgtNTEuMjc0LS45NTh2MTQzLjY1bC0xOTYuOTEgMTIwLjA2NHY1Mi43MTdsMTk4LjgyNy02NS40M3YxMDYuNjQ2bC00NS41MjkgMzUuOTQ0djQxLjY5NGw3MC45MjgtMjIuMDQ3IDcwLjkyNyAyMi4wNDd2LTQxLjY5NGwtNDYuMDA5LTM1Ljk0NHYtMTA2LjY0NnoiIGZpbGw9InBhcmFtKGZpbGwpIiBmaWxsLW9wYWNpdHk9InBhcmFtKGZpbGwtb3BhY2l0eSkiIHN0cm9rZT0icGFyYW0ob3V0bGluZSkiIHN0cm9rZS1vcGFjaXR5PSJwYXJhbShvdXRsaW5lLW9wYWNpdHkpIiBzdHJva2Utd2lkdGg9InBhcmFtKG91dGxpbmUtd2lkdGgpIi8+Cjwvc3ZnPgo="
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Civil terrestre (Mayor)",
+            "etiqueta": "Civil terrestre (Mayor)",
+            "activo": false,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#1F78B4",
+                "rgba": "rgba(31,120,180,1.00)",
+                "r": 31,
+                "g": 120,
+                "b": 180,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSvgMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "31,120,180,255,rgb:0.12156862745098039,0.47058823529411764,0.70588235294117652,1",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "size": "2.8",
+                    "outline_width": "0.4",
+                    "size_unit": "MM",
+                    "name": "background_square_rounded.svg"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#1F78B4",
+                    "rgba": "rgba(31,120,180,1.00)",
+                    "r": 31,
+                    "g": 120,
+                    "b": 180,
+                    "a": 255
+                  },
+                  "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1ODAgNTgwIiBoZWlnaHQ9IjU4MCIgdmlld0JveD0iMCAwIDU4MCA1ODAiIHdpZHRoPSI1ODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im01NDIuOTM2IDQ4Ni4yNDJjMCAzMS4zMTItMjUuMzgzIDU2LjY5My01Ni42OTMgNTYuNjkzaC0zOTIuNDg2Yy0zMS4zMTEgMC01Ni42OTMtMjUuMzgyLTU2LjY5My01Ni42OTN2LTM5Mi40ODVjMC0zMS4zMTEgMjUuMzgyLTU2LjY5MyA1Ni42OTMtNTYuNjkzaDM5Mi40ODVjMzEuMzExIDAgNTYuNjkzIDI1LjM4MiA1Ni42OTMgNTYuNjkzdjM5Mi40ODV6IiBmaWxsPSJwYXJhbShmaWxsKSIgZmlsbC1vcGFjaXR5PSJwYXJhbShmaWxsLW9wYWNpdHkpIiBzdHJva2U9InBhcmFtKG91dGxpbmUpIiBzdHJva2Utb3BhY2l0eT0icGFyYW0ob3V0bGluZS1vcGFjaXR5KSIgc3Ryb2tlLXdpZHRoPSJwYXJhbShvdXRsaW5lLXdpZHRoKSIvPgo8L3N2Zz4K"
+                },
+                {
+                  "clase": "QgsSvgMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "255,255,255,255,rgb:1,1,1,1",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "size": "1.97647",
+                    "outline_width": "0.1",
+                    "size_unit": "MM",
+                    "name": "transport_airport.svg"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFFFFF",
+                    "rgba": "rgba(255,255,255,1.00)",
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 255
+                  },
+                  "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1ODAgNTgwIiBoZWlnaHQ9IjU4MCIgdmlld0JveD0iMCAwIDU4MCA1ODAiIHdpZHRoPSI1ODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im01MTYuNzQ5IDQwMC4zNjR2LTUyLjcxN2wtMTk5Ljc2NS0xMjAuMDYzdi0xNDIuNjkyYy4wMzQtMzQuOTU4LTUxLjIxNS0zNC45NTgtNTEuMjc0LS45NTh2MTQzLjY1bC0xOTYuOTEgMTIwLjA2NHY1Mi43MTdsMTk4LjgyNy02NS40M3YxMDYuNjQ2bC00NS41MjkgMzUuOTQ0djQxLjY5NGw3MC45MjgtMjIuMDQ3IDcwLjkyNyAyMi4wNDd2LTQxLjY5NGwtNDYuMDA5LTM1Ljk0NHYtMTA2LjY0NnoiIGZpbGw9InBhcmFtKGZpbGwpIiBmaWxsLW9wYWNpdHk9InBhcmFtKGZpbGwtb3BhY2l0eSkiIHN0cm9rZT0icGFyYW0ob3V0bGluZSkiIHN0cm9rZS1vcGFjaXR5PSJwYXJhbShvdXRsaW5lLW9wYWNpdHkpIiBzdHJva2Utd2lkdGg9InBhcmFtKG91dGxpbmUtd2lkdGgpIi8+Cjwvc3ZnPgo="
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "estaciones_RFN25",
+      "nombre_tabla": "estaciones_RFN25",
+      "grupo": "Mapa-Base/Puntos",
+      "tipo": "vector",
+      "visible_qgis": true,
+      "campos": [
+        "IDOD",
+        "TIPO_OD",
+        "Jurisdicc",
+        "Nombre"
+      ],
+      "simbologia": {
+        "tipo": "categorizedSymbol",
+        "campo": "TIPO_OD",
+        "categorias": [
+          {
+            "valor": "Estación de pasajeros",
+            "etiqueta": "Estación de pasajeros",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#4A4A4A",
+                "rgba": "rgba(74,74,74,1.00)",
+                "r": 74,
+                "g": 74,
+                "b": 74,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSvgMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "74,74,74,255,hsv:0,0,0.29019607843137257,1",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "size": "3",
+                    "outline_width": "0.4",
+                    "size_unit": "MM",
+                    "name": "background_square_rounded.svg"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#4A4A4A",
+                    "rgba": "rgba(74,74,74,1.00)",
+                    "r": 74,
+                    "g": 74,
+                    "b": 74,
+                    "a": 255
+                  },
+                  "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1ODAgNTgwIiBoZWlnaHQ9IjU4MCIgdmlld0JveD0iMCAwIDU4MCA1ODAiIHdpZHRoPSI1ODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im01NDIuOTM2IDQ4Ni4yNDJjMCAzMS4zMTItMjUuMzgzIDU2LjY5My01Ni42OTMgNTYuNjkzaC0zOTIuNDg2Yy0zMS4zMTEgMC01Ni42OTMtMjUuMzgyLTU2LjY5My01Ni42OTN2LTM5Mi40ODVjMC0zMS4zMTEgMjUuMzgyLTU2LjY5MyA1Ni42OTMtNTYuNjkzaDM5Mi40ODVjMzEuMzExIDAgNTYuNjkzIDI1LjM4MiA1Ni42OTMgNTYuNjkzdjM5Mi40ODV6IiBmaWxsPSJwYXJhbShmaWxsKSIgZmlsbC1vcGFjaXR5PSJwYXJhbShmaWxsLW9wYWNpdHkpIiBzdHJva2U9InBhcmFtKG91dGxpbmUpIiBzdHJva2Utb3BhY2l0eT0icGFyYW0ob3V0bGluZS1vcGFjaXR5KSIgc3Ryb2tlLXdpZHRoPSJwYXJhbShvdXRsaW5lLXdpZHRoKSIvPgo8L3N2Zz4K"
+                },
+                {
+                  "clase": "QgsSvgMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "255,255,255,255,hsv:0,0,1,1",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "size": "2.11764",
+                    "outline_width": "0.1",
+                    "size_unit": "MM",
+                    "name": "transport_train_station2.svg"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFFFFF",
+                    "rgba": "rgba(255,255,255,1.00)",
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 255
+                  },
+                  "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1ODAgNTgwIiBoZWlnaHQ9IjU4MCIgdmlld0JveD0iMCAwIDU4MCA1ODAiIHdpZHRoPSI1ODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im00MDMuNDA0IDQzNC42N2MyOC4zNDQtNC41NjcgNTYuNTY0LTM0LjExNyA1Ni41NjQtNzAuMTQ1di0yNjMuNDA1YzAtMzcuMTg4LTMxLjMwNS03MS4zMTktNzMuODA3LTcxLjMxOWwtOTAuNTY2LS4wNjktOTEuMjU3LjA2OWMtNDIuNTAzIDAtNzMuNzczIDM0LjEzMi03My43NzMgNzEuMzE5djI2My40MDVjMCAzNi4wMjcgMjguMTg3IDY1LjU3NyA1Ni41MyA3MC4xNDVsLTg1LjAwMiAxMjcuNTA1aDQ5LjA2Nmw2MC43ODEtODkuMTE1aDgzLjI0MS4wNjguMDY5IDgzLjI0bDYwLjc4MSA4OS4xMTVoNDkuMDY2em0tMTU2LjA0Ni0zNzcuNzc5YzAtNi40NjYgNS42MjctMTEuODg3IDEyLjA5NC0xMS44ODdoMzUuNzI5LjA2OC4wNjkgMzUuNzI5YzYuNDY3IDAgMTIuMDk0IDUuNDIgMTIuMDk0IDExLjg4N3YyMC45NGMwIDYuNDY2LTUuMzE5IDEyLjAyNC0xMi4wOTQgMTIuMDI0aC0zNS43MjktLjA2OS0uMDY4LTM1LjcyOWMtNi43NzQgMC0xMi4wOTQtNS41NTgtMTIuMDk0LTEyLjAyNHptLTQ0LjU3NCAzMzkuMzU1Yy0xNy44NjYgMC0zMi4zNDMtMTQuNDc4LTMyLjM0My0zMi4zNDIgMC0xNy44NjcgMTQuNDc3LTMyLjM0NCAzMi4zNDMtMzIuMzQ0IDE3Ljg2NiAwIDMyLjM3NyAxNC40NzcgMzIuMzc3IDMyLjM0NCAwIDE3Ljg2NS0xNC41MTIgMzIuMzQyLTMyLjM3NyAzMi4zNDJ6bTkyLjQ2Ni0xNzEuMTExaC0uMDY4LTg4LjM5Yy0yMC4zMjQgMC0zNi45NTMtMTMuOTc5LTM2Ljc2Ni0zNi43NjZ2LTQ3LjQwOGMwLTE5LjcwNyAxMi43NDctMzYuOTAzIDM2Ljc2Ni0zNi45MDNoODguMzkuMTM4IDg4LjM4OWMyNC4wMTkgMCAzNi43NjYgMTcuMTk2IDM2Ljc2NiAzNi45MDN2NDcuNDA4Yy4xODggMjIuNzg3LTE2LjQ0MiAzNi43NjYtMzYuNzY2IDM2Ljc2NmgtODguMzg5em01OS4zNjQgMTM4Ljc2OWMwLTE3Ljg2NyAxNC40NzctMzIuMzQ0IDMyLjM0Mi0zMi4zNDQgMTcuODY2IDAgMzIuMzQzIDE0LjQ3NyAzMi4zNDMgMzIuMzQ0IDAgMTcuODY0LTE0LjQ3NyAzMi4zNDItMzIuMzQzIDMyLjM0Mi0xNy44NjUgMC0zMi4zNDItMTQuNDc3LTMyLjM0Mi0zMi4zNDJ6IiBmaWxsPSJwYXJhbShmaWxsKSIgZmlsbC1vcGFjaXR5PSJwYXJhbShmaWxsLW9wYWNpdHkpIiBzdHJva2U9InBhcmFtKG91dGxpbmUpIiBzdHJva2Utb3BhY2l0eT0icGFyYW0ob3V0bGluZS1vcGFjaXR5KSIgc3Ryb2tlLXdpZHRoPSJwYXJhbShvdXRsaW5lLXdpZHRoKSIvPgo8L3N2Zz4K"
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Patio",
+            "etiqueta": "Patio",
+            "activo": false,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#6A9DEF",
+                "rgba": "rgba(106,157,239,1.00)",
+                "r": 106,
+                "g": 157,
+                "b": 239,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSvgMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "106,157,239,255,hsv:0.60277777777777775,0.55686274509803924,0.93725490196078431,1",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "size": "3",
+                    "outline_width": "0.4",
+                    "size_unit": "MM",
+                    "name": "background_square_rounded.svg"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#6A9DEF",
+                    "rgba": "rgba(106,157,239,1.00)",
+                    "r": 106,
+                    "g": 157,
+                    "b": 239,
+                    "a": 255
+                  },
+                  "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1ODAgNTgwIiBoZWlnaHQ9IjU4MCIgdmlld0JveD0iMCAwIDU4MCA1ODAiIHdpZHRoPSI1ODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im01NDIuOTM2IDQ4Ni4yNDJjMCAzMS4zMTItMjUuMzgzIDU2LjY5My01Ni42OTMgNTYuNjkzaC0zOTIuNDg2Yy0zMS4zMTEgMC01Ni42OTMtMjUuMzgyLTU2LjY5My01Ni42OTN2LTM5Mi40ODVjMC0zMS4zMTEgMjUuMzgyLTU2LjY5MyA1Ni42OTMtNTYuNjkzaDM5Mi40ODVjMzEuMzExIDAgNTYuNjkzIDI1LjM4MiA1Ni42OTMgNTYuNjkzdjM5Mi40ODV6IiBmaWxsPSJwYXJhbShmaWxsKSIgZmlsbC1vcGFjaXR5PSJwYXJhbShmaWxsLW9wYWNpdHkpIiBzdHJva2U9InBhcmFtKG91dGxpbmUpIiBzdHJva2Utb3BhY2l0eT0icGFyYW0ob3V0bGluZS1vcGFjaXR5KSIgc3Ryb2tlLXdpZHRoPSJwYXJhbShvdXRsaW5lLXdpZHRoKSIvPgo8L3N2Zz4K"
+                },
+                {
+                  "clase": "QgsSvgMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "106,157,239,255,hsv:0.60277777777777775,0.55686274509803924,0.93725490196078431,1",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "size": "2.11764",
+                    "outline_width": "0.1",
+                    "size_unit": "MM",
+                    "name": "transport_train_station2.svg"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#6A9DEF",
+                    "rgba": "rgba(106,157,239,1.00)",
+                    "r": 106,
+                    "g": 157,
+                    "b": 239,
+                    "a": 255
+                  },
+                  "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1ODAgNTgwIiBoZWlnaHQ9IjU4MCIgdmlld0JveD0iMCAwIDU4MCA1ODAiIHdpZHRoPSI1ODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im00MDMuNDA0IDQzNC42N2MyOC4zNDQtNC41NjcgNTYuNTY0LTM0LjExNyA1Ni41NjQtNzAuMTQ1di0yNjMuNDA1YzAtMzcuMTg4LTMxLjMwNS03MS4zMTktNzMuODA3LTcxLjMxOWwtOTAuNTY2LS4wNjktOTEuMjU3LjA2OWMtNDIuNTAzIDAtNzMuNzczIDM0LjEzMi03My43NzMgNzEuMzE5djI2My40MDVjMCAzNi4wMjcgMjguMTg3IDY1LjU3NyA1Ni41MyA3MC4xNDVsLTg1LjAwMiAxMjcuNTA1aDQ5LjA2Nmw2MC43ODEtODkuMTE1aDgzLjI0MS4wNjguMDY5IDgzLjI0bDYwLjc4MSA4OS4xMTVoNDkuMDY2em0tMTU2LjA0Ni0zNzcuNzc5YzAtNi40NjYgNS42MjctMTEuODg3IDEyLjA5NC0xMS44ODdoMzUuNzI5LjA2OC4wNjkgMzUuNzI5YzYuNDY3IDAgMTIuMDk0IDUuNDIgMTIuMDk0IDExLjg4N3YyMC45NGMwIDYuNDY2LTUuMzE5IDEyLjAyNC0xMi4wOTQgMTIuMDI0aC0zNS43MjktLjA2OS0uMDY4LTM1LjcyOWMtNi43NzQgMC0xMi4wOTQtNS41NTgtMTIuMDk0LTEyLjAyNHptLTQ0LjU3NCAzMzkuMzU1Yy0xNy44NjYgMC0zMi4zNDMtMTQuNDc4LTMyLjM0My0zMi4zNDIgMC0xNy44NjcgMTQuNDc3LTMyLjM0NCAzMi4zNDMtMzIuMzQ0IDE3Ljg2NiAwIDMyLjM3NyAxNC40NzcgMzIuMzc3IDMyLjM0NCAwIDE3Ljg2NS0xNC41MTIgMzIuMzQyLTMyLjM3NyAzMi4zNDJ6bTkyLjQ2Ni0xNzEuMTExaC0uMDY4LTg4LjM5Yy0yMC4zMjQgMC0zNi45NTMtMTMuOTc5LTM2Ljc2Ni0zNi43NjZ2LTQ3LjQwOGMwLTE5LjcwNyAxMi43NDctMzYuOTAzIDM2Ljc2Ni0zNi45MDNoODguMzkuMTM4IDg4LjM4OWMyNC4wMTkgMCAzNi43NjYgMTcuMTk2IDM2Ljc2NiAzNi45MDN2NDcuNDA4Yy4xODggMjIuNzg3LTE2LjQ0MiAzNi43NjYtMzYuNzY2IDM2Ljc2NmgtODguMzg5em01OS4zNjQgMTM4Ljc2OWMwLTE3Ljg2NyAxNC40NzctMzIuMzQ0IDMyLjM0Mi0zMi4zNDQgMTcuODY2IDAgMzIuMzQzIDE0LjQ3NyAzMi4zNDMgMzIuMzQ0IDAgMTcuODY0LTE0LjQ3NyAzMi4zNDItMzIuMzQzIDMyLjM0Mi0xNy44NjUgMC0zMi4zNDItMTQuNDc3LTMyLjM0Mi0zMi4zNDJ6IiBmaWxsPSJwYXJhbShmaWxsKSIgZmlsbC1vcGFjaXR5PSJwYXJhbShmaWxsLW9wYWNpdHkpIiBzdHJva2U9InBhcmFtKG91dGxpbmUpIiBzdHJva2Utb3BhY2l0eT0icGFyYW0ob3V0bGluZS1vcGFjaXR5KSIgc3Ryb2tlLXdpZHRoPSJwYXJhbShvdXRsaW5lLXdpZHRoKSIvPgo8L3N2Zz4K"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "Loc_rur",
+      "nombre_tabla": "Loc_rur",
+      "grupo": "Mapa-Base/Puntos",
+      "tipo": "vector",
+      "visible_qgis": true,
+      "campos": [
+        "CVEGEO",
+        "NOM_MUN",
+        "NOMGEO",
+        "CVE_AGEB",
+        "POB1",
+        "POB8",
+        "POB12",
+        "POB24",
+        "POB42",
+        "POB84",
+        "POB125_R",
+        "POB126_R",
+        "POB127_R",
+        "POB128_R",
+        "POB129_R",
+        "OID"
+      ],
+      "simbologia": {
+        "tipo": "graduatedSymbol",
+        "campo": "POB1",
+        "rangos": [
+          {
+            "etiqueta": "1 - 50",
+            "valor_min": 1.0,
+            "valor_max": 50.0,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 0.7,
+              "color": {
+                "hex": "#FFF5F0",
+                "rgba": "rgba(255,245,240,1.00)",
+                "r": 255,
+                "g": 245,
+                "b": 240,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "255,245,240,255,rgb:1,0.96078431372549022,0.94117647058823528,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "2",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFF5F0",
+                    "rgba": "rgba(255,245,240,1.00)",
+                    "r": 255,
+                    "g": 245,
+                    "b": 240,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "50 - 100",
+            "valor_min": 50.0,
+            "valor_max": 100.0,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 0.7,
+              "color": {
+                "hex": "#FCA486",
+                "rgba": "rgba(252,164,134,1.00)",
+                "r": 252,
+                "g": 164,
+                "b": 134,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "252,164,134,255,rgb:0.9882352941176471,0.64263370717936985,0.52739757381551844,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "1",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FCA486",
+                    "rgba": "rgba(252,164,134,1.00)",
+                    "r": 252,
+                    "g": 164,
+                    "b": 134,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "100 - 500",
+            "valor_min": 100.0,
+            "valor_max": 500.0,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 0.7,
+              "color": {
+                "hex": "#EA372A",
+                "rgba": "rgba(234,55,42,1.00)",
+                "r": 234,
+                "g": 55,
+                "b": 42,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "234,55,42,255,rgb:0.91915770199130231,0.21377889677271686,0.1650110627908751,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "0.6",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#EA372A",
+                    "rgba": "rgba(234,55,42,1.00)",
+                    "r": 234,
+                    "g": 55,
+                    "b": 42,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "500 - 2416",
+            "valor_min": 500.0,
+            "valor_max": 2416.0,
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 0.7,
+              "color": {
+                "hex": "#67000D",
+                "rgba": "rgba(103,0,13,1.00)",
+                "r": 103,
+                "g": 0,
+                "b": 13,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleMarkerSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "103,0,13,255,rgb:0.40392156862745099,0,0.05098039215686274,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "size": "0.8",
+                    "outline_width": "0",
+                    "size_unit": "MM",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#67000D",
+                    "rgba": "rgba(103,0,13,1.00)",
+                    "r": 103,
+                    "g": 0,
+                    "b": 13,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "RFN_2024",
+      "nombre_tabla": "RFN_2024",
+      "grupo": "Mapa-Base/Líneas",
+      "tipo": "vector",
+      "visible_qgis": true,
+      "campos": [
+        "LINEA",
+        "SERVICIO",
+        "ID",
+        "ENTIDAD",
+        "CNDICON",
+        "VIA",
+        "LONG"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 0.8,
+          "color": {
+            "hex": "#000000",
+            "rgba": "rgba(0,0,0,1.00)",
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "0,0,0,255,rgb:0,0,0,1",
+                "line_width": "0.15",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#000000",
+                "rgba": "rgba(0,0,0,1.00)",
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsMarkerLineSymbolLayer",
+              "enabled": true,
+              "props": {},
+              "alertas": [],
+              "sub_simbolo": {
+                "tipo_geometria": 0,
+                "opacidad": 1.0,
+                "color": {
+                  "hex": "#000000",
+                  "rgba": "rgba(0,0,0,1.00)",
+                  "r": 0,
+                  "g": 0,
+                  "b": 0,
+                  "a": 255
+                },
+                "capas_simbolo": [
+                  {
+                    "clase": "QgsSimpleMarkerSymbolLayer",
+                    "enabled": true,
+                    "props": {
+                      "color": "255,0,0,255,rgb:1,0,0,1",
+                      "outline_color": "0,0,0,255,rgb:0,0,0,1",
+                      "size": "0.6",
+                      "outline_width": "0.2",
+                      "size_unit": "MM",
+                      "outline_style": "solid"
+                    },
+                    "alertas": [],
+                    "color_parsed": {
+                      "hex": "#FF0000",
+                      "rgba": "rgba(255,0,0,1.00)",
+                      "r": 255,
+                      "g": 0,
+                      "b": 0,
+                      "a": 255
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "RNC_2025_SURESTE",
+      "nombre_tabla": "RNC_2025_SURESTE",
+      "grupo": "Mapa-Base/Líneas",
+      "tipo": "vector",
+      "visible_qgis": true,
+      "campos": [
+        "fid",
+        "ID_RED",
+        "TIPO_VIAL",
+        "NOMBRE",
+        "CODIGO",
+        "CONDICION",
+        "PEAJE",
+        "ADMINISTRA",
+        "VELOCIDAD",
+        "LONGITUD",
+        "ANCHO"
+      ],
+      "simbologia": {
+        "tipo": "categorizedSymbol",
+        "campo": "ADMINISTRA",
+        "categorias": [
+          {
+            "valor": "Federal",
+            "etiqueta": "Federal",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#E31A1C",
+                "rgba": "rgba(227,26,28,1.00)",
+                "r": 227,
+                "g": 26,
+                "b": 28,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleLineSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "line_color": "227,26,28,255,rgb:0.8901960784313725,0.10196078431372549,0.10980392156862745,1",
+                    "line_width": "0.4",
+                    "line_width_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#E31A1C",
+                    "rgba": "rgba(227,26,28,1.00)",
+                    "r": 227,
+                    "g": 26,
+                    "b": 28,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Estatal",
+            "etiqueta": "Estatal",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FF7F00",
+                "rgba": "rgba(255,127,0,1.00)",
+                "r": 255,
+                "g": 127,
+                "b": 0,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleLineSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "line_color": "255,255,255,255,rgb:1,1,1,1",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFFFFF",
+                    "rgba": "rgba(255,255,255,1.00)",
+                    "r": 255,
+                    "g": 255,
+                    "b": 255,
+                    "a": 255
+                  }
+                },
+                {
+                  "clase": "QgsSimpleLineSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "line_color": "255,127,0,255,rgb:1,0.49803921568627452,0,1",
+                    "line_width": "0.210943",
+                    "line_width_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FF7F00",
+                    "rgba": "rgba(255,127,0,1.00)",
+                    "r": 255,
+                    "g": 127,
+                    "b": 0,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Municipal",
+            "etiqueta": "Municipal",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 0.5,
+              "color": {
+                "hex": "#FDBF6F",
+                "rgba": "rgba(253,191,111,1.00)",
+                "r": 253,
+                "g": 191,
+                "b": 111,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleLineSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "line_color": "253,191,111,255,rgb:0.99215686274509807,0.74901960784313726,0.43529411764705883,1",
+                    "line_width": "0.1",
+                    "line_width_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FDBF6F",
+                    "rgba": "rgba(253,191,111,1.00)",
+                    "r": 253,
+                    "g": 191,
+                    "b": 111,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "N/A",
+            "etiqueta": "N/A",
+            "activo": false,
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 0.3,
+              "color": {
+                "hex": "#FDBF6F",
+                "rgba": "rgba(253,191,111,1.00)",
+                "r": 253,
+                "g": 191,
+                "b": 111,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleLineSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "line_color": "253,191,111,255,rgb:0.99215686274509807,0.74901960784313726,0.43529411764705883,1",
+                    "line_width": "0.15",
+                    "line_width_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FDBF6F",
+                    "rgba": "rgba(253,191,111,1.00)",
+                    "r": 253,
+                    "g": 191,
+                    "b": 111,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "N/D",
+            "etiqueta": "N/D",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 0.3,
+              "color": {
+                "hex": "#FDBF6F",
+                "rgba": "rgba(253,191,111,1.00)",
+                "r": 253,
+                "g": 191,
+                "b": 111,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleLineSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "line_color": "253,191,111,255,rgb:0.99215686274509807,0.74901960784313726,0.43529411764705883,1",
+                    "line_width": "0.15",
+                    "line_width_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FDBF6F",
+                    "rgba": "rgba(253,191,111,1.00)",
+                    "r": 253,
+                    "g": 191,
+                    "b": 111,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Otro",
+            "etiqueta": "Otro",
+            "activo": false,
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 0.3,
+              "color": {
+                "hex": "#FDBF6F",
+                "rgba": "rgba(253,191,111,1.00)",
+                "r": 253,
+                "g": 191,
+                "b": 111,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleLineSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "line_color": "253,191,111,255,rgb:0.99215686274509807,0.74901960784313726,0.43529411764705883,1",
+                    "line_width": "0.15",
+                    "line_width_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FDBF6F",
+                    "rgba": "rgba(253,191,111,1.00)",
+                    "r": 253,
+                    "g": 191,
+                    "b": 111,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Particular",
+            "etiqueta": "Particular",
+            "activo": false,
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 0.3,
+              "color": {
+                "hex": "#FDBF6F",
+                "rgba": "rgba(253,191,111,1.00)",
+                "r": 253,
+                "g": 191,
+                "b": 111,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleLineSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "line_color": "253,191,111,255,rgb:0.99215686274509807,0.74901960784313726,0.43529411764705883,1",
+                    "line_width": "0.15",
+                    "line_width_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FDBF6F",
+                    "rgba": "rgba(253,191,111,1.00)",
+                    "r": 253,
+                    "g": 191,
+                    "b": 111,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "None",
+            "etiqueta": "",
+            "activo": false,
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 0.3,
+              "color": {
+                "hex": "#FDBF6F",
+                "rgba": "rgba(253,191,111,1.00)",
+                "r": 253,
+                "g": 191,
+                "b": 111,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleLineSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "line_color": "253,191,111,255,rgb:0.99215686274509807,0.74901960784313726,0.43529411764705883,1",
+                    "line_width": "0.15",
+                    "line_width_unit": "MM"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FDBF6F",
+                    "rgba": "rgba(253,191,111,1.00)",
+                    "r": 253,
+                    "g": 191,
+                    "b": 111,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "corr_agua_2003",
+      "nombre_tabla": "corr_agua_2003",
+      "grupo": "Mapa-Base/Líneas",
+      "tipo": "vector",
+      "visible_qgis": true,
+      "campos": [
+        "gid",
+        "tipo",
+        "longitud"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#A6CEE3",
+            "rgba": "rgba(166,206,227,1.00)",
+            "r": 166,
+            "g": 206,
+            "b": 227,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "166,206,227,255,rgb:0.65098039215686276,0.80784313725490198,0.8901960784313725,1",
+                "line_width": "0.12",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#A6CEE3",
+                "rgba": "rgba(166,206,227,1.00)",
+                "r": 166,
+                "g": 206,
+                "b": 227,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "catp50s3gw",
+      "nombre_tabla": "catp50s3gw",
+      "grupo": "Mapa-Base/Polígonos",
+      "tipo": "vector",
+      "visible_qgis": true,
+      "campos": [
+        "objectid",
+        "geografico",
+        "nombre",
+        "condicion",
+        "codigo",
+        "cali_repr",
+        "carta",
+        "identifica",
+        "cov_",
+        "cov_id"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 0.4,
+          "color": {
+            "hex": "#D1D7D9",
+            "rgba": "rgba(209,215,217,1.00)",
+            "r": 209,
+            "g": 215,
+            "b": 217,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "209,215,217,255,rgb:0.81960784313725488,0.84313725490196079,0.85098039215686272,1",
+                "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                "outline_width": "0.26",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#D1D7D9",
+                "rgba": "rgba(209,215,217,1.00)",
+                "r": 209,
+                "g": 215,
+                "b": 217,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "Loc_urb",
+      "nombre_tabla": "Loc_urb",
+      "grupo": "Mapa-Base/Polígonos",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "CVEGEO",
+        "NOM_MUN",
+        "NOMGEO",
+        "POB1",
+        "POB8",
+        "POB12",
+        "POB24",
+        "POB42",
+        "POB84",
+        "POB125_R",
+        "POB126_R",
+        "POB127_R",
+        "POB128_R",
+        "POB129_R",
+        "OID"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#FFFB01",
+            "rgba": "rgba(255,251,1,1.00)",
+            "r": 255,
+            "g": 251,
+            "b": 1,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,251,1,255,hsv:0.16388888888888889,0.99607843137254903,1,1",
+                "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                "outline_width": "0.26",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FFFB01",
+                "rgba": "rgba(255,251,1,1.00)",
+                "r": 255,
+                "g": 251,
+                "b": 1,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "ANP_2024",
+      "nombre_tabla": "ANP_2024",
+      "grupo": "Mapa-Base/Polígonos",
+      "tipo": "vector",
+      "visible_qgis": true,
+      "campos": [
+        "ID_ANP",
+        "ID_DOF",
+        "NOMBRE",
+        "CAT_MANEJO",
+        "ESTADOS",
+        "SUPERFICIE",
+        "COV_ID",
+        "cita"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 0.3,
+          "color": {
+            "hex": "#33A02C",
+            "rgba": "rgba(51,160,44,1.00)",
+            "r": 51,
+            "g": 160,
+            "b": 44,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsLinePatternFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "51,160,44,255,rgb:0.20000000000000001,0.62745098039215685,0.17254901960784313,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#33A02C",
+                "rgba": "rgba(51,160,44,1.00)",
+                "r": 51,
+                "g": 160,
+                "b": 44,
+                "a": 255
+              },
+              "sub_simbolo": {
+                "tipo_geometria": 1,
+                "opacidad": 0.1,
+                "color": {
+                  "hex": "#33A02C",
+                  "rgba": "rgba(51,160,44,1.00)",
+                  "r": 51,
+                  "g": 160,
+                  "b": 44,
+                  "a": 255
+                },
+                "capas_simbolo": [
+                  {
+                    "clase": "QgsSimpleLineSymbolLayer",
+                    "enabled": true,
+                    "props": {
+                      "line_color": "51,160,44,255,rgb:0.20000000000000001,0.62745098039215685,0.17254901960784313,1",
+                      "line_width": "0.1",
+                      "line_width_unit": "MM"
+                    },
+                    "alertas": [],
+                    "color_parsed": {
+                      "hex": "#33A02C",
+                      "rgba": "rgba(51,160,44,1.00)",
+                      "r": 51,
+                      "g": 160,
+                      "b": 44,
+                      "a": 255
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "clase": "QgsLinePatternFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "51,160,44,255,rgb:0.20000000000000001,0.62745098039215685,0.17254901960784313,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#33A02C",
+                "rgba": "rgba(51,160,44,1.00)",
+                "r": 51,
+                "g": 160,
+                "b": 44,
+                "a": 255
+              },
+              "sub_simbolo": {
+                "tipo_geometria": 1,
+                "opacidad": 1.0,
+                "color": {
+                  "hex": "#33A02C",
+                  "rgba": "rgba(51,160,44,1.00)",
+                  "r": 51,
+                  "g": 160,
+                  "b": 44,
+                  "a": 255
+                },
+                "capas_simbolo": [
+                  {
+                    "clase": "QgsSimpleLineSymbolLayer",
+                    "enabled": true,
+                    "props": {
+                      "line_color": "51,160,44,255,rgb:0.20000000000000001,0.62745098039215685,0.17254901960784313,1",
+                      "line_width": "0.1",
+                      "line_width_unit": "MM"
+                    },
+                    "alertas": [],
+                    "color_parsed": {
+                      "hex": "#33A02C",
+                      "rgba": "rgba(51,160,44,1.00)",
+                      "r": 51,
+                      "g": 160,
+                      "b": 44,
+                      "a": 255
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "51,160,44,255,rgb:0.20000000000000001,0.62745098039215685,0.17254901960784313,1",
+                "line_width": "0.15",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#33A02C",
+                "rgba": "rgba(51,160,44,1.00)",
+                "r": 51,
+                "g": 160,
+                "b": 44,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "ZonasMetropolitanas",
+      "nombre_tabla": "ZonasMetropolitanas",
+      "grupo": "Mapa-Base/Polígonos",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "CVEGEO",
+        "CVE_ENT",
+        "CVE_MUN",
+        "NOMGEO",
+        "CVE_MET",
+        "NOM_MET",
+        "TIPO_MET"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 0.5,
+          "color": {
+            "hex": "#FDBF6F",
+            "rgba": "rgba(253,191,111,1.00)",
+            "r": 253,
+            "g": 191,
+            "b": 111,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "253,191,111,255,rgb:0.99215686274509807,0.74901960784313726,0.43529411764705883,1",
+                "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                "outline_width": "0.26",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FDBF6F",
+                "rgba": "rgba(253,191,111,1.00)",
+                "r": 253,
+                "g": 191,
+                "b": 111,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    }
+  ]
+}

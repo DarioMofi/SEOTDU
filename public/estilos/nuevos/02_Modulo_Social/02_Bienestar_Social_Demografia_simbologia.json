@@ -1,0 +1,785 @@
+{
+  "modulo": "Bienestar Social y Demografía",
+  "total_capas": 12,
+  "capas": [
+    {
+      "nombre": "C04_Centros_comunitarios_multiusos_rurales_OPMATPG_2023",
+      "nombre_tabla": "C04_Centros_comunitarios_multiusos_rurales_OPMATPG_2023",
+      "grupo": "POT/Bienestar_Social_Demografía/E3_Comunidades, hogar y bienestar",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "ubicación",
+        "región"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#704489",
+            "rgba": "rgba(112,68,137,1.00)",
+            "r": 112,
+            "g": 68,
+            "b": 137,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "240,240,240,0,rgb:0.94117647058823528,0.94117647058823528,0.94117647058823528,0",
+                "outline_color": "202,122,245,255,rgb:0.792156862745098,0.47843137254901963,0.96078431372549022,1",
+                "size": "16",
+                "outline_width": "0.1",
+                "size_unit": "Point",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#F0F0F0",
+                "rgba": "rgba(240,240,240,0.00)",
+                "r": 240,
+                "g": 240,
+                "b": 240,
+                "a": 0
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "240,240,240,0,rgb:0.94117647058823528,0.94117647058823528,0.94117647058823528,0",
+                "outline_color": "170,102,205,255,rgb:0.66666666666666663,0.40000000000000002,0.80392156862745101,1",
+                "size": "11",
+                "outline_width": "0.5",
+                "size_unit": "Point",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#F0F0F0",
+                "rgba": "rgba(240,240,240,0.00)",
+                "r": 240,
+                "g": 240,
+                "b": 240,
+                "a": 0
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "112,68,137,255,rgb:0.4392156862745098,0.26666666666666666,0.53725490196078429,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "6",
+                "outline_width": "0",
+                "size_unit": "Point",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#704489",
+                "rgba": "rgba(112,68,137,1.00)",
+                "r": 112,
+                "g": 68,
+                "b": 137,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Equipamientos_salud_OPMATPG_2023",
+      "nombre_tabla": "C04_Equipamientos_salud_OPMATPG_2023",
+      "grupo": "POT/Bienestar_Social_Demografía/E3_Comunidades, hogar y bienestar",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "UbicaciÃ³n"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#ACB0D3",
+            "rgba": "rgba(172,176,211,1.00)",
+            "r": 172,
+            "g": 176,
+            "b": 211,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsFontMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "172,176,211,255,rgb:0.67450980392156867,0.69019607843137254,0.82745098039215681,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "18",
+                "outline_width": "0",
+                "size_unit": "Point"
+              },
+              "alertas": [
+                "FUENTE_ESRI: 'ESRI Enviro Hazard Analysis' — no reproducible en web"
+              ],
+              "color_parsed": {
+                "hex": "#ACB0D3",
+                "rgba": "rgba(172,176,211,1.00)",
+                "r": 172,
+                "g": 176,
+                "b": 211,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsFontMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "85,26,139,255,rgb:0.33333333333333331,0.10196078431372549,0.54509803921568623,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "18",
+                "outline_width": "0",
+                "size_unit": "Point"
+              },
+              "alertas": [
+                "FUENTE_ESRI: 'ESRI Enviro Hazard Analysis' — no reproducible en web"
+              ],
+              "color_parsed": {
+                "hex": "#551A8B",
+                "rgba": "rgba(85,26,139,1.00)",
+                "r": 85,
+                "g": 26,
+                "b": 139,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsFontMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "85,26,139,255,rgb:0.33333333333333331,0.10196078431372549,0.54509803921568623,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "18",
+                "outline_width": "0",
+                "size_unit": "Point"
+              },
+              "alertas": [
+                "FUENTE_ESRI: 'ESRI Enviro Hazard Analysis' — no reproducible en web"
+              ],
+              "color_parsed": {
+                "hex": "#551A8B",
+                "rgba": "rgba(85,26,139,1.00)",
+                "r": 85,
+                "g": 26,
+                "b": 139,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Hospital_Gneral_Centenario_OPMATPG_2023",
+      "nombre_tabla": "C04_Hospital_Gneral_Centenario_OPMATPG_2023",
+      "grupo": "POT/Bienestar_Social_Demografía/E3_Comunidades, hogar y bienestar",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "Nombre"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#002673",
+            "rgba": "rgba(0,38,115,1.00)",
+            "r": 0,
+            "g": 38,
+            "b": 115,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsFontMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "0,38,115,255,rgb:0,0.14901960784313725,0.45098039215686275,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "24",
+                "outline_width": "0",
+                "size_unit": "Point"
+              },
+              "alertas": [
+                "FUENTE_ESRI: 'ESRI AMFM Electric' — no reproducible en web"
+              ],
+              "color_parsed": {
+                "hex": "#002673",
+                "rgba": "rgba(0,38,115,1.00)",
+                "r": 0,
+                "g": 38,
+                "b": 115,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Sustitución_materiales_viviendas_tradicionales_INEGI_2020_OPMATPG_2023",
+      "nombre_tabla": "C04_Sustitución_materiales_viviendas_tradicionales_INEGI_2020_OPMATPG_2023",
+      "grupo": "POT/Bienestar_Social_Demografía/E3_Comunidades, hogar y bienestar",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "NOM_ENT",
+        "NOM_MUN",
+        "NOMGEO",
+        "POB1",
+        "POB2",
+        "POB4",
+        "OID_1",
+        "layer",
+        "path"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#729B6F",
+            "rgba": "rgba(114,155,111,1.00)",
+            "r": 114,
+            "g": 155,
+            "b": 111,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "114,155,111,255,rgb:0.44705882352941179,0.60784313725490191,0.43529411764705883,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "2",
+                "outline_width": "0",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#729B6F",
+                "rgba": "rgba(114,155,111,1.00)",
+                "r": 114,
+                "g": 155,
+                "b": 111,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Sustitución_materiales_viviendas_tradicionales_localidades_INEGI_2020_OPMATPG_2023",
+      "nombre_tabla": "C04_Sustitución_materiales_viviendas_tradicionales_localidades_INEGI_2020_OPMATPG_2023",
+      "grupo": "POT/Bienestar_Social_Demografía/E3_Comunidades, hogar y bienestar",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "NOM_ENT",
+        "NOM_MUN",
+        "NOMGEO",
+        "POB1",
+        "POB2",
+        "POB4",
+        "OID_1",
+        "layer",
+        "path",
+        "BUFF_DIST",
+        "ORIG_FID"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#D69DBC",
+            "rgba": "rgba(214,157,188,1.00)",
+            "r": 214,
+            "g": 157,
+            "b": 188,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "214,157,188,255,rgb:0.83921568627450982,0.61568627450980395,0.73725490196078436,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "outline_width": "0.26",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#D69DBC",
+                "rgba": "rgba(214,157,188,1.00)",
+                "r": 214,
+                "g": 157,
+                "b": 188,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_EFPatrimonioInmble_SIC_2023",
+      "nombre_tabla": "C04_EFPatrimonioInmble_SIC_2023",
+      "grupo": "POT/Bienestar_Social_Demografía/06_PATRIMONIO",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "FolderPath"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#65000D",
+            "rgba": "rgba(101,0,13,1.00)",
+            "r": 101,
+            "g": 0,
+            "b": 13,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSvgMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "101,0,13,255,rgb:0.396078431372549,0,0.05098039215686274,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "3",
+                "outline_width": "0.4",
+                "size_unit": "MM",
+                "name": "background_square_rounded.svg"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#65000D",
+                "rgba": "rgba(101,0,13,1.00)",
+                "r": 101,
+                "g": 0,
+                "b": 13,
+                "a": 255
+              },
+              "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1ODAgNTgwIiBoZWlnaHQ9IjU4MCIgdmlld0JveD0iMCAwIDU4MCA1ODAiIHdpZHRoPSI1ODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im01NDIuOTM2IDQ4Ni4yNDJjMCAzMS4zMTItMjUuMzgzIDU2LjY5My01Ni42OTMgNTYuNjkzaC0zOTIuNDg2Yy0zMS4zMTEgMC01Ni42OTMtMjUuMzgyLTU2LjY5My01Ni42OTN2LTM5Mi40ODVjMC0zMS4zMTEgMjUuMzgyLTU2LjY5MyA1Ni42OTMtNTYuNjkzaDM5Mi40ODVjMzEuMzExIDAgNTYuNjkzIDI1LjM4MiA1Ni42OTMgNTYuNjkzdjM5Mi40ODV6IiBmaWxsPSJwYXJhbShmaWxsKSIgZmlsbC1vcGFjaXR5PSJwYXJhbShmaWxsLW9wYWNpdHkpIiBzdHJva2U9InBhcmFtKG91dGxpbmUpIiBzdHJva2Utb3BhY2l0eT0icGFyYW0ob3V0bGluZS1vcGFjaXR5KSIgc3Ryb2tlLXdpZHRoPSJwYXJhbShvdXRsaW5lLXdpZHRoKSIvPgo8L3N2Zz4K"
+            },
+            {
+              "clase": "QgsSvgMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,255,255,255,rgb:1,1,1,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "2.11765",
+                "outline_width": "0.1",
+                "size_unit": "MM",
+                "name": "transport_train_station2.svg"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FFFFFF",
+                "rgba": "rgba(255,255,255,1.00)",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              },
+              "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1ODAgNTgwIiBoZWlnaHQ9IjU4MCIgdmlld0JveD0iMCAwIDU4MCA1ODAiIHdpZHRoPSI1ODAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im00MDMuNDA0IDQzNC42N2MyOC4zNDQtNC41NjcgNTYuNTY0LTM0LjExNyA1Ni41NjQtNzAuMTQ1di0yNjMuNDA1YzAtMzcuMTg4LTMxLjMwNS03MS4zMTktNzMuODA3LTcxLjMxOWwtOTAuNTY2LS4wNjktOTEuMjU3LjA2OWMtNDIuNTAzIDAtNzMuNzczIDM0LjEzMi03My43NzMgNzEuMzE5djI2My40MDVjMCAzNi4wMjcgMjguMTg3IDY1LjU3NyA1Ni41MyA3MC4xNDVsLTg1LjAwMiAxMjcuNTA1aDQ5LjA2Nmw2MC43ODEtODkuMTE1aDgzLjI0MS4wNjguMDY5IDgzLjI0bDYwLjc4MSA4OS4xMTVoNDkuMDY2em0tMTU2LjA0Ni0zNzcuNzc5YzAtNi40NjYgNS42MjctMTEuODg3IDEyLjA5NC0xMS44ODdoMzUuNzI5LjA2OC4wNjkgMzUuNzI5YzYuNDY3IDAgMTIuMDk0IDUuNDIgMTIuMDk0IDExLjg4N3YyMC45NGMwIDYuNDY2LTUuMzE5IDEyLjAyNC0xMi4wOTQgMTIuMDI0aC0zNS43MjktLjA2OS0uMDY4LTM1LjcyOWMtNi43NzQgMC0xMi4wOTQtNS41NTgtMTIuMDk0LTEyLjAyNHptLTQ0LjU3NCAzMzkuMzU1Yy0xNy44NjYgMC0zMi4zNDMtMTQuNDc4LTMyLjM0My0zMi4zNDIgMC0xNy44NjcgMTQuNDc3LTMyLjM0NCAzMi4zNDMtMzIuMzQ0IDE3Ljg2NiAwIDMyLjM3NyAxNC40NzcgMzIuMzc3IDMyLjM0NCAwIDE3Ljg2NS0xNC41MTIgMzIuMzQyLTMyLjM3NyAzMi4zNDJ6bTkyLjQ2Ni0xNzEuMTExaC0uMDY4LTg4LjM5Yy0yMC4zMjQgMC0zNi45NTMtMTMuOTc5LTM2Ljc2Ni0zNi43NjZ2LTQ3LjQwOGMwLTE5LjcwNyAxMi43NDctMzYuOTAzIDM2Ljc2Ni0zNi45MDNoODguMzkuMTM4IDg4LjM4OWMyNC4wMTkgMCAzNi43NjYgMTcuMTk2IDM2Ljc2NiAzNi45MDN2NDcuNDA4Yy4xODggMjIuNzg3LTE2LjQ0MiAzNi43NjYtMzYuNzY2IDM2Ljc2NmgtODguMzg5em01OS4zNjQgMTM4Ljc2OWMwLTE3Ljg2NyAxNC40NzctMzIuMzQ0IDMyLjM0Mi0zMi4zNDQgMTcuODY2IDAgMzIuMzQzIDE0LjQ3NyAzMi4zNDMgMzIuMzQ0IDAgMTcuODY0LTE0LjQ3NyAzMi4zNDItMzIuMzQzIDMyLjM0Mi0xNy44NjUgMC0zMi4zNDItMTQuNDc3LTMyLjM0Mi0zMi4zNDJ6IiBmaWxsPSJwYXJhbShmaWxsKSIgZmlsbC1vcGFjaXR5PSJwYXJhbShmaWxsLW9wYWNpdHkpIiBzdHJva2U9InBhcmFtKG91dGxpbmUpIiBzdHJva2Utb3BhY2l0eT0icGFyYW0ob3V0bGluZS1vcGFjaXR5KSIgc3Ryb2tlLXdpZHRoPSJwYXJhbShvdXRsaW5lLXdpZHRoKSIvPgo8L3N2Zz4K"
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_GrupoEtnico_INPI_2020",
+      "nombre_tabla": "C04_GrupoEtnico_INPI_2020",
+      "grupo": "POT/Bienestar_Social_Demografía/06_PATRIMONIO",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#7D8B8F",
+            "rgba": "rgba(125,139,143,1.00)",
+            "r": 125,
+            "g": 139,
+            "b": 143,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "125,139,143,255,rgb:0.49019607843137253,0.54509803921568623,0.5607843137254902,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "2",
+                "outline_width": "0",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#7D8B8F",
+                "rgba": "rgba(125,139,143,1.00)",
+                "r": 125,
+                "g": 139,
+                "b": 143,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_PatrimonioInmaterial_SIC_2023",
+      "nombre_tabla": "C04_PatrimonioInmaterial_SIC_2023",
+      "grupo": "POT/Bienestar_Social_Demografía/06_PATRIMONIO",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "FolderPath"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#BEB297",
+            "rgba": "rgba(190,178,151,1.00)",
+            "r": 190,
+            "g": 178,
+            "b": 151,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "190,178,151,255,rgb:0.74509803921568629,0.69803921568627447,0.59215686274509804,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "2",
+                "outline_width": "0",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#BEB297",
+                "rgba": "rgba(190,178,151,1.00)",
+                "r": 190,
+                "g": 178,
+                "b": 151,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_PatrimonioInmaterialIdioma_OPMATPG_2023",
+      "nombre_tabla": "C04_PatrimonioInmaterialIdioma_OPMATPG_2023",
+      "grupo": "POT/Bienestar_Social_Demografía/06_PATRIMONIO",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "FolderPath"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#E5B636",
+            "rgba": "rgba(229,182,54,1.00)",
+            "r": 229,
+            "g": 182,
+            "b": 54,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "229,182,54,255,rgb:0.89803921568627454,0.71372549019607845,0.21176470588235294,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "2",
+                "outline_width": "0",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#E5B636",
+                "rgba": "rgba(229,182,54,1.00)",
+                "r": 229,
+                "g": 182,
+                "b": 54,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_PatrimonioInmueble_SIC_2023",
+      "nombre_tabla": "C04_PatrimonioInmueble_SIC_2023",
+      "grupo": "POT/Bienestar_Social_Demografía/06_PATRIMONIO",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "FolderPath"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#BECF50",
+            "rgba": "rgba(190,207,80,1.00)",
+            "r": 190,
+            "g": 207,
+            "b": 80,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "190,207,80,255,rgb:0.74509803921568629,0.81176470588235294,0.31372549019607843,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "2",
+                "outline_width": "0",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#BECF50",
+                "rgba": "rgba(190,207,80,1.00)",
+                "r": 190,
+                "g": 207,
+                "b": 80,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_ZonasArqueológicas_SIC_2023",
+      "nombre_tabla": "C04_ZonasArqueológicas_SIC_2023",
+      "grupo": "POT/Bienestar_Social_Demografía/06_PATRIMONIO",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "zona_arque",
+        "zona_arq_1",
+        "nom_mun",
+        "pagina_web",
+        "x",
+        "y",
+        "link_sic"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#FF9E17",
+            "rgba": "rgba(255,158,23,1.00)",
+            "r": 255,
+            "g": 158,
+            "b": 23,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,158,23,255,rgb:1,0.61960784313725492,0.09019607843137255,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "2",
+                "outline_width": "0",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FF9E17",
+                "rgba": "rgba(255,158,23,1.00)",
+                "r": 255,
+                "g": 158,
+                "b": 23,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_PobAfromexicana_INEGI_2020",
+      "nombre_tabla": "C04_PobAfromexicana_INEGI_2020",
+      "grupo": "POT/Bienestar_Social_Demografía/06_PATRIMONIO",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "CVE_ENT",
+        "CVE_MUN",
+        "NOMGEO",
+        "afro1",
+        "afro2",
+        "afro3",
+        "afro4",
+        "afro5",
+        "afro6",
+        "afro1_r",
+        "afro2_r",
+        "afro3_r",
+        "afro4_r",
+        "afro5_r",
+        "afro6_r"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#E77148",
+            "rgba": "rgba(231,113,72,1.00)",
+            "r": 231,
+            "g": 113,
+            "b": 72,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "231,113,72,255,rgb:0.90588235294117647,0.44313725490196076,0.28235294117647058,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "outline_width": "0.26",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#E77148",
+                "rgba": "rgba(231,113,72,1.00)",
+                "r": 231,
+                "g": 113,
+                "b": 72,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    }
+  ]
+}

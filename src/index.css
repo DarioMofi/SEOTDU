@@ -796,25 +796,27 @@ body:hover { scrollbar-width: thin; scrollbar-color: var(--c-beige-lt) transpare
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 6px;
   font-size: 12px;
   color: var(--c-text);
 }
 
-.map-legend__color {
-  width: 14px;
-  height: 14px;
-  border-radius: 3px;
+/* Caja de la muestra: el SVG que va dentro lo genera `toSwatchSvg` con el
+   símbolo real de QGIS, así que aquí no se decide ningún color ni borde. */
+.map-legend__swatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 16px;
   flex-shrink: 0;
-  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 /* ─── Layer Cards (Geovisor sidebar) ────────────────────────────────── */
 .layer-card {
-  padding: 12px;
+  padding: 9px 10px;
   border-radius: 8px;
   border: 1px solid #e5e7eb;
-  transition: all 0.15s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .layer-card:hover {
@@ -830,6 +832,21 @@ body:hover { scrollbar-width: thin; scrollbar-color: var(--c-beige-lt) transpare
 .layer-card--active:hover {
   border-color: var(--c-guinda);
   background: rgba(159, 34, 65, 0.04);
+}
+
+.layer-card--inactive {
+  animation: layer-descend 0.45s cubic-bezier(0.16, 1, 0.3, 1) ease-out;
+}
+
+@keyframes layer-descend {
+  0% {
+    transform: translateY(-6px);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* ─── Opacity Slider ────────────────────────────────────────────────── */

@@ -1,0 +1,728 @@
+{
+  "tipo": "grupo",
+  "nombre": "Normatividad_MOT",
+  "capas": [
+    {
+      "tipo": "grupo",
+      "nombre": "MOT-2023",
+      "capas": [
+        {
+          "tipo": "capa",
+          "nombre": "C04_Modelo_Ordenamiento_Territorial_OP_PG_2023_CP",
+          "id": "C04_Modelo_Ordenamiento_Territorial_OP_PG_2023_CP_bb712948_00c4_43b3_ac41_d064abd1ebeb",
+          "tipo_capa": "Vector",
+          "visible": true,
+          "simbologia": {
+            "tipo": "categorizedSymbol",
+            "campo_clasificacion": "\"POL_OT\"",
+            "categorias": [
+              {
+                "valor": "Densificación Urbana",
+                "etiqueta": "Densificación Urbana",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "168,0,0,255,rgb:0.6588235,0,0,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Mejoramiento urbano",
+                "etiqueta": "Mejoramiento urbano",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "201,69,8,255,rgb:0.7882353,0.2705882,0.0313725,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Crecimiento urbano PDU",
+                "etiqueta": "Crecimiento urbano PDU",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "237,161,19,255,rgb:0.9294118,0.6313725,0.0745098,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Reserva crecimiento TM",
+                "etiqueta": "Reserva crecimiento TM",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "245,202,12,255,rgb:0.9607843,0.7921569,0.0470588,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Regulación urbana",
+                "etiqueta": "Regulación urbana",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "255,255,0,255,rgb:1,1,0,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Aprovechamiento Agropecuario",
+                "etiqueta": "Aprovechamiento Agropecuario",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "123,237,0,255,rgb:0.4823529,0.9294118,0,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Aprovechamiento Sustentable",
+                "etiqueta": "Aprovechamiento Sustentable",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "0,219,0,255,rgb:0,0.8588235,0,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Recuperación/Corredor Ecológico",
+                "etiqueta": "Recuperación Corredor Ecológico",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "20,186,95,255,rgb:0.0784314,0.7294118,0.372549,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Conservación",
+                "etiqueta": "Conservación",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "32,153,143,255,rgb:0.1254902,0.6,0.5607843,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Protección",
+                "etiqueta": "Protección",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "22,103,138,255,rgb:0.0862745,0.4039216,0.5411765,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Área Natural Protegida",
+                "etiqueta": "Área Natural Protegida",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "11,44,122,255,rgb:0.0431373,0.172549,0.4784314,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "None",
+                "etiqueta": "<all other values>",
+                "renderizado": false,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "207,245,188,255,rgb:0.8117647,0.9607843,0.7372549,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "tipo_geometria": "Polygon",
+          "campos": [
+            "fid",
+            "OBJECTID",
+            "REGION",
+            "POL_OT",
+            "ESTR_1",
+            "LIN_ESTR1",
+            "ESTR_2",
+            "LIN_ESTR2",
+            "ACC_LE1A",
+            "ACC_LE1B",
+            "ACC_LE1C",
+            "ACC_LE2A",
+            "ACC_LE2B",
+            "AGT",
+            "Shape_Leng",
+            "Shape_Area",
+            "Area_Ha",
+            "Area_km2"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Modelo_Ordenamiento_Territorial_OP_PG_2023_CP copiar",
+          "id": "C04_Modelo_Ordenamiento_Territorial_OP_PG_2023_CP_77fc6235_6779_4e5e_b895_02a1c0812801",
+          "tipo_capa": "Vector",
+          "visible": true,
+          "simbologia": {
+            "tipo": "categorizedSymbol",
+            "campo_clasificacion": "\"POL_OT\"",
+            "categorias": [
+              {
+                "valor": "Densificación Urbana",
+                "etiqueta": "Densificación Urbana",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "168,0,0,255,rgb:0.6588235,0,0,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Mejoramiento urbano",
+                "etiqueta": "Mejoramiento urbano",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "201,69,8,255,rgb:0.7882353,0.2705882,0.0313725,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Crecimiento urbano PDU",
+                "etiqueta": "Crecimiento urbano PDU",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "237,161,19,255,rgb:0.9294118,0.6313725,0.0745098,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Reserva crecimiento TM",
+                "etiqueta": "Reserva crecimiento TM",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "245,202,12,255,rgb:0.9607843,0.7921569,0.0470588,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Regulación urbana",
+                "etiqueta": "Regulación urbana",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "255,255,0,255,rgb:1,1,0,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Aprovechamiento Agropecuario",
+                "etiqueta": "Aprovechamiento Agropecuario",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "123,237,0,255,rgb:0.4823529,0.9294118,0,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Aprovechamiento Sustentable",
+                "etiqueta": "Aprovechamiento Sustentable",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "0,219,0,255,rgb:0,0.8588235,0,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Recuperación/Corredor Ecológico",
+                "etiqueta": "Recuperación Corredor Ecológico",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "20,186,95,255,rgb:0.0784314,0.7294118,0.372549,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Conservación",
+                "etiqueta": "Conservación",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "32,153,143,255,rgb:0.1254902,0.6,0.5607843,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Protección",
+                "etiqueta": "Protección",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "22,103,138,255,rgb:0.0862745,0.4039216,0.5411765,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "Área Natural Protegida",
+                "etiqueta": "Área Natural Protegida",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "11,44,122,255,rgb:0.0431373,0.172549,0.4784314,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "None",
+                "etiqueta": "<all other values>",
+                "renderizado": false,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "207,245,188,255,rgb:0.8117647,0.9607843,0.7372549,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "tipo_geometria": "Polygon",
+          "campos": [
+            "fid",
+            "OBJECTID",
+            "REGION",
+            "POL_OT",
+            "ESTR_1",
+            "LIN_ESTR1",
+            "ESTR_2",
+            "LIN_ESTR2",
+            "ACC_LE1A",
+            "ACC_LE1B",
+            "ACC_LE1C",
+            "ACC_LE2A",
+            "ACC_LE2B",
+            "AGT",
+            "Shape_Leng",
+            "Shape_Area",
+            "Area_Ha",
+            "Area_km2"
+          ]
+        }
+      ]
+    }
+  ]
+}

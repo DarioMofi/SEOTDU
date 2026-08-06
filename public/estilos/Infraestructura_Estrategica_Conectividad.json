@@ -1,0 +1,2737 @@
+{
+  "tipo": "grupo",
+  "nombre": "Infraestructura_Estratégica_Conectividad",
+  "capas": [
+    {
+      "tipo": "grupo",
+      "nombre": "E4_Integración territorial, desarrollo urbano e industria",
+      "capas": [
+        {
+          "tipo": "capa",
+          "nombre": "C04_Ampliacion_red_electrica_OPMATPG_2023",
+          "id": "C04_Ampliacion_red_electrica_OPMATPG_2023_5f7f5198_5312_4829_95ad_9b9e4bafa75b",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "flat",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "round",
+                    "line_color": "168,56,0,255,rgb:0.6588235,0.2196078,0,1",
+                    "line_style": "solid",
+                    "line_width": "0",
+                    "line_width_unit": "Point",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                },
+                {
+                  "tipo": "QgsMarkerLineSymbolLayer",
+                  "propiedades": {
+                    "average_angle_length": "4",
+                    "average_angle_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "average_angle_unit": "MM",
+                    "interval": "15",
+                    "interval_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "interval_unit": "Point",
+                    "offset": "0",
+                    "offset_along_line": "0.5",
+                    "offset_along_line_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_along_line_unit": "Point",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "place_on_every_part": "True",
+                    "placements": "Interval",
+                    "ring_filter": "0",
+                    "rotate": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "id",
+            "nombre",
+            "localidad"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Construcción_centrales_y_subestaciones_eléctricas_OPMATPG_2023",
+          "id": "C04_Construcci_n_centrales_y_subestaciones_el_ctricas_OPMATPG_2023_158e45fa_ecda_4eaa_a328_8f6af27261b3",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "255,85,0,255,rgb:1,0.3333333,0,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "name": "star",
+                    "offset": "0,0.56999999999999995",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "no",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "11.7108",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "id",
+            "Ubicación"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Construcción_ciclovía_Hopelchén_OPMATPG_2023",
+          "id": "C04_Construcci_n_ciclov_a_Hopelch_n_OPMATPG_2023_0b0a4152_97e5_40b6_83bc_9378d92b630f",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "flat",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "round",
+                    "line_color": "0,168,132,255,rgb:0,0.6588235,0.5176471,1",
+                    "line_style": "solid",
+                    "line_width": "1",
+                    "line_width_unit": "Point",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                },
+                {
+                  "tipo": "QgsMarkerLineSymbolLayer",
+                  "propiedades": {
+                    "average_angle_length": "4",
+                    "average_angle_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "average_angle_unit": "MM",
+                    "interval": "33",
+                    "interval_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "interval_unit": "Point",
+                    "offset": "0",
+                    "offset_along_line": "1.5",
+                    "offset_along_line_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_along_line_unit": "Point",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "place_on_every_part": "True",
+                    "placements": "Interval",
+                    "ring_filter": "0",
+                    "rotate": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "id",
+            "Descrip"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Construcción_libramientos_carreteros_OPMATPG_2023",
+          "id": "C04_Construcci_n_libramientos_carreteros_OPMATPG_2023_1da2d6f6_43f4_4f90_817b_4b53fc0e2374",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "round",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "round",
+                    "line_color": "255,0,0,255,rgb:1,0,0,1",
+                    "line_style": "solid",
+                    "line_width": "3.5",
+                    "line_width_unit": "Point",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "id",
+            "nombre"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Construcción_PTAR_OPMATPG_2023",
+          "id": "C04_Construcci_n_PTAR_OPMATPG_2023_85a8951f_9152_4e3b_b75d_ed01b76d8c56",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsFontMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "chr": "`",
+                    "color": "255,255,255,255,rgb:1,1,1,1",
+                    "font": "ESRI Enviro Hazard Analysis",
+                    "font_style": "NULL",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "offset": "-2.5,-2.5",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "size": "18",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                },
+                {
+                  "tipo": "QgsFontMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "chr": "_",
+                    "color": "85,134,189,255,rgb:0.3333333,0.5254902,0.7411765,1",
+                    "font": "ESRI Enviro Hazard Analysis",
+                    "font_style": "NULL",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "offset": "0,-2.5",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "size": "18",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "id",
+            "Ubicación"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Estudio_de_ingenierías_basicas_para_transporte_de_carga_OPMATPG_2023",
+          "id": "C04_Estudio_de_ingenier_as_basicas_para_transporte_de_carga_OPMATPG_2023_693cd89c_78b2_4e7b_9238_ef1a0e6edf4f",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsFontMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "chr": "Ñ",
+                    "color": "255,255,255,255,rgb:1,1,1,1",
+                    "font": "ESRI Hazardous Materials",
+                    "font_style": "NULL",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "offset": "-1,-3",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "size": "22",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                },
+                {
+                  "tipo": "QgsFontMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "chr": "Ö",
+                    "color": "230,121,13,255,rgb:0.9019608,0.4745098,0.0509804,1",
+                    "font": "ESRI Hazardous Materials",
+                    "font_style": "NULL",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "offset": "-0.5,-3",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "size": "22",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "id",
+            "Descrip"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Estudio_de_preinversion_Tren_Ligero_OPMATPG_2023",
+          "id": "C04_Estudio_de_preinversion_Tren_Ligero_OPMATPG_2023_2dde3ef7_88f9_4a71_b9b8_031818ae0e0d",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsRasterMarkerSymbolLayer",
+                  "propiedades": {
+                    "alpha": "1",
+                    "angle": "0",
+                    "fixedAspectRatio": "0",
+                    "horizontal_anchor_point": "1",
+                    "imageFile": "base64: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",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "scale_method": "diameter",
+                    "size": "25",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "id",
+            "nombre",
+            "ubicación"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Fortalecimiento_energético_INEGI_2020",
+          "id": "C04_Fortalecimiento_energ_tico_INEGI_2020_94173416_16a0_49c5_b5ac_1652a411ba1a",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "0,38,115,255,rgb:0,0.1490196,0.4509804,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "name": "square",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "no",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "14.7272",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                },
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "255,255,255,255,rgb:1,1,1,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "name": "square",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "no",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "12.0495",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                },
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "0,38,115,255,rgb:0,0.1490196,0.4509804,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "name": "square",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "no",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "5.35535",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "CVEGEO",
+            "NOM_ENT",
+            "NOM_MUN",
+            "NOMGEO",
+            "POB1",
+            "POB2",
+            "POB4",
+            "OID",
+            "layer",
+            "path"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Industria_Planta_Biocombustible_OPMATPG_2023",
+          "id": "C04_Industria_Planta_Biocombustible_OPMATPG_2023_1b4b8095_4c53_4b6a_bbf2_ff6e95627243",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsFontMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "chr": "\"",
+                    "color": "255,239,164,255,rgb:1,0.9372549,0.6431373,1",
+                    "font": "ESRI Enviro Hazard Incident",
+                    "font_style": "NULL",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "offset": "-1.5,-2.5",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "size": "18",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                },
+                {
+                  "tipo": "QgsFontMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "chr": "#",
+                    "color": "0,0,0,255,rgb:0,0,0,1",
+                    "font": "ESRI Enviro Hazard Incident",
+                    "font_style": "NULL",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "offset": "-0.5,-2.5",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "size": "18",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "id",
+            "Nombre"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Manejo_integral_residuos_sólidos_INEGI_2022_OPMATPG_2023",
+          "id": "C04_Manejo_integral_residuos_s_lidos_INEGI_2022_OPMATPG_2023_0c4bed69_c760_4e08_9b8e_598cb15bb3cc",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsFontMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "chr": "Ã",
+                    "color": "56,168,0,255,rgb:0.2196078,0.6588235,0,1",
+                    "font": "ESRI Hazardous Materials",
+                    "font_style": "NULL",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "offset": "0,-4",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "size": "30",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "CVEGEO",
+            "CVE_ENT",
+            "CVE_MUN",
+            "NOMGEO"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Mejoramiento_conectividad_Corredor_Puebla-Progreso_OPMATPG_2023",
+          "id": "C04_Mejoramiento_conectividad_Corredor_Puebla_Progreso_OPMATPG_2023_29ff8a99_37fa_466b_bc13_a516a4762123",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsFontMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "chr": "/",
+                    "color": "245,122,122,255,rgb:0.9607843,0.4784314,0.4784314,1",
+                    "font": "ESRI Surveyor",
+                    "font_style": "NULL",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "offset": "0,-4",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "size": "28",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "id",
+            "nombre"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Parque_Industrial_Textil_OPMATPG_2023",
+          "id": "C04_Parque_Industrial_Textil_OPMATPG_2023_53d9eefc_b53d_438b_bbd9_aaeba20ac5dd",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsFontMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "chr": "X",
+                    "color": "168,0,0,255,rgb:0.6588235,0,0,1",
+                    "font": "ESRI IGL Font23",
+                    "font_style": "NULL",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "offset": "0,-3",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "size": "22",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                },
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "168,0,0,255,rgb:0.6588235,0,0,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "name": "octagon",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "no",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "14.9957",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                },
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "255,255,255,255,rgb:1,1,1,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "name": "octagon",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "no",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "8.17948",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                },
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "168,0,0,255,rgb:0.6588235,0,0,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "miter",
+                    "name": "octagon",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "Point",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "no",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "4.08974",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "Point",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "id",
+            "Nombre"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Programa_abastecimiento_agua_localidades_Tren_Maya_OPMATPG_2023",
+          "id": "C04_Programa_abastecimiento_agua_localidades_Tren_Maya_OPMATPG_2023_9f744af4_9ec8_48a0_8a06_29536471a0db",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleFillSymbolLayer",
+                  "propiedades": {
+                    "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "color": "190,207,80,255,rgb:0.745098,0.8117647,0.3137255,1",
+                    "joinstyle": "bevel",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "solid",
+                    "outline_width": "0.26",
+                    "outline_width_unit": "MM",
+                    "style": "solid"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Polygon",
+          "campos": [
+            "fid"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Transporte_fluvial_rÍo_Palizada_INEGI_2008",
+          "id": "C04_Transporte_fluvial_r_o_Palizada_INEGI_2008_45f2786b_cf1d_46a0_b7a4_bdf4000e7765",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleFillSymbolLayer",
+                  "propiedades": {
+                    "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "color": "190,210,255,255,rgb:0.745098,0.8235294,1,1",
+                    "joinstyle": "bevel",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "no",
+                    "outline_width": "0.26",
+                    "outline_width_unit": "MM",
+                    "style": "solid"
+                  }
+                },
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "round",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "round",
+                    "line_color": "68,79,137,255,rgb:0.2666667,0.3098039,0.5372549,1",
+                    "line_style": "solid",
+                    "line_width": "4",
+                    "line_width_unit": "Point",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Polygon",
+          "campos": [
+            "fid",
+            "NOMBRE",
+            "ORDEN",
+            "TIPO",
+            "CVE_ENT",
+            "NOMGEO",
+            "MacReg",
+            "ID_Geo_N"
+          ]
+        }
+      ]
+    },
+    {
+      "tipo": "grupo",
+      "nombre": "07_SUR",
+      "capas": [
+        {
+          "tipo": "capa",
+          "nombre": "C04_EAdmin1_INEGI_2023",
+          "id": "C04_EAdmin1_INEGI_2023_98751690_8a46_42b7_8b85_98f6309b3b18",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "229,182,54,255,rgb:0.8980392,0.7137255,0.2117647,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "bevel",
+                    "name": "circle",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "solid",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "2",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "MM",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "CVEGEO",
+            "CVE_MUN",
+            "GEOGRAFICO",
+            "AMBITO"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_EAdmin2_INEGI_2023",
+          "id": "C04_EAdmin2_INEGI_2023_938eddd9_d0cc_4f88_89e7_fb197005ded5",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "190,207,80,255,rgb:0.745098,0.8117647,0.3137255,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "bevel",
+                    "name": "circle",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "solid",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "2",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "MM",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "CVEGEO",
+            "CVE_MUN",
+            "GEOGRAFICO",
+            "NOMSERV",
+            "TIPO",
+            "AMBITO"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_EComercio_INEGI_2023",
+          "id": "C04_EComercio_INEGI_2023_a4751743_409e_4156_8fe6_934a04aae957",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "231,113,72,255,rgb:0.9058824,0.4431373,0.2823529,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "bevel",
+                    "name": "circle",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "solid",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "2",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "MM",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "CVEGEO",
+            "CVE_MUN",
+            "GEOGRAFICO",
+            "NOMSERV",
+            "AMBITO"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_EEMediaSuperior_INEE_OPMATPG_2023",
+          "id": "C04_EEMediaSuperior_INEE_OPMATPG_2023_1dea69ae_4e29_488a_8f7a_9b5323e1bf9a",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "114,155,111,255,rgb:0.4470588,0.6078431,0.4352941,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "bevel",
+                    "name": "circle",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "solid",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "2",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "MM",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "cve_mun",
+            "nom_mun",
+            "nom_plant"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_EESuperior_DENUE_OPMATPG_2023",
+          "id": "C04_EESuperior_DENUE_OPMATPG_2023_27b3bcf7_839e_4af7_b87d_d815fad2a938",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "164,113,88,255,rgb:0.6431373,0.4431373,0.345098,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "bevel",
+                    "name": "circle",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "solid",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "2",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "MM",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "nom_estab",
+            "cve_mun",
+            "municipio"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_ES1erNivel_CLUES_OPMATPG_2023",
+          "id": "C04_ES1erNivel_CLUES_OPMATPG_2023_190dc5b7_e72b_4678_9954_ec2c79e5ee7c",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "125,139,143,255,rgb:0.4901961,0.545098,0.5607843,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "bevel",
+                    "name": "circle",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "solid",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "2",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "MM",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "NOMBRE COM",
+            "CLUES"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_ES2doNivel_CLUES_OPMATPG_2023",
+          "id": "C04_ES2doNivel_CLUES_OPMATPG_2023_2d950819_8f97_4939_9760_a9fc7da5fd69",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "190,178,151,255,rgb:0.745098,0.6980392,0.5921569,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "bevel",
+                    "name": "circle",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "solid",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "2",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "MM",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "NOMBRE COM",
+            "CLUES"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_ES3erNivel_CLUES_OPMATPG_2023",
+          "id": "C04_ES3erNivel_CLUES_OPMATPG_2023_d4e73734_f9e8_4ed7_b7c3_2bf752b5de84",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 0,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleMarkerSymbolLayer",
+                  "propiedades": {
+                    "angle": "0",
+                    "cap_style": "square",
+                    "color": "229,182,54,255,rgb:0.8980392,0.7137255,0.2117647,1",
+                    "horizontal_anchor_point": "1",
+                    "joinstyle": "bevel",
+                    "name": "circle",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "solid",
+                    "outline_width": "0",
+                    "outline_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "outline_width_unit": "MM",
+                    "scale_method": "diameter",
+                    "size": "2",
+                    "size_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "size_unit": "MM",
+                    "vertical_anchor_point": "1"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Point",
+          "campos": [
+            "fid",
+            "NOMBRE COM",
+            "CLUES"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_DerechosDeViaGasoductos_CENEGAS_2019",
+          "id": "C04_DerechosDeViaGasoductos_CENEGAS_2019_0d299282_07ac_4ebc_8775_755134e7d71e",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "114,155,111,255,rgb:0.4470588,0.6078431,0.4352941,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "Nombre",
+            "Fecha_Oper",
+            "Empresa1",
+            "Inversion",
+            "Diametro",
+            "Longitud",
+            "Producto"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_DerechosDeViaLineasDeTransmisionElectrica_Geocomunes_2023",
+          "id": "C04_DerechosDeViaLineasDeTransmisionElectrica_Geocomunes_2023_dd470d4b_5d7e_487d_a4cb_4f3ecd00c6ad",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "164,113,88,255,rgb:0.6431373,0.4431373,0.345098,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "id",
+            "Potencia_k",
+            "Inversion",
+            "Tipo",
+            "Fase"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C55_RelacionRuralCdsOrden1_DFI_OPMATPG_2023",
+          "id": "C55_RelacionRuralCdsOrden1_DFI_OPMATPG_2023_a5887640_bf22_4238_adb9_12b538ab67ed",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "190,207,80,255,rgb:0.745098,0.8117647,0.3137255,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_EEAsignacionMediaSuperior_DFI_OPMATPG_2023",
+          "id": "C04_EEAsignacionMediaSuperior_DFI_OPMATPG_2023_37cc24a4_381d_4a5c_a6d5_700bf58af6d0",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "255,158,23,255,rgb:1,0.6196078,0.0901961,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_EEAsignacionSuperior_DFI_OPMATPG_2023",
+          "id": "C04_EEAsignacionSuperior_DFI_OPMATPG_2023_735baab9_9d92_407c_a2b7_c2e38f153d5f",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "141,90,153,255,rgb:0.5529412,0.3529412,0.6,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_ESAsignacion1erNivel_CLUES_OPMATPG_2023",
+          "id": "C04_ESAsignacion1erNivel_CLUES_OPMATPG_2023_3bb1d3c2_6b5c_4208_9382_a9f04d4e49e5",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "190,207,80,255,rgb:0.745098,0.8117647,0.3137255,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_ESAsignacion2doNivel_CLUES_OPMATPG_2023",
+          "id": "C04_ESAsignacion2doNivel_CLUES_OPMATPG_2023_903566f2_962d_4f71_a8b5_11fac91273ef",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "231,113,72,255,rgb:0.9058824,0.4431373,0.2823529,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C55_RelacionRuralCdsOrden3_DFI_OPMATPG_2023",
+          "id": "C55_RelacionRuralCdsOrden3_DFI_OPMATPG_2023_0083b30d_bc9f_49a3_86df_ed013e695eae",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "231,113,72,255,rgb:0.9058824,0.4431373,0.2823529,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C55_RelacionUrbanaCdsOrden1_DFI_OPMATPG_2023",
+          "id": "C55_RelacionUrbanaCdsOrden1_DFI_OPMATPG_2023_25987666_1a25_444c_bb69_ad52e2f0602c",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "255,158,23,255,rgb:1,0.6196078,0.0901961,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C55_RelacionUrbanaCdsOrden3_DFI_OPMATPG_2023",
+          "id": "C55_RelacionUrbanaCdsOrden3_DFI_OPMATPG_2023_effd79dc_394f_4f87_8ccb_260461a9cbe2",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "141,90,153,255,rgb:0.5529412,0.3529412,0.6,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C55_TPartRelacionRuralCdsOrden1_DFI_OPMATPG_2023",
+          "id": "C55_TPartRelacionRuralCdsOrden1_DFI_OPMATPG_2023_614d58c5_1999_4d1f_9535_78919f55027a",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "114,155,111,255,rgb:0.4470588,0.6078431,0.4352941,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C55_TPartRelacionUrbanaCdsOrden1_DFI_OPMATPG_2023",
+          "id": "C55_TPartRelacionUrbanaCdsOrden1_DFI_OPMATPG_2023_9373e27f_2191_46cc_bf26_bc21b8353aca",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "164,113,88,255,rgb:0.6431373,0.4431373,0.345098,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_RelacionUrbRuralEstTM_FONATUR_OPMATPG_2023",
+          "id": "C04_RelacionUrbRuralEstTM_FONATUR_OPMATPG_2023_857e1ddc_0781_4cfb_b49f_ce4bd14a5a58",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "125,139,143,255,rgb:0.4901961,0.545098,0.5607843,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_ESAsignacion3erNivel_CLUES_OPMATPG_2023",
+          "id": "C04_ESAsignacion3erNivel_CLUES_OPMATPG_2023_352198df_8a1b_4d1f_9605_14a3d08b5f90",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 1,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleLineSymbolLayer",
+                  "propiedades": {
+                    "align_dash_pattern": "0",
+                    "capstyle": "square",
+                    "customdash": "5;2",
+                    "customdash_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "customdash_unit": "MM",
+                    "dash_pattern_offset": "0",
+                    "dash_pattern_offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "dash_pattern_offset_unit": "MM",
+                    "draw_inside_polygon": "0",
+                    "joinstyle": "bevel",
+                    "line_color": "255,158,23,255,rgb:1,0.6196078,0.0901961,1",
+                    "line_style": "solid",
+                    "line_width": "0.26",
+                    "line_width_unit": "MM",
+                    "offset": "0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "ring_filter": "0",
+                    "trim_distance_end": "0",
+                    "trim_distance_end_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_end_unit": "MM",
+                    "trim_distance_start": "0",
+                    "trim_distance_start_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "trim_distance_start_unit": "MM",
+                    "tweak_dash_pattern_on_corners": "0",
+                    "use_custom_dash": "0",
+                    "width_map_unit_scale": "3x:0,0,0,0,0,0"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Line",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_ESCobertura1erNivel_CLUES_OPMATPG_2023",
+          "id": "C04_ESCobertura1erNivel_CLUES_OPMATPG_2023_5f329822_7b8e_4a4b_b638_f3b3c3ed055d",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "categorizedSymbol",
+            "campo_clasificacion": "Name",
+            "categorias": [
+              {
+                "valor": "0 - 1000",
+                "etiqueta": "0 - 1000",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "0,68,27,255,rgb:0,0.2666667,0.1058824,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "1000 - 2500",
+                "etiqueta": "1000 - 2500",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "61,167,90,255,rgb:0.239826,0.6545052,0.352636,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "2500 - 5000",
+                "etiqueta": "2500 - 5000",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "178,224,171,255,rgb:0.6963302,0.8783246,0.6710918,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "None",
+                "etiqueta": "",
+                "renderizado": false,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "247,252,245,255,rgb:0.9686275,0.9882353,0.9607843,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "tipo_geometria": "Polygon",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_ESCobertura2doNivel_CLUES_OPMATPG_2023",
+          "id": "C04_ESCobertura2doNivel_CLUES_OPMATPG_2023_dc57b321_4a2c_409f_b52c_a89f1b832ec8",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "categorizedSymbol",
+            "campo_clasificacion": "Name",
+            "categorias": [
+              {
+                "valor": "0 - 1000",
+                "etiqueta": "0 - 1000",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "0,68,27,255,rgb:0,0.2666667,0.1058824,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "1000 - 2500",
+                "etiqueta": "1000 - 2500",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "61,167,90,255,rgb:0.239826,0.6545052,0.352636,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "2500 - 5000",
+                "etiqueta": "2500 - 5000",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "178,224,171,255,rgb:0.6963302,0.8783246,0.6710918,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "None",
+                "etiqueta": "",
+                "renderizado": false,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "247,252,245,255,rgb:0.9686275,0.9882353,0.9607843,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "tipo_geometria": "Polygon",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_ESCobertura3erNivel_CLUES_OPMATPG_2023",
+          "id": "C04_ESCobertura3erNivel_CLUES_OPMATPG_2023_270901f9_fb94_4b31_8565_bbbdfe6446ef",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "categorizedSymbol",
+            "campo_clasificacion": "Name",
+            "categorias": [
+              {
+                "valor": "0 - 15000",
+                "etiqueta": "0 - 15000",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "0,68,27,255,rgb:0,0.2666667,0.1058824,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "15000 - 30000",
+                "etiqueta": "15000 - 30000",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "61,167,90,255,rgb:0.239826,0.6545052,0.352636,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "30000 - 60000",
+                "etiqueta": "30000 - 60000",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "178,224,171,255,rgb:0.6963302,0.8783246,0.6710918,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "valor": "None",
+                "etiqueta": "",
+                "renderizado": true,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "247,252,245,255,rgb:0.9686275,0.9882353,0.9607843,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "tipo_geometria": "Polygon",
+          "campos": [
+            "fid",
+            "Name",
+            "CVE_ENT",
+            "NOM_ENT"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_TelecomunicacionesVivienda_INEGI_2020",
+          "id": "C04_TelecomunicacionesVivienda_INEGI_2020_b7eb1acd_3973_4b06_b68b_747b1a564d04",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "singleSymbol",
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "capas_simbolo": [
+                {
+                  "tipo": "QgsSimpleFillSymbolLayer",
+                  "propiedades": {
+                    "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "color": "190,178,151,255,rgb:0.745098,0.6980392,0.5921569,1",
+                    "joinstyle": "bevel",
+                    "offset": "0,0",
+                    "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                    "offset_unit": "MM",
+                    "outline_color": "35,35,35,255,rgb:0.1372549,0.1372549,0.1372549,1",
+                    "outline_style": "solid",
+                    "outline_width": "0.26",
+                    "outline_width_unit": "MM",
+                    "style": "solid"
+                  }
+                }
+              ]
+            }
+          },
+          "tipo_geometria": "Polygon",
+          "campos": [
+            "fid",
+            "CVEGEO",
+            "NOMGEO",
+            "T_ViPartHa",
+            "Viv_tel_fi",
+            "Viv_celu",
+            "Viv_intern",
+            "P_ViTel_fi",
+            "P_viv_celu",
+            "P_viv_inte"
+          ]
+        },
+        {
+          "tipo": "capa",
+          "nombre": "C04_Vivienda_ITER_INEGI_2020",
+          "id": "C04_Vivienda_ITER_INEGI_2020_94e44c27_3c7c_4cde_98ad_9405dc1c71d2",
+          "tipo_capa": "Vector",
+          "visible": false,
+          "simbologia": {
+            "tipo": "graduatedSymbol",
+            "campo_clasificacion": "DENS_HAB",
+            "metodo_clasificacion": "Quantile",
+            "rangos": [
+              {
+                "etiqueta": "1 - 15",
+                "valor_min": 0.7431525632,
+                "valor_max": 15.462118519380015,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "255,255,255,255,rgb:1,1,1,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "etiqueta": "15 - 249",
+                "valor_min": 15.462118519380015,
+                "valor_max": 248.64261379732,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "255,191,191,255,rgb:1,0.7499962,0.7499962,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "etiqueta": "249 - 386",
+                "valor_min": 248.64261379732,
+                "valor_max": 386.12863322135996,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "255,128,128,255,rgb:1,0.5000076,0.5000076,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "etiqueta": "386 - 553",
+                "valor_min": 386.12863322135996,
+                "valor_max": 552.7031995064,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "255,64,64,255,rgb:1,0.2500038,0.2500038,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "etiqueta": "553 - 26341",
+                "valor_min": 552.7031995064,
+                "valor_max": 26340.6551702134,
+                "simbolo": {
+                  "tipo_geometria": 2,
+                  "opacidad": 1.0,
+                  "capas_simbolo": [
+                    {
+                      "tipo": "QgsSimpleFillSymbolLayer",
+                      "propiedades": {
+                        "border_width_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "color": "255,0,0,255,rgb:1,0,0,1",
+                        "joinstyle": "bevel",
+                        "offset": "0,0",
+                        "offset_map_unit_scale": "3x:0,0,0,0,0,0",
+                        "offset_unit": "MM",
+                        "outline_color": "35,35,35,0,rgb:0.1372549,0.1372549,0.1372549,0",
+                        "outline_style": "solid",
+                        "outline_width": "0.26",
+                        "outline_width_unit": "MM",
+                        "style": "solid"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "tipo_geometria": "Polygon",
+          "campos": [
+            "fid",
+            "CVEGEO",
+            "CVE_MUN",
+            "CVE_LOC",
+            "NOMGEO",
+            "AMBITO",
+            "km2",
+            "NOM_MUN",
+            "NOM_LOC",
+            "AMBITO_1",
+            "POBTOT",
+            "VIVTOT",
+            "TVIVHAB",
+            "TVIVPAR",
+            "VIVPAR_HAB",
+            "VIVPARH_CV",
+            "TVIVPARHAB",
+            "VIVPAR_DES",
+            "VIVPAR_UT",
+            "OCUPVIVPAR",
+            "PROM_OCUP",
+            "PRO_OCUP_C",
+            "VPH_PISODT",
+            "VPH_PISOTI",
+            "VPH_1DOR",
+            "VPH_2YMASD",
+            "VPH_1CUART",
+            "VPH_2CUART",
+            "VPH_3YMASC",
+            "VPH_C_ELEC",
+            "VPH_S_ELEC",
+            "VPH_AGUADV",
+            "VPH_AEASP",
+            "VPH_AGUAFV",
+            "VPH_TINACO",
+            "VPH_CISTER",
+            "VPH_EXCSA",
+            "VPH_LETR",
+            "VPH_DRENAJ",
+            "VPH_NODREN",
+            "VPH_C_SERV",
+            "VPH_NDEAED",
+            "VPH_DSADMA",
+            "VPH_NDACMM",
+            "VPH_SNBIEN",
+            "VPH_REFRI",
+            "VPH_LAVAD",
+            "VPH_HMICRO",
+            "VPH_AUTOM",
+            "VPH_MOTO",
+            "VPH_BICI",
+            "VPH_RADIO",
+            "VPH_TV",
+            "VPH_PC",
+            "VPH_TELEF",
+            "VPH_CEL",
+            "VPH_INTER",
+            "VPH_STVP",
+            "VPH_SPMVPI",
+            "VPH_CVJ",
+            "VPH_SINRTV",
+            "VPH_SINLTC",
+            "VPH_SINCIN",
+            "VPH_SINTIC",
+            "DENS_HAB"
+          ]
+        }
+      ]
+    }
+  ]
+}

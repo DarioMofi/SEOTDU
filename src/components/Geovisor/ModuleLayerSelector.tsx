@@ -8,6 +8,13 @@ interface Layer {
   isFixed?: boolean
 }
 
+/** Varias capas que el menú maneja como una sola entrada. */
+interface LayerGroup {
+  id: string
+  label: string
+  layers: string[]
+}
+
 interface Module {
   id: string
   title: string
@@ -16,6 +23,21 @@ interface Module {
   layers: Layer[]
   /** Capas que se encienden al activar el módulo. Sin lista, se encienden todas. */
   defaultLayers?: string[]
+  groups?: LayerGroup[]
+}
+
+/**
+ * Una fila del menú: o una capa suelta, o un grupo. El resto del componente
+ * trabaja contra esto y no contra capas, así que un grupo se prende, se apaga,
+ * se reordena y cambia de opacidad como una unidad.
+ */
+interface Entrada {
+  key: string
+  label: string
+  desc: string
+  /** Capas que controla. Una sola cuando no es grupo. */
+  ids: string[]
+  esGrupo: boolean
 }
 
 import { appConfig } from '../../config/appConfig'
@@ -167,6 +189,55 @@ function extractLayersFromStyle(node: StyleNode, availableLayers: string[] = [])
   return result
 }
 
+interface ModuleConfig {
+  stylesFrom?: string[]
+  defaultLayers?: string[]
+  groups?: LayerGroup[]
+}
+
+/**
+ * Reacomoda `ids` para que las capas de un mismo grupo queden contiguas, en la
+ * posición de la primera de ellas.
+ *
+ * Hace falta porque el grupo es una sola fila del menú: si sus capas siguieran
+ * dispersas en la pila, las flechas de orden no tendrían un significado claro.
+ * El bloque hereda la prioridad más alta que tenía cualquiera de sus capas y
+ * conserva el orden relativo del árbol de QGIS, así que lo único que cambia es
+ * que las capas del grupo se juntan.
+ */
+function agruparContiguas(ids: string[], groups: LayerGroup[] = []): string[] {
+  if (groups.length === 0) return ids
+
+  const grupoDe = new Map<string, LayerGroup>()
+  for (const g of groups) for (const id of g.layers) grupoDe.set(id, g)
+
+  const salida: string[] = []
+  const puestos = new Set<string>()
+  for (const id of ids) {
+    if (puestos.has(id)) continue
+    const grupo = grupoDe.get(id)
+    if (!grupo) {
+      salida.push(id)
+      puestos.add(id)
+      continue
+    }
+    for (const miembro of ids.filter((x) => grupoDe.get(x) === grupo)) {
+      salida.push(miembro)
+      puestos.add(miembro)
+    }
+  }
+  return salida
+}
+
+/** Lee un volcado en cualquiera de los dos formatos y devuelve sus capas con datos. */
+function leerEstilo(json: any, availableLayers: string[]): Layer[] {
+  return esFormatoNuevo(json)
+    ? extractLayersFromNewStyle(json, availableLayers)
+    : extractLayersFromStyle(json as StyleNode, availableLayers).filter(
+        (l) => availableLayers.length === 0 || availableLayers.includes(l.id)
+      )
+}
+
 interface Props {
   activeLayers: string[]
   onChangeLayers: (layers: string[]) => void
@@ -206,7 +277,7 @@ export default function ModuleLayerSelector({
    * escribió la configuración: la primera capa del árbol se dibuja encima.
    */
   const capasEncendidas = (modulo: Module): string[] => {
-    const ids = modulo.layers.map((l) => l.id)
+    const ids = agruparContiguas(modulo.layers.map((l) => l.id), modulo.groups)
     if (!modulo.defaultLayers) return ids
     const encendidas = modulo.defaultLayers
     return ids.filter((id) => encendidas.includes(id))
@@ -234,12 +305,28 @@ export default function ModuleLayerSelector({
             const res = await fetch(`/estilos/${modConfig.file}`)
             if (!res.ok) throw new Error('File not found')
             const json = await res.json()
-            const extractedLayers = esFormatoNuevo(json)
-              ? extractLayersFromNewStyle(json, availableLayers)
-              : extractLayersFromStyle(json as StyleNode, availableLayers).filter(
-                  l => availableLayers.length === 0 || availableLayers.includes(l.id)
-                )
-            
+            let extractedLayers = leerEstilo(json, availableLayers)
+
+            // `stylesFrom` deja que un volcado aporte el árbol y el orden de
+            // dibujo mientras otro conserva la simbología. Sirve para ampliar un
+            // módulo con capas nuevas sin perder el detalle de las que ya
+            // estaban: el volcado nuevo trae más capas, pero dejó de exportar la
+            // forma del marcador, el desplazamiento y el ángulo.
+            for (const archivo of (modConfig as ModuleConfig).stylesFrom ?? []) {
+              const alt = await fetch(`/estilos/${archivo}`)
+              if (!alt.ok) {
+                console.error(`No se pudo leer la simbología preferida ${archivo}`)
+                continue
+              }
+              const preferida = new Map(
+                leerEstilo(await alt.json(), availableLayers).map((l) => [l.id, l.simbologia])
+              )
+              extractedLayers = extractedLayers.map((l) =>
+                preferida.has(l.id) ? { ...l, simbologia: preferida.get(l.id) } : l
+              )
+            }
+
+
             extractedLayers.forEach(l => {
               if (l.simbologia) allStyles[l.id] = l.simbologia
               allLabels[l.id] = l.label
@@ -251,7 +338,8 @@ export default function ModuleLayerSelector({
               colorClass: modConfig.colorClass,
               icon: getModuleIcon(modConfig.icon),
               layers: extractedLayers,
-              defaultLayers: (modConfig as { defaultLayers?: string[] }).defaultLayers
+              defaultLayers: (modConfig as ModuleConfig).defaultLayers,
+              groups: (modConfig as ModuleConfig).groups
             }
           } catch (error) {
             console.error(`Error loading styles for ${modConfig.id}:`, error)
@@ -261,7 +349,8 @@ export default function ModuleLayerSelector({
               colorClass: modConfig.colorClass,
               icon: getModuleIcon(modConfig.icon),
               layers: [],
-              defaultLayers: (modConfig as { defaultLayers?: string[] }).defaultLayers
+              defaultLayers: (modConfig as ModuleConfig).defaultLayers,
+              groups: (modConfig as ModuleConfig).groups
             }
           }
         })
@@ -335,24 +424,46 @@ export default function ModuleLayerSelector({
     onChangeOrder(ids)
   }
 
-  const toggleLayer = (layerId: string) => {
-    if (activeLayers.includes(layerId)) {
-      onChangeLayers(activeLayers.filter((id) => id !== layerId))
-      onChangeOrder(layerOrder.filter((id) => id !== layerId))
+  /** Prende o apaga una entrada completa: un grupo viaja con todas sus capas. */
+  const toggleEntrada = (ids: string[]) => {
+    if (ids.some((id) => activeLayers.includes(id))) {
+      onChangeLayers(activeLayers.filter((id) => !ids.includes(id)))
+      onChangeOrder(layerOrder.filter((id) => !ids.includes(id)))
     } else {
-      onChangeLayers([...activeLayers, layerId])
-      onChangeOrder([...layerOrder, layerId])
+      onChangeLayers([...activeLayers, ...ids.filter((id) => !activeLayers.includes(id))])
+      onChangeOrder([...layerOrder, ...ids.filter((id) => !layerOrder.includes(id))])
     }
   }
 
-  const moveLayer = (layerId: string, dir: -1 | 1) => {
-    const idx = layerOrder.indexOf(layerId)
-    if (idx < 0) return
-    const newIdx = idx + dir
-    if (newIdx < 0 || newIdx >= layerOrder.length) return
-    const next = [...layerOrder];
-    [next[idx], next[newIdx]] = [next[newIdx], next[idx]]
-    onChangeOrder(next)
+  /** Aplica una opacidad a todas las capas de la entrada. */
+  const cambiarOpacidad = (ids: string[], valor: number) => {
+    ids.forEach((id) => onChangeOpacity(id, valor))
+  }
+
+  /**
+   * Sube o baja una entrada un lugar en el orden de dibujo. Los dos bloques
+   * involucrados se intercambian enteros, así que un grupo nunca se intercala
+   * con las capas de otra entrada.
+   */
+  const moveEntrada = (module: Module, entrada: Entrada, dir: -1 | 1) => {
+    const activas = getOrderedEntries(module).filter((e) =>
+      e.ids.some((id) => activeLayers.includes(id))
+    )
+    const idx = activas.findIndex((e) => e.key === entrada.key)
+    const vecino = activas[idx + dir]
+    if (idx < 0 || !vecino) return
+
+    const bloque = (e: Entrada) => layerOrder.filter((id) => e.ids.includes(id))
+    const arriba = dir === -1 ? bloque(vecino) : bloque(entrada)
+    const abajo = dir === -1 ? bloque(entrada) : bloque(vecino)
+    if (arriba.length === 0 || abajo.length === 0) return
+
+    // Los dos bloques se reinsertan intercambiados donde empezaba el de arriba.
+    const inicio = layerOrder.indexOf(arriba[0])
+    const resto = layerOrder.filter((id) => !arriba.includes(id) && !abajo.includes(id))
+    const antes = layerOrder.slice(0, inicio).filter((id) => resto.includes(id))
+    const despues = resto.filter((id) => !antes.includes(id))
+    onChangeOrder([...antes, ...abajo, ...arriba, ...despues])
   }
 
   // Obtener las capas del módulo expandido, ordenadas según layerOrder (activas primero)
@@ -363,6 +474,56 @@ export default function ModuleLayerSelector({
       if (!ordered.includes(id)) ordered.push(id)
     })
     return ordered.map((id) => moduleLayers.find((l) => l.id === id)!).filter(Boolean)
+  }
+
+  /**
+   * Las filas del menú del módulo. Un grupo ocupa el lugar de su capa más alta
+   * y sustituye a todas sus capas, que dejan de listarse por separado. Las
+   * `FIXED_LAYERS` siguen sin aparecer.
+   */
+  const getOrderedEntries = (module: Module): Entrada[] => {
+    const capas = getOrderedLayers(module.layers).filter((l) => !l.isFixed)
+    const grupos = module.groups ?? []
+    if (grupos.length === 0) {
+      return capas.map((l) => ({
+        key: l.id,
+        label: l.label,
+        desc: l.desc,
+        ids: [l.id],
+        esGrupo: false
+      }))
+    }
+
+    const grupoDe = new Map<string, LayerGroup>()
+    for (const g of grupos) for (const id of g.layers) grupoDe.set(id, g)
+
+    const entradas: Entrada[] = []
+    const emitidos = new Set<string>()
+    for (const capa of capas) {
+      const grupo = grupoDe.get(capa.id)
+      if (!grupo) {
+        entradas.push({
+          key: capa.id,
+          label: capa.label,
+          desc: capa.desc,
+          ids: [capa.id],
+          esGrupo: false
+        })
+        continue
+      }
+      if (emitidos.has(grupo.id)) continue
+      emitidos.add(grupo.id)
+      // Solo las capas del grupo que de verdad llegaron con datos.
+      const ids = capas.filter((l) => grupoDe.get(l.id) === grupo).map((l) => l.id)
+      entradas.push({
+        key: grupo.id,
+        label: grupo.label,
+        desc: `${ids.length} capas agrupadas`,
+        ids,
+        esGrupo: true
+      })
+    }
+    return entradas
   }
 
   const mapaBaseModule = modules.find(m => m.id === 'mapa_base')
@@ -423,20 +584,23 @@ export default function ModuleLayerSelector({
               {/* Capas del Módulo */}
               {isExpanded && (
                 <div className="border-t border-gray-100 p-2.5 flex flex-col gap-2 bg-white">
-                  {getOrderedLayers(module.layers).filter(layer => !layer.isFixed).map((layer) => {
-                    const isLayerActive = activeLayers.includes(layer.id)
-                    const opacity = layerOpacity[layer.id] ?? 1
-                    const activeInModule = module.layers.filter((l) => activeLayers.includes(l.id))
-                    const orderIdx = layerOrder.indexOf(layer.id)
-                    const canMoveUp = isLayerActive && orderIdx > 0 && layerOrder[orderIdx - 1] !== undefined && activeInModule.some((l) => l.id === layerOrder[orderIdx - 1])
-                    const canMoveDown = isLayerActive && orderIdx < layerOrder.length - 1 && activeInModule.some((l) => l.id === layerOrder[orderIdx + 1])
+                  {(() => {
+                    const entradas = getOrderedEntries(module)
+                    const activas = entradas.filter((e) => e.ids.some((id) => activeLayers.includes(id)))
+                    return entradas.map((entrada) => {
+                    const isLayerActive = entrada.ids.some((id) => activeLayers.includes(id))
+                    // Un grupo comparte una sola opacidad; la primera capa la representa.
+                    const opacity = layerOpacity[entrada.ids[0]] ?? 1
+                    const posActiva = activas.findIndex((e) => e.key === entrada.key)
+                    const canMoveUp = isLayerActive && posActiva > 0
+                    const canMoveDown = isLayerActive && posActiva >= 0 && posActiva < activas.length - 1
 
                     return (
                       <div
-                        key={layer.id}
+                        key={entrada.key}
                         ref={(el) => {
-                          if (el) itemRefs.current.set(layer.id, el)
-                          else itemRefs.current.delete(layer.id)
+                          if (el) itemRefs.current.set(entrada.key, el)
+                          else itemRefs.current.delete(entrada.key)
                         }}
                         className={`capas layer-card transition-colors duration-300 ease-in-out ${
                           isLayerActive ? 'layer-card--active' : 'layer-card--inactive opacity-90'
@@ -451,11 +615,11 @@ export default function ModuleLayerSelector({
                               type="button"
                               role="switch"
                               aria-checked={isLayerActive}
-                              onClick={() => toggleLayer(layer.id)}
+                              onClick={() => toggleEntrada(entrada.ids)}
                               className={`relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
                                 isLayerActive ? 'bg-[var(--c-guinda)]' : 'bg-gray-200'
                               }`}
-                              aria-label={isLayerActive ? `Desactivar ${layer.label}` : `Activar ${layer.label}`}
+                              aria-label={isLayerActive ? `Desactivar ${entrada.label}` : `Activar ${entrada.label}`}
                             >
                               <span
                                 aria-hidden="true"
@@ -465,11 +629,11 @@ export default function ModuleLayerSelector({
                               />
                             </button>
 
-                            {/* Flechas de orden (debajo del switch, solo si activa y >1 capa) */}
-                            {isLayerActive && activeInModule.length > 1 && (
+                            {/* Flechas de orden (debajo del switch, solo si activa y >1 entrada) */}
+                            {isLayerActive && activas.length > 1 && (
                               <div className="flex flex-col gap-0.5 transition-all duration-300">
                                 <button
-                                  onClick={(e) => { e.stopPropagation(); moveLayer(layer.id, -1) }}
+                                  onClick={(e) => { e.stopPropagation(); moveEntrada(module, entrada, -1) }}
                                   disabled={!canMoveUp}
                                   className={`w-7 h-5 rounded flex items-center justify-center transition-all cursor-pointer ${
                                     canMoveUp
@@ -484,7 +648,7 @@ export default function ModuleLayerSelector({
                                   </svg>
                                 </button>
                                 <button
-                                  onClick={(e) => { e.stopPropagation(); moveLayer(layer.id, 1) }}
+                                  onClick={(e) => { e.stopPropagation(); moveEntrada(module, entrada, 1) }}
                                   disabled={!canMoveDown}
                                   className={`w-7 h-5 rounded flex items-center justify-center transition-all cursor-pointer ${
                                     canMoveDown
@@ -505,14 +669,14 @@ export default function ModuleLayerSelector({
                           {/* Contenido derecho: label + desc + opacidad */}
                           <div className="flex-1 min-w-0">
                             <label
-                              htmlFor={`layer-${layer.id}`}
+                              htmlFor={`layer-${entrada.key}`}
                               className="text-xs font-semibold text-gray-700 cursor-pointer block"
-                              onClick={() => toggleLayer(layer.id)}
+                              onClick={() => toggleEntrada(entrada.ids)}
                             >
-                              {layer.label}
+                              {entrada.label}
                             </label>
                             <p className="text-[10px] text-gray-400 mt-0.5 leading-relaxed">
-                              {layer.desc}
+                              {entrada.desc}
                             </p>
 
                             {/* Opacidad (con animación suave de despliegue/colapso) */}
@@ -531,7 +695,7 @@ export default function ModuleLayerSelector({
                                   value={opacity}
                                   onChange={(e) => {
                                     e.stopPropagation()
-                                    onChangeOpacity(layer.id, parseFloat(e.target.value))
+                                    cambiarOpacidad(entrada.ids, parseFloat(e.target.value))
                                   }}
                                   onClick={(e) => e.stopPropagation()}
                                   className="layer-opacity-slider flex-1 cursor-pointer"
@@ -542,7 +706,8 @@ export default function ModuleLayerSelector({
                         </div>
                       </div>
                     )
-                  })}
+                    })
+                  })()}
                 </div>
               )}
             </div>

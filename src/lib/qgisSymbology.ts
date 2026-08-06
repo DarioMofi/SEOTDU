@@ -216,7 +216,24 @@ function basename(raw: unknown): string {
   return String(raw ?? '').split(/[\\/]/).pop() ?? ''
 }
 
-function translateSymbolLayer(capa: any): SymbolLayer | null {
+/**
+ * Color de trazo del propio símbolo, para las tramas que no traen el suyo.
+ *
+ * `QgsLinePatternFillSymbolLayer` delega su color a un sub-símbolo de línea que
+ * el volcado no exporta, y escribe `color: 'NULL'`. Sin esto la trama se
+ * descarta y el polígono se queda sin rayado. En la cartografía de origen la
+ * trama y el trazo del símbolo son del mismo color, así que se reutiliza.
+ */
+function strokeColorOfStack(capas: any[]): Rgba | null {
+  for (const capa of capas) {
+    const props: Props = capa?.props ?? capa?.propiedades ?? {}
+    const color = parseQgisColor(props.line_color) ?? parseQgisColor(props.outline_color)
+    if (color) return color
+  }
+  return null
+}
+
+function translateSymbolLayer(capa: any, patternFallback: Rgba | null = null): SymbolLayer | null {
   // El volcado nuevo renombró `tipo`→`clase` y `propiedades`→`props`, y añadió
   // `enabled`. Se aceptan ambos esquemas mientras la cartografía termina de
   // migrarse módulo por módulo; cuando los seis estén en el formato nuevo, los
@@ -241,7 +258,7 @@ function translateSymbolLayer(capa: any): SymbolLayer | null {
     }
 
     case 'QgsLinePatternFillSymbolLayer': {
-      const color = parseQgisColor(props.color)
+      const color = parseQgisColor(props.color) ?? patternFallback
       if (!color) return null
       return {
         kind: 'patternFill',
@@ -336,8 +353,10 @@ const GEOMETRY_BY_CODE: Record<string, GeometryKind> = {
 
 function buildSymbol(simbolo: any): ResolvedSymbol | null {
   if (!simbolo) return null
-  const layers = (simbolo.capas_simbolo ?? [])
-    .map(translateSymbolLayer)
+  const capas: any[] = simbolo.capas_simbolo ?? []
+  const patternFallback = strokeColorOfStack(capas)
+  const layers = capas
+    .map((capa) => translateSymbolLayer(capa, patternFallback))
     .filter((layer: SymbolLayer | null): layer is SymbolLayer => layer !== null)
   if (!layers.length) return null
   return {

@@ -29,6 +29,7 @@ export const appConfig = {
   LAYER_ALIASES: {
     'C04_Municipios': 'Límites Municipales',
     'C04_Loc_rur': 'Localidades Rurales',
+    'C04_Loc_urb': 'Localidades Urbanas',
     'C04_RFN_2024': 'Red Ferroviaria Nacional',
     'C04_ANP_2024': 'Áreas Naturales Protegidas',
     'C04_ZonasMetropolitanas': 'Zonas Metropolitanas'
@@ -48,7 +49,15 @@ export const appConfig = {
       id: 'mapa_base',
       title: 'Mapa Base',
       colorClass: 'text-slate-600 bg-slate-50 border-slate-200',
-      file: 'Mapa_Base.json',
+      // El árbol y el orden de dibujo salen del volcado nuevo, que trae cuatro
+      // capas que el viejo no tenía (`estatal`, `CESC`, `BUFER_ESTATAL`,
+      // `catp50s3gw`) y es superconjunto estricto del anterior.
+      file: 'nuevos/00_Mapa_Base/00_Mapa_Base_simbologia.json',
+      // Pero la simbología de las once capas que ya existían se sigue tomando
+      // del volcado viejo: el nuevo dejó de exportar la forma del marcador, el
+      // desplazamiento y el ángulo, y aquí eso se nota en los iconos de
+      // aeropuertos, puertos y estaciones y en la trama cruzada del ANP.
+      stylesFrom: ['Mapa_Base.json'],
       icon: 'mapa_base' // Manejaremos el render del SVG dinámico en el componente
     },
     {
@@ -56,7 +65,43 @@ export const appConfig = {
       title: 'Medio Ambiente',
       colorClass: 'text-green-600 bg-green-50 border-green-200',
       file: 'Monitor_Ambiental_Climatico.json',
-      icon: 'ambiental'
+      icon: 'ambiental',
+      // Grupos de capas: el menú las trata como una sola entrada para acotar la
+      // interacción. El switch y la opacidad del grupo aplican a todas sus
+      // capas a la vez, y las capas dejan de tener control propio.
+      //
+      // No son `FIXED_LAYERS`: se dibujan y se apagan con el grupo, no con el
+      // módulo. La leyenda no cambia — sigue saliendo la simbología de cada
+      // capa por separado, porque se calcula desde las capas dibujadas.
+      //
+      // Una capa que no esté aquí conserva su card individual.
+      groups: [
+        {
+          id: 'ambiental_programas',
+          label: 'Programas',
+          layers: [
+            'C04_Programa_Captacion_lluvia_Xpujil_INEGI_2020',
+            'C04_Programa_proteccion_tortugas_SEMABICCE_OPMATPG_2023',
+            'C04_Programa_saneamiento_cuencas_CONAGUA_2016'
+          ]
+        },
+        {
+          id: 'ambiental_anp',
+          label: 'Áreas Naturales Protegidas (ANP)',
+          layers: [
+            'C04_ANP_Río_Candelaria_OPMATPG_2023',
+            'C04_ANP_Estatal_BalamKin_BalamKu_CONABIO_2020'
+          ]
+        },
+        {
+          id: 'ambiental_corredores',
+          label: 'Propuestas de Corredores',
+          layers: [
+            'C04_Propuesta_Corredor_Palizada_SEMABICCE_2023',
+            'C04_Propuesta_Corredor_Balam_Beh_SEMABICCE_2023'
+          ]
+        }
+      ]
     },
     {
       id: 'social',
@@ -80,7 +125,36 @@ export const appConfig = {
         'C04_PatrimonioInmueble_SIC_2023',
         'C04_ZonasArqueológicas_SIC_2023'
       ],
-      icon: 'social'
+      icon: 'social',
+      // Ver el comentario de `groups` en el módulo ambiental.
+      groups: [
+        {
+          id: 'social_sustitucion',
+          label: 'Sustitución de materiales en viviendas tradicionales',
+          layers: [
+            'C04_Sustitución_materiales_viviendas_tradicionales_INEGI_2020_OPMATPG_2023',
+            'C04_Sustitución_materiales_viviendas_tradicionales_localidades_INEGI_2020_OPMATPG_2023'
+          ]
+        },
+        {
+          id: 'social_patrimonio',
+          label: 'Patrimoniales',
+          layers: [
+            'C04_PatrimonioInmueble_SIC_2023',
+            'C04_PatrimonioInmaterialIdioma_OPMATPG_2023',
+            'C04_EFPatrimonioInmble_SIC_2023',
+            'C04_PatrimonioInmaterial_SIC_2023'
+          ]
+        },
+        {
+          id: 'social_salud',
+          label: 'Equipamiento de salud',
+          layers: [
+            'C04_Equipamientos_salud_OPMATPG_2023',
+            'C04_Hospital_Gneral_Centenario_OPMATPG_2023'
+          ]
+        }
+      ]
     },
     {
       id: 'infraestructura',
@@ -115,6 +189,36 @@ export const appConfig = {
         'C04_Programa_abastecimiento_agua_localidades_Tren_Maya_OPMATPG_2023',
         'C04_DerechosDeViaGasoductos_CENEGAS_2019',
         'C04_Vivienda_ITER_INEGI_2020'
+      ],
+      // Ver el comentario de `groups` en el módulo ambiental.
+      groups: [
+        {
+          id: 'infra_construccion',
+          label: 'Construcción',
+          layers: [
+            'C04_Construcción_centrales_y_subestaciones_eléctricas_OPMATPG_2023',
+            'C04_Construcción_ciclovía_Hopelchén_OPMATPG_2023',
+            'C04_Construcción_libramientos_carreteros_OPMATPG_2023',
+            'C04_Construcción_PTAR_OPMATPG_2023'
+          ]
+        },
+        {
+          id: 'infra_estudios',
+          label: 'Estudios de campo',
+          layers: [
+            'C04_Estudio_de_ingenierías_basicas_para_transporte_de_carga_OPMATPG_2023',
+            'C04_Estudio_de_preinversion_Tren_Ligero_OPMATPG_2023'
+          ]
+        },
+        {
+          id: 'infra_electrica',
+          label: 'Eléctrica',
+          layers: [
+            'C04_DerechosDeViaLineasDeTransmisionElectrica_Geocomunes_2023',
+            'C04_Fortalecimiento_energético_INEGI_2020',
+            'C04_Ampliacion_red_electrica_OPMATPG_2023'
+          ]
+        }
       ]
     },
     {
@@ -122,7 +226,31 @@ export const appConfig = {
       title: 'Aptitud Territorial',
       colorClass: 'text-purple-600 bg-purple-50 border-purple-200',
       file: 'Aptitud_Territorial_Desarrollo_Economico.json',
-      icon: 'aptitud'
+      icon: 'aptitud',
+      // Solo el grupo E2. En QGIS el grupo 03_ECONOMICO está entero
+      // desmarcado, así que sus 7 capas no se encienden aunque lleguen datos.
+      defaultLayers: [
+        'C04_Centros_abasto_por_región_OPMATPG_2023',
+        'C04_Circuitos_turisticos_SICM_2020_OPMATPG_2023',
+        'C04_Construcción_centro_innovacion_tec_SDA_2023',
+        'C04_Construccion_infraestructura_hidroagricola_SDA_2023',
+        'C04_Desarrollo_energías_alternativas_OPMATPG_2023',
+        'C04_Equipamiento_apicola_DENUE_2020_OPMATPG_2023',
+        'C04_Infraestructura_produccion_arroz_SDA_2023',
+        'C04_Nucleos_lecheros_SDA_2023',
+        'C04_Programa_reconversión_productiva_agropecuaria_SDA_2023'
+      ],
+      // Ver el comentario de `groups` en el módulo ambiental.
+      groups: [
+        {
+          id: 'aptitud_construccion',
+          label: 'Construcción',
+          layers: [
+            'C04_Construcción_centro_innovacion_tec_SDA_2023',
+            'C04_Construccion_infraestructura_hidroagricola_SDA_2023'
+          ]
+        }
+      ]
     },
     {
       id: 'normatividad',

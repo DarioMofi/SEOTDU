@@ -273,9 +273,16 @@ const QGIS_GLYPH_LIBRARY: Record<string, (fill: string) => string> = {
   'ESRI Enviro Hazard Incident|#': (fill) =>
     `<text y="0.5" text-anchor="middle" dominant-baseline="central" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" fill="${fill}">B</text>`,
 
-  // Corredor de conectividad: anillo.
+  // Anillo. Lo comparten el corredor de conectividad (rosa) y los núcleos
+  // lecheros (verde); en ambas leyendas de QGIS se ve igual, lo que confirma
+  // que el glifo es el mismo y solo cambia el color.
   'ESRI Surveyor|/': (fill) =>
     `<circle r="8" fill="none" stroke="${fill}" stroke-width="3"/>`,
+
+  // Infraestructura de producción de arroz: anillo con cruz inscrita.
+  'ESRI Surveyor|>': (fill) =>
+    `<g fill="none" stroke="${fill}" stroke-width="2.2">` +
+    `<circle r="8"/><path d="M-8,0 H8 M0,-8 V8"/></g>`,
 
   // Parque industrial textil: la lanzadera se insinúa con un rombo alargado.
   'ESRI IGL Font23|X': (fill) =>

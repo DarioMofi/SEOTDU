@@ -35,43 +35,54 @@ Qué implica al diseñar algo nuevo:
 
 ### Autenticación (planeada, nada implementado aún)
 
-Habrá autenticación con **Supabase Auth** y cuatro tipos de usuario: uno
-público y tres institucionales con permisos distintos entre sí.
+Habrá autenticación con **Supabase Auth** y cuatro tipos de usuario: uno público
+y tres institucionales con permisos distintos entre sí. Qué puede hacer cada
+perfil institucional todavía no está definido, así que no lo asumas: pregúntalo
+antes de diseñar nada que dependa de ello.
 
-Qué puede hacer cada perfil institucional todavía no está definido, así que no
-lo asumas: pregúntalo antes de diseñar nada que dependa de ello.
-
-Hoy `LoginCard.tsx` es solo maqueta — su `handleSubmit` simula 1.4 s de carga y
-no llama a nada. No hay sesión, ni rutas protegidas, ni roles.
+Hoy `LoginCard.tsx` es solo maqueta — su `handleSubmit` no llama a nada. No hay
+sesión, ni rutas protegidas, ni roles.
 
 ## Pipeline de cartografía
 
 ```
-cartografia/*.gpkg  →  extract_gpkg.py  →  public/layers/*.geojson
-public/estilos/*.json  (simbología volcada desde QGIS)
+cartografia/*.gpkg             ─┐
+cartografia/pendientes/*.gpkg  ─┴→ extract_gpkg.py → public/layers/*.geojson
+                                                   → public/layers/available.json
+
+public/estilos/**/*.json  ← volcado de simbología de QGIS (no pasa por el script)
 ```
 
 - `cartografia/` está **fuera de `public/`** a propósito: Vite copia todo
-  `public/` al build, y los ~98 MB de GeoPackage se desplegarían a Vercel sin
-  que nadie los use (el navegador no lee SQLite). Está en `.gitignore`.
+  `public/` al build y cientos de MB de GeoPackage se desplegarían a Vercel sin
+  que nadie los use (el navegador no lee SQLite). Está en `.gitignore`, así que
+  **nada de ahí se recupera desde git**.
 - `public/layers/` **sí se versiona**: es lo que Vercel sirve.
-- `extract_gpkg.py` hace tres cosas además de convertir: reproyecta a EPSG:4326,
-  **repara el mojibake** del origen y recorta las coordenadas a 6 decimales.
-- Para regenerar: pega los `.gpkg` en `cartografia/`, borra `public/layers/` y
-  corre `python extract_gpkg.py`.
+- Los `.gpkg` de la raíz se vuelcan enteros; de `pendientes/` solo se toma lo
+  listado en `POOL_LAYERS`.
+- Además de convertir, `extract_gpkg.py` reproyecta a EPSG:4326, **repara el
+  mojibake** (no es cosmético: la simbología categorizada empareja el valor del
+  estilo contra el del dato, y si no coinciden la capa se pinta de un solo
+  color), recorta a 6 decimales y aplica `EXCLUIDAS` y `CRS_REAL`.
+- Regenerar: `rm -rf public/layers && python extract_gpkg.py`. Sin borrar nada es
+  idempotente, porque salta lo que ya existe.
+- **Para quitar una capa del visor, tocar los datos, no el estilo**:
+  `available.json` es la compuerta. El procedimiento y los defectos del origen
+  que el script tapa están en
+  [docs/pipeline-cartografia.md](docs/pipeline-cartografia.md).
 
-### Mojibake
+## Volcados de simbología: hay dos generaciones
 
-Los GPKG de origen traen texto con doble y triple codificación UTF-8 (`ó` →
-`Ã³` → `ÃƒÂ³`), con tres codecs distintos involucrados (`cp1252`, `latin-1` e
-`ISO-8859-14`). `normalize_encoding()` lo deshace iterando.
+`public/estilos/*.json` es el volcado **viejo** (árbol anidado por grupos);
+`public/estilos/nuevos/<módulo>/` es el **nuevo** (plano, con `nombre_tabla`).
+`ModuleLayerSelector` lee los dos y ninguno reemplaza al otro: el nuevo trae más
+capas pero **dejó de exportar la forma del marcador, el desplazamiento y el
+ángulo**, así que varios módulos se quedan en el viejo a propósito. `stylesFrom`
+deja que un volcado aporte el árbol y el orden mientras otro conserva la
+simbología; Mapa Base lo usa así.
 
-**Importa porque no es cosmético**: la simbología categorizada empareja el valor
-del estilo (que sí está limpio) contra el valor del dato. Si no coinciden, la
-capa entera se pinta de un solo color.
-
-Queda una cadena irreparable, `El ParaÃíso` en `C04_Loc_rur`: perdió bytes en
-origen. No inventarle un valor.
+En el repo **solo quedan los volcados que algún módulo carga**: migrar otro
+módulo al formato nuevo exige volver a exportarlo desde QGIS.
 
 ## Traducción de simbología QGIS → web
 
@@ -88,40 +99,21 @@ dibujaría el elemento (clase con `renderizado: false`, valor sin categoría,
 valor fuera de los rangos graduados). Quien llama debe omitirlo, no pintarlo.
 
 `resolveLegend(simbologia)` es su contraparte: lista **todas** las clases de la
-capa sin necesitar los datos, y aplica los mismos descartes, así que lo que el
+capa sin necesitar los datos y aplica los mismos descartes, así que lo que el
 mapa no pinta tampoco se lista. Su muestra la dibuja `toSwatchSvg`, que vive en
-el adaptador y no en el módulo puro porque las tramas de relleno inyectan
-`<pattern>` en el documento.
+el adaptador porque las tramas de relleno inyectan `<pattern>` en el documento.
 
 **Nunca una tabla de colores en paralelo.** La leyenda ya se rompió así una vez:
 sus ids escritos a mano dejaron de coincidir con los de las capas y el recuadro
 desapareció entero, sin error en consola.
 
-Detalles que ya están resueltos y conviene no romper:
-
-- Se recorre la **pila completa** de `capas_simbolo`, no solo la primera.
-- Unidades: `MM` × 3.7795 y `Point` × 1.3333 (96 dpi). Nunca × 3.
-- Los puntos se componen como SVG apilado en un `divIcon`; el caso de un solo
-  círculo simple usa `circleMarker` por rendimiento.
-- Los rangos graduados usan la semántica de QGIS: la primera clase incluye su
-  cota inferior, las demás la excluyen.
-
-### Limitaciones conocidas
-
-- **`QgsFontMarkerSymbolLayer`**: 8 capas usan glifos de fuentes propietarias de
-  ESRI que el navegador no tiene. Se dibuja un disco del color correcto como
-  sustituto. Solo se arregla cambiándolos a marcadores SVG en QGIS.
-- **Leaflet admite un relleno y un trazo por geometría.** Cuando QGIS apila
-  varias capas de relleno en un polígono, hay que aplanarlas. Esto no se
-  arregla con datos nuevos: se resolvería migrando a MapLibre.
-- El volcado de estilos **no incluye** `subSymbol` (usado por `MarkerLine` y
-  `FilledMarker`) ni el campo `enabled`. Se arregla en el script exportador,
-  no en los GeoPackage.
-- Los `QgsSvgMarkerSymbolLayer` guardan rutas absolutas del equipo autor. Los 4
-  SVG en uso están reimplementados a mano en `QGIS_SVG_LIBRARY`.
-
-Ver [docs/especificacion-entrega-cartografia.md](docs/especificacion-entrega-cartografia.md)
-para lo que hay que exigirle al equipo que entrega la cartografía.
+**Antes de tocar la simbología** lee
+[docs/simbologia-qgis-web.md](docs/simbologia-qgis-web.md): tiene las reglas ya
+resueltas que es fácil romper sin darse cuenta (conversión de unidades,
+composición de puntos, semántica de los rangos graduados) y las limitaciones
+conocidas de Leaflet y del volcado. Para lo que hay que exigirle al equipo que
+entrega la cartografía, ver
+[docs/especificacion-entrega-cartografia.md](docs/especificacion-entrega-cartografia.md).
 
 ## Modelo de módulos
 
@@ -138,19 +130,36 @@ la vez.
 - `activeModule` y `expandedModule` son estados distintos en
   `ModuleLayerSelector`. No volver a fusionarlos.
 
-Los estilos describen 108 capas pero los GeoPackage solo traen 49; el resto se
-descarta con `available.json`. No es un bug del frontend.
+Los volcados describen muchas más capas de las que traen los GeoPackage; el resto
+se descarta con `available.json`. No es un bug del frontend.
+
+### Grupos de capas
+
+`MODULES_CONFIG[].groups` convierte varias capas en **una sola fila** del menú,
+para acotar la interacción del usuario. El switch, la opacidad y las flechas
+actúan sobre el bloque completo y sus capas dejan de tener control propio.
+Agregar un grupo es solo declararlo: `ModuleLayerSelector` trabaja contra
+*entradas* (capa suelta o grupo), no contra capas.
+
+No es lo mismo que `FIXED_LAYERS`: un grupo sí aparece en el menú y sí se puede
+apagar.
+
+- La leyenda **no cambia**: sigue listando cada capa con su simbología, porque se
+  calcula desde las capas dibujadas y no desde el menú.
+- Un grupo se vuelve un **bloque contiguo** en el orden de dibujo, en la posición
+  de su capa más alta. Hace falta para que las flechas signifiquen algo, pero
+  desvía el orden del árbol de QGIS: antes de agrupar capas dispersas, comprueba
+  que la que sube no tape a las que quedan debajo (un relleno sólido sí; un
+  punto, una línea fina o una trama, no).
+- El contador del encabezado cuenta **capas dibujadas**, no filas: un módulo
+  puede decir «12 activas» y mostrar 8 filas.
 
 ## Mantener este archivo
 
-Este archivo es lo único que hereda una conversación nueva, así que envejecer mal
-le cuesta caro al proyecto.
-
-Cuando se cierre un cambio que altere cómo se entiende el proyecto —arquitectura,
-estructura de carpetas, el pipeline de cartografía, una convención o una
-limitación nueva— y el usuario indique que ya funciona o que pasa a otro tema,
-propón actualizarlo antes de seguir. El procedimiento está en la skill
-`actualizar-contexto`.
+Cada línea de aquí se paga en todas las sesiones siguientes, y un dato
+desactualizado hace más daño que una omisión. Cuando se cierre un cambio que
+altere cómo se entiende el proyecto y el usuario pase a otro tema, propón
+actualizarlo. El procedimiento está en la skill `actualizar-contexto`.
 
 ## Convenciones
 
@@ -171,3 +180,6 @@ propón actualizarlo antes de seguir. El procedimiento está en la skill
   `MapViewer` no dibuja una capa hasta conocer su simbología.
 - `pandas` 3.x usa el dtype `str`, no `object`. Filtrar por `object` en
   `extract_gpkg.py` descarta silenciosamente todas las columnas de texto.
+- Si una capa **no se ve y la consola está limpia**, sospecha del CRS antes que
+  del render: mira la primera coordenada de su GeoJSON. Ya pasó una vez con una
+  tabla que declaraba 4326 con coordenadas proyectadas (ver `CRS_REAL`).

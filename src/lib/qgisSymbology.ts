@@ -502,6 +502,44 @@ export function resolveLegend(simbologia: any): LegendEntry[] {
  * Devuelve `null` cuando QGIS no lo dibujaría: clase apagada, valor sin
  * categoría, o valor fuera de los rangos graduados.
  */
+/**
+ * Devuelve un resolvedor de símbolo **con memoria** para una capa.
+ *
+ * `resolveSymbol` es puro pero caro, y quien dibuja lo llama una vez por
+ * elemento *y por cada gancho de Leaflet* (`filter`, `style`, `pointToLayer`).
+ * En una capa de 76 897 tramos eso son ~154 000 resoluciones para producir 7
+ * símbolos distintos, porque el resultado solo depende del valor del campo de
+ * clasificación, no del elemento.
+ *
+ * La caché vive en el cierre que se devuelve, no en el módulo: cada capa tiene
+ * la suya y se va con ella. Así esto sigue siendo código puro y sin estado
+ * global, apto para correr en el servidor cuando las capas migren a Supabase.
+ *
+ * Usar esto en vez de `resolveSymbol` siempre que se recorra una capa entera.
+ */
+export function createSymbolResolver(
+  simbologia: any
+): (properties?: Record<string, unknown>) => ResolvedSymbol | null {
+  if (!simbologia) return () => null
+
+  // Sin campo de clasificación el símbolo es el mismo para toda la capa, así
+  // que se resuelve una sola vez. `classificationField` devuelve '' si no hay.
+  const campo = classificationField(simbologia)
+  if (!campo) {
+    const unico = resolveSymbol(simbologia)
+    return () => unico
+  }
+
+  const cache = new Map<unknown, ResolvedSymbol | null>()
+  return (properties = {}) => {
+    const valor = properties?.[campo]
+    if (cache.has(valor)) return cache.get(valor) ?? null
+    const symbol = resolveSymbol(simbologia, properties)
+    cache.set(valor, symbol)
+    return symbol
+  }
+}
+
 export function resolveSymbol(
   simbologia: any,
   properties: Record<string, unknown> = {}

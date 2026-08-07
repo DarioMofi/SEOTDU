@@ -6,6 +6,17 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 8443
+    },
+    {
+      "name": "sesim",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "C:/Users/dario/Downloads/Maqueta_SIM/sesim",
+        "run",
+        "dev"
+      ],
+      "port": 5173
     }
   ]
 }

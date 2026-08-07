@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css'
 import { MunicipioProperties } from '../../data/campecheData'
 import LimEstBase from '../../data/Lim_Est_Base.json'
 import LimMunBase from '../../data/Lim_Mun_Base.json'
-import { resolveSymbol } from '../../lib/qgisSymbology'
+import { createSymbolResolver, resolveSymbol } from '../../lib/qgisSymbology'
 import { toPathOptions, toPointLayer } from '../../lib/leafletSymbology'
 
 interface Props {
@@ -18,9 +18,24 @@ interface Props {
 
 /**
  * Simbología de un elemento. `null` significa que QGIS no lo dibujaría.
+ *
+ * Para recorrer una capa entera usar `createSymbolResolver`, que cachea: esto
+ * resuelve desde cero en cada llamada.
  */
 function styleFor(layerId: string, feature: any, layerStyles?: Record<string, any>) {
   return resolveSymbol(layerStyles?.[layerId], feature?.properties ?? {})
+}
+
+/** Tabla de atributos del popup. Se arma al abrirlo, no al cargar la capa. */
+function tablaDePropiedades(properties: Record<string, unknown>): string {
+  let html = '<div class="max-h-60 overflow-y-auto"><table class="text-xs text-left w-full border-collapse">'
+  Object.entries(properties).forEach(([key, value]) => {
+    // Ignorar campos internos como fid, OBJECTID
+    if (key !== 'fid' && !key.startsWith('OBJECTID')) {
+      html += `<tr class="border-b border-gray-100"><td class="font-bold py-1.5 pr-3 text-gray-600">${key}</td><td class="py-1.5 text-gray-800">${value ?? '-'}</td></tr>`
+    }
+  })
+  return html + '</table></div>'
 }
 
 const CENTROIDES: Record<string, [number, number]> = {
@@ -82,7 +97,12 @@ export default function MapViewer({ activeLayers, selectedFeature, onSelectFeatu
       maxBounds: CAMPECHE_BOUNDS,
       maxBoundsViscosity: 0.8,
       zoomControl: false,
-      attributionControl: false
+      attributionControl: false,
+      // Renderizado en canvas en vez de SVG. Con la cartografía completa el
+      // mapa montaba ~78 000 nodos en el DOM y tardaba ~12 s en pintar, cuando
+      // la descarga solo aportaba ~1.3 s de eso. Los `divIcon` de los puntos
+      // compuestos siguen siendo DOM: canvas solo afecta a líneas y polígonos.
+      preferCanvas: true
     })
 
     mapInstance.current = map
@@ -198,32 +218,30 @@ export default function MapViewer({ activeLayers, selectedFeature, onSelectFeatu
             // Verificar si sigue activa antes de añadirla
             if (!activeLayers.includes(layerId)) return
             
+            // Un resolvedor por capa: cachea el símbolo por valor del campo
+            // de clasificación. Leaflet consulta la simbología tres veces por
+            // elemento y aquí eso son cientos de miles de llamadas.
+            const simboloDe = createSymbolResolver(layerStyles[layerId])
+
             const geoJsonLayer = L.geoJSON(data, {
               // QGIS omite las clases apagadas y los valores fuera de rango;
               // descartarlos aquí evita crear geometrías invisibles.
-              filter: (feature) =>
-                styleFor(layerId, feature, layerStyles) !== null,
-              style: (feature) =>
-                toPathOptions(styleFor(layerId, feature, layerStyles), opacity),
+              filter: (feature) => simboloDe(feature?.properties) !== null,
+              style: (feature) => toPathOptions(simboloDe(feature?.properties), opacity),
               pointToLayer: (feature, latlng) => {
-                const symbol = styleFor(layerId, feature, layerStyles)
+                const symbol = simboloDe(feature?.properties)
                 return (
                   toPointLayer(symbol, latlng, opacity) ??
                   L.circleMarker(latlng, { radius: 0, opacity: 0, fillOpacity: 0 })
                 )
               },
               onEachFeature: (feature, layer) => {
-                if (feature.properties) {
-                  let propsHtml = '<div class="max-h-60 overflow-y-auto"><table class="text-xs text-left w-full border-collapse">'
-                  Object.entries(feature.properties).forEach(([key, value]) => {
-                    // Ignorar campos internos como fid, OBJECTID
-                    if (key !== 'fid' && !key.startsWith('OBJECTID')) {
-                      propsHtml += `<tr class="border-b border-gray-100"><td class="font-bold py-1.5 pr-3 text-gray-600">${key}</td><td class="py-1.5 text-gray-800">${value ?? '-'}</td></tr>`
-                    }
-                  })
-                  propsHtml += '</table></div>'
-                  layer.bindPopup(propsHtml, { maxWidth: 300 })
-                }
+                if (!feature.properties) return
+                // El contenido se arma al abrir, no al cargar: construirlo aquí
+                // significaba una tabla HTML y un popup por elemento, y hay
+                // capas de decenas de miles. Leaflet acepta una función y la
+                // evalúa en el primer clic.
+                layer.bindPopup(() => tablaDePropiedades(feature.properties), { maxWidth: 300 })
               }
             }).addTo(map)
             

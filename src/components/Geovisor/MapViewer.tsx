@@ -4,7 +4,7 @@ import 'leaflet/dist/leaflet.css'
 import { MunicipioProperties } from '../../data/campecheData'
 import LimEstBase from '../../data/Lim_Est_Base.json'
 import LimMunBase from '../../data/Lim_Mun_Base.json'
-import { createSymbolResolver, resolveSymbol } from '../../lib/qgisSymbology'
+import { createSymbolResolver, resolveSymbol, usesPatternFill } from '../../lib/qgisSymbology'
 import { toPathOptions, toPointLayer } from '../../lib/leafletSymbology'
 
 interface Props {
@@ -221,9 +221,19 @@ export default function MapViewer({ activeLayers, selectedFeature, onSelectFeatu
             // Un resolvedor por capa: cachea el símbolo por valor del campo
             // de clasificación. Leaflet consulta la simbología tres veces por
             // elemento y aquí eso son cientos de miles de llamadas.
-            const simboloDe = createSymbolResolver(layerStyles[layerId])
+            const simbologia = layerStyles[layerId]
+            const simboloDe = createSymbolResolver(simbologia)
 
-            const geoJsonLayer = L.geoJSON(data, {
+            // `renderer` no está en los tipos de `GeoJSONOptions`, pero Leaflet
+            // pasa las opciones completas a cada geometría que crea, así que sí
+            // se respeta. Se declara aquí para no perder el resto del tipado.
+            const opciones: L.GeoJSONOptions & { renderer?: L.Renderer } = {
+              // El mapa va en canvas por rendimiento, pero las tramas y los
+              // rellenos de imagen son un `<pattern>` de SVG: el canvas los
+              // recibe como texto, no los entiende y pinta negro. Esas capas
+              // son pocas, así que se quedan en SVG. `undefined` deja que use
+              // el renderizador del mapa.
+              renderer: usesPatternFill(simbologia) ? L.svg() : undefined,
               // QGIS omite las clases apagadas y los valores fuera de rango;
               // descartarlos aquí evita crear geometrías invisibles.
               filter: (feature) => simboloDe(feature?.properties) !== null,
@@ -243,7 +253,9 @@ export default function MapViewer({ activeLayers, selectedFeature, onSelectFeatu
                 // evalúa en el primer clic.
                 layer.bindPopup(() => tablaDePropiedades(feature.properties), { maxWidth: 300 })
               }
-            }).addTo(map)
+            }
+
+            const geoJsonLayer = L.geoJSON(data, opciones).addTo(map)
             
             // Reemplazar placeholder
             const oldPlaceholder = vectorLayersRef.current[layerId]

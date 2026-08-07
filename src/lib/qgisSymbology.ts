@@ -497,11 +497,27 @@ export function resolveLegend(simbologia: any): LegendEntry[] {
 }
 
 /**
- * Resuelve el símbolo que corresponde a un elemento.
+ * `true` si alguna clase de la capa se rellena con una trama de líneas o con
+ * una imagen (`QgsLinePatternFillSymbolLayer`, `QgsRasterFillSymbolLayer`).
  *
- * Devuelve `null` cuando QGIS no lo dibujaría: clase apagada, valor sin
- * categoría, o valor fuera de los rangos graduados.
+ * Importa al elegir el renderizador de Leaflet: esos rellenos se traducen a un
+ * `<pattern>` de SVG referenciado como `url(#id)`, y el renderizador de canvas
+ * recibe ese texto como color, no lo entiende y **pinta la capa de negro**.
+ * Quien dibuje debe darle SVG a estas capas aunque el resto del mapa vaya en
+ * canvas. Ya pasó una vez: los corredores del módulo ambiental y la
+ * infraestructura hidroagrícola salieron negras al activar `preferCanvas`.
+ *
+ * Se consulta con `resolveLegend` para cubrir las capas categorizadas donde
+ * solo algunas clases traen trama.
  */
+export function usesPatternFill(simbologia: any): boolean {
+  return resolveLegend(simbologia).some((entry) =>
+    entry.symbol.layers.some(
+      (capa) => capa.kind === 'patternFill' || capa.kind === 'rasterFill'
+    )
+  )
+}
+
 /**
  * Devuelve un resolvedor de símbolo **con memoria** para una capa.
  *
@@ -540,6 +556,12 @@ export function createSymbolResolver(
   }
 }
 
+/**
+ * Resuelve el símbolo que corresponde a un elemento.
+ *
+ * Devuelve `null` cuando QGIS no lo dibujaría: clase apagada, valor sin
+ * categoría, o valor fuera de los rangos graduados.
+ */
 export function resolveSymbol(
   simbologia: any,
   properties: Record<string, unknown> = {}

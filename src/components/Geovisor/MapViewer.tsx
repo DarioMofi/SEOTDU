@@ -6,6 +6,7 @@ import LimEstBase from '../../data/Lim_Est_Base.json'
 import LimMunBase from '../../data/Lim_Mun_Base.json'
 import { createSymbolResolver, resolveSymbol, usesPatternFill } from '../../lib/qgisSymbology'
 import { toPathOptions, toPointLayer } from '../../lib/leafletSymbology'
+import { getCapaGeoJSON } from '../../lib/cartografia'
 
 interface Props {
   activeLayers: string[]
@@ -56,19 +57,20 @@ const CENTROIDES: Record<string, [number, number]> = {
 
 // Límites geográficos para restringir desplazamiento en el estado de Campeche
 const CAMPECHE_BOUNDS: L.LatLngBoundsExpression = [
-  [17.2, -92.8],
-  [21.2, -88.8]
+  [16.5, -94.5], // Suroeste (más amplio al sur y oeste)
+  [21.8, -87.0]  // Noreste (más amplio al norte y este)
 ]
 
 
 
 
 
-export default function MapViewer({ activeLayers, selectedFeature, onSelectFeature, layerOpacity, layerStyles, layerOrder }: Props) {
+export default function MapViewer({ activeLayers, selectedFeature, layerOpacity, layerStyles, layerOrder }: Props) {
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstance = useRef<L.Map | null>(null)
   const limiteEstatalLayer = useRef<L.GeoJSON | null>(null)
   const limiteMunicipalLayer = useRef<L.GeoJSON | null>(null)
+  const maskLayerRef = useRef<L.Polygon | null>(null)
 
   // Refs para capas vectoriales dinámicas
   const vectorLayersRef = useRef<Record<string, L.GeoJSON | null>>({})
@@ -105,6 +107,14 @@ export default function MapViewer({ activeLayers, selectedFeature, onSelectFeatu
       preferCanvas: true
     })
 
+    // Crear Paneles (Panes) personalizados para el control del Z-Index
+    // Los marcadores por defecto están en markerPane (zIndex 600)
+    map.createPane('maskPane')
+    map.getPane('maskPane')!.style.zIndex = '650' // Por encima de markerPane
+    
+    map.createPane('bordersPane')
+    map.getPane('bordersPane')!.style.zIndex = '660' // Por encima de maskPane
+
     mapInstance.current = map
 
     return () => {
@@ -118,6 +128,7 @@ export default function MapViewer({ activeLayers, selectedFeature, onSelectFeatu
       vectorLayersRef.current = {}
       limiteEstatalLayer.current = null
       limiteMunicipalLayer.current = null
+      maskLayerRef.current = null
       baseLayerRef.current = null
     }
   }, [])
@@ -205,11 +216,7 @@ export default function MapViewer({ activeLayers, selectedFeature, onSelectFeatu
         vectorLayersRef.current[layerId] = L.geoJSON(undefined)
         
         // Cargar nueva capa
-        fetch(`/layers/${layerId}.geojson`)
-          .then(res => {
-            if (!res.ok) throw new Error(`GeoJSON no encontrado para ${layerId}`)
-            return res.json()
-          })
+        getCapaGeoJSON(layerId)
           .then(data => {
             // El fetch puede resolver después de que el mapa fue destruido:
             // StrictMode monta el componente dos veces y añadir capas al mapa
@@ -295,6 +302,7 @@ export default function MapViewer({ activeLayers, selectedFeature, onSelectFeatu
     // Renderizar límite municipal si no existe
     if (!limiteMunicipalLayer.current) {
       limiteMunicipalLayer.current = L.geoJSON(LimMunBase as any, {
+        pane: 'bordersPane',
         style: () => ({
           fill: false,
           weight: 1.2,
@@ -312,6 +320,7 @@ export default function MapViewer({ activeLayers, selectedFeature, onSelectFeatu
     // Renderizar límite estatal
     if (!limiteEstatalLayer.current) {
       limiteEstatalLayer.current = L.geoJSON(LimEstBase as any, {
+        pane: 'bordersPane',
         style: () => ({
           fill: false,
           weight: 2.2,
@@ -325,6 +334,48 @@ export default function MapViewer({ activeLayers, selectedFeature, onSelectFeatu
       })
     }
 
+    // Renderizar máscara invertida si hay un municipio seleccionado
+    if (maskLayerRef.current) {
+      map.removeLayer(maskLayerRef.current)
+      maskLayerRef.current = null
+    }
+
+    if (selectedFeature) {
+      const normalize = (str: string) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()
+      
+      const munFeature = (LimMunBase as any).features.find(
+        (f: any) => normalize(f.properties.NOMGEO) === normalize(selectedFeature.nombre)
+      )
+
+      if (munFeature && munFeature.geometry) {
+        // Anillo exterior que cubre todo
+        const outerRing: [number, number][] = [
+          [90, -180], [90, 180], [-90, 180], [-90, -180]
+        ]
+        const holes: [number, number][][] = []
+        
+        if (munFeature.geometry.type === 'Polygon') {
+          munFeature.geometry.coordinates.forEach((ring: any[]) => {
+            holes.push(ring.map((c: any[]) => [c[1], c[0]]))
+          })
+        } else if (munFeature.geometry.type === 'MultiPolygon') {
+          munFeature.geometry.coordinates.forEach((poly: any[]) => {
+            poly.forEach((ring: any[]) => {
+              holes.push(ring.map((c: any[]) => [c[1], c[0]]))
+            })
+          })
+        }
+
+        maskLayerRef.current = L.polygon([outerRing, ...holes], {
+          stroke: false,
+          fillColor: mapaBase === 'satelite' ? '#000000' : '#f8fafc',
+          fillOpacity: mapaBase === 'satelite' ? 0.65 : 0.85,
+          interactive: true, // Bloquea los clics a las capas que están por debajo
+          pane: 'maskPane' // Panel con zIndex superior
+        }).addTo(map)
+      }
+    }
+
     // Ajustar orden de apilamiento visual (Z-Index)
     const reversedOrder = [...layerOrder].reverse()
     reversedOrder.forEach((id) => {
@@ -334,15 +385,13 @@ export default function MapViewer({ activeLayers, selectedFeature, onSelectFeatu
       }
     })
 
-    // Traer los límites al frente
-    if (limiteMunicipalLayer.current && map.hasLayer(limiteMunicipalLayer.current)) {
-      limiteMunicipalLayer.current.bringToFront()
-    }
-    if (limiteEstatalLayer.current && map.hasLayer(limiteEstatalLayer.current)) {
-      limiteEstatalLayer.current.bringToFront()
-    }
+    // (Opcional) Traer al frente dentro de sus respectivos Panes, 
+    // aunque el CSS zIndex de los Panes ya garantiza el orden global absoluto.
+    if (maskLayerRef.current && map.hasLayer(maskLayerRef.current)) maskLayerRef.current.bringToFront()
+    if (limiteMunicipalLayer.current && map.hasLayer(limiteMunicipalLayer.current)) limiteMunicipalLayer.current.bringToFront()
+    if (limiteEstatalLayer.current && map.hasLayer(limiteEstatalLayer.current)) limiteEstatalLayer.current.bringToFront()
 
-  }, [activeLayers, mapaBase, layerOpacity, layerOrder, layerStyles])  // Centrar mapa al seleccionar un municipio
+  }, [activeLayers, selectedFeature, mapaBase, layerOpacity, layerOrder, layerStyles])  // Centrar mapa al seleccionar un municipio
   useEffect(() => {
     const map = mapInstance.current
     if (!map || !selectedFeature) return

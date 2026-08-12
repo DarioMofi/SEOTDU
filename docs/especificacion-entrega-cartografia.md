@@ -53,18 +53,9 @@ Afectaba a **19 de 58 capas** y a **341 cadenas de texto**.
    QGIS y buscar las cadenas `Ã`, `Â`, `â€`. Si aparece alguna, la capa está
    mal. Debe dar cero resultados en las 58 capas.
 
-### Nota sobre el estado actual
+### Consecuencia del nuevo Backend
 
-El pipeline de extracción (`extract_gpkg.py`) ya repara esto automáticamente:
-recodifica probando `cp1252`, `latin-1` e `ISO-8859-14` hasta que el texto
-queda limpio. Reparó 340 de las 341 cadenas.
-
-**La única irreparable es `El ParaÃíso`** (una localidad en `C04_Loc_rur`):
-perdió bytes en el origen y no se puede reconstruir sin adivinar. Esa sí
-requiere corregirse en la fuente.
-
-La reparación automática es una red de seguridad, **no un sustituto** de
-entregar los datos bien. Si llegan limpios, el paso es inocuo.
+Dado que el script automático de extracción ya no existe y los datos se subirán directamente de QGIS a PostGIS, **ya no hay ninguna red de seguridad que limpie estos caracteres.** Es 100% obligatorio que los datos vengan limpios de origen, de lo contrario la simbología fallará silenciosamente en la base de datos.
 
 ---
 

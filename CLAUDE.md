@@ -43,33 +43,14 @@ antes de diseñar nada que dependa de ello.
 Hoy `LoginCard.tsx` es solo maqueta — su `handleSubmit` no llama a nada. No hay
 sesión, ni rutas protegidas, ni roles.
 
-## Pipeline de cartografía
+## Pipeline de cartografía (Actualizado para Migración a Backend)
 
-```
-cartografia/*.gpkg             ─┐
-cartografia/pendientes/*.gpkg  ─┴→ extract_gpkg.py → public/layers/*.geojson
-                                                   → public/layers/available.json
+Anteriormente, existía un script llamado `extract_gpkg.py` y una carpeta `cartografia/` que convertían los archivos `.gpkg` de QGIS en los archivos `.geojson` que hoy viven en `public/layers/`. 
 
-public/estilos/**/*.json  ← volcado de simbología de QGIS (no pasa por el script)
-```
-
-- `cartografia/` está **fuera de `public/`** a propósito: Vite copia todo
-  `public/` al build y cientos de MB de GeoPackage se desplegarían a Vercel sin
-  que nadie los use (el navegador no lee SQLite). Está en `.gitignore`, así que
-  **nada de ahí se recupera desde git**.
-- `public/layers/` **sí se versiona**: es lo que Vercel sirve.
-- Los `.gpkg` de la raíz se vuelcan enteros; de `pendientes/` solo se toma lo
-  listado en `POOL_LAYERS`.
-- Además de convertir, `extract_gpkg.py` reproyecta a EPSG:4326, **repara el
-  mojibake** (no es cosmético: la simbología categorizada empareja el valor del
-  estilo contra el del dato, y si no coinciden la capa se pinta de un solo
-  color), recorta a 6 decimales y aplica `EXCLUIDAS` y `CRS_REAL`.
-- Regenerar: `rm -rf public/layers && python extract_gpkg.py`. Sin borrar nada es
-  idempotente, porque salta lo que ya existe.
-- **Para quitar una capa del visor, tocar los datos, no el estilo**:
-  `available.json` es la compuerta. El procedimiento y los defectos del origen
-  que el script tapa están en
-  [docs/pipeline-cartografia.md](docs/pipeline-cartografia.md).
+**Estos elementos de andamiaje fueron eliminados** del repositorio como paso previo a la migración hacia Supabase (PostgreSQL + PostGIS). 
+- El nuevo flujo de trabajo requiere que la cartografía se suba manualmente y 1 a 1 desde QGIS hacia la base de datos de Supabase, para garantizar control de calidad.
+- Los archivos `.geojson` en `public/layers/` y `available.json` se conservan **solo temporalmente** para que el visor siga funcionando mientras se conecta el backend.
+- Para consultar el historial de los defectos que el script reparaba (mojibake, etc.), consultar [docs/pipeline-cartografia.md](docs/pipeline-cartografia.md), ya que esas limpiezas ahora deberán realizarse manualmente o en la base de datos.
 
 ## Volcados de simbología: hay dos generaciones
 

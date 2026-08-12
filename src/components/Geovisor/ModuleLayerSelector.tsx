@@ -20,6 +20,9 @@ interface Module {
   title: string
   icon: React.ReactNode
   colorClass: string
+  themeColor: string
+  themeBg: string
+  themeHover: string
   layers: Layer[]
   /** Capas que se encienden al activar el módulo. Sin lista, se encienden todas. */
   defaultLayers?: string[]
@@ -41,6 +44,7 @@ interface Entrada {
 }
 
 import { appConfig } from '../../config/appConfig'
+import { getCapasDisponibles, getEstiloModulo } from '../../lib/cartografia'
 
 function getModuleIcon(iconName: string) {
   switch(iconName) {
@@ -54,44 +58,32 @@ function getModuleIcon(iconName: string) {
       )
     case 'ambiental':
       return (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-          <path d="M2 12h20" />
+        <svg className="w-5 h-5" viewBox="0 -960 960 960" fill="currentColor">
+          <path d="M216-176q-45-45-70.5-104T120-402q0-63 24-124.5T222-642q35-35 86.5-60t122-39.5Q501-756 591.5-759t202.5 7q8 106 5 195t-16.5 160.5q-13.5 71.5-38 125T684-182q-53 53-112.5 77.5T450-80q-65 0-127-25.5T216-176Zm112-16q29 17 59.5 24.5T450-160q46 0 91-18.5t86-59.5q18-18 36.5-50.5t32-85Q709-426 716-500.5t2-177.5q-49-2-110.5-1.5T485-670q-61 9-116 29t-90 55q-45 45-62 89t-17 85q0 59 22.5 103.5T262-246q42-80 111-153.5T534-520q-72 63-125.5 142.5T328-192Zm0 0Zm0 0Z" />
         </svg>
       )
     case 'social':
       return (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-          <circle cx="9" cy="7" r="4" />
-          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+        <svg className="w-5 h-5" viewBox="0 -960 960 960" fill="currentColor">
+          <path d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM247-527q-47-47-47-113t47-113q47-47 113-47t113 47q47 47 47 113t-47 113q-47 47-113 47t-113-47Zm466 0q-47 47-113 47-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113q0 66-47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm296.5-343.5Q440-607 440-640t-23.5-56.5Q393-720 360-720t-56.5 23.5Q280-673 280-640t23.5 56.5Q327-560 360-560t56.5-23.5ZM360-240Zm0-400Z" />
         </svg>
       )
     case 'infraestructura':
       return (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="18" cy="5" r="3" />
-          <circle cx="6" cy="12" r="3" />
-          <circle cx="18" cy="19" r="3" />
-          <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
-          <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+        <svg className="w-5 h-5" viewBox="0 -960 960 960" fill="currentColor">
+          <path d="M247-167q-47-47-47-113v-327q-35-13-57.5-43.5T120-720q0-50 35-85t85-35q50 0 85 35t35 85q0 39-22.5 69.5T280-607v327q0 33 23.5 56.5T360-200q33 0 56.5-23.5T440-280v-400q0-66 47-113t113-47q66 0 113 47t47 113v327q35 13 57.5 43.5T840-240q0 50-35 85t-85 35q-50 0-85-35t-35-85q0-39 22.5-70t57.5-43v-327q0-33-23.5-56.5T600-760q-33 0-56.5 23.5T520-680v400q0 66-47 113t-113 47q-66 0-113-47Zm-7-513q17 0 28.5-11.5T280-720q0-17-11.5-28.5T240-760q-17 0-28.5 11.5T200-720q0 17 11.5 28.5T240-680Zm480 480q17 0 28.5-11.5T760-240q0-17-11.5-28.5T720-280q-17 0-28.5 11.5T680-240q0 17 11.5 28.5T720-200ZM240-720Zm480 480Z" />
         </svg>
       )
     case 'aptitud':
       return (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <line x1="18" y1="20" x2="18" y2="10" />
-          <line x1="12" y1="20" x2="12" y2="4" />
-          <line x1="6" y1="20" x2="6" y2="14" />
+        <svg className="w-5 h-5" viewBox="0 -960 960 960" fill="currentColor">
+          <path d="M640-160v-280h160v280H640Zm-240 0v-640h160v640H400Zm-240 0v-440h160v440H160Z" />
         </svg>
       )
     case 'normatividad':
       return (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-          <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+        <svg className="w-5 h-5" viewBox="0 -960 960 960" fill="currentColor">
+          <path d="M240-80q-50 0-85-35t-35-85v-120h120v-560h600v680q0 50-35 85t-85 35H240Zm480-80q17 0 28.5-11.5T760-200v-600H320v480h360v120q0 17 11.5 28.5T720-160ZM360-600v-80h360v80H360Zm0 120v-80h360v80H360ZM240-160h360v-80H200v40q0 17 11.5 28.5T240-160Zm0 0h-40 400-360Z" />
         </svg>
       )
     default:
@@ -248,6 +240,8 @@ interface Props {
   onChangeOrder: (order: string[]) => void
   /** Emite la simbología y las etiquetas de todas las capas, indexadas por id. */
   onStylesLoaded?: (styles: Record<string, any>, labels: Record<string, string>) => void
+  onInfoClick?: (entrada: Entrada) => void
+  onActiveModuleChange?: (title: string) => void
 }
 
 export default function ModuleLayerSelector({
@@ -258,7 +252,9 @@ export default function ModuleLayerSelector({
   onChangeOpacity,
   layerOrder,
   onChangeOrder,
-  onStylesLoaded
+  onStylesLoaded,
+  onInfoClick,
+  onActiveModuleChange
 }: Props) {
   // Módulo activo: sus capas son las que están dibujadas. Solo uno a la vez.
   // Es independiente del acordeón, que arranca cerrado.
@@ -288,10 +284,7 @@ export default function ModuleLayerSelector({
     async function fetchModules() {
       let availableLayers: string[] = []
       try {
-        const resAvail = await fetch('/layers/available.json')
-        if (resAvail.ok) {
-          availableLayers = await resAvail.json()
-        }
+        availableLayers = await getCapasDisponibles()
       } catch (e) {
         console.error('No se pudo cargar la lista de capas disponibles', e)
       }
@@ -302,9 +295,7 @@ export default function ModuleLayerSelector({
       const loadedModules = await Promise.all(
         appConfig.MODULES_CONFIG.map(async (modConfig) => {
           try {
-            const res = await fetch(`/estilos/${modConfig.file}`)
-            if (!res.ok) throw new Error('File not found')
-            const json = await res.json()
+            const json = await getEstiloModulo(modConfig.file)
             let extractedLayers = leerEstilo(json, availableLayers)
 
             // `stylesFrom` deja que un volcado aporte el árbol y el orden de
@@ -313,17 +304,17 @@ export default function ModuleLayerSelector({
             // estaban: el volcado nuevo trae más capas, pero dejó de exportar la
             // forma del marcador, el desplazamiento y el ángulo.
             for (const archivo of (modConfig as ModuleConfig).stylesFrom ?? []) {
-              const alt = await fetch(`/estilos/${archivo}`)
-              if (!alt.ok) {
-                console.error(`No se pudo leer la simbología preferida ${archivo}`)
-                continue
+              try {
+                const altJson = await getEstiloModulo(archivo)
+                const preferida = new Map(
+                  leerEstilo(altJson, availableLayers).map((l) => [l.id, l.simbologia])
+                )
+                extractedLayers = extractedLayers.map((l) =>
+                  preferida.has(l.id) ? { ...l, simbologia: preferida.get(l.id) } : l
+                )
+              } catch (e) {
+                console.error(`No se pudo leer la simbología preferida ${archivo}`, e)
               }
-              const preferida = new Map(
-                leerEstilo(await alt.json(), availableLayers).map((l) => [l.id, l.simbologia])
-              )
-              extractedLayers = extractedLayers.map((l) =>
-                preferida.has(l.id) ? { ...l, simbologia: preferida.get(l.id) } : l
-              )
             }
 
 
@@ -336,6 +327,9 @@ export default function ModuleLayerSelector({
               id: modConfig.id,
               title: modConfig.title,
               colorClass: modConfig.colorClass,
+              themeColor: (modConfig as any).themeColor || '#9F2241',
+              themeBg: (modConfig as any).themeBg || 'rgba(159,34,65,0.02)',
+              themeHover: (modConfig as any).themeHover || 'rgba(159,34,65,0.04)',
               icon: getModuleIcon(modConfig.icon),
               layers: extractedLayers,
               defaultLayers: (modConfig as ModuleConfig).defaultLayers,
@@ -347,6 +341,9 @@ export default function ModuleLayerSelector({
               id: modConfig.id,
               title: modConfig.title,
               colorClass: modConfig.colorClass,
+              themeColor: (modConfig as any).themeColor || '#9F2241',
+              themeBg: (modConfig as any).themeBg || 'rgba(159,34,65,0.02)',
+              themeHover: (modConfig as any).themeHover || 'rgba(159,34,65,0.04)',
               icon: getModuleIcon(modConfig.icon),
               layers: [],
               defaultLayers: (modConfig as ModuleConfig).defaultLayers,
@@ -367,6 +364,7 @@ export default function ModuleLayerSelector({
         const ids = capasEncendidas(inicial)
         onChangeLayers(ids)
         onChangeOrder(ids)
+        if (onActiveModuleChange) onActiveModuleChange(inicial.title)
       }
     }
     fetchModules()
@@ -422,6 +420,7 @@ export default function ModuleLayerSelector({
     setExpandedModule(moduleId)
     onChangeLayers(ids)
     onChangeOrder(ids)
+    if (onActiveModuleChange) onActiveModuleChange(modulo.title)
   }
 
   /** Prende o apaga una entrada completa: un grupo viaja con todas sus capas. */
@@ -537,8 +536,13 @@ export default function ModuleLayerSelector({
     return (
       <div
         key={module.id}
+        style={{
+          '--theme-color': module.themeColor,
+          '--theme-bg': module.themeBg,
+          '--theme-hover': module.themeHover
+        } as React.CSSProperties}
         className={`border rounded-lg overflow-hidden transition-all duration-200 ${
-          isActive ? 'border-[var(--c-guinda)] bg-white shadow-sm' : 'border-gray-100'
+          isActive ? 'border-[var(--theme-color)] bg-white shadow-sm' : 'border-gray-100'
         } ${isExpanded ? 'shadow-sm bg-white' : isActive ? '' : 'bg-gray-50/50 hover:bg-gray-50'}`}
       >
         {/* Encabezado Módulo */}
@@ -547,10 +551,17 @@ export default function ModuleLayerSelector({
           className={`mapas w-full flex items-center justify-between p-3.5 text-left cursor-pointer transition-colors`}
           aria-expanded={isExpanded}
           aria-current={isActive ? 'true' : undefined}
-          title={isActive ? 'Módulo activo' : `Mostrar ${module.title}`}
+          title={module.title}
         >
                 <div className="flex items-center gap-3">
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center border ${module.colorClass}`}>
+                  <div 
+                    className="w-8 h-8 rounded-lg flex items-center justify-center border"
+                    style={{
+                      color: 'var(--theme-color)',
+                      borderColor: 'var(--theme-color)',
+                      backgroundColor: 'var(--theme-bg)'
+                    }}
+                  >
                     {module.icon}
                   </div>
                   <div>
@@ -558,7 +569,7 @@ export default function ModuleLayerSelector({
                       {module.title}
                     </h4>
                     {activeCount > 0 && (
-                      <span className="inline-block text-[9px] font-bold bg-[var(--c-guinda)] text-white px-2 py-0.5 rounded-full mt-1">
+                      <span className="inline-block text-[9px] font-bold bg-[var(--theme-color)] text-white px-2 py-0.5 rounded-full mt-1">
                         {activeCount} activa{activeCount > 1 ? 's' : ''}
                       </span>
                     )}
@@ -587,8 +598,21 @@ export default function ModuleLayerSelector({
                   {(() => {
                     const entradas = getOrderedEntries(module)
                     const activas = entradas.filter((e) => e.ids.some((id) => activeLayers.includes(id)))
-                    return entradas.map((entrada) => {
-                    const isLayerActive = entrada.ids.some((id) => activeLayers.includes(id))
+                    
+                    const half = Math.ceil(entradas.length / 2)
+                    const diagnosticoEntradas = entradas.slice(0, half)
+                    const estrategiasEntradas = entradas.slice(half)
+
+                    const renderCategory = (categoryEntradas: typeof entradas, title: string) => {
+                      if (categoryEntradas.length === 0) return null
+                      return (
+                        <div className="mb-4 last:mb-0">
+                          <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2 px-2 border-l-2 border-[var(--theme-color)] ml-1">
+                            {title}
+                          </h4>
+                          <div className="flex flex-col gap-2">
+                            {categoryEntradas.map((entrada) => {
+                              const isLayerActive = entrada.ids.some((id) => activeLayers.includes(id))
                     // Un grupo comparte una sola opacidad; la primera capa la representa.
                     const opacity = layerOpacity[entrada.ids[0]] ?? 1
                     const posActiva = activas.findIndex((e) => e.key === entrada.key)
@@ -617,7 +641,7 @@ export default function ModuleLayerSelector({
                               aria-checked={isLayerActive}
                               onClick={() => toggleEntrada(entrada.ids)}
                               className={`relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
-                                isLayerActive ? 'bg-[var(--c-guinda)]' : 'bg-gray-200'
+                                isLayerActive ? 'bg-[var(--theme-color)]' : 'bg-gray-200'
                               }`}
                               aria-label={isLayerActive ? `Desactivar ${entrada.label}` : `Activar ${entrada.label}`}
                             >
@@ -637,7 +661,7 @@ export default function ModuleLayerSelector({
                                   disabled={!canMoveUp}
                                   className={`w-7 h-5 rounded flex items-center justify-center transition-all cursor-pointer ${
                                     canMoveUp
-                                      ? 'text-gray-400 hover:text-[var(--c-guinda)] hover:bg-gray-100'
+                                      ? 'text-gray-400 hover:text-[var(--theme-color)] hover:bg-gray-100'
                                       : 'text-gray-200 cursor-not-allowed'
                                   }`}
                                   aria-label="Subir capa"
@@ -652,7 +676,7 @@ export default function ModuleLayerSelector({
                                   disabled={!canMoveDown}
                                   className={`w-7 h-5 rounded flex items-center justify-center transition-all cursor-pointer ${
                                     canMoveDown
-                                      ? 'text-gray-400 hover:text-[var(--c-guinda)] hover:bg-gray-100'
+                                      ? 'text-gray-400 hover:text-[var(--theme-color)] hover:bg-gray-100'
                                       : 'text-gray-200 cursor-not-allowed'
                                   }`}
                                   aria-label="Bajar capa"
@@ -667,7 +691,7 @@ export default function ModuleLayerSelector({
                           </div>
 
                           {/* Contenido derecho: label + desc + opacidad */}
-                          <div className="flex-1 min-w-0">
+                          <div className="flex-1 min-w-0 pr-6 relative">
                             <label
                               htmlFor={`layer-${entrada.key}`}
                               className="text-xs font-semibold text-gray-700 cursor-pointer block"
@@ -678,6 +702,21 @@ export default function ModuleLayerSelector({
                             <p className="text-[10px] text-gray-400 mt-0.5 leading-relaxed">
                               {entrada.desc}
                             </p>
+
+                            <button 
+                              onClick={(e) => { 
+                                e.stopPropagation(); 
+                                if (onInfoClick) onInfoClick(entrada); 
+                              }} 
+                              className="absolute top-0 right-0 p-1 text-gray-400 hover:text-[var(--theme-color)] transition-colors cursor-pointer"
+                              title="Ver información de capa"
+                            >
+                              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 16v-4" />
+                                <path d="M12 8h.01" />
+                              </svg>
+                            </button>
 
                             {/* Opacidad (con animación suave de despliegue/colapso) */}
                             <div
@@ -702,11 +741,22 @@ export default function ModuleLayerSelector({
                                 />
                               </div>
                             </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      )
+                    })}
+                          </div>
+                        </div>
+                      )
+                    }
+
+                    return (
+                      <>
+                        {renderCategory(diagnosticoEntradas, 'Diagnóstico')}
+                        {renderCategory(estrategiasEntradas, 'Estrategias')}
+                      </>
                     )
-                    })
                   })()}
                 </div>
               )}
@@ -736,7 +786,7 @@ export default function ModuleLayerSelector({
             {tematicosModules.length > 0 && (
               <div className="flex flex-col gap-2">
                 <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1 mt-2 px-1">
-                  Módulos Temáticos
+                  Monitores
                 </h3>
                 {tematicosModules.map(renderModule)}
               </div>

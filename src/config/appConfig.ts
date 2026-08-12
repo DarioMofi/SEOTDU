@@ -13,7 +13,10 @@ export const appConfig = {
     'C04_corr_agua_2003',
     'C04_estaciones_RFN25',
     'C04_Puertos_reg',
-    'C04_Aeropuertos_2012'
+    'C04_Aeropuertos_2012',
+    'estatal',
+    'C04_BUFER_ESTATAL',
+    'C04_Municipios'
   ],
 
   // Nombres del árbol de QGIS que no coinciden con la tabla real del
@@ -49,6 +52,9 @@ export const appConfig = {
       id: 'mapa_base',
       title: 'Mapa Base',
       colorClass: 'text-slate-600 bg-slate-50 border-slate-200',
+      themeColor: '#475569',
+      themeBg: 'rgba(71, 85, 105, 0.02)',
+      themeHover: 'rgba(71, 85, 105, 0.04)',
       // El árbol y el orden de dibujo salen del volcado nuevo, que trae cuatro
       // capas que el viejo no tenía (`estatal`, `CESC`, `BUFER_ESTATAL`,
       // `catp50s3gw`) y es superconjunto estricto del anterior.
@@ -62,8 +68,11 @@ export const appConfig = {
     },
     {
       id: 'ambiental',
-      title: 'Medio Ambiente',
+      title: 'Ambiental',
       colorClass: 'text-green-600 bg-green-50 border-green-200',
+      themeColor: '#77923B',
+      themeBg: 'rgba(122, 209, 9, 0.02)',
+      themeHover: 'rgba(83, 168, 13, 0.02)',
       file: 'Monitor_Ambiental_Climatico.json',
       icon: 'ambiental',
       // Grupos de capas: el menú las trata como una sola entrada para acotar la
@@ -105,8 +114,11 @@ export const appConfig = {
     },
     {
       id: 'social',
-      title: 'Socio Demográfico',
+      title: 'Social',
       colorClass: 'text-blue-600 bg-blue-50 border-blue-200',
+      themeColor: '#006FC0',
+      themeBg: 'rgba(37, 99, 235, 0.02)',
+      themeHover: 'rgba(37, 99, 235, 0.04)',
       // Primer módulo migrado al volcado nuevo de QGIS (carpeta `nuevos/`).
       // Los demás siguen con el volcado viejo hasta que se validen uno a uno.
       file: 'nuevos/02_Modulo_Social/02_Bienestar_Social_Demografia_simbologia.json',
@@ -160,6 +172,9 @@ export const appConfig = {
       id: 'infraestructura',
       title: 'Infraestructura',
       colorClass: 'text-orange-600 bg-orange-50 border-orange-200',
+      themeColor: '#C00000',
+      themeBg: 'rgba(234, 88, 12, 0.02)',
+      themeHover: 'rgba(234, 88, 12, 0.04)',
       // Se queda en el volcado viejo a propósito: el nuevo no exporta la forma
       // del marcador ni su desplazamiento, y aquí eso se nota — la estrella de
       // las subestaciones, los cuadrados del fortalecimiento energético y los
@@ -223,8 +238,11 @@ export const appConfig = {
     },
     {
       id: 'aptitud',
-      title: 'Aptitud Territorial',
+      title: 'Económico',
       colorClass: 'text-purple-600 bg-purple-50 border-purple-200',
+      themeColor: '#FFC000',
+      themeBg: 'rgba(147, 51, 234, 0.02)',
+      themeHover: 'rgba(147, 51, 234, 0.04)',
       file: 'Aptitud_Territorial_Desarrollo_Economico.json',
       icon: 'aptitud',
       // Solo el grupo E2. En QGIS el grupo 03_ECONOMICO está entero
@@ -254,8 +272,11 @@ export const appConfig = {
     },
     {
       id: 'normatividad',
-      title: 'Normatividad / Gestión',
+      title: 'Modelo de Ordenamiento Territorial',
       colorClass: 'text-slate-600 bg-slate-50 border-slate-200',
+      themeColor: '#1C334E',
+      themeBg: 'rgba(71, 85, 105, 0.02)',
+      themeHover: 'rgba(71, 85, 105, 0.04)',
       file: 'Normatividad_MOT.json',
       icon: 'normatividad'
     }

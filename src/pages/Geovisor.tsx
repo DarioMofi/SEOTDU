@@ -23,7 +23,9 @@ export default function Geovisor() {
   // Las capas activas las fija el módulo seleccionado, que se resuelve hasta
   // que ModuleLayerSelector termina de leer los estilos.
   const [activeLayers, setActiveLayers] = useState<string[]>([])
+  const [activeModuleTitle, setActiveModuleTitle] = useState<string>('')
   const [selectedFeature, setSelectedFeature] = useState<MunicipioProperties | null>(null)
+  const [selectedLayerInfo, setSelectedLayerInfo] = useState<any>(null)
   const [activeTab, setActiveTab] = useState<'capas' | 'info'>('capas')
   const [layerOpacity, setLayerOpacity] = useState<Record<string, number>>({})
   const [layerStyles, setLayerStyles] = useState<Record<string, any>>({})
@@ -50,7 +52,17 @@ export default function Geovisor() {
           activeTab={activeTab}
           onChangeTab={setActiveTab}
           selectedFeature={selectedFeature}
-          onSelectFeature={setSelectedFeature}
+          onSelectFeature={(feat) => {
+            setSelectedFeature(feat)
+            if (feat) setSelectedLayerInfo(null)
+          }}
+          selectedLayerInfo={selectedLayerInfo}
+          onSelectLayerInfo={(info) => {
+            setSelectedLayerInfo(info)
+            if (info) setSelectedFeature(null)
+          }}
+          activeLayers={activeLayers}
+          activeModuleTitle={activeModuleTitle}
         >
           <ModuleLayerSelector
             activeLayers={activeLayers}
@@ -64,6 +76,12 @@ export default function Geovisor() {
               setLayerStyles(styles)
               setLayerLabels(labels)
             }}
+            onInfoClick={(info) => {
+              setSelectedLayerInfo(info)
+              setSelectedFeature(null)
+              setActiveTab('info')
+            }}
+            onActiveModuleChange={setActiveModuleTitle}
           />
         </SidebarControl>
 
@@ -77,6 +95,7 @@ export default function Geovisor() {
             onSelectFeature={(feat) => {
               setSelectedFeature(feat)
               if (feat) {
+                setSelectedLayerInfo(null)
                 setActiveTab('info')
               } else {
                 setActiveTab('capas')

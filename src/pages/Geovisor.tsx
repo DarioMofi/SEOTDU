@@ -31,15 +31,19 @@ export default function Geovisor() {
   const [layerStyles, setLayerStyles] = useState<Record<string, any>>({})
   const [layerLabels, setLayerLabels] = useState<Record<string, string>>({})
   const [layerOrder, setLayerOrder] = useState<string[]>([])
+  const [selectedScale, setSelectedScale] = useState<string>('Estatal')
 
   const handleOpacityChange = (layerId: string, opacity: number) => {
     setLayerOpacity((prev) => ({ ...prev, [layerId]: opacity }))
   }
 
+  const isCustomScale = ['Área de gestión territorial', 'Manzanas', 'Localidades Urbanas', 'Localidades Rurales'].includes(selectedScale)
+  const effectiveActiveLayers = isCustomScale ? [] : activeLayers;
+
   // La leyenda enumera lo que el mapa está dibujando, en su mismo orden de
   // apilado: la capa de encima aparece primero.
   const legendLayers = layerOrder
-    .filter((id) => activeLayers.includes(id))
+    .filter((id) => effectiveActiveLayers.includes(id))
     .map((id) => ({ id, label: layerLabels[id] ?? id }))
 
   return (
@@ -61,8 +65,10 @@ export default function Geovisor() {
             setSelectedLayerInfo(info)
             if (info) setSelectedFeature(null)
           }}
-          activeLayers={activeLayers}
+          activeLayers={effectiveActiveLayers}
           activeModuleTitle={activeModuleTitle}
+          selectedScale={selectedScale}
+          onSelectScale={setSelectedScale}
         >
           <ModuleLayerSelector
             activeLayers={activeLayers}
@@ -87,7 +93,7 @@ export default function Geovisor() {
 
         <div className="flex-1 relative h-full">
           <MapViewer
-            activeLayers={activeLayers}
+            activeLayers={effectiveActiveLayers}
             selectedFeature={selectedFeature}
             layerOpacity={layerOpacity}
             layerStyles={layerStyles}
@@ -111,5 +117,6 @@ export default function Geovisor() {
     </div>
   )
 }
+
 
 

@@ -1,4 +1,3 @@
-
 export default function Hero() {
 
   return (
@@ -18,7 +17,7 @@ export default function Hero() {
 
       <div className="hero__content">
         <h1 className="hero__title">
-          Sistema Estatal de Planeación y Ordenamiento Territorial de Campeche
+          Sistema Estatal de Ordenamiento Territorial y Desarrollo Urbano del estado de Campeche
         </h1>
       </div>
     </section>

@@ -3,56 +3,9 @@ import { useNavigate } from 'react-router-dom'
 export default function Header() {
   const navigate = useNavigate()
 
-  const handleImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    e.currentTarget.style.display = 'none'
-    const placeholder = e.currentTarget.nextElementSibling as HTMLElement | null
-    if (placeholder) placeholder.style.display = 'flex'
-  }
-
   return (
     <header className="header" role="banner">
-      <div className="header__inner">
-        {/* Logotipos institucionales */}
-        <div className="header__logos">
-          {/* Logo Campeche */}
-          <div style={{ position: 'relative', height: 56 }}>
-            <img
-              src="/gobiernoparatodos.jpeg"
-              alt="Gobierno para todos"
-              className="header__logo-img header__logo-img--campeche"
-              onError={handleImgError}
-            />
-            <div
-              className="header__logo-placeholder header__logo-img--campeche"
-              style={{ display: 'none', height: 56 }}
-            >
-              <span style={{ fontSize: 10, color: 'var(--c-gray-md)', textAlign: 'center', lineHeight: 1.3 }}>
-                Logo<br />Campeche
-              </span>
-            </div>
-          </div>
-
-          <div className="header__logo-divider" aria-hidden="true" />
-
-          {/* Logo Gobierno para Todos */}
-          <div style={{ position: 'relative', height: 56 }}>
-            <img
-              src="/logocampeche.jpg"
-              alt="Logo Campeche"
-              className="header__logo-img header__logo-img--gobierno"
-              onError={handleImgError}
-            />
-            <div
-              className="header__logo-placeholder header__logo-img--gobierno"
-              style={{ display: 'none', height: 56 }}
-            >
-              <span style={{ fontSize: 10, color: 'var(--c-gray-md)', textAlign: 'center', lineHeight: 1.3 }}>
-                Gobierno<br />para Todos
-              </span>
-            </div>
-          </div>
-        </div>
-
+      <div className="header__inner" style={{ justifyContent: 'flex-end', padding: '4px 24px' }}>
         {/* Botón de perfil / inicio de sesión */}
         <button 
           className="header__user-btn" 

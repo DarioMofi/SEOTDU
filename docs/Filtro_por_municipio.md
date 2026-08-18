@@ -77,3 +77,49 @@ Una vez implementada la función en Supabase, el frontend simplificará su códi
 *   **Rendimiento Drástico:** El navegador solo descargará kilobytes de información en lugar de megabytes. Si la capa del estado pesa 50MB, recortarla a un municipio pequeño devolverá solo unos cuantos kilobytes.
 *   **Seguridad e Integridad:** Los datos fuera del municipio simplemente no existirán en la memoria del navegador.
 *   **Simplicidad de UI:** Al no usar máscaras visuales ni jugar con los z-indexes del mapa, se evitan problemas de clics fantasmas en marcadores tapados visualmente.
+
+### 4. Cálculo de Estadística Descriptiva en Backend (Nuevo)
+
+Con la reciente adición del módulo de "Estadística Descriptiva" en el panel lateral (`SidebarControl.tsx`), será necesario calcular estos agregados reales en el backend mediante **PostGIS** en lugar de generarlos en el cliente.
+
+Para alimentar las gráficas (ej. uso de suelo y zonificación), se recomienda crear funciones RPC específicas que devuelvan los cálculos de área total:
+
+**Ejemplo de SQL para Estadísticas de Área:**
+```sql
+CREATE OR REPLACE FUNCTION get_estadistica_uso_suelo(p_municipio_id text DEFAULT NULL)
+RETURNS json AS $$
+DECLARE
+  v_limite geometry;
+BEGIN
+  -- 1. Obtener la geometría del municipio (o nulo para todo el estado)
+  IF p_municipio_id IS NOT NULL THEN
+    SELECT geom INTO v_limite FROM limites_municipales WHERE id = p_municipio_id;
+  END IF;
+
+  RETURN (
+    SELECT json_agg(
+      json_build_object(
+        'categoria', uso_suelo,
+        -- Calcular superficie en Hectáreas usando el área de la intersección
+        'superficie_ha', sum(
+          ST_Area(
+            CASE 
+              WHEN v_limite IS NOT NULL THEN ST_Intersection(geom, v_limite)
+              ELSE geom
+            END::geography
+          )
+        ) / 10000
+      )
+    )
+    FROM capas
+    WHERE layer_id = 'uso_suelo'
+    AND (v_limite IS NULL OR ST_Intersects(geom, v_limite))
+    GROUP BY uso_suelo
+  );
+END;
+$$ LANGUAGE plpgsql;
+```
+
+**Impacto en Frontend:**
+- El componente `SidebarControl.tsx` pasará de tener variables `barVals` y `pieVals` simuladas por un algoritmo hash, a disparar una petición asíncrona hacia Supabase pasándole el ID del municipio seleccionado (o `null` si la escala es Estatal).
+- Las gráficas SVG se renderizarán directamente sobre este flujo de datos verídico calculando los porcentajes exactos (`superficie_ha / total_ha * 100`).

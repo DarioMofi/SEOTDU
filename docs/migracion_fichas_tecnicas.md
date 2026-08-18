@@ -91,3 +91,18 @@ Migrar esta lógica al catálogo SQL logrará un acoplamiento perfecto de respon
 * La **Base de datos** almacenará el dato normalizado 1 sola vez en el catálogo.
 * El **Backend (API)** transmitirá solo cadenas de texto ligeras al cargar el mapa.
 * El **Frontend (React)** será de reacción inmediata, renderizando la pestaña de Información en 0 milisegundos sin depender de la carga de megabytes de polígonos.
+
+---
+
+## 4. Unificación de Vistas y Supresión de Ficha Territorial
+
+En el rediseño reciente del frontend (en `SidebarControl.tsx`), se eliminó la sección redundante de "Ficha Territorial" que aparecía al filtrar por un municipio, consolidando la visualización en dos componentes modulares que se inyectan sin importar el estado del filtro:
+
+1. **Estadística Descriptiva**
+2. **Información del Mapa** (Instituciones responsables e Instrumentos normativos)
+
+### Impacto en la Migración
+
+Al usar la misma función renderizadora (`renderInformacionMapa()`) tanto en la vista general (escala estatal) como en la ficha del municipio, la arquitectura del backend se simplifica aún más:
+* El panel "Información del Mapa" simplemente se alimentará de forma reactiva de los metadatos de las capas actualmente prendidas, independientemente del polígono o municipio enfocado.
+* No habrá necesidad de crear endpoints de metadatos separados ni duplicar atributos descriptivos normativos dentro de las tablas espaciales municipales. El estado global del catálogo dominará la UI de forma predecible.

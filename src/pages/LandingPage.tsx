@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
+import Larguillo from '../components/Larguillo'
 import FaqBox from '../components/FaqBox'
 import ModulesGrid from '../components/ModulesGrid'
 import Footer from '../components/Footer'
@@ -17,6 +18,10 @@ export default function LandingPage() {
 
       <main id="main-content">
         <Hero />
+        
+        <section className="bg-white pt-1">
+          <Larguillo />
+        </section>
 
         {/* Sección de interacción: descripción + FAQ */}
         <section className="interaction" aria-labelledby="interaction-heading">
@@ -72,7 +77,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <ModulesGrid />
+        {/* <ModulesGrid /> */}
       </main>
 
       <Footer />

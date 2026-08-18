@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { CAMPECHE_GEOJSON, MunicipioProperties } from '../../data/campecheData'
 import { getCapaGeoJSON } from '../../lib/cartografia'
 

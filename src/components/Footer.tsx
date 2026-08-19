@@ -74,10 +74,26 @@ export default function Footer() {
         <div>
           <h3 className="footer__col-title">Enlaces</h3>
           <ul className="footer__links">
-            <li><a href="#" className="footer__link">Transparencia Estatal</a></li>
-            <li><a href="#" className="footer__link">Conectividad Para Todos</a></li>
-            <li><a href="#" className="footer__link">Laboratorios de Transformación Digital</a></li>
-            <li><a href="#" className="footer__link">Ko'ox</a></li>
+            <li>
+              <a
+                href="https://sedumop.campeche.gob.mx/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer__link"
+              >
+                SEDUMOP
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.infocam.gob.mx/infocam/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer__link"
+              >
+                INFOCAM
+              </a>
+            </li>
           </ul>
         </div>
       </div>

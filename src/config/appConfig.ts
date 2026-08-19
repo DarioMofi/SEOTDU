@@ -67,6 +67,16 @@ export const appConfig = {
       icon: 'mapa_base' // Manejaremos el render del SVG dinámico en el componente
     },
     {
+      id: 'normatividad',
+      title: 'Modelo de Ordenamiento Territorial',
+      colorClass: 'text-slate-600 bg-slate-50 border-slate-200',
+      themeColor: '#1C334E',
+      themeBg: 'rgba(71, 85, 105, 0.02)',
+      themeHover: 'rgba(71, 85, 105, 0.04)',
+      file: 'Normatividad_MOT.json',
+      icon: 'normatividad'
+    },
+    {
       id: 'ambiental',
       title: 'Ambiental',
       colorClass: 'text-green-600 bg-green-50 border-green-200',
@@ -269,16 +279,6 @@ export const appConfig = {
           ]
         }
       ]
-    },
-    {
-      id: 'normatividad',
-      title: 'Modelo de Ordenamiento Territorial',
-      colorClass: 'text-slate-600 bg-slate-50 border-slate-200',
-      themeColor: '#1C334E',
-      themeBg: 'rgba(71, 85, 105, 0.02)',
-      themeHover: 'rgba(71, 85, 105, 0.04)',
-      file: 'Normatividad_MOT.json',
-      icon: 'normatividad'
     }
   ]
 }

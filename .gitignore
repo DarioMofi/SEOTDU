@@ -4,7 +4,10 @@ dist/
 # Guía de migración al backend: se mantiene solo en local
 backend_migration_guide.md
 
-# GeoPackage de origen: insumo de extract_gpkg.py. Están fuera de public/
-# porque Vite copiaría los ~98 MB al build y el navegador no los puede leer
-# (son SQLite). Lo que se publica son los GeoJSON de public/layers.
+# GeoPackage de origen
 cartografia/
+*.gpkg
+public/layers/Geopaquetes/
+
+# Documentación local
+docs/ 

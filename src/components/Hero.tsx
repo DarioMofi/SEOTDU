@@ -1,8 +1,7 @@
 export default function Hero() {
-
   return (
     <section className="hero" aria-label="Presentación principal">
-      {/* Imagen de fondo del estado de Campeche */}
+      {/* Fotografía de alta resolución con sobrevuelo de cámara cinematográfico */}
       <img
         src="/campeche.jpeg"
         alt="Vista aérea del estado de Campeche"
@@ -12,6 +11,7 @@ export default function Hero() {
           e.currentTarget.style.display = 'none'
         }}
       />
+
       {/* Overlay de contraste */}
       <div className="hero__overlay" aria-hidden="true" />
 

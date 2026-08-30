@@ -18,6 +18,23 @@ interface MonitorItem {
 
 const items: MonitorItem[] = [
   { 
+    id: 5, 
+    title: "MOT", 
+    themeColor: "#1C334E",
+    targetModulo: "normatividad",
+    icon: (
+      <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" viewBox="0 -960 960 960" fill="currentColor">
+        <path d="M240-80q-50 0-85-35t-35-85v-120h120v-560h600v680q0 50-35 85t-85 35H240Zm480-80q17 0 28.5-11.5T760-200v-600H320v480h360v120q0 17 11.5 28.5T720-160ZM360-600v-80h360v80H360Zm0 120v-80h360v80H360ZM240-160h360v-80H200v40q0 17 11.5 28.5T240-160Zm0 0h-40 400-360Z" />
+      </svg>
+    ),
+    options: [
+      { id: '5-1', label: 'Proyecto 1', text: 'Modelo de Ordenamiento Territorial: zonificación primaria, secundaria y criterios de uso del suelo.' },
+      { id: '5-2', label: 'Proyecto 2', text: 'Regulación de asentamientos humanos y delimitación de límites urbanos consolidados.' },
+      { id: '5-3', label: 'Proyecto 3', text: 'Matriz de compatibilidad y condicionantes de aprovechamiento del suelo estatal.' },
+      { id: '5-4', label: 'Proyecto 4', text: 'Instrumentos normativos y lineamientos de ordenamiento territorial metropolitano.' },
+    ]
+  },
+  { 
     id: 1, 
     title: "Ambiental", 
     themeColor: "#77923B",
@@ -83,23 +100,6 @@ const items: MonitorItem[] = [
       { id: '4-2', label: 'Proyecto 2', text: 'Zonas industriales, parques logísticos y generación de empleo formal por sector.' },
       { id: '4-3', label: 'Proyecto 3', text: 'Encadenamientos productivos y competitividad regional en el sureste.' },
       { id: '4-4', label: 'Proyecto 4', text: 'Incentivos a la inversión económica, atracción de empresas y desarrollo de clústeres locales.' },
-    ]
-  },
-  { 
-    id: 5, 
-    title: "MOT", 
-    themeColor: "#1C334E",
-    targetModulo: "normatividad",
-    icon: (
-      <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" viewBox="0 -960 960 960" fill="currentColor">
-        <path d="M240-80q-50 0-85-35t-35-85v-120h120v-560h600v680q0 50-35 85t-85 35H240Zm480-80q17 0 28.5-11.5T760-200v-600H320v480h360v120q0 17 11.5 28.5T720-160ZM360-600v-80h360v80H360Zm0 120v-80h360v80H360ZM240-160h360v-80H200v40q0 17 11.5 28.5T240-160Zm0 0h-40 400-360Z" />
-      </svg>
-    ),
-    options: [
-      { id: '5-1', label: 'Proyecto 1', text: 'Modelo de Ordenamiento Territorial: zonificación primaria, secundaria y criterios de uso del suelo.' },
-      { id: '5-2', label: 'Proyecto 2', text: 'Regulación de asentamientos humanos y delimitación de límites urbanos consolidados.' },
-      { id: '5-3', label: 'Proyecto 3', text: 'Matriz de compatibilidad y condicionantes de aprovechamiento del suelo estatal.' },
-      { id: '5-4', label: 'Proyecto 4', text: 'Instrumentos normativos y lineamientos de ordenamiento territorial metropolitano.' },
     ]
   },
 ];
@@ -253,7 +253,7 @@ export default function Larguillo() {
                   style={{ color: isHighlighted ? item.themeColor : '#111827' }}
                 >
                   <span className="text-[10px] sm:text-[11px] md:text-[13px] font-semibold leading-tight drop-shadow-sm font-[family-name:var(--font-body)]">
-                    {item.id === 5 ? "Modelo de Ordenamiento Territorial" : `Monitor ${item.title}`}
+                    {item.title === "MOT" ? "Modelo de Ordenamiento Territorial" : `Monitor ${item.title}`}
                   </span>
                   <span className="flex-shrink-0 transition-transform duration-200 group-hover/title:scale-115">
                     {item.icon}

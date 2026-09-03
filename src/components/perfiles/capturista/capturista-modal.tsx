@@ -1,7 +1,19 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, type DragEvent } from 'react';
 import { X, UploadCloud, ArrowRight, ArrowLeft, CheckCircle, FileText, Database, AlertTriangle, File, Palette, RefreshCw, PlusCircle, ChevronRight, ChevronLeft } from 'lucide-react';
 import './capturista.css';
 import catalogos from '../../plataforma/catalogo-prueba.json';
+
+interface CapturistaModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  /** Recibe el nombre del archivo cargado, para pasarlo a borradores. */
+  onVerify: (nombre: string) => void;
+  onSubmitInstrumento: (nombre: string) => void;
+  tipo?: 'cartografia' | 'instrumento';
+  isVerifying?: boolean;
+}
+
+type Zona = 'a' | 'b' | 'c';
 
 const CapturistaModal = ({ 
   isOpen, 
@@ -10,15 +22,15 @@ const CapturistaModal = ({
   onSubmitInstrumento, 
   tipo = 'cartografia',
   isVerifying = false
-}) => {
+}: CapturistaModalProps) => {
   const [step, setStep] = useState(1);
   const [accion, setAccion] = useState('nuevo'); // 'nuevo' | 'actualizar'
   const [elementoAActualizar, setElementoAActualizar] = useState('');
   const [epsgConfirmed, setEpsgConfirmed] = useState(false);
   
-  const [archivo, setArchivo] = useState(null);
-  const [estilo, setEstilo] = useState(null);
-  const [documento, setDocumento] = useState(null);
+  const [archivo, setArchivo] = useState<File | null>(null);
+  const [estilo, setEstilo] = useState<File | null>(null);
+  const [documento, setDocumento] = useState<File | null>(null);
 
   // Estados de Ficha Técnica (Paso 2)
   const [fuente, setFuente] = useState('');
@@ -32,14 +44,14 @@ const CapturistaModal = ({
   const [fecha, setFecha] = useState('');
   const [ejeEvaluacion, setEjeEvaluacion] = useState('');
 
-  const [dragActive, setDragActive] = useState({ a: false, b: false, c: false });
-  const [fileError, setFileError] = useState(null); 
+  const [dragActive, setDragActive] = useState<Record<Zona, boolean>>({ a: false, b: false, c: false });
+  const [fileError, setFileError] = useState<string | null>(null);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
 
   const prevTipoRef = useRef(tipo);
   const maxSteps = 3;
-  const [pdfPreviewUrl, setPdfPreviewUrl] = useState(null);
+  const [pdfPreviewUrl, setPdfPreviewUrl] = useState<string | null>(null);
 
   useEffect(() => {
     if (documento && documento instanceof File) {
@@ -107,22 +119,22 @@ const CapturistaModal = ({
     setFileError(null);
   };
 
-  const isValidExtension = (fileName, allowedExtensions) => {
+  const isValidExtension = (fileName: string, allowedExtensions: string[]): boolean => {
     if (!fileName) return false;
-    const ext = `.${fileName.split('.').pop().toLowerCase()}`;
+    const ext = `.${(fileName.split('.').pop() ?? '').toLowerCase()}`;
     return allowedExtensions.includes(ext);
   };
 
-  const handleDragOver = (e, zone) => {
+  const handleDragOver = (e: DragEvent<HTMLElement>, zone: Zona) => {
     e.preventDefault();
     setDragActive({ ...dragActive, [zone]: true });
   };
-  const handleDragLeave = (e, zone) => {
+  const handleDragLeave = (e: DragEvent<HTMLElement>, zone: Zona) => {
     e.preventDefault();
     setDragActive({ ...dragActive, [zone]: false });
   };
 
-  const handleDropArchivo = (e) => {
+  const handleDropArchivo = (e: DragEvent<HTMLElement>) => {
     e.preventDefault();
     setDragActive({ ...dragActive, a: false });
     const file = e.dataTransfer.files[0];
@@ -134,7 +146,7 @@ const CapturistaModal = ({
     }
   };
 
-  const handleDropEstilo = (e) => {
+  const handleDropEstilo = (e: DragEvent<HTMLElement>) => {
     e.preventDefault();
     setDragActive({ ...dragActive, b: false });
     const file = e.dataTransfer.files[0];
@@ -146,7 +158,7 @@ const CapturistaModal = ({
     }
   };
 
-  const handleDropDocumento = (e) => {
+  const handleDropDocumento = (e: DragEvent<HTMLElement>) => {
     e.preventDefault();
     setDragActive({ ...dragActive, c: false });
     const file = e.dataTransfer.files[0];
@@ -355,7 +367,7 @@ const CapturistaModal = ({
                               accept=".geojson,.kml,.gpkg,.zip" 
                               style={{ display: 'none' }} 
                               onChange={(e) => {
-                                const file = e.target.files[0];
+                                const file = e.target.files?.[0];
                                 if (file && isValidExtension(file.name, ['.geojson', '.kml', '.gpkg', '.zip'])) {
                                   setArchivo(file);
                                   setFileError(null);
@@ -414,7 +426,7 @@ const CapturistaModal = ({
                               accept=".sld,.qml" 
                               style={{ display: 'none' }} 
                               onChange={(e) => {
-                                const file = e.target.files[0];
+                                const file = e.target.files?.[0];
                                 if (file && isValidExtension(file.name, ['.sld', '.qml'])) {
                                   setEstilo(file);
                                   setFileError(null);
@@ -467,7 +479,7 @@ const CapturistaModal = ({
                           accept=".pdf" 
                           style={{ display: 'none' }} 
                           onChange={(e) => {
-                            const file = e.target.files[0];
+                            const file = e.target.files?.[0];
                             if (file && isValidExtension(file.name, ['.pdf'])) {
                               setDocumento(file);
                               setFileError(null);

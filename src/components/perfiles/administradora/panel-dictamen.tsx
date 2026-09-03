@@ -1,7 +1,28 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { X, CheckCircle, XCircle, FileText, Map, Clock, PlusCircle, RefreshCw, Download, ExternalLink } from 'lucide-react';
 
-const MOCK_FICHAS = {
+/** Los campos que la ficha tecnica muestra en el panel. Datos de muestra: los
+ *  definitivos vendran del backend. */
+interface FichaTecnica {
+  tipo: string;
+  operacion: string;
+  archivoPdf: string;
+  paginasPdf: number;
+  pesoPdf: string;
+  titulo: string;
+  fuente: string;
+  responsable: string;
+  escala: string;
+  periodicidad: string;
+  monitor: string;
+  instrumentoOrigen: string;
+  fecha: string;
+  horizonte: string;
+  ejeEvaluacion: string;
+  fechaEnvioRevision: string;
+}
+
+const MOCK_FICHAS: Record<string, FichaTecnica> = {
   'red_ciclovias_v2': {
     tipo: 'cartografia',
     operacion: 'actualizar',
@@ -94,7 +115,16 @@ const MOCK_FICHAS = {
   }
 };
 
-const PanelDictamen = ({ elemento, capa, tipo = 'cartografia', isOpen, onClose, onDictamen }) => {
+interface PanelDictamenProps {
+  elemento?: string;
+  capa?: string;
+  tipo?: 'cartografia' | 'instrumento';
+  isOpen: boolean;
+  onClose: () => void;
+  onDictamen: (decision: 'aprobar' | 'rechazar', comentario: string) => void;
+}
+
+const PanelDictamen = ({ elemento, capa, tipo = 'cartografia', isOpen, onClose, onDictamen }: PanelDictamenProps) => {
   const [activeTab, setActiveTab] = useState('ficha');
   const [comentario, setComentario] = useState('');
 

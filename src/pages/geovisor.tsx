@@ -40,6 +40,7 @@ export default function Geovisor() {
   // apilado: la capa de encima aparece primero.
   const legendLayers = layerOrder
     .filter((id) => activeLayers.includes(id))
+    .filter((id) => !appConfig.LEGEND_HIDDEN_LAYERS.includes(id))
     .map((id) => ({ id, label: layerLabels[id] ?? id }))
 
   return (

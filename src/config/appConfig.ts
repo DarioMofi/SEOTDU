@@ -10,14 +10,20 @@ export const appConfig = {
   // usuario no las puede apagar por separado. Se encienden y se apagan con el
   // módulo que las contiene.
   FIXED_LAYERS: [
-    'C04_corr_agua_2003',
-    'C04_estaciones_RFN25',
-    'C04_Puertos_reg',
-    'C04_Aeropuertos_2012',
-    'estatal',
-    'C04_BUFER_ESTATAL',
-    'C04_Municipios'
+    'c04_lim_edo_2024_inegi_2024',
+    // El bufer es el efecto de los estados vecinos en gris; no representa un
+    // dato consultable, por eso va sin control y sin entrada propia.
+    'c00_bufer_estatal_inegi_2024_2026',
+    'c04_municipios_inegi_2024',
+    'c04_aeropuertos_2012',
+    'c04_estaciones_rfn25',
+    'c04_red_regional_imt_inegi_2024'
   ],
+
+  // Capas que se dibujan pero no se listan en la leyenda: no representan un
+  // dato consultable, son recurso visual. El bufer estatal es el gris de los
+  // estados vecinos, que sirve para enmarcar Campeche y nada más.
+  LEGEND_HIDDEN_LAYERS: ['c00_bufer_estatal_inegi_2024_2026'],
 
   // Nombres del árbol de QGIS que no coinciden con la tabla real del
   // GeoPackage. Son defectos de la cartografía de origen: en cuanto los
@@ -79,7 +85,10 @@ export const appConfig = {
         'c04_corr_agua_2003',
         'c00_anp_conanp_2025',
         'c00_rpt_conabio_2008',
-        'c04_areaboscosa_inegi_2018'
+        'c04_areaboscosa_inegi_2018',
+        // Fija y pesada (93 MB): al no tener control propio, se carga
+        // siempre que se abre el geovisor.
+        'c04_red_regional_imt_inegi_2024'
       ],
       icon: 'mapa_base' // Manejaremos el render del SVG dinámico en el componente
     },

@@ -375,8 +375,10 @@ export default function ModuleLayerSelector({
   const capasEncendidas = (modulo: Module): string[] => {
     const ids = agruparContiguas(modulo.layers.map((l) => l.id), modulo.groups)
     if (!modulo.defaultLayers) return ids
-    const encendidas = modulo.defaultLayers
-    return ids.filter((id) => encendidas.includes(id))
+    // Por id normalizado: `defaultLayers` puede nombrar la capa con el id del
+    // catálogo mientras el volcado la resuelve con el nombre original.
+    const encendidas = new Set(modulo.defaultLayers.map(norm))
+    return ids.filter((id) => encendidas.has(norm(id)))
   }
 
   // Cargar las capas dinámicamente desde los archivos JSON
@@ -558,7 +560,14 @@ export default function ModuleLayerSelector({
       onChangeLayers(activeLayers.filter((id) => !ids.includes(id)))
       onChangeOrder(layerOrder.filter((id) => !ids.includes(id)))
     } else {
-      onChangeLayers([...activeLayers, ...ids.filter((id) => !activeLayers.includes(id))])
+      // Al encender una capa del árbol se apaga el fondo excluyente del módulo:
+      // es un polígono que cubre el estado entero y taparía lo recién pedido.
+      const fondo = appConfig.CAPA_BASE_EXCLUYENTE[activeModule]
+      const apagarFondo = fondo && !ids.some((id) => norm(id) === norm(fondo))
+      const base = apagarFondo
+        ? activeLayers.filter((id) => norm(id) !== norm(fondo))
+        : activeLayers
+      onChangeLayers([...base, ...ids.filter((id) => !base.includes(id))])
       onChangeOrder([...layerOrder, ...ids.filter((id) => !layerOrder.includes(id))])
     }
   }
@@ -728,10 +737,6 @@ export default function ModuleLayerSelector({
                     const entradas = getOrderedEntries(module)
                     const activas = entradas.filter((e) => e.ids.some((id) => activeLayers.includes(id)))
                     
-                    const half = Math.ceil(entradas.length / 2)
-                    const diagnosticoEntradas = entradas.slice(0, half)
-                    const estrategiasEntradas = entradas.slice(half)
-
                     const renderCategory = (categoryEntradas: typeof entradas, title: string | null) => {
                       if (categoryEntradas.length === 0) return null
                       return (
@@ -885,8 +890,16 @@ export default function ModuleLayerSelector({
                     // Un módulo con árbol se navega por niveles: la estrategia
                     // despliega sus líneas y la línea despliega sus capas.
                     if (module.arbol) {
+                      // Las capas que el árbol no menciona —el propio modelo de
+                      // ordenamiento— van sueltas arriba, o se quedarían sin
+                      // forma de encenderse de nuevo.
+                      const enArbol = new Set(
+                        module.arbol.flatMap((e) => e.lineas.flatMap((l) => l.layers))
+                      )
+                      const sueltas = entradas.filter((e) => !e.ids.some((id) => enArbol.has(id)))
                       return (
                         <div className="flex flex-col gap-1">
+                          {sueltas.length > 0 && renderCategory(sueltas, null)}
                           {module.arbol.map((estrategia) => {
                             const claveEst = estrategia.label
                             const abiertaEst = ramasAbiertas.includes(claveEst)
@@ -964,12 +977,10 @@ export default function ModuleLayerSelector({
                       )
                     }
 
-                    return (
-                      <>
-                        {renderCategory(diagnosticoEntradas, 'Diagnóstico')}
-                        {renderCategory(estrategiasEntradas, 'Estrategias')}
-                      </>
-                    )
+                    // Sin árbol, las capas van en una lista sola. Antes se
+                    // partían en «Diagnóstico» y «Estrategias», pero el corte
+                    // era `slice(0, half)`: no clasificaba nada.
+                    return renderCategory(entradas, null)
                   })()}
                 </div>
               )}

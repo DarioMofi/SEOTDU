@@ -73,6 +73,13 @@ export const appConfig = {
     }
   >,
 
+  // Capa que se apaga sola al encender cualquiera de las capas del árbol de su
+  // módulo. El polígono del MOT cubre todo el estado: dejarlo encendido
+  // esconde debajo lo que el usuario acaba de pedir.
+  CAPA_BASE_EXCLUYENTE: {
+    normatividad: 'c04_modelo_ordenamiento_territorial_op_pg_2023_cp'
+  } as Record<string, string>,
+
   // Capas que rotulan cada elemento sobre el mapa, con el campo del que sale
   // el texto. El visor no toma rótulos del volcado de QGIS, así que se
   // declaran aquí.
@@ -157,6 +164,9 @@ export const appConfig = {
       themeBg: 'rgba(71, 85, 105, 0.02)',
       themeHover: 'rgba(71, 85, 105, 0.04)',
       file: 'JSON_SIMBOLOGIA/05_MOT.json',
+      // Solo el modelo arranca encendido. Las 40 capas de estrategia quedan
+      // apagadas: el usuario elige cual mirar.
+      defaultLayers: ['c04_modelo_ordenamiento_territorial_op_pg_2023_cp'],
       // El MOT no se organiza por temas como los demás monitores, sino por
       // Estrategia → Línea estratégica → capa. La fuente es
       // `public/layers/Clasificacion MOT.md`.

@@ -28,7 +28,7 @@ interface Module {
   defaultLayers?: string[]
   groups?: LayerGroup[]
   /** Solo el MOT: agrupa sus capas en Estrategia → Línea estratégica. */
-  arbol?: { label: string; lineas: { label: string; layers: string[] }[] }[]
+  arbol?: { label: string; lineas?: { label: string; layers: string[] }[]; layers?: string[] }[]
 }
 
 /**
@@ -46,7 +46,7 @@ interface Entrada {
 }
 
 import { appConfig } from '../../config/appConfig'
-import { getCapasDisponibles, getEstiloModulo } from '../../lib/cartografia'
+import { getCapasDisponibles, getCategoriasDeCapas, getEstiloModulo } from '../../lib/cartografia'
 
 function getModuleIcon(iconName: string) {
   switch(iconName) {
@@ -266,10 +266,14 @@ interface Linea {
   layers: string[]
 }
 
-/** Una estrategia: agrupa líneas. */
+/**
+ * Una rama del árbol. Con `lineas` abre otro nivel antes de las capas (el MOT);
+ * con `layers` las lista directo (los demás monitores, agrupados por categoría).
+ */
 interface Estrategia {
   label: string
-  lineas: Linea[]
+  lineas?: Linea[]
+  layers?: string[]
 }
 
 interface ModuleConfig {
@@ -391,6 +395,15 @@ export default function ModuleLayerSelector({
         console.error('No se pudo cargar la lista de capas disponibles', e)
       }
 
+      // Cómo clasifica la cartografía cada capa. Con esto los monitores que no
+      // declaran su propio árbol se agrupan en Desempeño / Estrategia.
+      let categorias: Record<string, string> = {}
+      try {
+        categorias = await getCategoriasDeCapas()
+      } catch (e) {
+        console.error('No se pudieron cargar las categorías de las capas', e)
+      }
+
       const allStyles: Record<string, any> = {}
       const allLabels: Record<string, string> = {}
 
@@ -429,7 +442,7 @@ export default function ModuleLayerSelector({
               // emparejamiento es por id normalizado. La capa se agrega con el
               // id del árbol: es el que resuelve el archivo nuevo.
               const deseadas = new Map(
-                arbol.flatMap((e) => e.lineas.flatMap((l) => l.layers)).map((id) => [norm(id), id])
+                arbol.flatMap((e) => (e.lineas ?? []).flatMap((l) => l.layers)).map((id) => [norm(id), id])
               )
               const yaEstan = new Set(extractedLayers.map((l) => norm(l.id)))
               for (const archivo of (modConfig as ModuleConfig).fuentesDeCapas ?? []) {
@@ -452,6 +465,23 @@ export default function ModuleLayerSelector({
               allLabels[l.id] = l.label
             })
             
+            /* Agrupación provisional de los monitores: dos ramas leídas del
+               atributo `categoria` del dato. Mapa Base no la lleva (todas sus
+               capas son `Mapa_Base`) y el MOT trae su propio árbol. */
+            const declarado = (modConfig as ModuleConfig).arbol
+            const porCategoria = [
+              { label: 'Desempeño territorial', categoria: 'Diagnostico' },
+              { label: 'Estrategia territorial', categoria: 'Estrategia' }
+            ]
+              .map((rama) => ({
+                label: rama.label,
+                layers: extractedLayers
+                  .filter((l) => categorias[norm(l.id)] === rama.categoria)
+                  .map((l) => l.id)
+              }))
+              .filter((rama) => rama.layers.length > 0)
+            const arbolFinal = declarado ?? (porCategoria.length > 0 ? porCategoria : undefined)
+
             return {
               id: modConfig.id,
               title: modConfig.title,
@@ -463,7 +493,7 @@ export default function ModuleLayerSelector({
               layers: extractedLayers,
               defaultLayers: (modConfig as ModuleConfig).defaultLayers,
               groups: (modConfig as ModuleConfig).groups,
-              arbol: (modConfig as ModuleConfig).arbol
+              arbol: arbolFinal
             }
           } catch (error) {
             console.error(`Error loading styles for ${modConfig.id}:`, error)
@@ -893,8 +923,13 @@ export default function ModuleLayerSelector({
                       // Las capas que el árbol no menciona —el propio modelo de
                       // ordenamiento— van sueltas arriba, o se quedarían sin
                       // forma de encenderse de nuevo.
+                      // Cuenta las dos formas de rama: con líneas y con capas
+                      // directas. Si no, las capas ya clasificadas salían
+                      // además como sueltas y se veían dos veces.
                       const enArbol = new Set(
-                        module.arbol.flatMap((e) => e.lineas.flatMap((l) => l.layers))
+                        module.arbol.flatMap((e) =>
+                          e.lineas ? e.lineas.flatMap((l) => l.layers) : (e.layers ?? [])
+                        )
                       )
                       const sueltas = entradas.filter((e) => !e.ids.some((id) => enArbol.has(id)))
                       return (
@@ -903,8 +938,12 @@ export default function ModuleLayerSelector({
                           {module.arbol.map((estrategia) => {
                             const claveEst = estrategia.label
                             const abiertaEst = ramasAbiertas.includes(claveEst)
+                            // Una rama con `lineas` abre otro nivel; una con
+                            // `layers` lista sus capas de una vez.
                             const capasEst = new Set(
-                              estrategia.lineas.flatMap((l) => l.layers)
+                              estrategia.lineas
+                                ? estrategia.lineas.flatMap((l) => l.layers)
+                                : (estrategia.layers ?? [])
                             )
                             const activasEst = entradas.filter(
                               (e) =>
@@ -938,7 +977,14 @@ export default function ModuleLayerSelector({
 
                                 {abiertaEst && (
                                   <div className="px-1.5 pb-1.5 flex flex-col gap-1">
-                                    {estrategia.lineas.map((linea) => {
+                                    {!estrategia.lineas &&
+                                      renderCategory(
+                                        entradas.filter((e) =>
+                                          e.ids.some((id) => capasEst.has(id))
+                                        ),
+                                        null
+                                      )}
+                                    {(estrategia.lineas ?? []).map((linea) => {
                                       const claveLinea = `${claveEst}//${linea.label}`
                                       const abiertaLinea = ramasAbiertas.includes(claveLinea)
                                       const suyas = entradas.filter((e) =>

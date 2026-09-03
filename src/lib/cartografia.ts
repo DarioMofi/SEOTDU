@@ -53,7 +53,9 @@ interface Catalogo {
   raiz: string
   mapas: Array<{
     id: string
-    secciones: Array<{ capas: Array<{ id: string; ruta: string }> }>
+    secciones: Array<{
+      capas: Array<{ id: string; ruta: string; categoria?: string | null }>
+    }>
   }>
 }
 
@@ -130,6 +132,30 @@ export async function getCapasDisponibles(): Promise<string[]> {
   const migradas = new Set(nuevas.map(norm))
   const sinDuplicar = sueltas.filter((id) => !migradas.has(norm(id)))
   return [...new Set([...sinDuplicar, ...nuevas])]
+}
+
+/**
+ * Cómo clasifica la cartografía cada capa: `Diagnostico`, `Estrategia` o
+ * `Mapa_Base`.
+ *
+ * Sale del atributo `categoria` del propio GeoJSON, precalculado en el
+ * catálogo: el menú necesita agrupar las capas antes de descargarlas.
+ *
+ * La clave es el id normalizado, porque el volcado de QGIS nombra las capas
+ * con el nombre original y el catálogo con el del archivo.
+ */
+export async function getCategoriasDeCapas(): Promise<Record<string, string>> {
+  const catalogo = await leerCatalogo()
+  if (!catalogo) return {}
+  const out: Record<string, string> = {}
+  for (const mapa of catalogo.mapas) {
+    for (const seccion of mapa.secciones) {
+      for (const capa of seccion.capas) {
+        if (capa.categoria) out[norm(capa.id)] = capa.categoria
+      }
+    }
+  }
+  return out
 }
 
 /**

@@ -34,19 +34,22 @@
               "id": "c00_bufer_estatal_inegi_2024_2026",
               "archivo": "c00_bufer_estatal_inegi_2024_2026.geojson",
               "ruta": "00_Mapa_Base/Limites_Administrativos/c00_bufer_estatal_inegi_2024_2026.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             },
             {
               "id": "c04_lim_edo_2024_inegi_2024",
               "archivo": "c04_lim_edo_2024_inegi_2024.geojson",
               "ruta": "00_Mapa_Base/Limites_Administrativos/c04_lim_edo_2024_inegi_2024.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             },
             {
               "id": "c04_municipios_inegi_2024",
               "archivo": "c04_municipios_inegi_2024.geojson",
               "ruta": "00_Mapa_Base/Limites_Administrativos/c04_municipios_inegi_2024.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             }
           ]
         },
@@ -61,25 +64,29 @@
               "id": "c00_zonasmetropolitanas_conapo_2020",
               "archivo": "c00_zonasmetropolitanas_conapo_2020.geojson",
               "ruta": "00_Mapa_Base/Localidades_Asentamientos/c00_zonasmetropolitanas_conapo_2020.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": null
             },
             {
               "id": "c04_localidades_rurales_2024",
               "archivo": "c04_localidades_rurales_2024.geojson",
               "ruta": "00_Mapa_Base/Localidades_Asentamientos/c04_localidades_rurales_2024.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             },
             {
               "id": "c04_scince_localidad_urbana_inegi_2020",
               "archivo": "c04_scince_localidad_urbana_inegi_2020.geojson",
               "ruta": "00_Mapa_Base/Localidades_Asentamientos/c04_scince_localidad_urbana_inegi_2020.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             },
             {
               "id": "c04_scince_manzana_inegi_2020",
               "archivo": "c04_scince_manzana_inegi_2020.geojson",
               "ruta": "00_Mapa_Base/Localidades_Asentamientos/c04_scince_manzana_inegi_2020.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             }
           ]
         },
@@ -94,37 +101,43 @@
               "id": "c00_anp_conanp_2025",
               "archivo": "c00_anp_conanp_2025.geojson",
               "ruta": "00_Mapa_Base/Medio_Natural/c00_anp_conanp_2025.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             },
             {
               "id": "c00_rpt_conabio_2008",
               "archivo": "c00_rpt_conabio_2008.geojson",
               "ruta": "00_Mapa_Base/Medio_Natural/c00_rpt_conabio_2008.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             },
             {
               "id": "c04_areaboscosa_inegi_2018",
               "archivo": "c04_areaboscosa_inegi_2018.geojson",
               "ruta": "00_Mapa_Base/Medio_Natural/c04_areaboscosa_inegi_2018.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             },
             {
               "id": "c04_cesc_opmatpg_2023",
               "archivo": "c04_cesc_opmatpg_2023.geojson",
               "ruta": "00_Mapa_Base/Medio_Natural/c04_cesc_opmatpg_2023.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             },
             {
               "id": "c04_corr_agua_2003",
               "archivo": "c04_corr_agua_2003.geojson",
               "ruta": "00_Mapa_Base/Medio_Natural/c04_corr_agua_2003.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             },
             {
               "id": "c04_cuerpos_agua_inegi_2024",
               "archivo": "c04_cuerpos_agua_inegi_2024.geojson",
               "ruta": "00_Mapa_Base/Medio_Natural/c04_cuerpos_agua_inegi_2024.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             }
           ]
         },
@@ -139,37 +152,43 @@
               "id": "c00_rfn_artf_2024",
               "archivo": "c00_rfn_artf_2024.geojson",
               "ruta": "00_Mapa_Base/Movilidad_Infraestructura/c00_rfn_artf_2024.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             },
             {
               "id": "c04_aeropuertos_2012",
               "archivo": "c04_aeropuertos_2012.geojson",
               "ruta": "00_Mapa_Base/Movilidad_Infraestructura/c04_aeropuertos_2012.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             },
             {
               "id": "c04_estaciones_rfn25",
               "archivo": "c04_estaciones_rfn25.geojson",
               "ruta": "00_Mapa_Base/Movilidad_Infraestructura/c04_estaciones_rfn25.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             },
             {
               "id": "c04_estacionestm_sedatu_2024",
               "archivo": "c04_estacionestm_sedatu_2024.geojson",
               "ruta": "00_Mapa_Base/Movilidad_Infraestructura/c04_estacionestm_sedatu_2024.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             },
             {
               "id": "c04_puntos_int_imt_inegi_2024",
               "archivo": "c04_puntos_int_imt_inegi_2024.geojson",
               "ruta": "00_Mapa_Base/Movilidad_Infraestructura/c04_puntos_int_imt_inegi_2024.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             },
             {
               "id": "c04_red_regional_imt_inegi_2024",
               "archivo": "c04_red_regional_imt_inegi_2024.geojson",
               "ruta": "00_Mapa_Base/Movilidad_Infraestructura/c04_red_regional_imt_inegi_2024.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Mapa_Base"
             }
           ]
         }
@@ -193,61 +212,71 @@
               "id": "c04_concentraciongeneracionresiduos_inegi_pepgirssu_2020",
               "archivo": "c04_concentraciongeneracionresiduos_inegi_pepgirssu_2020.geojson",
               "ruta": "01_Ambiental/01_Medio fisico natural/c04_concentraciongeneracionresiduos_inegi_pepgirssu_2020.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_erosionsuelo_inegi_2014",
               "archivo": "c04_erosionsuelo_inegi_2014.geojson",
               "ruta": "01_Ambiental/01_Medio fisico natural/c04_erosionsuelo_inegi_2014.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_generacionresiduosmun_inegi_pepgirssu_2020",
               "archivo": "c04_generacionresiduosmun_inegi_pepgirssu_2020.geojson",
               "ruta": "01_Ambiental/01_Medio fisico natural/c04_generacionresiduosmun_inegi_pepgirssu_2020.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_industriatratamientoresiduos_inegi_denue_2023",
               "archivo": "c04_industriatratamientoresiduos_inegi_denue_2023.geojson",
               "ruta": "01_Ambiental/01_Medio fisico natural/c04_industriatratamientoresiduos_inegi_denue_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_iresilienciacambioclimatico_opmatpg_2023",
               "archivo": "c04_iresilienciacambioclimatico_opmatpg_2023.geojson",
               "ruta": "01_Ambiental/01_Medio fisico natural/c04_iresilienciacambioclimatico_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_karst_cenapred_2023",
               "archivo": "c04_karst_cenapred_2023.geojson",
               "ruta": "01_Ambiental/01_Medio fisico natural/c04_karst_cenapred_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_sequialx_opmatpg_2023",
               "archivo": "c04_sequialx_opmatpg_2023.geojson",
               "ruta": "01_Ambiental/01_Medio fisico natural/c04_sequialx_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_sequiamx_opmatpg_2023",
               "archivo": "c04_sequiamx_opmatpg_2023.geojson",
               "ruta": "01_Ambiental/01_Medio fisico natural/c04_sequiamx_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_sitiosdispresiduos_inegi_pepgirssu_2020",
               "archivo": "c04_sitiosdispresiduos_inegi_pepgirssu_2020.geojson",
               "ruta": "01_Ambiental/01_Medio fisico natural/c04_sitiosdispresiduos_inegi_pepgirssu_2020.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_ttrop_noaa_2023",
               "archivo": "c04_ttrop_noaa_2023.geojson",
               "ruta": "01_Ambiental/01_Medio fisico natural/c04_ttrop_noaa_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             }
           ]
         },
@@ -262,85 +291,99 @@
               "id": "c04_advc_conanp_conabio_2022",
               "archivo": "c04_advc_conanp_conabio_2022.geojson",
               "ruta": "01_Ambiental/E1_Selva, Tierra y Agua/c04_advc_conanp_conabio_2022.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_anp_estatal_balamkin_balamku_conabio_2020",
               "archivo": "c04_anp_estatal_balamkin_balamku_conabio_2020.geojson",
               "ruta": "01_Ambiental/E1_Selva, Tierra y Agua/c04_anp_estatal_balamkin_balamku_conabio_2020.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_anp_rio_candelaria_opmatpg_2023",
               "archivo": "c04_anp_rio_candelaria_opmatpg_2023.geojson",
               "ruta": "01_Ambiental/E1_Selva, Tierra y Agua/c04_anp_rio_candelaria_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_conservacion_y_restauracion_humedales_conabio_2020",
               "archivo": "c04_conservacion_y_restauracion_humedales_conabio_2020.geojson",
               "ruta": "01_Ambiental/E1_Selva, Tierra y Agua/c04_conservacion_y_restauracion_humedales_conabio_2020.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_pasos_de_fauna_ftm_2023",
               "archivo": "c04_pasos_de_fauna_ftm_2023.geojson",
               "ruta": "01_Ambiental/E1_Selva, Tierra y Agua/c04_pasos_de_fauna_ftm_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_playas_anidacion_tortugas_opmatpg_2023",
               "archivo": "c04_playas_anidacion_tortugas_opmatpg_2023.geojson",
               "ruta": "01_Ambiental/E1_Selva, Tierra y Agua/c04_playas_anidacion_tortugas_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_programa_captacion_lluvia_xpujil_inegi_2020",
               "archivo": "c04_programa_captacion_lluvia_xpujil_inegi_2020.geojson",
               "ruta": "01_Ambiental/E1_Selva, Tierra y Agua/c04_programa_captacion_lluvia_xpujil_inegi_2020.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_programa_proteccion_tortugas_semabicce_opmatpg_2023",
               "archivo": "c04_programa_proteccion_tortugas_semabicce_opmatpg_2023.geojson",
               "ruta": "01_Ambiental/E1_Selva, Tierra y Agua/c04_programa_proteccion_tortugas_semabicce_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_programa_saneamiento_cuencas_conagua_2016",
               "archivo": "c04_programa_saneamiento_cuencas_conagua_2016.geojson",
               "ruta": "01_Ambiental/E1_Selva, Tierra y Agua/c04_programa_saneamiento_cuencas_conagua_2016.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_propuesta_corredor_balam_beh_semabicce_2023",
               "archivo": "c04_propuesta_corredor_balam_beh_semabicce_2023.geojson",
               "ruta": "01_Ambiental/E1_Selva, Tierra y Agua/c04_propuesta_corredor_balam_beh_semabicce_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_propuesta_corredor_norte_semabicce_2023",
               "archivo": "c04_propuesta_corredor_norte_semabicce_2023.geojson",
               "ruta": "01_Ambiental/E1_Selva, Tierra y Agua/c04_propuesta_corredor_norte_semabicce_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_propuesta_corredor_palizada_semabicce_2023",
               "archivo": "c04_propuesta_corredor_palizada_semabicce_2023.geojson",
               "ruta": "01_Ambiental/E1_Selva, Tierra y Agua/c04_propuesta_corredor_palizada_semabicce_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_red_monitoreo_calidad_aguas_superficiales_conabio_2008",
               "archivo": "c04_red_monitoreo_calidad_aguas_superficiales_conabio_2008.geojson",
               "ruta": "01_Ambiental/E1_Selva, Tierra y Agua/c04_red_monitoreo_calidad_aguas_superficiales_conabio_2008.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_rio_candelaria_inegi_2008_opmatpg_2023",
               "archivo": "c04_rio_candelaria_inegi_2008_opmatpg_2023.geojson",
               "ruta": "01_Ambiental/E1_Selva, Tierra y Agua/c04_rio_candelaria_inegi_2008_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             }
           ]
         }
@@ -364,7 +407,8 @@
               "id": "c04_localidades_iter_inegi_2020",
               "archivo": "c04_localidades_iter_inegi_2020.geojson",
               "ruta": "02_Social/02_Sociodemográfico/c04_localidades_iter_inegi_2020.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             }
           ]
         },
@@ -379,37 +423,43 @@
               "id": "c04_efpatrimonioinmble_sic_2023",
               "archivo": "c04_efpatrimonioinmble_sic_2023.geojson",
               "ruta": "02_Social/06_Patrimonio/c04_efpatrimonioinmble_sic_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_grupoetnico_inpi_2020",
               "archivo": "c04_grupoetnico_inpi_2020.geojson",
               "ruta": "02_Social/06_Patrimonio/c04_grupoetnico_inpi_2020.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_patrimonioinmaterial_sic_2023",
               "archivo": "c04_patrimonioinmaterial_sic_2023.geojson",
               "ruta": "02_Social/06_Patrimonio/c04_patrimonioinmaterial_sic_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_patrimonioinmaterialidioma_opmatpg_2023",
               "archivo": "c04_patrimonioinmaterialidioma_opmatpg_2023.geojson",
               "ruta": "02_Social/06_Patrimonio/c04_patrimonioinmaterialidioma_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_patrimonioinmueble_sic_2023",
               "archivo": "c04_patrimonioinmueble_sic_2023.geojson",
               "ruta": "02_Social/06_Patrimonio/c04_patrimonioinmueble_sic_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_zonasarqueologicas_sic_2023",
               "archivo": "c04_zonasarqueologicas_sic_2023.geojson",
               "ruta": "02_Social/06_Patrimonio/c04_zonasarqueologicas_sic_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             }
           ]
         },
@@ -424,31 +474,36 @@
               "id": "c04_centros_comunitarios_multiusos_rurales_opmatpg_2023",
               "archivo": "c04_centros_comunitarios_multiusos_rurales_opmatpg_2023.geojson",
               "ruta": "02_Social/E3_Comunidades_Hogar_Bienestar/c04_centros_comunitarios_multiusos_rurales_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_equipamientos_salud_opmatpg_2023",
               "archivo": "c04_equipamientos_salud_opmatpg_2023.geojson",
               "ruta": "02_Social/E3_Comunidades_Hogar_Bienestar/c04_equipamientos_salud_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_hospital_gneral_centenario_opmatpg_2023",
               "archivo": "c04_hospital_gneral_centenario_opmatpg_2023.geojson",
               "ruta": "02_Social/E3_Comunidades_Hogar_Bienestar/c04_hospital_gneral_centenario_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_sustitucion_materiales_viviendas_tradicionales_inegi_2020_opmatpg_2023",
               "archivo": "c04_sustitucion_materiales_viviendas_tradicionales_inegi_2020_opmatpg_2023.geojson",
               "ruta": "02_Social/E3_Comunidades_Hogar_Bienestar/c04_sustitucion_materiales_viviendas_tradicionales_inegi_2020_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_sustitucion_materiales_viviendas_tradicionales_localidades_inegi_2020_opmatpg_2023",
               "archivo": "c04_sustitucion_materiales_viviendas_tradicionales_localidades_inegi_2020_opmatpg_2023.geojson",
               "ruta": "02_Social/E3_Comunidades_Hogar_Bienestar/c04_sustitucion_materiales_viviendas_tradicionales_localidades_inegi_2020_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             }
           ]
         }
@@ -472,163 +527,190 @@
               "id": "c04_derechosdeviagasoductos_cenegas_2019",
               "archivo": "c04_derechosdeviagasoductos_cenegas_2019.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_derechosdeviagasoductos_cenegas_2019.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_derechosdevialineasdetransmisionelectrica_geocomunes_2023",
               "archivo": "c04_derechosdevialineasdetransmisionelectrica_geocomunes_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_derechosdevialineasdetransmisionelectrica_geocomunes_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_eadmin1_inegi_2023",
               "archivo": "c04_eadmin1_inegi_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_eadmin1_inegi_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_eadmin2_inegi_2023",
               "archivo": "c04_eadmin2_inegi_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_eadmin2_inegi_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_ecomercio_inegi_2023",
               "archivo": "c04_ecomercio_inegi_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_ecomercio_inegi_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_eeasignacionmediasuperior_dfi_opmatpg_2023",
               "archivo": "c04_eeasignacionmediasuperior_dfi_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_eeasignacionmediasuperior_dfi_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_eeasignacionsuperior_dfi_opmatpg_2023",
               "archivo": "c04_eeasignacionsuperior_dfi_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_eeasignacionsuperior_dfi_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_eemediasuperior_inee_opmatpg_2023",
               "archivo": "c04_eemediasuperior_inee_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_eemediasuperior_inee_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_eesuperior_denue_opmatpg_2023",
               "archivo": "c04_eesuperior_denue_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_eesuperior_denue_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_es1ernivel_clues_opmatpg_2023",
               "archivo": "c04_es1ernivel_clues_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_es1ernivel_clues_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_es2donivel_clues_opmatpg_2023",
               "archivo": "c04_es2donivel_clues_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_es2donivel_clues_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_es3ernivel_clues_opmatpg_2023",
               "archivo": "c04_es3ernivel_clues_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_es3ernivel_clues_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_esasignacion1ernivel_clues_opmatpg_2023",
               "archivo": "c04_esasignacion1ernivel_clues_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_esasignacion1ernivel_clues_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_esasignacion2donivel_clues_opmatpg_2023",
               "archivo": "c04_esasignacion2donivel_clues_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_esasignacion2donivel_clues_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_esasignacion3ernivel_clues_opmatpg_2023",
               "archivo": "c04_esasignacion3ernivel_clues_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_esasignacion3ernivel_clues_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_escobertura1ernivel_clues_opmatpg_2023",
               "archivo": "c04_escobertura1ernivel_clues_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_escobertura1ernivel_clues_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_escobertura2donivel_clues_opmatpg_2023",
               "archivo": "c04_escobertura2donivel_clues_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_escobertura2donivel_clues_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_escobertura3ernivel_clues_opmatpg_2023",
               "archivo": "c04_escobertura3ernivel_clues_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_escobertura3ernivel_clues_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_relacionurbruralesttm_fonatur_opmatpg_2023",
               "archivo": "c04_relacionurbruralesttm_fonatur_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_relacionurbruralesttm_fonatur_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_telecomunicacionesvivienda_inegi_2020",
               "archivo": "c04_telecomunicacionesvivienda_inegi_2020.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_telecomunicacionesvivienda_inegi_2020.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_vivienda_iter_inegi_2020",
               "archivo": "c04_vivienda_iter_inegi_2020.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c04_vivienda_iter_inegi_2020.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c55_relacionruralcdsorden1_dfi_opmatpg_2023",
               "archivo": "c55_relacionruralcdsorden1_dfi_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c55_relacionruralcdsorden1_dfi_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c55_relacionruralcdsorden3_dfi_opmatpg_2023",
               "archivo": "c55_relacionruralcdsorden3_dfi_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c55_relacionruralcdsorden3_dfi_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c55_relacionurbanacdsorden1_dfi_opmatpg_2023",
               "archivo": "c55_relacionurbanacdsorden1_dfi_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c55_relacionurbanacdsorden1_dfi_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c55_relacionurbanacdsorden3_dfi_opmatpg_2023",
               "archivo": "c55_relacionurbanacdsorden3_dfi_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c55_relacionurbanacdsorden3_dfi_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c55_tpartrelacionruralcdsorden1_dfi_opmatpg_2023",
               "archivo": "c55_tpartrelacionruralcdsorden1_dfi_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c55_tpartrelacionruralcdsorden1_dfi_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c55_tpartrelacionurbanacdsorden1_dfi_opmatpg_2023",
               "archivo": "c55_tpartrelacionurbanacdsorden1_dfi_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/07_Sistema_Urbano_Rural/c55_tpartrelacionurbanacdsorden1_dfi_opmatpg_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             }
           ]
         },
@@ -643,79 +725,92 @@
               "id": "c04_ampliacion_red_electrica_opmatpg_2023",
               "archivo": "c04_ampliacion_red_electrica_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/E4_Integración territorial, desarrollo urbano e industria/c04_ampliacion_red_electrica_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_construccion_centrales_y_subestaciones_electricas_opmatpg_2023",
               "archivo": "c04_construccion_centrales_y_subestaciones_electricas_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/E4_Integración territorial, desarrollo urbano e industria/c04_construccion_centrales_y_subestaciones_electricas_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_construccion_ciclovia_hopelchen_opmatpg_2023",
               "archivo": "c04_construccion_ciclovia_hopelchen_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/E4_Integración territorial, desarrollo urbano e industria/c04_construccion_ciclovia_hopelchen_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_construccion_libramientos_carreteros_opmatpg_2023",
               "archivo": "c04_construccion_libramientos_carreteros_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/E4_Integración territorial, desarrollo urbano e industria/c04_construccion_libramientos_carreteros_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_construccion_ptar_opmatpg_2023",
               "archivo": "c04_construccion_ptar_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/E4_Integración territorial, desarrollo urbano e industria/c04_construccion_ptar_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_estudio_de_ingenierias_basicas_para_transporte_de_carga_opmatpg_2023",
               "archivo": "c04_estudio_de_ingenierias_basicas_para_transporte_de_carga_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/E4_Integración territorial, desarrollo urbano e industria/c04_estudio_de_ingenierias_basicas_para_transporte_de_carga_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_estudio_de_preinversion_tren_ligero_opmatpg_2023",
               "archivo": "c04_estudio_de_preinversion_tren_ligero_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/E4_Integración territorial, desarrollo urbano e industria/c04_estudio_de_preinversion_tren_ligero_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_fortalecimiento_energetico_inegi_2020",
               "archivo": "c04_fortalecimiento_energetico_inegi_2020.geojson",
               "ruta": "03_Infraestructura/E4_Integración territorial, desarrollo urbano e industria/c04_fortalecimiento_energetico_inegi_2020.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_industria_planta_biocombustible_opmatpg_2023",
               "archivo": "c04_industria_planta_biocombustible_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/E4_Integración territorial, desarrollo urbano e industria/c04_industria_planta_biocombustible_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_manejo_integral_residuos_solidos_inegi_2022_opmatpg_2023",
               "archivo": "c04_manejo_integral_residuos_solidos_inegi_2022_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/E4_Integración territorial, desarrollo urbano e industria/c04_manejo_integral_residuos_solidos_inegi_2022_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_mejoramiento_conectividad_corredor_puebla_a_progreso_opmatpg_2023",
               "archivo": "c04_mejoramiento_conectividad_corredor_puebla_a_progreso_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/E4_Integración territorial, desarrollo urbano e industria/c04_mejoramiento_conectividad_corredor_puebla_a_progreso_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_parque_industrial_textil_opmatpg_2023",
               "archivo": "c04_parque_industrial_textil_opmatpg_2023.geojson",
               "ruta": "03_Infraestructura/E4_Integración territorial, desarrollo urbano e industria/c04_parque_industrial_textil_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_transporte_fluvial_rio_palizada_inegi_2008",
               "archivo": "c04_transporte_fluvial_rio_palizada_inegi_2008.geojson",
               "ruta": "03_Infraestructura/E4_Integración territorial, desarrollo urbano e industria/c04_transporte_fluvial_rio_palizada_inegi_2008.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             }
           ]
         }
@@ -739,43 +834,50 @@
               "id": "c04_centralidadeconomica_ce_denue_2019",
               "archivo": "c04_centralidadeconomica_ce_denue_2019.geojson",
               "ruta": "04_Económico/03_Económico/c04_centralidadeconomica_ce_denue_2019.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_instalaciones_cnh_2023",
               "archivo": "c04_instalaciones_cnh_2023.geojson",
               "ruta": "04_Económico/03_Económico/c04_instalaciones_cnh_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_muneconomicas_ce_inegi_2019",
               "archivo": "c04_muneconomicas_ce_inegi_2019.geojson",
               "ruta": "04_Económico/03_Económico/c04_muneconomicas_ce_inegi_2019.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_pozosaguasprofundas_cnh_2023",
               "archivo": "c04_pozosaguasprofundas_cnh_2023.geojson",
               "ruta": "04_Económico/03_Económico/c04_pozosaguasprofundas_cnh_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_pozosaguassomeras_cnh_2023",
               "archivo": "c04_pozosaguassomeras_cnh_2023.geojson",
               "ruta": "04_Económico/03_Económico/c04_pozosaguassomeras_cnh_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_pozoszonacuencasse_cnh_2023",
               "archivo": "c04_pozoszonacuencasse_cnh_2023.geojson",
               "ruta": "04_Económico/03_Económico/c04_pozoszonacuencasse_cnh_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             },
             {
               "id": "c04_terminalalmacenamiento_cnh_2023",
               "archivo": "c04_terminalalmacenamiento_cnh_2023.geojson",
               "ruta": "04_Económico/03_Económico/c04_terminalalmacenamiento_cnh_2023.geojson",
-              "eje": "desempeno_territorial"
+              "eje": "desempeno_territorial",
+              "categoria": "Diagnostico"
             }
           ]
         },
@@ -790,55 +892,64 @@
               "id": "c04_centros_abasto_por_region_opmatpg_2023",
               "archivo": "c04_centros_abasto_por_region_opmatpg_2023.geojson",
               "ruta": "04_Económico/E2_Campo_Mar_Turismo_Biocultural/c04_centros_abasto_por_region_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_circuitos_turisticos_sicm_2020_opmatpg_2023",
               "archivo": "c04_circuitos_turisticos_sicm_2020_opmatpg_2023.geojson",
               "ruta": "04_Económico/E2_Campo_Mar_Turismo_Biocultural/c04_circuitos_turisticos_sicm_2020_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_construccion_centro_innovacion_tec_sda_2023",
               "archivo": "c04_construccion_centro_innovacion_tec_sda_2023.geojson",
               "ruta": "04_Económico/E2_Campo_Mar_Turismo_Biocultural/c04_construccion_centro_innovacion_tec_sda_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_construccion_infraestructura_hidroagricola_sda_2023",
               "archivo": "c04_construccion_infraestructura_hidroagricola_sda_2023.geojson",
               "ruta": "04_Económico/E2_Campo_Mar_Turismo_Biocultural/c04_construccion_infraestructura_hidroagricola_sda_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_desarrollo_energias_alternativas_opmatpg_2023",
               "archivo": "c04_desarrollo_energias_alternativas_opmatpg_2023.geojson",
               "ruta": "04_Económico/E2_Campo_Mar_Turismo_Biocultural/c04_desarrollo_energias_alternativas_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_equipamiento_apicola_denue_2020_opmatpg_2023",
               "archivo": "c04_equipamiento_apicola_denue_2020_opmatpg_2023.geojson",
               "ruta": "04_Económico/E2_Campo_Mar_Turismo_Biocultural/c04_equipamiento_apicola_denue_2020_opmatpg_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_infraestructura_produccion_arroz_sda_2023",
               "archivo": "c04_infraestructura_produccion_arroz_sda_2023.geojson",
               "ruta": "04_Económico/E2_Campo_Mar_Turismo_Biocultural/c04_infraestructura_produccion_arroz_sda_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_nucleos_lecheros_sda_2023",
               "archivo": "c04_nucleos_lecheros_sda_2023.geojson",
               "ruta": "04_Económico/E2_Campo_Mar_Turismo_Biocultural/c04_nucleos_lecheros_sda_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             },
             {
               "id": "c04_programa_reconversion_productiva_agropecuaria_sda_2023",
               "archivo": "c04_programa_reconversion_productiva_agropecuaria_sda_2023.geojson",
               "ruta": "04_Económico/E2_Campo_Mar_Turismo_Biocultural/c04_programa_reconversion_productiva_agropecuaria_sda_2023.geojson",
-              "eje": "estrategia_territorial"
+              "eje": "estrategia_territorial",
+              "categoria": "Estrategia"
             }
           ]
         }
@@ -862,11 +973,13 @@
               "id": "c04_modelo_ordenamiento_territorial_op_pg_2023_cp",
               "archivo": "c04_modelo_ordenamiento_territorial_op_pg_2023_cp.geojson",
               "ruta": "05_MOT/c04_modelo_ordenamiento_territorial_op_pg_2023_cp.geojson",
-              "eje": null
+              "eje": null,
+              "categoria": "Estrategia"
             }
           ]
         }
       ]
     }
-  ]
+  ],
+  "nota_categoria": "`categoria` sale del atributo del mismo nombre en el GeoJSON: Diagnostico, Estrategia o Mapa_Base. Es lo que agrupa las capas en el menu del geovisor."
 }

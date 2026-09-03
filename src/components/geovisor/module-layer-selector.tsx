@@ -146,6 +146,27 @@ function aplicarAjustes(id: string, simbologia: any): any {
     }
   }
 
+  if (ajuste.svgMarcador) {
+    const ponerSvg = (nodo: any): void => {
+      if (Array.isArray(nodo)) return nodo.forEach(ponerSvg)
+      if (!nodo || typeof nodo !== 'object') return
+      const props = nodo.props ?? nodo.propiedades
+      if ((nodo.clase ?? nodo.tipo) === 'QgsSvgMarkerSymbolLayer' && props) {
+        props.name = ajuste.svgMarcador
+      }
+      Object.values(nodo).forEach(ponerSvg)
+    }
+    ponerSvg(s)
+  }
+
+  if (ajuste.categoriasVisibles) {
+    // Apagar la clase es el mecanismo propio de QGIS: `resolveSymbol` no la
+    // dibuja y `resolveLegend` no la lista, sin tocar ninguno de los dos.
+    for (const categoria of s.categorias ?? []) {
+      categoria.activo = ajuste.categoriasVisibles.includes(String(categoria.valor))
+    }
+  }
+
   if (ajuste.escalaPunto) {
     const escalar = (nodo: any): void => {
       if (Array.isArray(nodo)) return nodo.forEach(escalar)

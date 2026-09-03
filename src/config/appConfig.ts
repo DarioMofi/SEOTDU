@@ -40,8 +40,24 @@ export const appConfig = {
     'c04_localidades_rurales_2024': { escalaPunto: 0.35 },
     // Se pidió verlas sin clasificar: un gris parejo en vez de la rampa roja
     // por grado de urbanización.
-    'c04_scince_localidad_urbana_inegi_2020': { colorPlano: '154,158,163' }
-  } as Record<string, { escalaPunto?: number; colorPlano?: string }>,
+    'c04_scince_localidad_urbana_inegi_2020': { colorPlano: '154,158,163' },
+    // El volcado dejó el SVG dentro del texto de una alerta y `props.name`
+    // vacío, así que sin esto el marcador cae al punto negro de respaldo.
+    'c04_estacionestm_sedatu_2024': { svgMarcador: 'estacion_tren_maya.svg' },
+    // Solo estas cuatro administraciones se proyectan; las demás clases del
+    // volcado (N/A, N/D, Otro) se apagan y salen también de la leyenda.
+    'c04_red_regional_imt_inegi_2024': {
+      categoriasVisibles: ['Federal', 'Estatal', 'Municipal', 'Particular']
+    }
+  } as Record<
+    string,
+    {
+      escalaPunto?: number
+      colorPlano?: string
+      svgMarcador?: string
+      categoriasVisibles?: string[]
+    }
+  >,
 
   // Capas que se dibujan pero no se listan en la leyenda: no representan un
   // dato consultable, son recurso visual. El bufer estatal es el gris de los

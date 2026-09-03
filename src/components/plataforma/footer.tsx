@@ -16,7 +16,7 @@ export default function Footer() {
               }}
             />
             <img
-              src="/gobiernoparatodos.jpg"
+              src="/gobiernoparatodos.jpeg"
               alt="Gobierno para Todos"
               className="footer__logo-img"
               style={{ width: 140 }}

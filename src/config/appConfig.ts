@@ -43,12 +43,14 @@ export const appConfig = {
     'c04_scince_localidad_urbana_inegi_2020': { colorPlano: '154,158,163' },
     // El volcado dejó el SVG dentro del texto de una alerta y `props.name`
     // vacío, así que sin esto el marcador cae al punto negro de respaldo.
-    // El volcado lo dejaba en negro puro y se confundía con los demás puntos
-    // oscuros del mapa; el guinda institucional lo separa de los azules de
-    // aeropuertos y del gris de las estaciones ferroviarias.
+    // El volcado traía el pictograma negro con contorno casi negro y se
+    // confundía con los demás puntos oscuros. Va en azul petróleo, distinto de
+    // los azules de aeropuertos (8,48,107 y 31,120,180) y del azul claro del
+    // patio ferroviario, con contorno blanco para que despegue del fondo.
     'c04_estacionestm_sedatu_2024': {
       svgMarcador: 'estacion_tren_maya.svg',
-      colorSvg: '159,34,65',
+      colorSvg: '0,131,143',
+      colorContornoSvg: '255,255,255',
       escalaPunto: 1.25
     },
     // Marcadores de 2 y 3 px que se perdían en el mapa.
@@ -66,6 +68,7 @@ export const appConfig = {
       colorPlano?: string
       svgMarcador?: string
       colorSvg?: string
+      colorContornoSvg?: string
       categoriasVisibles?: string[]
     }
   >,

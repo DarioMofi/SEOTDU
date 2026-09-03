@@ -122,6 +122,44 @@ function norm(id: string): string {
     .replace(/[^a-z0-9]/g, '')
 }
 
+/**
+ * Aplica los ajustes de `appConfig.STYLE_OVERRIDES` a la simbología de una capa.
+ *
+ * Se hace aquí, sobre el volcado ya leído, para no tocar el archivo exportado
+ * de QGIS: ese se regenera y perdería los cambios. Trabaja sobre una copia.
+ */
+function aplicarAjustes(id: string, simbologia: any): any {
+  const ajuste = appConfig.STYLE_OVERRIDES[id]
+  if (!ajuste || !simbologia) return simbologia
+  let s = structuredClone(simbologia)
+
+  if (ajuste.colorPlano) {
+    // Se descarta la clasificación entera: un solo símbolo para toda la capa,
+    // tomando el de la primera clase como base para conservar trazo y forma.
+    const base = s.categorias?.[0]?.simbolo ?? s.rangos?.[0]?.simbolo ?? s.simbolo_unico
+    if (base) {
+      for (const capa of base.capas_simbolo ?? []) {
+        const props = capa.props ?? capa.propiedades
+        if (props?.color) props.color = `${ajuste.colorPlano},255`
+      }
+      s = { tipo: 'singleSymbol', campo: null, simbolo_unico: base }
+    }
+  }
+
+  if (ajuste.escalaPunto) {
+    const escalar = (nodo: any): void => {
+      if (Array.isArray(nodo)) return nodo.forEach(escalar)
+      if (!nodo || typeof nodo !== 'object') return
+      const props = nodo.props ?? nodo.propiedades
+      if (props?.size) props.size = String(Number(props.size) * ajuste.escalaPunto!)
+      Object.values(nodo).forEach(escalar)
+    }
+    escalar(s)
+  }
+
+  return s
+}
+
 function extractLayersFromNewStyle(json: any, availableLayers: string[]): Layer[] {
   return (json.capas as any[]).flatMap((capa) => {
     // Los rásteres del proyecto QGIS (mapas base de Carto) no son capas
@@ -141,13 +179,14 @@ function extractLayersFromNewStyle(json: any, availableLayers: string[]): Layer[
         : // La entrega nueva trae el mismo id en minúscula.
           (availableLayers.find((a) => norm(a) === norm(declarado)) ?? declarado)
     if (availableLayers.length > 0 && !availableLayers.includes(id)) return []
+    if (appConfig.EXCLUDED_LAYERS.includes(id)) return []
 
     const cleanLabel = String(capa.nombre ?? id).replace(/^C\d+_/, '').replace(/_/g, ' ')
     return [{
       id,
       label: appConfig.LAYER_ALIASES[id] || cleanLabel,
       desc: 'Capa dinámica',
-      simbologia: capa.simbologia,
+      simbologia: aplicarAjustes(id, capa.simbologia),
       isFixed: appConfig.FIXED_LAYERS.includes(id)
     }]
   })

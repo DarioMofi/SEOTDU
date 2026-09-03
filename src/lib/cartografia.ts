@@ -16,6 +16,18 @@
 const MAPAS_MIGRADOS = ['mapa_base']
 
 /**
+ * Capas de un módulo migrado que siguen leyéndose del archivo suelto.
+ *
+ * La red regional es el mismo dato en las dos generaciones —76,897 tramos,
+ * misma geometría, mismos campos— pero la entrega nueva pesa 93 MB contra 31
+ * del anterior: la diferencia son metadatos repetidos en cada tramo. Como la
+ * capa va fija y se carga siempre, se sirve la ligera.
+ */
+const SERVIDAS_DEL_ARCHIVO_VIEJO: Record<string, string> = {
+  c04redregionalimtinegi2024: 'RNC_2025_SURESTE',
+}
+
+/**
  * Normaliza para comparar ids entre generaciones: la entrega nueva bajó los
  * nombres a minúscula y les quitó los acentos.
  */
@@ -73,7 +85,10 @@ function indiceEntregaNueva(): Promise<Map<string, string>> {
  * minúscula, así que la búsqueda es por id normalizado.
  */
 export async function getCapaGeoJSON(layerId: string): Promise<any> {
-  const url = (await indiceEntregaNueva()).get(norm(layerId)) ?? `/layers/${layerId}.geojson`
+  const excepcion = SERVIDAS_DEL_ARCHIVO_VIEJO[norm(layerId)]
+  const url = excepcion
+    ? `/layers/${excepcion}.geojson`
+    : ((await indiceEntregaNueva()).get(norm(layerId)) ?? `/layers/${layerId}.geojson`)
   const res = await fetch(url)
   if (!res.ok) throw new Error(`GeoJSON no encontrado para ${layerId}`)
   return res.json()

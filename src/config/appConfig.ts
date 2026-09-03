@@ -20,6 +20,29 @@ export const appConfig = {
     'c04_red_regional_imt_inegi_2024'
   ],
 
+  // Capas que el volcado declara pero el visor no debe mostrar.
+  //
+  // `Puntos_Int_IMT` usa un renderizador por reglas que el visor no traduce, y
+  // además su estilo filtra por valores de `CLASE` que el dato no contiene:
+  // dibujaba 0 de 1,234 puntos. `CESC` son polígonos sin ningún atributo que
+  // explique qué representan.
+  EXCLUDED_LAYERS: [
+    'c04_puntos_int_imt_inegi_2024',
+    'c04_cesc_opmatpg_2023'
+  ],
+
+  // Ajustes deliberados sobre lo que exporta QGIS. Son decisiones de
+  // visualización tomadas aquí, no defectos del volcado: por eso viven en la
+  // configuración y no editando el volcado, que se pierde al reexportarlo.
+  STYLE_OVERRIDES: {
+    // 2,729 puntos de 2 px saturaban el mapa; la graduación es por color, así
+    // que achicarlos no pierde información.
+    'c04_localidades_rurales_2024': { escalaPunto: 0.35 },
+    // Se pidió verlas sin clasificar: un gris parejo en vez de la rampa roja
+    // por grado de urbanización.
+    'c04_scince_localidad_urbana_inegi_2020': { colorPlano: '154,158,163' }
+  } as Record<string, { escalaPunto?: number; colorPlano?: string }>,
+
   // Capas que se dibujan pero no se listan en la leyenda: no representan un
   // dato consultable, son recurso visual. El bufer estatal es el gris de los
   // estados vecinos, que sirve para enmarcar Campeche y nada más.
@@ -77,7 +100,6 @@ export const appConfig = {
         'c00_rfn_artf_2024',
         'c04_aeropuertos_2012',
         'c04_estaciones_rfn25',
-        'c04_puntos_int_imt_inegi_2024',
         'c04_estacionestm_sedatu_2024',
         'c00_zonasmetropolitanas_conapo_2020',
         'c04_scince_localidad_urbana_inegi_2020',
@@ -86,8 +108,6 @@ export const appConfig = {
         'c00_anp_conanp_2025',
         'c00_rpt_conabio_2008',
         'c04_areaboscosa_inegi_2018',
-        // Fija y pesada (93 MB): al no tener control propio, se carga
-        // siempre que se abre el geovisor.
         'c04_red_regional_imt_inegi_2024'
       ],
       icon: 'mapa_base' // Manejaremos el render del SVG dinámico en el componente

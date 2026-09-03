@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/auth-context';
 import { LogOut, ChevronDown, ChevronUp, Map, FileText, Settings } from 'lucide-react';
 import { AdminProfileIcon } from '../../common/role-icons';
 import '../capturista/capturista.css';
+
+interface AdministradorSidebarProps {
+  capasEnRevision?: string[];
+  instrumentosEnRevision?: string[];
+  onSelectCapa?: (nombre: string) => void;
+  capaActiva?: string;
+  onSelectInstrumento?: (nombre: string) => void;
+  instrumentoActivo?: string;
+}
 
 const AdministradorSidebar = ({ 
   capasEnRevision = [], 
@@ -12,7 +21,7 @@ const AdministradorSidebar = ({
   capaActiva,
   onSelectInstrumento,
   instrumentoActivo
-}) => {
+}: AdministradorSidebarProps) => {
   const navigate = useNavigate();
   const { logout } = useAuth();
   const [bandejaCartografiaOpen, setBandejaCartografiaOpen] = useState(true);

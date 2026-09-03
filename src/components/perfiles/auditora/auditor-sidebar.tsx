@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/auth-context';
 import { Eye, LogOut, ChevronDown, ChevronUp, Map, FileText, Search } from 'lucide-react';
 import '../capturista/capturista.css';
 import './auditor.css';
 
-const AuditorSidebar = ({ onSelectCapa, capaActiva, onSelectInstrumento, elementoActivo }) => {
+interface AuditorSidebarProps {
+  /* El segundo argumento se pasa desde el listado de instrumentos, pero hoy el
+     handler de admin-map-viewer solo lee el primero. */
+  onSelectCapa?: (nombre: string, tipo?: string) => void;
+  capaActiva?: string;
+  onSelectInstrumento?: (nombre: string) => void;
+  elementoActivo?: string;
+}
+
+const AuditorSidebar = ({ onSelectCapa, capaActiva, onSelectInstrumento, elementoActivo }: AuditorSidebarProps) => {
   const navigate = useNavigate();
   const { logout } = useAuth();
   const [bandejaCartografiaOpen, setBandejaCartografiaOpen] = useState(true);

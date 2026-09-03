@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/auth-context';
 import { LogOut, ChevronDown, ChevronUp, CheckCircle2, FileText, Map, History } from 'lucide-react';
 import { CapturistaProfileIcon } from '../../common/role-icons';
 import './capturista.css';
+
+interface CapturistaSidebarProps {
+  onOpenModal: (tipo: 'cartografia' | 'instrumento') => void;
+  isVerifying?: boolean;
+  onFinalSubmit: () => void;
+  capasEnBorradores?: string[];
+  capasEnRevision?: string[];
+  instrumentosEnBorradores?: string[];
+  instrumentosEnRevision?: string[];
+}
 
 const CapturistaSidebar = ({ 
   onOpenModal, 
@@ -13,7 +23,7 @@ const CapturistaSidebar = ({
   capasEnRevision = [],
   instrumentosEnBorradores = [],
   instrumentosEnRevision = []
-}) => {
+}: CapturistaSidebarProps) => {
   const navigate = useNavigate();
   const { logout } = useAuth();
   const [bandejaCartografiaOpen, setBandejaCartografiaOpen] = useState(true);

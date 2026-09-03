@@ -18,8 +18,10 @@ import { toPathOptions, toPointLayer } from '../lib/leafletSymbology'
 const ESRI_CLARO =
   'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}'
 
-/** Por debajo de esto se carga solo; lo demás va a botón. */
-const LIMITE_AUTOMATICO_MB = 5
+/* Por debajo de esto se carga solo. El corte deja fuera las cuatro pesadas
+   (cesc, cuerpos_agua, scince_manzana, red_regional_imt = 177 MB) para poder
+   encenderlas una a una y ver cuanto cuesta cada una. */
+const LIMITE_AUTOMATICO_MB = 20
 
 const norm = (s: string) =>
   s
@@ -115,18 +117,6 @@ export default function PruebaMapaBase() {
         if (!r.ok) throw new Error(`HTTP ${r.status}`)
         return r.json()
       })
-      /* Los estilos de QGIS clasifican por campos en MAYUSCULAS (TIPO_OD,
-         G_URBANO, POB1...) pero la entrega nueva exporto los GeoJSON con los
-         campos en minuscula. Aqui se agregan alias en mayuscula para probar si
-         esa es toda la diferencia; el arreglo de fondo va en otro lado. */
-      for (const f of datos.features ?? []) {
-        const p = f.properties
-        if (!p) continue
-        for (const k of Object.keys(p)) {
-          const alto = k.toUpperCase()
-          if (alto !== k && !(alto in p)) p[alto] = p[k]
-        }
-      }
       const simboloDe = createSymbolResolver(capa.estilo)
       const opciones: L.GeoJSONOptions & { renderer?: L.Renderer } = {
         renderer: usesPatternFill(capa.estilo) ? L.svg() : undefined,

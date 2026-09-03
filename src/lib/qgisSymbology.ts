@@ -407,8 +407,29 @@ function isCatchAll(categoria: any): boolean {
   return String(categoria?.etiqueta ?? '').trim() === ''
 }
 
+/**
+ * Lee el valor del campo de clasificación tolerando la caja del nombre.
+ *
+ * QGIS conserva el nombre original del campo (`G_URBANO`, `TIPO_OD`, `POB1`)
+ * pero al exportar a GeoJSON los nombres suelen bajar a minúscula — así llegó
+ * la entrega de `public/layers/GeoJSON/`. Sin esta tolerancia el valor sale
+ * `undefined`, el símbolo resuelve a `null` y la capa entera se descarta **sin
+ * un solo error en consola**: 7 de las 19 capas del mapa base no dibujaban
+ * nada por esto, y el mapa se veía casi vacío.
+ *
+ * El acierto exacto se resuelve primero, que es el caso del volcado viejo.
+ */
+function readField(properties: Record<string, unknown>, campo: string): unknown {
+  if (campo in properties) return properties[campo]
+  const objetivo = campo.toLowerCase()
+  for (const clave of Object.keys(properties)) {
+    if (clave.toLowerCase() === objetivo) return properties[clave]
+  }
+  return undefined
+}
+
 function pickCategory(simbologia: any, properties: Record<string, unknown>): any {
-  const value = properties?.[classificationField(simbologia)]
+  const value = readField(properties, classificationField(simbologia))
   const categorias: any[] = simbologia.categorias ?? []
   const chosen =
     categorias.find((categoria) => !isCatchAll(categoria) && sameValue(categoria.valor, value)) ??
@@ -418,7 +439,7 @@ function pickCategory(simbologia: any, properties: Record<string, unknown>): any
 }
 
 function pickRange(simbologia: any, properties: Record<string, unknown>): any {
-  const value = Number(properties?.[classificationField(simbologia)])
+  const value = Number(readField(properties, classificationField(simbologia)))
   if (!Number.isFinite(value)) return null
   const rangos: any[] = simbologia.rangos ?? []
   for (let i = 0; i < rangos.length; i++) {
@@ -548,7 +569,7 @@ export function createSymbolResolver(
 
   const cache = new Map<unknown, ResolvedSymbol | null>()
   return (properties = {}) => {
-    const valor = properties?.[campo]
+    const valor = readField(properties, campo)
     if (cache.has(valor)) return cache.get(valor) ?? null
     const symbol = resolveSymbol(simbologia, properties)
     cache.set(valor, symbol)

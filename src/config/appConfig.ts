@@ -156,7 +156,132 @@ export const appConfig = {
       themeColor: '#1C334E',
       themeBg: 'rgba(71, 85, 105, 0.02)',
       themeHover: 'rgba(71, 85, 105, 0.04)',
-      file: 'Normatividad_MOT.json',
+      file: 'JSON_SIMBOLOGIA/05_MOT.json',
+      // El MOT no se organiza por temas como los demás monitores, sino por
+      // Estrategia → Línea estratégica → capa. La fuente es
+      // `public/layers/Clasificacion MOT.md`.
+      //
+      // Cada capa cuelga de la estrategia que le corresponde por el número de
+      // su línea, no de la columna del dataset: ahí había tres capas bajo E4
+      // con líneas 1.3 y 2.1.
+      //
+      // Casi todas estas capas ya viven en otro monitor; aquí se repiten a
+      // propósito, porque el MOT es otra lectura del mismo territorio.
+      arbol: [
+      {
+        label: "E1 · Selva, tierra y agua",
+        lineas: [
+          {
+            label: "1.1 Protección y recualificación de la biodiversidad y los servicios ecosistémicos",
+            layers: [
+              "c04_anp_estatal_balamkin_balamku_conabio_2020",
+              "c04_anp_rio_candelaria_opmatpg_2023",
+              "c04_pasos_de_fauna_ftm_2023",
+              "c04_playas_anidacion_tortugas_opmatpg_2023",
+              "c04_rio_candelaria_inegi_2008_opmatpg_2023",
+              "c04_programa_proteccion_tortugas_semabicce_opmatpg_2023",
+            ]
+          },
+          {
+            label: "1.2 Reforestación y restauración de los recursos ambientales",
+            layers: [
+              "c04_conservacion_y_restauracion_humedales_conabio_2020",
+              "c04_propuesta_corredor_balam_beh_semabicce_2023",
+              "c04_propuesta_corredor_norte_semabicce_2023",
+              "c04_propuesta_corredor_palizada_semabicce_2023",
+            ]
+          },
+          {
+            label: "1.3 Cuidado y uso respetuoso del agua",
+            layers: [
+              "c04_programa_captacion_lluvia_xpujil_inegi_2020",
+              "c04_programa_saneamiento_cuencas_conagua_2016",
+              "c04_red_monitoreo_calidad_aguas_superficiales_conabio_2008",
+              "c04_construccion_ptar_opmatpg_2023",
+            ]
+          },
+        ]
+      },
+      {
+        label: "E2 · Campo, mar y turismo biocultural",
+        lineas: [
+          {
+            label: "2.1 Emprendimiento rural y aprovechamiento económico sostenible",
+            layers: [
+              "c04_centros_abasto_por_region_opmatpg_2023",
+              "c04_construccion_centro_innovacion_tec_sda_2023",
+              "c04_construccion_infraestructura_hidroagricola_sda_2023",
+              "c04_desarrollo_energias_alternativas_opmatpg_2023",
+              "c04_equipamiento_apicola_denue_2020_opmatpg_2023",
+              "c04_infraestructura_produccion_arroz_sda_2023",
+              "c04_nucleos_lecheros_sda_2023",
+              "c04_programa_reconversion_productiva_agropecuaria_sda_2023",
+              "c04_industria_planta_biocombustible_opmatpg_2023",
+              "c04_parque_industrial_textil_opmatpg_2023",
+            ]
+          },
+          {
+            label: "2.3 Turismo biocultural, incluyente y social",
+            layers: [
+              "c04_circuitos_turisticos_sicm_2020_opmatpg_2023",
+            ]
+          },
+        ]
+      },
+      {
+        label: "E3 · Comunidades, hogar y bienestar",
+        lineas: [
+          {
+            label: "3.1 Justicia socioespacial y acceso a oportunidades de desarrollo",
+            layers: [
+              "c04_centros_comunitarios_multiusos_rurales_opmatpg_2023",
+              "c04_equipamientos_salud_opmatpg_2023",
+              "c04_hospital_gneral_centenario_opmatpg_2023",
+            ]
+          },
+          {
+            label: "3.3 Fortalecimiento del acceso a una vivienda adecuada",
+            layers: [
+              "c04_sustitucion_materiales_viviendas_tradicionales_inegi_2020_opmatpg_2023",
+              "c04_sustitucion_materiales_viviendas_tradicionales_localidades_inegi_2020_opmatpg_2023",
+            ]
+          },
+        ]
+      },
+      {
+        label: "E4 · Integración territorial, desarrollo urbano e industria",
+        lineas: [
+          {
+            label: "4.1 Conectividad y transporte",
+            layers: [
+              "c04_estudio_de_ingenierias_basicas_para_transporte_de_carga_opmatpg_2023",
+            ]
+          },
+          {
+            label: "4.2 Desarrollo urbano, servicios básicos e infraestructura",
+            layers: [
+              "c04_ampliacion_red_electrica_opmatpg_2023",
+              "c04_construccion_centrales_y_subestaciones_electricas_opmatpg_2023",
+              "c04_construccion_ciclovia_hopelchen_opmatpg_2023",
+              "c04_construccion_libramientos_carreteros_opmatpg_2023",
+              "c04_estudio_de_preinversion_tren_ligero_opmatpg_2023",
+              "c04_fortalecimiento_energetico_inegi_2020",
+              "c04_manejo_integral_residuos_solidos_inegi_2022_opmatpg_2023",
+              "c04_mejoramiento_conectividad_corredor_puebla_a_progreso_opmatpg_2023",
+              "c04_transporte_fluvial_rio_palizada_inegi_2008",
+            ]
+          },
+        ]
+      },
+      ],
+      // De dónde sale la simbología de las capas del árbol: viven en las
+      // carpetas de los otros cuatro monitores.
+      fuentesDeCapas: [
+        'JSON_SIMBOLOGIA/01_Monitor_Ambiental_Climatico.json',
+        'JSON_SIMBOLOGIA/02_Bienestar_Social_Demografia.json',
+        'JSON_SIMBOLOGIA/03_Infraestructura_Estrategica_Conectividad.json',
+        'JSON_SIMBOLOGIA/04_Desarrollo_Economico.json'
+      ],
       icon: 'normatividad'
     },
     {

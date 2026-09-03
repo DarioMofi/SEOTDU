@@ -27,6 +27,8 @@ interface Module {
   /** Capas que se encienden al activar el módulo. Sin lista, se encienden todas. */
   defaultLayers?: string[]
   groups?: LayerGroup[]
+  /** Solo el MOT: agrupa sus capas en Estrategia → Línea estratégica. */
+  arbol?: { label: string; lineas: { label: string; layers: string[] }[] }[]
 }
 
 /**
@@ -258,10 +260,24 @@ function extractLayersFromStyle(node: StyleNode, availableLayers: string[] = [])
   return result
 }
 
+/** Una línea estratégica: el nivel más hondo del árbol, el que ya trae capas. */
+interface Linea {
+  label: string
+  layers: string[]
+}
+
+/** Una estrategia: agrupa líneas. */
+interface Estrategia {
+  label: string
+  lineas: Linea[]
+}
+
 interface ModuleConfig {
   stylesFrom?: string[]
   defaultLayers?: string[]
   groups?: LayerGroup[]
+  arbol?: Estrategia[]
+  fuentesDeCapas?: string[]
 }
 
 /**
@@ -338,6 +354,13 @@ export default function ModuleLayerSelector({
   const [activeModule, setActiveModule] = useState<string>(initialModule ?? appConfig.DEFAULT_MODULE)
   const [expandedModule, setExpandedModule] = useState<string | null>(null)
   const [modules, setModules] = useState<Module[]>([])
+  /* Secciones abiertas del árbol (MOT). La clave es la ruta completa, así una
+     línea de E1 y otra de E4 con el mismo nombre no se abren juntas. */
+  const [ramasAbiertas, setRamasAbiertas] = useState<string[]>([])
+  const alternarRama = (clave: string) =>
+    setRamasAbiertas((prev) =>
+      prev.includes(clave) ? prev.filter((c) => c !== clave) : [...prev, clave]
+    )
 
   const itemRefs = useRef<Map<string, HTMLDivElement | null>>(new Map())
   const prevPositions = useRef<Map<string, number>>(new Map())
@@ -395,6 +418,33 @@ export default function ModuleLayerSelector({
             }
 
 
+            // Un módulo con árbol reúne capas que viven en otros monitores:
+            // se agregan aquí, tomando su simbología de `fuentesDeCapas`.
+            const arbol = (modConfig as ModuleConfig).arbol
+            if (arbol) {
+              // El árbol nombra las capas con el id del catálogo (minúsculas)
+              // y los volcados con el nombre original de QGIS, así que el
+              // emparejamiento es por id normalizado. La capa se agrega con el
+              // id del árbol: es el que resuelve el archivo nuevo.
+              const deseadas = new Map(
+                arbol.flatMap((e) => e.lineas.flatMap((l) => l.layers)).map((id) => [norm(id), id])
+              )
+              const yaEstan = new Set(extractedLayers.map((l) => norm(l.id)))
+              for (const archivo of (modConfig as ModuleConfig).fuentesDeCapas ?? []) {
+                try {
+                  const fuente = await getEstiloModulo(archivo)
+                  for (const capa of leerEstilo(fuente, [])) {
+                    const idArbol = deseadas.get(norm(capa.id))
+                    if (!idArbol || yaEstan.has(norm(capa.id))) continue
+                    yaEstan.add(norm(capa.id))
+                    extractedLayers.push({ ...capa, id: idArbol })
+                  }
+                } catch (e) {
+                  console.error(`No se pudieron leer las capas de ${archivo}`, e)
+                }
+              }
+            }
+
             extractedLayers.forEach(l => {
               if (l.simbologia) allStyles[l.id] = l.simbologia
               allLabels[l.id] = l.label
@@ -410,7 +460,8 @@ export default function ModuleLayerSelector({
               icon: getModuleIcon(modConfig.icon),
               layers: extractedLayers,
               defaultLayers: (modConfig as ModuleConfig).defaultLayers,
-              groups: (modConfig as ModuleConfig).groups
+              groups: (modConfig as ModuleConfig).groups,
+              arbol: (modConfig as ModuleConfig).arbol
             }
           } catch (error) {
             console.error(`Error loading styles for ${modConfig.id}:`, error)
@@ -424,7 +475,8 @@ export default function ModuleLayerSelector({
               icon: getModuleIcon(modConfig.icon),
               layers: [],
               defaultLayers: (modConfig as ModuleConfig).defaultLayers,
-              groups: (modConfig as ModuleConfig).groups
+              groups: (modConfig as ModuleConfig).groups,
+              arbol: (modConfig as ModuleConfig).arbol
             }
           }
         })
@@ -680,13 +732,15 @@ export default function ModuleLayerSelector({
                     const diagnosticoEntradas = entradas.slice(0, half)
                     const estrategiasEntradas = entradas.slice(half)
 
-                    const renderCategory = (categoryEntradas: typeof entradas, title: string) => {
+                    const renderCategory = (categoryEntradas: typeof entradas, title: string | null) => {
                       if (categoryEntradas.length === 0) return null
                       return (
                         <div className="mb-4 last:mb-0">
-                          <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2 px-2 border-l-2 border-[var(--theme-color)] ml-1">
-                            {title}
-                          </h4>
+                          {title && (
+                            <h4 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2 px-2 border-l-2 border-[var(--theme-color)] ml-1">
+                              {title}
+                            </h4>
+                          )}
                           <div className="flex flex-col gap-2">
                             {categoryEntradas.map((entrada) => {
                               const isLayerActive = entrada.ids.some((id) => activeLayers.includes(id))
@@ -824,6 +878,88 @@ export default function ModuleLayerSelector({
                       )
                     })}
                           </div>
+                        </div>
+                      )
+                    }
+
+                    // Un módulo con árbol se navega por niveles: la estrategia
+                    // despliega sus líneas y la línea despliega sus capas.
+                    if (module.arbol) {
+                      return (
+                        <div className="flex flex-col gap-1">
+                          {module.arbol.map((estrategia) => {
+                            const claveEst = estrategia.label
+                            const abiertaEst = ramasAbiertas.includes(claveEst)
+                            const capasEst = new Set(
+                              estrategia.lineas.flatMap((l) => l.layers)
+                            )
+                            const activasEst = entradas.filter(
+                              (e) =>
+                                e.ids.some((id) => capasEst.has(id)) &&
+                                e.ids.some((id) => activeLayers.includes(id))
+                            ).length
+                            return (
+                              <div key={claveEst} className="rounded-md border border-gray-100">
+                                <button
+                                  onClick={() => alternarRama(claveEst)}
+                                  aria-expanded={abiertaEst}
+                                  className="w-full flex items-center justify-between gap-2 px-2.5 py-2 text-left hover:bg-gray-50 rounded-md"
+                                >
+                                  <span className="text-[11px] font-bold text-gray-700 uppercase tracking-wide">
+                                    {estrategia.label}
+                                  </span>
+                                  <span className="flex items-center gap-1.5 shrink-0">
+                                    {activasEst > 0 && (
+                                      <span className="text-[10px] font-semibold text-white bg-[var(--theme-color)] rounded-full px-1.5 py-px">
+                                        {activasEst}
+                                      </span>
+                                    )}
+                                    <svg
+                                      className={`w-3.5 h-3.5 text-gray-400 transition-transform ${abiertaEst ? 'rotate-180' : ''}`}
+                                      viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+                                    >
+                                      <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                  </span>
+                                </button>
+
+                                {abiertaEst && (
+                                  <div className="px-1.5 pb-1.5 flex flex-col gap-1">
+                                    {estrategia.lineas.map((linea) => {
+                                      const claveLinea = `${claveEst}//${linea.label}`
+                                      const abiertaLinea = ramasAbiertas.includes(claveLinea)
+                                      const suyas = entradas.filter((e) =>
+                                        e.ids.some((id) => linea.layers.includes(id))
+                                      )
+                                      if (suyas.length === 0) return null
+                                      return (
+                                        <div key={claveLinea}>
+                                          <button
+                                            onClick={() => alternarRama(claveLinea)}
+                                            aria-expanded={abiertaLinea}
+                                            className="w-full flex items-start justify-between gap-2 px-2 py-1.5 text-left hover:bg-gray-50 rounded"
+                                          >
+                                            <span className="text-[11px] leading-snug text-gray-600">
+                                              {linea.label}
+                                            </span>
+                                            <svg
+                                              className={`w-3 h-3 mt-0.5 text-gray-400 shrink-0 transition-transform ${abiertaLinea ? 'rotate-180' : ''}`}
+                                              viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+                                            >
+                                              <polyline points="6 9 12 15 18 9" />
+                                            </svg>
+                                          </button>
+                                          {abiertaLinea && (
+                                            <div className="pl-1">{renderCategory(suyas, null)}</div>
+                                          )}
+                                        </div>
+                                      )
+                                    })}
+                                  </div>
+                                )}
+                              </div>
+                            )
+                          })}
                         </div>
                       )
                     }

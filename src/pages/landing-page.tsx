@@ -4,7 +4,6 @@ import Navbar from '../components/plataforma/navbar'
 import Hero from '../components/plataforma/hero'
 import Larguillo from '../components/plataforma/larguillo'
 import FaqBox from '../components/plataforma/faq-box'
-import ModulesGrid from '../components/plataforma/modules-grid'
 import Footer from '../components/plataforma/footer'
 import Underfooter from '../components/plataforma/underfooter'
 
@@ -77,7 +76,8 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* <ModulesGrid /> */}
+        {/* Cuadricula de modulos, desactivada. Para reactivarla hay que volver
+            a importar ModulesGrid desde components/plataforma/modules-grid. */}
       </main>
 
       <Footer />

@@ -1,9 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { 
   ArrowLeft, CheckCircle, XCircle, Clock, FileText, 
   Map, Download, Search, LayoutList, Table as TableIcon, AlertTriangle, 
-  RefreshCw, UploadCloud, Layers, X, FileCheck
+  UploadCloud, Layers, X, FileCheck
 } from 'lucide-react';
 import { useAuth } from '../../context/auth-context';
 import './bitacora-logs.css';
@@ -200,17 +200,17 @@ export default function BitacoraLogs() {
   const navigate = useNavigate();
   const { role } = useAuth();
   const isAuditor = role === 'auditor';
-  const isAdministrador = role === 'administrador' || role === 'administradora';
+  const isAdministrador = role === 'administrador';
   const isCapturista = role === 'capturista';
 
   // Función para extraer solo la fecha sin la hora
-  const getSoloFecha = (dateStr) => {
+  const getSoloFecha = (dateStr?: string | null) => {
     if (!dateStr || typeof dateStr !== 'string') return '';
     return dateStr.split(',')[0].trim();
   };
 
   // Helper para mostrar badge de operación según rol/acción
-  const getOperacionBadge = (operacion) => {
+  const getOperacionBadge = (operacion: string) => {
     switch (operacion) {
       case 'nuevo':
         return <span className="badge-operacion op-nuevo">Nuevo registro</span>;
@@ -268,7 +268,7 @@ export default function BitacoraLogs() {
   const rechazadosCount = mockLogs.filter(l => l.status === 'rechazado').length;
 
   // Manejador para toggle interactivo de los botones KPI
-  const handleToggleKpi = (targetStatus) => {
+  const handleToggleKpi = (targetStatus: string) => {
     if (targetStatus === 'todos') {
       setStatusFilter('todos');
     } else if (statusFilter === targetStatus) {
@@ -331,7 +331,7 @@ export default function BitacoraLogs() {
   };
 
   // Función para descargar el dictamen oficial de rechazo en PDF
-  const handleDownloadDictamenPdf = (log) => {
+  const handleDownloadDictamenPdf = (log: (typeof mockLogs)[number]) => {
     const content = `GOBIERNO DEL ESTADO DE CAMPECHE
 SISTEMA ESTATAL DE ORDENAMIENTO TERRITORIAL Y DESARROLLO URBANO (SEOTDU)
 UNIDAD DE VALIDACIÓN INSTITUCIONAL Y REVISIÓN TERRITORIAL
@@ -375,7 +375,7 @@ Administración General de Información Territorial - SEOTDU Campeche`;
     URL.revokeObjectURL(url);
   };
 
-  const getStatusBadge = (status) => {
+  const getStatusBadge = (status: string) => {
     switch (status) {
       case 'aprobado':
         return <span className="status-pill aprobado"><CheckCircle size={13} /> Aprobado</span>;

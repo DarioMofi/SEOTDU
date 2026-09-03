@@ -230,13 +230,15 @@ function extractLayersFromStyle(node: StyleNode, availableLayers: string[] = [])
       } else if (availableLayers.includes(`C04_${node.nombre}`)) {
         realId = `C04_${node.nombre}`
       } else {
-        const matched = availableLayers.find(avail => 
-          avail.toLowerCase().endsWith(node.nombre.toLowerCase()) || 
-          node.nombre.toLowerCase().endsWith(avail.toLowerCase())
-        )
+        // Comparación normalizada, no por sufijo. La laxa emparejaba capas de
+        // otro monitor en cuanto la lista de disponibles crecía: Ambiental se
+        // llenó de capas de Social por eso.
+        const matched = availableLayers.find((avail) => norm(avail) === norm(node.nombre))
         if (matched) realId = matched
       }
     }
+
+    if (appConfig.EXCLUDED_LAYERS.includes(realId)) return result
 
     // Identificar capas fijas
     const isFixed = appConfig.FIXED_LAYERS.includes(realId) || appConfig.FIXED_LAYERS.includes(node.nombre)

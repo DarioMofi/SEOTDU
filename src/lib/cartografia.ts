@@ -12,16 +12,19 @@
  *
  * - **De qué archivo se sirve una capa** (`indiceEntregaNueva`): se indexa el
  *   catálogo completo. Es una búsqueda por id y no cambia qué capas existen.
- * - **Qué capas existen** (`getCapasDisponibles`): solo los mapas de esta
- *   lista. Ampliarla no es inocuo — `ModuleLayerSelector` resuelve los
- *   nombres del volcado viejo con una coincidencia laxa por sufijo, y al
- *   pasar la lista de 60 a 112 ids empezó a emparejar capas de otro monitor:
- *   Ambiental se llenó de capas de Social.
+ * - **Qué capas existen** (`getCapasDisponibles`): los mapas de esta lista.
+ *   `null` = todos. Ampliarla exigió antes cambiar la resolución de nombres
+ *   del volcado viejo, que emparejaba por sufijo y con 112 ids empezaba a
+ *   confundir capas de otro monitor.
  *
  * **Para volver atrás**, `public/layers/Referencia monitores antes de
  * migrar.md` tiene cómo se veía cada monitor antes de tocar esto.
  */
-const MAPAS_MIGRADOS = ['mapa_base']
+const MAPAS_MIGRADOS: string[] | null = null
+
+function estaMigrado(id: string): boolean {
+  return MAPAS_MIGRADOS === null || MAPAS_MIGRADOS.includes(id)
+}
 
 
 
@@ -121,7 +124,7 @@ export async function getCapasDisponibles(): Promise<string[]> {
   if (!catalogo) return sueltas
 
   const nuevas = catalogo.mapas
-    .filter((m) => MAPAS_MIGRADOS.includes(m.id))
+    .filter((m) => estaMigrado(m.id))
     .flatMap((m) => m.secciones.flatMap((s) => s.capas.map((c) => c.id)))
 
   // Varias capas existen en las dos generaciones con el mismo nombre

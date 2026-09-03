@@ -340,7 +340,19 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
           color: mapaBase === 'satelite' ? '#cbd5e1' : '#475569',
           dashArray: '4, 4',
           interactive: false
-        })
+        }),
+        onEachFeature: (feature, layer) => {
+          const texto = feature.properties?.NOMGEO ?? feature.properties?.nomgeo
+          if (texto) {
+            layer.bindTooltip(String(texto), {
+              permanent: true,
+              direction: 'center',
+              className: 'rotulo-capa',
+              interactive: false,
+              pane: 'bordersPane'
+            })
+          }
+        }
       }).addTo(map)
     } else {
       limiteMunicipalLayer.current.setStyle({

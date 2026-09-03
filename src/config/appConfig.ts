@@ -81,11 +81,8 @@ export const appConfig = {
   } as Record<string, string>,
 
   // Capas que rotulan cada elemento sobre el mapa, con el campo del que sale
-  // el texto. El visor no toma rótulos del volcado de QGIS, así que se
-  // declaran aquí.
-  LAYER_LABELS: {
-    'c04_municipios_inegi_2024': 'nomgeo'
-  } as Record<string, string>,
+  // el texto. Los municipios ya se rotulan de forma constante en el visor base.
+  LAYER_LABELS: {} as Record<string, string>,
 
   // Capas que se dibujan pero no se listan en la leyenda: no representan un
   // dato consultable, son recurso visual. El bufer estatal es el gris de los
@@ -96,9 +93,12 @@ export const appConfig = {
   // GeoPackage. Son defectos de la cartografía de origen: en cuanto los
   // corrijan allá, estas entradas se borran.
   TABLE_ALIASES: {
-    // El estilo escribe la capa con guion; la tabla la trae con guion bajo.
+    // El estilo escribe la capa con guion y sin la «a» intermedia; el archivo nuevo
+    // del catálogo incluye «..._puebla_a_progreso_...».
     'C04_Mejoramiento_conectividad_Corredor_Puebla-Progreso_OPMATPG_2023':
-      'C04_Mejoramiento_conectividad_Corredor_Puebla_Progreso_OPMATPG_2023'
+      'c04_mejoramiento_conectividad_corredor_puebla_a_progreso_opmatpg_2023',
+    'C04_Mejoramiento_conectividad_Corredor_Puebla_Progreso_OPMATPG_2023':
+      'c04_mejoramiento_conectividad_corredor_puebla_a_progreso_opmatpg_2023'
   } as Record<string, string>,
 
   // Diccionario para cambiar los nombres técnicos por nombres amigables en el menú
@@ -303,6 +303,22 @@ export const appConfig = {
       themeHover: 'rgba(83, 168, 13, 0.02)',
       file: 'Monitor_Ambiental_Climatico.json',
       icon: 'ambiental',
+      // Las 12 capas de estrategia que estaban activas por defecto antes de la
+      // categorización. Las 10 capas de diagnóstico quedan en el menú apagadas.
+      defaultLayers: [
+        'C04_Programa_proteccion_tortugas_SEMABICCE_OPMATPG_2023',
+        'C04_ADVC_CONANP_CONABIO_2022',
+        'C04_Red_monitoreo_calidad_aguas_superficiales_CONABIO_2008',
+        'C04_ANP_Estatal_BalamKin_BalamKu_CONABIO_2020',
+        'C04_ANP_Río_Candelaria_OPMATPG_2023',
+        'C04_Conservación_y_Restauracion_humedales_CONABIO_2020',
+        'C04_Pasos_de_fauna_FTM_2023',
+        'C04_Playas_anidación_tortugas_OPMATPG_2023',
+        'C04_Programa_Captacion_lluvia_Xpujil_INEGI_2020',
+        'C04_Programa_saneamiento_cuencas_CONAGUA_2016',
+        'C04_Propuesta_Corredor_Balam_Beh_SEMABICCE_2023',
+        'C04_Propuesta_Corredor_Palizada_SEMABICCE_2023'
+      ],
       // Grupos de capas: el menú las trata como una sola entrada para acotar la
       // interacción. El switch y la opacidad del grupo aplican a todas sus
       // capas a la vez, y las capas dejan de tener control propio.
@@ -423,7 +439,7 @@ export const appConfig = {
         'C04_Fortalecimiento_energético_INEGI_2020',
         'C04_Industria_Planta_Biocombustible_OPMATPG_2023',
         'C04_Manejo_integral_residuos_sólidos_INEGI_2022_OPMATPG_2023',
-        'C04_Mejoramiento_conectividad_Corredor_Puebla_Progreso_OPMATPG_2023',
+        'c04_mejoramiento_conectividad_corredor_puebla_a_progreso_opmatpg_2023',
         'C04_Parque_Industrial_Textil_OPMATPG_2023',
         'C04_Transporte_fluvial_rÍo_Palizada_INEGI_2008',
         'C04_DerechosDeViaLineasDeTransmisionElectrica_Geocomunes_2023',

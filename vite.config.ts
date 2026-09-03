@@ -17,9 +17,10 @@ export default defineConfig({
     host: '0.0.0.0',
     port: parseInt(process.env.PORT || '5173'),
     strictPort: false,
-    // La cartografia de `public/layers` son cientos de MB: vigilarla satura el
-    // watcher y retrasa el arranque del servidor.
-    watch: { ignored: ['**/*.gpkg', '**/public/layers/**'] },
+    // `public/` son cientos de MB entre cartografia e imagenes: vigilarlo
+    // satura el watcher y retrasa el arranque. Los .gpkg y .mp4 se listan
+    // aparte porque tambien pueden vivir fuera de public/.
+    watch: { ignored: ['**/*.gpkg', '**/*.mp4', '**/public/**'] },
   },
   preview: {
     host: '0.0.0.0',

@@ -6,14 +6,24 @@
 /**
  * La entrega nueva de cartografía vive en `public/layers/GeoJSON/`, organizada
  * en carpetas y descrita por `catalogo.json`. La vieja son archivos sueltos en
- * `public/layers/`. Las dos conviven mientras se migra módulo por módulo.
+ * `public/layers/`, que se conservan mientras se valida la migración.
  *
- * **Hoy solo Mapa Base usa la entrega nueva.** El acotamiento es deliberado:
- * los demás módulos siguen leyendo sus archivos sueltos con sus volcados
- * viejos hasta validarse uno a uno. Para migrar otro módulo basta agregarlo
- * aquí y apuntar su `file` a `JSON_SIMBOLOGIA/` en `appConfig`.
+ * Son dos cosas distintas y por eso se resuelven distinto:
+ *
+ * - **De qué archivo se sirve una capa** (`indiceEntregaNueva`): se indexa el
+ *   catálogo completo. Es una búsqueda por id y no cambia qué capas existen.
+ * - **Qué capas existen** (`getCapasDisponibles`): solo los mapas de esta
+ *   lista. Ampliarla no es inocuo — `ModuleLayerSelector` resuelve los
+ *   nombres del volcado viejo con una coincidencia laxa por sufijo, y al
+ *   pasar la lista de 60 a 112 ids empezó a emparejar capas de otro monitor:
+ *   Ambiental se llenó de capas de Social.
+ *
+ * **Para volver atrás**, `public/layers/Referencia monitores antes de
+ * migrar.md` tiene cómo se veía cada monitor antes de tocar esto.
  */
 const MAPAS_MIGRADOS = ['mapa_base']
+
+
 
 /**
  * Capas de un módulo migrado que siguen leyéndose del archivo suelto.
@@ -64,7 +74,6 @@ function indiceEntregaNueva(): Promise<Map<string, string>> {
       const indice = new Map<string, string>()
       if (!catalogo) return indice // Sin catálogo se sigue sirviendo lo viejo.
       for (const mapa of catalogo.mapas) {
-        if (!MAPAS_MIGRADOS.includes(mapa.id)) continue
         for (const seccion of mapa.secciones) {
           for (const capa of seccion.capas) {
             indice.set(norm(capa.id), `${catalogo.raiz}/${capa.ruta}`)

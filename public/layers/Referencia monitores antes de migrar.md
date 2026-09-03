@@ -20,3 +20,16 @@ Mapa Base ya estaba migrado cuando se tomó esta referencia.
 Para volver atrás: `MAPAS_MIGRADOS` en `src/lib/cartografia.ts` acota qué mapas
 leen de `public/layers/GeoJSON/`. Dejarlo en `['mapa_base']` restaura este
 estado.
+
+## Resultado de la migración
+
+Los cinco monitores quedaron **iguales a esta referencia** leyendo ya de
+`public/layers/GeoJSON/`. Se verificó archivo por archivo y contando entradas
+de leyenda.
+
+Lo que costó encontrarse: al ampliar también `getCapasDisponibles` a todos los
+mapas, Ambiental se llenó de capas de Social. La causa es la coincidencia laxa
+por sufijo con la que `ModuleLayerSelector` resuelve los nombres del volcado
+viejo: con 60 ids acertaba, con 112 empezó a emparejar capas de otro monitor.
+Por eso esa lista sigue acotada y solo el índice de URLs abarca el catálogo
+completo.

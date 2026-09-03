@@ -1,9 +1,14 @@
-import React from 'react';
+import type { SVGProps } from 'react';
+
+/** `size` fija ancho y alto a la vez; el resto son props normales de <svg>. */
+interface IconoPerfilProps extends Omit<SVGProps<SVGSVGElement>, 'width' | 'height'> {
+  size?: number;
+}
 
 /**
  * Icono de perfil de Administrador (Silueta ejecutiva formal con corbata y bolsillo)
  */
-export const AdminProfileIcon = ({ size = 64, className = '', color = 'currentColor', ...props }) => (
+export const AdminProfileIcon = ({ size = 64, className = '', color = 'currentColor', ...props }: IconoPerfilProps) => (
   <svg 
     width={size} 
     height={size} 
@@ -41,7 +46,7 @@ export const AdminProfileIcon = ({ size = 64, className = '', color = 'currentCo
 /**
  * Icono de perfil de Capturista (Misma silueta y proporciones pero simplificada)
  */
-export const CapturistaProfileIcon = ({ size = 64, className = '', color = 'currentColor', ...props }) => (
+export const CapturistaProfileIcon = ({ size = 64, className = '', color = 'currentColor', ...props }: IconoPerfilProps) => (
   <svg 
     width={size} 
     height={size} 

@@ -8,7 +8,6 @@ import AdminLayout from './components/plataforma/admin-layout'
 import AdminMapViewer from './components/geovisor/admin-map-viewer'
 import BitacoraLogs from './components/bitacora/bitacora-logs'
 import RutaProtegida from './components/ruta-protegida'
-import PruebaMapaBase from './pages/prueba-mapa-base'
 
 export default function App() {
   return (
@@ -21,8 +20,6 @@ export default function App() {
           <Route path="/catalogo" element={<Catalogo />} />
           <Route path="/geovisor" element={<Geovisor />} />
           <Route path="/login" element={<Login />} />
-          {/* Banco de pruebas de la entrega nueva de cartografia. Desechable. */}
-          <Route path="/prueba-mapa-base" element={<PruebaMapaBase />} />
 
           {/* Visor interactivo multi-rol (Administrador, Capturista, Auditor).
               Lo que va detras de RutaProtegida exige sesion. */}

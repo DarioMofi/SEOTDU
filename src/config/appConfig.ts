@@ -55,15 +55,32 @@ export const appConfig = {
       themeColor: '#475569',
       themeBg: 'rgba(71, 85, 105, 0.02)',
       themeHover: 'rgba(71, 85, 105, 0.04)',
-      // El árbol y el orden de dibujo salen del volcado nuevo, que trae cuatro
-      // capas que el viejo no tenía (`estatal`, `CESC`, `BUFER_ESTATAL`,
-      // `catp50s3gw`) y es superconjunto estricto del anterior.
-      file: 'nuevos/00_Mapa_Base/00_Mapa_Base_simbologia.json',
-      // Pero la simbología de las once capas que ya existían se sigue tomando
-      // del volcado viejo: el nuevo dejó de exportar la forma del marcador, el
-      // desplazamiento y el ángulo, y aquí eso se nota en los iconos de
-      // aeropuertos, puertos y estaciones y en la trama cruzada del ANP.
-      stylesFrom: ['Mapa_Base.json'],
+      // Primer módulo servido por la entrega nueva de `public/layers/GeoJSON/`.
+      // Su simbología viene completa en un solo volcado, así que ya no hace
+      // falta `stylesFrom` para rescatar la forma del marcador del volcado
+      // viejo. El ruteo del GeoJSON lo resuelve `cartografia.ts`.
+      file: 'JSON_SIMBOLOGIA/00_Mapa_Base.json',
+      // Las 15 capas que se encienden al activar el módulo. Quedan fuera las
+      // cuatro pesadas —red regional, manzanas, cuerpos de agua y CESC— que
+      // suman 177 de los 207 MB del mapa base y tardan ~30 s en dibujarse.
+      // Siguen en el menú, apagadas, para encenderlas a voluntad.
+      defaultLayers: [
+        'c04_lim_edo_2024_inegi_2024',
+        'c04_municipios_inegi_2024',
+        'c00_bufer_estatal_inegi_2024_2026',
+        'c00_rfn_artf_2024',
+        'c04_aeropuertos_2012',
+        'c04_estaciones_rfn25',
+        'c04_puntos_int_imt_inegi_2024',
+        'c04_estacionestm_sedatu_2024',
+        'c00_zonasmetropolitanas_conapo_2020',
+        'c04_scince_localidad_urbana_inegi_2020',
+        'c04_localidades_rurales_2024',
+        'c04_corr_agua_2003',
+        'c00_anp_conanp_2025',
+        'c00_rpt_conabio_2008',
+        'c04_areaboscosa_inegi_2018'
+      ],
       icon: 'mapa_base' // Manejaremos el render del SVG dinámico en el componente
     },
     {

@@ -108,6 +108,20 @@ function esFormatoNuevo(json: any): boolean {
   return Array.isArray(json?.capas) && typeof json?.modulo === 'string'
 }
 
+/**
+ * Compara ids entre las dos generaciones de cartografía: el volcado de QGIS
+ * conserva el nombre original (`C04_Lim_Edo_2024_INEGI_2024`) y la entrega
+ * nueva lo bajó a minúscula y sin acentos. Misma normalización que usa
+ * `cartografia.ts` para resolver la URL del GeoJSON.
+ */
+function norm(id: string): string {
+  return id
+    .normalize('NFKD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '')
+}
+
 function extractLayersFromNewStyle(json: any, availableLayers: string[]): Layer[] {
   return (json.capas as any[]).flatMap((capa) => {
     // Los rásteres del proyecto QGIS (mapas base de Carto) no son capas
@@ -124,7 +138,8 @@ function extractLayersFromNewStyle(json: any, availableLayers: string[]): Layer[
       ? declarado
       : availableLayers.includes(`C04_${declarado}`)
         ? `C04_${declarado}`
-        : declarado
+        : // La entrega nueva trae el mismo id en minúscula.
+          (availableLayers.find((a) => norm(a) === norm(declarado)) ?? declarado)
     if (availableLayers.length > 0 && !availableLayers.includes(id)) return []
 
     const cleanLabel = String(capa.nombre ?? id).replace(/^C\d+_/, '').replace(/_/g, ' ')

@@ -146,13 +146,14 @@ function aplicarAjustes(id: string, simbologia: any): any {
     }
   }
 
-  if (ajuste.svgMarcador) {
+  if (ajuste.svgMarcador || ajuste.colorSvg) {
     const ponerSvg = (nodo: any): void => {
       if (Array.isArray(nodo)) return nodo.forEach(ponerSvg)
       if (!nodo || typeof nodo !== 'object') return
       const props = nodo.props ?? nodo.propiedades
       if ((nodo.clase ?? nodo.tipo) === 'QgsSvgMarkerSymbolLayer' && props) {
-        props.name = ajuste.svgMarcador
+        if (ajuste.svgMarcador) props.name = ajuste.svgMarcador
+        if (ajuste.colorSvg) props.color = `${ajuste.colorSvg},255`
       }
       Object.values(nodo).forEach(ponerSvg)
     }

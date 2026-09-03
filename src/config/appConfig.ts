@@ -43,7 +43,17 @@ export const appConfig = {
     'c04_scince_localidad_urbana_inegi_2020': { colorPlano: '154,158,163' },
     // El volcado dejó el SVG dentro del texto de una alerta y `props.name`
     // vacío, así que sin esto el marcador cae al punto negro de respaldo.
-    'c04_estacionestm_sedatu_2024': { svgMarcador: 'estacion_tren_maya.svg' },
+    // El volcado lo dejaba en negro puro y se confundía con los demás puntos
+    // oscuros del mapa; el guinda institucional lo separa de los azules de
+    // aeropuertos y del gris de las estaciones ferroviarias.
+    'c04_estacionestm_sedatu_2024': {
+      svgMarcador: 'estacion_tren_maya.svg',
+      colorSvg: '159,34,65',
+      escalaPunto: 1.25
+    },
+    // Marcadores de 2 y 3 px que se perdían en el mapa.
+    'c04_aeropuertos_2012': { escalaPunto: 1.5 },
+    'c04_estaciones_rfn25': { escalaPunto: 1.5 },
     // Solo estas cuatro administraciones se proyectan; las demás clases del
     // volcado (N/A, N/D, Otro) se apagan y salen también de la leyenda.
     'c04_red_regional_imt_inegi_2024': {
@@ -55,9 +65,17 @@ export const appConfig = {
       escalaPunto?: number
       colorPlano?: string
       svgMarcador?: string
+      colorSvg?: string
       categoriasVisibles?: string[]
     }
   >,
+
+  // Capas que rotulan cada elemento sobre el mapa, con el campo del que sale
+  // el texto. El visor no toma rótulos del volcado de QGIS, así que se
+  // declaran aquí.
+  LAYER_LABELS: {
+    'c04_municipios_inegi_2024': 'nomgeo'
+  } as Record<string, string>,
 
   // Capas que se dibujan pero no se listan en la leyenda: no representan un
   // dato consultable, son recurso visual. El bufer estatal es el gris de los

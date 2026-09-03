@@ -7,6 +7,7 @@ import LimMunBase from '../../data/Lim_Mun_Base.json'
 import { createSymbolResolver, resolveSymbol, usesPatternFill } from '../../lib/qgisSymbology'
 import { toPathOptions, toPointLayer } from '../../lib/leafletSymbology'
 import { getCapaGeoJSON } from '../../lib/cartografia'
+import { appConfig } from '../../config/appConfig'
 
 // Mapa base claro: Esri Light Gray Canvas. Se usa Esri y no CARTO porque los
 // teselados de CARTO ahora exigen API key y devuelven las imágenes marcadas
@@ -269,6 +270,21 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
               },
               onEachFeature: (feature, layer) => {
                 if (!feature.properties) return
+
+                // Rótulo permanente sobre el elemento. `direction: 'center'` lo
+                // pone encima del polígono y no a un lado, que es lo que se
+                // espera de un nombre de municipio.
+                const campoRotulo = appConfig.LAYER_LABELS[layerId]
+                const texto = campoRotulo ? feature.properties[campoRotulo] : null
+                if (texto) {
+                  layer.bindTooltip(String(texto), {
+                    permanent: true,
+                    direction: 'center',
+                    className: 'rotulo-capa',
+                    // Sin esto Leaflet intercepta el clic y el popup no abre.
+                    interactive: false
+                  })
+                }
                 // El contenido se arma al abrir, no al cargar: construirlo aquí
                 // significaba una tabla HTML y un popup por elemento, y hay
                 // capas de decenas de miles. Leaflet acepta una función y la

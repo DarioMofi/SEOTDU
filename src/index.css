@@ -1126,3 +1126,22 @@ body:hover { scrollbar-width: thin; scrollbar-color: var(--c-beige-lt) transpare
 .modal-btn-accept:hover {
   background: var(--c-guinda-dk, #691C32);
 }
+/* ─── Rótulos de capa sobre el mapa ──────────────────────────────────── */
+/* Texto suelto, sin la caja blanca ni la flecha que Leaflet pone por
+   defecto: sobre un mapa base claro el nombre se lee mejor limpio, con un
+   halo que lo separa de lo que tenga debajo. */
+.leaflet-tooltip.rotulo-capa {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  font-family: var(--font-body, system-ui), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary, #2d2d2d);
+  text-shadow:
+    -1px -1px 2px #fff, 1px -1px 2px #fff,
+    -1px 1px 2px #fff, 1px 1px 2px #fff;
+  white-space: nowrap;
+}
+.leaflet-tooltip.rotulo-capa::before { display: none; }

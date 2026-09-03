@@ -13,6 +13,9 @@ interface CapturistaSidebarProps {
   capasEnRevision?: string[];
   instrumentosEnBorradores?: string[];
   instrumentosEnRevision?: string[];
+  /* admin-map-viewer lo envia con el resultado de la ultima accion, pero el
+     sidebar todavia no lo muestra en ningun lado. */
+  actionLog?: string;
 }
 
 const CapturistaSidebar = ({ 

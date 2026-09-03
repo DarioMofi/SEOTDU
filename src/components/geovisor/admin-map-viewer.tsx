@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { MapContainer, TileLayer, ScaleControl, Polyline, Marker, Tooltip, useMapEvents, useMap, GeoJSON } from 'react-leaflet';
 import L from 'leaflet';
 import { Download, Map, List, Plus, Minus, Ruler, ChevronDown, ChevronUp, Printer, UploadCloud, XCircle, CheckCircle } from 'lucide-react';
@@ -21,14 +21,14 @@ import '../perfiles/capturista/capturista.css';
 import '../perfiles/auditora/auditor.css';
 
 /* Helper para capturar la instancia del mapa */
-const MapInstanceCapture = ({ setMapInstance }) => {
+const MapInstanceCapture = ({ setMapInstance }: { setMapInstance: (map: L.Map) => void }) => {
   const map = useMap();
   useEffect(() => { setMapInstance(map); }, [map, setMapInstance]);
   return null;
 };
 
 /* Helper para el vuelo automático del mapa (Auditor) */
-const MapFlyTo = ({ capaActiva }) => {
+const MapFlyTo = ({ capaActiva }: { capaActiva: string }) => {
   const map = useMap();
   useEffect(() => {
     if (capaActiva) map.flyTo([19.83, -90.54], 11, { duration: 1.5 });
@@ -37,8 +37,8 @@ const MapFlyTo = ({ capaActiva }) => {
 };
 
 /* Componente para la herramienta de medicion lineal */
-const MeasureTool = ({ isMeasuring }) => {
-  const [points, setPoints] = useState([]);
+const MeasureTool = ({ isMeasuring }: { isMeasuring: boolean }) => {
+  const [points, setPoints] = useState<L.LatLng[]>([]);
   const [distance, setDistance] = useState(0);
 
   useMapEvents({
@@ -77,7 +77,7 @@ const MeasureTool = ({ isMeasuring }) => {
   );
 };
 
-const mockGeoJSONData = {
+const mockGeoJSONData: GeoJSON.FeatureCollection = {
   type: "FeatureCollection",
   features: [{
     type: "Feature",
@@ -86,12 +86,12 @@ const mockGeoJSONData = {
   }]
 };
 
-const CAMPECHE_BOUNDS = [[13.5, -97.0], [25.0, -83.0]];
+const CAMPECHE_BOUNDS: L.LatLngBoundsExpression = [[13.5, -97.0], [25.0, -83.0]];
 
 const AdminMapViewer = () => {
   const { role } = useAuth(); // ESTADO GLOBAL (Rol: 'administrador', 'capturista' o 'auditor')
 
-  const [mapInstance, setMapInstance] = useState(null);
+  const [mapInstance, setMapInstance] = useState<L.Map | null>(null);
   
   /* Herramientas de Mapa */
   const [mapaBaseOpen, setMapaBaseOpen] = useState(false);
@@ -109,27 +109,29 @@ const AdminMapViewer = () => {
   /* --- Estados Específicos: Administrador --- */
   const [isDictamenOpen, setIsDictamenOpen] = useState(false);
   const [recursoDictamen, setRecursoDictamen] = useState('');
-  const [tipoDictamen, setTipoDictamen] = useState('cartografia');
+  const [tipoDictamen, setTipoDictamen] = useState<'cartografia' | 'instrumento'>('cartografia');
   const [instrumentoActivoAdmin, setInstrumentoActivoAdmin] = useState('');
-  const [capasAprobadas, setCapasAprobadas] = useState(['red_vial_primaria']);
+  /* Nada en la interfaz lista todavia las capas aprobadas; se conserva el
+     setter para no perder el flujo cuando exista esa vista. */
+  const [, setCapasAprobadas] = useState<string[]>(['red_vial_primaria']);
   const [capasEnRevision, setCapasEnRevision] = useState(['red_ciclovias_v2', 'censo_paraderos_2026', 'pimus_municipio_carmen']);
   const [instrumentosEnRevisionAdmin, setInstrumentosEnRevisionAdmin] = useState(['PIMUS_Carmen_2025.pdf', 'Programa_Movilidad_Estatal_2024.pdf']);
   
   /* --- Estados Específicos: Capturista --- */
-  const [modalConfig, setModalConfig] = useState({ isOpen: false, tipo: 'cartografia' });
+  const [modalConfig, setModalConfig] = useState<{ isOpen: boolean; tipo: 'cartografia' | 'instrumento' }>({ isOpen: false, tipo: 'cartografia' });
   const [isVerifying, setIsVerifying] = useState(false);
-  const [capasEnBorradores, setCapasEnBorradores] = useState([]);
-  const [instrumentosEnBorradores, setInstrumentosEnBorradores] = useState([]);
+  const [capasEnBorradores, setCapasEnBorradores] = useState<string[]>([]);
+  const [instrumentosEnBorradores] = useState<string[]>([]);
   const [instrumentosEnRevision, setInstrumentosEnRevision] = useState(['PIMUS_Carmen_2025.pdf']);
   const [actionLog, setActionLog] = useState('');
 
-  const handleMouseDown = (e) => {
+  const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
     dragStartPos.current = { startX: e.clientX, startY: e.clientY, x: herramientasPos.x, y: herramientasPos.y };
   };
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       if (!isDragging) return;
       setHerramientasPos({
         x: dragStartPos.current.x + (e.clientX - dragStartPos.current.startX),
@@ -175,7 +177,7 @@ const AdminMapViewer = () => {
   };
 
   /* Funciones Administrador */
-  const handleSelectCapaAdmin = (nombreCapa) => {
+  const handleSelectCapaAdmin = (nombreCapa: string) => {
     setCapaActiva(nombreCapa);
     setInstrumentoActivoAdmin('');
     setRecursoDictamen(nombreCapa);
@@ -184,7 +186,7 @@ const AdminMapViewer = () => {
     if (mapInstance) mapInstance.flyTo([19.85, -90.53], 12, { duration: 1.5 });
   };
 
-  const handleSelectInstrumentoAdmin = (nombreInstrumento) => {
+  const handleSelectInstrumentoAdmin = (nombreInstrumento: string) => {
     setCapaActiva('');
     setInstrumentoActivoAdmin(nombreInstrumento);
     setRecursoDictamen(nombreInstrumento);
@@ -192,7 +194,7 @@ const AdminMapViewer = () => {
     setIsDictamenOpen(true);
   };
 
-  const procesarDictamen = (decision, comentario) => {
+  const procesarDictamen = (decision: 'aprobar' | 'rechazar', _comentario: string) => {
     if (tipoDictamen === 'cartografia') {
       setCapasEnRevision(prev => prev.filter(c => c !== recursoDictamen));
       if (decision === 'aprobar') {
@@ -208,11 +210,11 @@ const AdminMapViewer = () => {
   };
 
   /* Funciones Capturista */
-  const handleOpenCapturistaModal = (tipo) => {
+  const handleOpenCapturistaModal = (tipo: 'cartografia' | 'instrumento') => {
     setModalConfig({ isOpen: true, tipo });
   };
 
-  const handleVerifyLayer = (nombreArchivo) => {
+  const handleVerifyLayer = (nombreArchivo: string) => {
     setCapaActiva(nombreArchivo);
     setCapasEnBorradores(prev => [nombreArchivo, ...prev]);
     setActionLog(`Carga inicial: Archivos de "${nombreArchivo}" retenidos en memoria local.`);
@@ -220,7 +222,7 @@ const AdminMapViewer = () => {
     if (mapInstance) mapInstance.flyTo([19.85, -90.53], 12, { duration: 1.5 });
   };
 
-  const handleSubmitInstrumento = (nombreDocumento) => {
+  const handleSubmitInstrumento = (nombreDocumento: string) => {
     setInstrumentosEnRevision(prev => [nombreDocumento, ...prev]);
     setActionLog(`Instrumento enviado: "${nombreDocumento}" registrado para dictamen institucional.`);
     setModalConfig(prev => ({ ...prev, isOpen: false }));
@@ -240,11 +242,11 @@ const AdminMapViewer = () => {
 
   /* Funciones Auditor */
   const [instrumentoActivoAuditor, setInstrumentoActivoAuditor] = useState('');
-  const handleSelectCapaAuditoria = (nombreCapa) => {
+  const handleSelectCapaAuditoria = (nombreCapa: string) => {
     setInstrumentoActivoAuditor('');
     setCapaActiva(nombreCapa);
   };
-  const handleSelectInstrumentoAuditoria = (nombreInstrumento) => {
+  const handleSelectInstrumentoAuditoria = (nombreInstrumento: string) => {
     setCapaActiva('');
     setInstrumentoActivoAuditor(nombreInstrumento);
   };

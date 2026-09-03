@@ -8,6 +8,17 @@ import { createSymbolResolver, resolveSymbol, usesPatternFill } from '../../lib/
 import { toPathOptions, toPointLayer } from '../../lib/leafletSymbology'
 import { getCapaGeoJSON } from '../../lib/cartografia'
 
+// Mapa base claro: Esri Light Gray Canvas. Se usa Esri y no CARTO porque los
+// teselados de CARTO ahora exigen API key y devuelven las imágenes marcadas
+// con «API KEY REQUIRED» encima del mapa.
+//
+// Va sin la capa de etiquetas (`World_Light_Gray_Reference`) a propósito: sus
+// topónimos son exónimos en inglés («Havana», no «La Habana»), así que se
+// prefiere el mapa base limpio y que las etiquetas las pongan las capas.
+const ESRI_CLARO =
+  'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}'
+const ESRI_ATRIBUCION = 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ'
+
 interface Props {
   activeLayers: string[]
   selectedFeature: MunicipioProperties | null
@@ -171,8 +182,12 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
 
     let newBaseLayer: L.TileLayer
     if (mapaBase === 'claro') {
-      newBaseLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        maxZoom: 19
+      // `maxNativeZoom` porque el teselado de Esri solo llega a z16: sin esto,
+      // a partir de ahí el mapa se queda en blanco en lugar de reescalar.
+      newBaseLayer = L.tileLayer(ESRI_CLARO, {
+        maxZoom: 19,
+        maxNativeZoom: 16,
+        attribution: ESRI_ATRIBUCION
       })
     } else {
       newBaseLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {

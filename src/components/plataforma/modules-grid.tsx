@@ -53,7 +53,7 @@ const MODULES = [
   },
 ]
 
-import { appConfig } from '../config/appConfig'
+import { appConfig } from '../../config/appConfig'
 
 export default function ModulesGrid() {
   const navigate = useNavigate()

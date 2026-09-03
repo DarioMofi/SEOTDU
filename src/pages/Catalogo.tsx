@@ -1,7 +1,7 @@
-import Header from '../components/Header'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-import Underfooter from '../components/Underfooter'
+import Header from '../components/plataforma/header'
+import Navbar from '../components/plataforma/navbar'
+import Footer from '../components/plataforma/footer'
+import Underfooter from '../components/plataforma/underfooter'
 
 export default function Catalogo() {
   return (

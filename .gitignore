@@ -11,3 +11,7 @@ public/layers/Geopaquetes/
 
 # Documentación local
 docs/ 
+# Entrega nueva de cartografia: ~288 MB pendientes de prueba. Se queda fuera de
+# git a proposito; si al final se confirma, valorar Git LFS antes de meterla.
+# El manifiesto (public/layers/catalogo.json) si se versiona.
+public/layers/GeoJSON/

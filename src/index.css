@@ -23,6 +23,21 @@
 
   --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
   --radius-card: 8px;
+  --c-dorado:        #BC955B;
+  --status-borrador: #8A724A;
+  --status-revision: #F59E0B;
+  --status-aprobado: #10B981;
+  --status-rechazado:#EF4444;
+  --border-color:    #E5E7EB;
+  --text-primary:    #2D2D2D;
+  --text-secondary:  #53565A;
+  --surface-color:   #FFFFFF;
+  --surface-border:  #E5E7EB;
+  --radius-md:       8px;
+  --radius-lg:       12px;
+  --shadow-sm:       0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md:       0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg:       0 10px 25px rgba(0, 0, 0, 0.1);
   --transition:  0.2s ease;
 }
 
@@ -145,6 +160,19 @@ body:hover { scrollbar-width: thin; scrollbar-color: var(--c-beige-lt) transpare
 }
 .header__user-btn:hover { background: rgba(255, 255, 255, 0.3); }
 .header__user-btn svg { width: 18px; height: 18px; }
+
+/* Con sesion iniciada el header pasa a blanco y sus iconos a gris: separa a
+   simple vista la plataforma publica de la vista institucional. El circulo y la
+   posicion de los botones no cambian. */
+.header--sesion {
+  background: var(--c-white);
+  border-bottom: 1px solid var(--border-color);
+}
+.header--sesion .header__user-btn {
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--text-secondary);
+}
+.header--sesion .header__user-btn:hover { background: rgba(0, 0, 0, 0.09); }
 
 /* ─── Navbar ─────────────────────────────────────────────────────────── */
 .navbar {
@@ -895,3 +923,206 @@ body:hover { scrollbar-width: thin; scrollbar-color: var(--c-beige-lt) transpare
   cursor: pointer;
 }
 
+
+/* =========================================================
+   COMPONENTES NORMALIZADOS DE SESIM
+   ========================================================= */
+
+/* --- PANELES FLOTANTES GLOBALES --- */
+.floating-panel,
+.floating-right-panel,
+.audit-drawer {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+}
+
+/* --- TITULOS DE PANELES NORMALIZADOS --- */
+.panel-section-title {
+  margin: 0 0 12px 0;
+  font-size: 11px;
+  color: var(--c-guinda-dk);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* --- BOTONES NORMALIZADOS (ORIGINAL SESIM) --- */
+.btn-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 13px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  background: var(--c-guinda);
+  color: var(--c-white);
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--c-guinda-dk);
+  transform: translateY(-1px);
+}
+.btn-primary:disabled {
+  background: var(--c-gray-md);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--c-guinda);
+  border: 1px solid var(--c-guinda);
+}
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(159, 34, 65, 0.05);
+}
+
+.btn-tertiary {
+  background: var(--c-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+.btn-tertiary:hover:not(:disabled) {
+  background: #E5E7EB;
+  color: var(--c-guinda-dk);
+}
+
+/* Boton Blanco Elevado */
+.btn-white {
+  background: var(--c-white);
+  color: var(--c-guinda);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+.btn-white:hover:not(:disabled) {
+  background: var(--c-bg);
+  transform: translateY(-1px);
+}
+.btn-white:disabled {
+  background: var(--c-bg);
+  color: var(--text-secondary);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- Modal de Politicas de Uso --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background: var(--c-white, #ffffff);
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  padding: 32px 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.modal-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--c-guinda, #9F2241);
+  text-align: center;
+  margin: 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #d7dbdd;
+  line-height: 1.4;
+  font-family: var(--font-heading);
+}
+
+.modal-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--c-gray-dk, #53565A);
+  text-align: center;
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+.modal-text {
+  font-size: 13.5px;
+  color: var(--c-text, #333333);
+  text-align: justify;
+  line-height: 1.65;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #d7dbdd;
+  overflow-y: auto;
+  max-height: 48vh;
+  padding-right: 8px;
+  font-family: var(--font-body);
+}
+
+.modal-text p {
+  margin: 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.modal-btn {
+  padding: 10px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-family: var(--font-body);
+}
+
+.modal-btn-cancel {
+  background: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+.modal-btn-cancel:hover {
+  background: #e5e7eb;
+}
+
+.modal-btn-accept {
+  background: var(--c-guinda, #9F2241);
+  color: #ffffff;
+}
+.modal-btn-accept:hover {
+  background: var(--c-guinda-dk, #691C32);
+}

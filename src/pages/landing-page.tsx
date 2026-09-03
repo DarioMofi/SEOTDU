@@ -1,12 +1,12 @@
 import { useNavigate } from 'react-router-dom'
-import Header from '../components/Header'
-import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
-import Larguillo from '../components/Larguillo'
-import FaqBox from '../components/FaqBox'
-import ModulesGrid from '../components/ModulesGrid'
-import Footer from '../components/Footer'
-import Underfooter from '../components/Underfooter'
+import Header from '../components/plataforma/header'
+import Navbar from '../components/plataforma/navbar'
+import Hero from '../components/plataforma/hero'
+import Larguillo from '../components/plataforma/larguillo'
+import FaqBox from '../components/plataforma/faq-box'
+import ModulesGrid from '../components/plataforma/modules-grid'
+import Footer from '../components/plataforma/footer'
+import Underfooter from '../components/plataforma/underfooter'
 
 export default function LandingPage() {
   const navigate = useNavigate()

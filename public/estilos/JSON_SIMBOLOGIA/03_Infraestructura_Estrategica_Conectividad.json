@@ -1,0 +1,2880 @@
+{
+  "modulo": "Infraestructura Estratégica y Conectividad",
+  "total_capas": 41,
+  "capas": [
+    {
+      "nombre": "C04_Ampliacion_red_electrica_OPMATPG_2023",
+      "nombre_tabla": "C04_Ampliacion_red_electrica_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/E4_Integración territorial, desarrollo urbano e industria",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "nombre",
+        "localidad"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#A83800",
+            "rgba": "rgba(168,56,0,1.00)",
+            "r": 168,
+            "g": 56,
+            "b": 0,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "168,56,0,255,rgb:0.6588235294117647,0.2196078431372549,0,1",
+                "line_width": "0",
+                "line_width_unit": "Point"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#A83800",
+                "rgba": "rgba(168,56,0,1.00)",
+                "r": 168,
+                "g": 56,
+                "b": 0,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsMarkerLineSymbolLayer",
+              "enabled": true,
+              "props": {},
+              "alertas": [],
+              "sub_simbolo": {
+                "tipo_geometria": 0,
+                "opacidad": 1.0,
+                "color": {
+                  "hex": "#A83800",
+                  "rgba": "rgba(168,56,0,1.00)",
+                  "r": 168,
+                  "g": 56,
+                  "b": 0,
+                  "a": 255
+                },
+                "capas_simbolo": [
+                  {
+                    "clase": "QgsSimpleMarkerSymbolLayer",
+                    "enabled": true,
+                    "props": {
+                      "color": "168,56,0,255,rgb:0.6588235294117647,0.2196078431372549,0,1",
+                      "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                      "size": "3.6818",
+                      "outline_width": "0",
+                      "size_unit": "Point",
+                      "outline_style": "no"
+                    },
+                    "alertas": [],
+                    "color_parsed": {
+                      "hex": "#A83800",
+                      "rgba": "rgba(168,56,0,1.00)",
+                      "r": 168,
+                      "g": 56,
+                      "b": 0,
+                      "a": 255
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C04_Construccion_centrales_y_subestaciones_electricas_OPMATPG_2023",
+      "nombre_tabla": "C04_Construccion_centrales_y_subestaciones_electricas_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/E4_Integración territorial, desarrollo urbano e industria",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "Ubicación"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#FF5500",
+            "rgba": "rgba(255,85,0,1.00)",
+            "r": 255,
+            "g": 85,
+            "b": 0,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,85,0,255,rgb:1,0.33333333333333331,0,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "11.7108",
+                "outline_width": "0",
+                "size_unit": "Point",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FF5500",
+                "rgba": "rgba(255,85,0,1.00)",
+                "r": 255,
+                "g": 85,
+                "b": 0,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Construccion_ciclovia_Hopelchen_OPMATPG_2023",
+      "nombre_tabla": "C04_Construccion_ciclovia_Hopelchen_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/E4_Integración territorial, desarrollo urbano e industria",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "Descrip"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#00A884",
+            "rgba": "rgba(0,168,132,1.00)",
+            "r": 0,
+            "g": 168,
+            "b": 132,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "0,168,132,255,rgb:0,0.6588235294117647,0.51764705882352946,1",
+                "line_width": "1",
+                "line_width_unit": "Point"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#00A884",
+                "rgba": "rgba(0,168,132,1.00)",
+                "r": 0,
+                "g": 168,
+                "b": 132,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsMarkerLineSymbolLayer",
+              "enabled": true,
+              "props": {},
+              "alertas": [],
+              "sub_simbolo": {
+                "tipo_geometria": 0,
+                "opacidad": 1.0,
+                "color": {
+                  "hex": "#000000",
+                  "rgba": "rgba(0,0,0,1.00)",
+                  "r": 0,
+                  "g": 0,
+                  "b": 0,
+                  "a": 255
+                },
+                "capas_simbolo": [
+                  {
+                    "clase": "QgsFontMarkerSymbolLayer",
+                    "enabled": true,
+                    "props": {
+                      "color": "0,0,0,255,rgb:0,0,0,1",
+                      "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                      "size": "13",
+                      "outline_width": "0",
+                      "size_unit": "Point"
+                    },
+                    "alertas": [],
+                    "color_parsed": {
+                      "hex": "#000000",
+                      "rgba": "rgba(0,0,0,1.00)",
+                      "r": 0,
+                      "g": 0,
+                      "b": 0,
+                      "a": 255
+                    }
+                  },
+                  {
+                    "clase": "QgsFontMarkerSymbolLayer",
+                    "enabled": true,
+                    "props": {
+                      "color": "0,237,136,255,rgb:0,0.92941176470588238,0.53333333333333333,1",
+                      "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                      "size": "12",
+                      "outline_width": "0",
+                      "size_unit": "Point"
+                    },
+                    "alertas": [],
+                    "color_parsed": {
+                      "hex": "#00ED88",
+                      "rgba": "rgba(0,237,136,1.00)",
+                      "r": 0,
+                      "g": 237,
+                      "b": 136,
+                      "a": 255
+                    }
+                  },
+                  {
+                    "clase": "QgsFontMarkerSymbolLayer",
+                    "enabled": true,
+                    "props": {
+                      "color": "255,255,255,255,rgb:1,1,1,1",
+                      "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                      "size": "12",
+                      "outline_width": "0",
+                      "size_unit": "Point"
+                    },
+                    "alertas": [],
+                    "color_parsed": {
+                      "hex": "#FFFFFF",
+                      "rgba": "rgba(255,255,255,1.00)",
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C04_Construccion_libramientos_carreteros_OPMATPG_2023",
+      "nombre_tabla": "C04_Construccion_libramientos_carreteros_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/E4_Integración territorial, desarrollo urbano e industria",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "nombre"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#FF0000",
+            "rgba": "rgba(255,0,0,1.00)",
+            "r": 255,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "255,0,0,255,rgb:1,0,0,1",
+                "line_width": "3.5",
+                "line_width_unit": "Point"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FF0000",
+                "rgba": "rgba(255,0,0,1.00)",
+                "r": 255,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C04_Construccion_PTAR_OPMATPG_2023",
+      "nombre_tabla": "C04_Construccion_PTAR_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/E4_Integración territorial, desarrollo urbano e industria",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "Ubicación"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#5586BD",
+            "rgba": "rgba(85,134,189,1.00)",
+            "r": 85,
+            "g": 134,
+            "b": 189,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsFontMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,255,255,255,rgb:1,1,1,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "18",
+                "outline_width": "0",
+                "size_unit": "Point"
+              },
+              "alertas": [
+                "FUENTE_ESRI: 'ESRI Enviro Hazard Analysis' — no reproducible en web"
+              ],
+              "color_parsed": {
+                "hex": "#FFFFFF",
+                "rgba": "rgba(255,255,255,1.00)",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsFontMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "85,134,189,255,rgb:0.33333333333333331,0.52549019607843139,0.74117647058823533,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "18",
+                "outline_width": "0",
+                "size_unit": "Point"
+              },
+              "alertas": [
+                "FUENTE_ESRI: 'ESRI Enviro Hazard Analysis' — no reproducible en web"
+              ],
+              "color_parsed": {
+                "hex": "#5586BD",
+                "rgba": "rgba(85,134,189,1.00)",
+                "r": 85,
+                "g": 134,
+                "b": 189,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Estudio_de_ingenierias_basicas_para_transporte_de_carga_OPMATPG_2023",
+      "nombre_tabla": "C04_Estudio_de_ingenierias_basicas_para_transporte_de_carga_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/E4_Integración territorial, desarrollo urbano e industria",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "Descrip"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#FFFFFF",
+            "rgba": "rgba(255,255,255,1.00)",
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsFontMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,255,255,255,rgb:1,1,1,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "22",
+                "outline_width": "0",
+                "size_unit": "Point"
+              },
+              "alertas": [
+                "FUENTE_ESRI: 'ESRI Hazardous Materials' — no reproducible en web"
+              ],
+              "color_parsed": {
+                "hex": "#FFFFFF",
+                "rgba": "rgba(255,255,255,1.00)",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsFontMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "230,121,13,255,rgb:0.90196078431372551,0.47450980392156861,0.05098039215686274,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "22",
+                "outline_width": "0",
+                "size_unit": "Point"
+              },
+              "alertas": [
+                "FUENTE_ESRI: 'ESRI Hazardous Materials' — no reproducible en web"
+              ],
+              "color_parsed": {
+                "hex": "#E6790D",
+                "rgba": "rgba(230,121,13,1.00)",
+                "r": 230,
+                "g": 121,
+                "b": 13,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Estudio_de_preinversion_Tren_Ligero_OPMATPG_2023",
+      "nombre_tabla": "C04_Estudio_de_preinversion_Tren_Ligero_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/E4_Integración territorial, desarrollo urbano e industria",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "nombre",
+        "ubicación"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#000000",
+            "rgba": "rgba(0,0,0,1.00)",
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsRasterMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "size": "25",
+                "size_unit": "Point"
+              },
+              "alertas": []
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Fortalecimiento_energetico_INEGI_2020",
+      "nombre_tabla": "C04_Fortalecimiento_energetico_INEGI_2020",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/E4_Integración territorial, desarrollo urbano e industria",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "NOM_ENT",
+        "NOM_MUN",
+        "NOMGEO",
+        "POB1",
+        "POB2",
+        "POB4",
+        "OID",
+        "layer",
+        "path"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#002673",
+            "rgba": "rgba(0,38,115,1.00)",
+            "r": 0,
+            "g": 38,
+            "b": 115,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "0,38,115,255,rgb:0,0.14901960784313725,0.45098039215686275,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "14.7272",
+                "outline_width": "0",
+                "size_unit": "Point",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#002673",
+                "rgba": "rgba(0,38,115,1.00)",
+                "r": 0,
+                "g": 38,
+                "b": 115,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,255,255,255,rgb:1,1,1,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "12.0495",
+                "outline_width": "0",
+                "size_unit": "Point",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FFFFFF",
+                "rgba": "rgba(255,255,255,1.00)",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "0,38,115,255,rgb:0,0.14901960784313725,0.45098039215686275,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "5.35535",
+                "outline_width": "0",
+                "size_unit": "Point",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#002673",
+                "rgba": "rgba(0,38,115,1.00)",
+                "r": 0,
+                "g": 38,
+                "b": 115,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Industria_Planta_Biocombustible_OPMATPG_2023",
+      "nombre_tabla": "C04_Industria_Planta_Biocombustible_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/E4_Integración territorial, desarrollo urbano e industria",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "Nombre"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#FFEFA4",
+            "rgba": "rgba(255,239,164,1.00)",
+            "r": 255,
+            "g": 239,
+            "b": 164,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsFontMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,239,164,255,rgb:1,0.93725490196078431,0.64313725490196083,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "18",
+                "outline_width": "0",
+                "size_unit": "Point"
+              },
+              "alertas": [
+                "FUENTE_ESRI: 'ESRI Enviro Hazard Incident' — no reproducible en web"
+              ],
+              "color_parsed": {
+                "hex": "#FFEFA4",
+                "rgba": "rgba(255,239,164,1.00)",
+                "r": 255,
+                "g": 239,
+                "b": 164,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsFontMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "0,0,0,255,rgb:0,0,0,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "18",
+                "outline_width": "0",
+                "size_unit": "Point"
+              },
+              "alertas": [
+                "FUENTE_ESRI: 'ESRI Enviro Hazard Incident' — no reproducible en web"
+              ],
+              "color_parsed": {
+                "hex": "#000000",
+                "rgba": "rgba(0,0,0,1.00)",
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Manejo_integral_residuos_solidos_INEGI_2022_OPMATPG_2023",
+      "nombre_tabla": "C04_Manejo_integral_residuos_solidos_INEGI_2022_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/E4_Integración territorial, desarrollo urbano e industria",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "CVE_ENT",
+        "CVE_MUN",
+        "NOMGEO"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#38A800",
+            "rgba": "rgba(56,168,0,1.00)",
+            "r": 56,
+            "g": 168,
+            "b": 0,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsFontMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "56,168,0,255,rgb:0.2196078431372549,0.6588235294117647,0,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "20",
+                "outline_width": "0",
+                "size_unit": "Point"
+              },
+              "alertas": [
+                "FUENTE_ESRI: 'ESRI Hazardous Materials' — no reproducible en web"
+              ],
+              "color_parsed": {
+                "hex": "#38A800",
+                "rgba": "rgba(56,168,0,1.00)",
+                "r": 56,
+                "g": 168,
+                "b": 0,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Mejoramiento_conectividad_Corredor_Puebla_a_Progreso_OPMATPG_2023",
+      "nombre_tabla": "C04_Mejoramiento_conectividad_Corredor_Puebla_a_Progreso_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/E4_Integración territorial, desarrollo urbano e industria",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "nombre"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#F57A7A",
+            "rgba": "rgba(245,122,122,1.00)",
+            "r": 245,
+            "g": 122,
+            "b": 122,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsFontMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "245,122,122,255,rgb:0.96078431372549022,0.47843137254901963,0.47843137254901963,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "28",
+                "outline_width": "0",
+                "size_unit": "Point"
+              },
+              "alertas": [
+                "FUENTE_ESRI: 'ESRI Surveyor' — no reproducible en web"
+              ],
+              "color_parsed": {
+                "hex": "#F57A7A",
+                "rgba": "rgba(245,122,122,1.00)",
+                "r": 245,
+                "g": 122,
+                "b": 122,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Parque_Industrial_Textil_OPMATPG_2023",
+      "nombre_tabla": "C04_Parque_Industrial_Textil_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/E4_Integración territorial, desarrollo urbano e industria",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "Nombre"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#000000",
+            "rgba": "rgba(0,0,0,1.00)",
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsFontMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "168,0,0,255,rgb:0.6588235294117647,0,0,1",
+                "outline_color": "255,255,255,255,rgb:1,1,1,1",
+                "size": "22",
+                "outline_width": "0",
+                "size_unit": "Point"
+              },
+              "alertas": [
+                "FUENTE_ESRI: 'ESRI IGL Font23' — no reproducible en web"
+              ],
+              "color_parsed": {
+                "hex": "#A80000",
+                "rgba": "rgba(168,0,0,1.00)",
+                "r": 168,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "168,0,0,255,rgb:0.6588235294117647,0,0,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "14.9957",
+                "outline_width": "0",
+                "size_unit": "Point",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#A80000",
+                "rgba": "rgba(168,0,0,1.00)",
+                "r": 168,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,255,255,255,rgb:1,1,1,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "8.17948",
+                "outline_width": "0",
+                "size_unit": "Point",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FFFFFF",
+                "rgba": "rgba(255,255,255,1.00)",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "168,0,0,255,rgb:0.6588235294117647,0,0,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "size": "4.08974",
+                "outline_width": "0",
+                "size_unit": "Point",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#A80000",
+                "rgba": "rgba(168,0,0,1.00)",
+                "r": 168,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_Programa_abastecimiento_agua_localidades_Tren_Maya_OPMATPG_2023",
+      "nombre_tabla": "C04_Programa_abastecimiento_agua_localidades_Tren_Maya_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/E4_Integración territorial, desarrollo urbano e industria",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#BECF50",
+            "rgba": "rgba(190,207,80,1.00)",
+            "r": 190,
+            "g": 207,
+            "b": 80,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "190,207,80,255,rgb:0.74509803921568629,0.81176470588235294,0.31372549019607843,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "outline_width": "0.26",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#BECF50",
+                "rgba": "rgba(190,207,80,1.00)",
+                "r": 190,
+                "g": 207,
+                "b": 80,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_Transporte_fluvial_rio_Palizada_INEGI_2008",
+      "nombre_tabla": "C04_Transporte_fluvial_rio_Palizada_INEGI_2008",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/E4_Integración territorial, desarrollo urbano e industria",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "NOMBRE",
+        "ORDEN",
+        "TIPO",
+        "CVE_ENT",
+        "NOMGEO",
+        "MacReg",
+        "ID_Geo_N"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#BED2FF",
+            "rgba": "rgba(190,210,255,1.00)",
+            "r": 190,
+            "g": 210,
+            "b": 255,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "190,210,255,255,rgb:0.74509803921568629,0.82352941176470584,1,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "outline_width": "0.26",
+                "outline_style": "no"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#BED2FF",
+                "rgba": "rgba(190,210,255,1.00)",
+                "r": 190,
+                "g": 210,
+                "b": 255,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "68,79,137,255,rgb:0.26666666666666666,0.30980392156862746,0.53725490196078429,1",
+                "line_width": "4",
+                "line_width_unit": "Point"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#444F89",
+                "rgba": "rgba(68,79,137,1.00)",
+                "r": 68,
+                "g": 79,
+                "b": 137,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_DerechosDeViaGasoductos_CENEGAS_2019",
+      "nombre_tabla": "C04_DerechosDeViaGasoductos_CENEGAS_2019",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Nombre",
+        "Fecha_Oper",
+        "Empresa1",
+        "Inversion",
+        "Diametro",
+        "Longitud",
+        "Producto"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#FF01EA",
+            "rgba": "rgba(255,1,234,1.00)",
+            "r": 255,
+            "g": 1,
+            "b": 234,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "0,0,0,255,rgb:0,0,0,1",
+                "line_width": "0.46",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#000000",
+                "rgba": "rgba(0,0,0,1.00)",
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "255,1,234,255,hsv:0.84722222222222221,0.99607843137254903,1,1",
+                "line_width": "0.227225",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FF01EA",
+                "rgba": "rgba(255,1,234,1.00)",
+                "r": 255,
+                "g": 1,
+                "b": 234,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C04_DerechosDeViaLineasDeTransmisionElectrica_Geocomunes_2023",
+      "nombre_tabla": "C04_DerechosDeViaLineasDeTransmisionElectrica_Geocomunes_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "id",
+        "Potencia_k",
+        "Inversion",
+        "Tipo",
+        "Fase"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 0.3,
+          "color": {
+            "hex": "#000000",
+            "rgba": "rgba(0,0,0,1.00)",
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "0,0,0,255,rgb:0,0,0,1",
+                "line_width": "0.198",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#000000",
+                "rgba": "rgba(0,0,0,1.00)",
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsMarkerLineSymbolLayer",
+              "enabled": true,
+              "props": {},
+              "alertas": [],
+              "sub_simbolo": {
+                "tipo_geometria": 0,
+                "opacidad": 1.0,
+                "color": {
+                  "hex": "#FFFFFF",
+                  "rgba": "rgba(255,255,255,1.00)",
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 255
+                },
+                "capas_simbolo": [
+                  {
+                    "clase": "QgsSimpleMarkerSymbolLayer",
+                    "enabled": true,
+                    "props": {
+                      "color": "255,255,255,255,rgb:1,1,1,1",
+                      "outline_color": "0,0,0,255,rgb:0,0,0,1",
+                      "size": "0.2",
+                      "outline_width": "0.4",
+                      "size_unit": "MM",
+                      "outline_style": "solid"
+                    },
+                    "alertas": [],
+                    "color_parsed": {
+                      "hex": "#FFFFFF",
+                      "rgba": "rgba(255,255,255,1.00)",
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "clase": "QgsMarkerLineSymbolLayer",
+              "enabled": true,
+              "props": {},
+              "alertas": [],
+              "sub_simbolo": {
+                "tipo_geometria": 0,
+                "opacidad": 1.0,
+                "color": {
+                  "hex": "#FFFFFF",
+                  "rgba": "rgba(255,255,255,1.00)",
+                  "r": 255,
+                  "g": 255,
+                  "b": 255,
+                  "a": 255
+                },
+                "capas_simbolo": [
+                  {
+                    "clase": "QgsSimpleMarkerSymbolLayer",
+                    "enabled": true,
+                    "props": {
+                      "color": "255,255,255,255,rgb:1,1,1,1",
+                      "outline_color": "0,0,0,255,rgb:0,0,0,1",
+                      "size": "0.2",
+                      "outline_width": "0.4",
+                      "size_unit": "MM",
+                      "outline_style": "solid"
+                    },
+                    "alertas": [],
+                    "color_parsed": {
+                      "hex": "#FFFFFF",
+                      "rgba": "rgba(255,255,255,1.00)",
+                      "r": 255,
+                      "g": 255,
+                      "b": 255,
+                      "a": 255
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C04_Vivienda_ITER_INEGI_2020",
+      "nombre_tabla": "C04_Vivienda_ITER_INEGI_2020",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "CVE_MUN",
+        "CVE_LOC",
+        "NOMGEO",
+        "AMBITO",
+        "km2",
+        "NOM_MUN",
+        "NOM_LOC",
+        "AMBITO_1",
+        "POBTOT",
+        "VIVTOT",
+        "TVIVHAB",
+        "TVIVPAR",
+        "VIVPAR_HAB",
+        "VIVPARH_CV",
+        "TVIVPARHAB",
+        "VIVPAR_DES",
+        "VIVPAR_UT",
+        "OCUPVIVPAR",
+        "PROM_OCUP",
+        "PRO_OCUP_C",
+        "VPH_PISODT",
+        "VPH_PISOTI",
+        "VPH_1DOR",
+        "VPH_2YMASD",
+        "VPH_1CUART",
+        "VPH_2CUART",
+        "VPH_3YMASC",
+        "VPH_C_ELEC",
+        "VPH_S_ELEC",
+        "VPH_AGUADV",
+        "VPH_AEASP",
+        "VPH_AGUAFV",
+        "VPH_TINACO",
+        "VPH_CISTER",
+        "VPH_EXCSA",
+        "VPH_LETR",
+        "VPH_DRENAJ",
+        "VPH_NODREN",
+        "VPH_C_SERV",
+        "VPH_NDEAED",
+        "VPH_DSADMA",
+        "VPH_NDACMM",
+        "VPH_SNBIEN",
+        "VPH_REFRI",
+        "VPH_LAVAD",
+        "VPH_HMICRO",
+        "VPH_AUTOM",
+        "VPH_MOTO",
+        "VPH_BICI",
+        "VPH_RADIO",
+        "VPH_TV",
+        "VPH_PC",
+        "VPH_TELEF",
+        "VPH_CEL",
+        "VPH_INTER",
+        "VPH_STVP",
+        "VPH_SPMVPI",
+        "VPH_CVJ",
+        "VPH_SINRTV",
+        "VPH_SINLTC",
+        "VPH_SINCIN",
+        "VPH_SINTIC",
+        "DENS_HAB"
+      ],
+      "simbologia": {
+        "tipo": "graduatedSymbol",
+        "campo": "DENS_HAB",
+        "rangos": [
+          {
+            "etiqueta": "1 - 15",
+            "valor_min": 0.7431525632,
+            "valor_max": 15.462118519380015,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FAFAFA",
+                "rgba": "rgba(250,250,250,1.00)",
+                "r": 250,
+                "g": 250,
+                "b": 250,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "250,250,250,255,rgb:0.98039215686274506,0.98039215686274506,0.98039215686274506,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FAFAFA",
+                    "rgba": "rgba(250,250,250,1.00)",
+                    "r": 250,
+                    "g": 250,
+                    "b": 250,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "15 - 249",
+            "valor_min": 15.462118519380015,
+            "valor_max": 248.64261379732,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#BDBDBD",
+                "rgba": "rgba(189,189,189,1.00)",
+                "r": 189,
+                "g": 189,
+                "b": 189,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "189,189,189,255,rgb:0.74019989318684676,0.74019989318684676,0.74019989318684676,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#BDBDBD",
+                    "rgba": "rgba(189,189,189,1.00)",
+                    "r": 189,
+                    "g": 189,
+                    "b": 189,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "249 - 386",
+            "valor_min": 248.64261379732,
+            "valor_max": 386.12863322135996,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#808080",
+                "rgba": "rgba(128,128,128,1.00)",
+                "r": 128,
+                "g": 128,
+                "b": 128,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "128,128,128,255,rgb:0.50000762951094835,0.50000762951094835,0.50000762951094835,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#808080",
+                    "rgba": "rgba(128,128,128,1.00)",
+                    "r": 128,
+                    "g": 128,
+                    "b": 128,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "386 - 553",
+            "valor_min": 386.12863322135996,
+            "valor_max": 552.7031995064,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#424242",
+                "rgba": "rgba(66,66,66,1.00)",
+                "r": 66,
+                "g": 66,
+                "b": 66,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "66,66,66,255,rgb:0.2598001068131533,0.2598001068131533,0.2598001068131533,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#424242",
+                    "rgba": "rgba(66,66,66,1.00)",
+                    "r": 66,
+                    "g": 66,
+                    "b": 66,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "etiqueta": "553 - 26341",
+            "valor_min": 552.7031995064,
+            "valor_max": 26340.6551702134,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#050505",
+                "rgba": "rgba(5,5,5,1.00)",
+                "r": 5,
+                "g": 5,
+                "b": 5,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "5,5,5,255,rgb:0.0196078431372549,0.0196078431372549,0.0196078431372549,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#050505",
+                    "rgba": "rgba(5,5,5,1.00)",
+                    "r": 5,
+                    "g": 5,
+                    "b": 5,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_EAdmin1_INEGI_2023",
+      "nombre_tabla": "C04_EAdmin1_INEGI_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "CVE_MUN",
+        "GEOGRAFICO",
+        "AMBITO"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#000000",
+            "rgba": "rgba(0,0,0,1.00)",
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSvgMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "0,0,0,255,rgb:0,0,0,1",
+                "outline_color": "0,0,0,0,rgb:0,0,0,0",
+                "size": "3",
+                "outline_width": "0.1",
+                "size_unit": "MM",
+                "name": "religion=christian.svg"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#000000",
+                "rgba": "rgba(0,0,0,1.00)",
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              },
+              "svg_base64": "data:image/svg+xml;base64,PHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1NzkuOTk3IDU3OS45OTciIGhlaWdodD0iNTc5Ljk5NyIgdmlld0JveD0iMCAwIDU3OS45OTcgNTc5Ljk5NyIgd2lkdGg9IjU3OS45OTciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Im00NDIuMDE4IDE5My45MzloLTEyOC4wNDZ2LTEyMi43MTRoLTUwLjcwN3YxMjIuNzE0aC0xMzMuNzIzdjUwLjcwN2gxMzMuNzIzdjI2OS4zMDdoNTAuNzA3di0yNjkuMzA3aDEyOC4wNDZ6IiBmaWxsPSJwYXJhbShmaWxsKSIgZmlsbC1vcGFjaXR5PSJwYXJhbShmaWxsLW9wYWNpdHkpIiBzdHJva2U9InBhcmFtKG91dGxpbmUpIiBzdHJva2Utb3BhY2l0eT0icGFyYW0ob3V0bGluZS1vcGFjaXR5KSIgc3Ryb2tlLXdpZHRoPSJwYXJhbShvdXRsaW5lLXdpZHRoKSIvPgo8L3N2Zz4K"
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_EAdmin2_INEGI_2023",
+      "nombre_tabla": "C04_EAdmin2_INEGI_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "CVE_MUN",
+        "GEOGRAFICO",
+        "NOMSERV",
+        "TIPO",
+        "AMBITO"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#B80808",
+            "rgba": "rgba(184,8,8,1.00)",
+            "r": 184,
+            "g": 8,
+            "b": 8,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "184,8,8,255,rgb:0.72156862745098038,0.03137254901960784,0.03137254901960784,1",
+                "outline_color": "184,8,8,255,rgb:0.72156862745098038,0.03137254901960784,0.03137254901960784,1",
+                "size": "1.83333",
+                "outline_width": "0.2",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#B80808",
+                "rgba": "rgba(184,8,8,1.00)",
+                "r": 184,
+                "g": 8,
+                "b": 8,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,0,0,255,rgb:1,0,0,1",
+                "outline_color": "255,0,0,255,rgb:1,0,0,1",
+                "size": "2",
+                "outline_width": "0.2",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FF0000",
+                "rgba": "rgba(255,0,0,1.00)",
+                "r": 255,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_EComercio_INEGI_2023",
+      "nombre_tabla": "C04_EComercio_INEGI_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "CVE_MUN",
+        "GEOGRAFICO",
+        "NOMSERV",
+        "AMBITO"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#33A02C",
+            "rgba": "rgba(51,160,44,1.00)",
+            "r": 51,
+            "g": 160,
+            "b": 44,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "51,160,44,255,rgb:0.20000000000000001,0.62745098039215685,0.17254901960784313,1",
+                "outline_color": "255,255,255,0,rgb:1,1,1,0",
+                "size": "1.2",
+                "outline_width": "0.4",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#33A02C",
+                "rgba": "rgba(51,160,44,1.00)",
+                "r": 51,
+                "g": 160,
+                "b": 44,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_EEMediaSuperior_INEE_OPMATPG_2023",
+      "nombre_tabla": "C04_EEMediaSuperior_INEE_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "cve_mun",
+        "nom_mun",
+        "nom_plant"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#487BB6",
+            "rgba": "rgba(72,123,182,1.00)",
+            "r": 72,
+            "g": 123,
+            "b": 182,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "72,123,182,255,rgb:0.28235294117647058,0.4823529411764706,0.71372549019607845,1",
+                "outline_color": "50,87,128,255,rgb:0.19607843137254902,0.3411764705882353,0.50196078431372548,1",
+                "size": "1",
+                "outline_width": "0.4",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#487BB6",
+                "rgba": "rgba(72,123,182,1.00)",
+                "r": 72,
+                "g": 123,
+                "b": 182,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_EESuperior_DENUE_OPMATPG_2023",
+      "nombre_tabla": "C04_EESuperior_DENUE_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "nom_estab",
+        "cve_mun",
+        "municipio"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#487BB6",
+            "rgba": "rgba(72,123,182,1.00)",
+            "r": 72,
+            "g": 123,
+            "b": 182,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "72,123,182,255,rgb:0.28235294117647058,0.4823529411764706,0.71372549019607845,1",
+                "outline_color": "50,87,128,255,rgb:0.19607843137254902,0.3411764705882353,0.50196078431372548,1",
+                "size": "2",
+                "outline_width": "0.4",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#487BB6",
+                "rgba": "rgba(72,123,182,1.00)",
+                "r": 72,
+                "g": 123,
+                "b": 182,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_ES1erNivel_CLUES_OPMATPG_2023",
+      "nombre_tabla": "C04_ES1erNivel_CLUES_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "NOMBRE COM",
+        "CLUES"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#FFFFFF",
+            "rgba": "rgba(255,255,255,1.00)",
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,255,255,255,rgb:1,1,1,1",
+                "outline_color": "227,26,28,255,rgb:0.8901960784313725,0.10196078431372549,0.10980392156862745,1",
+                "size": "1.4",
+                "outline_width": "0.2",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FFFFFF",
+                "rgba": "rgba(255,255,255,1.00)",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "227,26,28,255,rgb:0.8901960784313725,0.10196078431372549,0.10980392156862745,1",
+                "outline_color": "227,26,28,255,rgb:0.8901960784313725,0.10196078431372549,0.10980392156862745,1",
+                "size": "0.807692",
+                "outline_width": "0.1",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#E31A1C",
+                "rgba": "rgba(227,26,28,1.00)",
+                "r": 227,
+                "g": 26,
+                "b": 28,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_ES2doNivel_CLUES_OPMATPG_2023",
+      "nombre_tabla": "C04_ES2doNivel_CLUES_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "NOMBRE COM",
+        "CLUES"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#FFFFFF",
+            "rgba": "rgba(255,255,255,1.00)",
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,255,255,255,rgb:1,1,1,1",
+                "outline_color": "227,26,28,255,rgb:0.8901960784313725,0.10196078431372549,0.10980392156862745,1",
+                "size": "2",
+                "outline_width": "0.4",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FFFFFF",
+                "rgba": "rgba(255,255,255,1.00)",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "227,26,28,255,rgb:0.8901960784313725,0.10196078431372549,0.10980392156862745,1",
+                "outline_color": "227,26,28,255,rgb:0.8901960784313725,0.10196078431372549,0.10980392156862745,1",
+                "size": "1.15385",
+                "outline_width": "0.2",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#E31A1C",
+                "rgba": "rgba(227,26,28,1.00)",
+                "r": 227,
+                "g": 26,
+                "b": 28,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_ES3erNivel_CLUES_OPMATPG_2023",
+      "nombre_tabla": "C04_ES3erNivel_CLUES_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "NOMBRE COM",
+        "CLUES"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 0,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#FFFFFF",
+            "rgba": "rgba(255,255,255,1.00)",
+            "r": 255,
+            "g": 255,
+            "b": 255,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "255,255,255,255,rgb:1,1,1,1",
+                "outline_color": "227,26,28,255,rgb:0.8901960784313725,0.10196078431372549,0.10980392156862745,1",
+                "size": "3",
+                "outline_width": "0.4",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#FFFFFF",
+                "rgba": "rgba(255,255,255,1.00)",
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 255
+              }
+            },
+            {
+              "clase": "QgsSimpleMarkerSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "227,26,28,255,rgb:0.8901960784313725,0.10196078431372549,0.10980392156862745,1",
+                "outline_color": "227,26,28,255,rgb:0.8901960784313725,0.10196078431372549,0.10980392156862745,1",
+                "size": "1.73077",
+                "outline_width": "0.2",
+                "size_unit": "MM",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#E31A1C",
+                "rgba": "rgba(227,26,28,1.00)",
+                "r": 227,
+                "g": 26,
+                "b": 28,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "0"
+    },
+    {
+      "nombre": "C04_ESCobertura1erNivel_CLUES_OPMATPG_2023",
+      "nombre_tabla": "C04_ESCobertura1erNivel_CLUES_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#D5B43C",
+            "rgba": "rgba(213,180,60,1.00)",
+            "r": 213,
+            "g": 180,
+            "b": 60,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "213,180,60,255,rgb:0.83529411764705885,0.70588235294117652,0.23529411764705882,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "outline_width": "0.26",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#D5B43C",
+                "rgba": "rgba(213,180,60,1.00)",
+                "r": 213,
+                "g": 180,
+                "b": 60,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_ESCobertura2doNivel_CLUES_OPMATPG_2023",
+      "nombre_tabla": "C04_ESCobertura2doNivel_CLUES_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#85B66F",
+            "rgba": "rgba(133,182,111,1.00)",
+            "r": 133,
+            "g": 182,
+            "b": 111,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "133,182,111,255,rgb:0.52156862745098043,0.71372549019607845,0.43529411764705883,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "outline_width": "0.26",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#85B66F",
+                "rgba": "rgba(133,182,111,1.00)",
+                "r": 133,
+                "g": 182,
+                "b": 111,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_ESCobertura3erNivel_CLUES_OPMATPG_2023",
+      "nombre_tabla": "C04_ESCobertura3erNivel_CLUES_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#91522D",
+            "rgba": "rgba(145,82,45,1.00)",
+            "r": 145,
+            "g": 82,
+            "b": 45,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "145,82,45,255,rgb:0.56862745098039214,0.32156862745098042,0.17647058823529413,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "outline_width": "0.26",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#91522D",
+                "rgba": "rgba(145,82,45,1.00)",
+                "r": 145,
+                "g": 82,
+                "b": 45,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_TelecomunicacionesVivienda_INEGI_2020",
+      "nombre_tabla": "C04_TelecomunicacionesVivienda_INEGI_2020",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "CVEGEO",
+        "NOMGEO",
+        "T_ViPartHa",
+        "Viv_tel_fi",
+        "Viv_celu",
+        "Viv_intern",
+        "P_ViTel_fi",
+        "P_viv_celu",
+        "P_viv_inte"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 2,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#E15989",
+            "rgba": "rgba(225,89,137,1.00)",
+            "r": 225,
+            "g": 89,
+            "b": 137,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleFillSymbolLayer",
+              "enabled": true,
+              "props": {
+                "color": "225,89,137,255,rgb:0.88235294117647056,0.34901960784313724,0.53725490196078429,1",
+                "outline_color": "35,35,35,255,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,1",
+                "outline_width": "0.26",
+                "outline_style": "solid"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#E15989",
+                "rgba": "rgba(225,89,137,1.00)",
+                "r": 225,
+                "g": 89,
+                "b": 137,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "2"
+    },
+    {
+      "nombre": "C04_EEAsignacionMediaSuperior_DFI_OPMATPG_2023",
+      "nombre_tabla": "C04_EEAsignacionMediaSuperior_DFI_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#F3A6B2",
+            "rgba": "rgba(243,166,178,1.00)",
+            "r": 243,
+            "g": 166,
+            "b": 178,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "243,166,178,255,rgb:0.95294117647058818,0.65098039215686276,0.69803921568627447,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#F3A6B2",
+                "rgba": "rgba(243,166,178,1.00)",
+                "r": 243,
+                "g": 166,
+                "b": 178,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C04_EEAsignacionSuperior_DFI_OPMATPG_2023",
+      "nombre_tabla": "C04_EEAsignacionSuperior_DFI_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#D5B43C",
+            "rgba": "rgba(213,180,60,1.00)",
+            "r": 213,
+            "g": 180,
+            "b": 60,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "213,180,60,255,rgb:0.83529411764705885,0.70588235294117652,0.23529411764705882,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#D5B43C",
+                "rgba": "rgba(213,180,60,1.00)",
+                "r": 213,
+                "g": 180,
+                "b": 60,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C04_ESAsignacion1erNivel_CLUES_OPMATPG_2023",
+      "nombre_tabla": "C04_ESAsignacion1erNivel_CLUES_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#B7484B",
+            "rgba": "rgba(183,72,75,1.00)",
+            "r": 183,
+            "g": 72,
+            "b": 75,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "183,72,75,255,rgb:0.71764705882352942,0.28235294117647058,0.29411764705882354,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#B7484B",
+                "rgba": "rgba(183,72,75,1.00)",
+                "r": 183,
+                "g": 72,
+                "b": 75,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C04_ESAsignacion2doNivel_CLUES_OPMATPG_2023",
+      "nombre_tabla": "C04_ESAsignacion2doNivel_CLUES_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#E8718D",
+            "rgba": "rgba(232,113,141,1.00)",
+            "r": 232,
+            "g": 113,
+            "b": 141,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "232,113,141,255,rgb:0.90980392156862744,0.44313725490196076,0.55294117647058827,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#E8718D",
+                "rgba": "rgba(232,113,141,1.00)",
+                "r": 232,
+                "g": 113,
+                "b": 141,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C04_ESAsignacion3erNivel_CLUES_OPMATPG_2023",
+      "nombre_tabla": "C04_ESAsignacion3erNivel_CLUES_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#F3A6B2",
+            "rgba": "rgba(243,166,178,1.00)",
+            "r": 243,
+            "g": 166,
+            "b": 178,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "243,166,178,255,rgb:0.95294117647058818,0.65098039215686276,0.69803921568627447,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#F3A6B2",
+                "rgba": "rgba(243,166,178,1.00)",
+                "r": 243,
+                "g": 166,
+                "b": 178,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C04_RelacionUrbRuralEstTM_FONATUR_OPMATPG_2023",
+      "nombre_tabla": "C04_RelacionUrbRuralEstTM_FONATUR_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#C43C39",
+            "rgba": "rgba(196,60,57,1.00)",
+            "r": 196,
+            "g": 60,
+            "b": 57,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "196,60,57,255,rgb:0.7686274509803922,0.23529411764705882,0.22352941176470589,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#C43C39",
+                "rgba": "rgba(196,60,57,1.00)",
+                "r": 196,
+                "g": 60,
+                "b": 57,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C55_RelacionRuralCdsOrden1_DFI_OPMATPG_2023",
+      "nombre_tabla": "C55_RelacionRuralCdsOrden1_DFI_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#B7484B",
+            "rgba": "rgba(183,72,75,1.00)",
+            "r": 183,
+            "g": 72,
+            "b": 75,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "183,72,75,255,rgb:0.71764705882352942,0.28235294117647058,0.29411764705882354,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#B7484B",
+                "rgba": "rgba(183,72,75,1.00)",
+                "r": 183,
+                "g": 72,
+                "b": 75,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C55_RelacionRuralCdsOrden3_DFI_OPMATPG_2023",
+      "nombre_tabla": "C55_RelacionRuralCdsOrden3_DFI_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#E8718D",
+            "rgba": "rgba(232,113,141,1.00)",
+            "r": 232,
+            "g": 113,
+            "b": 141,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "232,113,141,255,rgb:0.90980392156862744,0.44313725490196076,0.55294117647058827,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#E8718D",
+                "rgba": "rgba(232,113,141,1.00)",
+                "r": 232,
+                "g": 113,
+                "b": 141,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C55_RelacionUrbanaCdsOrden1_DFI_OPMATPG_2023",
+      "nombre_tabla": "C55_RelacionUrbanaCdsOrden1_DFI_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#F3A6B2",
+            "rgba": "rgba(243,166,178,1.00)",
+            "r": 243,
+            "g": 166,
+            "b": 178,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "243,166,178,255,rgb:0.95294117647058818,0.65098039215686276,0.69803921568627447,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#F3A6B2",
+                "rgba": "rgba(243,166,178,1.00)",
+                "r": 243,
+                "g": 166,
+                "b": 178,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C55_RelacionUrbanaCdsOrden3_DFI_OPMATPG_2023",
+      "nombre_tabla": "C55_RelacionUrbanaCdsOrden3_DFI_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#D5B43C",
+            "rgba": "rgba(213,180,60,1.00)",
+            "r": 213,
+            "g": 180,
+            "b": 60,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "213,180,60,255,rgb:0.83529411764705885,0.70588235294117652,0.23529411764705882,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#D5B43C",
+                "rgba": "rgba(213,180,60,1.00)",
+                "r": 213,
+                "g": 180,
+                "b": 60,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C55_TPartRelacionRuralCdsOrden1_DFI_OPMATPG_2023",
+      "nombre_tabla": "C55_TPartRelacionRuralCdsOrden1_DFI_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#85B66F",
+            "rgba": "rgba(133,182,111,1.00)",
+            "r": 133,
+            "g": 182,
+            "b": 111,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "133,182,111,255,rgb:0.52156862745098043,0.71372549019607845,0.43529411764705883,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#85B66F",
+                "rgba": "rgba(133,182,111,1.00)",
+                "r": 133,
+                "g": 182,
+                "b": 111,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    },
+    {
+      "nombre": "C55_TPartRelacionUrbanaCdsOrden1_DFI_OPMATPG_2023",
+      "nombre_tabla": "C55_TPartRelacionUrbanaCdsOrden1_DFI_OPMATPG_2023",
+      "grupo": "POT/Infraestructura_Estratégica_Conectividad/07_SUR",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "Name",
+        "CVE_ENT",
+        "NOM_ENT"
+      ],
+      "simbologia": {
+        "tipo": "singleSymbol",
+        "campo": null,
+        "simbolo_unico": {
+          "tipo_geometria": 1,
+          "opacidad": 1.0,
+          "color": {
+            "hex": "#91522D",
+            "rgba": "rgba(145,82,45,1.00)",
+            "r": 145,
+            "g": 82,
+            "b": 45,
+            "a": 255
+          },
+          "capas_simbolo": [
+            {
+              "clase": "QgsSimpleLineSymbolLayer",
+              "enabled": true,
+              "props": {
+                "line_color": "145,82,45,255,rgb:0.56862745098039214,0.32156862745098042,0.17647058823529413,1",
+                "line_width": "0.26",
+                "line_width_unit": "MM"
+              },
+              "alertas": [],
+              "color_parsed": {
+                "hex": "#91522D",
+                "rgba": "rgba(145,82,45,1.00)",
+                "r": 145,
+                "g": 82,
+                "b": 45,
+                "a": 255
+              }
+            }
+          ]
+        }
+      },
+      "alertas": [],
+      "geometria": "1"
+    }
+  ]
+}

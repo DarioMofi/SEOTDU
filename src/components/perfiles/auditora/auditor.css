@@ -1,0 +1,135 @@
+/* Auditor.css - Estilos específicos para el rol de Solo Lectura */
+
+.admin-sidebar.auditor-sidebar,
+.auditor-sidebar {
+  background-color: #878B8E;
+}
+
+.auditor-sidebar .admin-profile-section {
+  background-color: #55565A;
+}
+
+.auditor-sidebar .admin-nav-group {
+  background-color: #878B8E;
+}
+
+/* --- Ajuste del buscador para el tema oscuro --- */
+.auditor-sidebar .sidebar-search-container {
+  padding: 0 20px;
+  margin-bottom: 12px;
+}
+
+.auditor-sidebar .search-input-wrapper {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.auditor-sidebar .search-input-wrapper input {
+  background: transparent;
+  border: none;
+  color: var(--c-white);
+  width: 100%;
+  margin-left: 6px;
+  font-size: 11.5px;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+.auditor-sidebar .search-input-wrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- Timeline de Trazabilidad --- */
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  gap: 0;
+  flex: 1; /* Toma todo el espacio sobrante del panel */
+  overflow-y: auto; /* Activa el scroll vertical */
+}
+
+.timeline-item {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  padding-bottom: 26px;
+  flex-shrink: 0; /* Evita que la tarjeta se aplaste */
+}
+
+/* La línea conectora */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 30px;
+  bottom: 0;
+  width: 2px;
+  background: var(--border-color);
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+.timeline-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 2;
+  border: 2px solid var(--c-white);
+}
+
+.timeline-icon.upload { background: #6B7280; color: var(--c-white); }
+.timeline-icon.reject { background: var(--status-rechazado); color: var(--c-white); }
+.timeline-icon.approve { background: var(--status-aprobado); color: var(--c-white); }
+
+.timeline-content {
+  background: var(--c-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  flex: 1;
+  width: 100%;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.timeline-user {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-heading);
+}
+
+.timeline-date {
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-family: monospace;
+}
+
+.timeline-comment {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-top: 4px;
+  padding: 6px 10px;
+  background: var(--c-bg);
+  border-left: 3px solid var(--c-dorado);
+  border-radius: 0 4px 4px 0;
+}

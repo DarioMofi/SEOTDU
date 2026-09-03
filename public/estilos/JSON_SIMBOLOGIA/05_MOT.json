@@ -1,0 +1,497 @@
+{
+  "modulo": "Normatividad y MOT",
+  "total_capas": 1,
+  "capas": [
+    {
+      "nombre": "C04_Modelo_Ordenamiento_Territorial_OP_PG_2023_CP",
+      "nombre_tabla": "C04_Modelo_Ordenamiento_Territorial_OP_PG_2023_CP",
+      "grupo": "POT/Normatividad_MOT/MOT-2023",
+      "tipo": "vector",
+      "visible_qgis": false,
+      "campos": [
+        "fid",
+        "OBJECTID",
+        "REGION",
+        "POL_OT",
+        "ESTR_1",
+        "LIN_ESTR1",
+        "ESTR_2",
+        "LIN_ESTR2",
+        "ACC_LE1A",
+        "ACC_LE1B",
+        "ACC_LE1C",
+        "ACC_LE2A",
+        "ACC_LE2B",
+        "AGT",
+        "Shape_Leng",
+        "Shape_Area",
+        "Area_Ha",
+        "Area_km2"
+      ],
+      "simbologia": {
+        "tipo": "categorizedSymbol",
+        "campo": "\"POL_OT\"",
+        "categorias": [
+          {
+            "valor": "Densificación Urbana",
+            "etiqueta": "Densificación Urbana",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#A80000",
+                "rgba": "rgba(168,0,0,1.00)",
+                "r": 168,
+                "g": 0,
+                "b": 0,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "168,0,0,255,rgb:0.6588235294117647,0,0,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#A80000",
+                    "rgba": "rgba(168,0,0,1.00)",
+                    "r": 168,
+                    "g": 0,
+                    "b": 0,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Mejoramiento urbano",
+            "etiqueta": "Mejoramiento urbano",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#C94508",
+                "rgba": "rgba(201,69,8,1.00)",
+                "r": 201,
+                "g": 69,
+                "b": 8,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "201,69,8,255,rgb:0.78823529411764703,0.27058823529411763,0.03137254901960784,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#C94508",
+                    "rgba": "rgba(201,69,8,1.00)",
+                    "r": 201,
+                    "g": 69,
+                    "b": 8,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Crecimiento urbano PDU",
+            "etiqueta": "Crecimiento urbano PDU",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#EDA113",
+                "rgba": "rgba(237,161,19,1.00)",
+                "r": 237,
+                "g": 161,
+                "b": 19,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "237,161,19,255,rgb:0.92941176470588238,0.63137254901960782,0.07450980392156863,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#EDA113",
+                    "rgba": "rgba(237,161,19,1.00)",
+                    "r": 237,
+                    "g": 161,
+                    "b": 19,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Reserva crecimiento TM",
+            "etiqueta": "Reserva crecimiento TM",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#F5CA0C",
+                "rgba": "rgba(245,202,12,1.00)",
+                "r": 245,
+                "g": 202,
+                "b": 12,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "245,202,12,255,rgb:0.96078431372549022,0.792156862745098,0.04705882352941176,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#F5CA0C",
+                    "rgba": "rgba(245,202,12,1.00)",
+                    "r": 245,
+                    "g": 202,
+                    "b": 12,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Regulación urbana",
+            "etiqueta": "Regulación urbana",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#FFFF00",
+                "rgba": "rgba(255,255,0,1.00)",
+                "r": 255,
+                "g": 255,
+                "b": 0,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "255,255,0,255,rgb:1,1,0,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#FFFF00",
+                    "rgba": "rgba(255,255,0,1.00)",
+                    "r": 255,
+                    "g": 255,
+                    "b": 0,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Aprovechamiento Agropecuario",
+            "etiqueta": "Aprovechamiento Agropecuario",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#7BED00",
+                "rgba": "rgba(123,237,0,1.00)",
+                "r": 123,
+                "g": 237,
+                "b": 0,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "123,237,0,255,rgb:0.4823529411764706,0.92941176470588238,0,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#7BED00",
+                    "rgba": "rgba(123,237,0,1.00)",
+                    "r": 123,
+                    "g": 237,
+                    "b": 0,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Aprovechamiento Sustentable",
+            "etiqueta": "Aprovechamiento Sustentable",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#00DB00",
+                "rgba": "rgba(0,219,0,1.00)",
+                "r": 0,
+                "g": 219,
+                "b": 0,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "0,219,0,255,rgb:0,0.85882352941176465,0,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#00DB00",
+                    "rgba": "rgba(0,219,0,1.00)",
+                    "r": 0,
+                    "g": 219,
+                    "b": 0,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Recuperación/Corredor Ecológico",
+            "etiqueta": "Recuperación Corredor Ecológico",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#14BA5F",
+                "rgba": "rgba(20,186,95,1.00)",
+                "r": 20,
+                "g": 186,
+                "b": 95,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "20,186,95,255,rgb:0.07843137254901961,0.72941176470588232,0.37254901960784315,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#14BA5F",
+                    "rgba": "rgba(20,186,95,1.00)",
+                    "r": 20,
+                    "g": 186,
+                    "b": 95,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Conservación",
+            "etiqueta": "Conservación",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#20998F",
+                "rgba": "rgba(32,153,143,1.00)",
+                "r": 32,
+                "g": 153,
+                "b": 143,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "32,153,143,255,rgb:0.12549019607843137,0.59999999999999998,0.5607843137254902,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#20998F",
+                    "rgba": "rgba(32,153,143,1.00)",
+                    "r": 32,
+                    "g": 153,
+                    "b": 143,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Protección",
+            "etiqueta": "Protección",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#16678A",
+                "rgba": "rgba(22,103,138,1.00)",
+                "r": 22,
+                "g": 103,
+                "b": 138,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "22,103,138,255,rgb:0.08627450980392157,0.40392156862745099,0.54117647058823526,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#16678A",
+                    "rgba": "rgba(22,103,138,1.00)",
+                    "r": 22,
+                    "g": 103,
+                    "b": 138,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "Área Natural Protegida",
+            "etiqueta": "Área Natural Protegida",
+            "activo": true,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#0B2C7A",
+                "rgba": "rgba(11,44,122,1.00)",
+                "r": 11,
+                "g": 44,
+                "b": 122,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "11,44,122,255,rgb:0.04313725490196078,0.17254901960784313,0.47843137254901963,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#0B2C7A",
+                    "rgba": "rgba(11,44,122,1.00)",
+                    "r": 11,
+                    "g": 44,
+                    "b": 122,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "valor": "None",
+            "etiqueta": "<all other values>",
+            "activo": false,
+            "simbolo": {
+              "tipo_geometria": 2,
+              "opacidad": 1.0,
+              "color": {
+                "hex": "#CFF5BC",
+                "rgba": "rgba(207,245,188,1.00)",
+                "r": 207,
+                "g": 245,
+                "b": 188,
+                "a": 255
+              },
+              "capas_simbolo": [
+                {
+                  "clase": "QgsSimpleFillSymbolLayer",
+                  "enabled": true,
+                  "props": {
+                    "color": "207,245,188,255,rgb:0.81176470588235294,0.96078431372549022,0.73725490196078436,1",
+                    "outline_color": "35,35,35,0,rgb:0.13725490196078433,0.13725490196078433,0.13725490196078433,0",
+                    "outline_width": "0.26",
+                    "outline_style": "solid"
+                  },
+                  "alertas": [],
+                  "color_parsed": {
+                    "hex": "#CFF5BC",
+                    "rgba": "rgba(207,245,188,1.00)",
+                    "r": 207,
+                    "g": 245,
+                    "b": 188,
+                    "a": 255
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "alertas": [],
+      "geometria": "2"
+    }
+  ]
+}

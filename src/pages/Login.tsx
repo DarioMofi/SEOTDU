@@ -1,18 +1,15 @@
-import Header from '../components/Header'
-import LoginCard from '../components/LoginCard'
-import Footer from '../components/Footer'
-import Underfooter from '../components/Underfooter'
+import Header from '../components/plataforma/header';
+import LoginCard from '../components/plataforma/login-card';
+import Footer from '../components/plataforma/footer';
+import Underfooter from '../components/plataforma/underfooter';
 
-// Vista Institucional: sin Navbar, solo Header + LoginCard + Footer
 export default function Login() {
   return (
     <div className="page-shell">
       <Header />
-
       <LoginCard />
-
       <Footer />
       <Underfooter />
     </div>
-  )
+  );
 }

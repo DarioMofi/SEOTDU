@@ -27,6 +27,8 @@ interface Props {
   layerOpacity: Record<string, number>
   layerStyles?: Record<string, any>
   layerOrder: string[]
+  /** Clic sobre la capa de encima: abre su ficha tecnica en el panel. */
+  onLayerClick?: (layerId: string, propiedades: Record<string, unknown>) => void
 }
 
 /**
@@ -37,18 +39,6 @@ interface Props {
  */
 function styleFor(layerId: string, feature: any, layerStyles?: Record<string, any>) {
   return resolveSymbol(layerStyles?.[layerId], feature?.properties ?? {})
-}
-
-/** Tabla de atributos del popup. Se arma al abrirlo, no al cargar la capa. */
-function tablaDePropiedades(properties: Record<string, unknown>): string {
-  let html = '<div class="max-h-60 overflow-y-auto"><table class="text-xs text-left w-full border-collapse">'
-  Object.entries(properties).forEach(([key, value]) => {
-    // Ignorar campos internos como fid, OBJECTID
-    if (key !== 'fid' && !key.startsWith('OBJECTID')) {
-      html += `<tr class="border-b border-gray-100"><td class="font-bold py-1.5 pr-3 text-gray-600">${key}</td><td class="py-1.5 text-gray-800">${value ?? '-'}</td></tr>`
-    }
-  })
-  return html + '</table></div>'
 }
 
 const CENTROIDES: Record<string, [number, number]> = {
@@ -77,7 +67,7 @@ const CAMPECHE_BOUNDS: L.LatLngBoundsExpression = [
 
 
 
-export default function MapViewer({ activeLayers, selectedFeature, layerOpacity, layerStyles, layerOrder }: Props) {
+export default function MapViewer({ activeLayers, selectedFeature, layerOpacity, layerStyles, layerOrder, onLayerClick }: Props) {
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstance = useRef<L.Map | null>(null)
   const limiteEstatalLayer = useRef<L.GeoJSON | null>(null)
@@ -86,6 +76,17 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
 
   // Refs para capas vectoriales dinámicas
   const vectorLayersRef = useRef<Record<string, L.GeoJSON | null>>({})
+
+  // Solo la capa de encima responde al clic. El manejador se enlaza una vez,
+  // cuando la capa termina de cargar, así que no puede cerrar sobre el orden
+  // ni sobre la prop: los lee de estos refs, que sí se actualizan.
+  const capaSuperiorRef = useRef<string | null>(null)
+  const onLayerClickRef = useRef(onLayerClick)
+  onLayerClickRef.current = onLayerClick
+  capaSuperiorRef.current =
+    layerOrder.find(
+      (id) => activeLayers.includes(id) && !appConfig.FIXED_LAYERS.includes(id)
+    ) ?? null
 
   // Estado local para el mapa base seleccionado
   const [mapaBase, setMapaBase] = useState<'claro' | 'satelite'>('claro')
@@ -126,6 +127,12 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
     
     map.createPane('bordersPane')
     map.getPane('bordersPane')!.style.zIndex = '660' // Por encima de maskPane
+    // El mapa va en canvas, y el canvas de este panel es un elemento que cubre
+    // el mapa entero: aunque sus capas sean `interactive: false`, el navegador
+    // le entregaba a el todos los clics y ninguna capa de abajo se enteraba.
+    // Aqui no hay nada consultable —limites y rotulos—, asi que el panel entero
+    // se vuelve transparente al puntero.
+    map.getPane('bordersPane')!.style.pointerEvents = 'none'
 
     mapInstance.current = map
 
@@ -285,11 +292,14 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
                     interactive: false
                   })
                 }
-                // El contenido se arma al abrir, no al cargar: construirlo aquí
-                // significaba una tabla HTML y un popup por elemento, y hay
-                // capas de decenas de miles. Leaflet acepta una función y la
-                // evalúa en el primer clic.
-                layer.bindPopup(() => tablaDePropiedades(feature.properties), { maxWidth: 300 })
+                // Seleccionar una capa concreta entre veinte encimadas era
+                // cuestión de suerte, así que solo contesta la de más arriba;
+                // el resto se ignora aunque Leaflet les pase el clic.
+                layer.on('click', (evento) => {
+                  L.DomEvent.stopPropagation(evento)
+                  if (capaSuperiorRef.current !== layerId) return
+                  onLayerClickRef.current?.(layerId, feature.properties)
+                })
               }
             }
 

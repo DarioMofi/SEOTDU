@@ -93,6 +93,17 @@ export default function Geovisor() {
             layerOpacity={layerOpacity}
             layerStyles={layerStyles}
             layerOrder={layerOrder}
+            onLayerClick={(layerId, propiedades) => {
+              setSelectedLayerInfo({
+                key: layerId,
+                label: layerLabels[layerId] ?? layerId,
+                ids: [layerId],
+                esGrupo: false,
+                propiedades
+              })
+              setSelectedFeature(null)
+              setActiveTab('info')
+            }}
             onSelectFeature={(feat) => {
               setSelectedFeature(feat)
               if (feat) {

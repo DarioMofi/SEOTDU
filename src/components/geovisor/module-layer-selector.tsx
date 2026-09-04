@@ -600,7 +600,9 @@ export default function ModuleLayerSelector({
         ? activeLayers.filter((id) => norm(id) !== norm(fondo))
         : activeLayers
       onChangeLayers([...base, ...ids.filter((id) => !base.includes(id))])
-      onChangeOrder([...layerOrder, ...ids.filter((id) => !layerOrder.includes(id))])
+      // Al frente del orden, no al final: una capa recién encendida debe
+      // quedar encima y primera en la lista, no hasta abajo y tapada.
+      onChangeOrder([...ids, ...layerOrder.filter((id) => !ids.includes(id))])
     }
   }
 
@@ -798,120 +800,114 @@ export default function ModuleLayerSelector({
                           isLayerActive ? 'layer-card--active' : 'layer-card--inactive opacity-90'
                         }`}
                       >
-                        <div className="flex items-start gap-3">
-                          {/* Columna izquierda: switch + flechas. Es la que fija
-                              el alto del card, así que va apretada. */}
-                          <div className="flex flex-col items-center gap-0.5 mt-0.5">
-                            {/* Switch toggle para encender/apagar capa */}
-                            <button
-                              type="button"
-                              role="switch"
-                              aria-checked={isLayerActive}
-                              onClick={() => toggleEntrada(entrada.ids)}
-                              className={`relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
-                                isLayerActive ? 'bg-[var(--theme-color)]' : 'bg-gray-200'
+                        {/* Fila principal: switch, nombre e info. */}
+                        <div className="flex items-center gap-2">
+                          {/* Switch toggle para encender/apagar capa */}
+                          <button
+                            type="button"
+                            role="switch"
+                            aria-checked={isLayerActive}
+                            onClick={() => toggleEntrada(entrada.ids)}
+                            className={`relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none ${
+                              isLayerActive ? 'bg-[var(--theme-color)]' : 'bg-gray-200'
+                            }`}
+                            aria-label={isLayerActive ? `Desactivar ${entrada.label}` : `Activar ${entrada.label}`}
+                          >
+                            <span
+                              aria-hidden="true"
+                              className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
+                                isLayerActive ? 'translate-x-4' : 'translate-x-0'
                               }`}
-                              aria-label={isLayerActive ? `Desactivar ${entrada.label}` : `Activar ${entrada.label}`}
-                            >
-                              <span
-                                aria-hidden="true"
-                                className={`pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out ${
-                                  isLayerActive ? 'translate-x-4' : 'translate-x-0'
-                                }`}
-                              />
-                            </button>
+                            />
+                          </button>
 
-                            {/* Flechas de orden (debajo del switch, solo si activa y >1 entrada) */}
-                            {isLayerActive && activas.length > 1 && (
-                              <div className="flex flex-col gap-0.5 transition-all duration-300">
-                                <button
-                                  onClick={(e) => { e.stopPropagation(); moveEntrada(module, entrada, -1) }}
-                                  disabled={!canMoveUp}
-                                  className={`w-7 h-5 rounded flex items-center justify-center transition-all cursor-pointer ${
-                                    canMoveUp
-                                      ? 'text-gray-400 hover:text-[var(--theme-color)] hover:bg-gray-100'
-                                      : 'text-gray-200 cursor-not-allowed'
-                                  }`}
-                                  aria-label="Subir capa"
-                                  title="Subir capa"
-                                >
-                                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                    <polyline points="18 15 12 9 6 15" />
-                                  </svg>
-                                </button>
-                                <button
-                                  onClick={(e) => { e.stopPropagation(); moveEntrada(module, entrada, 1) }}
-                                  disabled={!canMoveDown}
-                                  className={`w-7 h-5 rounded flex items-center justify-center transition-all cursor-pointer ${
-                                    canMoveDown
-                                      ? 'text-gray-400 hover:text-[var(--theme-color)] hover:bg-gray-100'
-                                      : 'text-gray-200 cursor-not-allowed'
-                                  }`}
-                                  aria-label="Bajar capa"
-                                  title="Bajar capa"
-                                >
-                                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                                    <polyline points="6 9 12 15 18 9" />
-                                  </svg>
-                                </button>
-                              </div>
-                            )}
-                          </div>
+                          <label
+                            htmlFor={`layer-${entrada.key}`}
+                            className="flex-1 min-w-0 text-xs font-semibold text-gray-700 cursor-pointer leading-snug"
+                            onClick={() => toggleEntrada(entrada.ids)}
+                          >
+                            {entrada.label}
+                          </label>
 
-                          {/* Contenido derecho: label + desc + opacidad */}
-                          <div className="flex-1 min-w-0 pr-6 relative">
-                            <label
-                              htmlFor={`layer-${entrada.key}`}
-                              className="text-xs font-semibold text-gray-700 cursor-pointer block"
-                              onClick={() => toggleEntrada(entrada.ids)}
-                            >
-                              {entrada.label}
-                            </label>
-                            <p className="text-[10px] text-gray-400 mt-0.5 leading-relaxed">
-                              {entrada.desc}
-                            </p>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              if (onInfoClick) onInfoClick(entrada);
+                            }}
+                            className="flex-shrink-0 p-0.5 text-gray-400 hover:text-[var(--theme-color)] transition-colors cursor-pointer"
+                            title="Ver información de capa"
+                          >
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                              <circle cx="12" cy="12" r="10" />
+                              <path d="M12 16v-4" />
+                              <path d="M12 8h.01" />
+                            </svg>
+                          </button>
+                        </div>
 
-                            <button 
-                              onClick={(e) => { 
-                                e.stopPropagation(); 
-                                if (onInfoClick) onInfoClick(entrada); 
-                              }} 
-                              className="absolute top-0 right-0 p-1 text-gray-400 hover:text-[var(--theme-color)] transition-colors cursor-pointer"
-                              title="Ver información de capa"
-                            >
-                              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <circle cx="12" cy="12" r="10" />
-                                <path d="M12 16v-4" />
-                                <path d="M12 8h.01" />
-                              </svg>
-                            </button>
-
-                            {/* Opacidad (con animación suave de despliegue/colapso) */}
-                            <div
-                              className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                                isLayerActive ? 'max-h-12 opacity-100 mt-2' : 'max-h-0 opacity-0 mt-0 pointer-events-none'
-                              }`}
-                            >
-                              <div className="flex items-center gap-2 pt-0.5">
-                                <span className="text-[10px] font-semibold text-gray-400 uppercase w-16 flex-shrink-0">Opacidad</span>
-                                <input
-                                  type="range"
-                                  min="0"
-                                  max="1"
-                                  step="0.05"
-                                  value={opacity}
-                                  onChange={(e) => {
-                                    e.stopPropagation()
-                                    cambiarOpacidad(entrada.ids, parseFloat(e.target.value))
-                                  }}
-                                  onClick={(e) => e.stopPropagation()}
-                                  className="layer-opacity-slider flex-1 cursor-pointer"
-                                />
-                              </div>
+                        {/* Segunda fila: flechas de orden y opacidad, en el
+                            lugar donde antes iba la descripción de la capa. */}
+                        <div
+                          className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                            isLayerActive ? 'max-h-10 opacity-100 mt-1' : 'max-h-0 opacity-0 mt-0 pointer-events-none'
+                          }`}
+                        >
+                          <div className="flex items-center gap-2 pr-1">
+                            {/* Hueco del ancho del switch: alinea la opacidad
+                                bajo el nombre, haya flechas o no. */}
+                            <div className="w-11 flex-shrink-0 flex items-center gap-0.5">
+                              {activas.length > 1 && (
+                                <>
+                                  <button
+                                    onClick={(e) => { e.stopPropagation(); moveEntrada(module, entrada, -1) }}
+                                    disabled={!canMoveUp}
+                                    className={`w-5 h-5 rounded flex items-center justify-center transition-all cursor-pointer ${
+                                      canMoveUp
+                                        ? 'text-gray-400 hover:text-[var(--theme-color)] hover:bg-gray-100'
+                                        : 'text-gray-200 cursor-not-allowed'
+                                    }`}
+                                    aria-label="Subir capa"
+                                    title="Subir capa"
+                                  >
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                      <polyline points="18 15 12 9 6 15" />
+                                    </svg>
+                                  </button>
+                                  <button
+                                    onClick={(e) => { e.stopPropagation(); moveEntrada(module, entrada, 1) }}
+                                    disabled={!canMoveDown}
+                                    className={`w-5 h-5 rounded flex items-center justify-center transition-all cursor-pointer ${
+                                      canMoveDown
+                                        ? 'text-gray-400 hover:text-[var(--theme-color)] hover:bg-gray-100'
+                                        : 'text-gray-200 cursor-not-allowed'
+                                    }`}
+                                    aria-label="Bajar capa"
+                                    title="Bajar capa"
+                                  >
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                      <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                  </button>
+                                </>
+                              )}
                             </div>
-                            </div>
+                            <span className="text-[10px] font-semibold text-gray-400 uppercase flex-shrink-0">Opacidad</span>
+                            <input
+                              type="range"
+                              min="0"
+                              max="1"
+                              step="0.05"
+                              value={opacity}
+                              onChange={(e) => {
+                                e.stopPropagation()
+                                cambiarOpacidad(entrada.ids, parseFloat(e.target.value))
+                              }}
+                              onClick={(e) => e.stopPropagation()}
+                              className="layer-opacity-slider flex-1 cursor-pointer"
+                            />
                           </div>
                         </div>
+                      </div>
                       )
                     })}
                           </div>

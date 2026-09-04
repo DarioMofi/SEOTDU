@@ -4,22 +4,14 @@ export default function Footer() {
       <div className="footer__inner">
         {/* Columna 1: Institucional / Logos */}
         <div>
-          <h3 className="footer__col-title">Institucional</h3>
+          {/* El titulo va dentro del bloque para que comparta centro con el
+              escudo; el tamano lo pone `.footer__logo-img`. */}
           <div className="footer__logo-row">
+            <h3 className="footer__col-title">Institucional</h3>
             <img
               src="/gobiernoparatodos.jpeg"
               alt="Gobierno del Estado de Campeche"
               className="footer__logo-img"
-              style={{ width: 120 }}
-              onError={(e) => {
-                e.currentTarget.style.display = 'none'
-              }}
-            />
-            <img
-              src="/gobiernoparatodos.jpeg"
-              alt="Gobierno para Todos"
-              className="footer__logo-img"
-              style={{ width: 140 }}
               onError={(e) => {
                 e.currentTarget.style.display = 'none'
               }}

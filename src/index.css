@@ -629,10 +629,15 @@ body:hover { scrollbar-width: thin; scrollbar-color: var(--c-beige-lt) transpare
 .footer__logo-row {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  /* El ancho lo fija el hijo mas ancho —el titulo o el escudo—, asi que los dos
+     quedan concentricos sin empujar el bloque al medio de la columna. */
+  width: max-content;
   gap: 10px;
 }
+.footer__logo-row .footer__col-title { margin-bottom: 0; }
 .footer__logo-img {
-  height: 64px;
+  height: 120px;
   width: auto;
   object-fit: contain;
   background: transparent;

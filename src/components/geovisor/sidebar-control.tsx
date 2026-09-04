@@ -2,6 +2,55 @@ import { useState, useRef, useEffect } from 'react'
 import { CAMPECHE_GEOJSON, MunicipioProperties } from '../../data/campecheData'
 import { getCapaGeoJSON } from '../../lib/cartografia'
 
+/**
+ * La ficha tecnica de una capa, campo por campo.
+ *
+ * Los nombres de la izquierda son los del GeoJSON de la entrega nueva; van sin
+ * enie ni acentos porque asi los exporta la cartografia. El texto visible se
+ * escribe aparte, en espanol correcto.
+ */
+const FICHA_TECNICA: Array<{ etiqueta: string; campo: string }> = [
+  { etiqueta: 'Fuente', campo: 'fuente' },
+  { etiqueta: 'Responsable', campo: 'responsable' },
+  { etiqueta: 'Escala', campo: 'cobertura' },
+  { etiqueta: 'Periodicidad', campo: 'periodicidad' },
+  { etiqueta: 'Monitor', campo: 'modulo' },
+  { etiqueta: 'Instrumento de Origen', campo: 'instrumento' },
+  { etiqueta: 'Fecha', campo: 'fecha' },
+  { etiqueta: 'Horizonte de Planeación', campo: 'horizonte_planeacion' },
+  { etiqueta: 'Eje de Evaluación', campo: 'eje_evaluacion' }
+]
+
+/**
+ * Valores que la entrega codifica sin enie ni acentos y con guion bajo. Los que
+ * no estan aqui solo cambian el guion bajo por espacio.
+ */
+const VALORES_LEGIBLES: Record<string, string> = {
+  Cada_10_anios: 'Cada 10 años',
+  Mapa_Base: 'Mapa Base',
+  Economico: 'Económico',
+  No_aplica: 'No aplica'
+}
+
+function legible(valor: unknown): string {
+  if (valor === null || valor === undefined || valor === '') return 'No disponible'
+  const texto = String(valor)
+  return VALORES_LEGIBLES[texto] ?? texto.replace(/_/g, ' ')
+}
+
+/**
+ * Metadatos de la capa y campos de control del archivo. No entran en la tabla
+ * de atributos: los primeros ya salen arriba en la ficha y los segundos no le
+ * dicen nada a quien consulta el mapa.
+ */
+const CAMPOS_NO_LISTABLES = new Set([
+  'titulo', ...FICHA_TECNICA.map((f) => f.campo),
+  'tipo_dato', 'geometria', 'categoria', 'categoria_estrategia', 'tema_subgrupo',
+  'restricciones', 'proyeccion', 'estatus', 'tipo_geometria_detectado',
+  'tamanio_archivo_kb', 'extension_norte', 'extension_sur', 'extension_este',
+  'extension_oeste', 'fid', 'oid'
+])
+
 interface Props {
   activeTab: 'capas' | 'info'
   onChangeTab: (tab: 'capas' | 'info') => void
@@ -39,7 +88,22 @@ export default function SidebarControl({
 
   const filterRef = useRef<HTMLDivElement>(null)
 
+  // Los datos propios del elemento que se toco en el mapa, sin los metadatos
+  // que la ficha ya muestra arriba.
+  const atributosDelElemento: Array<[string, unknown]> = selectedLayerInfo?.propiedades
+    ? Object.entries(selectedLayerInfo.propiedades as Record<string, unknown>).filter(
+        ([clave]) => !CAMPOS_NO_LISTABLES.has(clave) && !clave.startsWith('OBJECTID')
+      )
+    : []
+
   useEffect(() => {
+    if (selectedLayerInfo?.propiedades) {
+      // Viene de un clic en el mapa: son los atributos del elemento que se
+      // tocó, más precisos que los del primer registro de la capa.
+      setLayerMetadata(selectedLayerInfo.propiedades)
+      setIsLoadingMetadata(false)
+      return
+    }
     if (selectedLayerInfo && selectedLayerInfo.ids && selectedLayerInfo.ids.length > 0) {
       setIsLoadingMetadata(true)
       setLayerMetadata(null)
@@ -495,29 +559,40 @@ export default function SidebarControl({
                   ) : (
                     <>
                       <div className="block bg-gray-50/80 p-3.5 rounded-lg border border-gray-100 transition-all mb-4">
-                        <h5 className="text-[10px] font-bold text-gray-400 uppercase">Instrumento Normativo</h5>
-                        <p className="text-sm font-semibold text-gray-700 mt-0.5">
-                          {layerMetadata?.instrumento_vigencia || 'No disponible'}
+                        <h5 className="text-[10px] font-bold text-gray-400 uppercase">Nombre del Recurso</h5>
+                        <p className="text-sm font-semibold text-gray-700 mt-0.5 break-words">
+                          {layerMetadata?.titulo || 'No disponible'}
                         </p>
                       </div>
 
                       <div className="flex flex-col gap-2">
-                        <div>
-                          <h5 className="text-[10px] font-bold text-gray-400 uppercase mb-0.5">Denominación Oficial</h5>
-                          <p className="text-xs text-gray-600">{layerMetadata?.denominacion_oficial || 'No disponible'}</p>
-                        </div>
-                        <div>
-                          <h5 className="text-[10px] font-bold text-gray-400 uppercase mb-0.5">Institución Responsable</h5>
-                          <p className="text-xs text-gray-600">{layerMetadata?.responsable_institucional || 'No disponible'}</p>
-                        </div>
-                        <div>
-                          <h5 className="text-[10px] font-bold text-gray-400 uppercase mb-0.5">Fecha de Actualización</h5>
-                          <p className="text-xs text-gray-600">{layerMetadata?.fecha_actualizacion || 'No disponible'}</p>
-                        </div>
-                        <div>
-                          <h5 className="text-[10px] font-bold text-gray-400 uppercase mb-0.5">Escala</h5>
-                          <p className="text-xs text-gray-600">{layerMetadata?.cobertura_territorial || 'No disponible'}</p>
-                        </div>
+                        {FICHA_TECNICA.map(({ etiqueta, campo }) => (
+                          <div key={campo}>
+                            <h5 className="text-[10px] font-bold text-gray-400 uppercase mb-0.5">{etiqueta}</h5>
+                            <p className="text-xs text-gray-600 break-words">{legible(layerMetadata?.[campo])}</p>
+                          </div>
+                        ))}
+
+                        {atributosDelElemento.length > 0 && (
+                          <details className="mt-1 rounded-lg border border-gray-100 bg-gray-50/80" open>
+                            <summary className="cursor-pointer px-3 py-2 text-[10px] font-bold uppercase text-gray-400">
+                              Atributos del elemento
+                            </summary>
+                            <div className="max-h-60 overflow-y-auto px-3 pb-3">
+                              <table className="w-full border-collapse text-left text-xs">
+                                <tbody>
+                                  {atributosDelElemento.map(([k, v]) => (
+                                    <tr key={k} className="border-b border-gray-100 last:border-0">
+                                      <td className="py-1.5 pr-3 font-bold text-gray-600">{k}</td>
+                                      <td className="py-1.5 text-gray-800 break-words">{String(v ?? '-')}</td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                          </details>
+                        )}
+
                         <div className="mt-2 p-3 bg-blue-50/50 rounded-lg border border-blue-100">
                           <p className="text-xs text-blue-800 flex gap-2 items-start">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0 mt-0.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>

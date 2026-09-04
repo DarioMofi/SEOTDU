@@ -736,7 +736,7 @@ body:hover { scrollbar-width: thin; scrollbar-color: var(--c-beige-lt) transpare
 }
 
 .geovisor-sidebar {
-  width: 380px;
+  width: 445px;
   height: 100%;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);

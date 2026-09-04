@@ -109,7 +109,11 @@ export default function SidebarControl({
       setLayerMetadata(null)
       getCapaGeoJSON(selectedLayerInfo.ids[0])
         .then(geojson => {
-          if (geojson && geojson.features && geojson.features.length > 0) {
+          // Los metadatos van una sola vez en el encabezado del archivo: son
+          // identicos en cada elemento y repetirlos multiplicaba su peso.
+          if (geojson?.metadatos) {
+            setLayerMetadata(geojson.metadatos)
+          } else if (geojson && geojson.features && geojson.features.length > 0) {
             setLayerMetadata(geojson.features[0].properties)
           } else {
             setLayerMetadata({})

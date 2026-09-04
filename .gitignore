@@ -13,5 +13,7 @@ public/layers/Geopaquetes/
 docs/ 
 # Entrega nueva de cartografia: ~288 MB pendientes de prueba. Se queda fuera de
 # git a proposito; si al final se confirma, valorar Git LFS antes de meterla.
-# El manifiesto (public/layers/catalogo.json) si se versiona.
-public/layers/GeoJSON/
+# La entrega de cartografia si se versiona: sin ella el catalogo apunta a
+# archivos que no existen y en produccion no se dibuja ninguna capa. Pesa 111 MB
+# tras redondear coordenadas a 6 decimales y subir los metadatos repetidos al
+# encabezado de cada archivo.

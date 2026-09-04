@@ -298,7 +298,10 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
                 layer.on('click', (evento) => {
                   L.DomEvent.stopPropagation(evento)
                   if (capaSuperiorRef.current !== layerId) return
-                  onLayerClickRef.current?.(layerId, feature.properties)
+                  // Los metadatos viven en el encabezado del archivo, no en
+                  // cada elemento; la ficha los necesita junto a los del
+                  // elemento que se toco.
+                  onLayerClickRef.current?.(layerId, { ...(data?.metadatos ?? {}), ...feature.properties })
                 })
               }
             }

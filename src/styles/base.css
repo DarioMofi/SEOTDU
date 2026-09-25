@@ -1,0 +1,53 @@
+/* ─── Reset / Base ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--c-text);
+  background-color: var(--c-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+
+/* ─── Scrollbar (hidden until hover) ────────────────────────────────── */
+* { scrollbar-width: none; }
+*::-webkit-scrollbar { display: none; }
+body:hover { scrollbar-width: thin; scrollbar-color: var(--c-beige-lt) transparent; }
+
+/* ─── Focus Rings (WCAG) ─────────────────────────────────────────────── */
+:focus-visible {
+  outline: 3px solid var(--c-beige-lt);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─── Skip Link (WCAG bypass) ────────────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 8px;
+  z-index: 9999;
+  padding: 8px 16px;
+  background: var(--c-guinda);
+  color: var(--c-white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 0 0 6px 6px;
+  text-decoration: none;
+}
+.skip-link:focus { top: 0; }
+
+/* ─── Layout Shell ───────────────────────────────────────────────────── */
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.page-shell main { flex: 1; }

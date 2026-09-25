@@ -29,6 +29,8 @@ interface Props {
   layerOrder: string[]
   /** Clic sobre la capa de encima: abre su ficha tecnica en el panel. */
   onLayerClick?: (layerId: string, propiedades: Record<string, unknown>) => void
+  /** Abre la pantalla contextualizadora del geovisor */
+  onOpenGuide?: () => void
 }
 
 /**
@@ -63,11 +65,7 @@ const CAMPECHE_BOUNDS: L.LatLngBoundsExpression = [
   [21.8, -87.0]  // Noreste (más amplio al norte y este)
 ]
 
-
-
-
-
-export default function MapViewer({ activeLayers, selectedFeature, layerOpacity, layerStyles, layerOrder, onLayerClick }: Props) {
+export default function MapViewer({ activeLayers, selectedFeature, layerOpacity, layerStyles, layerOrder, onLayerClick, onOpenGuide }: Props) {
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstance = useRef<L.Map | null>(null)
   const limiteEstatalLayer = useRef<L.GeoJSON | null>(null)
@@ -466,7 +464,7 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
       />
 
       {/* Controles del Mapa (Esquina Superior Derecha) */}
-      <div className="absolute top-4 right-4 z-[1000] flex flex-col items-center gap-3">
+      <div className="absolute top-14 right-4 z-[1000] flex flex-col items-center gap-3">
         {/* Selector de Mapa Base */}
         <div className="relative">
           <button
@@ -570,6 +568,21 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
               <path d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM256 362.7c-7.5 0-14.7-3-20-8.3L129.3 247.7c-11-11-11-29 0-40s29-11 40 0l58.7 58.7V117.3c0-15.6 12.7-28.3 28.3-28.3s28.3 12.7 28.3 28.3v149.1l58.7-58.7c11-11 29-11 40 0s11 29 0 40L276 354.3C270.7 359.7 263.5 362.7 256 362.7z" />
             </svg>
           </button>
+
+          {onOpenGuide && (
+            <button
+              onClick={onOpenGuide}
+              className="w-7 h-7 rounded-md bg-white shadow-[0_2px_8px_rgba(0,0,0,0.12)] hover:bg-gray-50 flex items-center justify-center text-gray-700 hover:text-[var(--c-guinda)] transition-all cursor-pointer border border-gray-100"
+              aria-label="Guía contextual del Geovisor"
+              title="Guía contextual del Geovisor"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+            </button>
+          )}
         </div>
       </div>
     </div>

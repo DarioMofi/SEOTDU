@@ -356,9 +356,14 @@ export default function ModuleLayerSelector({
   onActiveModuleChange
 }: Props) {
   // Módulo activo: sus capas son las que están dibujadas. Solo uno a la vez.
-  // Es independiente del acordeón, que arranca cerrado.
+  // Es independiente del acordeón, aunque ambos arranquen en el mismo módulo.
   const [activeModule, setActiveModule] = useState<string>(initialModule ?? appConfig.DEFAULT_MODULE)
-  const [expandedModule, setExpandedModule] = useState<string | null>(null)
+  // Arranca desplegado sobre el módulo inicial: la guía de bienvenida señala
+  // los controles de capa, y con el acordeón cerrado apuntaría a algo que no
+  // está en pantalla. Sigue siendo un estado distinto de `activeModule`.
+  const [expandedModule, setExpandedModule] = useState<string | null>(
+    initialModule ?? appConfig.DEFAULT_MODULE
+  )
   const [modules, setModules] = useState<Module[]>([])
   /* Secciones abiertas del árbol (MOT). La clave es la ruta completa, así una
      línea de E1 y otra de E4 con el mismo nombre no se abren juntas. */
@@ -558,7 +563,8 @@ export default function ModuleLayerSelector({
     })
   }, [activeLayers, layerOrder, expandedModule])
 
-  // Removido auto-expandir el módulo para permitir que inicie cerrado
+  // El acordeón no se auto-expande al cambiar de módulo: eso lo decide
+  // `selectModule`. Aquí solo se fija el estado inicial, arriba.
 
   /**
    * Clic en el encabezado de un módulo.

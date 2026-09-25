@@ -1,0 +1,38 @@
+/* ─── Design Tokens ─────────────────────────────────────────────────── */
+:root {
+  --c-guinda:    #9F2241;
+  --c-guinda-dk: #691C32;
+  --c-beige-lt:  #BCA986;
+  --c-beige-dk:  #AB9470;
+  --c-verde:     #235B4E;
+  --c-verde-dk:  #10312B;
+  --c-gray-md:   #888B8D;
+  --c-gray-dk:   #53565A;
+  --c-white:     #FFFFFF;
+  --c-bg:        #F5F4F2;
+  --c-bg-card:   #FFFFFF;
+  --c-text:      #2D2D2D;
+  --c-text-lt:   #53565A;
+
+  --font-heading: 'Roboto Slab', Georgia, serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --radius-card: 8px;
+  --c-dorado:        #BC955B;
+  --status-borrador: #8A724A;
+  --status-revision: #F59E0B;
+  --status-aprobado: #10B981;
+  --status-rechazado:#EF4444;
+  --border-color:    #E5E7EB;
+  --text-primary:    #2D2D2D;
+  --text-secondary:  #53565A;
+  --surface-color:   #FFFFFF;
+  --surface-border:  #E5E7EB;
+  --radius-md:       8px;
+  --radius-lg:       12px;
+  --shadow-sm:       0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md:       0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg:       0 10px 25px rgba(0, 0, 0, 0.1);
+  --transition:  0.2s ease;
+}

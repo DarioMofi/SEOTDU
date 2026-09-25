@@ -1,0 +1,443 @@
+/* ─── Geovisor Custom Styles ─────────────────────────────────────────── */
+.geovisor-layout {
+  display: flex;
+  height: calc(100vh - 131px) !important;
+  flex: none !important;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .geovisor-layout {
+    flex-direction: column;
+    height: calc(100vh - 131px) !important;
+    overflow: hidden;
+  }
+}
+
+.geovisor-sidebar {
+  width: 445px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid #E5E7EB;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition);
+}
+
+@media (max-width: 768px) {
+  .geovisor-sidebar {
+    width: 100%;
+    height: 300px;
+    max-height: 300px;
+    flex-shrink: 0;
+    border-right: none;
+    border-bottom: 1px solid #E5E7EB;
+  }
+}
+
+.geovisor-map-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: #f0ede8;
+}
+
+@media (max-width: 768px) {
+  .geovisor-map-container {
+    top: 300px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    position: absolute;
+  }
+}
+
+/* Personalización de controles de Leaflet */
+.leaflet-bar {
+  border: none !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+.leaflet-bar a {
+  background-color: var(--c-white) !important;
+  color: var(--c-text) !important;
+  border-bottom: 1px solid #e8e4de !important;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.leaflet-bar a:hover {
+  background-color: var(--c-bg) !important;
+  color: var(--c-guinda) !important;
+}
+
+.leaflet-bar a.leaflet-disabled {
+  background-color: #f4f4f4 !important;
+  color: #bbb !important;
+}
+
+/* Leyenda del mapa */
+.map-legend {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 16px;
+  border-radius: var(--radius-card);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  font-family: var(--font-body);
+  max-width: 260px;
+}
+
+@media (max-width: 480px) {
+  .map-legend {
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    max-width: none;
+  }
+}
+
+.map-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--c-text);
+}
+
+/* Caja de la muestra de leyenda */
+.map-legend__swatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ─── Layer Cards (Geovisor sidebar) ────────────────────────────────── */
+.layer-card {
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.layer-card:hover {
+  border-color: #d1d5db;
+  background: rgba(249, 250, 251, 0.5);
+}
+
+.layer-card--active {
+  border-color: var(--theme-color, var(--c-guinda));
+  background: var(--theme-bg, rgba(159, 34, 65, 0.02));
+}
+
+.layer-card--active:hover {
+  border-color: var(--theme-color, var(--c-guinda));
+  background: var(--theme-hover, rgba(159, 34, 65, 0.04));
+}
+
+.layer-card--inactive {
+  animation: layer-descend 0.45s cubic-bezier(0.16, 1, 0.3, 1) ease-out;
+}
+
+@keyframes layer-descend {
+  0% {
+    transform: translateY(-6px);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ─── Opacity Slider ────────────────────────────────────────────────── */
+.layer-opacity-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: #e5e7eb;
+  outline: none;
+  cursor: pointer;
+}
+
+.layer-opacity-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--theme-color, var(--c-guinda));
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.layer-opacity-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.layer-opacity-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--theme-color, var(--c-guinda));
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* =========================================================
+   COMPONENTES NORMALIZADOS DE SESIM
+   ========================================================= */
+
+/* --- PANELES FLOTANTES GLOBALES --- */
+.floating-panel,
+.floating-right-panel,
+.audit-drawer {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+}
+
+/* --- TITULOS DE PANELES NORMALIZADOS --- */
+.panel-section-title {
+  margin: 0 0 12px 0;
+  font-size: 11px;
+  color: var(--c-guinda-dk);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+/* --- BOTONES NORMALIZADOS (ORIGINAL SESIM) --- */
+.btn-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 13px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  background: var(--c-guinda);
+  color: var(--c-white);
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--c-guinda-dk);
+  transform: translateY(-1px);
+}
+.btn-primary:disabled {
+  background: var(--c-gray-md);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--c-guinda);
+  border: 1px solid var(--c-guinda);
+}
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(159, 34, 65, 0.05);
+}
+
+.btn-tertiary {
+  background: var(--c-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+.btn-tertiary:hover:not(:disabled) {
+  background: #E5E7EB;
+  color: var(--c-guinda-dk);
+}
+
+/* Boton Blanco Elevado */
+.btn-white {
+  background: var(--c-white);
+  color: var(--c-guinda);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+.btn-white:hover:not(:disabled) {
+  background: var(--c-bg);
+  transform: translateY(-1px);
+}
+.btn-white:disabled {
+  background: var(--c-bg);
+  color: var(--text-secondary);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* --- Modal de Politicas de Uso --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background: var(--c-white, #ffffff);
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  padding: 32px 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.modal-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--c-guinda, #9F2241);
+  text-align: center;
+  margin: 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #d7dbdd;
+  line-height: 1.4;
+  font-family: var(--font-heading);
+}
+
+.modal-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--c-gray-dk, #53565A);
+  text-align: center;
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+.modal-text {
+  font-size: 13.5px;
+  color: var(--c-text, #333333);
+  text-align: justify;
+  line-height: 1.65;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #d7dbdd;
+  overflow-y: auto;
+  max-height: 48vh;
+  padding-right: 8px;
+  font-family: var(--font-body);
+}
+
+.modal-text p {
+  margin: 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.modal-btn {
+  padding: 10px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-family: var(--font-body);
+}
+
+.modal-btn-cancel {
+  background: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+.modal-btn-cancel:hover {
+  background: #e5e7eb;
+}
+
+.modal-btn-accept {
+  background: var(--c-guinda, #9F2241);
+  color: #ffffff;
+}
+.modal-btn-accept:hover {
+  background: var(--c-guinda-dk, #691C32);
+}
+
+/* ─── Rótulos de capa sobre el mapa ──────────────────────────────────── */
+.leaflet-tooltip.rotulo-capa {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  font-family: var(--font-body, system-ui), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary, #2d2d2d);
+  text-shadow:
+    -1px -1px 2px #fff, 1px -1px 2px #fff,
+    -1px 1px 2px #fff, 1px 1px 2px #fff;
+  white-space: nowrap;
+}
+.leaflet-tooltip.rotulo-capa::before { display: none; }
+
+/* ─── Guía Contextualizadora del Geovisor ──────────────────────────── */
+@keyframes guide-pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.92;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.guide-pulse {
+  animation: guide-pulse-subtle 2.6s ease-in-out infinite;
+}
+
+.guide-text-shadow {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 2px 8px rgba(0, 0, 0, 0.75);
+}

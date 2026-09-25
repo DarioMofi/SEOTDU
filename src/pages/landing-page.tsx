@@ -31,14 +31,14 @@ export default function LandingPage() {
                 id="interaction-heading"
                 style={{
                   fontFamily: 'var(--font-heading)',
-                  fontSize: '1.15rem',
+                  fontSize: '1.2rem',
                   fontWeight: 700,
                   color: 'var(--c-guinda)',
                   marginBottom: 16,
                   marginTop: 0,
                 }}
               >
-
+                Acceso Rápido y Consultas Frecuentes
               </h2>
               <p className="interaction__text">
                 Explora el territorio de Campeche a través de nuestras herramientas de planeación y

@@ -8,12 +8,34 @@ import MapViewer from '../components/geovisor/map-viewer'
 import SidebarControl from '../components/geovisor/sidebar-control'
 import ModuleLayerSelector from '../components/geovisor/module-layer-selector'
 import MapLegend from '../components/geovisor/map-legend'
+import GeovisorGuideOverlay from '../components/geovisor/geovisor-guide-overlay'
 import { MunicipioProperties } from '../data/campecheData'
 import { appConfig } from '../config/appConfig'
 
 export default function Geovisor() {
   const [searchParams] = useSearchParams()
   const moduloInicial = searchParams.get('modulo') || appConfig.DEFAULT_MODULE
+
+  const [showGuide, setShowGuide] = useState(() => {
+    try {
+      return !localStorage.getItem('peotdu_geovisor_guide_dismissed')
+    } catch {
+      return true
+    }
+  })
+
+  const handleCloseGuide = () => {
+    setShowGuide(false)
+    try {
+      localStorage.setItem('peotdu_geovisor_guide_dismissed', 'true')
+    } catch {
+      // Ignorar restricciones de almacenamiento local
+    }
+  }
+
+  const handleOpenGuide = () => {
+    setShowGuide(true)
+  }
 
   // Hacer scroll hacia arriba al cargar la página
   useEffect(() => {
@@ -113,9 +135,12 @@ export default function Geovisor() {
                 setActiveTab('capas')
               }
             }}
+            onOpenGuide={handleOpenGuide}
           />
           <MapLegend layers={legendLayers} styles={layerStyles} />
         </div>
+
+        <GeovisorGuideOverlay isOpen={showGuide} onClose={handleCloseGuide} />
       </main>
 
       <Footer />

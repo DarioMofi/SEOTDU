@@ -27,6 +27,12 @@ Qué implica al diseñar algo nuevo:
   que sobreviva a la migración o pueda correr en el servidor. La separación
   entre `qgisSymbology.ts` (puro) y `leafletSymbology.ts` (adaptador) es el
   ejemplo a seguir.
+- **Las dependencias apuntan en una sola dirección**: nada en `lib/`, `config/`,
+  `data/` ni `context/` importa de `components/`, y no hay ciclos. Es la
+  propiedad de la que cuelga que la migración sea acotada; conviene no romperla.
+  Se comprueba con
+  `grep -rn "components" src/lib/ src/config/ src/data/ src/context/`, que debe
+  seguir sin devolver nada.
 - El acceso a datos conviene que pase por un punto único (`src/lib/cartografia.ts`),
   para que cambiar `fetch('/layers/x.geojson')` por Supabase toque un solo lugar.
 - La leyenda **se calcula desde la simbología**, no aparte. Cuando las capas
@@ -40,7 +46,7 @@ Qué implica al diseñar algo nuevo:
 Hay cuatro tipos de usuario: el público (sin sesión) y tres institucionales —
 **administrador** (dictamina), **capturista** (carga) y **auditor** (consulta).
 
-`src/context/auth-context.jsx` expone `role`, `login(password)` y `logout()`,
+`src/context/auth-context.tsx` expone `role`, `login(password)` y `logout()`,
 persistidos en `localStorage` bajo `sim_role`. **El rol lo decide la contraseña**
 (`administrador`, `auditor`, `capturista`; cualquier otra cae en capturista).
 Eso es maqueta para enseñar el flujo — no valida nada. La autenticación real irá
@@ -61,9 +67,18 @@ Dos invariantes que ya costaron un bug cada una:
 mismo gobierno. Eso explica sus rarezas:
 
 - Traen **CSS global escrito a mano**, no Tailwind; pasarlos a Tailwind está
-  pendiente en otra rama. Mientras tanto sus nombres de clase chocan con los de
-  PEOTDU (`.header`, `.form-input`, `.modal-overlay`, `.modal-content`): al ser
-  CSS global, gana el último import.
+  pendiente en otra rama. Mientras tanto quedan dos clases definidas dos veces,
+  y al ser CSS global gana el último import: `.form-input` (`index.css` y
+  `perfiles/capturista/capturista.css`) y `.header` (`index.css` y
+  `geovisor/admin-map-viewer.css`).
+- `admin-map-viewer.tsx` importa cinco hojas de estilo, tres de ellas de otros
+  roles, así que el CSS de un rol se carga siempre que se carga el visor
+  institucional, sea el rol que sea.
+- Usa **Leaflet declarativo** (`react-leaflet`), al contrario que el visor
+  público, que lo usa imperativo. Son dos modelos mentales para el mismo
+  problema; no comparten selector de fondo, zoom ni medición. Hoy no molesta
+  porque no dibuja cartografía real — es una maqueta de interacción, no una
+  segunda implementación terminada.
 - **Sus datos son mock en el estado del componente.** `admin-map-viewer` no hace
   ningún `fetch`, y `catalogo-prueba.json` son catálogos de muestra: los
   definitivos vendrán del backend.
@@ -95,6 +110,14 @@ Mapa Base lo usa así.
 renderizador no se dibuja ni sale en la leyenda, **sin error en consola**. Se
 resuelve cambiándola a categorizada en QGIS.
 
+Como las dos generaciones nombran distinto la misma capa (la nueva bajó los
+nombres a minúscula y sin acentos), los ids se comparan **normalizados**. Y
+`norm()` está **duplicada** en `lib/cartografia.ts` y en
+`module-layer-selector.tsx`: son dos copias de la regla que decide si dos ids son
+el mismo, así que **si se cambia una hay que cambiar la otra**. Todo esto —
+`norm()`, `TABLE_ALIASES`, las excepciones por peso — es deuda con fecha de
+caducidad: en SQL el id es la llave primaria y se borra.
+
 ## Traducción de simbología QGIS → web
 
 Dos módulos con una separación deliberada:
@@ -124,7 +147,14 @@ resueltas que es fácil romper sin darse cuenta y las limitaciones conocidas de
 Leaflet y del volcado. Para lo que hay que exigirle a quien entrega la
 cartografía, ver
 [docs/especificacion-entrega-cartografia.md](docs/especificacion-entrega-cartografia.md).
-**`docs/` está en `.gitignore`**: quien clone el repo no los tendrá.
+
+Para la arquitectura completa —lenguajes y por qué, reparto de componentes, y qué
+cambia con el backend— ver
+[docs/arquitectura-frontend.md](docs/arquitectura-frontend.md), que además lleva
+la deuda técnica conocida y los comandos para verificar cada afirmación.
+
+**`docs/` está en `.gitignore`** por decisión del proyecto: quien clone el repo
+no los tendrá y se comparten a mano.
 
 ## Mapa base
 
@@ -135,8 +165,23 @@ open source ni tiene SLA.
 
 Va **sin la capa `*_Reference`** porque sus topónimos son exónimos en inglés
 («Havana», no «La Habana»); los nombres que quedan vienen horneados en el raster
-y no se pueden quitar. Y con `maxNativeZoom: 16`, porque el teselado de Esri no
-pasa de z16 y sin eso el mapa se queda en blanco al acercar más.
+y no se pueden quitar ni desde las capas ni desde la exportación de QGIS. Y con
+`maxNativeZoom: 16`, porque el teselado de Esri no pasa de z16 y sin eso el mapa
+se queda en blanco al acercar más.
+
+Ojo con el nombre: **«mapa base» son dos cosas distintas.** El *módulo*
+`mapa_base` se configura en `appConfig.ts` como cualquier otro; el *fondo de
+teselas* está escrito a mano en `map-viewer.tsx` y, por separado, en
+`admin-map-viewer.tsx`. Cambiar de proveedor obliga hoy a editar dos archivos —
+deberían estar en `appConfig`.
+
+El visor institucional además ofrece **teselas de Google** (`mt1.google.com/vt`),
+un extremo no documentado ni licenciado para producción. Conviene retirarlo
+antes de publicar.
+
+Toda la plataforma trabaja en **EPSG:4326** y así lo declara al usuario
+(`login-card.tsx`, y el modal de carga solo acepta 4326). **El visor no
+reproyecta**: la reproyección es responsabilidad de quien entrega la cartografía.
 
 ## Modelo de módulos
 
@@ -179,7 +224,27 @@ apagar.
   que la que sube no tape a las que quedan debajo (un relleno sólido sí; un
   punto, una línea fina o una trama, no).
 - El contador del encabezado cuenta **capas dibujadas**, no filas: un módulo
-  puede decir «12 activas» y mostrar 8 filas.
+## Catálogo de Instrumentos Normativos
+
+Módulo de consulta documental territorial (`/catalogo`, implementado en `src/pages/catalogo.tsx` y estilizado en `src/styles/catalogo.css`). Hoy funciona con datos en memoria desde `src/data/instrumentosData.ts` y archivos locales en `public/Instrumentos/`.
+
+### Acervo documental y nomenclatura de archivos
+- **Universo de datos**: 34 instrumentos totales derivados de `public/Dataset (1).xlsx`.
+- **Instrumentos caducos**: 2 registros sin documento oficial (`PDU-CAN-CAM-2000` y `PDU-PAL-CAM-2000`), marcados con `linkPdf: null` (en UI: «PDF en digitalización»).
+- **Instrumentos vigentes**: 32 registros con archivo PDF físico disponible en `public/Instrumentos/`. Incluye `PDU-CHAM-CAM-2005` integrado y vinculado.
+- **Nomenclatura canónica**: Todos los archivos se renombraron de sus nombres heterogéneos originales a su clave oficial `{id}.pdf` (ej. `PDU-ESC-CAM-2004.pdf`, `PEOTDU-CAM-2023.pdf`, `PMDU-CAM-CAM-2020.pdf`).
+
+### Optimización de peso para Git y despliegue
+- La carpeta original sumaba 1.85 GB con PDFs escaneados de hasta 644 MB (incompatibles con el límite de 100 MB por archivo de GitHub).
+- Se ejecutó compresión por lotes con `PyMuPDF` (`fitz`) + `Pillow` (script en `scratch/compress_all.py`), recomprimiendo páginas ráster a 150 DPI / JPEG 65-70% con limpieza de streams y garbage collection.
+- **Resultado**: Reducción a 754 MB totales (-1.01 GB ahorrado, -58%). **0 archivos superan 100 MB** (el más pesado pasó de 644 MB a 89 MB).
+- **Para producción**: Los PDFs deben migrarse a un bucket de almacenamiento de objetos (Supabase Storage o Cloudflare R2 / S3) y la carpeta `public/Instrumentos/` debe añadirse a `.gitignore` para no inflar el historial de Git ni saturar el límite de build estático en Vercel.
+
+### Decisiones de interfaz y componentes
+- **Tarjetas (`.instrument-card`)**: Los botones «Ver ficha técnica» y «Descargar PDF» se agrupan a la derecha dentro de `.instrument-actions-group` al interior de `.instrument-meta-grid`. Se eliminó el bloque inferior `.instrument-card-actions`.
+- **Estilo de botón de descarga**: Gris claro en reposo (`#f3f4f6`, borde `var(--border-color)` y texto `var(--c-gray-dk)`), pasando a rojo guinda (`var(--c-guinda)`) con texto e icono blancos en `:hover`.
+- **Modal de ficha técnica (`.catalogo-modal-body`)**: Se retiró el botón secundario inactivo (`.modal-doc-btn--secondary`) y se unificó la acción de descarga como «Descargar PDF» (`.modal-doc-btn--primary`), manteniendo el mismo comportamiento de descarga directa (`download`) y estilo gris con hover guinda.
+- **Filtros laterales (`.catalogo-sidebar`)**: Ordenados verticalmente como Escala → Tipo de Instrumento → Vigencia → Año de Publicación (menú desplegable en la parte inferior). La búsqueda en el encabezado filtra por nombre/id (excluye municipios) y el filtro de municipios se maneja mediante selector desplegable compacto contiguo.
 
 ## Convenciones
 
@@ -207,7 +272,10 @@ apagar.
   `MapViewer` no dibuja una capa hasta conocer su simbología.
 - Si una capa **no se ve y la consola está limpia**, sospecha del CRS antes que
   del render: mira la primera coordenada de su GeoJSON. Ya pasó una vez con una
-  tabla que declaraba 4326 con coordenadas proyectadas (ver `CRS_REAL`).
+  tabla que declaraba 4326 con coordenadas proyectadas.
+- **`AGENTS.md` en la raíz está obsoleto** y contradice a este archivo: describe
+  el proyecto como `figma-make-app`, cita `src/App.tsx` (hoy `src/app.tsx`), un
+  `.mise.toml` que no existe y un servidor en el 8443. Pendiente de borrar.
 - `public/` pesa cientos de MB de cartografía. Está fuera del watcher de Vite a
   propósito; si lo quitas de `watch.ignored`, el arranque se vuelve lentísimo.
 

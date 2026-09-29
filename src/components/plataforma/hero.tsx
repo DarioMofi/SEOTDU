@@ -537,7 +537,7 @@ export default function Hero() {
           {/* 1. Título principal institucional */}
           <header className="hero-sticky-stage__header">
             <h1 id="bento-hero-title" className="hero-sticky-stage__main-title">
-              Sistema Estatal de Ordenamiento Territorial y Desarrollo Urbano del Estado de Campeche
+              Sistema Estatal de Planeación del Ordenamiento Territorial, Desarrollo Urbano y Metropolitano (SEPOTDUM) de Campeche
             </h1>
           </header>
 

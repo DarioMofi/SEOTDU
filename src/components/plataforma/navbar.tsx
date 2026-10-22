@@ -1,4 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom'
+import { assetUrl } from '../../lib/assetUrl'
 
 export default function Navbar() {
   const navigate = useNavigate()
@@ -25,14 +26,14 @@ export default function Navbar() {
         {/* Logotipos institucionales movidos desde el Header */}
         <div className="header__logos">
           <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-            <img src="/gobiernoparatodos.jpeg" alt="Gobierno para todos" className="header__logo-img header__logo-img--campeche" onError={handleImgError} />
+            <img src={assetUrl('/gobiernoparatodos.jpeg')} alt="Gobierno para todos" className="header__logo-img header__logo-img--campeche" onError={handleImgError} />
             <div className="header__logo-placeholder header__logo-img--campeche" style={{ display: 'none' }}>
               <span style={{ fontSize: 10, color: 'var(--c-gray-md)', textAlign: 'center', lineHeight: 1.3 }}>Logo<br />Campeche</span>
             </div>
           </div>
           <div className="header__logo-divider" aria-hidden="true" />
           <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-            <img src="/logocampeche.jpg" alt="Logo Campeche" className="header__logo-img header__logo-img--gobierno" onError={handleImgError} />
+            <img src={assetUrl('/logocampeche.jpg')} alt="Logo Campeche" className="header__logo-img header__logo-img--gobierno" onError={handleImgError} />
             <div className="header__logo-placeholder header__logo-img--gobierno" style={{ display: 'none' }}>
               <span style={{ fontSize: 10, color: 'var(--c-gray-md)', textAlign: 'center', lineHeight: 1.3 }}>Gobierno<br />para Todos</span>
             </div>

@@ -2,6 +2,7 @@ import type { CSSProperties, ReactNode } from 'react'
 import { ArrowDown, Pyramid, Castle, Factory, Users } from 'lucide-react'
 import ImageSlot from '../common/image-slot'
 import { CAMPECHE_SVG_VIEWBOX, CAMPECHE_STATE_PATH } from '../../data/campecheSilhouetteSvg'
+import { assetUrl } from '../../lib/assetUrl'
 
 /* Portada de la página de inicio: imagen hero + mosaico histórico.
    Las fotografías son espacios listos (ver ImageSlot): se sustituyen dejando
@@ -23,7 +24,7 @@ const EPOCAS: Epoca[] = [
     titulo: 'Pasado maya',
     periodo: 'Siglos III a XVI',
     texto: 'Edzná, Calakmul y Becán organizaron el territorio peninsular con ciudades, caminos y sistemas de agua.',
-    src: '/img/inicio/historia-maya.jpg',
+    src: assetUrl('/img/inicio/historia-maya.jpg'),
     icono: <Pyramid aria-hidden="true" />,
     tono: '#7A5C3A',
   },
@@ -32,7 +33,7 @@ const EPOCAS: Epoca[] = [
     titulo: 'Etapa colonial',
     periodo: '1540 – 1821',
     texto: 'San Francisco de Campeche se funda en 1540; sus murallas y baluartes la protegieron de la piratería.',
-    src: '/img/inicio/historia-colonial.jpg',
+    src: assetUrl('/img/inicio/historia-colonial.jpg'),
     icono: <Castle aria-hidden="true" />,
     tono: '#9F2241',
   },
@@ -41,7 +42,7 @@ const EPOCAS: Epoca[] = [
     titulo: 'Modernización del siglo XX',
     periodo: '1900 – 1999',
     texto: 'Ferrocarril, carreteras y el auge petrolero de la Sonda de Campeche transformaron la economía del estado.',
-    src: '/img/inicio/historia-siglo-xx.jpg',
+    src: assetUrl('/img/inicio/historia-siglo-xx.jpg'),
     icono: <Factory aria-hidden="true" />,
     tono: '#235B4E',
   },
@@ -50,7 +51,7 @@ const EPOCAS: Epoca[] = [
     titulo: 'Actualidad',
     periodo: 'Siglo XXI',
     texto: 'Más de 928 mil personas en 13 municipios que planean su territorio con visión de largo plazo.',
-    src: '/img/inicio/historia-actualidad.jpg',
+    src: assetUrl('/img/inicio/historia-actualidad.jpg'),
     icono: <Users aria-hidden="true" />,
     tono: '#AB7A2E',
   },
@@ -76,7 +77,7 @@ export default function PortadaInicio() {
       <div className="portada__grid">
         {/* Imagen hero */}
         <ImageSlot
-          src="/img/inicio/hero.jpg"
+          src={assetUrl('/img/inicio/hero.jpg')}
           alt="Personas en el centro histórico de San Francisco de Campeche al atardecer"
           className="portada__hero"
           fallback={<FondoSilueta tono="#9F2241" />}

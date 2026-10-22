@@ -5,6 +5,7 @@ import { getProyectosSeguimiento, type ProyectoSeguimiento } from '../../lib/dat
 import { nombreCapaLegible } from '../../lib/textoLegible';
 import DiagramaParadigma from '../common/diagrama-paradigma';
 import LarguilloSubsistemas from './larguillo-subsistemas';
+import { assetUrl } from '../../lib/assetUrl';
 import { SUBSISTEMAS, ORDEN_MONITORES, type SubsistemaId } from '../../data/paradigmaPeotdu';
 
 interface Option {
@@ -370,7 +371,7 @@ export default function Larguillo() {
                   isFirst ? 'rounded-bl-lg' : ''
                 } ${isLast ? 'rounded-br-lg' : ''}`}
                 style={{
-                  backgroundImage: "url('/Larguillo.png')",
+                  backgroundImage: `url('${assetUrl('/Larguillo.png')}')`,
                   backgroundSize: "500% 100%",
                   backgroundPosition: `${recorte * 25}% bottom`,
                   backgroundRepeat: "no-repeat"

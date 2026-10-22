@@ -6,6 +6,7 @@ import Footer from '../components/plataforma/footer'
 import Underfooter from '../components/plataforma/underfooter'
 import { INSTRUMENTOS_DATA, Instrumento } from '../data/instrumentosData'
 import { getPublicacionesInstrumentos, type PublicacionInstrumento } from '../lib/datosPrograma'
+import { assetUrl } from '../lib/assetUrl'
 import ResumenCatalogo from '../components/catalogo/resumen-catalogo'
 import {
   Search,
@@ -606,7 +607,7 @@ export default function Catalogo() {
 
                       {inst.linkPdf ? (
                         <a
-                          href={inst.linkPdf}
+                          href={assetUrl(inst.linkPdf)}
                           download={`${inst.id}.pdf`}
                           className="instrument-download-action-btn"
                           title="Descargar documento oficial (PDF)"
@@ -744,7 +745,7 @@ export default function Catalogo() {
                   ) : null}
                   {selectedInst.linkPdf ? (
                     <a
-                      href={selectedInst.linkPdf}
+                      href={assetUrl(selectedInst.linkPdf)}
                       download={`${selectedInst.id}.pdf`}
                       className="modal-doc-btn modal-doc-btn--primary"
                       title="Descargar documento oficial (PDF)"

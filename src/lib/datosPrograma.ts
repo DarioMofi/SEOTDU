@@ -67,13 +67,15 @@ export interface PublicacionInstrumento {
   linkPdfExterno: string | null
 }
 
+import { assetUrl } from './assetUrl'
+
 const cache = new Map<string, Promise<unknown>>()
 
 function cargar<T>(archivo: string, vacio: T): Promise<T> {
   if (!cache.has(archivo)) {
     cache.set(
       archivo,
-      fetch(`/datos/${archivo}`)
+      fetch(assetUrl(`/datos/${archivo}`))
         .then((r) => (r.ok ? r.json() : vacio))
         .catch((err) => {
           console.error(`No se pudo leer /datos/${archivo}`, err)

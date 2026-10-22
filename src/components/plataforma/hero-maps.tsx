@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import { X, MousePointerClick } from 'lucide-react'
 import ImageSlot from '../common/image-slot'
+import { assetUrl } from '../../lib/assetUrl'
 import {
   INDICADORES_ESTADO,
   INDICADORES_MUNICIPIOS,
@@ -341,7 +342,7 @@ export function HeroCampecheMap({ isVisible }: HeroCampecheMapProps) {
             {selectedMun && (
               <ImageSlot
                 key={selectedMun.id}
-                src={`/img/municipios/${selectedMun.id}.jpg`}
+                src={assetUrl(`/img/municipios/${selectedMun.id}.jpg`)}
                 alt={`Territorio municipal de ${selectedMun.name}`}
                 className="hero-fase0-mun-img"
                 fallback={<MunicipioContorno mun={selectedMun} />}

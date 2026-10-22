@@ -7,6 +7,8 @@
 // para el onboarding; el PEOTDU no la formula así. Se acordó usarla mientras
 // no exista una versión oficial; cambiarla es editar `dimension` aquí.
 
+import { assetUrl } from '../lib/assetUrl'
+
 export type DimensionId = 'estructura' | 'desarrollo' | 'gobernanza'
 export type SubsistemaId =
   | 'fisico-natural' | 'urbano-rural' | 'movilidad'
@@ -150,7 +152,7 @@ const IMAGENES_FACHADA = import.meta.glob<string>('../assets/larguillo-subsistem
   import: 'default',
 })
 const imagenFachada = (n: number) =>
-  IMAGENES_FACHADA[`../assets/larguillo-subsistemas/${n}SoloCasa.png`] ?? `/Larguillo_2/${n}SoloCasa.png`
+  IMAGENES_FACHADA[`../assets/larguillo-subsistemas/${n}SoloCasa.png`] ?? assetUrl(`/Larguillo_2/${n}SoloCasa.png`)
 
 // Cada subsistema conserva su fachada aunque cambie el orden de la calle
 const NUMERO_FACHADA: Record<SubsistemaId, number> = {

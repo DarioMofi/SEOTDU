@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { Building2, Fish, Wheat, Beef, TreePalm, Construction } from 'lucide-react'
 import ImageSlot from '../common/image-slot'
+import { assetUrl } from '../../lib/assetUrl'
 
 /* Mosaico de actividades productivas. Fotografías pendientes: cada espacio
    espera su archivo en public/img/actividades/<id>.jpg (ver ImageSlot). */
@@ -20,7 +21,7 @@ export default function MosaicoActividades() {
       {ACTIVIDADES.map((a) => (
         <div key={a.id} role="listitem" className="mosaico-actividades__item">
           <ImageSlot
-            src={`/img/actividades/${a.id}.jpg`}
+            src={assetUrl(`/img/actividades/${a.id}.jpg`)}
             alt={a.alt}
             fallback={<div className="mosaico-actividades__fallback" aria-hidden="true">{a.icono}</div>}
             caption={a.label}

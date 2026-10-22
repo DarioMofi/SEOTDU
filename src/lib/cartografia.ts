@@ -62,8 +62,10 @@ interface Catalogo {
   }>
 }
 
+import { assetUrl } from './assetUrl'
+
 function leerCatalogo(): Promise<Catalogo | null> {
-  return fetch('/layers/catalogo.json')
+  return fetch(assetUrl('/layers/catalogo.json'))
     .then((r) => (r.ok ? (r.json() as Promise<Catalogo>) : null))
     .catch(() => null)
 }
@@ -103,7 +105,7 @@ export async function getCapaGeoJSON(layerId: string): Promise<any> {
   const url = excepcion
     ? `/layers/${excepcion}.geojson`
     : ((await indiceEntregaNueva()).get(norm(layerId)) ?? `/layers/${layerId}.geojson`)
-  const res = await fetch(url)
+  const res = await fetch(assetUrl(url))
   if (!res.ok) throw new Error(`GeoJSON no encontrado para ${layerId}`)
   return res.json()
 }
@@ -116,7 +118,7 @@ export async function getCapaGeoJSON(layerId: string): Promise<any> {
  * esté en esta lista, así que sin la unión las capas nuevas no aparecerían.
  */
 export async function getCapasDisponibles(): Promise<string[]> {
-  const res = await fetch('/layers/available.json')
+  const res = await fetch(assetUrl('/layers/available.json'))
   if (!res.ok) throw new Error('No se pudo cargar la lista de capas disponibles')
   const sueltas: string[] = await res.json()
 
@@ -165,7 +167,7 @@ export async function getCategoriasDeCapas(): Promise<Record<string, string>> {
  * Obtiene la configuración de simbología para un módulo o archivo específico.
  */
 export async function getEstiloModulo(archivo: string): Promise<any> {
-  const res = await fetch(`/estilos/${archivo}`)
+  const res = await fetch(assetUrl(`/estilos/${archivo}`))
   if (!res.ok) throw new Error(`Estilo no encontrado: ${archivo}`)
   return res.json()
 }

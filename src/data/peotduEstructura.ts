@@ -6,14 +6,16 @@
 // impresa + 17 de portada y preliminares) y se comprobó contra el PDF.
 // `modulo` enlaza al geovisor cuando el capítulo tiene cartografía publicada.
 
-export const PEOTDU_PDF_OFICIAL = '/Instrumentos/PEOTDU-CAM-2023.pdf'
+import { assetUrl } from '../lib/assetUrl'
+
+export const PEOTDU_PDF_OFICIAL = assetUrl('/Instrumentos/PEOTDU-CAM-2023.pdf')
 
 // PROVISIONAL: la versión condensada aún no existe. Cuando se tenga, dejarla en
 // public/Instrumentos/ y poner aquí su ruta; mientras sea null el botón se
 // muestra deshabilitado como «Próximamente».
 export const PEOTDU_PDF_CONDENSADA: string | null = null
 
-export const PEOTDU_PORTADA = '/img/peotdu/portada-peotdu.png'
+export const PEOTDU_PORTADA = assetUrl('/img/peotdu/portada-peotdu.png')
 
 export const PEOTDU_PUNTOS: string[] = [
   'Establece el diagnóstico, las políticas, estrategias y proyectos prioritarios que orientan el ordenamiento territorial y el desarrollo urbano sustentable del estado. Se formula con base en estudios técnicos y mediante la participación de la ciudadanía, los municipios y las autoridades.',

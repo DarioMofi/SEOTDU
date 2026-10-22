@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './context/auth-context'
 import LandingPage from './pages/landing-page'
 import Catalogo from './pages/catalogo'
@@ -12,7 +12,7 @@ import RutaProtegida from './components/ruta-protegida'
 export default function App() {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <HashRouter>
         <a href="#main-content" className="skip-link">Saltar al contenido principal</a>
         <Routes>
           {/* Rutas Publicas */}
@@ -33,7 +33,7 @@ export default function App() {
             <Route path="/logs/global" element={<BitacoraLogs />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </AuthProvider>
   )
 }

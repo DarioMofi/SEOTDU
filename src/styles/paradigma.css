@@ -1,0 +1,157 @@
+/* ─── Diagrama circular del paradigma del PEOTDU ─────────────────────── */
+/* Paleta del diagrama original: azules, turquesas, blanco y acentos cálidos */
+.paradigma {
+  --p-cuenca: #2F5D7C;
+  --p-entorno: #4C9AA3;
+  --p-calido: #D2873A;
+  --p-tinta: #1D3B4F;
+  display: grid;
+  font-family: var(--font-body);
+  color: var(--p-tinta);
+}
+.paradigma--onboarding {
+  grid-template-columns: minmax(150px, 1fr) minmax(0, 520px) minmax(150px, 1fr);
+  grid-template-areas: "izq lienzo der" "monitores monitores monitores" "leyenda leyenda leyenda";
+  align-items: center;
+  gap: 8px 24px;
+}
+.paradigma--control {
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "ayuda ayuda" "lienzo lienzo" "monitores monitores" "izq der";
+  gap: 8px;
+}
+.paradigma__ayuda {
+  grid-area: ayuda; display: flex; align-items: flex-start; gap: 6px;
+  margin: 0; padding: 6px 8px; border-radius: 8px;
+  background: #E6F2F3; color: #1D3B4F; font-size: 0.7rem; line-height: 1.35;
+}
+.paradigma__ayuda svg { flex-shrink: 0; color: #2E8C8A; margin-top: 1px; }
+/* Pulso breve de los nodos al aparecer: invita a hacer clic */
+@media (prefers-reduced-motion: no-preference) {
+  .paradigma--control .paradigma__nodo-circ { animation: paradigma-pulso 1.4s ease-out 0.4s 3; }
+}
+@keyframes paradigma-pulso {
+  0% { stroke-width: 2; }
+  40% { stroke-width: 9; stroke-opacity: 0.6; }
+  100% { stroke-width: 2; }
+}
+.paradigma__lado--izq { grid-area: izq; }
+.paradigma__lado--der { grid-area: der; }
+.paradigma__lienzo { grid-area: lienzo; position: relative; }
+.paradigma__leyenda { grid-area: leyenda; }
+.paradigma__lienzo > svg { width: 100%; height: auto; display: block; overflow: visible; }
+
+.paradigma__derechos { fill: none; stroke: var(--p-calido); stroke-width: 3; stroke-dasharray: 2 7; stroke-linecap: round; opacity: 0.9; }
+.paradigma__cuenca { fill: none; stroke: var(--p-cuenca); stroke-width: 38; }
+.paradigma__entorno { fill: none; stroke: var(--p-entorno); stroke-width: 30; }
+.paradigma__anillo { cursor: help; }
+.paradigma__anillo:hover circle { filter: brightness(1.12); }
+.paradigma__disco { fill: #FFFFFF; }
+.paradigma__rotulo { font-size: 13px; font-weight: 800; letter-spacing: 0.22em; fill: #FFFFFF; pointer-events: none; }
+.paradigma__rotulo--calido { fill: var(--p-calido); font-size: 12px; letter-spacing: 0.12em; }
+.paradigma__dimension { fill: none; stroke-width: 12; stroke-linecap: round; cursor: help; transition: stroke-width 0.2s ease; }
+.paradigma__dimension:hover { stroke-width: 18; }
+.paradigma__conector { stroke: #C9DCE1; stroke-width: 1.5; }
+.paradigma__centro circle { fill: #E6F2F3; stroke: var(--p-entorno); stroke-width: 2; }
+.paradigma__icono-centro { color: var(--p-cuenca); }
+.paradigma__centro-txt { font-size: 12px; font-weight: 700; fill: var(--p-cuenca); }
+
+/* Anillo exterior de monitores: cada sector se alimenta de sus subsistemas */
+.paradigma__alimenta { stroke-width: 1.5; stroke-dasharray: 3 5; stroke-linecap: round; opacity: 0.45; transition: opacity 0.2s ease, stroke-width 0.2s ease; pointer-events: none; }
+.paradigma__alimenta.is-resaltado { opacity: 0.95; stroke-width: 2.5; stroke-dasharray: none; }
+.paradigma__monitor { cursor: pointer; outline: none; }
+.paradigma__monitor-sector { fill: var(--mon); opacity: 0.78; stroke: #FFFFFF; stroke-width: 1.5; transition: opacity 0.2s ease; }
+.paradigma__monitor-txt { font-size: 13px; font-weight: 800; letter-spacing: 0.14em; fill: var(--mon-tinta); pointer-events: none; }
+.paradigma__monitor:hover .paradigma__monitor-sector,
+.paradigma__monitor:focus-visible .paradigma__monitor-sector,
+.paradigma__monitor.is-resaltado .paradigma__monitor-sector,
+.paradigma__monitor.is-activo .paradigma__monitor-sector { opacity: 1; }
+.paradigma__monitor:focus-visible .paradigma__monitor-sector { stroke: var(--p-tinta); stroke-dasharray: 3 2; }
+.paradigma__nodo.is-en-monitor:not(.is-activo) .paradigma__nodo-circ { fill: color-mix(in srgb, var(--dim) 10%, white); stroke-width: 4; }
+
+/* Leyenda de monitores: nombres legibles aunque el diagrama sea pequeño */
+.paradigma__monitores { grid-area: monitores; display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.paradigma__monitores button {
+  display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 999px;
+  border: 1px solid #DCE8EA; background: #FFFFFF; cursor: pointer;
+  font: 600 0.72rem var(--font-body); color: var(--p-tinta);
+}
+.paradigma__monitores button span { width: 9px; height: 9px; border-radius: 50%; background: var(--mon); }
+.paradigma__monitores button:hover { border-color: var(--mon); }
+.paradigma__monitores button.is-activo { border-color: var(--mon); background: color-mix(in srgb, var(--mon) 12%, white); }
+.paradigma--control .paradigma__monitores button { font-size: 0.64rem; padding: 2px 7px; }
+
+.paradigma__nodo { cursor: pointer; outline: none; }
+.paradigma__nodo-circ { fill: #FFFFFF; stroke: var(--dim); stroke-width: 2.5; transition: fill 0.2s ease, stroke-width 0.2s ease; }
+.paradigma__icono { color: var(--dim); transition: color 0.2s ease; }
+.paradigma__nodo-txt { font-size: 12.5px; font-weight: 700; fill: var(--p-tinta); paint-order: stroke; stroke: #FFFFFF; stroke-width: 4px; }
+.paradigma__nodo:hover .paradigma__nodo-circ,
+.paradigma__nodo:focus-visible .paradigma__nodo-circ { fill: color-mix(in srgb, var(--dim) 12%, white); stroke-width: 4; }
+.paradigma__nodo:focus-visible .paradigma__nodo-circ { stroke-dasharray: 4 3; }
+.paradigma__nodo.is-activo .paradigma__nodo-circ { fill: var(--dim); stroke-width: 4; }
+.paradigma__nodo.is-activo .paradigma__icono { color: #FFFFFF; }
+.paradigma__nodo.is-activo .paradigma__nodo-txt { fill: var(--dim); }
+.paradigma__nodo { transition: transform 0.2s ease; }
+
+/* Tarjeta flotante */
+.paradigma__pista {
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  transform: translate(-50%, 8px);
+  width: min(320px, 92%);
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid #DCE8EA;
+  border-left: 4px solid var(--pista);
+  box-shadow: 0 10px 28px rgba(29, 59, 79, 0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.paradigma__pista.is-visible { opacity: 1; transform: translate(-50%, 0); }
+.paradigma__pista strong { display: block; font-size: 0.88rem; color: var(--pista); }
+.paradigma__pista-extra { display: block; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #6B7280; margin-top: 1px; }
+.paradigma__pista p { margin: 4px 0 0; font-size: 0.8rem; line-height: 1.45; color: #374151; }
+
+/* Lados: Insumos (Desempeño) y Salidas (Estrategia) */
+.paradigma__lado { display: flex; align-items: center; gap: 6px; }
+.paradigma__lado-txt { display: flex; flex-direction: column; gap: 2px; }
+.paradigma__lado-txt small { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--p-calido); }
+.paradigma__lado-txt strong { font-size: 0.95rem; color: var(--p-cuenca); }
+.paradigma__lado-txt span { font-size: 0.82rem; line-height: 1.45; color: #4B5563; }
+.paradigma--onboarding .paradigma__lado--izq { justify-content: flex-end; text-align: right; }
+.paradigma--onboarding .paradigma__lado--izq .paradigma__lado-txt { align-items: flex-end; }
+.paradigma--onboarding .paradigma__lado { border-top: 2px solid var(--p-entorno); padding-top: 10px; }
+
+button.paradigma__lado {
+  justify-content: center;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1.5px solid #CFE1E4;
+  background: #FFFFFF;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+button.paradigma__lado .paradigma__lado-txt strong { font-size: 0.78rem; }
+button.paradigma__lado .paradigma__lado-txt small { font-size: 0.6rem; }
+button.paradigma__lado:hover { border-color: var(--p-entorno); }
+button.paradigma__lado.is-activo { background: var(--p-cuenca); border-color: var(--p-cuenca); color: #FFFFFF; }
+button.paradigma__lado.is-activo .paradigma__lado-txt strong,
+button.paradigma__lado.is-activo .paradigma__lado-txt small { color: #FFFFFF; }
+
+.paradigma__leyenda { display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; list-style: none; margin: 0; padding: 0; font-size: 0.8rem; font-weight: 600; }
+.paradigma__leyenda li { display: inline-flex; align-items: center; gap: 6px; }
+.paradigma__leyenda span { width: 22px; height: 6px; border-radius: 3px; display: inline-block; }
+
+@media (max-width: 860px) {
+  .paradigma--onboarding { grid-template-columns: 1fr 1fr; grid-template-areas: "lienzo lienzo" "monitores monitores" "izq der" "leyenda leyenda"; }
+  .paradigma--onboarding .paradigma__lado--izq { justify-content: flex-start; text-align: left; }
+  .paradigma--onboarding .paradigma__lado--izq .paradigma__lado-txt { align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .paradigma__pista, .paradigma__dimension, .paradigma__nodo-circ { transition: none; }
+}

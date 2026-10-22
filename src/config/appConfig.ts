@@ -3,8 +3,9 @@
 export const appConfig = {
   // Cada módulo es el mapa base de su propio tema: solo uno puede estar activo
   // a la vez, y al activarlo se encienden todas sus capas. Este es el que
-  // arranca encendido.
-  DEFAULT_MODULE: 'mapa_base',
+  // arranca encendido. Es el primer monitor del orden de la página de inicio;
+  // el Mapa Base ya no arranca encendido (va al final del menú).
+  DEFAULT_MODULE: 'ambiental',
 
   // Capas que se dibujan junto con su módulo pero NO aparecen en el menú: el
   // usuario no las puede apagar por separado. Se encienden y se apagan con el
@@ -84,6 +85,23 @@ export const appConfig = {
   // el texto. Los municipios ya se rotulan de forma constante en el visor base.
   LAYER_LABELS: {} as Record<string, string>,
 
+  // Rótulos de nombres que aparecen o desaparecen según el acercamiento. Con
+  // 2,700 localidades rurales, rotularlas todas a escala estatal tapaba el
+  // mapa; por eso cada capa declara desde qué zoom se rotula y cuántos rótulos
+  // como máximo (los de mayor población primero) caben en pantalla.
+  ETIQUETAS_ZOOM: {
+    c04_scince_localidad_urbana_inegi_2020: { minZoom: 9, max: 60 },
+    c04_localidades_rurales_2024: { minZoom: 12, max: 120 },
+  } as Record<string, { minZoom: number; max: number }>,
+
+  // Los nombres de municipio se ocultan a partir de este zoom para dejar
+  // sitio a los de localidades.
+  ZOOM_OCULTAR_MUNICIPIOS: 11,
+
+  // Capas que muestran un resumen al pasar el cursor y resaltan el polígono.
+  // Las manzanas no se entendían con solo el clic: son miles y muy pequeñas.
+  HOVER_LAYERS: ['c04_scince_manzana_inegi_2020'] as string[],
+
   // Capas que se dibujan pero no se listan en la leyenda: no representan un
   // dato consultable, son recurso visual. El bufer estatal es el gris de los
   // estados vecinos, que sirve para enmarcar Campeche y nada más.
@@ -158,7 +176,7 @@ export const appConfig = {
     },
     {
       id: 'normatividad',
-      title: 'Modelo de Ordenamiento Territorial',
+      title: 'Gobernanza (MOT)',
       colorClass: 'text-slate-600 bg-slate-50 border-slate-200',
       themeColor: '#1C334E',
       themeBg: 'rgba(71, 85, 105, 0.02)',

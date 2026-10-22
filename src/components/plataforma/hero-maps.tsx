@@ -1,14 +1,19 @@
-import { useState, useRef, useEffect, useMemo, memo } from 'react'
+import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { X } from 'lucide-react'
+import { X, MousePointerClick } from 'lucide-react'
+import ImageSlot from '../common/image-slot'
+import {
+  INDICADORES_ESTADO,
+  INDICADORES_MUNICIPIOS,
+  formatoMiles,
+  porcentaje,
+} from '../../data/indicadoresTerritoriales'
 import {
   CAMPECHE_SVG_VIEWBOX,
   CAMPECHE_STATE_PATH,
   CAMPECHE_MUNICIPALITIES,
   type MunicipalityInfo,
 } from '../../data/campecheSilhouetteSvg'
-import { MEXICO_DOTS_DATA } from '../../data/mexicoDotsData'
-import { CAMPECHE_DOTS_DATA } from '../../data/campecheDotsData'
 import { INSTRUMENTOS_DATA } from '../../data/instrumentosData'
 
 /* ─── 1. Mapa Interactivo del Estado de Campeche (Fase 0) ──────────────── */
@@ -65,7 +70,40 @@ export function HeroCampecheMap({ isVisible }: HeroCampecheMapProps) {
 
   const mainInstrument = activeInstruments[0] || null
 
+  // El indicador "haz clic" se retira con la primera interacción sobre el mapa
+  const [hasInteracted, setHasInteracted] = useState(false)
+
+  // Indicadores del panel: estatales o del municipio seleccionado
+  const indicadores = useMemo(() => {
+    if (!selectedMun) {
+      return {
+        urbanas: INDICADORES_ESTADO.localidadesUrbanas,
+        rurales: INDICADORES_ESTADO.localidadesRurales as number | null,
+        pobUrbana: INDICADORES_ESTADO.poblacionUrbana,
+        pobRural: INDICADORES_ESTADO.poblacionRural,
+        pobTotal: INDICADORES_ESTADO.poblacionTotal,
+        anio: INDICADORES_ESTADO.anioCreacion as number | null,
+        creacionDetalle: INDICADORES_ESTADO.creacionDetalle,
+        segregadoDe: undefined as string | undefined,
+        pib: INDICADORES_ESTADO.pibParticipacionNacional as number | null,
+      }
+    }
+    const m = INDICADORES_MUNICIPIOS[selectedMun.id]
+    return {
+      urbanas: m?.localidadesUrbanas ?? 0,
+      rurales: null,
+      pobUrbana: m?.poblacionUrbana ?? 0,
+      pobRural: m?.poblacionRural ?? 0,
+      pobTotal: (m?.poblacionUrbana ?? 0) + (m?.poblacionRural ?? 0),
+      anio: m?.anioCreacion ?? null,
+      creacionDetalle: m?.anioCreacion ? `Decreto de creación: ${m.anioCreacion}` : 'Año de creación por confirmar',
+      segregadoDe: m?.segregadoDe,
+      pib: m?.pibParticipacionEstatal ?? null,
+    }
+  }, [selectedMun])
+
   const handleMunClick = (mun: MunicipalityInfo) => {
+    setHasInteracted(true)
     try {
       if (selectedMun?.name === mun.name) {
         setSelectedMun(null)
@@ -260,47 +298,69 @@ export function HeroCampecheMap({ isVisible }: HeroCampecheMapProps) {
           </svg>
         </div>
 
+        {/* Indicador de interactividad: desaparece en cuanto el usuario toca un municipio */}
+        {!hasInteracted && (
+          <div className="hero-fase0-map-hint" aria-hidden="true">
+            <MousePointerClick className="w-4 h-4" />
+            <span>Haz clic en un municipio para ver sus datos</span>
+          </div>
+        )}
+
         {/* Tarjetas informativas laterales con métricas territoriales */}
         <div className="hero-fase0-sidebar">
-          <div className="hero-fase0-meta-card">
-            <div className="flex items-center justify-between gap-2 mb-1">
-              <span className="hero-fase0-meta-badge">
-                {selectedMun ? 'Municipio Seleccionado' : 'Entidad Federativa'}
-              </span>
-              {selectedMun && (
-                <button
-                  type="button"
-                  onClick={handleReset}
-                  className="hero-fase0-close-btn"
-                  aria-label="Deseleccionar municipio y ver estado general"
-                  title="Deseleccionar municipio"
-                >
-                  <X className="w-3.5 h-3.5" />
-                </button>
-              )}
+          <div className={`hero-fase0-meta-card ${selectedMun ? 'hero-fase0-meta-card--mun' : ''}`}>
+            <div className="hero-fase0-meta-text">
+              <div className="flex items-center justify-between gap-2 mb-1">
+                <span className="hero-fase0-meta-badge">
+                  {selectedMun ? 'Municipio Seleccionado' : 'Entidad Federativa'}
+                </span>
+                {selectedMun && (
+                  <button
+                    type="button"
+                    onClick={handleReset}
+                    className="hero-fase0-close-btn"
+                    aria-label="Deseleccionar municipio y ver estado general"
+                    title="Deseleccionar municipio"
+                  >
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+                )}
+              </div>
+              <h3 className="hero-fase0-meta-title">
+                {selectedMun ? selectedMun.name : 'Estado de Campeche'}
+              </h3>
+              <p className="hero-fase0-meta-desc">
+                {selectedMun
+                  ? selectedMun.detalles
+                  : 'Entidad soberana integrada por 13 municipios en un territorio estratégico con gran biodiversidad, patrimonio biocultural y vocación marítima e industrial.'}
+              </p>
             </div>
-            <h3 className="hero-fase0-meta-title">
-              {selectedMun ? selectedMun.name : 'Estado de Campeche'}
-            </h3>
-            <p className="hero-fase0-meta-desc">
-              {selectedMun
-                ? selectedMun.detalles
-                : 'Entidad soberana integrada por 13 municipios en un territorio estratégico con gran biodiversidad, patrimonio biocultural y vocación marítima e industrial.'}
-            </p>
+
+            {/* Imagen del territorio municipal. Mientras no haya fotografía en
+                public/img/municipios/<id>.jpg se dibuja el contorno del municipio. */}
+            {selectedMun && (
+              <ImageSlot
+                key={selectedMun.id}
+                src={`/img/municipios/${selectedMun.id}.jpg`}
+                alt={`Territorio municipal de ${selectedMun.name}`}
+                className="hero-fase0-mun-img"
+                fallback={<MunicipioContorno mun={selectedMun} />}
+              />
+            )}
           </div>
 
           <div className="hero-fase0-metrics-grid">
-            {/* Métrica 1: Municipios / Cabecera */}
+            {/* Municipios / Cabecera */}
             <div className="hero-fase0-metric">
               <span className="hero-fase0-metric-val">
                 {selectedMun ? selectedMun.cabecera : '13'}
               </span>
               <span className="hero-fase0-metric-lbl">
-                {selectedMun ? 'Cabecera Municipal' : 'Municipios Constitucionales'}
+                {selectedMun ? 'Cabecera Municipal' : 'Municipios'}
               </span>
             </div>
 
-            {/* Métrica 2: Extensión Territorial */}
+            {/* Extensión territorial */}
             <div className="hero-fase0-metric">
               <span className="hero-fase0-metric-val">
                 {selectedMun ? selectedMun.superficie : '57,485 km²'}
@@ -310,18 +370,66 @@ export function HeroCampecheMap({ isVisible }: HeroCampecheMapProps) {
               </span>
             </div>
 
-            {/* Métrica 3: Población */}
+            {/* Población */}
             <div className="hero-fase0-metric">
               <span className="hero-fase0-metric-val">
-                {selectedMun ? selectedMun.poblacion : '928,363 hab.'}
+                {selectedMun ? selectedMun.poblacion : `${formatoMiles(INDICADORES_ESTADO.poblacionTotal)} hab.`}
               </span>
               <span className="hero-fase0-metric-lbl">
-                {selectedMun ? 'Población Municipal' : 'Población Estatal (INEGI)'}
+                {selectedMun ? 'Población Municipal' : 'Población Estatal (INEGI 2020)'}
               </span>
             </div>
 
-            {/* Métrica 4: Instrumento normativo vigente */}
+            {/* Localidades urbanas */}
             <div className="hero-fase0-metric">
+              <span className="hero-fase0-metric-val">
+                {formatoMiles(indicadores.urbanas)}
+                <small className="hero-fase0-metric-pct">{porcentaje(indicadores.pobUrbana, indicadores.pobTotal)}</small>
+              </span>
+              <span className="hero-fase0-metric-lbl">Localidades urbanas</span>
+              <span className="hero-fase0-metric-sub">{formatoMiles(indicadores.pobUrbana)} hab.</span>
+            </div>
+
+            {/* Localidades rurales */}
+            <div className="hero-fase0-metric">
+              {/* Sin conteo oficial de localidades rurales por municipio: ahí se muestra su población */}
+              <span className="hero-fase0-metric-val">
+                {indicadores.rurales !== null ? formatoMiles(indicadores.rurales) : formatoMiles(indicadores.pobRural)}
+                <small className="hero-fase0-metric-pct">{porcentaje(indicadores.pobRural, indicadores.pobTotal)}</small>
+              </span>
+              <span className="hero-fase0-metric-lbl">
+                {indicadores.rurales !== null ? 'Localidades rurales' : 'Habitantes en localidades rurales'}
+              </span>
+              {indicadores.rurales !== null && (
+                <span className="hero-fase0-metric-sub">{formatoMiles(indicadores.pobRural)} hab.</span>
+              )}
+            </div>
+
+            {/* Año de creación */}
+            <div className="hero-fase0-metric" title={indicadores.creacionDetalle}>
+              <span className={`hero-fase0-metric-val ${indicadores.anio === null ? 'is-pending' : ''}`}>
+                {indicadores.anio ?? 'Por confirmar'}
+              </span>
+              <span className="hero-fase0-metric-lbl">
+                {selectedMun ? 'Creación del municipio' : 'Creación del estado'}
+              </span>
+              {indicadores.segregadoDe && (
+                <span className="hero-fase0-metric-sub">Segregado de {indicadores.segregadoDe}</span>
+              )}
+            </div>
+
+            {/* Aportación al PIB */}
+            <div className="hero-fase0-metric">
+              <span className={`hero-fase0-metric-val ${indicadores.pib === null ? 'is-pending' : ''}`}>
+                {indicadores.pib !== null ? `${indicadores.pib}%` : 'Por confirmar'}
+              </span>
+              <span className="hero-fase0-metric-lbl">
+                {selectedMun ? 'Aportación al PIB estatal' : `Aportación al PIB nacional (${INDICADORES_ESTADO.pibAnio})`}
+              </span>
+            </div>
+
+            {/* Instrumentos de planeación vigentes */}
+            <div className="hero-fase0-metric hero-fase0-metric--wide">
               <span
                 className="hero-fase0-metric-val hero-fase0-metric-val--instrument"
                 title={mainInstrument ? `${mainInstrument.nombre} (${mainInstrument.fechaPublicacion})` : (selectedMun?.instrumentoNormativo || 'Programa Estatal de Ordenamiento Territorial y Desarrollo Urbano')}
@@ -332,7 +440,7 @@ export function HeroCampecheMap({ isVisible }: HeroCampecheMapProps) {
               </span>
               <div className="hero-fase0-metric-footer">
                 <span className="hero-fase0-metric-lbl">
-                  Instrumentos vigentes {totalVigentes}
+                  Instrumentos de planeación urbana y territorial vigentes: <strong>{totalVigentes}</strong>
                 </span>
                 <Link
                   to={selectedMun ? `/catalogo?municipio=${encodeURIComponent(selectedMun.name)}` : '/catalogo'}
@@ -344,169 +452,32 @@ export function HeroCampecheMap({ isVisible }: HeroCampecheMapProps) {
               </div>
             </div>
           </div>
+          <p className="hero-fase0-source">Fuente: {INDICADORES_ESTADO.fuente}</p>
         </div>
       </div>
     </div>
   )
 }
 
-/* ─── 2. Mapa Punteado del Territorio Nacional (Fase 1 - Canvas Acelerado) ── */
-export const HeroMexicoDots = memo(function HeroMexicoDots({ isActive = true }: { isActive?: boolean }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-
-  useEffect(() => {
-    if (!isActive) return
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    let animId: number
-    const dpr = Math.min(window.devicePixelRatio || 1, 2)
-    const width = 520
-    const height = 290
-    canvas.width = width * dpr
-    canvas.height = height * dpr
-    ctx.scale(dpr, dpr)
-
-    const PADDING = 10
-    const scale = Math.min((width - PADDING * 2) / 640, (height - PADDING * 2) / 430)
-    const offsetX = (width - 640 * scale) / 2
-    const offsetY = (height - 430 * scale) / 2
-
-    // Colores institucionales: Guinda (155, 34, 66) y Dorado Luminoso (212, 175, 55)
-    const GUINDA = [155, 34, 66]
-    const DORADO = [212, 175, 55]
-    const CAMPECHE_DORADO = [226, 186, 104]
-    const CAMPECHE_GUINDA = [130, 21, 48]
-
-    let startTime = performance.now()
-
-    const render = (now: number) => {
-      const elapsed = (now - startTime) / 1000
-      ctx.clearRect(0, 0, width, height)
-
-      for (let i = 0; i < MEXICO_DOTS_DATA.length; i++) {
-        const dot = MEXICO_DOTS_DATA[i]
-        const t = ((elapsed + dot.delay) % 2.8) / 2.8
-        const wave = 0.5 - 0.5 * Math.cos(t * Math.PI * 2)
-
-        let r: number, g: number, b: number, radius: number
-        if (dot.isCampeche) {
-          const cWave = 1 - wave
-          r = Math.round(CAMPECHE_GUINDA[0] + (CAMPECHE_DORADO[0] - CAMPECHE_GUINDA[0]) * cWave)
-          g = Math.round(CAMPECHE_GUINDA[1] + (CAMPECHE_DORADO[1] - CAMPECHE_GUINDA[1]) * cWave)
-          b = Math.round(CAMPECHE_GUINDA[2] + (CAMPECHE_DORADO[2] - CAMPECHE_GUINDA[2]) * cWave)
-          radius = 4.2 * scale
-        } else {
-          r = Math.round(GUINDA[0] + (DORADO[0] - GUINDA[0]) * wave)
-          g = Math.round(GUINDA[1] + (DORADO[1] - GUINDA[1]) * wave)
-          b = Math.round(GUINDA[2] + (DORADO[2] - GUINDA[2]) * wave)
-          radius = 3.5 * scale
-        }
-
-        ctx.beginPath()
-        ctx.arc(offsetX + dot.x * scale, offsetY + dot.y * scale, radius, 0, Math.PI * 2)
-        ctx.fillStyle = `rgb(${r},${g},${b})`
-        ctx.fill()
-      }
-
-      animId = requestAnimationFrame(render)
+/* Contorno del municipio seleccionado, recortado a su propia extensión.
+   Respaldo de la fotografía municipal: reutiliza la geometría del mapa. */
+function MunicipioContorno({ mun }: { mun: MunicipalityInfo }) {
+  const viewBox = useMemo(() => {
+    const nums = (mun.path.match(/-?\d+(\.\d+)?/g) || []).map(Number)
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity
+    for (let i = 0; i + 1 < nums.length; i += 2) {
+      minX = Math.min(minX, nums[i]); maxX = Math.max(maxX, nums[i])
+      minY = Math.min(minY, nums[i + 1]); maxY = Math.max(maxY, nums[i + 1])
     }
-
-    animId = requestAnimationFrame(render)
-    return () => cancelAnimationFrame(animId)
-  }, [isActive])
+    const pad = Math.max(maxX - minX, maxY - minY) * 0.08
+    return `${minX - pad} ${minY - pad} ${maxX - minX + pad * 2} ${maxY - minY + pad * 2}`
+  }, [mun])
 
   return (
-    <div className="hero-mexico-dots-container" aria-label="Mapa punteado del territorio nacional">
-      <canvas
-        ref={canvasRef}
-        className="hero-mexico-dots-canvas"
-        style={{
-          width: '100%',
-          maxWidth: 520,
-          height: 'auto',
-          aspectRatio: '520 / 290',
-          display: 'block',
-        }}
-      />
+    <div className="hero-fase0-mun-contorno">
+      <svg viewBox={viewBox} preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <path d={mun.path} vectorEffect="non-scaling-stroke" />
+      </svg>
     </div>
   )
-})
-
-/* ─── 3. Mapa Punteado del Estado de Campeche (Fase 3 - Canvas Acelerado) ── */
-export const HeroCampecheDots = memo(function HeroCampecheDots({ isActive = true }: { isActive?: boolean }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-
-  useEffect(() => {
-    if (!isActive) return
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    let animId: number
-    const dpr = Math.min(window.devicePixelRatio || 1, 2)
-    const width = 380
-    const height = 350
-    canvas.width = width * dpr
-    canvas.height = height * dpr
-    ctx.scale(dpr, dpr)
-
-    const PADDING = 10
-    const scale = Math.min((width - PADDING * 2) / 550, (height - PADDING * 2) / 500)
-    const offsetX = (width - 550 * scale) / 2
-    const offsetY = (height - 500 * scale) / 2
-
-    // Colores institucionales: Guinda (155, 34, 66) y Dorado Luminoso (212, 175, 55)
-    const GUINDA = [155, 34, 66]
-    const DORADO = [212, 175, 55]
-
-    let startTime = performance.now()
-
-    const render = (now: number) => {
-      const elapsed = (now - startTime) / 1000
-      ctx.clearRect(0, 0, width, height)
-
-      for (let i = 0; i < CAMPECHE_DOTS_DATA.length; i++) {
-        const dot = CAMPECHE_DOTS_DATA[i]
-        const t = ((elapsed + dot.delay) % 2.8) / 2.8
-        const wave = 0.5 - 0.5 * Math.cos(t * Math.PI * 2)
-
-        const r = Math.round(GUINDA[0] + (DORADO[0] - GUINDA[0]) * wave)
-        const g = Math.round(GUINDA[1] + (DORADO[1] - GUINDA[1]) * wave)
-        const b = Math.round(GUINDA[2] + (DORADO[2] - GUINDA[2]) * wave)
-        const radius = 3.6 * scale
-
-        ctx.beginPath()
-        ctx.arc(offsetX + dot.x * scale, offsetY + dot.y * scale, radius, 0, Math.PI * 2)
-        ctx.fillStyle = `rgb(${r},${g},${b})`
-        ctx.fill()
-      }
-
-      animId = requestAnimationFrame(render)
-    }
-
-    animId = requestAnimationFrame(render)
-    return () => cancelAnimationFrame(animId)
-  }, [isActive])
-
-  return (
-    <div className="hero-campeche-dots-container" aria-label="Mapa punteado del Estado de Campeche">
-      <canvas
-        ref={canvasRef}
-        className="hero-campeche-dots-canvas"
-        style={{
-          width: '100%',
-          maxWidth: 290,
-          height: 'auto',
-          aspectRatio: '380 / 350',
-          display: 'block',
-        }}
-      />
-    </div>
-  )
-})
-
-export default HeroCampecheMap
+}

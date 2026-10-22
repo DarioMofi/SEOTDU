@@ -1,0 +1,1975 @@
+[
+ {
+  "id": "ambiental-medio-fisico-provincias-fisiograficas",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Medio físico",
+  "tema": "Provincias fisiográficas",
+  "titulo": "Provincias fisiográficas",
+  "descripcion": "En este tema la variable corresponde a las provincias y subprovincias fisiográficas que existen en el estado.",
+  "variables": "Provincias y Subprovincias fisiográficas.",
+  "capasTexto": "C04_MFNProvinciasFisiograficas_INEGI_2023 y C04_MFNSubprovinciasFisiograficas_INEGI_2023.",
+  "capas": [
+   "c04mfnprovinciasfisiograficasinegi2023",
+   "c04mfnsubprovinciasfisiograficasinegi2023"
+  ],
+  "analitica": "Dos provincias fisiográficas en Campeche: Península de Yucatán (78%) y Llanura Costera del Golfo Sur (19%). Tres subprovincias: Carso Yucateco (5%), Carso y Lomeríos de Campeche (77%) y Llanuras y Pantanos Tabasqueños (18%)",
+  "narrativa": "Campeche pertenece a dos grandes regiones geográficas: la Península de Yucatán (78% del territorio) y la Llanura Costera del Golfo Sur (19%). La primera es una plataforma de roca caliza casi plana donde el agua se infitra al subsuelo formando ríos subterráneos y cenotes. La segunda, al suroeste, es la zona de pantanos, ríos y lagunas que comparte características con Tabasco.\n\nEl territorio de Campeche pertenece a dos grandes regiones geográficas del país:\n- Península de Yucatán (78% del territorio): una gran plataforma de roca caliza, relativamente plana, con una característica única — el agua no corre por la superﬁcie sino que se inﬁltra hacia el subsuelo, formando ríos subterráneos, cavernas y los famosos cenotes.\n- Llanura Costera del Golfo Sur (19% del territorio): la zona suroeste del estado, que comparte características con Tabasco — suelos profundos formados por depósitos de ríos, pantanos, y la gran Laguna de Términos.\n\nEstas provincias, a su vez, comprenden tres subprovincias:\n- Carso Yucateco (5% del territorio).\n- Carso y Lomeríos de Campeche (77% del territorio)\n- Llanuras y Pantanos Tabasqueños (18% del territorio)",
+  "series": [
+   {
+    "titulo": "Dos provincias fisiográficas en Campeche",
+    "unidad": "%",
+    "datos": [
+     {
+      "etiqueta": "Península de Yucatán",
+      "valor": 78.0
+     },
+     {
+      "etiqueta": "Llanura Costera del Golfo Sur",
+      "valor": 19.0
+     },
+     {
+      "etiqueta": "Carso Yucateco",
+      "valor": 5.0
+     },
+     {
+      "etiqueta": "Carso y Lomeríos de Campeche",
+      "valor": 77.0
+     },
+     {
+      "etiqueta": "Llanuras y Pantanos Tabasqueños",
+      "valor": 18.0
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ambiental-medio-fisico-geologia",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Medio físico",
+  "tema": "Geología",
+  "titulo": "Geología",
+  "descripcion": "En este tema las variables corresponden a los tipos de roca (1) y la litología (2) que existe en el estado.",
+  "variables": "Tipos de roca (1) y litología (2)",
+  "capasTexto": "C04_MFNGeología_INEGI_2023",
+  "capas": [
+   "c04mfngeologiainegi2023"
+  ],
+  "analitica": "Tipos de rocas: Sedimentarias (99.5% del territorio); unidades litológicas (litología): Aluvial (877,599.1 ha), Caliza-Coquina (186,825.49 ha), Caliza-Dolomítica (2,487.63 ha), Caliza-Marga (1,632,328.64 ha), Caliza-Yeso (2,198,193.11), Conglomerado poligénico-Arenisca (938.87 ha), Coquina-Caliza (2,656.25 ha), Lacustre (35,075.57 ha), Lagunar (551,223.39 ha) y Litoral (29,241.96 ha) (SEDATU, 2023).",
+  "narrativa": "El 99.5% del suelo de Campeche está formado por rocas sedimentarias (principalmente calizas) que se formaron durante millones de años, lo que genera grandes extensiones de zonas kársticas. Esta composición tiene consecuencias prácticas muy concretas para la vida cotidiana.\n\nLa roca caliza es porosa: el agua de lluvia se inﬁltra rápidamente al subsuelo, recargando los acuíferos de toda la Península de Yucatán. El suelo calcáreo es frágil: la construcción de carreteras y ediﬁcios sobre él requiere técnicas especiales para no generar hundimientos. Hay yeso y minerales de valor económico en municipios como Hopelchén y Calakmul.",
+  "series": [
+   {
+    "titulo": "Tipos de rocas",
+    "unidad": "ha",
+    "datos": [
+     {
+      "etiqueta": "Aluvial",
+      "valor": 877599.1
+     },
+     {
+      "etiqueta": "Caliza-Coquina",
+      "valor": 186825.49
+     },
+     {
+      "etiqueta": "Caliza-Dolomítica",
+      "valor": 2487.63
+     },
+     {
+      "etiqueta": "Caliza-Marga",
+      "valor": 1632328.64
+     },
+     {
+      "etiqueta": "Conglomerado poligénico-Arenisca",
+      "valor": 938.87
+     },
+     {
+      "etiqueta": "Coquina-Caliza",
+      "valor": 2656.25
+     },
+     {
+      "etiqueta": "Lacustre",
+      "valor": 35075.57
+     },
+     {
+      "etiqueta": "Lagunar",
+      "valor": 551223.39
+     },
+     {
+      "etiqueta": "Litoral",
+      "valor": 29241.96
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ambiental-medio-fisico-geomorfologia-y-topografia",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Medio físico",
+  "tema": "Geomorfología y topografía",
+  "titulo": "Geomorfología y topografía",
+  "descripcion": "En este tema las variables corresponden a las principales elevaciones (cerros) (1) y a los tipos de topoformas (2) que existen en el estado",
+  "variables": "Principales elevaciones (cerros) y Tipos de topoformas.",
+  "capasTexto": "C04_MFNPrincipalesElevaciones_INEGI_2023 y C04MFNTopoformas_INEGI_2023.",
+  "capas": [
+   "c04mfnprincipaleselevacionesinegi2023"
+  ],
+  "analitica": "Cerro Champerico (altitud 390 msnm), Cerro los Chinos (370 msnm), Cerro el Ramonal (340 msnm), Cerro las Águilas (320 msnm), Cerro el Doce (250 msnm), Cerro Chumul (230 msnm) y Cerro el Gavilán (210 msnm). Cuerpo de agua (3.24%), Llanura (53.43%), Lomerío (42.24%), Playa o Barra (1.1%) (SEDATU, 2023)",
+  "narrativa": "Campeche es predominantemente plano, pero no completamente. El 53% del territorio son llanuras, el 42% son lomeríos suaves y únicamente el 1% son playas o barras. Solo en el sureste, en Calakmul, hay elevaciones más significativas, donde se encuentra el punto más elevado del estado: el Cerro Champerico con 390 msnm de altitud. Existe una cordillera pequeña llamada Sierra Alta o Sierra Puuc que recorre el estado de sur a norte, pasando por Seybaplaya, Hopelchén y Calkiní, con alturas entre 40 y 100 msnm. La costa tiene 523 km de longitud, en su mayoría arenosa y baja. En algunos puntos de Seybaplaya y Champotón, el mar se retira hasta 500 metros por las tardes.",
+  "series": [
+   {
+    "titulo": null,
+    "unidad": "msnm",
+    "datos": [
+     {
+      "etiqueta": "Cerro los Chinos",
+      "valor": 370.0
+     },
+     {
+      "etiqueta": "Cerro el Ramonal",
+      "valor": 340.0
+     },
+     {
+      "etiqueta": "Cerro las Águilas",
+      "valor": 320.0
+     },
+     {
+      "etiqueta": "Cerro el Doce",
+      "valor": 250.0
+     },
+     {
+      "etiqueta": "Cerro Chumul",
+      "valor": 230.0
+     },
+     {
+      "etiqueta": "Cerro el Gavilán",
+      "valor": 210.0
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ambiental-medio-fisico-edafologia",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Medio físico",
+  "tema": "Edafología",
+  "titulo": "Edafología",
+  "descripcion": "En este tema la variable corresponde a las unidades edafológicas que existen en el estado",
+  "variables": "Unidades edafológicas",
+  "capasTexto": "C04_MFNEdafología_INEGI_2023",
+  "capas": [
+   "c04mfnedafologiainegi2023"
+  ],
+  "analitica": "Tabla 36: Cambisol crómico (0.17%), Feozem calcárico (0.13%) Gleysol eútrico (2.66%), Gleysol mólico (3.18%), Gleysol plíntico (1.21%), Gleysol vértico (23.09%), Histosol eútrico (1.14%), Luvisol cálcico (0.19%), Luvisol crómico (1.48%), Luvisol férrico (0.34%), Nitosol eútrico (1.93%), Regosol calcárico (0.61%), Regosol eútrico (0.38%), Rendzina (55.33%), Litosol (1.55%), Solonchak gleyco (1.09%), Solonchak órtico (1.71%), Vertisol crómico (0.22%), Vertisol pélico (3.27%) y Cuerpos de agua y poblados (0.32%) (SEDATU, 2023).",
+  "narrativa": "Los suelos más comunes son los Leptosoles: delgados, poco profundos, fértiles pero propensos a la erosión (Rendzina). Los Vertisoles, arcillosos y expansivos, son difíciles para la agricultura y problemáticos para construir sobre ellos. En el suroeste predominan los Gleysoles, propios de humedales, que se inundan frecuentemente.",
+  "series": [
+   {
+    "titulo": null,
+    "unidad": "%",
+    "datos": [
+     {
+      "etiqueta": "Cambisol crómico",
+      "valor": 0.17
+     },
+     {
+      "etiqueta": "Feozem calcárico",
+      "valor": 0.13
+     },
+     {
+      "etiqueta": "Gleysol eútrico",
+      "valor": 2.66
+     },
+     {
+      "etiqueta": "Gleysol mólico",
+      "valor": 3.18
+     },
+     {
+      "etiqueta": "Gleysol plíntico",
+      "valor": 1.21
+     },
+     {
+      "etiqueta": "Gleysol vértico",
+      "valor": 23.09
+     },
+     {
+      "etiqueta": "Histosol eútrico",
+      "valor": 1.14
+     },
+     {
+      "etiqueta": "Luvisol cálcico",
+      "valor": 0.19
+     },
+     {
+      "etiqueta": "Luvisol crómico",
+      "valor": 1.48
+     },
+     {
+      "etiqueta": "Luvisol férrico",
+      "valor": 0.34
+     },
+     {
+      "etiqueta": "Nitosol eútrico",
+      "valor": 1.93
+     },
+     {
+      "etiqueta": "Regosol calcárico",
+      "valor": 0.61
+     },
+     {
+      "etiqueta": "Regosol eútrico",
+      "valor": 0.38
+     },
+     {
+      "etiqueta": "Rendzina",
+      "valor": 55.33
+     },
+     {
+      "etiqueta": "Litosol",
+      "valor": 1.55
+     },
+     {
+      "etiqueta": "Solonchak gleyco",
+      "valor": 1.09
+     },
+     {
+      "etiqueta": "Solonchak órtico",
+      "valor": 1.71
+     },
+     {
+      "etiqueta": "Vertisol crómico",
+      "valor": 0.22
+     },
+     {
+      "etiqueta": "Vertisol pélico",
+      "valor": 3.27
+     },
+     {
+      "etiqueta": "Cuerpos de agua y poblados",
+      "valor": 0.32
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ambiental-clima-y-cambio-climatico-clima",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Clima y cambio climático",
+  "tema": "Clima",
+  "titulo": "Clima",
+  "descripcion": "En este tema las variables corresponden a la distribución de unidades climáticas que existen en el estado, tendencia de la temperatura entre 1985 y 2022, precipitación anual entre 1985 y 2022 y climatología estatal del año 2022.",
+  "variables": "Distribución de unidades climáticas, tendencia de la temperatura entre 1985 y 2022 y precipitación anual entre 1985 y 2022.",
+  "capasTexto": "C04_MFNClima_INEGI_2023",
+  "capas": [
+   "c04mfnclimainegi2023"
+  ],
+  "analitica": "- Distribución de unidades climáticas: Clima cálido subhúmedo (97% del territorio), Clima cálido húmedo (3%), subdividido en Clima Cálido subhúmedo con lluvias en verano y humedad media (Aw1) (36% de la superficie estatal), Clima cálido subhúmedo (Aw1(x’)) (33.5%), Clima cálido subhúmedo seco (Aw0) (13%), Cálido subhúmedo (Aw2) (11%), Clima tropical monzónico con lluvias todo el año (Am(f)) (2%) y Clima cálido subhúmedo (Aw2 (x’)) (2%).\n- Temperatura: Gráfica 11 – Temperatura media anual de 26 a 27°C, con valores máximos de 36°C y mínimos de 17°C, con máximos históricos de 42°C y mínimas de 10°C.\n- Lluvias: Gráfica 12 – Precipitación anual entre 800 y 2,000 mm con el mes más lluvioso en septiembre (237.9 mm) (SEDATU, 2023).",
+  "narrativa": "Campeche tiene clima tropical cálido en prácticamente todo su territorio (97%). La temperatura promedio es de 26-27°C, con máximas de hasta 42°C en verano y mínimas de 10°C en invierno. La temperatura mínima ha aumentado 2.3°C en los últimos 37 años. Las lluvias van de 900 a 2,000 mm anuales. La temporada de lluvia es de junio a octubre. Septiembre es el mes más lluvioso (casi 238 mm en promedio). En contraste, 2003 fue un año con solo 491 mm, casi un tercio del promedio. La variabilidad extrema de las lluvias, entre 491 mm y 1,790 mm según el año, hace que la agricultura y la gestión del agua sean actividades de alto riesgo sin infraestructura adecuada.",
+  "series": []
+ },
+ {
+  "id": "ambiental-recursos-hidricos-hidrologia",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Recursos hídricos",
+  "tema": "Hidrología",
+  "titulo": "Hidrología",
+  "descripcion": "En este tema las variables corresponden a las corrientes superficiales (ríos), cuencas y clasificación, zonas funcionales de cuenca y humedales que existen en el estado.",
+  "variables": "Corrientes superficiales (ríos), Cuencas y clasificación, zonas funcionales de cuenca y humedales",
+  "capasTexto": "C04_MFNCuencaFuncional_INEGI_2023",
+  "capas": [
+   "c04mfncuencafuncionalinegi2023"
+  ],
+  "analitica": "- Corrientes superficiales (ríos): Tabla 37. – Río Candelaria (150 km de longitud, 11,115 km² de área drenada), Río Champotón (47 km de longitud, 649 km² de área drenada), Río Palizada (85 km de longitud, 1,272 km² de área drenada), Río Chumpán (91 km de longitud, sin información de km² de área drenada) y Río Mamantel (45 km de longitud, 1,225 km² de área drenada).\n- Cuencas y clasificación: Tabla 38 – Subcuenca hidrológica (Volumen disponible de salida en millones de m³/Clasificación): San Pedro (116.716/Disponibilidad), Usumacinta (2,183.991/Disponibilidad), Palizada (49.407/Disponibilidad), San Pedro y San Pablo (69.506/Disponibilidad), Laguna del Este (50.856/Disponibilidad), Laguna de Términos (194.115/Disponibilidad), Mamatel (89.098/Disponibilidad), Cumpan (151.430/Disponibilidad), Laguna del Pom y Atasta (129.988/Disponibilidad), Alto Río Candelaria (1,477.598/Disponibilidad), Bajo Río Candelaria (1,685.641/Disponibilidad), Río Champotón 1 (599.460/Disponibilidad), Río Champotón 2 (715.567/Disponibilidad), Campeche (0/Déficit), Arroyo Siho (5.304/Disponibilidad), Calakmul (3.810/Disponibilidad), Vicente Guerrero (0/Déficit) y La Malinche (7.553/Disponibilidad).\n- Zonas funcionales de cuenca: Mapa 7 – Cuenca alta (Zona de captación), Cuenca media (zona de transición entre cuenca alta y baja), Cuenca baja (Zona de descarga).\n- Humedales: Tabla 39 – Clase de humedal (Ha): Creados (5,115.95), Estuarino (244,831.20), Fluvial (172,011.22), Lacustre (30,388.24), Palustre (2,162,251.25) y Total general (2,614,597.86) (SEDATU, 2023).",
+  "narrativa": "La mayor parte del agua de Campeche no corre por la superﬁcie sino que se inﬁltra al subsuelo, formando una red de cavernas y acuíferos. Los ríos principales son el Candelaria (que nace en Guatemala), el Palizada (brazo del Usumacinta) y el Champotón. La Laguna de Términos, en el suroeste, es el sistema lagunar más importante del Golfo de México. El agua es el recurso más estratégico de Campeche. Los cuerpos de agua más importantes son: Río Candelaria: el más largo, originado en Guatemala. Recorre 150 km por el sur del estado y desemboca en la Laguna de Términos, el Río Palizada: el más caudaloso, brazo del Usumacinta, el Río Champotón: ubicado en el centro del estado, desemboca directamente en el Golfo de México y La Laguna de Términos, ubicada en el suroeste, es el sistema lagunar más importante del Golfo de México, con una enorme biodiversidad y un papel crítico en la economía pesquera de la región.\n\nEstos cuerpos de agua se distribuyen a lo largo de tres zonas funcionales de las cuencas y subcuencas que existen en el estado, divididas en cuenca alta (Zonas de captación pluvial), Cuenca media (Zonas de transición entre cuenca alta y baja) y Cuenca baja (Zona de descarga). Esta distribución genera la formación de grandes humedales en el estado, los cuales son suelos cubiertos de agua de manera estacional o permanente y corresponden a ecosistemas de alta diversidad.",
+  "series": [
+   {
+    "titulo": "Humedales",
+    "unidad": null,
+    "datos": [
+     {
+      "etiqueta": "Creados",
+      "valor": 5115.95
+     },
+     {
+      "etiqueta": "Estuarino",
+      "valor": 244831.2
+     },
+     {
+      "etiqueta": "Fluvial",
+      "valor": 172011.22
+     },
+     {
+      "etiqueta": "Lacustre",
+      "valor": 30388.24
+     },
+     {
+      "etiqueta": "Palustre",
+      "valor": 2162251.25
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ambiental-cobertura-vegetal-y-usos-de-suelo-vegetacion-y-usos-de-suelo",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Cobertura vegetal y usos de suelo",
+  "tema": "Vegetación y usos de suelo",
+  "titulo": "Vegetación y usos de suelo",
+  "descripcion": "En este tema la variable corresponde a los principales usos de suelo y vegetación que existen en el estado.",
+  "variables": "Principales usos de suelo y vegetación",
+  "capasTexto": "C04_MFNUsoSueloVegetación_INEGI_2023",
+  "capas": [
+   "c04mfnusosuelovegetacioninegi2023"
+  ],
+  "analitica": "Agrícola (395,044.04/7.12%), Agua (19,340.86/0.35%), Bosque (22,780.65/0.41%), Manglar (184,011.74/3.32%), Pastizales (753,333.21/13.59%), Selva (1,749,323.14/31.55%), Suelo desnudo (25,669.18/0.46%), Urbano (34,584.54/0.62%), Vegetación de valor ambiental (302,802.63/5.46%), Vegetación secundaria arbórea (1,708,915.21/30.82%), Vegetación secundaria arbustiva (346,093.59/6.24%), Vegetación secundaria herbácea (3,061.65/0.06%), Total general (5,544,960.44/100%) (SEDATU, 2023)",
+  "narrativa": "El 31% del estado es selva, el 30% vegetación secundaria, el 13% pastizales y el 7% suelo agrícola. La selva alta y mediana subperennifolia cubre el 21% y se concentra en Calakmul y el sureste. Los manglares ocupan el 3.3% y son fundamentales para la protección costera. Los pastizales — resultado de la ganadería extensiva — se distribuyen por todo el estado con un 13% de cobertura.",
+  "series": [
+   {
+    "titulo": null,
+    "unidad": "%",
+    "datos": [
+     {
+      "etiqueta": "Agrícola",
+      "valor": 7.12
+     },
+     {
+      "etiqueta": "Agua",
+      "valor": 0.35
+     },
+     {
+      "etiqueta": "Bosque",
+      "valor": 0.41
+     },
+     {
+      "etiqueta": "Manglar",
+      "valor": 3.32
+     },
+     {
+      "etiqueta": "Pastizales",
+      "valor": 13.59
+     },
+     {
+      "etiqueta": "Selva",
+      "valor": 31.55
+     },
+     {
+      "etiqueta": "Suelo desnudo",
+      "valor": 0.46
+     },
+     {
+      "etiqueta": "Urbano",
+      "valor": 0.62
+     },
+     {
+      "etiqueta": "Vegetación de valor ambiental",
+      "valor": 5.46
+     },
+     {
+      "etiqueta": "Vegetación secundaria arbórea",
+      "valor": 30.82
+     },
+     {
+      "etiqueta": "Vegetación secundaria arbustiva",
+      "valor": 6.24
+     },
+     {
+      "etiqueta": "Vegetación secundaria herbácea",
+      "valor": 0.06
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ambiental-biodiversidad-y-conservacion-areas-naturales-protegidas-y-sitios-prioritarios-para-la-conservacion",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Biodiversidad y conservación",
+  "tema": "Áreas Naturales Protegidas y Sitios Prioritarios para la Conservación",
+  "titulo": "Áreas Naturales Protegidas y Sitios Prioritarios para la Conservación",
+  "descripcion": "En este tema las variables corresponden a las ANPs de competencia Federal y Municipal, las ADVC, las RTP, RMP, RHP, AICAs y Sitios RAMSAR que existen en el estado.",
+  "variables": "Áreas Naturales Protegidas de competencia Federal, Municipal y Áreas Destinadas Voluntariamente a la Conservación (ADVC), Regiones Terrestres Prioritarias, Regiones Marinas Prioritarias, Regiones Hidrológicas Prioritarias, Sitios RAMSAR y AICAS.",
+  "capasTexto": "C04_ADVC_CONANP_CONABIO_2022, C04_AICAS_CONABIO_2023, C04_AICONSERVACIONA_CONABIO_2023, C04_ANPEstatal_CONANP_CONABIO_2022, C04_ANPFederal_CONANP_CONABIO_2022, C04_ZNANP_CONANP_2023, C04_RAMSAR_CONANP_CONABIO_2023, C04_RAMSARpunto_CONANP_CONABIO_2023, C04_RHPrioritarias_CONABIO_2004, C04_RMARPrioritarias_CONABIO_2004, C04_RMARPrioritarias_CONABIO_2023, C04_RTPrioritarias_CONABIO_2004 y C04_RTPrioritarias_CONABIO_2023",
+  "capas": [
+   "c04advcconanpconabio2022",
+   "c04aicasconabio2023",
+   "c04aiconservacionaconabio2023",
+   "c04anpestatalconanpconabio2022",
+   "c04anpfederalconanpconabio2022",
+   "c04ramsarconanpconabio2023",
+   "c04ramsarpuntoconanpconabio2023",
+   "c04rhprioritariasconabio2004",
+   "c04rmarprioritariasconabio2004",
+   "c04rmarprioritariasconabio2023",
+   "c04rtprioritariasconabio2004",
+   "c04rtprioritariasconabio2023",
+   "c04znanpconanp2023"
+  ],
+  "analitica": "Áreas Naturales Protegidas de competencia Federal (Superficie en el estado (ha)): Tabla 41*\n- Áreas de Protección de Flora y Fauna: \n\nBala’an K’aax a/ (13,233.74), Laguna de Términos (702,624.22), Balam Kin (115,658.24)\n- Reserva de la Biósfera\n\nCalakmul (728,908.57), Ría Celestúna/ (23,442.54), Los Petenes (282,857.63), Pantanos de Centlaa/ (15,154.79), Balam Kú (463,441.75)\n\nÁreas Naturales Protegidas de competencia Municipal (Superficie en el estado (ha)): Tabla 42\n\nParque Urbano Salto Grande, con 1,569 hectáreas\n\nÁreas Destinadas Voluntariamente a la Conservación: \n- 27 ADVC, equivalente a 122,150.10 hectáreas\n\nRegiones Terrestres Prioritarias: Tabla 43\n- Silvituc-Calakmul: 2,029,820.82 ha, más de 16 especies de fauna de importancia ecosistémica y 1,600 especies de plantas vasculares\n- Pantanos de Centla: 351,735.95 ha, 60 especies de peces, 85 de reptiles, 26 de anfibios, 103 de mamíferos, 264 especies de aves y 568 especies de plantas\n- Sur del Punto Put: 177,566.61 ha, sin datos de biodiversidad\n- Petenes-Ría Celestún: 133,720.17 ha, más de 13 especies de fauna y 11 de flora de importancia ecosistémica \n\nRegiones Hidrológicas Prioritarias: Tabla 44\n- Calakmul: 414,495.57 ha, Recursos hídricos: charcas temporales, pozos y corrientes subterráneas, más de cuatro especies de fauna y cuatro de flora de importancia ecosistémica \n- Sur de Campeche: 708,638.46 ha, Recursos hídricos: Lago Noh, Río Candelaria, más de 16 especies de fauna y nueve de flora de importancia ecosistémica \n- Cabecera del Río Champotón: 172,502.66 ha, Recursos hídricos: Río Champotón, más de cuatro grupos de especies de fauna y tres especies de flora de importancia ecosistémica  \n- Cabecera del Río Candelaria: 102,579.03 ha, Recursos hídricos: Humedales y, Río Candelaria, más de 13 especies de flora de importancia ecosistémica  \n- Boca del Río Champotón: 73,490.77 ha, Recursos hídricos: Río Champotón y arroyos, más de tres grupos de especies de fauna y cuatro especies de flora de importancia ecosistémica  \n\nRegiones Marinas Prioritarias: Tabla 45\n- Pantanos de Centla-Laguna de Términos: 55,114 ha, Importancia: Representa el aporte hídrico más importante del país. Biodiversidad: más de 23 grupos de especies de flora y fauna de importancia ecosistémica \n- Cayos Campeche: 15,643 ha, Importancia: Zona arrecifal con dunas costeras. Es una zona migratoria de aves y refugio para peces e invertebrados. Biodiversidad: más de 10 grupos de especies de flora y fauna de importancia ecosistémica\n- Sonda de Campeche: 13,568 ha, Importancia: Zona de cenotes, ríos, dunas, humedales y franja costera con playas y afloramiento de agua dulce. Zona de crianza y reproducción de peces. Biodiversidad: más de 10 grupos de especies de flora y fauna de importancia ecosistémica \n- Champotón-El Palmar: 13,551 ha, Importancia: Zona oceánica y zona de humedales, lagunas, dunas, marismas y afloramiento de agua dulce y enriquecimiento de nutrientes. Biodiversidad: más de 10 grupos de especies de flora y fauna de importancia ecosistémica \n\nAICAs: Nueve AICAS\n- Ría Celestún: Importancia: Mayor población de flamencos. Avifauna: 304 especies con 12 cuasiendémicas, cinco en peligro, 20 amenazadas, 22 raras y 4 sujetas a protección especial\n- Los Petenes: Importancia: Presencia de varias especies endémicas. Avifauna: 138 especies de aves de 38 familias.\n- Sierra de Ticul-Punto Put: Importancia: Zonas de refugio, alimentación y reproducción. Avifauna: 232 especies con varias catalogadas en peligro, amenazadas o raras.\n- Corredor Calakmul-Sian Ka'an: Importancia: Corredor biológico entre Calakmul y Sian Ka’an. Avifauna: Sin información.\n- Islas de la Sonda de Campeche: Importancia: Área de reproducción de aves marinas y sitio de descanso para aves migratorias. Avifauna: Sin información.\n- Calakmul: Importancia: Reserva más grande del trópico mexicano, aquí se encuentran 118 (75.2%) de las 143 especies que existen en el estado dentro de alguna categoría de riesgo. Avifauna: 355 especies, con nueve endémicas o cuasiendémicas.\n- Laguna de Términos: Importancia: Aloja 84 especies (53.5%) dentro de alguna de las categorías de amenaza. Avifauna: Sin información.\n- Pantanos de Centla: Importancia: Refugio de aves migratorias (66 especies). Avifauna: Sin información.\n- Sur de Quintana Roo: Importancia: Aquí se registra el 58% de la avifauna del estado de Quintana Roo y 49% de la Península de Yucatán. Área de invernación y conecta la principal reserva del trópico con Sian Ka’an. Avifauna: 224 especies.\n\nSitios RAMSAR: Cuatro sitios RAMSAR\n- Playa Tortuguera Chenkán: Importancia: Sitio de anidación de tortugas marinas en peligro de extinción. Zona de mitigación de inundaciones y prevención de erosión costera\n- Área de Protección de Flora y Fauna Laguna de Términos: Importancia: Es la laguna costera más grande de la costa del Golfo de México. Amenazado por la actividad urbana, industrial, petrolera, agrícola y ganadera de Ciudad del Carmen\n- Reserva de la Biósfera Los Petenes: Importancia: Alto valor ecosistémico\n- Reserva de la Biósfera Ría Celestún: Importancia: Alto valor ecosistémico en espacio reducido, excelente grado de conservación. 304 especies de aves, especialmente el flamenco rosa",
+  "narrativa": "Campeche es un estado con un alto grado de biodiversidad e importancia ecológica. El 40% del territorio de Campeche (2.35 millones de hectáreas) está bajo algún tipo de protección legal. Incluye 8 ANP federales, 2 estatales, 1 municipal y 27 Áreas Destinadas Voluntariamente a la Conservación. La Reserva de la Biósfera Calakmul es la reserva de selva tropical más grande de México y Patrimonio Mundial Mixto UNESCO desde 2014. \n\nEn el estado existen además cuatro Regiones Terrestres Prioritarias, cinco Regiones Hidrológicas Prioritarias, cuatro Regiones Marinas Prioritarias, nueve Áreas de Importancia para la Conservación de las Aves y 4 sitios Ramsar, los cuales son humedales de alta importancia global para la conservación de la biodiversidad.",
+  "series": [
+   {
+    "titulo": null,
+    "unidad": null,
+    "datos": [
+     {
+      "etiqueta": "Bala’an K’aax",
+      "valor": 13233.74
+     },
+     {
+      "etiqueta": "Laguna de Términos",
+      "valor": 702624.22
+     },
+     {
+      "etiqueta": "Balam Kin",
+      "valor": 115658.24
+     }
+    ]
+   },
+   {
+    "titulo": null,
+    "unidad": null,
+    "datos": [
+     {
+      "etiqueta": "Calakmul",
+      "valor": 728908.57
+     },
+     {
+      "etiqueta": "Ría Celestún",
+      "valor": 23442.54
+     },
+     {
+      "etiqueta": "Los Petenes",
+      "valor": 282857.63
+     },
+     {
+      "etiqueta": "Pantanos de Centla",
+      "valor": 15154.79
+     },
+     {
+      "etiqueta": "Balam Kú",
+      "valor": 463441.75
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ambiental-servicios-ecosistemicos-deforestacion-y-degradacion-forestal",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Servicios ecosistémicos",
+  "tema": "Deforestación y degradación forestal",
+  "titulo": "Deforestación y degradación forestal",
+  "descripcion": "En este tema las variables corresponden a los sitios que presentan deforestación, degradación y pérdida forestales que existen en el estado, así como el cálculo de la diferencia espectral EVI de Campeche.",
+  "variables": "Deforestación, Degradación forestal, Pérdida forestal y Diferencia espectral EVI",
+  "capasTexto": "C04_DEFORESTACION_INEGI_2021, R04_PERDIDAARBOREA_OPMATPG_2023 y R04_DIFEREVI_OPMATPG_2023.",
+  "capas": [
+   "c04deforestacioninegi2021",
+   "r04difereviopmatpg2023",
+   "r04perdidaarboreaopmatpg2023"
+  ],
+  "analitica": "- Deforestación y degradación forestal: Deforestación (sin información), Degradación forestal (sin información).\n- Pérdida forestal: 2000 (sin información cuantitativa), 2020 (sin información cuantitativa).\n- Diferencia espectral EVI: 2020 - 2023 (Muy baja, baja, media alta y muy alta, sin información cuantitativa)",
+  "narrativa": "La deforestación en Campeche tiene cinco causas principales: expansión agrícola (especialmente menonita), ganadería extensiva, tala ilegal, construcción de infraestructura (incluyendo el Tren Maya) e incendios forestales. El análisis satelital entre 2016 y 2021 conﬁrma pérdidas signiﬁcativas fuera de las zonas protegidas.",
+  "series": []
+ },
+ {
+  "id": "ambiental-servicios-ecosistemicos-perdida-de-la-biodiversidad",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Servicios ecosistémicos",
+  "tema": "Pérdida de la biodiversidad",
+  "titulo": "Pérdida de la biodiversidad",
+  "descripcion": "En este tema las variables corresponden a el Índice Capital Natural, el Índice de biodiversidad, el Índice de impacto antropogénico, el potencial de especies en riesgo y la amenaza a la biodiversidad que existe en el estado",
+  "variables": "Índice de Capital Natural, Índice de biodiversidad, Índice de impacto antropogénico, Potencial de especies en riesgo y Amenaza a la biodiversidad",
+  "capasTexto": "R04_ICAPITALNATURA_CONABIO_2018, R04_IBIODIVERSIDAD_CONABIO_2018, R04_IIMPACTOANTROPOGENICO_CONABIO_2018, R04_POTENCIALESPECIESRIESGO_CONABIO_2018 y R04_AMENAZABIODIVERSIDAD_CONABIO_2018",
+  "capas": [
+   "r04amenazabiodiversidadconabio2018",
+   "r04ibiodiversidadconabio2018",
+   "r04icapitalnaturaconabio2018",
+   "r04iimpactoantropogenicoconabio2018",
+   "r04potencialespeciesriesgoconabio2018"
+  ],
+  "analitica": "- Índice de Capital Natural: Alto (Valores cercanos a 1), Bajo (Valores cercanos a cero). Sin información cuantitativa\n- Índice de biodiversidad: Nulo o casi nulo (Valores entre 0-0.5), Muy bajo (Valores entre 0.51 y 0.8), Bajo (Valores entre 0.81 y 0.9), Medio (Valores entre 0.91 y 0.95), Alto (Valores entre 0.96 y 0.97) y Muy alto (Valores entre 0.98 y 1). Sin información cuantitativa\n- Índice de impacto antropogénico: Muy alto y bajo, sin información cuantitativa\n- Potencial de especies en riesgo: Número de especies potenciales en riesgo. Valores (2-14. 15-23, 24-35, 36-47, 48-55, 56-60, 61-66, 67-72, 73-79 y 80-94)\n- Amenaza a la biodiversidad: Muy alta y baja, sin información cuantitativa",
+  "narrativa": "Las zonas del sureste, noroeste y suroeste, cercanos a las Áreas Naturales Protegidas, son las que conservan las tasas más altas de capital natural y el menor grado de impacto antropogénico. Corresponden a los sitios donde se ha perdido la menor cantidad de especies. En contraste, los menores niveles de biodiversidad se encuentran al sur y occidente de las ciudades, cercanos a las zonas urbanas.  El estado tiene entre 80 y 94 especies bajo alguna categoría de riesgo en su zona sur, la más biodiversa.",
+  "series": []
+ },
+ {
+  "id": "ambiental-servicios-ecosistemicos-erosion-y-degradacion-de-suelos",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Servicios ecosistémicos",
+  "tema": "Erosión y degradación de suelos",
+  "titulo": "Erosión y degradación de suelos",
+  "descripcion": "En este tema las variables corresponden a la erosión y la degradación de suelos de Campeche.",
+  "variables": "Erosión de suelos y Degradación de suelos",
+  "capasTexto": "C04_EROSIONSUELO_INEGI_2014 y C04_DEGRADACIONSUELO_INECC_2012.",
+  "capas": [
+   "c04degradacionsueloinecc2012",
+   "c04erosionsueloinegi2014"
+  ],
+  "analitica": "- Erosión de suelos: Grado (Fuerte, Moderado, Leve y antrópica), Tipo (Hídrica y antrópica). Mapa 21.\n- Erosión de suelos: Grado (Extremo, moderado, ligero), Tipo (Física por pérdida de la función productiva, química por declinación de la fertilidad y reducción del contenido de materia orgánica, física por compactación y química por declinación de la fertilidad y reducción del contenido de materia orgánica)",
+  "narrativa": "La erosión más fuerte se registra en el sureste (Calakmul). La capital del estado presenta una degradación extrema por la urbanización. El municipio de Hopelchén muestra degradación química moderada por pérdida de fertilidad. El norte del estado (Calkiní, Hecelchakán, Tenabo) tiene grados moderados de erosión hídrica.",
+  "series": []
+ },
+ {
+  "id": "ambiental-servicios-ecosistemicos-disponibilidad-de-agua-en-cuencas-y-acuiferos",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Servicios ecosistémicos",
+  "tema": "Disponibilidad de agua en cuencas y acuíferos",
+  "titulo": "Disponibilidad de agua en cuencas y acuíferos",
+  "descripcion": "En este tema las variables corresponden a la disponibilidad media anual de los acuíferos y usos del agua en Campeche.",
+  "variables": "Disponibilidad media anual de los acuíferos y Usos del agua",
+  "capasTexto": "Ninguna",
+  "capas": [],
+  "analitica": "- Disponibilidad media anual de los acuíferos: Tabla 46. (Acuífero/Disponibilidad media anual) - Xpujil/307.2, Península de Yucatán/2,386.9, Total/2,694.1\n- Usos del agua: Tabla 47. (Actividad-Usos del agua) - Acuacultura/18.54, agrícola/1,068.14, agroindustrial/0.18, doméstico/0.11, industrial/20.06, otros/0.02, pecuario/9.99, público urbano/173.09, servicios/6.96, en blanco/1.39, múltiples/n.d., Total/1,298.48",
+  "narrativa": "Campeche tiene dos acuíferos. El de la Península de Yucatán ha perdido el 70% de su disponibilidad entre 1995 y 2020 — todavía no está en escasez, pero la tendencia es preocupante. El acuífero Xpujil, en Calakmul y Hopelchén, tiene agua, pero no es potable en muchas zonas por su alto contenido de yeso. Ambos están en veda.",
+  "series": []
+ },
+ {
+  "id": "ambiental-servicios-ecosistemicos-produccion-y-disposicion-final-de-residuos-solidos",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Servicios ecosistémicos",
+  "tema": "Producción y disposición final de residuos sólidos",
+  "titulo": "Producción y disposición final de residuos sólidos",
+  "descripcion": "En este tema las variables corresponden a la generación de residuos sólidos urbanos por municipio, la concentración de la generación de residuos, los sitios de disposición de residuos y la industria de tratamiento de residuos en Campeche.",
+  "variables": "Generación de residuos sólidos urbanos por municipio, Concentración de la generación de residuos sólidos, Sitios de disposición de residuos e Industria de tratamiento de residuos",
+  "capasTexto": "C04_GeneraciónResiduosMun_INEGI_PEPGIRSSU_2020, C04_ConcentraciónGeneraciónResiduos_INEGI_PEPGIRSSU_2020, C04_SitiosDispResiduos_INEGI_PEPGIRSSU_2020 y C04_IndustriaTratamientoResiduos_INEGI_DENUE_2023.",
+  "capas": [
+   "c04concentraciongeneracionresiduosinegipepgirssu2020",
+   "c04generacionresiduosmuninegipepgirssu2020",
+   "c04industriatratamientoresiduosinegidenue2023",
+   "c04sitiosdispresiduosinegipepgirssu2020"
+  ],
+  "analitica": "Generación de residuos sólidos urbanos por municipio: Tabla 49. (Municipio/Generación per cápita (kg/hab/día) /Residuos (Ton/día) /% de participación en la generación total) - Campeche (1.02/300.25/33), Carmen (0.95/236.65/26), Champotón (0.99/77.47/9), Escárcega (1.08/64.90/7), Calkiní (1.03/61.01/7), Candelaria (1.04/48.88/5), Hopelchén (0.92/38.81/4), Hecelchakán (0.98/31.37/3), Calakmul (0.95/30.06/3), Tenabo (1.01/11.56/1), Palizada (1.03/8.92/1).",
+  "narrativa": "San Francisco de Campeche es el municipio que más toneladas de RSU genera al día, con 300.25, sin embargo, Escárcega es el municipio con mayor generación per cápita, con una cantidad de 1.08 kg/Hab al día.\n\nCampeche genera menos residuos sólidos de lo esperado para su PIB, dado que su economía petrolera es intensiva en capital, pero no en consumo masivo. Sin embargo, la infraestructura para manejo de residuos es insuficiente, especialmente en zonas rurales, lo que genera tiraderos clandestinos y quema de basura a cielo abierto.",
+  "series": []
+ },
+ {
+  "id": "ambiental-riesgos-ambientales-peligros-geologicos",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Riesgos ambientales",
+  "tema": "Peligros geológicos",
+  "titulo": "Peligros geológicos",
+  "descripcion": "En este tema las variables corresponden a karsticidad y susceptibilidad a hundimientos en el Estado de Campeche.",
+  "variables": "Karsticidad y susceptibilidad a hundimientos",
+  "capasTexto": "C04_KARST_CENAPRED_2023, la tabla de atributos viene vacía R04_HUNDIMIENTO_OPTMAG_2023.",
+  "capas": [
+   "c04karstcenapred2023",
+   "r04hundimientooptmag2023"
+  ],
+  "analitica": "No hay información analítica relacionada, sólo representación visual",
+  "narrativa": "El principal peligro geológico de Campeche es la karsticidad: el hundimiento del suelo calcáreo por efecto de la disolución de la roca. Esto genera riesgo para construcciones en zonas donde el subsuelo tiene cavidades. También existe riesgo de inundación en las zonas de baja topografía.\n\n  ------------------------------------------------------------------------\n  Peligros geológicos                                        \n  ----------------------------------- ---------------------- -------------\n  Descriptivo                                                \n\n  Definición                                                 \n  ------------------------------------------------------------------------",
+  "series": []
+ },
+ {
+  "id": "ambiental-riesgos-ambientales-peligros-hidrometeorologicos",
+  "monitor": "ambiental",
+  "subsistema": "fisico-natural",
+  "vista": "desempeno",
+  "seccion": "Riesgos ambientales",
+  "tema": "Peligros hidrometeorológicos",
+  "titulo": "Peligros hidrometeorológicos",
+  "descripcion": "En este tema las variables corresponden a las tormentas tropicales cuya trayectoria se aproxima al Estado de Campeche, presión barométrica, velocidad del viento, densidad de tormentas tropicales (1980-2023), precipitación media diaria para un periodo de retorno de 20, 50 y 100 años, coeficiente de escurrimientos, potencial de escurrimientos por día para un periodo de retorno a 20, 50 y 100 años, índice estandarizado de precipitación, NDVI reclasificado y peligro por sequía proyectado para un horizonte a largo plazo (2081-2100)\n\nVariable: Tormentas tropicales cuya trayectoria se aproxima al Estado de Campeche, Presión barométrica, Velocidad del viento, Densidad de tormentas tropicales (1980-2023), Precipitación media diaria para un periodo de retorno de 20, 50 y 100 años, Índice Estandarizado de precipitación, NDVI reclasificado, Peligro por sequía proyectado para un horizonte a largo plazo (2081-2100).",
+  "variables": "",
+  "capasTexto": "C04_SEQUIALX_OPMATPG_2023, R04_VVIENTO_NOAA_2023, R04_PRESBAR_NOAA_2023, R04_PELIGROS_OPTMAG_2023, R04_NDVI_NASA_2023 y C04_TTROP_NOAA_2023.",
+  "capas": [
+   "c04sequialxopmatpg2023",
+   "c04ttropnoaa2023",
+   "r04ndvinasa2023",
+   "r04peligrosoptmag2023",
+   "r04presbarnoaa2023",
+   "r04vvientonoaa2023"
+  ],
+  "analitica": "Tormentas tropicales cuya trayectoria se aproxima al Estado de Campeche de 1980 a 2023: Tabla 55. (Año/Nombre/Naturaleza): 1980/Hermine/Tormenta tropical, 1986/Sin nombre/Tormenta tropical, 1988/Debby/Tormenta tropical, 1990/Diana/Tormenta tropical, 1993/Gert/Tormenta tropical, 1995/Roxanne/Tormenta tropical, 1996/Dolly/Tormenta tropical, 1998/Mitch/Tormenta tropical, 1999/Katrina/Tormenta tropical, 2000/Keith/Tormenta tropical, 2001/Chantal/Tormenta tropical, 2002/Isidore/Tormenta tropical, 2005/Stan/Tormenta tropical, 2007/Dean/Tormenta tropical, 2008/Arthur/Tormenta tropical, 2008/Marco/Tormenta tropical, 2010/Richard/Perturbación, 2010/Alex/Tormenta tropical, 2010/Karl/Tormenta tropical, 2010/Richard/Tormenta tropical, 2011/Harvey/Tormenta tropical, 2012/Helene/Perturbación, 2012/Ernesto/Tormenta tropical, 2013/Barry/Tormenta tropical, 2014/Hanna/Perturbación, 2016/Earl/Tormenta tropical, 2017/Harvey/Perturbación, 2017/Franklin/Tormenta tropical, 2020/Cristobal/Tormenta tropical, 2021/Grace/Tormenta tropical, 2022/Lisa/Tormenta tropical.",
+  "narrativa": "Los principales peligros hidrometeorológicos son: tormentas tropicales (que afectan principalmente la zona costera), inundaciones (especialmente en el suroeste, en Palizada y Carmen), sequías (en el norte) y los fenómenos de Nortes (vientos fríos del invierno que generan lluvias y oleaje en la costa)",
+  "series": []
+ },
+ {
+  "id": "aptitud-situacion-economica-panorama-economico",
+  "monitor": "aptitud",
+  "subsistema": "economico",
+  "vista": "desempeno",
+  "seccion": "Situación económica",
+  "tema": "Panorama económico",
+  "titulo": "Panorama económico",
+  "descripcion": "En este tema la variable corresponde al panorama económico en el estado",
+  "variables": "Panorama económico",
+  "capasTexto": "Ninguna",
+  "capas": [],
+  "analitica": "Participación del 2.7% del PIB nacional en 2021, equivalente a 462,352.56 millones de pesos. Lugar 14 del ranking nacional de entidades. PIB per cápita de 519,161 pesos.\nTabla 92: Sector primario 1.4%, Sector secundario 82.5%. Actividad preponderante, Gráfica 34: Minería petrolera (94.3%) y Construcción (1.4%). Sector terciario (16.1%)",
+  "narrativa": "Campeche ocupa el lugar 14 en la aportación al PIB Nacional. El sector económico preponderante es el secundario, del cual, las actividades con mayor aporte a la economía estatal son la minería petrolera y la construcción. La economía de Campeche depende en gran medida del petróleo, sector que genera un PIB per cápita alto pero poco empleo directo para la población local. Esta dependencia es una vulnerabilidad: la producción petrolera mexicana lleva años en declive, y sin diversificación económica el estado enfrentará una crisis estructural",
+  "series": [
+   {
+    "titulo": null,
+    "unidad": "%",
+    "datos": [
+     {
+      "etiqueta": "Minería petrolera",
+      "valor": 94.3
+     },
+     {
+      "etiqueta": "Construcción",
+      "valor": 1.4
+     },
+     {
+      "etiqueta": "Sector terciario",
+      "valor": 16.1
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "aptitud-sistema-economico-estructura-economica",
+  "monitor": "aptitud",
+  "subsistema": "economico",
+  "vista": "desempeno",
+  "seccion": "Sistema económico",
+  "tema": "Estructura económica",
+  "titulo": "Estructura económica",
+  "descripcion": "En este tema las variables corresponden a la tasa de crecimiento anual de la actividad económica, las exportaciones de Campeche en el IV trimestre de 2022, el valor comercial de 10 productos esenciales en Campeche en 2022, el valor comercial de la miel en 2018 y la inversión extranjera directa de Campeche de 1999 al 2020 que existe en el estado",
+  "variables": "Tasa de crecimiento anual de la actividad económica, Exportaciones de Campeche en el IV trimestre de 2022, Valor comercial de 10 productos esenciales en Campeche en 2022, Valor comercial de la miel en 2018 e Inversión extranjera directa de Campeche de 1999 al 2020.",
+  "capasTexto": "Ninguna",
+  "capas": [],
+  "analitica": "- Tasa de crecimiento anual de la actividad económica: Actividad primaria: 2006 (+17%), 2007 (-25%), 2008 (+15%), 2009 (+6%), 2010 (+20%), 2011(-10%), 2012 (+5.5%), 2013 (0%), 2014 (+13%), 2015 (+8%), 2016 (+9%), 2017 (0%), 2018 (+10.5%), 2019 (-3%), 2020 (0%), 2021 (+8.5%); Actividad secundaria: 2006 (-2.5%), 2007 (-6%), 2008 (-10%), 2009 (-10.5%), 2010 (-4%), 2011 (-5%), 2012 (-1%), 2013 (+0.5%), 2014 (-7%), 2015 (-8%), 2016 (-6%), 2017 (-12%), 2018 (-1%), 2019 (-1.5%), 2020 (-6%), 20201 (-4.07%); Actividad terciaria: 2006 (-4%), 2007 (-6%), 2008 (-9%), 2009 (-11%), 2010 (-4%), 2012 (-2%), 2013 (+1%), 2014 (-5%), 2015 (-7%), 2016 (-6%), 2017 (-10.5%), 2018 (-2%), 2019 (-3%), 2020 (-7%), 2021 (-5.81%). Total:  2006 (-2%), 2007 (-5.5%), 2008 (-8%), 2009 (-10%), 2010 (-3%), 2011 (-4%), 2012 (-1%), 2013 (+1%), 2014 (-5%), 2015 (-7%), 2016 (-5.5%), 2017 (-10%), 2018 (-1%), 2019 (-1.5%), 2020 (-6%), 2021 (-4.07%)\n- Exportaciones de Campeche en el IV trimestre de 2022: Extracción de petróleo y gas (99%), Cría y explotación de animales (<1%), fabricación de prendas de vestir (<1%), Pesca, caza y captura (<1%), Industria alimentaria (<1%), Industria química (<1%)\n- Valor comercial de 10 productos esenciales en Campeche en 2022: Camisetas de punto ($12,812,483 USD), Accesorios de tubería, fundición, hierro o acero ($6,781,834 USD), Maquinaria y similares ($5,363,898 USD), Crustáceos ($4,495,207 USD), Válvulas y artículos similares para tuberías ($6,729,473 USD), Bombas para líquidos ($3,995,295 USD), Suéteres, pulóveres y cárdigan ($2,825,533 USD), Manufacturas de Hierro o Acero (2,129,125 USD), Maquinaria (1,767,378 USD), y Aparatos para filtrar o purificar líquidos (1,478,767 USD)\n- Valor comercial de la miel en 2018: Campeche ($29,657,840), Participación nacional del 21%\n- Inversión Extranjera Directa en Campeche (1999-2020): (Millones de USD), 1999 (30.5), 2000 (25.3), 2001 (51.6), 2002 (190.9), 2003 (65.7), 2004 (149), 2005 (129.3), 2006 (30.4), 2007 (134.5), 2008 (150.1), 2009 (26.2), 2010 (73.2), 2011 (24.8), 2012 (209.7), 2013 (278.4), 2014 (218.6), 2015 (543), 2016 (142.1), 2017 (328.3), 2018 (123.5), 2019 (151.9), 2020 (140.3)",
+  "narrativa": "En los últimos años el PIB del estado ha crecido débilmente en correlación con las actividades secundarias, sector que más ingresos constituye para el estado. Las actividades primarias han aumentado y las terciarias han crecido alrededor del 5%. Dentro de estas actividades, el comercio en el estado se centra en 10 productos esenciales asociadas con la fabricación de prendas de vestir, pesca, caza y captura, cría y explotación de animales, así como la industria química y alimentaria. Más allá del petróleo, Campeche tiene vocaciones productivas con gran potencial: apicultura, pesca, agricultura, turismo y artesanías. El problema es que estas actividades operan de forma aislada, sin cadenas de distribución, sin centros de acopio y con acceso limitado a mercados.",
+  "series": [
+   {
+    "titulo": "Tasa de crecimiento anual de la actividad económica · Actividad primaria",
+    "unidad": "%",
+    "datos": [
+     {
+      "etiqueta": "2006",
+      "valor": 17.0
+     },
+     {
+      "etiqueta": "2007",
+      "valor": -25.0
+     },
+     {
+      "etiqueta": "2008",
+      "valor": 15.0
+     },
+     {
+      "etiqueta": "2009",
+      "valor": 6.0
+     },
+     {
+      "etiqueta": "2010",
+      "valor": 20.0
+     },
+     {
+      "etiqueta": "2011",
+      "valor": -10.0
+     },
+     {
+      "etiqueta": "2012",
+      "valor": 5.5
+     },
+     {
+      "etiqueta": "2013",
+      "valor": 0.0
+     },
+     {
+      "etiqueta": "2014",
+      "valor": 13.0
+     },
+     {
+      "etiqueta": "2015",
+      "valor": 8.0
+     },
+     {
+      "etiqueta": "2016",
+      "valor": 9.0
+     },
+     {
+      "etiqueta": "2017",
+      "valor": 0.0
+     },
+     {
+      "etiqueta": "2018",
+      "valor": 10.5
+     },
+     {
+      "etiqueta": "2019",
+      "valor": -3.0
+     },
+     {
+      "etiqueta": "2020",
+      "valor": 0.0
+     },
+     {
+      "etiqueta": "2021",
+      "valor": 8.5
+     }
+    ]
+   },
+   {
+    "titulo": "Tasa de crecimiento anual de la actividad económica · Actividad secundaria",
+    "unidad": "%",
+    "datos": [
+     {
+      "etiqueta": "2006",
+      "valor": -2.5
+     },
+     {
+      "etiqueta": "2007",
+      "valor": -6.0
+     },
+     {
+      "etiqueta": "2008",
+      "valor": -10.0
+     },
+     {
+      "etiqueta": "2009",
+      "valor": -10.5
+     },
+     {
+      "etiqueta": "2010",
+      "valor": -4.0
+     },
+     {
+      "etiqueta": "2011",
+      "valor": -5.0
+     },
+     {
+      "etiqueta": "2012",
+      "valor": -1.0
+     },
+     {
+      "etiqueta": "2013",
+      "valor": 0.5
+     },
+     {
+      "etiqueta": "2014",
+      "valor": -7.0
+     },
+     {
+      "etiqueta": "2015",
+      "valor": -8.0
+     },
+     {
+      "etiqueta": "2016",
+      "valor": -6.0
+     },
+     {
+      "etiqueta": "2017",
+      "valor": -12.0
+     },
+     {
+      "etiqueta": "2018",
+      "valor": -1.0
+     },
+     {
+      "etiqueta": "2019",
+      "valor": -1.5
+     },
+     {
+      "etiqueta": "2020",
+      "valor": -6.0
+     }
+    ]
+   },
+   {
+    "titulo": "Tasa de crecimiento anual de la actividad económica · Actividad terciaria",
+    "unidad": "%",
+    "datos": [
+     {
+      "etiqueta": "2006",
+      "valor": -4.0
+     },
+     {
+      "etiqueta": "2007",
+      "valor": -6.0
+     },
+     {
+      "etiqueta": "2008",
+      "valor": -9.0
+     },
+     {
+      "etiqueta": "2009",
+      "valor": -11.0
+     },
+     {
+      "etiqueta": "2010",
+      "valor": -4.0
+     },
+     {
+      "etiqueta": "2012",
+      "valor": -2.0
+     },
+     {
+      "etiqueta": "2013",
+      "valor": 1.0
+     },
+     {
+      "etiqueta": "2014",
+      "valor": -5.0
+     },
+     {
+      "etiqueta": "2015",
+      "valor": -7.0
+     },
+     {
+      "etiqueta": "2016",
+      "valor": -6.0
+     },
+     {
+      "etiqueta": "2017",
+      "valor": -10.5
+     },
+     {
+      "etiqueta": "2018",
+      "valor": -2.0
+     },
+     {
+      "etiqueta": "2019",
+      "valor": -3.0
+     },
+     {
+      "etiqueta": "2020",
+      "valor": -7.0
+     },
+     {
+      "etiqueta": "2021",
+      "valor": -5.81
+     },
+     {
+      "etiqueta": "2011",
+      "valor": -4.0
+     }
+    ]
+   },
+   {
+    "titulo": "Valor comercial de 10 productos esenciales en Campeche en 2022",
+    "unidad": "USD",
+    "datos": [
+     {
+      "etiqueta": "Camisetas de punto",
+      "valor": 12812483.0
+     },
+     {
+      "etiqueta": "Accesorios de tubería, fundición, hierro o acero",
+      "valor": 6781834.0
+     },
+     {
+      "etiqueta": "Maquinaria y similares",
+      "valor": 5363898.0
+     },
+     {
+      "etiqueta": "Crustáceos",
+      "valor": 4495207.0
+     },
+     {
+      "etiqueta": "Válvulas y artículos similares para tuberías",
+      "valor": 6729473.0
+     },
+     {
+      "etiqueta": "Bombas para líquidos",
+      "valor": 3995295.0
+     },
+     {
+      "etiqueta": "Suéteres, pulóveres y cárdigan",
+      "valor": 2825533.0
+     },
+     {
+      "etiqueta": "Manufacturas de Hierro o Acero",
+      "valor": 2129125.0
+     },
+     {
+      "etiqueta": "Maquinaria",
+      "valor": 1767378.0
+     },
+     {
+      "etiqueta": "Aparatos para filtrar o purificar líquidos",
+      "valor": 1478767.0
+     }
+    ]
+   },
+   {
+    "titulo": null,
+    "unidad": null,
+    "datos": [
+     {
+      "etiqueta": "1999",
+      "valor": 30.5
+     },
+     {
+      "etiqueta": "2000",
+      "valor": 25.3
+     },
+     {
+      "etiqueta": "2001",
+      "valor": 51.6
+     },
+     {
+      "etiqueta": "2002",
+      "valor": 190.9
+     },
+     {
+      "etiqueta": "2003",
+      "valor": 65.7
+     },
+     {
+      "etiqueta": "2004",
+      "valor": 149.0
+     },
+     {
+      "etiqueta": "2005",
+      "valor": 129.3
+     },
+     {
+      "etiqueta": "2006",
+      "valor": 30.4
+     },
+     {
+      "etiqueta": "2007",
+      "valor": 134.5
+     },
+     {
+      "etiqueta": "2008",
+      "valor": 150.1
+     },
+     {
+      "etiqueta": "2009",
+      "valor": 26.2
+     },
+     {
+      "etiqueta": "2010",
+      "valor": 73.2
+     },
+     {
+      "etiqueta": "2011",
+      "valor": 24.8
+     },
+     {
+      "etiqueta": "2012",
+      "valor": 209.7
+     },
+     {
+      "etiqueta": "2013",
+      "valor": 278.4
+     },
+     {
+      "etiqueta": "2014",
+      "valor": 218.6
+     },
+     {
+      "etiqueta": "2015",
+      "valor": 543.0
+     },
+     {
+      "etiqueta": "2016",
+      "valor": 142.1
+     },
+     {
+      "etiqueta": "2017",
+      "valor": 328.3
+     },
+     {
+      "etiqueta": "2018",
+      "valor": 123.5
+     },
+     {
+      "etiqueta": "2019",
+      "valor": 151.9
+     },
+     {
+      "etiqueta": "2020",
+      "valor": 140.3
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "aptitud-vocaciones-productivas-vocaciones-estatales",
+  "monitor": "aptitud",
+  "subsistema": "economico",
+  "vista": "desempeno",
+  "seccion": "Vocaciones productivas",
+  "tema": "Vocaciones estatales",
+  "titulo": "Vocaciones estatales",
+  "descripcion": "En este tema la variable corresponde al índice de especialización de actividad económica por sector en el Estado de Campeche.",
+  "variables": "Índice de especialización por sector.",
+  "capasTexto": "Ninguna",
+  "capas": [],
+  "analitica": "- Índice de Especialización por sector de actividades y municipios:  (Actividades primarias, Secundarias y Terciarias) Campeche (0.76, 2.07, 0.11), Calkiní (44.57, 0.42, 9.15), Campeche (13.13, 0.20, 13.52), Carmen (0.37, 1.03, 0.62), Champotón (73.53, 0.32, 10.04), Hecelchakán (0.00, 0.15, 14.60), Hopelchén (0.00, 0.09, 15.56), Palizada (51.80, 0.05, 14.80), Tenabo (0.00, 0.88, 2.98), Escárcega (0.30, 0.10, 15.37), Calakmul (0.00, 0.05, 16.17), Candelaria (0.00, 0.02, 16.63), Dzitbalché (0.00, 3.20, 0.80) y Seybaplaya (1.50, 0.90, 1.00)\n- Actividad económica por sector: Producción bruta total que va de 163.71 a 559,451.08, gráficas con el valor agregado por sector. No hay información cuantitativa, sólo visual.",
+  "narrativa": "El estado de Campeche se caracteriza por una vocación productiva centrada en las actividades del sector secundario, liderado por el municipio Carmen, el cual participa con el 99.4% de las mismas. Los índices de especialización por sector de actividad varían, con municipios enfocados en actividades en los tres sectores.",
+  "series": []
+ },
+ {
+  "id": "aptitud-vocaciones-productivas-actividades-primarias",
+  "monitor": "aptitud",
+  "subsistema": "economico",
+  "vista": "desempeno",
+  "seccion": "Vocaciones productivas",
+  "tema": "Vocaciones estatales",
+  "titulo": "Actividades primarias",
+  "descripcion": "En este tema la variable corresponde al valor de la producción agrícola de los 10 principales productos, al índice de especialización de productos agrícolas en el estado, la producción agrícola por municipio, la producción pecuaria y el valor de la producción de pesca y captura de peces, crustáceos, moluscos y otras especies en el estado.",
+  "variables": "Valor de la producción agrícola de los 10 principales productos, Índice de especialización de productos agrícolas en el estado, Producción agrícola por municipio, Producción pecuaria y Valor de la producción de pesca y captura de peces, crustáceos, moluscos y otras especies.",
+  "capasTexto": "Ninguna",
+  "capas": [],
+  "analitica": "- Valor de la producción agrícola de los 10 principales productos (Millones de pesos): Maíz grano (2,148.4), caña de azúcar (894.9), Soya (739.4), Palma africana o de aceite (602.4), Arroz palay (337.6), Sargo grano (317.4), Calabaza o semilla chihua (349.4), Sandía (204.6), Papaya (192.5), Mango (120.8) y Toronja (pomelo) (104.3).\n- Índice de especialización de productos agrícolas (Productos, índice de especialización, lugar nacional):  Caña de azúcar (2.2, 2), Maíz grano (2.0, 2), Sandía (4.4, 2), Arroz palay (24.5, 5), Sorgo grano (1.9, 6), Mango (1.2, 8), Papaya (3.2, 8), Calabaza semilla o chihua (35.3, 9), Marañón (93.7, 9), Nanche (8.2, 9), Jamaica (2.3, 10), Pimienta (3.5, 10), Toronja (Pomelo) (6.9, 10), Palma africana o de aceite (27.8, 11), Mamey (2.2, 12), Cacahuate (1.2, 13), Frijol x pelón (2.0, 13), Soya (40.6, 13), Stevia (1.4, 14), Sábila (2.7, 15) y Zapote (20.4, 18).\n- Producción agrícola por municipio: Valores que van de 24,941.9 a 1,067,025.6 toneladas.\n- Producción pecuaria: (Especie, producto, producción en toneladas y valor de la producción en mdp): Ave (Carne, 23,086, 754), Ave (Huevo plato Bovino en pie (38,452 ton; 1,820 MDP), Porcino en pie (12,150 ton; 485 MDP), Huevo plato (1,120 ton; 32 MDP), Leche de bovino (38.5 millones de litros; 245 MDP). Pesca y acuacultura: Valor total de captura marítima y acuícola de 1,482 MDP, destacando el camarón (628 MDP), pulpo (312 MDP), jaiba (145 MDP), cazón (98 MDP) y robalo (82 MDP).",
+  "narrativa": "El sector primario de Campeche presenta una elevada diversificación agrícola y pecuaria con un volumen significativo de producción en cultivos agroindustriales como maíz, caña de azúcar, soya y palma de aceite. Destaca además por altos índices de especialización nacional en productos agroforestales y frutícolas como marañón, soya, calabaza chihua, palma de aceite y arroz. No obstante, la producción agrícola y pecuaria se enfrenta a retos de infraestructura de transformación e industrialización local, vendiéndose mayoritariamente como materia prima sin procesar. La pesca y captura marina representan un pilar socioeconómico fundamental en los municipios costeros de Carmen, Champotón, Seybaplaya y Campeche, aunque amenazados por la sobreexplotación y la contaminación hídrica.",
+  "series": [
+   {
+    "titulo": null,
+    "unidad": null,
+    "datos": [
+     {
+      "etiqueta": "Maíz grano",
+      "valor": 2148.4
+     },
+     {
+      "etiqueta": "caña de azúcar",
+      "valor": 894.9
+     },
+     {
+      "etiqueta": "Soya",
+      "valor": 739.4
+     },
+     {
+      "etiqueta": "Palma africana o de aceite",
+      "valor": 602.4
+     },
+     {
+      "etiqueta": "Arroz pala",
+      "valor": 337.6
+     },
+     {
+      "etiqueta": "Sargo grano",
+      "valor": 317.4
+     },
+     {
+      "etiqueta": "Calabaza o semilla chihua",
+      "valor": 349.4
+     },
+     {
+      "etiqueta": "Sandía",
+      "valor": 204.6
+     },
+     {
+      "etiqueta": "Papaya",
+      "valor": 192.5
+     },
+     {
+      "etiqueta": "Mango",
+      "valor": 120.8
+     }
+    ]
+   },
+   {
+    "titulo": "Producción pecuaria",
+    "unidad": "MDP",
+    "datos": [
+     {
+      "etiqueta": "pulpo",
+      "valor": 312.0
+     },
+     {
+      "etiqueta": "jaiba",
+      "valor": 145.0
+     },
+     {
+      "etiqueta": "cazón",
+      "valor": 98.0
+     },
+     {
+      "etiqueta": "robalo",
+      "valor": 82.0
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "aptitud-vocaciones-productivas-actividades-secundarias",
+  "monitor": "aptitud",
+  "subsistema": "economico",
+  "vista": "desempeno",
+  "seccion": "Vocaciones productivas",
+  "tema": "Vocaciones estatales",
+  "titulo": "Actividades secundarias",
+  "descripcion": "En este tema las variables corresponden al valor de la producción industrial, la concentración de unidades económicas manufactureras, el volumen de extracción de hidrocarburos por activo, la infraestructura logística de almacenamiento y refinamiento del estado de Campeche.",
+  "variables": "Índice de especialización industrial, Producción bruta de minería extractiva y manufacturera, Volumen de producción de petróleo crudo y gas natural e Infraestructura petrolera y ductos.",
+  "capasTexto": "C04_Ductos_CNH_2023, C04_Instalaciones_CNH_2023, C04_PozosZonaCuencasSE_CNH_2023, C04_TerminalAlmacenamiento_CNH_2023.",
+  "capas": [
+   "c04ductoscnh2023",
+   "c04instalacionescnh2023",
+   "c04pozoszonacuencassecnh2023",
+   "c04terminalalmacenamientocnh2023"
+  ],
+  "analitica": "- Producción de Hidrocarburos (Tabla 102 y 103): La minería petrolera aporta más del 80% del PIB estatal. Producción media de petróleo crudo: 1,485 miles de barriles diarios (mbd) repartidos en los activos Cantarell (160 mbd), Ku-Maloob-Zaap (720 mbd) y Abkatún-Pol-Chuc (210 mbd).\n- Índice de Especialización Industrial (Tabla 101): Extracción de petróleo y gas natural (IE: 21.7 en producción bruta; 48.9 en personal ocupado). Fabricación de prendas de vestir (IE: 3.4 en Calkiní y Hopelchén).\n- Ductos e Instalaciones: Red de más de 1,200 km de ductos marinos y terrestres que conectan la Sonda de Campeche con las terminales de almacenamiento en Atasta y Cayo Arcas.",
+  "narrativa": "El sector secundario de Campeche está hiper-concentrado en la minería extractiva de petróleo y gas natural en la Sonda de Campeche. Esta actividad genera la inmensa mayoría del ingreso estatal, pero su naturaleza intensiva en capital genera pocos empleos directos para la población local. La industria manufacturera no petrolera es sumamente incipiente y está representada por maquiladoras textiles en el norte (Calkiní y Hopelchén) y agroindustrias alimentarias dispersas, evidenciando la falta de parques industriales consolidados que le den valor agregado a la producción primaria local.",
+  "series": []
+ },
+ {
+  "id": "aptitud-vocaciones-productivas-actividades-terciarias",
+  "monitor": "aptitud",
+  "subsistema": "economico",
+  "vista": "desempeno",
+  "seccion": "Vocaciones productivas",
+  "tema": "Vocaciones estatales",
+  "titulo": "Actividades terciarias",
+  "descripcion": "En este tema las variables corresponden al valor agregado del sector comercio y servicios, el nivel de empleo formal e informal, y la densidad de unidades económicas por municipio.",
+  "variables": "Población Económicamente Activa (PEA) por sector, Unidades económicas terciarias (DENUE), Grado de encadenamiento productivo, Nivel de empleo informal.",
+  "capasTexto": "C04_CentralidadEconomica_CE_DENUE_2019, C04_MunEconomicas_CE_INEGI_2019.",
+  "capas": [
+   "c04centralidadeconomicacedenue2019",
+   "c04muneconomicasceinegi2019"
+  ],
+  "analitica": "- Estructura de la PEA (Tabla 108 y 110): PEA de 432,150 personas. Sector Terciario absorbe el 58.4% del empleo (Comercio 18.2%, Servicios personales y sociales 24.1%, Restaurantes/Hoteles 8.1%).\n- Unidades Económicas (Gráfica 42 y 43): 41,205 unidades económicas en el estado. El 94.2% son microempresas (0 a 5 trabajadores). Campeche y Carmen concentran el 62% del total de establecimientos comerciales y de servicios.\n- Encadenamiento Productivo (Tabla 105 y 106): El sector terciario presenta bajos encadenamientos hacia atrás y hacia adelante con la economía local, funcionando principalmente como comercio al por menor y servicios gubernamentales.",
+  "narrativa": "El sector servicios y comercio es el gran empleador de la población campechana, absorbiendo a casi 6 de cada 10 trabajadores. No obstante, la estructura empresarial es altamente frágil: la abrumadora mayoría de los negocios son microempresas familiares de subsistencia con baja productividad y alto grado de informalidad. Salvo en las ciudades de San Francisco de Campeche y Ciudad del Carmen, donde predominan los servicios corporativos, bancarios y de administración pública, en el resto de los municipios el comercio terciario es puramente local y está desconectado de las grandes cadenas de valor.\n\n  Actividades terciarias      \n  ------------------------ -- --\n  Descriptivo                 \n  Definición",
+  "series": []
+ },
+ {
+  "id": "aptitud-turismo-infraestructura-oferta-y-afluencia-turistica",
+  "monitor": "aptitud",
+  "subsistema": "economico",
+  "vista": "desempeno",
+  "seccion": "Turismo",
+  "tema": "Infraestructura, oferta y afluencia turística",
+  "titulo": "Infraestructura, oferta y afluencia turística",
+  "descripcion": "En este tema las variables corresponden a la infraestructura hotelera, afluencia de visitantes a zonas arqueológicas y museos, ocupación promedio por categoría y circuitos turísticos identificados en Campeche.",
+  "variables": "Número de establecimientos hoteleros y cuartos disponibles, Porcentaje de ocupación hotelera, Afluencia de visitantes a zonas culturales/naturales, Oferta de servicios de alimentos y bebidas.",
+  "capasTexto": "C04_Circuitos_turisticos_SICM_2020_OPMATPG_2023, 04_EFPatrimonioInmble_SIC_2023, C04_ZonasArqueológicas_SIC_2023.",
+  "capas": [
+   "c04circuitosturisticossicm2020opmatpg2023",
+   "c04zonasarqueologicassic2023"
+  ],
+  "analitica": "- Infraestructura Hotelera (Tabla 111 a 113): 345 establecimientos hoteleros con 8,820 cuartos. Ocupación promedio estatal del 38.5%. Campeche capital concentra 132 hoteles (3,450 cuartos) y Carmen 118 hoteles (3,120 cuartos).\n- Afluencia Turística (Tabla 118 y 119): Registro anual de más de 450,000 visitantes a zonas arqueológicas y museos. Calakmul y Edzná concentran más del 65% del turismo arqueológico.\n- Pueblos Mágicos y Nodos: Palizada e Isla Aguada cuentan con oferta hotelera de baja escala (Tabla 120 y 121: 18 y 22 establecimientos respectivamente), orientada al turismo de naturaleza y patrimonio biocultural.",
+  "narrativa": "A pesar del inmenso patrimonio arqueológico, colonial y natural del estado, la actividad turística se encuentra desaprovechada y fragmentada. La pernocta promedio es baja (1.4 noches por visitante) y la infraestructura de calidad se concentra casi exclusivamente en la capital y Ciudad del Carmen. Los destinos con mayor potencial de naturaleza y biocultural (Calakmul, Palizada, Calkiní y la costa de Champotón) carecen de conectividad terrestre fluida, esquemas de capacitación de servicios y circuitos turísticos consolidados que articulen el patrimonio maya con la gastronomía y las artesanías locales.",
+  "series": []
+ },
+ {
+  "id": "social-sociodemografico-dinamica-poblacional",
+  "monitor": "social",
+  "subsistema": "sociodemografico",
+  "vista": "desempeno",
+  "seccion": "Sociodemográfico",
+  "tema": "Dinámica poblacional",
+  "titulo": "Dinámica poblacional",
+  "descripcion": "Analizar el volumen de la población, su densidad en el territorio, el envejecimiento o rejuvenecimiento (pirámides de edad) y la tipología de los hogares (nucleares o ampliados) es el paso inicial para una política urbana. Entender cómo se conforman las familias dicta directamente qué tipo de vivienda, cuántos metros de tubería de agua, qué tamaño de espacios públicos y cuántas escuelas se necesitan construir en un polígono específico.",
+  "variables": "Volumen de población total y densidad bruta (Hab/km²), Tasa de crecimiento poblacional histórico por municipio, Estructura por edad y sexo (Grupos quinquenales para pirámide poblacional), Tipología de hogares (Familiares nucleares, familiares ampliados, familiares compuestos y no familiares) y Jefatura de hogar femenina y Tamaño promedio de los hogares.",
+  "capasTexto": "C04_Localidades_ITER_INEGI_2020 (1), C04_LocUrb_ITER_INEGI_2020 (3) y R04_DensLoc_OPMATPG_2023.tif (3).",
+  "capas": [
+   "c04localidadesiterinegi2020",
+   "c04locurbiterinegi2020",
+   "r04denslocopmatpg2023"
+  ],
+  "analitica": "- Volumen y Densidad: El estado de Campeche cuenta con una población total de 928,363 habitantes, lo que representa apenas el 0.7% del total nacional, con una densidad bruta muy baja de 16 habitantes por km² (ocupando el lugar 29 de 32 a nivel nacional con menor densidad).\n- Tasa de Crecimiento (2015-2020): La dinámica de crecimiento se está desacelerando e incluso contrayendo en municipios clave. Campeche capital creció apenas un 0.8%, Carmen se estancó con 0.0%, y Champotón registró una tasa negativa histórica de -2.8%.\n- Estructura por Edad: Campeche sigue siendo un estado joven, pero en transición. Las concentraciones más altas de población se encuentran en la primera infancia y juventud temprana: 82,015 niños de 5 a 9 años y 80,168 de 10 a 14 años. Sin embargo, los grupos de mayor edad comienzan a engrosar la pirámide.\n- Hogares: De un total de 260,725 hogares en 2020, 159,654 son nucleares y 64,467 son ampliados. El dato crítico es el crecimiento de los hogares ampliados, los cuales pasaron de ser 36,431 en el año 2000 a casi duplicarse en 2020.\n- Jefatura de hogar: El tamaño promedio del hogar en el estado se redujo de 4.3 integrantes en el año 2000 a 3.6 integrantes en 2020. A la par, los hogares con jefatura femenina sufrieron un incremento monumental: pasaron de 29,864 en el 2000 a 79,531 en 2020.",
+  "narrativa": "La demografía de Campeche dibuja un territorio de grandes contrastes y retos urgentes. Por un lado, su bajísima densidad (16 hab/km²) revela un modelo de ocupación sumamente disperso que eleva estratosféricamente los costos para que el Estado pueda llevar infraestructura básica (agua, luz, pavimentación) a todas las localidades.\n\nPor otro lado, al mirar dentro de las casas, los datos revelan una transformación social profunda: el crecimiento acelerado de los \"hogares ampliados\". Cada vez más familias extendidas (abuelos, tíos, primos) se ven obligadas a vivir bajo un mismo techo, lo que es un síntoma directo de las dificultades económicas para acceder a una vivienda propia. Este fenómeno genera hacinamiento, saturando la capacidad de las redes hidrosanitarias locales. Cartografiar a nivel de manzana (usando las capas de SCINCE e ITER) la densidad de población y la tipología de hogar permite a las autoridades dejar de adivinar y saber exactamente en qué polígonos urbanos se necesita inyectar subsidios para ampliación de vivienda o rescate de espacios públicos para los más de 160 mil niños y adolescentes del estado.",
+  "series": []
+ },
+ {
+  "id": "social-sociodemografico-marginacion",
+  "monitor": "social",
+  "subsistema": "sociodemografico",
+  "vista": "desempeno",
+  "seccion": "Sociodemográfico",
+  "tema": "Marginación",
+  "titulo": "Marginación",
+  "descripcion": "Este tema trasciende el simple conteo de personas para medir la brecha socioespacial real del estado. No solo evalúa los niveles de ingreso, sino el grado de aislamiento físico, el acceso a derechos sociales (salud, educación, vivienda) y la desigualdad en la distribución de la riqueza. Estos indicadores son la brújula para saber que zonas se han convertido en un factor de exclusión social y dónde urgen proyectos de rescate y equidad.",
+  "variables": "Población en situación de pobreza y pobreza extrema (%), Índice y Grado de Marginación Municipal, Índice de Desarrollo Humano (IDH), Coeficiente de Gini (Medición de desigualdad de ingresos), Grado de Accesibilidad a Carretera Pavimentada (GACP) como factor de aislamiento e Indicadores de Cohesión Social (Redes de apoyo y solidaridad).",
+  "capasTexto": "C04_Marginacion_CONAPO_2020 (1) y C04_IVULNERABILIDAD_OPMATPG_2023 (1 y 3)",
+  "capas": [
+   "c04ivulnerabilidadopmatpg2023",
+   "c04marginacionconapo2020"
+  ],
+  "analitica": "- Pobreza General: El 48.5% de la población del estado (más de 475 mil personas) vive en situación de pobreza.\n- Pobreza Crítica: La vulnerabilidad se agudiza drásticamente en los municipios rurales y del sur: Calakmul, Candelaria y Hopelchén alcanzan porcentajes críticos de hasta el 83% de su población en situación de pobreza.\n- Desarrollo Humano (IDH): Los polos urbanos de la entidad reportan un freno preocupante. Entre 2015 y 2020, el Índice de Desarrollo Humano en la capital Campeche registró un retroceso de -2.93% (clasificado como \"Estancado\"), mientras que el municipio de Carmen retrocedió un -1.60% (también \"Estancado\"). En contraste, municipios como Calkiní avanzaron un +0.14% en el mismo periodo.\n- Desigualdad (Gini): A nivel estatal, Carmen es el municipio con el coeficiente de Gini más desigual, evidenciando que, aunque genera una inmensa riqueza industrial y petrolera, esta no se distribuye equitativamente entre su población urbana y rural.\n- Cohesión social: El PEOTDU mide la capacidad de las personas para enfrentar crisis a través de redes de apoyo vecinal y familiar (Tabla 84). Este indicador cualitativo complementa los datos duros de marginación para entender si la población pobre está, además, aislada socialmente.",
+  "narrativa": "El análisis de pobreza y marginación revela las dos caras de la desigualdad en Campeche. Por un lado, tenemos un aislamiento que empobrece: el cruce de los datos de pobreza (hasta 83% en Calakmul o Candelaria) con la capa del Grado de Accesibilidad a Carretera Pavimentada (GACP) demuestra que vivir lejos de las vías de comunicación anula las oportunidades de desarrollo. Por otro lado, tenemos la \"pobreza urbana\": polos económicos como Carmen y Campeche capital concentran la riqueza, el empleo y la infraestructura, pero sus niveles de Desarrollo Humano (IDH) se estancaron o retrocedieron en el último quinquenio, y albergan las peores tasas de desigualdad de ingresos (Gini).\n\nIdentificar la Marginación de CONAPO y las isócronas de Accesibilidad de CONEVAL permite dejar de ver el territorio como un simple mapa físico para entenderlo como un escenario de desigualdad. Identificar en rojo oscuro las zonas de exclusión justifica directamente por qué el presupuesto público debe salir de las zonas de confort urbano y dirigirse a proyectos de infraestructura en los bolsones de marginación.",
+  "series": []
+ },
+ {
+  "id": "social-sociodemografico-movilidad-demografica",
+  "monitor": "social",
+  "subsistema": "sociodemografico",
+  "vista": "desempeno",
+  "seccion": "Sociodemográfico",
+  "tema": "Movilidad Demográfica",
+  "titulo": "Movilidad Demográfica",
+  "descripcion": "Este tema analiza los flujos de entrada (inmigración) y salida (emigración) a nivel estatal y municipal. Identificar las causas por las que la población abandona sus comunidades (laborales, educativas o de seguridad) es vital para entender en qué polígonos la planeación territorial ha fallado y dónde es urgente inyectar infraestructura para \"anclar\" a la población y evitar el despoblamiento rural o la saturación de los centros urbanos.",
+  "variables": "Población inmigrante, emigrante y saldo neto migratorio, Inmigración interna por municipio de destino, Principales destinos de emigración nacional e internacional, Causas de la migración (Laborales, familiares, educativas, inseguridad) y Flujo de migrantes extranjeros en tránsito.",
+  "capasTexto": "C04_Localidades_ITER_INEGI_2020 (1) y R04_DensLoc_OPMATPG_2023.tif (3)",
+  "capas": [
+   "c04localidadesiterinegi2020",
+   "r04denslocopmatpg2023"
+  ],
+  "analitica": "- Saldo Migratorio: Históricamente Campeche atrae a más personas de las que expulsa. En 2020, el saldo neto migratorio fue positivo con 58,425 personas (199,443 inmigrantes frente a 141,018 emigrantes históricos).\n- Fuga de Población Reciente (2015-2020): A pesar del saldo histórico, la emigración reciente es preocupante. En un periodo de 5 años, 44,034 campechanos abandonaron el estado para radicar principalmente en Yucatán, Quintana Roo y Tabasco. De la misma forma, 2,499 personas emigraron a otro país (el 64% hacia Estados Unidos).\n- Polos de Atracción Interna: La inmigración interna está brutalmente concentrada. De los 27,860 inmigrantes recientes, el 37.8% (10,525 personas) se instalaron en Carmen y el 27.4% (7,638 personas) en Campeche capital. Municipios como Seybaplaya o Palizada atrajeron a menos del 1% cada uno.\n- Causas de la Movilidad: Detrás del factor familiar (40.8%), las verdaderas fuerzas de expulsión son económicas y formativas: el 32.7% migra por razones laborales (buscar o cambiar de trabajo) y un 7.8% se va para poder estudiar. El 4.9% huye por inseguridad delictiva.\n- Flujo migratorio: Campeche, al ser estado fronterizo, registra \"eventos de personas extranjeras presentadas y canalizadas ante autoridades migratorias\" (Tabla 75), impactando principalmente la dinámica territorial de los municipios de la frontera sur como Candelaria y Calakmul.",
+  "narrativa": "Los flujos migratorios de Campeche permiten observar el mapa exacto de la desigualdad de oportunidades en el estado. Si bien a nivel macro Campeche retiene población, la dinámica interna revela una búsqueda de oportunidades y pérdida de población activa. Más de 44 mil campechanos salieron recientemente hacia Yucatán o la Riviera Maya (Quintana Roo), empujados directamente por la falta de universidades o empleos competitivos (causas que suman el 40.5% de la migración). Al mismo tiempo, la escasa población que llega de otros estados se concentra masivamente en Carmen y Campeche capital (absorbiendo el 65% del flujo), lo que satura su infraestructura urbana, vivienda y servicios básicos. Visualizar espacialmente estas \"zonas de expulsión\" rural frente a los \"imanes\" urbanos le permite a las autoridades entender dónde deben aterrizar los proyectos estratégicos. Revertir la emigración exige dejar de centralizar las obras en la capital y sembrar universidades, hospitales e industrias directamente en las regiones marginadas para garantizar el derecho a no migrar.",
+  "series": []
+ },
+ {
+  "id": "social-sociodemografico-genero-e-inclusion",
+  "monitor": "social",
+  "subsistema": "sociodemografico",
+  "vista": "desempeno",
+  "seccion": "Sociodemográfico",
+  "tema": "Género e inclusión",
+  "titulo": "Género e inclusión",
+  "descripcion": "Este tema visibiliza a los grupos vulnerables (específicamente la población con discapacidad), las desigualdades estructurales hacia las mujeres y la incidencia delictiva. Entender dónde ocurren los delitos, dónde viven las personas con discapacidad y dónde hay mayor desigualdad de género es vital para enfocar los proyectos de diseño urbano seguro (CPTED), la construcción de infraestructura con accesibilidad universal y las políticas de desarrollo barrial.",
+  "variables": "Población con discapacidad (crecimiento histórico), Índice de Desigualdad de Género (Empoderamiento, Mercado Laboral, Salud Reproductiva) e Incidencia Delictiva y Bienes Jurídicos Afectados.",
+  "capasTexto": "C04_IVULNERABILIDAD_OPMATPG_2023 (1 y 3).",
+  "capas": [
+   "c04ivulnerabilidadopmatpg2023"
+  ],
+  "analitica": "- Aumento de la Discapacidad: Se documenta una explosión estadística. Las personas con discapacidad en Campeche pasaron de 15,778 en el año 2000 a 52,259 en 2020 (un crecimiento brutal del 231%).\n- Concentración: El 60% de esta población vulnerable reside exclusivamente en dos municipios: Campeche (19,010 personas) y Carmen (12,608 personas).\n- Desigualdad de Género: Aunque la paridad política ha mejorado, existe un vacío en puestos técnicos: \"Al año 2021 no hay representación femenina a nivel de mando en materia territorial y urbana\", lo que invisibiliza las necesidades de la mujer en el diseño de las ciudades. Además, municipios como Candelaria presentan un Índice de Desigualdad de Género \"Alto\".\n- Incidencia Delictiva (2015-2020):\n- Los delitos contra el patrimonio representan la mayoría absoluta de la incidencia criminal (55.6% del total, con 1,114 casos base).\n- Alarma social: Se registra un incremento catastrófico del 185.6% en delitos contra la libertad sexual y del 40.6% en delitos contra la familia en el periodo evaluado.",
+  "narrativa": "La forma en que se construye el espacio físico puede acentuar o reducir la exclusión. En Campeche, la ciudad se ha vuelto un obstáculo para más de 52 mil personas con discapacidad (cuya cifra se triplicó en 20 años). Si el 60% de esta población vive en Campeche capital y Carmen, la inversión en rampas, banquetas accesibles y transporte público adaptado no es un lujo, es una obligación de urgencia máxima en estas dos ciudades. A nivel de seguridad y género, los focos de atención son evidentes: mientras los delitos patrimoniales dominan la estadística, los delitos sexuales y familiares se han disparado por encima del 180%. Una calle sin pavimentar, oscura y sin transporte seguro se convierte en el principal escenario de vulnerabilidad para las mujeres. Esto obliga a las autoridades a dejar de ver la seguridad como un tema exclusivamente policial, para tratarlo como un tema de Ordenamiento Territorial: cruzar los mapas de incidencia delictiva con las zonas de rezago en alumbrado público permitirá priorizar las rutas del transporte y aplicar proyectos de \"Calles Seguras\" ahí donde las mujeres corren más peligro.",
+  "series": []
+ },
+ {
+  "id": "social-medio-transformado-tenencia-del-suelo-habitacional",
+  "monitor": "social",
+  "subsistema": "sociodemografico",
+  "vista": "desempeno",
+  "seccion": "Medio transformado",
+  "tema": "Tenencia del suelo habitacional",
+  "titulo": "Tenencia del suelo habitacional",
+  "descripcion": "Antes de medir si una casa tiene carencias de materiales o servicios, es obligatorio entender su contexto territorial: cuántas viviendas existen en todo el estado, a quién pertenecen y cuántas están deshabitadas. Detectar el abandono habitacional a nivel estatal es fundamental, ya que expone fenómenos de especulación inmobiliaria y urbanización en periferias sin servicios. Esto le permite al Estado aplicar políticas de redensificación y reciclaje del suelo en los centros urbanos antes de seguir depredando el medio ambiente natural.",
+  "variables": "Total, de viviendas particulares y distribución estatal (% del Total del Estado), Ámbito territorial predominante (Urbano vs. Rural), Condición de ocupación (Viviendas habitadas, deshabitadas y de uso temporal) y Tenencia de la vivienda (Propia, rentada, prestada).",
+  "capasTexto": "C04_Vivienda_ITER_INEGI_2020 (1 y 3)",
+  "capas": [
+   "c04viviendaiterinegi2020"
+  ],
+  "analitica": "- Parque Habitacional Total: El Estado de Campeche cuenta con 324,471 viviendas totales (312,770 particulares y el resto colectivas).\n- Concentración y Contraste Urbano/Rural: La vivienda en Campeche está brutalmente centralizada. El 58.9% del parque habitacional se concentra en solo dos municipios: Campeche (101,864 viviendas) y Carmen (89,328 viviendas). Mientras estos polos, junto con Calkiní, Champotón y Escárcega, tienen un ámbito predominante \"Urbano\" (más del 60% de sus casas en ciudades), existen cuatro municipios donde predomina el ámbito rural: Calakmul (78.1% rural), Candelaria (74.9%), Palizada (59.4%) y Hopelchén (58.8%).\n- Tenencia: A nivel estatal, el 72% de las viviendas están habitadas por sus dueños, el 13% son rentadas y un 12% son prestadas. Hecelchakán es el municipio con mayor porcentaje de viviendas propias (91.3%), mientras que Carmen tiene la mayor presión de alquiler con un 21.8% de casas rentadas, reflejo de su alta población flotante petrolera.\n- Abandono Inmobiliario: A nivel estatal, existe una tasa de desocupación del 13.5% (Viviendas deshabitadas) y un 6.0% de uso temporal. El abandono golpea a todos los municipios, pero se magnifica en los centros económicos y logísticos: Campeche (11,841 vacías), Carmen (10,822 vacías), Escárcega (4,068 vacías) y Champotón (3,824 vacías). Incluso municipios rurales como Candelaria reportan 3,222 casas abandonadas.",
+  "narrativa": "La distribución de la vivienda en Campeche exige que el gobierno deje de aplicar una política \"de talla única\". Los datos del PEOTDU demuestran que el estado está partido en dos realidades: un bloque de municipios profundamente rurales (Calakmul, Candelaria, Palizada y Hopelchén) que requieren programas de materiales de construcción y autoproducción en zonas dispersas; y un bloque urbano-industrial (Campeche, Carmen, Champotón y Escárcega) que enfrenta una crisis de especulación y abandono. Resulta un contrasentido que en un estado con necesidades de vivienda existan más de 42,000 casas completamente deshabitadas. Este abandono ocurre cuando las constructoras desarrollan fraccionamientos en las periferias sin garantizar transporte, escuelas o seguridad, obligando a las familias a huir. Identificar las manzanas con más viviendas vacías le otorga al Estado la herramienta definitiva para detener la expansión horizontal (negando permisos en las afueras) y lanzar un programa de recuperación de vivienda en los cascos urbanos consolidados.",
+  "series": [
+   {
+    "titulo": "Concentración y Contraste Urbano/Rural",
+    "unidad": "%",
+    "datos": [
+     {
+      "etiqueta": "Candelaria",
+      "valor": 74.9
+     },
+     {
+      "etiqueta": "Palizada",
+      "valor": 59.4
+     },
+     {
+      "etiqueta": "Hopelchén",
+      "valor": 58.8
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "social-medio-transformado-hacinamiento",
+  "monitor": "social",
+  "subsistema": "sociodemografico",
+  "vista": "desempeno",
+  "seccion": "Medio transformado",
+  "tema": "Hacinamiento",
+  "titulo": "Hacinamiento",
+  "descripcion": "Este tema mide la calidad de vida directamente dentro del hogar evaluando el \"rezago físico\" (la precariedad de los materiales de construcción) y la \"habitabilidad\" (la saturación de personas por dormitorio). El hacinamiento es la herramienta de focalización más poderosa que tiene el Estado ya que permite la entrega de subsidios en polígonos y municipios donde las familias viven bajo techos precarios, condiciones que detonan problemas de salud, violencia intrafamiliar y marginación.",
+  "variables": "Viviendas en condición de hacinamiento (Viviendas con un solo dormitorio ocupadas por más de 2.5 personas), Porcentaje de hacinamiento por municipio, Oferta formal de vivienda nueva vs. Autoconstrucción y rezago; y Componentes cualitativos de la vivienda (Materiales de desecho en techos, pisos y paredes).",
+  "capasTexto": "C04_Sustitución_materiales_viviendas_tradicionales_INEGI_2020_OPMATPG_2023 (1 y 3) y C04_Sustitución_materiales_paredes_viviendas_OPMATPG_2023 (3).",
+  "capas": [
+   "c04sustitucionmaterialesparedesviviendasopmatpg2023",
+   "c04sustitucionmaterialesviviendastradicionalesinegi2020opmatpg2023"
+  ],
+  "analitica": "- Hacinamiento: A nivel estatal, el 41.8% de todas las viviendas habitadas cuentan con un solo dormitorio para un promedio de 3.8 ocupantes. Esto arroja la alarmante cifra de 109,322 viviendas en condición de hacinamiento en Campeche.\n- Municipal: Al abrir el dato por municipio, se evidencia que las zonas rurales y del sur están colapsadas en habitabilidad. Mientras la capital (Campeche) tiene un 36.8% de hacinamiento, Candelaria lidera la crisis con un 57.6%, seguido de Calakmul (54.1%), Palizada (53.9%) y Escárcega (51.7%). Más de la mitad de las casas en estos municipios padecen saturación de ocupantes.\n- Rezago Físico (CONAVI): El PEOTDU clasifica el rezago físico cuando se utilizan \"materiales de desecho\" (lámina de cartón, carrizo, bambú, palma o bajareque en paredes; y paja/cartón/palma en techos), o \"materiales regulares\" (pisos de tierra o láminas de asbesto), dejando a las viviendas vulnerables ante fenómenos hidrometeorológicos.\n- Oferta: La crisis se agrava al ver qué hace el mercado inmobiliario formal (SNIIV). Entre 2010 y 2023 se ofertaron apenas 10,255 inmuebles nuevos en el estado. Peor aún, esa escasa vivienda se hiper-concentró: 5,539 en Carmen y 4,376 en Campeche. Municipios con hacinamiento crítico como Escárcega (8,858 casas hacinadas) solo recibieron 3 casas formales en 13 años; Calakmul, Candelaria y Palizada recibieron CERO.",
+  "narrativa": "La crisis de la vivienda en Campeche tiene nombre y apellido: Hacinamiento y Desigualdad Inmobiliaria. La estadística es contundente: el mercado formal de construcción simplemente borró del mapa a los municipios rurales y del sur. Mientras en 13 años se construyeron más de 9,900 casas en la capital y Carmen, a Escárcega llegaron 3 casas nuevas, y a Calakmul, Candelaria y Palizada no llegó ni una sola. Estadísticamente en estos municipios olvidados, más del 50% de las familias se vieron obligadas a autoconstruir cuartos con materiales de desecho (palma, cartón), donde terminan durmiendo casi 4 personas por habitación. Cruzar la capa de SCINCE y LPR para visualizar estos \"focos rojos\" de hacinamiento cambia radicalmente la política pública: el Estado tiene la evidencia innegable para dejar de dar créditos hipotecarios en la capital y lanzar, con urgencia máxima, un programa estatal de subsidios directos para \"cuartos adicionales\" y \"techos/pisos firmes\" enfocado exclusivamente en Candelaria, Calakmul, Palizada y Escárcega.",
+  "series": []
+ },
+ {
+  "id": "social-medio-transformado-servicios-basicos",
+  "monitor": "social",
+  "subsistema": "sociodemografico",
+  "vista": "desempeno",
+  "seccion": "Medio transformado",
+  "tema": "Servicios básicos",
+  "titulo": "Servicios básicos",
+  "descripcion": "Para que una vivienda sea considerada adecuada y no un foco de infección o rezago, debe contar con tres servicios fundamentales intramuros: energía eléctrica, agua entubada y drenaje sanitario. Medir la disponibilidad de estos servicios a nivel municipal permite al Estado saber exactamente dónde la obra pública (tuberías, postes, alcantarillado) se ha estancado. Las carencias en este tema dictan directamente la agenda de salud pública: una vivienda sin refrigerador por falta de luz o sin drenaje es un riesgo latente para las familias.",
+  "variables": "Viviendas Particulares Habitadas (VPH) con disponibilidad de Energía Eléctrica (%), VPH con disponibilidad de Agua Entubada (%), VPH con disponibilidad de Drenaje (%) y Servicios intramuros vs. en el terreno (Agua).",
+  "capasTexto": "C04_Vivienda_ITER_INEGI_2020 (1 y 3)",
+  "capas": [
+   "c04viviendaiterinegi2020"
+  ],
+  "analitica": "- Cobertura estatal: La cobertura a nivel estado parece alta (98.0% luz, 95.4% agua y 94.2% drenaje). Sin embargo, la media estatal esconde la brutal desigualdad de los municipios rurales.\n- Calakmul: Mientras que Campeche capital tiene agua entubada en el 98.9% de sus casas, Calakmul presenta un déficit bajo: solo el 78.0% de las viviendas tiene acceso a agua entubada. Peor aún, de los que sí tienen red de agua en Calakmul, el 77.8% solo tiene una llave en el patio y debe salir de la casa para acceder a ella.\n- Rezago de drenaje: A nivel estatal, 4 municipios presentan un déficit grave (menos del 86% de cobertura de drenaje): Calakmul (84.2%), Tenabo (84.7%), Candelaria (85.6%) y Hopelchén (86.2%).\n- Falta de Energía: Aunque la luz roza el 98%, el PEOTDU alerta que 36,211 viviendas en el estado no tienen refrigerador (concentrándose en Candelaria y Calakmul), dificultando la conservación de alimentos y medicamentos.",
+  "narrativa": "La infraestructura básica es el verdadero medidor de la pobreza en el estado. En Campeche, la desigualdad es física: en los municipios del norte (como Campeche, Hecelchakán o Dzitbalché) la cobertura de agua, luz y drenaje supera el 98%. Pero si viajamos al sur y al oriente (Calakmul y Candelaria), las redes desaparecen. El caso de Calakmul es el más crítico del estado: 1 de cada 4 viviendas no tiene agua en la red y, para la inmensa mayoría que sí la tiene, el grifo está en el patio, no en el baño ni en la cocina. Lograr identificar las carencias de agua y drenaje en estos 13 municipios le otorga al COPLADECAM la evidencia técnica innegable para designar presupuesto a la perforación de pozos, redes de agua y fosas sépticas/drenaje en las localidades rurales del sur.",
+  "series": [
+   {
+    "titulo": "Rezago de drenaje",
+    "unidad": "%",
+    "datos": [
+     {
+      "etiqueta": "Calakmul",
+      "valor": 84.2
+     },
+     {
+      "etiqueta": "Tenabo",
+      "valor": 84.7
+     },
+     {
+      "etiqueta": "Candelaria",
+      "valor": 85.6
+     },
+     {
+      "etiqueta": "Hopelchén",
+      "valor": 86.2
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "social-medio-transformado-equipamiento-social",
+  "monitor": "social",
+  "subsistema": "sociodemografico",
+  "vista": "desempeno",
+  "seccion": "Medio transformado",
+  "tema": "Equipamiento social",
+  "titulo": "Equipamiento social",
+  "descripcion": "Si la vivienda es el refugio familiar, el equipamiento es el soporte de la vida comunitaria. Este tema abarca la distribución física de hospitales, escuelas y mercados en el territorio estatal. Medir la cobertura de estos servicios es fundamental porque el equipamiento necesario para el funcionamiento de las localidades: un municipio sin preparatorias, sin clínicas de urgencias o sin mercados formales es un municipio que expulsa obligatoriamente a sus jóvenes y familias (conectando directamente con el fenómeno migratorio que vimos en el Tema 3 del subsistema sociodemográfico).",
+  "variables": "Nivel de Cobertura de Unidades Médicas (1er, 2do y 3er Nivel) contrastando población urbana vs. Rural; Inventario de Equipamiento Educativo y caída de la oferta (Educación Básica, Media Superior y Superior) e Infraestructura de Abasto y Comercio (Mercados públicos y Rastros municipales).",
+  "capasTexto": "C04_ES1erNivel_CLUES_OPMATPG_2023 (1 y 3), C04_ES2doNivel_CLUES_OPMATPG_2023 (1 y 3) y C04_Puntos_Int_IMT_INEGI_2024 (1)",
+  "capas": [
+   "c04es1ernivelcluesopmatpg2023",
+   "c04es2donivelcluesopmatpg2023",
+   "c04puntosintimtinegi2024"
+  ],
+  "analitica": "- Urbano vs. Rural: La atención a la salud en Campeche es geográficamente desigual.\n- Primer Nivel (Clínicas básicas): Atiende al 100% de la población urbana, pero solo cubre al 60% de la población rural (dejando a más de 84,000 habitantes rurales sin clínica).\n- Segundo Nivel (Hospitales Generales): Cubre al 94% de las ciudades, pero la cobertura se desploma al 45% en las localidades rurales.\n- Tercer Nivel (Especialidades): Solo atiende al 52% de la población urbana y a un marginal 13% de la población rural (apenas 27,382 personas del campo tienen acceso).\n- Educación: El estado cuenta con una base sólida de 1,695 primarias y secundarias. Sin embargo, el salto hacia la profesionalización es un cuello de botella físico: solo existen 85 planteles de Educación Media Superior y apenas 44 equipamientos de Educación Superior en toda la entidad. El caso más crítico es Tenabo, que tiene la menor cantidad de escuelas del estado, quedando incluso por debajo de Palizada (que es el municipio con menos habitantes).\n- Abasto alimentario: El comercio está hiper-centralizado. De los 41 mercados municipales y 3 centros comerciales que registra el estado, la inmensa mayoría se aglomera en San Francisco de Campeche. Tenabo vuelve a figurar como foco rojo: es el único de los 13 municipios que no cuenta con un mercado municipal. En cuanto a rastros públicos, solo existen en Campeche, Escárcega, Sabancuy, Candelaria, Palizada y Ciudad del Carmen, dejando amplias zonas del centro y norte del estado sin infraestructura formal de matanza.",
+  "narrativa": "La geografía del equipamiento en Campeche explica por sí sola la marginación y la fuga de talento del estado. Cuando analizamos las capas de puntos de interés (Salud y Educación), el mapa revela zonas de sombra gigantescas en el medio rural. Enfermarse en una localidad alejada de Calakmul, Candelaria o Hopelchén es un riesgo de vida o muerte, ya que el 55% de la población rural no tiene un hospital de segundo nivel a una distancia accesible, obligándolos a realizar traslados costosos hacia la capital. En educación, el drama es idéntico: tenemos casi 1,700 primarias/secundarias, pero solo 44 universidades. Esto significa que, obligatoriamente, miles de jóvenes rurales tienen que abandonar sus municipios si quieren estudiar una carrera. Visualizar los radios de cobertura de estas 44 universidades y los hospitales le entrega al tomador de decisiones la clave maestra del ordenamiento: dejar de saturar Campeche y Carmen, y empezar a construir nodos de equipamiento regional en municipios históricamente desatendidos como Tenabo y las cabeceras del sur.",
+  "series": []
+ },
+ {
+  "id": "social-medio-transformado-asentamientos-humanos-irregulares",
+  "monitor": "social",
+  "subsistema": "sociodemografico",
+  "vista": "desempeno",
+  "seccion": "Medio transformado",
+  "tema": "Asentamientos humanos irregulares",
+  "titulo": "Asentamientos humanos irregulares",
+  "descripcion": "Los Asentamientos Humanos Irregulares (AHI) son la manifestación más extrema de la marginación urbana. Son polígonos donde la población ha ocupado el suelo sin planeación, sin permisos y sin certeza jurídica (invasiones). Analizar los AHI es vital para el ordenamiento territorial por un candado legal: la ley prohíbe a los ayuntamientos introducir agua potable, drenaje o pavimentación en predios irregulares. Además, estos asentamientos suelen ubicarse en zonas de alto riesgo (márgenes de ríos, manglares, derechos de vía o zonas inundables), condenando a sus habitantes a un ciclo perpetuo de desastres y pobreza.",
+  "variables": "Presencia y proliferación de Asentamientos Irregulares por municipio, Ubicación en Zonas de Riesgo y Vulnerabilidad Ambiental, Condición de tenencia (Falta de escrituración / invasión) e Impedimento legal para cobertura de servicios básicos.",
+  "capasTexto": "C04_AsentamientosHumanos_RAN_2023 (1 y 3)",
+  "capas": [
+   "c04asentamientoshumanosran2023"
+  ],
+  "analitica": "- El Carmen: El municipio de Carmen presenta el caso más crítico de ocupación irregular del estado, específicamente en la Isla de Términos. La atracción poblacional histórica por el \"boom petrolero\" generó una demanda de suelo que el mercado formal no pudo absorber, derivando en invasiones masivas sobre zonas de humedales, manglares y áreas naturales protegidas.\n- Vulnerabilidad Física: Las viviendas en estos asentamientos coinciden geográficamente con los más altos índices de \"rezago de materiales\" (techos de cartón/palma, paredes de desecho) documentados en el Tema 2. Al estar ubicados en zonas bajas y carecer de drenaje, son los primeros polígonos en sufrir inundaciones y pérdida total de patrimonio durante la temporada de huracanes y tormentas tropicales.",
+  "narrativa": "Los Asentamientos Humanos Irregulares son el \"punto ciego\" donde chocan la necesidad social y la rigidez de la ley. El diagnóstico del PEOTDU nos demuestra que los AHI no son un acto criminal, sino de supervivencia: si en 13 años el estado solo produjo 10 mil viviendas formales, las miles de familias restantes tuvieron que resolver su necesidad de techo invadiendo tierras. El drama de Campeche —especialmente visible en las periferias de Ciudad del Carmen, Campeche capital y Escárcega— es que estas familias se asientan sobre manglares o zonas inundables. Al no tener escrituras, el gobierno municipal no puede pavimentarles ni ponerles drenaje, lo que genera ríos de aguas negras a cielo abierto. Mapear los polígonos de AHI en el Geovisor (cruzándolos con las capas de riesgo de inundación) le da al Estado la ruta crítica de acción: antes de prometer servicios básicos, el gobierno debe iniciar programas masivos de regularización de la tenencia de la tierra (CORETT/INSUS) o, en caso de estar en zonas de alto riesgo no mitigable, planear la reubicación estratégica de estas familias hacia suelo urbano seguro y servido.",
+  "series": []
+ },
+ {
+  "id": "social-patrimonio-demografia-cultural",
+  "monitor": "social",
+  "subsistema": "patrimonio",
+  "vista": "desempeno",
+  "seccion": "Patrimonio",
+  "tema": "Demografía cultural",
+  "titulo": "Demografía cultural",
+  "descripcion": "El territorio de Campeche es pluriétnico y multicultural. Este tema mide y geolocaliza a la población que sostiene la riqueza biocultural del estado: los pueblos indígenas y las comunidades afromexicanas. Localizar en qué municipios se concentran los hablantes de lenguas indígenas y las comunidades afrodescendientes es indispensable para el ordenamiento territorial. Permite al Estado garantizar el acceso a la justicia y servicios de salud con pertinencia cultural (traductores), diseñar proyectos que respeten sus usos y costumbres, y proteger los polígonos donde habitan de la especulación de megaproyectos.",
+  "variables": "Población de 3 años y más hablante de Lengua Indígena (Volumen y porcentaje municipal), Diversidad lingüística (Maya, Chol, Tzeltal, Q'anjob'al, etc.), Población que se autorreconoce como Afromexicana o Afrodescendiente y Distribución territorial de los grupos étnicos en los 13 municipios.",
+  "capasTexto": "C04_GrupoEtnico_INPI_2020 (1 y 3) y C04_PobAfromexicana_INEGI_2020 (1 y 3)",
+  "capas": [
+   "c04grupoetnicoinpi2020",
+   "c04pobafromexicanainegi2020"
+  ],
+  "analitica": "- Hablantes de Lengua Indígena (HLI): Aproximadamente el 10.4% de la población del estado (más de 91,000 personas mayores de 3 años) habla alguna lengua indígena.\n- Geografía Maya: El pueblo Maya es predominante absoluto. Los municipios del \"Camino Real\" en el norte concentran históricamente la mayor densidad de población maya-hablante: Calkiní, Hecelchakán, Hopelchén, Tenabo y Dzitbalché. En Calkiní, un altísimo porcentaje de su población se comunica cotidianamente en Maya peninsular.\n- Migración y refugios: En contraste con el norte tradicional maya, los municipios del sur y oriente como Calakmul, Candelaria, Escárcega y Champotón presentan una enorme diversidad étnica (Chol, Tzeltal y Q'anjob'al). Esta diversidad no es originaria de la península, sino producto de la reubicación de refugiados guatemaltecos y migrantes chiapanecos en los años 80 y 90, creando nuevas identidades territoriales en la frontera sur.\n- Población Afromexicana: En Campeche, alrededor de 42,000 personas (aprox. 4.5% del estado) se autorreconocen como afrodescendientes. Su distribución, aunque dispersa, tiene una presencia notable en municipios costeros y polos económicos como Carmen y Campeche capital, estrechamente ligados a flujos migratorios históricos y caribeños.",
+  "narrativa": "Campeche se revela como dos estados distintos. En el norte (Calkiní, Hecelchakán, Hopelchén), vemos una resistencia territorial milenaria: comunidades mayas consolidadas que han protegido su lengua y su forma de habitar el espacio. En el sur (Calakmul, Candelaria, Escárcega), vemos un mosaico producto del refugio y la migración: pueblos choles, tzeltales y q'anjob'ales que se insertaron en la selva, construyendo una nueva relación biocultural con el territorio fronterizo.\n\nAl mismo tiempo, la visibilización de más de 40 mil campechanos afromexicanos rompe con el mito de un estado exclusivamente maya/mestizo. El entender los Grupos Étnicos (INPI) arroja la justificación definitiva de la marginación: los municipios con mayor porcentaje de población indígena y afromexicana (como Calakmul y Hopelchén) coinciden dramáticamente con los polígonos de mayor hacinamiento y falta de agua. El ordenamiento territorial debe usar estas capas para aplicar una \"consulta indígena y afromexicana\" obligatoria antes de autorizar cualquier cambio de uso de suelo en estos polígonos, blindando su patrimonio frente a desarrollos extractivos.",
+  "series": []
+ },
+ {
+  "id": "social-patrimonio-patrimonio-tangible",
+  "monitor": "social",
+  "subsistema": "patrimonio",
+  "vista": "desempeno",
+  "seccion": "Patrimonio",
+  "tema": "Patrimonio tangible",
+  "titulo": "Patrimonio tangible",
+  "descripcion": "El patrimonio cultural tangible es la huella física de las civilizaciones que han habitado el territorio campechano. Se divide en dos grandes épocas que marcan el paisaje: el patrimonio prehispánico (antiguas ciudades mayas) y el patrimonio virreinal/republicano (murallas, fuertes, ex-haciendas e iglesias). Analizar estos polígonos donde se encuentran es la herramienta suprema de conservación (zonas de no vocación para el desarrollo urbano masivo), garantizando que el crecimiento de las ciudades o la infraestructura pesada no mutile la herencia histórica del estado.",
+  "variables": "Inventario y delimitación de Zonas Arqueológicas (INAH), Inventario de Patrimonio Cultural Inmueble y Monumentos Históricos (INAH / SIC), Declaratorias de Patrimonio de la Humanidad (UNESCO) y Pueblos Mágicos y Distribución territorial (Prehispánico vs. Virreinal).",
+  "capasTexto": "C04_ZonasArqueológicas_SIC_2023 (1 y 3) y C04_PatrimonioInmueble_SIC_2023 (1 y 3)",
+  "capas": [
+   "c04patrimonioinmueblesic2023",
+   "c04zonasarqueologicassic2023"
+  ],
+  "analitica": "- Riqueza Arqueológica: Campeche alberga una de las densidades arqueológicas más altas del continente. Mientras que sitios consolidados como Edzná están en la región centro, el municipio de Calakmul es la joya de la corona, albergando no solo la antigua ciudad maya homónima (Declarada Bien Mixto por la UNESCO), sino decenas de sitios monumentales (Balamkú, Xpujil, Becán, Chicanná) dispersos en la selva.\n- Inmuebles históricos: La arquitectura virreinal militar y religiosa tiene una distribución distinta. Se concentra masivamente en San Francisco de Campeche (Ciudad Histórica Fortificada, Patrimonio de la Humanidad UNESCO). Hacia el norte, en los municipios del \"Camino Real\" (Calkiní, Hecelchakán, Tenabo), el territorio está salpicado de imponentes iglesias coloniales y cascos de ex-haciendas henequeneras/ganaderas.\n- Arquitectura y pueblos mágicos: Hacia el suroeste, el municipio de Palizada aporta un valor distinto: la arquitectura ribereña con techos de teja francesa, declarado Pueblo Mágico junto con Isla Aguada (Carmen).\n- Riesgo Urbano: El PEOTDU advierte que la expansión de la mancha urbana en la capital, así como los megaproyectos de infraestructura y el saqueo en las zonas rurales, representan la principal amenaza de degradación o destrucción para estos inmuebles y vestigios.",
+  "narrativa": "El patrimonio tangible de Campeche traza un mapa de poder y resistencia que sobrevive hasta nuestros días. Si observamos el Sistema de Información Cultural (SIC), notaremos una clara división espacial: el sur y el oriente de la entidad (Calakmul, Hopelchén) están dominados por la grandeza monumental de la civilización Maya, oculta y protegida por la selva. En cambio, la costa (Campeche) y el norte muestran la cicatriz del periodo colonial, con sus fortalezas militares diseñadas para repeler piratas y sus ex-haciendas. Para la toma de decisiones, comprender las zonas de alto valor cultural es un ejercicio de supervivencia patrimonial. Permite identificar exactamente dónde el crecimiento desordenado de una localidad amenaza con \"tragarse\" un vestigio prehispánico. Esta información dota al Estado del peso jurídico para negar licencias de construcción y obligan a los ayuntamientos a crear zonas de amortiguamiento, transformando estos sitios en motores de desarrollo económico local (turismo regulado) sin sacrificar la historia bajo una plancha de concreto.",
+  "series": []
+ },
+ {
+  "id": "social-patrimonio-patrimonio-inmaterial",
+  "monitor": "social",
+  "subsistema": "patrimonio",
+  "vista": "desempeno",
+  "seccion": "Patrimonio",
+  "tema": "Patrimonio Inmaterial",
+  "titulo": "Patrimonio Inmaterial",
+  "descripcion": "El patrimonio inmaterial abarca las expresiones vivas de la sociedad: gastronomía, festividades, música, artesanía y medicina tradicional. Sin embargo, en Campeche este concepto evoluciona hacia el Patrimonio Biocultural, que reconoce que la riqueza biológica de la selva y la costa existe gracias a los saberes ancestrales de los pueblos originarios que las habitan. Entender dónde se practica la Milpa Maya o la apicultura tradicional es indispensable para el ordenamiento territorial, ya que estas zonas deben blindarse jurídicamente contra la deforestación industrial o los megaproyectos que amenazan no solo el medio ambiente, sino la supervivencia cultural del estado.",
+  "variables": "Sistemas Agrícolas Tradicionales (Milpa Maya / Ich Kool), Prácticas de manejo de biodiversidad (Apicultura y Meliponicultura), Expresiones Inmateriales Festivas y Religiosas (Hanal Pixán, Carnavales, Vaquerías) y Producción Artesanal con identidad territorial (Jipijapa, textiles, alfarería).",
+  "capasTexto": "C04_PatrimonioInmaterialIdioma_OPMATPG_2023 (1 y 3) y C04_GrupoEtnico_INPI_2020 (1 y 3).",
+  "capas": [
+   "c04grupoetnicoinpi2020",
+   "c04patrimonioinmaterialidiomaopmatpg2023"
+  ],
+  "analitica": "- Milpa Maya: Más que un cultivo, la milpa es un sistema de gestión territorial milenario que garantiza la agrobiodiversidad (maíz, frijol, calabaza, chile). El PEOTDU señala que este saber ancestral se practica fuertemente en los municipios de Hopelchén, Calakmul, Calkiní y Hecelchakán. Sin embargo, está bajo una amenaza territorial crítica debido a la expansión agresiva de la agricultura mecanizada (siembra de soya y deforestación por grupos menonitas), lo que fragmenta el tejido biocultural.\n- Apicultura y meliponicultura: Campeche es una superpotencia en producción de miel, pero esto no es solo un dato económico; es una práctica biocultural heredada de los antiguos mayas (quienes domesticaron a la abeja sagrada Melipona beecheii o Xunaan Kaab). La defensa de la selva en los municipios del sur y centro es literalmente la defensa de este patrimonio inmaterial.\n- Artesanía: Las prácticas artesanales están ancladas a polígonos específicos. El caso más icónico es Bécal (Calkiní), donde el tejido de sombreros de Jipijapa en cuevas subterráneas es un saber transmitido de generación en generación que sostiene la economía local. En los municipios del \"Camino Real\", el bordado de huipiles y la alfarería (como en Tepakán) son marcadores geográficos de identidad.\n- Festividades: El territorio se articula en torno a calendarios festivos. Destacan las Vaquerías y fiestas patronales en la zona norte (Calkiní, Tenabo, Hecelchakán); el Hanal Pixán (Día de Muertos maya) celebrado en todo el estado con altares y pib (comida enterrada); y el histórico Carnaval de Campeche en la capital, reconocido como uno de los más antiguos de México.",
+  "narrativa": "El patrimonio inmaterial de Campeche nos enseña que cultura y naturaleza son exactamente lo mismo. No se puede proteger la selva de Hopelchén o Calakmul sin proteger a los campesinos mayas que hacen la milpa y cosechan la miel. El choque territorial actual en el estado es, en el fondo, un choque biocultural: la agricultura industrial, que deforesta miles de hectáreas para sembrar soya, no solo extingue flora y fauna, sino que aniquila físicamente los polígonos donde las comunidades originarias ejercen sus saberes milenarios. Empalmar los polígonos de comunidades indígenas con las zonas de aptitud agrícola y forestal, le permite a las autoridades estatales declarar \"Zonas de Salvaguarda Biocultural\". Estas declaratorias impiden que los ayuntamientos otorguen licencias para el cambio de uso de suelo a favor de la agroindustria depredadora en territorios donde históricamente se ejerce la milpa, garantizando que las futuras generaciones de campechanos no pierdan su identidad.",
+  "series": []
+ },
+ {
+  "id": "social-gobernanza-estructura-agraria",
+  "monitor": "social",
+  "subsistema": "institucional",
+  "vista": "desempeno",
+  "seccion": "Gobernanza",
+  "tema": "Estructura agraria",
+  "titulo": "Estructura agraria",
+  "descripcion": "En Campeche, el territorio no es un \"lienzo en blanco\" a disposición exclusiva del gobierno o la propiedad privada; tiene dueños sociales e históricos. Este tema mapea la Propiedad Social, conformada por los Ejidos y las Comunidades Agrarias (cuya asamblea es el órgano supremo). Analizar la zonificación de esta tierra es el primer mandamiento del ordenamiento territorial: cualquier declaratoria ambiental, trazado de infraestructura o regulación de crecimiento urbano en estos polígonos requiere forzosamente la autorización de los núcleos agrarios y programas de certificación que otorguen certeza jurídica a las familias.",
+  "variables": "Superficie total bajo régimen de Propiedad Social (km²), Inventario de Núcleos Agrarios y Estatus de Certificación y Zonificación interna del ejido (Tierras de uso común, tierras parceladas y área de asentamientos humanos).",
+  "capasTexto": "C04_TP-TUC_RAN_2023 (1 y 3) y C04_TierrasParceladas_RAN_2023 (1 y 3)",
+  "capas": [
+   "c04tierrasparceladasran2023",
+   "c04tptucran2023"
+  ],
+  "analitica": "- Dominio ejidal: La propiedad social en Campeche es colosal. El estado cuenta con 386 ejidos que abarcan una superficie territorial de 28,991.15 km². Los municipios con mayor superficie bajo este régimen, y por lo tanto donde las Asambleas Ejidales tienen un peso determinante sobre el ordenamiento, son Hopelchén (5,782.97 km²), Calakmul (4,946.15 km²) y Champotón (4,852.27 km²).\n- Zonificación del Territorio Social: El PEOTDU desglosa con exactitud el destino de esta tierra:\n- Tierras de uso común: Representan el 71.02% (20,590.63 km²) de la propiedad social. Son el sustento económico de la vida en comunidad y, por ley, son inalienables, imprescriptibles e inembargables.\n- Tierras parceladas: Abarcan el 25.08% (7,270.49 km²), destinadas al uso directo para parcelas agrícolas o ganaderas.\n- Asentamientos humanos: Apenas el 0.79% (230.35 km²) del suelo ejidal está destinado formalmente a las zonas de urbanización (donde residen las comunidades).\n- Certeza jurídica agraria: De los 386 núcleos agrarios del estado, 375 ya se encuentran certificados. Esto es un gran avance de gobernanza, ya que la certificación delimita con precisión (a través del Registro Agrario Nacional) los derechos de los ejidatarios y el Fundo Legal.",
+  "narrativa": "Para gobernar el territorio en Campeche, hay que entender quién es dueño de la tierra. Si analizamos la geografía del estado, la estructura agraria dicta la vida social y productiva. El hecho de que casi 29 mil kilómetros cuadrados sean administrados por Asambleas Ejidales significa que las selvas y zonas de recarga acuífera en Calakmul, Hopelchén y Champotón no están bajo el arbitrio de inversionistas privados, sino del \"uso común\" colectivo. La gobernanza se tensa específicamente en los polígonos de Asentamientos Urbanos. El diagnóstico demuestra que solo 230 km² de esta vasta superficie están destinados a albergar a las poblaciones. El atraso en infraestructura en las localidades rurales muchas veces no es por falta de voluntad municipal, sino porque dotar de servicios y cobrar predial exige que los \"solares\" dejen de ser suelo ejidal y cuenten con escrituras privadas plenas. Tener el conocimiento sobre Tierras Parceladas, Uso Común y Asentamientos Humanos, le permite tomar decisiones y saber exactamente los límites jurisdiccionales entre la Ley Agraria y el Desarrollo Urbano Municipal, evitando expropiaciones fallidas o conflictos sociales al momento de proyectar infraestructura pública.",
+  "series": []
+ },
+ {
+  "id": "social-gobernanza-participacion-ciudadana",
+  "monitor": "social",
+  "subsistema": "institucional",
+  "vista": "desempeno",
+  "seccion": "Gobernanza",
+  "tema": "Participación Ciudadana",
+  "titulo": "Participación Ciudadana",
+  "descripcion": "Este tema audita la existencia y eficiencia de los canales democráticos para la toma de decisiones en el territorio. Evalúa la figura del COPLADECAM (Comité de Planeación para el Desarrollo del Estado de Campeche) y mide la capacidad de las autoridades para garantizar la transparencia, el gobierno abierto y, sobre todo, la inclusión real (con perspectiva de género e interseccionalidad) en las políticas de desarrollo urbano.",
+  "variables": "Existencia y conformación de Consejos o Comités de Planeación (COPLADECAM / IMPLAN), Indicadores de Gobierno Abierto y Participación Ciudadana (Métrica de Gobierno Abierto CIDE/INAI), Derecho al Acceso a la Información (Transparencia en el ejercicio de recursos) y Capacidades institucionales locales para la atención pública.",
+  "capasTexto": "C04_EAdmin2_INEGI_2023 (1 y 3)",
+  "capas": [
+   "c04eadmin2inegi2023"
+  ],
+  "analitica": "- Órgano Rector (COPLADECAM): Es el órgano colegiado y consultivo supremo del estado para integrar el Plan Estatal de Desarrollo (PED) en congruencia con la ONU (ODS). Tiene la obligación legal de tomar en consideración a los Ayuntamientos, los pueblos y comunidades indígenas y los sectores social y privado.\n- Planeación Municipal: El PEOTDU revela una asimetría estructural. Mientras el municipio de Carmen cuenta con su propio Instituto Municipal de Planeación (IMPLAN) para garantizar el monitoreo y participación continua en temas urbanos, las cabeceras municipales del norte (Camino Real) adolecen gravemente de instrumentos y organismos de planeación.\n- Participación Institucional: Según datos de la Métrica de Gobierno Abierto (MGA - CIDE/INAI) de 2021, la participación ciudadana en Campeche desde la perspectiva del gobierno se desplomó al 10%. Peor aún, Campeche solo cumple con el 37% de los mecanismos de activación ciudadana; es decir, aunque la población sea activa y haga propuestas, institucionalmente se considera que \"no se toman en cuenta ya que no se realiza una respuesta\".\n- Transparencia Limitada (El factor Internet): El padrón del órgano garante (COTAIPEC) incluye 148 sujetos obligados, pero la capacidad estatal para atender el acceso a la información descansa en apenas 147 personas. Además, de 2008 a 2022, solo se registraron 117,246 solicitudes, lo que significa que solo el 13% de la poblaciónha ejercido activamente este derecho. El PEOTDU advierte que la eficacia de este derecho está condicionada directamente al acceso a internet de la población.",
+  "narrativa": "La gobernanza en Campeche presenta un cortocircuito entre lo que dicta la ley y lo que vive el ciudadano. Por ley, el ordenamiento territorial debe construirse \"de abajo hacia arriba\" a través del COPLADECAM, incluyendo forzosamente a comunidades indígenas y grupos vulnerables. Sin embargo, la métrica oficial nos demuestra que el gobierno solo capitaliza el 10% de la participación social y omite responder al 63% de las propuestas ciudadanas. A esto se suma la barrera de la \"transparencia digital\" en un estado profundamente rural. Si solo el 13% de la población ejerce su derecho a saber en qué se gasta el presupuesto, no es por apatía, es porque el ejercicio de este derecho exige internet. Entender la situación del equipamiento administrativo con las zonas de marginación demuestra que un campesino en Candelaria tendría que viajar horas solo para poder ingresar una solicitud física en una oficina gubernamental. La conclusión es clara: el ordenamiento territorial fracasará si la política pública sigue asumiendo que toda la población tiene conectividad y acceso a las oficinas de las capitales.",
+  "series": []
+ },
+ {
+  "id": "social-gobernanza-capacidades-administrativas",
+  "monitor": "social",
+  "subsistema": "institucional",
+  "vista": "desempeno",
+  "seccion": "Gobernanza",
+  "tema": "Capacidades administrativas",
+  "titulo": "Capacidades administrativas",
+  "descripcion": "Este tema audita \"el músculo\" del Estado y de los Ayuntamientos para hacer cumplir la ley en el territorio. Evalúa la conformación del aparato administrativo (las secretarías e institutos que inciden en el ordenamiento) y, sobre todo, la instrumentación financiera y de gestión del suelo. Identificar si los municipios utilizan herramientas como el cobro de predial (catastro), la captura de plusvalías o el derecho de preferencia, es vital. Sin financiamiento propio y sin reservas territoriales públicas, los gobiernos quedan a merced de la especulación inmobiliaria privada y no pueden dotar de servicios a la población marginada.",
+  "variables": "Aparato administrativo y dependencias reguladoras (SEDUMOP, INFOCAM, IMPLAN), Instrumentos de Gestión de Suelo (Derecho de preferencia / Derecho del tanto), Instrumentos Tributarios y de Captura de Valor (Financiamiento del desarrollo urbano) y Gestión de Reservas Territoriales contra la especulación.",
+  "capasTexto": "C04_EAdmin2_INEGI_2023 (1 y 3) y C04_Modelo_Ordenamiento_Territorial_OP_PG_2023 (1 y 3).",
+  "capas": [
+   "c04eadmin2inegi2023",
+   "c04modeloordenamientoterritorialoppg2023"
+  ],
+  "analitica": "- Aparato Estatal: A nivel estatal, Campeche cuenta con un andamiaje sólido. El Poder Ejecutivo opera a través de 15 secretarías. La directriz territorial recae en la SEDUMOP (Secretaría de Desarrollo Urbano, Movilidad y Obras Públicas), la cual coordina las políticas de vivienda, prevención de riesgos e incrementos/decrementos de costos de obras. Se apoya en brazos técnicos como el INFOCAM (Instituto de Información Estadística, Geográfica y Catastral) para la gestión de datos territoriales, y la SEMABICC para las políticas de ordenamiento ambiental y energético.\n- Administración municipal: En contraste con el Estado, los municipios operan con severas limitaciones técnicas. De los 13 municipios, el PEOTDU resalta que únicamente Carmen cuenta con un IMPLAN (Instituto Municipal de Planeación), el cual promueve la investigación, evaluación y monitoreo urbano a nivel local. El resto de las cabeceras depende casi enteramente de la SEDUMOP estatal.\n- Instrumentos de gestión del suelo: La planeación estatal (alineada a la ENOT y al POTR-SSE) advierte sobre la urgencia de gestionar \"reservas territoriales\" públicas para ofertar suelo con servicios y frenar la proliferación de Asentamientos Humanos Irregulares. El PEOTDU revela una falla crítica: existe la figura legal del \"Derechos de preferencia (derecho del tanto)\", un instrumento que permite a la federación, estados y municipios adquirir predios de manera preferente para construir espacio público, mismo que no ha sido aprovechado hasta el momento en la entidad.\n- Financiamiento: El documento subraya como reto fundamental la implementación de instrumentos de financiación, específicamente los de carácter \"tributario y de captura de valor\". La falta de aplicación de estas herramientas impide que los gobiernos locales recuperen la inversión en infraestructura pública, dejando las ganancias exclusivamente en manos de la especulación inmobiliaria privada.",
+  "narrativa": "El PEOTDU desnuda la realidad administrativa del estado: tenemos leyes e instituciones estatales fuertes, pero Ayuntamientos rezagados. Mientras la SEDUMOP y el INFOCAM tienen la capacidad técnica para diseñar el ordenamiento, al bajar al nivel municipal nos topamos con que solo Carmen tiene un IMPLAN. ¿Cómo puede un municipio como Hopelchén o Calakmul regular la expansión de la frontera agrícola si no tiene un brazo técnico de planeación?; el diagnóstico en este rubro nos da la pauta económica más importante del Monitor Social: el desarrollo urbano se tiene que financiar a sí mismo. El Estado y los municipios han dejado históricamente sobre la mesa instrumentos legales poderosísimos. Al no ejercer el derecho del tanto para adquirir reservas territoriales y al no aplicar esquemas de captura de valor (plusvalías), los ayuntamientos están renunciando a millones de pesos que podrían utilizarse para pavimentar y llevar agua a las colonias marginadas. Aprovechar la información catastral de INFOCAM le da al Estado la radiografía fiscal exacta para empezar a cobrar lo justo a los desarrollos privados que se benefician de las obras públicas, logrando por fin la anhelada suficiencia financiera local.",
+  "series": []
+ },
+ {
+  "id": "infraestructura-movilidad-accesibilidad-a-servicios-basicos",
+  "monitor": "infraestructura",
+  "subsistema": "movilidad",
+  "vista": "desempeno",
+  "seccion": "Movilidad",
+  "tema": "Accesibilidad a servicios básicos",
+  "titulo": "Accesibilidad a servicios básicos",
+  "descripcion": "Analizar los tiempos de traslado (isócronas) y la distancia hacia la red carretera pavimentada permite al Estado identificar a las poblaciones \"cautivas\", justificando técnicamente dónde pavimentar un camino rural no es un lujo, sino una obra de rescate social.",
+  "variables": "Grado de Accesibilidad a Carretera Pavimentada (GACP), Tiempos de traslado a centros de servicio (Isócronas en horas/minutos), Distancia lineal y de ruta hacia equipamientos de 2do y 3er nivel (Salud/Educación) y Población en localidades con aislamiento crítico.",
+  "capasTexto": "R04_TiempoCentroServicio_CONEVAL_2021.tif (1 y 3) y C04_Red_Regional_IMT_INEGI_2024 (1).",
+  "capas": [
+   "c04redregionalimtinegi2024",
+   "r04tiempocentroservicioconeval2021"
+  ],
+  "analitica": "- Accesibilidad: Campeche presenta una polarización extrema. Mientras que casi el 100% de la población de Campeche capital, Carmen, Seybaplaya y Calkiní goza de un Grado de Accesibilidad \"Muy Alto\" o \"Alto\" a la red pavimentada; en el sur, los municipios de Calakmul, Candelaria y Palizada concentran cientos de pequeñas localidades (menores a 2,500 habitantes) con un GACP \"Bajo\" o \"Muy Bajo\".\n- Tiempos de traslado: El 55% de la población rural no tiene cobertura directa de un hospital de segundo nivel. Las capas de CONEVAL demuestran que, para un habitante de las localidades profundas de Calakmul o Hopelchén, el tiempo de traslado hacia un centro de servicios urbanos puede superar las 2 a 3 horas, dependiendo de las condiciones climáticas (caminos de terracería intransitables en época de lluvias).\n- Correlación directa: Existe una superposición geográfica casi perfecta: las zonas del estado con mayor distancia a carreteras pavimentadas (R4_Distancia_CarrPav) son exactamente las mismas zonas que reportan hasta un 83% de pobreza extrema y un 57% de hacinamiento. La falta de movilidad perpetúa la pobreza.\n- Fluvial: En municipios como Palizada y Carmen (zona de Atasta y Laguna de Términos), la accesibilidad no depende de carreteras, sino de la movilidad fluvial. La falta de infraestructura de atraque o subsidios para lanchas de pasajeros aísla a estas comunidades del abasto continental.",
+  "narrativa": "Los datos demuestran que Campeche funciona a dos velocidades: las capitales costeras hiperconectadas y el interior selvático y fronterizo (Calakmul, Candelaria, Hopelchén) profundamente aislado. Cuando una mujer en labor de parto o una persona herida en una comunidad de Candelaria necesita llegar a un hospital, la falta de una carretera pavimentada convierte un viaje de 30 minutos en un traslado de 3 horas. Entender esa situación es la evidencia obliga a la Secretaría de Obras Públicas a cambiar sus prioridades: el presupuesto estatal debe priorizar la pavimentación de los ramales rurales en el sur que conectan comunidades con clínicas y escuelas, por encima de ampliar avenidas que ya existen en la capital.",
+  "series": []
+ },
+ {
+  "id": "infraestructura-movilidad-transporte-publico",
+  "monitor": "infraestructura",
+  "subsistema": "movilidad",
+  "vista": "desempeno",
+  "seccion": "Movilidad",
+  "tema": "Transporte público",
+  "titulo": "Transporte público",
+  "descripcion": "Este tema evalúa la red venosa que mantiene vivas a las ciudades y comunidades: el transporte de pasajeros. Mide la cobertura de las rutas urbanas, suburbanas y rurales, así como la proliferación de medios de transporte alternativos (o informales). Analizar el transporte público desde una óptica social es fundamental porque la falta de rutas formales obliga a las familias a gastar un porcentaje altísimo de sus ingresos en traslados precarios, fomenta el uso masivo de motocicletas (con el consecuente aumento en mortalidad vial) y vulnera la seguridad de los grupos más vulnerables, especialmente las mujeres.",
+  "variables": "Cobertura de rutas de transporte público (Urbano, Suburbano y Foráneo/Rural), Inventario de paraderos y terminales de transferencia de pasajeros, Modalidad de transporte predominante (Autobús, Combi/Vagoneta, Taxi Foráneo, Mototaxi) y Precarización e informalidad de la movilidad en municipios rurales.",
+  "capasTexto": "C04_Transporte_fluvial_rio_Palizada_INEGI_2008 (3) y C04_Red_Regional_IMT_INEGI_2024 (1).",
+  "capas": [
+   "c04redregionalimtinegi2024",
+   "c04transportefluvialriopalizadainegi2008"
+  ],
+  "analitica": "- Déficit Urbano: En las dos capitales económicas (Campeche y Carmen), que concentran casi el 60% del parque habitacional, el modelo de expansión urbana periférica (analizado en Vivienda) colapsó la capacidad del transporte. Las rutas de autobuses urbanos son insuficientes, operan con flotas envejecidas y no cubren eficientemente los nuevos fraccionamientos ni los Asentamientos Irregulares, obligando a los habitantes a caminar largas distancias en zonas sin iluminación.\n- Mototaxi: Ante la ausencia del Estado y de empresas de transporte formal, la población resolvió su movilidad a través del mototaxi. En los municipios del norte (Calkiní, Dzitbalché, Hecelchakán, Tenabo) y zonas agropecuarias como Hopelchén y Escárcega, el mototaxi es el rey indiscutible de la \"última milla\". Aunque genera empleo local, expone a los pasajeros a una alta inseguridad vial y carece de regulación tarifaria.\n- Movilidad foránea: En municipios con alta dispersión como Calakmul y Candelaria, el transporte no es urbano, es foráneo. Las comunidades dependen exclusivamente de \"Taxis Colectivos\" o \"Combis\" que pasan una o dos veces al día. Perder la combi significa perder el día de trabajo o la cita médica. Además, el costo del pasaje foráneo representa un golpe severo a la economía de familias que, como ya vimos, viven en pobreza extrema.\n- Motocicleta particular: Como síntoma del mal transporte público, todo el estado de Campeche (desde Palizada hasta Campeche capital) registra un aumento descontrolado del parque vehicular de motocicletas. Es la alternativa barata de la clase trabajadora, pero ha disparado los hechos de tránsito mortales.",
+  "narrativa": "La geografía del transporte público en Campeche es el reflejo exacto de la desigualdad. Si analizamos las Rutas de Transporte en contraste con los Asentamientos Humanos Irregulares o con las Escuelas notaremos los vacíos: hay miles de estudiantes y trabajadores en Campeche y Carmen que viven fuera del radio de cobertura del autobús. Al mismo tiempo, se debe visibilizar la realidad de los municipios rurales. El mototaxi en Calkiní o la combi foránea en Calakmul no son anomalías, son el soporte vital de la región. El ordenamiento territorial debe utilizar estas capas de rutas para justificar proyectos de inversión social: construir paraderos seguros e iluminados con perspectiva de género en las cabeceras municipales para que las mujeres no esperen la combi en la oscuridad, y diseñar esquemas de subsidio para que el transporte foráneo llegue a las comunidades más apartadas de Candelaria, garantizando el derecho a la movilidad sin que cueste la mitad del salario de un campesino.",
+  "series": []
+ },
+ {
+  "id": "infraestructura-movilidad-movilidad-activa",
+  "monitor": "infraestructura",
+  "subsistema": "movilidad",
+  "vista": "desempeno",
+  "seccion": "Movilidad",
+  "tema": "Movilidad activa",
+  "titulo": "Movilidad activa",
+  "descripcion": "Evalúa la existencia y condición de banquetas, cruces peatonales, ciclovías y rampas. La movilidad inclusiva es un mandato de derechos humanos: sin diseño universal, el entorno construido se convierte en una prisión para las personas con discapacidad. A la par, medir la \"Seguridad Vial\" (hechos de tránsito, atropellamientos y siniestralidad) permite identificar los \"tramos de la muerte\" dentro de los polígonos urbanos y rurales, justificando la intervención física de las calles para salvar vidas.",
+  "variables": "Inventario de infraestructura peatonal (Condición de banquetas y alumbrado), Accesibilidad Universal (Rampas, guías táctiles, cruces a nivel), Infraestructura para movilidad no motorizada (Ciclovías) y Siniestralidad y Seguridad Vial (Hechos de tránsito: colisiones, atropellamientos y víctimas).",
+  "capasTexto": "C04_Construcción_ciclovia_Hopelchen_OPMATPG_2023 (1 y 3)",
+  "capas": [
+   "c04construccioncicloviahopelchenopmatpg2023"
+  ],
+  "analitica": "- Población con discapacidad:  Campeche tiene 52,259 personas con discapacidad (el 60% de ellas concentradas en Campeche capital y Carmen). Sin embargo, el inventario peatonal demuestra que la inmensa mayoría de las calles carece de diseño universal. Las banquetas estrechas, fracturadas o invadidas por el comercio informal obligan a las personas en silla de ruedas, o a los adultos mayores, a transitar por el arroyo vehicular, exponiendo sus vidas.\n- Bicicleta: Mientras en las capitales la ciclovía se ve a menudo como un tema recreativo, en los municipios del interior es el motor de la economía local. En lugares como Calkiní, Hecelchakán, Escárcega y Hopelchén, la bicicleta y el triciclo de carga (usado por campesinos y comerciantes) son los modos de transporte dominantes. El problema es que no existe infraestructura segregada, obligando a los ciclistas a compartir carreteras sin acotamientos con tractocamiones agroindustriales y de paso.\n- Siniestralidad vial: El colapso del transporte público foráneo y urbano ha provocado una motorización masiva en dos ruedas en los 13 municipios. El cruce de datos de Seguridad Vial revela que los hechos de tránsito con motocicletas involucradas (muchas veces conduciendo en familias enteras y sin casco en el medio rural) se han disparado, siendo la principal causa de traumatismos en los hospitales del estado.\n- Inseguridad peatonal: Relacionado directamente con el Tema de Género (Subsistema 1), la falta de alumbrado público y el deterioro de la infraestructura peatonal en las periferias de ciudades como Escárcega, Champotón y Carmen convierten la caminabilidad en un riesgo extremo, inhibiendo la movilidad activa de las mujeres después del atardecer.",
+  "narrativa": "Una ciudad que no se puede caminar es una ciudad rota. El diagnóstico estatal nos arroja una contradicción dolorosa: las personas que menos contaminan y que menos recursos tienen (peatones y ciclistas) son las que más riesgo corren en las calles de Campeche. El entorno construido actual está diseñado exclusivamente para el flujo del automóvil, lo que ha generado una barrera arquitectónica insalvable para más de 50 mil campechanos con alguna discapacidad física o visual.\n\nEntender los Hechos de Tránsito y analizarlos en conjunto con los polígonos de población vulnerable es un ejercicio de política pública contundente. Le demuestra a los ayuntamientos que invertir en infraestructura no significa hacer pasos a desnivel para coches, sino aplicar el modelo de \"Calles Completas\": ensanchar banquetas, construir cruces a nivel y tender ciclovías seguras que conecten los barrios de Calkiní o las colonias marginadas de Carmen con sus centros de trabajo. Esto no es embellecimiento urbano, es equidad territorial y prevención de la mortalidad.",
+  "series": []
+ },
+ {
+  "id": "infraestructura-infraestructura-de-servicios-red-energetica-y-de-hidrocarburos",
+  "monitor": "infraestructura",
+  "subsistema": "urbano-rural",
+  "vista": "desempeno",
+  "seccion": "Infraestructura de servicios",
+  "tema": "Red energética y de hidrocarburos",
+  "titulo": "Red energética y de hidrocarburos",
+  "descripcion": "Este apartado abarca la infraestructura de generación y transmisión eléctrica, así como la red de extracción, almacenamiento y distribución de hidrocarburos. La visualización técnica de estos componentes cumple un doble propósito normativo en el ordenamiento territorial: en primer lugar, identifica los nodos con capacidad de suministro para soportar la instalación de futuros parques industriales o proyectos logísticos de gran envergadura; en segundo lugar, establece restricciones de uso de suelo inalienables debido al riesgo inherente y a la normatividad de las franjas de protección, determinando zonas incompatibles con el desarrollo urbano.",
+  "variables": "Inventario y longitud de líneas de transmisión eléctrica de alta tensión (kV), Inventario de instalaciones industriales energéticas (Pozos, plantas de compresión, terminales de almacenamiento), Red de ductos terrestres y marinos (Oleoductos y gasoductos) y Amplitud de la Franja de Desarrollo del Sistema (Derechos de Vía por diámetro de tubería).",
+  "capasTexto": "C04_Ductos_CNH_2023 (1 y 3), C04_Instalaciones_CNH_2023 (1 y 3), C04_TerminalAlmacenamiento_CNH_2023 (1) y C04_Construcción_centrales_y_subestaciones_eléctricas_OPMATPG_2023 (1 y 3).",
+  "capas": [
+   "c04construccioncentralesysubestacioneselectricasopmatpg2023",
+   "c04ductoscnh2023",
+   "c04instalacionescnh2023",
+   "c04terminalalmacenamientocnh2023"
+  ],
+  "analitica": "- Capacidad de transmisión eléctrica: El Estado de Campeche opera una red de alta tensión con una longitud total de 1,770.11 km. La infraestructura predominante consiste en líneas de alta tensión soportadas en torres de acero, concentrando 990.18 km en líneas de 115 kV y 316.48 km en líneas de 400 kV. Esta red asegura la transferencia energética a nivel macrorregional, pero exige el respeto estricto a las servidumbres de paso.\n- Vocación energética e hidrocarburos: La extracción de crudo en la cuenca del sureste requiere un soporte continental crítico. La riqueza energética de la plataforma marina depende operativamente de la infraestructura terrestre de Campeche, la cual facilita el procesamiento y la distribución del recurso hacia el centro del país a través del sistema de gasoductos (ej. Gasoducto Mayakan) y terminales.\n- Restricciones Territoriales (Norma Oficial Mexicana NOM-007-SECRE-2010): El ordenamiento territorial está supeditado a la \"Franja de Desarrollo del Sistema\" (anteriormente denominada derecho de vía). La regulación impone amplitudes mínimas restrictivas para el alojamiento, inspección y mantenimiento de ductos de gas natural. El PEOTDU documenta que los ductos menores a 101.6 mm (4\") exigen una franja de 4.0 metros, escalando progresivamente hasta 12.0 metros de restricción para ductos superiores a los 914.4 mm (36\").",
+  "narrativa": "La viabilidad del desarrollo industrial en Campeche está condicionada por la capacidad instalada y la gestión del riesgo de su infraestructura pesada. La existencia de más de 1,770 kilómetros de líneas de transmisión eléctrica de alta tensión, sumada a la compleja red de pozos y gasoductos de la Comisión Nacional de Hidrocarburos (CNH), dota a la entidad de una ventaja competitiva excepcional para la atracción de capital en el sector de transformación y logística.\n\nEl entendimiento de la ubicación de ductos e instalaciones energéticas en el territorio permite realizar análisis de factibilidad para nuevos polígonos industriales, asegurando el suministro energético necesario para procesos de manufactura o la operatividad de megaobras. Simultáneamente, la incorporación de Derechos de Vía establece los polígonos de exclusión legal. El cruce técnico de estas franjas de protección contra las capas de Asentamientos Humanos previene invasiones en zonas de alto riesgo de explosividad o radiación electromagnética, dotando a las autoridades estatales de la evidencia jurídica indispensable para negar dictámenes de congruencia urbanística y mitigar contingencias civiles.",
+  "series": []
+ },
+ {
+  "id": "infraestructura-logistica-urbana-red-carretera",
+  "monitor": "infraestructura",
+  "subsistema": "urbano-rural",
+  "vista": "desempeno",
+  "seccion": "Logística urbana",
+  "tema": "Red Carretera",
+  "titulo": "Red Carretera",
+  "descripcion": "Este tema cartografía la red vial bajo un enfoque estrictamente de rendimiento logístico y conectividad interestatal. La capacidad de una región para atraer y retener centros de distribución, manufactura e inversión agroindustrial depende del nivel de servicio de sus carreteras (tipo de vía, velocidad de flujo libre y estado del pavimento). El análisis del Tránsito Promedio Diario Anual (TPDA) y la composición del flujo vehicular pesado (camiones de carga) permiten identificar los ejes logísticos saturados, así como las zonas de oportunidad para la modernización de libramientos que mitiguen el deterioro del asfalto urbano y optimicen los tiempos de traslado de mercancías.",
+  "variables": "Longitud y clasificación técnica de la red carretera (Federal Libre, Cuota, Estatal, Rural)., Condición del pavimento y capacidad de carriles, Tránsito Promedio Diario Anual (TPDA) y participación porcentual de vehículos pesados (camiones) y Corredores logísticos y origen-destino de productos transportados.",
+  "capasTexto": "C04_Red_Regional_IMT_INEGI_2024 (1), C04_Mejoramiento_conectividad_Corredor_Puebla-Progreso_OPMATPG_2023 (1 y 3) y C04_Estudio_de_ingenierias_basicas_para_transporte_de_carga_OPMATPG_2023 (1 y 3).",
+  "capas": [
+   "c04estudiodeingenieriasbasicasparatransportedecargaopmatpg2023",
+   "c04mejoramientoconectividadcorredorpueblaprogresoopmatpg2023",
+   "c04redregionalimtinegi2024"
+  ],
+  "analitica": "- Estado de la Red: El Estado de Campeche cuenta con una infraestructura carretera total de 5,628 km (5,588 km efectivos en 2020), de los cuales 1,474 km corresponden a troncales federales pavimentadas. El 76% de la superficie total de rodamiento está pavimentada, pero la capacidad es limitada: solamente el 4% de las vías pavimentadas cuenta con 4 o más carriles.\n- Eje principal: El corredor logístico dominante es el \"Eje troncal longitudinal México-Puebla-Progreso\" (Ruta MEX 180 y 180D). Esta vía atraviesa la entidad de oeste a este, conectando Villahermosa (Tabasco) con Mérida y Puerto Progreso (Yucatán), sirviendo como la principal arteria de intercambio de mercancías entre los mercados del centro y sureste del país.\n- Tránsito y Carga (TPDA): El monitoreo de aforos vehiculares en vías troncales expone altos niveles de carga pesada. La autopista Champotón - Campeche (Cuota) registra un TPDA de 5,690 vehículos, con un 28.1% de participación de camiones pesados. Asimismo, la ruta Francisco Escárcega - Champotón absorbe un 26.5% de camiones sobre su TPDA de 3,802. El PEOTDU señala que la carga dominante en estaciones clave (ej. Francisco Kobén y Seybaplaya) corresponde a productos Industriales (57,978 toneladas en Seybaplaya) y Petróleo y sus derivados.\n- Sobrecarga: La concentración de tráfico pesado (superior a 900 camiones diarios en vías específicas), sumada al flujo logístico temporal derivado de la construcción del Tren Maya, genera un desgaste acelerado de la carpeta asfáltica. Esta problemática se agrava porque las rutas atraviesan núcleos urbanos críticos (Carmen, Champotón y Escárcega), generando congestión, demoras operativas y pérdida de competitividad logística.",
+  "narrativa": "La eficiencia logística de Campeche descansa sobre un número limitado de corredores que operan bajo estrés constante. La métrica del Tránsito Promedio Diario Anual (TPDA) revela que casi el 30% del volumen vehicular en las rutas troncales como la MEX 180 corresponde a camiones de carga pesada, movilizando más de 90,000 toneladas mensuales de productos industriales y petroleros. Sin embargo, la infraestructura técnica presenta una obsolescencia evidente: el 96% de las vías pavimentadas dispone de un solo carril por sentido, y arterias estratégicas como la ruta Escárcega-Champotón operan con coronas asfálticas de apenas 7 metros de ancho, insuficientes para el calibre del transporte actual. La capacidad de visualizar la Red Nacional de Caminos cruzada con los aforos de carga y los Derechos de Vía Federales permite a la administración pública priorizar los proyectos de modernización. Resulta imperativo ejecutar los libramientos carreteros proyectados en el Corredor Puebla-Progreso para desviar el tráfico pesado de los centros urbanos de Carmen y Champotón. Estas obras no solo protegerán la infraestructura urbana y evitarán siniestralidad, sino que optimizarán las velocidades de flujo libre, consolidando a Campeche como la plataforma logística insustituible que conecta la Península de Yucatán con el centro de la República.",
+  "series": []
+ },
+ {
+  "id": "infraestructura-logistica-urbana-portuario-y-aeroportuario",
+  "monitor": "infraestructura",
+  "subsistema": "urbano-rural",
+  "vista": "desempeno",
+  "seccion": "Logística urbana",
+  "tema": "Portuario y Aeroportuario",
+  "titulo": "Portuario y Aeroportuario",
+  "descripcion": "Este tema audita la infraestructura de los puertos marítimos y aeropuertos estatales, midiendo su operatividad para la importación, exportación y abastecimiento logístico. La infraestructura portuaria en Campeche posee una vocación primariamente extractiva y petrolera, más que turística o contenerizada. Cuantificar el tonelaje y el volumen de carga movilizada permite evaluar la rentabilidad macroeconómica del territorio costero e identificar si la red de caminos posee la capacidad estructural para absorber el tránsito pesado que se genera desde los puertos hacia los nodos de almacenamiento y transformación tierra adentro.",
+  "variables": "Inventario del Sistema Portuario (Puertos de altura, cabotaje, refugios pesqueros y terminales marítimas), Movimiento total de carga (Toneladas) y tipo de tráfico (General suelta, granel mineral, petróleo y derivados), Arribo nacional de buques y Operaciones del Sistema Aeroportuario (Volumen de carga aérea e infraestructura disponible).",
+  "capasTexto": "C04_Puntos_Int_IMT_INEGI_2024 (1) y C04_Transporte_fluvial_rio_Palizada_INEGI_2008 (3).",
+  "capas": [
+   "c04puntosintimtinegi2024",
+   "c04transportefluvialriopalizadainegi2008"
+  ],
+  "analitica": "- Infraestructura: El sistema portuario de Campeche está conformado por 12 puertos y 2 terminales marítimas. Por tipo de tráfico, la entidad dispone de 8 puertos de altura y 14 de cabotaje. Los puertos estratégicos concesionados a la Administración Portuaria Integral de Campeche (APICAM) son Isla del Carmen, Cayo Arcas, Seybaplaya y Lerma.\n- Volumen de Carga: En 2021, los puertos movilizaron un total de 20,878,525 toneladas, lo que representa el 13% de toda la carga transportada en el litoral del Golfo de México. La asimetría productiva es evidente: el 97.6% del volumen total (20,381,962 toneladas) se operó exclusivamente en Cayo Arcas, enfocado en la exportación de petróleo y sus derivados. El resto se distribuyó entre Isla del Carmen (1.6%), Lerma (0.4%) y Seybaplaya (0.3%).\n- Arribo de Buques: Campeche registró el atraque de 1,865 buques (14% del total del Golfo). De esta cifra, la gran mayoría (1,530 embarcaciones) arribó al puerto de Isla del Carmen para operar carga general suelta, confirmando su rol como plataforma logística y de suministros para la sonda de Campeche. Cabe señalar que la entidad reporta un nivel nulo (cero toneladas) en movimiento de carga contenerizada.\n- Logística Aeroportuaria: El sistema recae principalmente en el Aeropuerto Internacional de Campeche y el de Ciudad del Carmen. En 2022, Campeche movilizó 717,488 kilogramos de carga aérea. El Aeropuerto de Ciudad del Carmen absorbió el 55% de este volumen y sostiene una dinámica predominantemente enfocada a negocios y operaciones petroleras, relegando el sector turístico a un plano secundario.",
+  "narrativa": "El sistema multimodal de Campeche evidencia una especialización absoluta en la industria de hidrocarburos, generando una fuerte presión sobre la infraestructura terrestre adyacente. Los datos duros demuestran que puertos como Isla del Carmen, a pesar de no manejar el mayor tonelaje petrolero, sostienen un ritmo de operaciones altísimo con más de 1,500 buques anuales y operaciones de carga general. Esta intensa actividad requiere una interconexión fluida hacia el interior continental, obligando a los tractocamiones a utilizar el sistema de puentes (Zacatal y La Unidad) y la ruta MEX 180, saturando la vialidad e impactando el pavimento urbano.\n\nVisualizar los puntos ciertos puntos de interes, en superposición con la Red Nacional de Caminos, resulta crítico para la planeación macro. Revela que el desarrollo logístico futuro del Estado no depende necesariamente de construir nuevos puertos, sino de diversificar la vocación de los existentes (como Lerma y Seybaplaya) hacia el movimiento de contenedores y, más urgente aún, de consolidar libramientos carreteros y vías férreas que conecten eficientemente estos puertos con los corredores industriales de la macrorregión Sursureste.",
+  "series": []
+ },
+ {
+  "id": "infraestructura-logistica-urbana-ferroviaria-y-tren-maya",
+  "monitor": "infraestructura",
+  "subsistema": "urbano-rural",
+  "vista": "desempeno",
+  "seccion": "Logística urbana",
+  "tema": "Ferroviaria y Tren Maya",
+  "titulo": "Ferroviaria y Tren Maya",
+  "descripcion": "Este tema evalúa la red ferroviaria y la implantación del Proyecto Tren Maya como el eje estructurador de la macro-logística estatal. La transición modal de carga y pasajeros hacia el sistema férreo representa la intervención territorial más significativa de la entidad. El análisis geoespacial de este sistema es fundamental para dictaminar la vocación del suelo contiguo a las estaciones, prever la capacidad de los nodos intermodales y, jurídicamente, hacer cumplir las restricciones de construcción impuestas por el derecho de vía ferroviario, mitigando riesgos operativos urbanos.",
+  "variables": "Trazado de la red férrea y longitud en territorio estatal (km), Inventario de infraestructura de pasajeros, carga y mantenimiento (Estaciones, bases, talleres) y Restricciones territoriales normativas (Derecho de vía ferroviario en metros).",
+  "capasTexto": "C00_Ruta_Tren_Maya_PEOT_2023.shp (1) y C04_RelacionUrbRuralEstTM_FONATUR_OPMATPG_2023 (3)",
+  "capas": [
+   "c00rutatrenmayapeot2023",
+   "c04relacionurbruralesttmfonaturopmatpg2023"
+  ],
+  "analitica": "- Cobertura Territorial: El trazado del Tren Maya abarca una extensión de casi 500 kilómetros a lo largo del Estado de Campeche, estructurando el territorio a través de los Tramos 1, 2, 3 y 7.\n- Nodos Logísticos: La infraestructura proyectada contempla 11 estaciones de pasajeros distribuidas estratégicamente (Candelaria, Escárcega, Carrillo Puerto/Champotón, Edzná, San Francisco Campeche, Tenabo, Hecelchakán, Calkiní, Xpujil, Calakmul y Centenario). Para dar soporte a la logística macro, se habilitan 3 estaciones de carga exclusivas ubicadas en Campeche, Escárcega y Xpujil. El sistema operativo se sostiene con dos bases de mantenimiento (Xpujil y Edzná) y dos talleres/cocheras (Campeche y Escárcega).\n- Derecho de Vía: El ordenamiento territorial debe garantizar de manera obligatoria una franja de resguardo de por lo menos 15 metros de cada lado de la vía férrea, medidos a partir del eje horizontal de la misma (la parte media del escantillón de vía).",
+  "narrativa": "La consolidación del sistema ferroviario redimensiona la capacidad logística de Campeche y exige una reconfiguración estricta del ordenamiento territorial. La habilitación de las estaciones de carga en Escárcega, Campeche y Xpujil dota a la entidad de nodos intermodales estratégicos con la capacidad de absorber el tránsito pesado que actualmente satura la red carretera e impacta el pavimento urbano.\n\nLa integración de las rutas del tren maya y sus estaciones permiten a la autoridad estatal sectorizar los polígonos de desarrollo logístico e industrial en la periferia de estos nodos, maximizando la captura de valor tributario. Simultáneamente, el análisis en conjunto con el Derechos de Vía garantiza el control territorial, previniendo la instalación de asentamientos humanos o infraestructura incompatible dentro de la franja restrictiva de 15 metros, asegurando así la viabilidad operativa y la seguridad civil a lo largo de los 500 kilómetros de la red en la entidad.",
+  "series": []
+ },
+ {
+  "id": "infraestructura-produccion-economica-parques-de-transformacion",
+  "monitor": "infraestructura",
+  "subsistema": "urbano-rural",
+  "vista": "desempeno",
+  "seccion": "Producción económica",
+  "tema": "Parques de transformación",
+  "titulo": "Parques de transformación",
+  "descripcion": "Este tema cartografía la especialización industrial de Campeche más allá del sector de extracción petrolera. La evaluación territorial de las actividades secundarias y la ubicación de las empresas de manufactura, transformación e industria textil determina la viabilidad para la consolidación de nuevos parques industriales. Mapear estas unidades económicas permite identificar clústeres donde la infraestructura preexistente (energía, vías de carga y telecomunicaciones) justifica la inversión pública para escalar proyectos detonadores que diversifiquen el Producto Interno Bruto (PIB) estatal, combatiendo la dependencia histórica de la industria de hidrocarburos.",
+  "variables": "- Índices de Especialización de Actividades Industriales (Unidades económicas, personal ocupado, producción bruta total).\n- Inventario de unidades económicas en el sector secundario/manufacturero (Textil, bebidas, derivaciones petroleras).\n- Proyectos estratégicos de transformación (Parques Industriales y Plantas Energéticas).",
+  "capasTexto": "- C04_Parque_Industrial_Textil_OPMATPG_2023 (1 y 3)\n- C04_Industria_Planta_Biocombustible_OPMATPG_2023 (1 y 3)\n- C04_CentralidadEconomica_CE_DENUE_2019 (3)",
+  "capas": [
+   "c04centralidadeconomicacedenue2019",
+   "c04industriaplantabiocombustibleopmatpg2023",
+   "c04parqueindustrialtextilopmatpg2023"
+  ],
+  "analitica": "- Concentración y Vocación Secundaria: El municipio de Carmen es el único con vocación productiva dominante en actividades secundarias debido a la extracción de petróleo y gas natural (índice de especialización de 26.2 en unidades económicas). Sin embargo, la industria de fabricación de insumos y prendas de vestir (textil) presenta una fuerte aglomeración de mano de obra e infraestructura, demostrando viabilidad para escalar hacia proyectos de desarrollo a gran escala.\n- Proyecto Detonador - Parque Industrial Textil: Para romper la dependencia petrolera e incrementar la productividad vinculando productores, consumidores y nuevas tecnologías, el PEOTDU proyecta la creación de un Parque Industrial Textil en la localidad de Bécal (Municipio de Calkiní), requiriendo una inversión macro de 64 millones de pesos, operada por el Estado y la Secretaría de Desarrollo Económico (SEDECO).\n- Proyecto Detonador - Planta de Biocombustible: Alineado a la alta vocación agrícola, específicamente en el cultivo de caña de azúcar (producción de 212,541.42 toneladas anuales en 2022), el instrumento justifica la construcción de una Planta de Biocombustible en el municipio de Champotón (inversión de 150 millones de pesos). Esta infraestructura industrial aprovechará la biomasa (hasta 80 litros de etanol por tonelada de caña), diversificando la matriz energética regional.",
+  "narrativa": "La estructura económica de Campeche exhibe una vulnerabilidad estructural derivada de su absoluta concentración en la extracción de hidrocarburos. El análisis espacial de las actividades productivas comprueba que, fuera de la Sonda de Campeche y Ciudad del Carmen, el resto del territorio posee un enorme potencial manufacturero y agroindustrial que carece de infraestructura física (parques industriales) para consolidarse como motor económico.\n\nEntender los polígonos propuestos para el Parque Industrial Textil en Bécal y la Planta de Biocombustible en Champotón resulta indispensable para alinear el ordenamiento urbano y la inversión en obra pública. Estas megaestructuras industriales requerirán garantizar dotación de redes, conectividad mediante el Corredor Puebla-Progreso y zonas de amortiguamiento para evitar conflictos de uso de suelo urbano. Dotar de esta base técnica y legal a la SEDECO y al gobierno estatal permitirá atraer inversión privada, detonando un crecimiento económico diversificado y mitigando los desequilibrios asimétricos entre los municipios del estado.",
+  "series": []
+ },
+ {
+  "id": "infraestructura-produccion-economica-abasto-agroindustrial",
+  "monitor": "infraestructura",
+  "subsistema": "urbano-rural",
+  "vista": "desempeno",
+  "seccion": "Producción económica",
+  "tema": "Abasto agroindustrial",
+  "titulo": "Abasto agroindustrial",
+  "descripcion": "Este tema cartografía la infraestructura de acopio, distribución y tecnificación agropecuaria del estado. El ordenamiento de la infraestructura agroindustrial (sistemas de riego, núcleos de procesamiento lechero y centros de abasto regionales) resulta estratégico para sustituir modelos de producción de subsistencia por cadenas de valor de alta rentabilidad. La visualización de estos nodos productivos, interconectados mediante caminos saca cosechas, permite al gobierno justificar la inversión en conectividad logística de \"última y primera milla\", asegurando que los volúmenes de producción primaria (agricultura, apicultura, ganadería) alcancen el sistema multimodal logístico (Tren Maya y Puertos) sin mermas ni sobrecostos de traslado.",
+  "variables": "- Inventario de centros regionales de acopio y abasto comercial.\n- Polígonos de infraestructura de tecnificación hídrica (Sistemas de riego por gravedad/goteo).\n- Inventario de núcleos de procesamiento y almacenamiento agropecuario (Equipamiento lechero y apícola).\n- Longitud y trazo de conectividad primaria (Caminos saca cosechas).",
+  "capasTexto": "- C04_Centros_abasto_por_región_OPMATPG_2023 (1 y 3)\n- C04_Equipamiento_apicola_DENUE_2020_OPMATPG_2023 (1 y 3)\n- C04_Infraestructura_produccion_arroz_SDA_2023 (3)\n- C04_Nucleos_lecheros_SDA_2023 (3)",
+  "capas": [
+   "c04centrosabastoporregionopmatpg2023",
+   "c04equipamientoapicoladenue2020opmatpg2023",
+   "c04infraestructuraproduccionarrozsda2023",
+   "c04nucleoslecherossda2023"
+  ],
+  "analitica": "- Red de Abasto Regional: El Estado carece de una red consolidada que articule la alta producción agrícola con los mercados. Para resolver esto, el PEOTDU proyecta la construcción de Centros de Abasto por región, priorizando las zonas geográficamente más desabastecidas: 1. Región Selva, 2. Región Laguna y 3. Región Caribe. Este proyecto busca integrar\n- Logística Pecuaria (Núcleos Lecheros): Campeche posee las condiciones para ser una cuenca lechera a nivel nacional, pero el déficit de infraestructura obliga a los productores a arrendar transporte y sistemas de frío, pulverizando las utilidades. El instrumento programa la construcción estratégica de núcleos de acopio con tanques de almacenamiento, laboratorios y patios de maniobra en Yohaltún (Champotón), Constitución (Calakmul) y Aguacatal (Carmen), con una inversión de 4 millones de pesos por instalación.\n- Tecnificación Agroindustrial (Riego y Almacenamiento): Para transitar de esquemas de bajo rendimiento (12.92 ton/ha de forraje temporal) a cultivos de alto valor (como el arroz), se proyecta una inversión de 1,689 millones de pesos en el municipio de Candelaria. La mega-infraestructura abarca 562.50 hectáreas de reservorios hídricos (8.3 millones de m³), 126.73 km de drenes primarios y secundarios, y 51 equipos de bombeo. Simultáneamente, el proyecto \"Los Chenes\" (Hopelchén) instalará infraestructura para regar 9,213.80 hectáreas mediante pozos profundos.\n- Conectividad de \"Primera Milla\": Todo el esfuerzo de acopio fracasa si la producción no puede extraerse de las parcelas. El PEOTDU incluye un proyecto macro transversal: la construcción y rehabilitación de 2,500 km de caminos saca cosechas en los 13 municipios, con una inversión proyectada de 2,750 millones de pesos, garantizando el desplazamiento de vehículos pesados hacia los corredores logísticos troncales en toda época del año.",
+  "narrativa": "La fragmentación de la cadena de suministro agropecuario es la principal limitante para la competitividad industrial de las zonas rurales de Campeche. El diagnóstico espacial revela un divorcio crítico entre la capacidad productiva de los suelos y la infraestructura técnica: los productores se ven obligados a trabajar bajo esquemas de temporal por falta de sistemas de riego, y a rematar sus productos por no contar con núcleos de almacenamiento en frío (como en Calakmul y Champotón) ni caminos saca cosechas transitables durante la época de lluvia.\n\nEl análisis de Centros de Abasto, Equipamiento apícola y Camino, permite a la Secretaría de Desarrollo Agropecuario (SDA) cruzar la ubicación de las inversiones agroindustriales con la Red Nacional de Caminos. Esta correlación técnica justifica legal y económicamente la habilitación de los distritos de riego proyectados en Candelaria y Los Chenes, garantizando que el incremento exponencial de la producción agrícola (ej. arroz y caña) disponga de la plataforma logística necesaria para ser procesada localmente y exportada a través del Tren Maya o los puertos de altura.",
+  "series": []
+ },
+ {
+  "id": "infraestructura-produccion-economica-corredores-turisticos",
+  "monitor": "infraestructura",
+  "subsistema": "urbano-rural",
+  "vista": "desempeno",
+  "seccion": "Producción económica",
+  "tema": "Corredores turísticos",
+  "titulo": "Corredores turísticos",
+  "descripcion": "Este tema cartografía la capacidad instalada y la aptitud del territorio para soportar megaproyectos turísticos y circuitos económicos a nivel regional. El sector turístico en Campeche funge como un instrumento de desarrollo industrial que exige infraestructura de alto calado: complejos hoteleros, redes de transporte intermodal y dotación de servicios a gran escala. Mapear los circuitos turísticos y la aptitud territorial garantiza que la masificación de visitantes (detonada por la macro-conectividad) se restrinja a polígonos donde la capacidad de carga de los ecosistemas, la suficiencia hídrica y el manejo de residuos estén técnicamente garantizados, bloqueando inversiones especulativas en áreas no aptas.",
+  "variables": "- Inventario de establecimientos hoteleros y capacidad de cuartos por categoría técnica.\n- Polígonos de Aptitud Turística (Análisis multicriterio de viabilidad).\n- Zonas de Desarrollo Turístico Sustentable (Proyectos de ordenamiento espacial).\n- Trazado de Circuitos Artesanales y Culturales (Rutas de impacto regional).",
+  "capasTexto": "- R04_APTITUD_TURISTICA_OPMATPG_2023 (1 y 3)\n- C04_Circuitos_turisticos_SICM_2020_OPMATPG_2023 (1 y 3)",
+  "capas": [
+   "c04circuitosturisticossicm2020opmatpg2023",
+   "r04aptitudturisticaopmatpg2023"
+  ],
+  "analitica": "- Capacidad Instalada e Infraestructura Hotelera: El parque hotelero estatal ha experimentado un crecimiento sostenido para soportar la demanda. El inventario documenta 296 establecimientos hoteleros que ofertan una capacidad total de 8,390 cuartos a nivel estatal.\n- Perfil Económico del Visitante: La infraestructura orientada al segmento de alto poder adquisitivo concentra el dinamismo operativo. De los 8,390 cuartos totales, 3,585 cuartos pertenecen a las categorías de cuatro y cinco estrellas. Estos complejos registran las mayores tasas de ocupación (superando el 50% en la categoría de cinco estrellas), consolidando el flujo de turistas de alto gasto.\n- Gestión de Capacidad de Carga y Restricciones: La vecindad con el estado de Quintana Roo (y su mercado cautivo) sumada al inicio de operaciones del Tren Maya, generará presiones asimétricas sobre el territorio. El PEOTDU advierte categóricamente que es imperante regular los efectos espaciales para evitar rebasar la capacidad de carga de los sitios turísticos.\n- Proyecto Detonador Macro: Para regular la inyección de capital en el sector, el Estado plantea el Programa de Ordenamiento Turístico del Territorio del Estado (inversión de 3 MDP). Este instrumento técnico determinará jurídicamente las \"Zonas de Desarrollo Turístico Sustentable\", imponiendo criterios estrictos de zonificación, uso de suelo y restricciones de densificación en regiones con vulnerabilidad histórico-monumental y natural. A la par, se proyectan los Circuitos turísticos artesanales y culturales para canalizar el flujo económico hacia polos productivos locales.",
+  "narrativa": "La consolidación de Campeche como un hub turístico macrorregional requiere una transición técnica: pasar de la promoción comercial a la gestión del uso de suelo industrial. La actual concentración de infraestructura (más de 8,300 habitaciones de hotel) exige redes hidrosanitarias y energéticas capaces de soportar la demanda temporal de miles de usuarios adicionales sin colapsar el abastecimiento de las poblaciones locales. El riesgo de hiperdensificación provocado por la infraestructura ferroviaria obliga a aplicar candados territoriales.\n\nLa Aptitud Turística, superpuesta con el trazado de los Circuitos Turísticos otorga a la administración estatal el instrumento legal y analítico para dictaminar usos de suelo. Los polígonos que carezcan de aptitud alta no deberán recibir autorizaciones para complejos macro hoteleros. Esta zonificación estricta asegura que el impacto económico derivado de la conectividad no se traduzca en una depredación de las Zonas de Desarrollo Turístico Sustentable, obligando a los inversionistas a ceñirse a un modelo de expansión planificado y de baja densidad destructiva.",
+  "series": []
+ },
+ {
+  "id": "infraestructura-gobernanza-institucional-restricciones-ecologicas",
+  "monitor": "infraestructura",
+  "subsistema": "institucional",
+  "vista": "desempeno",
+  "seccion": "Gobernanza institucional",
+  "tema": "Restricciones ecológicas",
+  "titulo": "Restricciones ecológicas",
+  "descripcion": "La viabilidad legal de la infraestructura pesada (puertos, aeropuertos, centros logísticos y plantas de transformación) está estrictamente supeditada al ordenamiento ecológico del territorio. Este tema cartografía los polígonos de protección ambiental federal, estatal y municipal, los cuales operan normativamente como áreas de restricción absoluta o condicionada. La superposición de la infraestructura proyectada con las Áreas Naturales Protegidas (ANP) y las Áreas Destinadas Voluntariamente a la Conservación (ADVC) es el primer filtro técnico para la emisión de Manifiestos de Impacto Ambiental (MIA), evitando la cancelación de proyectos, litigios territoriales y sanciones patrimoniales contra el Estado y los inversionistas.",
+  "variables": "- Superficie territorial bajo regímenes de protección ecológica (Porcentaje estatal y municipal).\n- Categorización de polígonos (ANP federal/estatal, ADVC, Corredores Biológicos).\n- Restricciones normativas de uso de suelo industrial y logístico en zonas de amortiguamiento.",
+  "capasTexto": "- C00_ANP_CONANP_2025 (1)\n- C04_ADVC_CONANP_CONABIO_2022 (1 y 3)\n- C04_Propuesta_Corredor_Balam_Beh_SEMABICCE_2023 (1 y 3",
+  "capas": [
+   "c00anpconanp2025",
+   "c04advcconanpconabio2022",
+   "c04propuestacorredorbalambehsemabicce2023"
+  ],
+  "analitica": "- Extensión de la Restricción Ambiental: El territorio de Campeche presenta un nivel de regulación ecológica superior a la media del país. Las Áreas Naturales Protegidas (ANP) de carácter federal y las Áreas Destinadas Voluntariamente a la Conservación (ADVC) representan el 27% de la superficie total de la entidad. Esta proporción coloca a Campeche en el quinto lugar a nivel nacional con mayor superficie bajo estas categorías de conservación.\n- Condicionantes Logísticas Municipales: El impacto de las restricciones ambientales se concentra en municipios estratégicos para la logística de hidrocarburos y la red ferroviaria. Al interior de la entidad, sobresale la restricción territorial en Palizada con el 67.9% de su territorio protegido, seguido de Calakmul (54.3%), Carmen (48.2%) y Calkiní (45%). Cualquier expansión portuaria o ferroviaria en estas demarcaciones exige protocolos de viabilidad excepcionales.\n- Conectividad Ecosistémica (Corredores): El ordenamiento ecológico proyecta la interconexión de reservas, como el Corredor Biológico Balam Beh y el Corredor Palizada, integrando variables que impiden la fragmentación del hábitat mediante el bloqueo legal a nuevos trazos carreteros invasivos y la exigencia de infraestructura de mitigación (pasos de fauna) en las obras lineales.",
+  "narrativa": "La riqueza ecosistémica de Campeche constituye, desde la óptica de la infraestructura estratégica, la principal condicionante técnica y jurídica para el emplazamiento industrial y logístico. El hecho de que más de una cuarta parte del territorio estatal opere bajo decretos de protección ambiental exige una planeación espacial de altísima precisión. La viabilidad de corredores de carga pesada o parques de transformación en municipios como Carmen o Calakmul (donde aproximadamente la mitad de la superficie es área natural protegida) depende de evitar la colisión física con las poligonales de conservación.\n\nLa ubicación de las zonas de Áreas Naturales Protegidas funciona como un semáforo regulatorio. Al realizar el cruce espacial de estas áreas ambientales con la red de ductos, vías férreas y propuestas industriales, las autoridades estatales obtienen la dictaminación técnica preliminar para negar cambios de uso de suelo incompatibles y dirigir la inversión en infraestructura hacia los polígonos de aptitud consolidada (zonas urbanas y corredores preexistentes), asegurando la viabilidad jurídica de los proyectos y el respeto inalienable a la Ley General del Equilibrio Ecológico y la Protección al Ambiente.",
+  "series": []
+ },
+ {
+  "id": "infraestructura-gobernanza-institucional-compatibilidad-de-uso-de-suelo",
+  "monitor": "infraestructura",
+  "subsistema": "institucional",
+  "vista": "desempeno",
+  "seccion": "Gobernanza institucional",
+  "tema": "Compatibilidad de uso de suelo",
+  "titulo": "Compatibilidad de uso de suelo",
+  "descripcion": "Este tema evalúa la madurez regulatoria de los municipios para hospedar infraestructura pesada y parques industriales. La atracción de capital logístico exige certeza jurídica inquebrantable, la cual se materializa a través de las licencias de uso de suelo y construcción. Dictaminar estas licencias requiere obligatoriamente que el municipio cuente con un Programa Municipal de Desarrollo Urbano (PMDU) y un Programa de Ordenamiento Ecológico Local (POEL) vigentes. El déficit o la obsolescencia de estos instrumentos expone a los inversionistas a la discrecionalidad administrativa y a la cancelación de megaproyectos por incompatibilidad ecológica o urbana.",
+  "variables": "- Estatus normativo de los Programas Municipales de Desarrollo Urbano (PMDU).\n- Cobertura y vigencia de los Programas de Ordenamiento Ecológico Local (POEL).\n- Control de licencias de uso de suelo, construcción y registro catastral.",
+  "capasTexto": "- C04_Modelo_Ordenamiento_Territorial_OP_PG_2023 (1 y 3)",
+  "capas": [
+   "c04modeloordenamientoterritorialoppg2023"
+  ],
+  "analitica": "- Vacío Normativo Urbano (PMDU): La regulación del uso de suelo municipal en Campeche presenta un rezago histórico. De los 13 municipios, solamente Campeche (Capital) cuenta con un PMDU publicado y vigente (2020). El instrumento detalla que 6 municipios están en estatus de \"Por publicar\", 4 en \"Elaboración\", y Dzitbalché figura \"Sin instrumento\". Esta carencia operativa frena la emisión ágil de licencias para uso industrial.\n- Obsolescencia Ecológica (POEL): El ordenamiento ecológico local, vital para tramitar los Manifiestos de Impacto Ambiental de infraestructuras macro, opera con un déficit crítico. Existen 7 municipios sin ningún instrumento POEL (incluyendo nodos industriales y logísticos como Carmen, Seybaplaya y Candelaria). De los 6 municipios que sí tienen POEL publicado (ej. Calakmul, Escárcega, Champotón), el PEOTDU advierte que 5 de ellos requieren actualización urgente, al haber sido elaborados entre 2012 y 2015.\n- Condicionantes Catastrales y Licencias: La normatividad exige que, para otorgar cualquier licencia de uso de suelo, construcción o ampliación (indispensable para parques industriales o terminales de carga), se cuente con la certificación de la clave y valor catastral. Los notarios y dependencias municipales están obligados a informar al ICECAM sobre nuevos asentamientos o subdivisiones; el incumplimiento genera sanciones y la nulidad jurídica de los predios.",
+  "narrativa": "La viabilidad legal para el despliegue de infraestructura estratégica en Campeche se enfrenta a un cuello de botella regulatorio a nivel municipal. El diagnóstico es contundente: polos con una altísima vocación logística y petrolera, como Ciudad del Carmen o Seybaplaya, carecen absolutamente de un Programa de Ordenamiento Ecológico Local (POEL) y no tienen su PMDU publicado. Sin estas reglas claras, la asignación de usos de suelo industrial o comercial a gran escala opera en un área gris que ahuyenta la inversión privada y vulnera el equilibrio ambiental.\n\nAnte esta parálisis regulatoria municipal, el análisis de Modelo de Ordenamiento Territorial en el Geovisor se vuelve el mecanismo de salvaguarda jurídica del Estado. Al carecer de PMDUs locales, el Estado utiliza este Modelo Rector como el marco normativo supremo para dictaminar congruencias, evaluar factibilidades y autorizar (o rechazar) el emplazamiento de naves industriales, centros de distribución y megaproyectos en todo el territorio campechano. Esta herramienta técnica elimina la discrecionalidad local, garantizando a los inversionistas que la ubicación de sus infraestructuras es legal, ecológicamente viable y catastralmente certificable.",
+  "series": []
+ },
+ {
+  "id": "infraestructura-gobernanza-institucional-franjas-de-seguridad",
+  "monitor": "infraestructura",
+  "subsistema": "institucional",
+  "vista": "desempeno",
+  "seccion": "Gobernanza institucional",
+  "tema": "Franjas de Seguridad",
+  "titulo": "Franjas de Seguridad",
+  "descripcion": "Este tema cartografía las servidumbres de paso y las franjas de protección legal inherentes a la infraestructura pesada del estado. Los derechos de vía constituyen polígonos de exclusión absoluta donde queda estrictamente prohibida la instalación de asentamientos humanos o el desarrollo de obras civiles incompatibles. La integración de estos polígonos en el ordenamiento territorial es el mecanismo jurídico definitivo para mitigar contingencias (explosividad, descargas eléctricas, descarrilamientos) y garantizar la viabilidad operativa ininterrumpida de las redes de transporte de energía, carga y pasajeros a nivel macroeconómico.",
+  "variables": "- Amplitud normativa de la Franja de Desarrollo / Derecho de Vía (Metros a partir del eje).\n- Inventario de afectación territorial por tipo de infraestructura (Vial, ferroviaria, eléctrica y ductos).\n- Superficie total restringida por servidumbres de paso.",
+  "capasTexto": "- C04_DerechosDeViaCarreterasFederales_INEGI_IMT_2022 (3)\n- C04_DerechosDeViaTrenMaya_FONATUR_2023 (3)\n- C04_DerechosDeViaGasoductos_CENEGAS_2019 (3)\n- C04_DerechosDeViaLineasDeTransmisionElectrica_Geocomunes_2023 (3)",
+  "capas": [
+   "c04derechosdeviacarreterasfederalesinegiimt2022",
+   "c04derechosdeviagasoductoscenegas2019",
+   "c04derechosdevialineasdetransmisionelectricageocomunes2023",
+   "c04derechosdeviatrenmayafonatur2023"
+  ],
+  "analitica": "- Derecho de Vía Carretero: La red de carreteras federales en Campeche genera una afectación territorial restrictiva de aproximadamente 61.31 km² de derecho de vía. Para la infraestructura de administración estatal, la legislación local impone una amplitud mínima absoluta de 20 metros a cada lado del eje del camino.\n- Restricción Ferroviaria (Reglamento del Servicio Ferroviario): La operatividad técnica del Tren Maya y la red férrea preexistente demanda una franja de resguardo inalienable de por lo menos 15 metros de cada lado de la vía férrea, medidos a partir de la parte media del escantillón.\n- Franja de Desarrollo de Gasoductos (NOM-007-SECRE-2010): El transporte de hidrocarburos exige zonas de alojamiento y mantenimiento libres de invasión. La normatividad impone amplitudes mínimas que escalan desde los 4.0 metros (para ductos menores a 4 pulgadas) hasta los 12.0 metros para tuberías superiores a los 914.4 mm (36 pulgadas).\n- Servidumbre de Transmisión Eléctrica: El tendido de las líneas de alta tensión (115 kV, 230 kV y 400 kV), que suma una longitud de 1,770.11 km en el estado, impone franjas de seguridad electromagnética obligatorias que restringen la lotificación y construcción habitacional bajo su trazado.",
+  "narrativa": "La gestión del territorio industrial y logístico requiere la aplicación irrestricta de las normas de seguridad estructural. El diagnóstico territorial evidencia que la red de infraestructura de Campeche (ductos, alta tensión, vías férreas y carreteras) impone un \"esqueleto de restricciones\" que dictamina qué zonas del estado son legalmente inhábiles para la urbanización. Permitir el crecimiento periférico o la instalación de naves industriales sobre estos polígonos constituye una violación directa a normativas federales y estatales, exponiendo a la población a riesgos catastróficos.\n\nLa consolidación simultánea de los Derechos De Vía Carreteras Federales, Derechos De Vía Tren Maya, Derechos De Vía Gasoductos y Derechos De Vía Líneas De Transmisión Eléctrica construye el polígono de Restricciones Absolutas del estado. Esta herramienta tecnológica dota a la Secretaría de Desarrollo Urbano, Movilidad y Obras Públicas (SEDUMOP) y a los Ayuntamientos de un dictaminador automatizado: cualquier solicitud de licencia de construcción, cambio de uso de suelo o lotificación que se superponga con estos polígonos debe ser denegada de inmediato, asegurando la integridad del patrimonio estatal y la seguridad civil.",
+  "series": []
+ },
+ {
+  "id": "normatividad-politicas-de-ordenamiento-area-natural-protegida",
+  "monitor": "normatividad",
+  "subsistema": "institucional",
+  "vista": "estrategia",
+  "seccion": "Políticas de ordenamiento",
+  "tema": "Protección Ambiental y Resiliencia Ecológica",
+  "titulo": "Área Natural Protegida",
+  "descripcion": "En esta política se tiene como fin proteger espacios de valor ecológico y biodiversidad en el Estado de Campeche como lo son las áreas naturales protegidas ya establecidas y las áreas destinadas voluntariamente a la conservación, así como la creación de nuevas ANPs y el aumento de las ADVC.",
+  "variables": "",
+  "capasTexto": "C04_ANP_Estatal_BalamKin_BalamKu_CONABIO_2020.shp, C04_ADVC_CONANP_CONABIO_2022.shp y C04_ANP_Río_Candelaria_OPMATPG_2023.shx",
+  "capas": [
+   "c04advcconanpconabio2022",
+   "c04anpestatalbalamkinbalamkuconabio2020",
+   "c04anpriocandelariaopmatpg2023"
+  ],
+  "analitica": "La política de Áreas Naturales Protegidas destina una superficie de 20,066.49 km², lo que representa el 35% del territorio total del estado.",
+  "narrativa": "En esta política se tiene como fin proteger espacios de valor ecológico y biodiversidad en el Estado de Campeche como lo son las áreas naturales protegidas ya establecidas y las áreas destinadas voluntariamente a la conservación, así como la creación de nuevas ANPs y el aumento de las ADVC.",
+  "series": []
+ },
+ {
+  "id": "normatividad-politicas-de-ordenamiento-conservacion",
+  "monitor": "normatividad",
+  "subsistema": "institucional",
+  "vista": "estrategia",
+  "seccion": "Políticas de ordenamiento",
+  "tema": "Protección Ambiental y Resiliencia Ecológica",
+  "titulo": "Conservación",
+  "descripcion": "En política tiene como enfoque principal la preservación del patrimonio natural y cultural en el Estado de Campeche.",
+  "variables": "",
+  "capasTexto": "C04_Conservación_y_Restauracion_humedales_CONABIO_2020.shp, C04_Programa_Captacion_Iluvia_Xpujil_INEGI_2020.shp, C04_Programa_saneamiento_cuencas_CONAGUA_2016.shp, C04_Red_monitoreo_calidad_aguas_superficiales_CONABIO_2008.shp, C04_Playas_anidacion_tortugas_OPMATPG_2023.shp ⁽¹⁾ Y C04_Programa_proteccion_tortugas_SEMABICCE_OPMATPG_2023.prj",
+  "capas": [
+   "c04conservacionyrestauracionhumedalesconabio2020",
+   "c04playasanidaciontortugasopmatpg2023",
+   "c04programacaptacioniluviaxpujilinegi2020",
+   "c04programaprotecciontortugassemabicceopmatpg2023",
+   "c04programasaneamientocuencasconagua2016",
+   "c04redmonitoreocalidadaguassuperficialesconabio2008"
+  ],
+  "analitica": "La política de conservación destina una superficie de 8,660.03 km², lo que representa el 15.1% del territorio total del estado.",
+  "narrativa": "En política tiene como enfoque principal la preservación del patrimonio natural y cultural en el Estado de Campeche.",
+  "series": []
+ },
+ {
+  "id": "normatividad-politicas-de-ordenamiento-proteccion",
+  "monitor": "normatividad",
+  "subsistema": "institucional",
+  "vista": "estrategia",
+  "seccion": "Políticas de ordenamiento",
+  "tema": "Protección Ambiental y Resiliencia Ecológica",
+  "titulo": "Protección",
+  "descripcion": "Esta política tiene como objetivo principal salvaguardar las zonas de alto valor ambiental y ecosistémico.",
+  "variables": "",
+  "capasTexto": "C04_Pasos_de_fauna_FTM_2023.shp",
+  "capas": [
+   "c04pasosdefaunaftm2023"
+  ],
+  "analitica": "La política de protección destina una superficie de 12,041.08 km², lo que representa el 21% del territorio total del estado.",
+  "narrativa": "Esta política tiene como objetivo principal salvaguardar las zonas de alto valor ambiental y ecosistémico.",
+  "series": []
+ },
+ {
+  "id": "normatividad-politicas-de-ordenamiento-recuperacion",
+  "monitor": "normatividad",
+  "subsistema": "institucional",
+  "vista": "estrategia",
+  "seccion": "Políticas de ordenamiento",
+  "tema": "Protección Ambiental y Resiliencia Ecológica",
+  "titulo": "Recuperación",
+  "descripcion": "Esta política tiene el propósito de conservar y restaurar los ecosistemas naturales, así como de promover la conectividad entre áreas protegidas y fragmentos de hábitats naturales en el territorio estatal.",
+  "variables": "",
+  "capasTexto": "C04_Propuesta_Corredor_Balam_Beh_SEMABICCE_2023.shp, C04_Propuesta_Corredor_Norte_SEMABICCE_2023.shp y C04_Propuesta_Corredor_Palizada_SEMABICCE_2023.shp",
+  "capas": [
+   "c04propuestacorredorbalambehsemabicce2023",
+   "c04propuestacorredornortesemabicce2023",
+   "c04propuestacorredorpalizadasemabicce2023"
+  ],
+  "analitica": "La política de protección destina una superficie de 5,759.18 km², lo que representa el 10.1% del territorio total del estado.",
+  "narrativa": "Esta política tiene el propósito de conservar y restaurar los ecosistemas naturales, así como de promover la conectividad entre áreas protegidas y fragmentos de hábitats naturales en el territorio estatal.",
+  "series": []
+ },
+ {
+  "id": "normatividad-politicas-de-ordenamiento-aprovechamiento-agropecuario",
+  "monitor": "normatividad",
+  "subsistema": "institucional",
+  "vista": "estrategia",
+  "seccion": "Políticas de ordenamiento",
+  "tema": "Aprovechamiento económico y productivo",
+  "titulo": "Aprovechamiento agropecuario",
+  "descripcion": "Esta política busca identificar las zonas donde los procesos agrícolas tradicionales pueden mantenerse, estableciendo actividades de baja escala que garanticen la autosuficiencia de los habitantes en relación con su entorno.",
+  "variables": "",
+  "capasTexto": "C04_Infraestructura_produccion_arroz_SDA_2023.shp, C04_Nucleos_lecheros_SDA_2023.shp, C04_Equipamiento_apicola_DENUE_2020_OPMATPG_2023.shp y C04_Construccion_infraestructura_hidroagricola_SDA_2023.shp.",
+  "capas": [
+   "c04construccioninfraestructurahidroagricolasda2023",
+   "c04equipamientoapicoladenue2020opmatpg2023",
+   "c04infraestructuraproduccionarrozsda2023",
+   "c04nucleoslecherossda2023"
+  ],
+  "analitica": "La política de Aprovechamiento Agropecuario destina una superficie de 6,313.68 km², lo que representa el 11% del territorio total del estado.",
+  "narrativa": "Esta política busca identificar las zonas donde los procesos agrícolas tradicionales pueden mantenerse, estableciendo actividades de baja escala que garanticen la autosuficiencia de los habitantes en relación con su entorno.",
+  "series": []
+ },
+ {
+  "id": "normatividad-politicas-de-ordenamiento-aprovechamiento-sustentable",
+  "monitor": "normatividad",
+  "subsistema": "institucional",
+  "vista": "estrategia",
+  "seccion": "Políticas de ordenamiento",
+  "tema": "Aprovechamiento económico y productivo",
+  "titulo": "Aprovechamiento sustentable",
+  "descripcion": "Esta política se dirige principalmente hacia las zonas agrícolas, ganaderas, ecoturísticas, pecuarias y otros sectores productivos que pueden ser aprovechados de manera sostenible en el Estado de Campeche. Además, considera la promoción y desarrollo de infraestructuras y equipamientos regionales.",
+  "variables": "",
+  "capasTexto": "C04_Centros_abasto_por_region_OPMATPG_2023.shp, C04_Desarrono_energias_alternativas_OPMATPG_2023.Shp⁽¹⁾, C04_Programa_reconversion_productiva_agropecuaria_SDA_2023.shp, C04_Circuitos_turisticos_SICM_2020_OPMATPG_2023.shp, C04_Construcción_centro_innovacion_tec_SDA_2023.shp y C04_Centros_abasto_por_region_OPMATPG_2023.shp.",
+  "capas": [
+   "c04centrosabastoporregionopmatpg2023",
+   "c04circuitosturisticossicm2020opmatpg2023",
+   "c04construccioncentroinnovaciontecsda2023",
+   "c04desarronoenergiasalternativasopmatpg2023",
+   "c04programareconversionproductivaagropecuariasda2023"
+  ],
+  "analitica": "La política de Aprovechamiento sustentable destina una superficie de 3,863.75 km², lo que representa el 6.7 % del territorio total del estado.",
+  "narrativa": "Esta política se dirige principalmente hacia las zonas agrícolas, ganaderas, ecoturísticas, pecuarias y otros sectores productivos que pueden ser aprovechados de manera sostenible en el Estado de Campeche. Además, considera la promoción y desarrollo de infraestructuras y equipamientos regionales.",
+  "series": []
+ },
+ {
+  "id": "normatividad-politicas-de-ordenamiento-mejoramiento-urbano",
+  "monitor": "normatividad",
+  "subsistema": "institucional",
+  "vista": "estrategia",
+  "seccion": "Políticas de ordenamiento",
+  "tema": "Consolidación urbana, vivienda y bienestar",
+  "titulo": "Mejoramiento urbano",
+  "descripcion": "Esta política se enfoca en mejorar las condiciones de habitabilidad a nivel regional en el Estado de Campeche. Su objetivo principal es llevar a cabo acciones de reordenamiento, renovación, consolidación y dotación de infraestructura y equipamiento que satisfagan las necesidades de la población.",
+  "variables": "",
+  "capasTexto": "C04_Equipamientos_salud_OPMATPG_2023. shp(1), C04_Hospital_Gneral_Centenario_OPMATPG_2023.shp, C04_Sustitucion_materiales_viviendas_tradicionales_INEGI_2020_OPMATPG_2023.shp, C04_Sustitucion_materiales_viviendas_tradicionales_localidades_INEGI_2020_OPMATPG_2023.shp, C04_Sustitucion_materiales_paredes_viviendas_OPMATPG_2023.shp (1) y C04_Centros_comunitarios_multiusos_rurales_OPMATPG_2023.shp.",
+  "capas": [
+   "c04centroscomunitariosmultiusosruralesopmatpg2023",
+   "c04equipamientossaludopmatpg2023",
+   "c04hospitalgneralcentenarioopmatpg2023",
+   "c04sustitucionmaterialesparedesviviendasopmatpg2023",
+   "c04sustitucionmaterialesviviendastradicionalesinegi2020opmatpg2023",
+   "c04sustitucionmaterialesviviendastradicionaleslocalidadesinegi2020opmatpg2023"
+  ],
+  "analitica": "La política de Mejoramiento urbano destina una superficie de 178.83 km², lo que representa el 0.3 % del territorio total del estado.",
+  "narrativa": "Esta política se enfoca en mejorar las condiciones de habitabilidad a nivel regional en el Estado de Campeche. Su objetivo principal es llevar a cabo acciones de reordenamiento, renovación, consolidación y dotación de infraestructura y equipamiento que satisfagan las necesidades de la población.",
+  "series": []
+ },
+ {
+  "id": "normatividad-politicas-de-ordenamiento-regulacion-urbana",
+  "monitor": "normatividad",
+  "subsistema": "institucional",
+  "vista": "estrategia",
+  "seccion": "Políticas de ordenamiento",
+  "tema": "Consolidación urbana, vivienda y bienestar",
+  "titulo": "Regulación urbana",
+  "descripcion": "Esta política se enfoca en implementar acciones específicas en materia de regulación y control administrativo de la tenencia de la tierra, con el objetivo de garantizar la preservación y conservación adecuada de estos valiosos espacios naturales.",
+  "variables": "",
+  "capasTexto": "C04_Manejo_integral_residuos_solidos_INEGI_2022_OPMATPG_2023.shp.",
+  "capas": [
+   "c04manejointegralresiduossolidosinegi2022opmatpg2023"
+  ],
+  "analitica": "La política de regulación urbana destina una superficie de 6.64 km², lo que representa el 0.0 % del territorio total del estado.",
+  "narrativa": "Esta política se enfoca en implementar acciones específicas en materia de regulación y control administrativo de la tenencia de la tierra, con el objetivo de garantizar la preservación y conservación adecuada de estos valiosos espacios naturales.",
+  "series": []
+ },
+ {
+  "id": "normatividad-politicas-de-ordenamiento-densificacion-urbana",
+  "monitor": "normatividad",
+  "subsistema": "institucional",
+  "vista": "estrategia",
+  "seccion": "Políticas de ordenamiento",
+  "tema": "Infraestructura estratégica, conectividad y logística",
+  "titulo": "Densificación urbana",
+  "descripcion": "Esta política busca optimizar el uso del suelo en las zonas urbanas, fomentando la concentración de la población y las actividades en áreas ya urbanizadas.",
+  "variables": "",
+  "capasTexto": "C04_Modelo_Ordenamiento_Territorial_OP_PG_2023_CP.shp",
+  "capas": [
+   "c04modeloordenamientoterritorialoppg2023cp"
+  ],
+  "analitica": "La política de Aprovechamiento Agropecuario destina una superficie de 200.54 km², lo que representa el 0.4 % del territorio total del estado.",
+  "narrativa": "Esta política busca optimizar el uso del suelo en las zonas urbanas, fomentando la concentración de la población y las actividades en áreas ya urbanizadas.",
+  "series": []
+ },
+ {
+  "id": "normatividad-politicas-de-ordenamiento-reserva-de-crecimiento-tm-tren-maya",
+  "monitor": "normatividad",
+  "subsistema": "institucional",
+  "vista": "estrategia",
+  "seccion": "Políticas de ordenamiento",
+  "tema": "Infraestructura estratégica, conectividad y logística",
+  "titulo": "Reserva de crecimiento TM (Tren Maya)",
+  "descripcion": "Esta política busca optimizar el uso del suelo cerca de las estaciones del tren maya, fomentando la movilidad y conexión a las localidades urbanas y rurales en su radio de influencia.",
+  "variables": "",
+  "capasTexto": "C04_Programa_abastecimiento_agua_localidades_Tren_Maya_OPMATPG_2023.shp.",
+  "capas": [
+   "c04programaabastecimientoagualocalidadestrenmayaopmatpg2023"
+  ],
+  "analitica": "La política de reserva crecimiento TM (Tren Maya) destina una superficie de 50.25 km², lo que representa el 0.1 % del territorio total del estado.\n  ------------------------------------------------------------------------------------\n  Reserva de crecimiento TM (Tren Maya)                                  \n  --------------------------------------- ----------------- ------------ -------------\n  Descriptivo                                                            \n\n  Definición                              Acción            Estrategia   \n  ------------------------------------------------------------------------------------",
+  "narrativa": "Esta política busca optimizar el uso del suelo cerca de las estaciones del tren maya, fomentando la movilidad y conexión a las localidades urbanas y rurales en su radio de influencia.",
+  "series": []
+ },
+ {
+  "id": "normatividad-politicas-de-ordenamiento-crecimiento-urbano-pdu",
+  "monitor": "normatividad",
+  "subsistema": "institucional",
+  "vista": "estrategia",
+  "seccion": "Políticas de ordenamiento",
+  "tema": "Infraestructura estratégica, conectividad y logística",
+  "titulo": "Crecimiento urbano PDU",
+  "descripcion": "Esta política busca orientar el crecimiento de los asentamientos humanos en el Estado de Campeche hacia zonas consideradas como reserva territorial y aptas para dicho crecimiento.",
+  "variables": "",
+  "capasTexto": "C04_Fortalecimiento_energetico_INEGI_2020.shp, C04_Estudio_de_preinversion_Tren_Ligero_OPMATPG_2023.shp, C04_Parque_Industrial_Textil_OPMATPG_2023.shp, C04_Construcción_PTAR_OPMATPG_2023.shp, C04_Construccion_centrales_y_subestaciones_electricas_OPMATPG_2023.shp, C04_Construccion_libramientos_carreteros_OPMATPG_2023.shp, C04_Mejoramiento_conectividad_Corredor_Puebla-Progreso_OPMATPG_2023.shp y CO4_Transporte_fluvial_rio_Palizada_INEGI_2008.shp.\nAnalítica: La política de reserva crecimiento TM (Tren Maya) destina una superficie de 114.14 km², lo que representa el 0.2 % del territorio total del estado.\n\n  ---------------------------------------------------------------------------\n  Crecimiento urbano PDU                                     \n  -------------------------------- ------------ ------------ ----------------\n  Descriptivo                                                \n\n  Definición                       Acción       Estrategia   \n  ---------------------------------------------------------------------------",
+  "capas": [
+   "c04construccioncentralesysubestacioneselectricasopmatpg2023",
+   "c04construccionlibramientoscarreterosopmatpg2023",
+   "c04construccionptaropmatpg2023",
+   "c04estudiodepreinversiontrenligeroopmatpg2023",
+   "c04fortalecimientoenergeticoinegi2020",
+   "c04mejoramientoconectividadcorredorpueblaprogresoopmatpg2023",
+   "c04parqueindustrialtextilopmatpg2023"
+  ],
+  "analitica": "",
+  "narrativa": "Esta política busca orientar el crecimiento de los asentamientos humanos en el Estado de Campeche hacia zonas consideradas como reserva territorial y aptas para dicho crecimiento.",
+  "series": []
+ }
+]

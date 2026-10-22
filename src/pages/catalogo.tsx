@@ -5,6 +5,8 @@ import Navbar from '../components/plataforma/navbar'
 import Footer from '../components/plataforma/footer'
 import Underfooter from '../components/plataforma/underfooter'
 import { INSTRUMENTOS_DATA, Instrumento } from '../data/instrumentosData'
+import { getPublicacionesInstrumentos, type PublicacionInstrumento } from '../lib/datosPrograma'
+import ResumenCatalogo from '../components/catalogo/resumen-catalogo'
 import {
   Search,
   X,
@@ -69,6 +71,8 @@ export default function Catalogo() {
   const [tiposSel, setTiposSel] = useState<string[]>([])
   const [anioSel, setAnioSel] = useState<number | null>(null)
   const [vigenciasSel, setVigenciasSel] = useState<string[]>([])
+  // Vigente / Caduco: lo fijan las cifras del resumen
+  const [versionSel, setVersionSel] = useState<string | null>(null)
   const [municipioSel, setMunicipioSel] = useState<string | null>(() => {
     const param = searchParams.get('municipio')
     if (!param) return null
@@ -80,6 +84,13 @@ export default function Catalogo() {
   const [showMuniDropdown, setShowMuniDropdown] = useState(false)
   const [showAnioDropdown, setShowAnioDropdown] = useState(false)
   const [selectedInst, setSelectedInst] = useState<Instrumento | null>(null)
+
+  // Enlaces a la publicación oficial, desde Ficha-tecnica.xlsx (ver
+  // scripts/actualizar-datos.py). Se cruzan por la clave del instrumento.
+  const [publicaciones, setPublicaciones] = useState<Record<string, PublicacionInstrumento>>({})
+  useEffect(() => {
+    getPublicacionesInstrumentos().then(setPublicaciones)
+  }, [])
 
   const muniRef = useRef<HTMLDivElement>(null)
   const anioRef = useRef<HTMLDivElement>(null)
@@ -133,6 +144,7 @@ export default function Catalogo() {
     setTiposSel([])
     setAnioSel(null)
     setVigenciasSel([])
+    setVersionSel(null)
     setMunicipioSel(null)
   }
 
@@ -142,30 +154,41 @@ export default function Catalogo() {
     tiposSel.length +
     (anioSel !== null ? 1 : 0) +
     vigenciasSel.length +
+    (versionSel ? 1 : 0) +
     (municipioSel ? 1 : 0)
 
-  // Filtrado y ordenamiento estricto por Tipo de Instrumento
-  const instrumentosFiltrados = useMemo(() => {
+  // Filtrado y ordenamiento estricto por Tipo de Instrumento.
+  // `omitir` deja fuera un filtro: el resumen cuenta cada tipo (y cada
+  // vigencia) sin el filtro de su propia dimensión, para no quedar en ceros.
+  const cumple = (inst: Instrumento, omitir: 'tipo' | 'version' | null = null) => {
     const query = busqueda.toLowerCase().trim()
-    return INSTRUMENTOS_DATA.filter((inst) => {
-      if (query) {
-        const matchesName = inst.nombre?.toLowerCase().includes(query)
-        const matchesId = inst.id?.toLowerCase().includes(query)
-        if (!matchesName && !matchesId) return false
-      }
-      if (municipioSel && inst.municipio !== municipioSel) return false
-      if (escalasSel.length > 0 && !escalasSel.includes(inst.escala)) return false
-      if (tiposSel.length > 0 && !tiposSel.includes(inst.tipo)) return false
-      if (anioSel !== null && inst.fechaPublicacion !== anioSel) return false
-      if (vigenciasSel.length > 0 && !vigenciasSel.includes(inst.vigencia)) return false
-      return true
-    }).sort((a, b) => {
+    if (query) {
+      const matchesName = inst.nombre?.toLowerCase().includes(query)
+      const matchesId = inst.id?.toLowerCase().includes(query)
+      if (!matchesName && !matchesId) return false
+    }
+    if (municipioSel && inst.municipio !== municipioSel) return false
+    if (escalasSel.length > 0 && !escalasSel.includes(inst.escala)) return false
+    if (omitir !== 'tipo' && tiposSel.length > 0 && !tiposSel.includes(inst.tipo)) return false
+    if (anioSel !== null && inst.fechaPublicacion !== anioSel) return false
+    if (vigenciasSel.length > 0 && !vigenciasSel.includes(inst.vigencia)) return false
+    if (omitir !== 'version' && versionSel && inst.version !== versionSel) return false
+    return true
+  }
+
+  const instrumentosFiltrados = useMemo(() => {
+    return INSTRUMENTOS_DATA.filter((inst) => cumple(inst)).sort((a, b) => {
       const oA = ORDEN_TIPO[a.tipo] ?? 99
       const oB = ORDEN_TIPO[b.tipo] ?? 99
       if (oA !== oB) return oA - oB
       return (b.fechaPublicacion || 0) - (a.fechaPublicacion || 0)
     })
-  }, [busqueda, municipioSel, escalasSel, tiposSel, anioSel, vigenciasSel])
+  }, [busqueda, municipioSel, escalasSel, tiposSel, anioSel, vigenciasSel, versionSel]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  const sinFiltroTipo = useMemo(() => INSTRUMENTOS_DATA.filter((i) => cumple(i, 'tipo')),
+    [busqueda, municipioSel, escalasSel, anioSel, vigenciasSel, versionSel]) // eslint-disable-line react-hooks/exhaustive-deps
+  const sinFiltroVersion = useMemo(() => INSTRUMENTOS_DATA.filter((i) => cumple(i, 'version')),
+    [busqueda, municipioSel, escalasSel, tiposSel, anioSel, vigenciasSel]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Contadores reactivos
   const counts = useMemo(() => {
@@ -309,6 +332,19 @@ export default function Catalogo() {
             )}
           </div>
         </section>
+
+        {/* Resumen: cifras y gráfica de la selección actual */}
+        <ResumenCatalogo
+          lista={instrumentosFiltrados}
+          listaTipos={sinFiltroTipo}
+          listaVersion={sinFiltroVersion}
+          total={INSTRUMENTOS_DATA.length}
+          filtrado={filtrosActivosTotal > 0}
+          tiposSel={tiposSel}
+          onTipo={(tipo) => toggleItem(tiposSel, tipo, setTiposSel)}
+          versionSel={versionSel}
+          onVersion={setVersionSel}
+        />
 
         {/* Estructura 2 Columnas: Parámetros de Búsqueda a la Izquierda + Lista a la Derecha */}
         <div className="catalogo-grid">
@@ -554,6 +590,20 @@ export default function Catalogo() {
                         <ChevronRight size={14} />
                       </button>
 
+                      {publicaciones[inst.id]?.linkPublicacion && (
+                        <a
+                          href={publicaciones[inst.id]!.linkPublicacion!}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="instrument-download-action-btn"
+                          title="Abrir la publicación oficial del instrumento (nueva pestaña)"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <ExternalLink size={14} />
+                          Ver publicación
+                        </a>
+                      )}
+
                       {inst.linkPdf ? (
                         <a
                           href={inst.linkPdf}
@@ -678,6 +728,20 @@ export default function Catalogo() {
                   Acceso a Documentos y Anexos
                 </h3>
                 <div className="modal-doc-actions">
+                  {publicaciones[selectedInst.id]?.linkPublicacion ? (
+                    <a
+                      href={publicaciones[selectedInst.id]!.linkPublicacion!}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="modal-doc-btn modal-doc-btn--primary"
+                      title="Abrir la publicación oficial del instrumento (nueva pestaña)"
+                    >
+                      <ExternalLink size={16} />
+                      Ver publicación oficial
+                    </a>
+                  ) : publicaciones[selectedInst.id]?.notaPublicacion ? (
+                    <span className="instrument-no-pdf">{publicaciones[selectedInst.id]!.notaPublicacion}</span>
+                  ) : null}
                   {selectedInst.linkPdf ? (
                     <a
                       href={selectedInst.linkPdf}

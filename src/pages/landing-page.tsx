@@ -1,7 +1,10 @@
-import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import Header from '../components/plataforma/header'
 import Navbar from '../components/plataforma/navbar'
 import Hero from '../components/plataforma/hero'
+import PortadaInicio from '../components/plataforma/portada-inicio'
+import SeccionEstructuraPeotdu from '../components/plataforma/seccion-peotdu'
 import Larguillo from '../components/plataforma/larguillo'
 import FaqBox from '../components/plataforma/faq-box'
 import Footer from '../components/plataforma/footer'
@@ -9,6 +12,17 @@ import Underfooter from '../components/plataforma/underfooter'
 
 export default function LandingPage() {
   const navigate = useNavigate()
+  const { hash } = useLocation()
+
+  // «Volver a los Monitores» desde el geovisor llega con #monitores: se baja
+  // a esa sección cuando ya está montada (el hero de arriba es muy alto).
+  useEffect(() => {
+    if (hash !== '#monitores') return
+    const t = setTimeout(() => {
+      document.getElementById('monitores-titulo')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 150)
+    return () => clearTimeout(t)
+  }, [hash])
 
   return (
     <div className="page-shell">
@@ -16,7 +30,9 @@ export default function LandingPage() {
       <Navbar />
 
       <main id="main-content">
+        <PortadaInicio />
         <Hero />
+        <SeccionEstructuraPeotdu />
         
         <section className="bg-white pt-1">
           <Larguillo />

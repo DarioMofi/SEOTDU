@@ -1,6 +1,18 @@
 import { useState, useEffect, useRef } from 'react'
-import { CheckCircle2, FileText, Link2 } from 'lucide-react'
-import { HeroCampecheMap, HeroMexicoDots, HeroCampecheDots } from './hero-maps'
+import { FileText, Link2, Table2, Scale, Landmark } from 'lucide-react'
+import { HeroCampecheMap } from './hero-maps'
+import EsquemaSistema from './esquema-sistema'
+import MosaicoActividades from './mosaico-actividades'
+import { FundamentoLinks, MatrizVinculacion, VinculosInstrumento } from './vinculacion-instrumentos'
+import { PeotduResumen } from './seccion-peotdu'
+import {
+  LEYES,
+  ORDEN_COLORES,
+  PYRAMID_TIERS,
+  type OrdenGobierno,
+  type PyramidTier,
+} from '../../data/sistemaPlaneacion'
+import { PEOTDU_PDF_OFICIAL } from '../../data/peotduEstructura'
 
 /* ─── Configuración de Umbrales de Scroll ─────────────────────────────── */
 const NAV_OFFSET = 112 // Altura combinada de Header institucional (40px) + Navbar (72px)
@@ -10,191 +22,11 @@ const SCROLL_TIER_STEP = 110 // Cada scroll posterior avanza un escalón de la p
 const SCROLL_FASE3_THRESHOLD = SCROLL_FASE2_THRESHOLD + SCROLL_TIER_STEP * 10 // ~1270px entra a Fase 3
 const TOTAL_HERO_SCROLL = SCROLL_FASE3_THRESHOLD + 40 // 1310px: finaliza de forma continua al alcanzar Fase 3 sin zona muerta de 20%
 
-/* ─── Definición de los 10 Instrumentos Oficiales (Pirámide Invertida) ── */
-export interface PyramidTier {
-  id: number
-  number: string
-  title: string
-  level: string
-  widthPercent: number // 100% arriba -> 46% abajo
-  bgColor: string
-  textColor: string
-  description: string
-  vinculos: string[]
-}
+/* ─── Instrumentos oficiales: los datos viven en data/sistemaPlaneacion ── */
+export { PYRAMID_TIERS }
+export type { PyramidTier }
 
-export const PYRAMID_TIERS: PyramidTier[] = [
-  {
-    id: 1,
-    number: '01',
-    title: 'Estrategia Nacional de Ordenamiento Territorial 2021-2024 (ENOT)',
-    level: 'Nacional Rector',
-    widthPercent: 100,
-    bgColor: '#E8E2D5',
-    textColor: '#2B2317',
-    description:
-      'Instrumento rector de nivel federal que define la visión de largo plazo del ordenamiento territorial nacional, orientando las políticas de desarrollo equilibrado y sustentabilidad ambiental en todo el país.',
-    vinculos: [
-      'Constitución Política de los EUM (Arts. 25, 26 y 27)',
-      'Plan Nacional de Desarrollo (PND)',
-      'Ley General de Asentamientos Humanos (LGAHOTDU)',
-      'PNOTDU y Programas Estatales (PEOTDU)',
-    ],
-  },
-  {
-    id: 2,
-    number: '02',
-    title: 'Programa Nacional de Ordenamiento Territorial y Desarrollo Urbano (PNOTDU) 2026-2030',
-    level: 'Nacional Sectorial',
-    widthPercent: 96,
-    bgColor: '#DFD8CB',
-    textColor: '#2B2317',
-    description:
-      'Concreta la Estrategia Nacional mediante metas, políticas sectoriales y lineamientos obligatorios para la ocupación del suelo y el desarrollo urbano sustentable de las regiones del país.',
-    vinculos: [
-      'Estrategia Nacional (ENOT)',
-      'Secretaría de Desarrollo Agrario, Territorial y Urbano (SEDATU)',
-      'Programas Regionales y Metropolitanos',
-      'Sistema Nacional de Información Territorial',
-    ],
-  },
-  {
-    id: 3,
-    number: '03',
-    title: 'Programas Estatales de Ordenamiento Territorial y Desarrollo Urbano (PEOTDU)',
-    level: 'Estatal Rector',
-    widthPercent: 92,
-    bgColor: '#C7BBA5',
-    textColor: '#251E13',
-    description:
-      'Instrumento rector del ordenamiento territorial y del desarrollo urbano del Estado de Campeche, con directrices vinculantes para la administración pública estatal y los 13 municipios.',
-    vinculos: [
-      'Plan Estatal de Desarrollo de Campeche (PED)',
-      'Ley de Asentamientos Humanos del Estado de Campeche',
-      'Programas Municipales de Desarrollo Urbano (PMDU)',
-      'SEDETU Campeche y Ayuntamientos',
-    ],
-  },
-  {
-    id: 4,
-    number: '04',
-    title: 'Programas Regionales de Desarrollo Urbano',
-    level: 'Regional',
-    widthPercent: 88,
-    bgColor: '#B1A187',
-    textColor: '#1C1710',
-    description:
-      'Coordinan el ordenamiento de dos o más municipios que comparten cuencas ecológicas, dinámicas socioeconómicas o corredores de infraestructura estratégica en el territorio de Campeche.',
-    vinculos: [
-      'PEOTDU Campeche',
-      'Convenios de Coordinación Intermunicipal',
-      'Proyectos de Infraestructura y Corredores Estratégicos',
-      'SEMABICCE y SEDETU',
-    ],
-  },
-  {
-    id: 5,
-    number: '05',
-    title: 'Programas de Zonas Metropolitanas o Conurbaciones',
-    level: 'Metropolitano',
-    widthPercent: 84,
-    bgColor: '#9A896B',
-    textColor: '#FFFFFF',
-    description:
-      'Planifican el desarrollo integral de centros de población conurbados o con interdependencia urbana, regulando movilidad compartida, reservas territoriales y servicios públicos comunes.',
-    vinculos: [
-      'LGAHOTDU (Gobernanza Metropolitana)',
-      'Comisiones Metropolitanas de Desarrollo',
-      'Institutos Municipales de Planeación (IMPLAN)',
-      'Zonas Conurbadas de la Entidad',
-    ],
-  },
-  {
-    id: 6,
-    number: '06',
-    title: 'Programa Sectorial de Ordenamiento Territorial, Desarrollo Urbano y Movilidad',
-    level: 'Sectorial',
-    widthPercent: 80,
-    bgColor: '#847353',
-    textColor: '#FFFFFF',
-    description:
-      'Alinea las políticas territoriales con sectores específicos como infraestructura vial, movilidad sustentable, vivienda social y desarrollo productivo en el territorio estatal.',
-    vinculos: [
-      'Ley de Movilidad del Estado de Campeche',
-      'Estrategia Nacional de Movilidad (ENAMOV)',
-      'Programas Estatales de Vivienda e Infraestructura',
-      'PIMUS Campeche',
-    ],
-  },
-  {
-    id: 7,
-    number: '07',
-    title: 'Programas Municipales de Desarrollo Urbano (PMDU)',
-    level: 'Municipal',
-    widthPercent: 75,
-    bgColor: '#736243',
-    textColor: '#FFFFFF',
-    description:
-      'Instrumento central a nivel municipal que determina la zonificación primaria, usos de suelo permitidos, reservas ecológicas y polígonos de crecimiento en el municipio.',
-    vinculos: [
-      'Art. 115 Constitucional (Facultades Municipales)',
-      'PEOTDU Campeche (Congruencia Vinculante)',
-      'Reglamentos Municipales de Construcción',
-      'Cabildos y Direcciones de Obras Públicas',
-    ],
-  },
-  {
-    id: 8,
-    number: '08',
-    title: 'Programas de Desarrollo Urbano de Centros de Población (PDUCP)',
-    level: 'Centro de Población',
-    widthPercent: 70,
-    bgColor: '#544632',
-    textColor: '#FFFFFF',
-    description:
-      'Determina la zonificación secundaria detallada, densidades habitacionales, traza vial urbana y equipamiento público para cada localidad y ciudad del municipio.',
-    vinculos: [
-      'PMDU del Municipio Respectivo',
-      'Planes de Espacio Público y Vialidad Urbana',
-      'Catastro y Registro Público de la Propiedad',
-      'Atlas Municipal de Riesgos',
-    ],
-  },
-  {
-    id: 9,
-    number: '09',
-    title: 'Programas Parciales de Desarrollo Urbano',
-    level: 'Parcial',
-    widthPercent: 65,
-    bgColor: '#423625',
-    textColor: '#FFFFFF',
-    description:
-      'Planes focalizados para zonas urbanas específicas con requerimientos particulares como centros históricos, distritos de revitalización o áreas de alto valor patrimonial o ambiental.',
-    vinculos: [
-      'PDUCP y PMDU',
-      'Centros Históricos y Patrimonio (INAH)',
-      'Distritos Urbanos de Conservación y Regeneración',
-      'Consejos de Participación y Sector Privado',
-    ],
-  },
-  {
-    id: 10,
-    number: '10',
-    title: 'Polígonos de Actuación',
-    level: 'Local Operativo',
-    widthPercent: 60,
-    bgColor: '#352B1D',
-    textColor: '#FFFFFF',
-    description:
-      'Delimitaciones operativas de gestión y ejecución del suelo para concretar proyectos urbanos público-privados, relotificaciones y transferencias de potencialidades de desarrollo.',
-    vinculos: [
-      'Programas Parciales y PDUCP',
-      'Sistemas de Actuación Social y Privada',
-      'Licencias y Factibilidades Urbanísticas',
-      'Direcciones de Desarrollo Urbano Municipal',
-    ],
-  },
-]
+const ORDENES: OrdenGobierno[] = ['Federal', 'Estatal', 'Municipal']
 
 /* ─── Subcomponente: Fase 2 (Pirámide Invertida en Embudo) ────────────── */
 function HeroPyramidFunnel({
@@ -207,6 +39,7 @@ function HeroPyramidFunnel({
   onTierSelect?: (tierId: number) => void
 }) {
   const currentTierData = PYRAMID_TIERS[activeTier - 1] || PYRAMID_TIERS[0]
+  const [matrizAbierta, setMatrizAbierta] = useState(false)
 
   return (
     <div
@@ -216,15 +49,24 @@ function HeroPyramidFunnel({
       <div className="hero-funnel-inner">
         <div className="hero-funnel-header">
           <p className="hero-funnel-intro-text">
-            El sistema comprende distintos instrumentos de planeación que orientan las acciones de planeación y los
-            programas de desarrollo urbano en congruencia con los programas y estrategias nacionales, este sistema se
-            integra a través de 10 tipos de instrumentos:
+            El sistema estatal se establece en congruencia con los programas y estrategias nacionales y de
+            esta se derivan y articulan ocho tipos de programas e instrumentos de ordenamiento territorial y
+            desarrollo urbano.
           </p>
+          {/* Código de color por orden de gobierno; se repite en cada escalón */}
+          <ul className="hero-funnel-orden-legend" aria-label="Orden de gobierno">
+            {ORDENES.map((o) => (
+              <li key={o}>
+                <span className="hero-funnel-orden-dot" style={{ background: ORDEN_COLORES[o] }} />
+                {o}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* Estructura con 2 paneles laterales (Descripción y Vinculos) y la pirámide central */}
+        {/* Estructura con 2 paneles laterales (Descripción y Vínculos) y la pirámide central */}
         <div className="hero-funnel-layout">
-          {/* Panel Lateral Izquierdo: Descripción */}
+          {/* Panel Lateral Izquierdo: Descripción y fundamento jurídico */}
           <aside className="hero-funnel-side-card hero-funnel-side-card--left">
             <div className="hero-funnel-side-card__header">
               <FileText className="w-4 h-4 text-[var(--c-guinda)]" />
@@ -233,10 +75,18 @@ function HeroPyramidFunnel({
             <div className="hero-funnel-side-card__body">
               <div className="hero-funnel-side-card__meta">
                 <span className="hero-funnel-side-card__num">{currentTierData.number}</span>
+                <span
+                  className="hero-funnel-orden-tag"
+                  style={{ background: ORDEN_COLORES[currentTierData.orden] }}
+                >
+                  {currentTierData.orden}
+                </span>
                 <span className="hero-funnel-side-card__level">{currentTierData.level}</span>
               </div>
               <h4 className="hero-funnel-side-card__instrument-title">{currentTierData.title}</h4>
               <p className="hero-funnel-side-card__text">{currentTierData.description}</p>
+              <span className="hero-funnel-side-card__subtitle">Fundamento</span>
+              <FundamentoLinks tier={currentTierData} />
             </div>
           </aside>
 
@@ -259,13 +109,14 @@ function HeroPyramidFunnel({
                     isActive ? 'is-active' : isCompleted ? 'is-completed' : 'is-upcoming'
                   }`}
                   onClick={() => onTierSelect?.(tier.id)}
-                  title={`Escalón ${tier.number}: ${tier.title} (${tier.level})`}
+                  title={`Escalón ${tier.number}: ${tier.title} (${tier.orden})`}
                 >
                   <div
                     className="hero-funnel-tier__content"
                     style={{
                       backgroundColor: tier.bgColor,
                       color: tier.textColor,
+                      boxShadow: `inset 6px 0 0 ${ORDEN_COLORES[tier.orden]}`,
                     }}
                   >
                     <span
@@ -280,13 +131,13 @@ function HeroPyramidFunnel({
                     <span className="hero-funnel-tier__title">{tier.title}</span>
 
                     <div className="hero-funnel-tier__right">
-                      {isCompleted ? (
-                        <CheckCircle2
-                          className="w-3.5 h-3.5"
-                          style={{ color: tierAccentColor }}
-                          aria-hidden="true"
-                        />
-                      ) : null}
+                      <span
+                        className="hero-funnel-tier__orden"
+                        style={{ background: ORDEN_COLORES[tier.orden] }}
+                        aria-label={`Orden ${tier.orden}`}
+                      >
+                        {tier.orden.charAt(0)}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -294,31 +145,36 @@ function HeroPyramidFunnel({
             })}
           </div>
 
-          {/* Panel Lateral Derecho: Vinculos */}
+          {/* Panel Lateral Derecho: Vínculos (diagrama de nodos) */}
           <aside className="hero-funnel-side-card hero-funnel-side-card--right">
             <div className="hero-funnel-side-card__header">
               <Link2 className="w-4 h-4 text-[var(--c-guinda)]" />
-              <h3 className="hero-funnel-side-card__title">Vinculos</h3>
+              <h3 className="hero-funnel-side-card__title">Vínculos</h3>
             </div>
             <div className="hero-funnel-side-card__body">
-              <span className="hero-funnel-side-card__subtitle">Articulación & Congruencia</span>
-              <ul className="hero-funnel-side-card__links-list">
-                {currentTierData.vinculos.map((item, idx) => (
-                  <li key={idx} className="hero-funnel-side-card__link-item">
-                    <span className="hero-funnel-side-card__link-dot" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <span className="hero-funnel-side-card__subtitle">Articulación y correspondencia</span>
+              <VinculosInstrumento tier={currentTierData} />
+              <button
+                type="button"
+                className="hero-funnel-matriz-btn"
+                onClick={() => setMatrizAbierta(true)}
+              >
+                <Table2 className="w-3.5 h-3.5" aria-hidden="true" /> Ver matriz completa
+              </button>
             </div>
           </aside>
         </div>
       </div>
+      <MatrizVinculacion
+        open={matrizAbierta}
+        onClose={() => setMatrizAbierta(false)}
+        activeId={currentTierData.id}
+      />
     </div>
   )
 }
 
-/* ─── Subcomponente: Fase 3 (Objetivos y Rectoría del PEOTDU) ─────────── */
+/* ─── Subcomponente: Fase 3 (PEOTDU: qué es, descargas y portada) ─────── */
 function HeroObjectivesFase3({ isVisible }: { isVisible: boolean }) {
   return (
     <div
@@ -326,61 +182,7 @@ function HeroObjectivesFase3({ isVisible }: { isVisible: boolean }) {
       aria-hidden={!isVisible}
     >
       <div className="hero-fase3-container">
-        <header className="hero-fase3-header">
-          <h2 className="hero-fase3-title">
-            Objetivos y Función Rectora del PEOTDU
-          </h2>
-        </header>
-
-        {/* 1. Objetivos de los instrumentos a ancho completo */}
-        <div className="hero-fase3-block hero-fase3-intro">
-          <p className="hero-fase3-text">
-            Estos instrumentos tienen entre sus objetivos garantizar la congruencia con el Sistema Nacional de
-            Planeación Democrática y el Sistema Estatal de Planeación Democrática, garantizar la congruencia con los
-            instrumentos de los niveles federal y estatal de planeación en la materia, contribuir al cumplimiento de
-            los objetivos y estrategias del Plan Nacional de Desarrollo y al Plan Estatal de Desarrollo, atender las
-            necesidades, requerimientos y problemáticas que planteen los diferentes sectores de la población e
-            integrar políticas de fomento para el desarrollo urbano sustentable.
-          </p>
-        </div>
-
-        {/* 2. Sección PEOTDU y Mapa Punteado de Campeche (abajo y a la derecha) */}
-        <div className="hero-fase3-body">
-          <div className="hero-fase3-block hero-fase3-flow">
-            <div className="hero-fase3-header-row">
-              <div className="hero-fase1-marker">
-                <span className="hero-fase3-circle" aria-hidden="true" />
-              </div>
-              <h3 className="hero-fase3-section-title">
-                Programa Estatal de Ordenamiento Territorial y Desarrollo Urbano (PEOTDU)
-              </h3>
-            </div>
-
-            <p className="hero-fase3-text">
-              El Programa Estatal de Ordenamiento Territorial y Desarrollo Urbano (PEOTDU) es el instrumento rector
-              del ordenamiento territorial y del desarrollo urbano del estado al constituirse como un instrumento de
-              gobernanza con directrices vinculantes para el conjunto de autoridades encargadas de la planeación del
-              territorio y del cual se desprenden los programas que componen el SEPOTDUM.
-            </p>
-
-            <p className="hero-fase3-text">
-              Entre sus objetivos están establecer mecanismos para la armonización del programa con el resto de
-              instrumentos de planeación, generar un diagnóstico integral con enfoque sistémico del territorio y
-              enfoque de cuenca, considerando las relaciones funcionales de los sistemas urbano-rurales, y las
-              interacciones entre subsistemas, definir las políticas y estrategias de ordenamiento territorial,
-              ecológico y desarrollo urbano sustentable de las regiones, zonas metropolitanas y municipios del
-              Estado, en función de sus recursos naturales, de sus actividades productivas, la dignidad del ser
-              humano, alcanzar el equilibrio entre los asentamientos humanos y sus condiciones ambientales y
-              orientar la inversión pública y privada hacia proyectos prioritarios para la conservación de los
-              recursos naturales, el desarrollo urbano y metropolitano.
-            </p>
-          </div>
-
-          {/* Figura animada del Estado de Campeche formada por puntos en el lado derecho */}
-          <div className="hero-fase3-map-col">
-            <HeroCampecheDots isActive={isVisible} />
-          </div>
-        </div>
+        <PeotduResumen />
       </div>
     </div>
   )
@@ -485,6 +287,7 @@ export default function Hero() {
 
   return (
     <div
+      id="territorio"
       className="hero-scroll-track"
       ref={trackRef}
       style={{ minHeight: `calc(100vh - 112px + ${TOTAL_HERO_SCROLL}px)` }}
@@ -537,8 +340,9 @@ export default function Hero() {
           {/* 1. Título principal institucional */}
           <header className="hero-sticky-stage__header">
             <h1 id="bento-hero-title" className="hero-sticky-stage__main-title">
-              Sistema Estatal de Planeación del Ordenamiento Territorial, Desarrollo Urbano y Metropolitano (SEPOTDUM) de Campeche
+              Sistema Estatal de Ordenamiento Territorial y Desarrollo Urbano
             </h1>
+            <p className="hero-sticky-stage__subtitle">Infraestructura pública digital</p>
           </header>
 
           {/* 2. Área central: Fase 0 (Mapa), Fase 1 (Pregunta + 2 Bloques), Fase 2 (Pirámide Invertida de 10 niveles), Fase 3 (Objetivos y Rectoría) */}
@@ -546,56 +350,72 @@ export default function Hero() {
             {/* FASE 0: Mapa y métricas territoriales */}
             <HeroCampecheMap isVisible={isPhase0Active} />
 
-            {/* FASE 1 (1 Scroll): Pregunta y AMBOS textos explicativos conectados por nodos */}
+            {/* FASE 1 (1 Scroll): Pregunta, textos, esquema del sistema y mosaico de actividades */}
             <div
-              className={`hero-story-flow ${isPhase1Active ? 'is-active' : 'is-standby'}`}
+              className={`hero-story-flow hero-sistema ${isPhase1Active ? 'is-active' : 'is-standby'}`}
               aria-hidden={!isPhase1Active}
             >
-              <div className="hero-fase1-tree">
-                {/* 1. Pregunta principal con su círculo conector raíz */}
-                <div className="hero-fase1-tree__node hero-fase1-tree__node--root">
-                  <div className="hero-fase1-marker">
-                    <span className="hero-fase1-circle hero-fase1-circle--root" aria-hidden="true" />
+              <div className="hero-sistema__grid">
+                <div className="hero-fase1-tree">
+                  {/* 1. Pregunta principal con su círculo conector raíz */}
+                  <div className="hero-fase1-tree__node hero-fase1-tree__node--root">
+                    <div className="hero-fase1-marker">
+                      <span className="hero-fase1-circle hero-fase1-circle--root" aria-hidden="true" />
+                    </div>
+                    <div className="hero-question-wrapper is-revealed">
+                      <h2 className="hero-sticky-stage__question-title">
+                        ¿Qué es el Sistema de Planeación del Ordenamiento Territorial, Desarrollo Urbano y Metropolitano?
+                      </h2>
+                    </div>
                   </div>
-                  <div className="hero-question-wrapper is-revealed">
-                    <h2 className="hero-sticky-stage__question-title">
-                      ¿Qué es el Sistema de Planeación del Ordenamiento Territorial, Desarrollo Urbano y Metropolitano?
-                    </h2>
+
+                  <div className="hero-fase1-tree__node hero-story-block is-revealed">
+                    <div className="hero-fase1-marker">
+                      <span className="hero-fase1-circle hero-fase1-circle--child" aria-hidden="true" />
+                    </div>
+                    <div className="hero-fase1-body">
+                      <p className="hero-story-block__text">
+                        El Sistema Estatal de Planeación del Ordenamiento Territorial, Desarrollo Urbano y Metropolitano (SEPOTDUM)
+                        es un mecanismo de vinculación estructurado mediante un conjunto de instrumentos de planeación tendientes
+                        al ordenamiento territorial de los asentamientos humanos y la regulación de las acciones de fundación,
+                        conservación, mejoramiento y crecimiento de los centros de población en la entidad que coadyuvan al Sistema
+                        Estatal de Planeación Democrática para el desarrollo del Estado (Art. 33).
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="hero-fase1-tree__node hero-story-block is-revealed">
+                    <div className="hero-fase1-marker">
+                      <span className="hero-fase1-circle hero-fase1-circle--child" aria-hidden="true" />
+                    </div>
+                    <div className="hero-fase1-body">
+                      <p className="hero-story-block__text">
+                        El sistema configura la dimensión espacial del desarrollo del Estado en el mediano y largo plazos;
+                        establece el marco básico de referencia y acción territorial con los planes nacional y estatal de
+                        desarrollo, los programas sectoriales y regionales, y promoverá la utilización racional del territorio
+                        y el desarrollo equilibrado de la entidad y privilegiando el bien común y los derechos fundamentales.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                {/* 2. Bloque 1 (desempaquetado, sin badge) con círculo justo antes del texto */}
-                <div className="hero-fase1-tree__node hero-story-block is-revealed">
-                  <div className="hero-fase1-marker">
-                    <span className="hero-fase1-circle hero-fase1-circle--child" aria-hidden="true" />
-                  </div>
-                  <div className="hero-fase1-body">
-                    <p className="hero-story-block__text">
-                      El Sistema Estatal de Planeación del Ordenamiento Territorial, Desarrollo Urbano y Metropolitano (SEPOTDUM)
-                      es un mecanismo de vinculación estructurado mediante un conjunto de instrumentos de planeación tendientes
-                      al ordenamiento territorial de los asentamientos humanos y la regulación de las acciones de fundación,
-                      conservación, mejoramiento y crecimiento de los centros de población en la entidad que coadyuvan al Sistema
-                      Estatal de Planeación Democrática para el desarrollo del Estado (Art. 33).
-                    </p>
-                  </div>
-                </div>
-
-                {/* 3. Bloque 2 (desempaquetado, sin badge) con círculo justo antes del texto */}
-                <div className="hero-fase1-tree__node hero-story-block is-revealed">
-                  <div className="hero-fase1-marker">
-                    <span className="hero-fase1-circle hero-fase1-circle--child" aria-hidden="true" />
-                  </div>
-                  <div className="hero-fase1-body">
-                    <p className="hero-story-block__text">
-                      El sistema configura la dimensión espacial del desarrollo del Estado en el mediano y largo plazos;
-                      establece el marco básico de referencia y acción territorial con los planes nacional y estatal de
-                      desarrollo, los programas sectoriales y regionales, y promoverá la utilización racional del territorio
-                      y el desarrollo equilibrado de la entidad y privilegiando el bien común y los derechos fundamentales.
-                    </p>
-                    <HeroMexicoDots isActive={isPhase1Active} />
-                  </div>
-                </div>
+                {/* Esquema de relaciones del sistema + acceso a los documentos legales */}
+                <figure className="hero-sistema__esquema">
+                  <EsquemaSistema />
+                  <figcaption className="hero-sistema__acciones">
+                    <a href={PEOTDU_PDF_OFICIAL} target="_blank" rel="noopener noreferrer" className="hero-sistema__btn">
+                      <Landmark className="w-4 h-4" aria-hidden="true" />
+                      Documento legal estatal (Periódico Oficial)
+                    </a>
+                    <a href={LEYES.LGAHOTDU.url} target="_blank" rel="noopener noreferrer" className="hero-sistema__btn hero-sistema__btn--outline">
+                      <Scale className="w-4 h-4" aria-hidden="true" />
+                      Ley General (LGAHOTDU)
+                    </a>
+                  </figcaption>
+                </figure>
               </div>
+
+              <MosaicoActividades />
             </div>
 
             {/* FASE 2 (2 Scroll + 3+ Scroll): Pirámide Invertida oficial con los 10 escalones */}

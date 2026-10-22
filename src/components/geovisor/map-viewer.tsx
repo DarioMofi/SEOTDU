@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import { MunicipioProperties } from '../../data/campecheData'
@@ -8,6 +8,9 @@ import { createSymbolResolver, resolveSymbol, usesPatternFill } from '../../lib/
 import { toPathOptions, toPointLayer } from '../../lib/leafletSymbology'
 import { getCapaGeoJSON } from '../../lib/cartografia'
 import { appConfig } from '../../config/appConfig'
+import { nombreElemento, poblacionElemento } from '../../lib/textoLegible'
+import { crearPopupFicha, contenidoTooltipManzana } from './popup-ficha'
+import { barraEscala, denominadorEscala, zonaUTM } from '../../lib/escalaMapa'
 
 // Mapa base claro: Esri Light Gray Canvas. Se usa Esri y no CARTO porque los
 // teselados de CARTO ahora exigen API key y devuelven las imágenes marcadas
@@ -31,6 +34,20 @@ interface Props {
   onLayerClick?: (layerId: string, propiedades: Record<string, unknown>) => void
   /** Abre la pantalla contextualizadora del geovisor */
   onOpenGuide?: () => void
+  /** Nombre legible de cada capa, para el encabezado del popup */
+  layerLabels?: Record<string, string>
+  /** Clic sobre un elemento del mapa (abre el panel de estrategia de su capa) */
+  onElementSelect?: (layerId: string) => void
+  /** Simbología: se apila encima de la escala gráfica, con el mismo ancho */
+  leyenda?: ReactNode
+}
+
+/** Rótulo candidato de una capa con ETIQUETAS_ZOOM */
+interface Rotulo {
+  ll: L.LatLng
+  texto: string
+  pob: number
+  punto: boolean
 }
 
 /**
@@ -65,7 +82,7 @@ const CAMPECHE_BOUNDS: L.LatLngBoundsExpression = [
   [21.8, -87.0]  // Noreste (más amplio al norte y este)
 ]
 
-export default function MapViewer({ activeLayers, selectedFeature, layerOpacity, layerStyles, layerOrder, onLayerClick, onOpenGuide }: Props) {
+export default function MapViewer({ activeLayers, selectedFeature, layerOpacity, layerStyles, layerOrder, onLayerClick, onOpenGuide, layerLabels, onElementSelect, leyenda }: Props) {
   const mapRef = useRef<HTMLDivElement>(null)
   const mapInstance = useRef<L.Map | null>(null)
   const limiteEstatalLayer = useRef<L.GeoJSON | null>(null)
@@ -81,10 +98,108 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
   const capaSuperiorRef = useRef<string | null>(null)
   const onLayerClickRef = useRef(onLayerClick)
   onLayerClickRef.current = onLayerClick
+  const layerLabelsRef = useRef(layerLabels)
+  layerLabelsRef.current = layerLabels
+  const onElementSelectRef = useRef(onElementSelect)
+  onElementSelectRef.current = onElementSelect
+  const layerOpacityRef = useRef(layerOpacity)
+  layerOpacityRef.current = layerOpacity
+  // Capas encendidas *ahora*: el fetch de una capa resuelve tarde y no debe
+  // fiarse de la lista que había cuando empezó (si se apagó mientras cargaba,
+  // se dibujaba igual y quedaba en el mapa sin estar en el menú).
+  const activeLayersRef = useRef(activeLayers)
+  activeLayersRef.current = activeLayers
+
+  // Rótulos dinámicos por zoom: candidatos por capa y el grupo dibujado
+  const rotulosRef = useRef<Record<string, Rotulo[]>>({})
+  const grupoRotulosRef = useRef<L.LayerGroup | null>(null)
+
+  // Redibuja los rótulos visibles. Solo se rotulan las capas cargadas cuyo
+  // zoom mínimo ya se alcanzó, dentro de la vista y priorizando población.
+  const actualizarRotulos = useRef(() => {
+    const map = mapInstance.current
+    const grupo = grupoRotulosRef.current
+    if (!map || !grupo) return
+    grupo.clearLayers()
+    const zoom = map.getZoom()
+    map.getContainer().classList.toggle('rotulos-municipio-ocultos', zoom >= appConfig.ZOOM_OCULTAR_MUNICIPIOS)
+    const vista = map.getBounds().pad(0.1)
+    // Anticolisión en pantalla: un rótulo que se encime con otro ya puesto se
+    // omite. Se recorren primero las capas urbanas y, dentro de cada capa, las
+    // localidades más pobladas, así que ganan los nombres más relevantes.
+    const ocupados: Array<[number, number, number, number]> = []
+    const libre = (x: number, y: number, w: number, h: number) =>
+      !ocupados.some(([ox, oy, ow, oh]) => x < ox + ow && x + w > ox && y < oy + oh && y + h > oy)
+    const capasOrdenadas = Object.entries(rotulosRef.current).sort(
+      ([a], [b]) => (appConfig.ETIQUETAS_ZOOM[a]?.minZoom ?? 0) - (appConfig.ETIQUETAS_ZOOM[b]?.minZoom ?? 0)
+    )
+    for (const [layerId, candidatos] of capasOrdenadas) {
+      const cfg = appConfig.ETIQUETAS_ZOOM[layerId]
+      if (!cfg || zoom < cfg.minZoom) continue
+      let puestos = 0
+      candidatos
+        .filter((r) => vista.contains(r.ll))
+        .sort((a, b) => b.pob - a.pob)
+        .forEach((r) => {
+          if (puestos >= cfg.max) return
+          const pt = map.latLngToContainerPoint(r.ll)
+          const w = r.texto.length * (r.punto ? 5.6 : 6.4) + 6
+          const h = 14
+          const x = r.punto ? pt.x + 6 : pt.x - w / 2
+          const y = pt.y - h / 2
+          if (!libre(x, y, w, h)) return
+          ocupados.push([x, y, w, h])
+          puestos++
+          L.tooltip({
+            permanent: true,
+            direction: r.punto ? 'right' : 'center',
+            offset: r.punto ? [6, 0] : [0, 0],
+            className: r.punto ? 'rotulo-localidad rotulo-localidad--rural' : 'rotulo-localidad',
+            interactive: false,
+          })
+            .setLatLng(r.ll)
+            .setContent(r.texto)
+            .addTo(grupo)
+        })
+    }
+  }).current
+
+  // Las capas con trama van en SVG, encima del canvas, y se quedan con el
+  // puntero en toda su superficie. Por regla general se dejan consultables
+  // (lo que se ve encima es lo que se consulta), salvo cuando hay encendida una
+  // capa de consulta al paso del cursor (manzanas): ahí solo la capa superior
+  // del menú conserva el puntero para no tapar ese resumen.
+  const ajustarPuntero = useRef(() => {
+    const hayCapaHover = Object.keys(vectorLayersRef.current).some((id) => appConfig.HOVER_LAYERS.includes(id))
+    for (const [id, capa] of Object.entries(vectorLayersRef.current)) {
+      const activa = !hayCapaHover || id === capaSuperiorRef.current
+      capa?.eachLayer((hijo) => {
+        const el = (hijo as L.Path).getElement?.() as HTMLElement | SVGElement | undefined
+        if (el && el.tagName.toLowerCase() === 'path') el.style.pointerEvents = activa ? '' : 'none'
+      })
+    }
+  }).current
   capaSuperiorRef.current =
     layerOrder.find(
       (id) => activeLayers.includes(id) && !appConfig.FIXED_LAYERS.includes(id)
     ) ?? null
+
+  // Escala gráfica dinámica: se recalcula con cada zoom o desplazamiento
+  const [escala, setEscala] = useState<{ px: number; texto: string; denominador: number; utm: string } | null>(null)
+  const actualizarEscala = useRef(() => {
+    const map = mapInstance.current
+    if (!map) return
+    const tam = map.getSize()
+    const y = tam.y / 2
+    // Metros por píxel en el centro de la vista (en Web Mercator varía con la latitud)
+    const a = map.containerPointToLatLng([tam.x / 2 - 50, y])
+    const b = map.containerPointToLatLng([tam.x / 2 + 50, y])
+    const mpp = map.distance(a, b) / 100
+    if (!isFinite(mpp) || mpp <= 0) return
+    const barra = barraEscala(mpp)
+    const c = map.getCenter()
+    setEscala({ px: barra.px, texto: barra.texto, denominador: denominadorEscala(mpp), utm: zonaUTM(c.lat, c.lng) })
+  }).current
 
   // Estado local para el mapa base seleccionado
   const [mapaBase, setMapaBase] = useState<'claro' | 'satelite'>('claro')
@@ -134,7 +249,17 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
 
     mapInstance.current = map
 
+    // Rótulos de localidades: en el panel de bordes, transparente al puntero
+    grupoRotulosRef.current = L.layerGroup([], { pane: 'bordersPane' }).addTo(map)
+    map.on('zoomend moveend', actualizarRotulos)
+    map.on('zoom move zoomend moveend resize', actualizarEscala)
+    actualizarEscala()
+
     return () => {
+      map.off('zoomend moveend', actualizarRotulos)
+      map.off('zoom move zoomend moveend resize', actualizarEscala)
+      grupoRotulosRef.current = null
+      rotulosRef.current = {}
       if (mapInstance.current) {
         mapInstance.current.remove()
         mapInstance.current = null
@@ -219,6 +344,10 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
           map.removeLayer(layer)
         }
         delete vectorLayersRef.current[layerId]
+        if (rotulosRef.current[layerId]) {
+          delete rotulosRef.current[layerId]
+          actualizarRotulos()
+        }
       }
     })
 
@@ -244,7 +373,10 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
             // desechado revienta dentro de Leaflet.
             if (mapInstance.current !== map) return
             // Verificar si sigue activa antes de añadirla
-            if (!activeLayers.includes(layerId)) return
+            if (!activeLayersRef.current.includes(layerId)) {
+              if (vectorLayersRef.current[layerId] && !map.hasLayer(vectorLayersRef.current[layerId]!)) delete vectorLayersRef.current[layerId]
+              return
+            }
             
             // Un resolvedor por capa: cachea el símbolo por valor del campo
             // de clasificación. Leaflet consulta la simbología tres veces por
@@ -262,6 +394,8 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
               // son pocas, así que se quedan en SVG. `undefined` deja que use
               // el renderizador del mapa.
               renderer: usesPatternFill(simbologia) ? L.svg() : undefined,
+              // Límites y búfer son marco de referencia: no deben robar clics
+              interactive: !appConfig.FIXED_LAYERS.includes(layerId),
               // QGIS omite las clases apagadas y los valores fuera de rango;
               // descartarlos aquí evita crear geometrías invisibles.
               filter: (feature) => simboloDe(feature?.properties) !== null,
@@ -290,16 +424,59 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
                     interactive: false
                   })
                 }
-                // Seleccionar una capa concreta entre veinte encimadas era
-                // cuestión de suerte, así que solo contesta la de más arriba;
-                // el resto se ignora aunque Leaflet les pase el clic.
+                // Candidato a rótulo dinámico (nombre de localidad por zoom)
+                if (appConfig.ETIQUETAS_ZOOM[layerId]) {
+                  const nombre = nombreElemento(feature.properties)
+                  if (nombre) {
+                    const punto = 'getLatLng' in layer
+                    const ll = punto
+                      ? (layer as L.Marker).getLatLng()
+                      : (layer as L.Polygon).getBounds().getCenter()
+                    ;(rotulosRef.current[layerId] ??= []).push({
+                      ll, texto: nombre, pob: poblacionElemento(feature.properties) ?? 0, punto,
+                    })
+                  }
+                }
+
+                // Manzanas y similares: resumen al pasar el cursor y resaltado
+                // del polígono, para que se lean sin tener que hacer clic.
+                if (appConfig.HOVER_LAYERS.includes(layerId) && 'setStyle' in layer) {
+                  const path = layer as L.Path
+                  path.bindTooltip(contenidoTooltipManzana(feature.properties), {
+                    sticky: true,
+                    direction: 'top',
+                    offset: [0, -10],
+                    className: 'tooltip-manzana',
+                  })
+                  path.on('mouseover', () => {
+                    path.setStyle({ weight: 2.5, color: '#9F2241', opacity: 1 })
+                    path.bringToFront()
+                  })
+                  path.on('mouseout', () => {
+                    path.setStyle(toPathOptions(simboloDe(feature.properties), layerOpacityRef.current[layerId] ?? 1))
+                  })
+                }
+
+                // Contesta el elemento que está debajo del cursor, de cualquier
+                // capa encendida: Leaflet ya entrega el clic solo al de más
+                // arriba en ese punto. Antes contestaba únicamente la capa
+                // superior del menú y, con varias capas, el resto no se podía
+                // consultar. Las capas fijas (límites, búfer) no son
+                // interactivas, así que no tapan a las demás.
                 layer.on('click', (evento) => {
                   L.DomEvent.stopPropagation(evento)
-                  if (capaSuperiorRef.current !== layerId) return
                   // Los metadatos viven en el encabezado del archivo, no en
                   // cada elemento; la ficha los necesita junto a los del
                   // elemento que se toco.
-                  onLayerClickRef.current?.(layerId, { ...(data?.metadatos ?? {}), ...feature.properties })
+                  onElementSelectRef.current?.(layerId)
+                  const verFicha = () =>
+                    onLayerClickRef.current?.(layerId, { ...(data?.metadatos ?? {}), ...feature.properties })
+                  // Popup con información básica y específica del elemento;
+                  // la ficha técnica completa sigue en el panel lateral.
+                  L.popup({ maxWidth: 340, minWidth: 260, className: 'ficha-popup-wrap', autoPanPadding: [40, 40], keepInView: true })
+                    .setLatLng((evento as L.LeafletMouseEvent).latlng)
+                    .setContent(crearPopupFicha(layerLabelsRef.current?.[layerId] ?? layerId, feature.properties, verFicha))
+                    .openOn(map)
                 })
               }
             }
@@ -311,6 +488,8 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
             if (oldPlaceholder && map.hasLayer(oldPlaceholder)) map.removeLayer(oldPlaceholder)
             
             vectorLayersRef.current[layerId] = geoJsonLayer
+            if (rotulosRef.current[layerId]) actualizarRotulos()
+            ajustarPuntero()
             
             // Re-aplicar Z-Index
             const reversedOrder = [...layerOrder].reverse()
@@ -445,6 +624,7 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
     if (limiteMunicipalLayer.current && map.hasLayer(limiteMunicipalLayer.current)) limiteMunicipalLayer.current.bringToFront()
     if (limiteEstatalLayer.current && map.hasLayer(limiteEstatalLayer.current)) limiteEstatalLayer.current.bringToFront()
 
+    ajustarPuntero()
   }, [activeLayers, selectedFeature, mapaBase, layerOpacity, layerOrder, layerStyles])  // Centrar mapa al seleccionar un municipio
   useEffect(() => {
     const map = mapInstance.current
@@ -463,8 +643,29 @@ export default function MapViewer({ activeLayers, selectedFeature, layerOpacity,
         className="geovisor-map-container"
       />
 
+      {/* Pie derecho: simbología y, debajo, la escala gráfica. Comparten
+          columna y ancho para leerse como un solo bloque de referencia. */}
+      <div className="mapa-pie">
+        {leyenda}
+        {escala && (
+          <div className="escala-mapa" aria-live="polite" aria-label={`Escala 1:${escala.denominador.toLocaleString('es-MX')}, ${escala.texto}, zona UTM ${escala.utm}`}>
+            <h4 className="escala-mapa__titulo">Escala</h4>
+            <div className="escala-mapa__barra" style={{ width: escala.px }}>
+              <span /><span />
+            </div>
+            <div className="escala-mapa__txt" style={{ width: escala.px }}>
+              <span>0</span>
+              <span>{escala.texto}</span>
+            </div>
+            <div className="escala-mapa__num">
+              1:{escala.denominador.toLocaleString('es-MX')} · UTM {escala.utm}
+            </div>
+          </div>
+        )}
+      </div>
+
       {/* Controles del Mapa (Esquina Superior Derecha) */}
-      <div className="absolute top-14 right-4 z-[1000] flex flex-col items-center gap-3">
+      <div className="geovisor-controles absolute top-14 right-4 z-[1000] flex flex-col items-center gap-3">
         {/* Selector de Mapa Base */}
         <div className="relative">
           <button

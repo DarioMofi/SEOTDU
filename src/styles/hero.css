@@ -42,6 +42,18 @@
   text-align: center;
 }
 
+/* Doble clase a propósito: `.hero-sticky-stage p` justifica todos los párrafos
+   del hero y, con una sola clase, le ganaba al centrado del subtítulo. */
+.hero-sticky-stage__header .hero-sticky-stage__subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(0.8rem, 0.95vw, 1.05rem);
+  font-weight: 500;
+  color: var(--c-gray-dk);
+  letter-spacing: 0.04em;
+  margin: 4px auto 0;
+  text-align: center;
+}
+
 /* Alineación justificada uniforme para textos del Hero */
 .hero-sticky-stage p {
   text-align: justify;
@@ -1139,3 +1151,404 @@
     display: none;
   }
 }
+
+/* ─── Fase 0: panel de datos ampliado (Etapa 4) ─────────────────────── */
+.hero-fase0-map-container { position: relative; }
+
+/* Indicador de que el mapa es interactivo */
+.hero-fase0-map-hint {
+  position: absolute;
+  left: 4%;
+  bottom: 4%;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--c-guinda);
+  color: #FFFFFF;
+  font: 600 0.8rem/1 var(--font-body);
+  box-shadow: 0 6px 16px rgba(159, 34, 65, 0.3);
+  pointer-events: none;
+  z-index: 3;
+  animation: heroHintPulse 2s ease-in-out infinite;
+}
+.hero-fase0-map-hint svg { animation: heroHintTap 2s ease-in-out infinite; }
+@keyframes heroHintPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(159, 34, 65, 0.45); }
+  50% { box-shadow: 0 0 0 10px rgba(159, 34, 65, 0); }
+}
+@keyframes heroHintTap {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(2px, 2px) scale(0.9); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-fase0-map-hint, .hero-fase0-map-hint svg { animation: none; }
+}
+
+.hero-fase0-sidebar { gap: 12px; }
+.hero-fase0-meta-card { padding: 14px 18px; }
+.hero-fase0-meta-card--mun {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px;
+  gap: 14px;
+  align-items: center;
+}
+.hero-fase0-mun-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  border: 1px solid #EAE5DC;
+}
+.hero-fase0-mun-contorno {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  background: #FFFFFF;
+  padding: 8px;
+}
+.hero-fase0-mun-contorno svg { width: 100%; height: 100%; }
+.hero-fase0-mun-contorno path {
+  fill: #EAE0D0;
+  stroke: var(--c-guinda);
+  stroke-width: 1.5;
+}
+
+.hero-fase0-metrics-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.hero-fase0-metric { padding: 11px 14px; }
+.hero-fase0-metric--wide { grid-column: span 2; }
+.hero-fase0-metric-val { font-size: 1.12rem; }
+.hero-fase0-metric-val.is-pending {
+  font-size: 0.9rem;
+  color: var(--c-gray-md);
+  font-style: italic;
+  font-weight: 600;
+}
+.hero-fase0-metric-pct {
+  margin-left: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #8A6520;
+}
+.hero-fase0-metric-sub {
+  font-size: 0.72rem;
+  color: var(--c-gray-dk);
+  margin-top: 2px;
+}
+.hero-fase0-source {
+  margin: 0;
+  font-size: 0.66rem;
+  color: var(--c-gray-md);
+  line-height: 1.35;
+}
+.hero-sticky-stage p.hero-fase0-source { text-align: left; }
+
+@media (max-width: 900px) {
+  .hero-fase0-metrics-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-fase0-metric--wide { grid-column: 1 / -1; }
+}
+
+/* ─── Fase 1: esquema del sistema + mosaico de actividades (Etapa 4) ── */
+.hero-sistema { padding-top: 12px; gap: 14px; max-width: 1440px; }
+.hero-sistema__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 44px);
+  align-items: start;
+}
+.hero-sistema .hero-fase1-tree { gap: 18px; }
+.hero-sistema .hero-story-block__text { font-size: clamp(0.86rem, 0.95vw, 0.98rem); line-height: 1.6; }
+.hero-sistema__esquema {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #FAF8F5;
+  border: 1px solid #EAE5DC;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.esquema-sistema { width: 100%; height: auto; max-height: 40vh; }
+.esquema__txt { font: 600 11px var(--font-body); }
+.esquema__nota { font: italic 500 9.5px var(--font-body); fill: #6B7280; }
+.esquema__leyenda text { font: 500 10.5px var(--font-body); fill: #374151; }
+.hero-sistema__acciones { display: flex; flex-wrap: wrap; gap: 8px; }
+.hero-sistema__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: var(--c-guinda);
+  color: #FFFFFF;
+  border: 1px solid var(--c-guinda);
+  font: 600 0.8rem/1.2 var(--font-body);
+  text-decoration: none;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+.hero-sistema__btn:hover { background: var(--c-guinda-dk); transform: translateY(-1px); }
+.hero-sistema__btn--outline { background: #FFFFFF; color: var(--c-guinda); }
+.hero-sistema__btn--outline:hover { background: #F4ECE1; color: var(--c-guinda-dk); }
+
+.mosaico-actividades {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  height: clamp(84px, 14vh, 130px);
+}
+.mosaico-actividades__item { position: relative; border-radius: 8px; overflow: hidden; }
+.mosaico-actividades__item .image-slot { position: absolute; inset: 0; }
+.mosaico-actividades__item .image-slot > img { transition: transform 0.45s ease; }
+.mosaico-actividades__item:hover .image-slot > img { transform: scale(1.07); }
+.mosaico-actividades__item .image-slot__caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 6px 10px;
+  font: 700 0.78rem/1.2 var(--font-body);
+  color: #FFFFFF;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  z-index: 1;
+}
+.mosaico-actividades__fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #C7BBA5, #736243);
+}
+.mosaico-actividades__fallback svg { width: 30px; height: 30px; color: rgba(255, 255, 255, 0.75); transform: translateY(-8px); }
+
+/* ─── Fase 2: orden de gobierno y vínculos (Etapa 4) ───────────────── */
+.hero-funnel-orden-legend {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  margin: 2px 0 0;
+  padding: 0;
+  font: 600 0.78rem var(--font-body);
+  color: #374151;
+}
+.hero-funnel-orden-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.hero-funnel-orden-dot { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+.hero-funnel-orden-tag {
+  font: 700 0.66rem/1 var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+.hero-funnel-tier__orden {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font: 800 0.66rem/1 var(--font-body);
+  color: #FFFFFF;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85);
+}
+.hero-funnel-side-card {
+  max-height: min(56vh, 470px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+.hero-funnel-side-card__text { font-size: 0.8rem; line-height: 1.5; }
+.hero-funnel-matriz-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--c-guinda);
+  color: var(--c-guinda);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font: 600 0.76rem var(--font-body);
+  cursor: pointer;
+}
+.hero-funnel-matriz-btn:hover { background: var(--c-guinda); color: #FFFFFF; }
+.hero-funnel-matriz-btn:hover svg { color: #FFFFFF !important; stroke: #FFFFFF !important; }
+
+.vinc-fundamento { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 5px; }
+.vinc-fundamento a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font: 600 0.78rem/1.3 var(--font-body);
+  color: var(--c-guinda);
+  text-decoration: none;
+}
+.vinc-fundamento a:hover { text-decoration: underline; }
+.vinc-pendiente { margin: 0; font-size: 0.76rem; font-style: italic; color: var(--c-gray-md); }
+.hero-sticky-stage p.vinc-pendiente { text-align: left; }
+
+.vinc-nodos { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.vinc-nodos__lbl {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font: 700 0.66rem var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6B7280;
+}
+.vinc-nodos__fila { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
+.vinc-nodos__conector { width: 1.5px; height: 12px; background: #C9BFAE; }
+.vinc-nodos__centro {
+  color: #FFFFFF;
+  font: 800 0.86rem var(--font-heading);
+  padding: 6px 14px;
+  border-radius: 999px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+.vinc-chip {
+  font: 700 0.7rem/1 var(--font-body);
+  padding: 4px 8px;
+  border: 1.5px solid;
+  border-radius: 999px;
+  background: #FFFFFF;
+  white-space: nowrap;
+}
+.vinc-chip--texto { border-color: #C9BFAE; color: #4B5563; white-space: normal; text-align: center; }
+
+/* Modal de la matriz de vinculación */
+.vinc-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(17, 24, 39, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: vincFade 0.2s ease;
+}
+@keyframes vincFade { from { opacity: 0; } to { opacity: 1; } }
+.vinc-modal__panel {
+  background: #FFFFFF;
+  border-radius: 12px;
+  max-width: 1100px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px;
+  gap: 10px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  font-family: var(--font-body);
+}
+.vinc-modal__header { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.vinc-modal__header h2 { margin: 0; font: 700 1.1rem var(--font-heading); color: var(--c-guinda); }
+.vinc-modal__header button {
+  border: 1px solid #E5E7EB; background: #FFFFFF; border-radius: 50%;
+  width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.vinc-modal__metodo, .vinc-modal__leyenda { margin: 0; font-size: 0.82rem; color: #4B5563; line-height: 1.5; }
+.vinc-modal__leyenda { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.vinc-modal__scroll { overflow: auto; border: 1px solid #EAE5DC; border-radius: 8px; }
+.vinc-matriz { border-collapse: collapse; width: 100%; font-size: 0.8rem; }
+.vinc-matriz th, .vinc-matriz td { border-bottom: 1px solid #F0ECE4; padding: 7px 8px; text-align: center; }
+.vinc-matriz thead th {
+  position: sticky; top: 0; background: #FAF8F5; font-weight: 700; color: #374151; white-space: nowrap;
+}
+.vinc-matriz thead th.is-inst { color: #8A6520; }
+.vinc-matriz tbody th { text-align: left; white-space: nowrap; font-weight: 700; color: #1F2937; }
+.vinc-matriz tbody tr:hover { background: #FBF8F3; }
+.vinc-matriz tbody tr.is-active { background: #F4ECE1; }
+.vinc-matriz__orden { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; }
+.vinc-matriz__f, .vinc-matriz__c {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 20px; height: 20px; border-radius: 4px; font-weight: 800; font-size: 0.7rem;
+}
+.vinc-matriz__f { background: var(--c-guinda); color: #FFFFFF; }
+.vinc-matriz__c { background: #F3E6CC; color: #8A6520; }
+.vinc-matriz__self { color: #9CA3AF; }
+
+/* ─── Fase 3: resumen del PEOTDU con portada y descargas (Etapa 4) ─── */
+.peotdu-resumen {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+  gap: clamp(20px, 3vw, 44px);
+  align-items: center;
+}
+.peotdu-resumen__texto { display: flex; flex-direction: column; gap: 12px; }
+.peotdu-resumen__lista { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.peotdu-resumen__lista li {
+  display: flex;
+  gap: 10px;
+  font-size: clamp(0.82rem, 0.9vw, 0.93rem);
+  line-height: 1.5;
+  color: #374151;
+}
+.peotdu-resumen__lista svg { flex-shrink: 0; margin-top: 3px; color: var(--c-guinda); }
+.peotdu-resumen__ancla {
+  display: inline-flex; align-items: center; gap: 6px; align-self: flex-start;
+  font: 600 0.84rem var(--font-body); color: var(--c-guinda); text-decoration: none;
+}
+.peotdu-resumen__ancla:hover { text-decoration: underline; }
+.peotdu-resumen__portada { display: flex; flex-direction: column; gap: 12px; }
+.peotdu-portada {
+  aspect-ratio: 567 / 737;
+  max-height: 46vh;
+  border-radius: 6px;
+  border: 1px solid #E5E7EB;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+  background: #FFFFFF;
+}
+.peotdu-portada > img { object-fit: contain; }
+.peotdu-portada__fallback {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  text-align: center; font: 700 1.2rem var(--font-heading); color: #235B4E; background: #E7EFEC;
+}
+.peotdu-cta { display: flex; flex-wrap: wrap; gap: 8px; }
+.peotdu-cta__btn {
+  flex: 1 1 130px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--c-guinda);
+  border: 1px solid var(--c-guinda);
+  color: #FFFFFF;
+  text-decoration: none;
+  font-family: var(--font-body);
+  transition: transform var(--transition), background var(--transition);
+}
+.peotdu-cta__btn span { display: flex; flex-direction: column; line-height: 1.2; }
+.peotdu-cta__btn strong { font-size: 0.8rem; }
+.peotdu-cta__btn small { font-size: 0.68rem; opacity: 0.85; }
+.peotdu-cta__btn:hover { background: var(--c-guinda-dk); transform: translateY(-1px); }
+.peotdu-cta__btn--outline { background: #FFFFFF; color: var(--c-guinda); }
+.peotdu-cta__btn--outline:hover { background: #F4ECE1; }
+.peotdu-cta__btn.is-disabled { opacity: 0.55; cursor: not-allowed; transform: none; background: #FFFFFF; }
+
+@media (max-width: 1100px) {
+  .hero-sistema__grid, .peotdu-resumen { grid-template-columns: 1fr; }
+  .mosaico-actividades { grid-template-columns: repeat(3, minmax(0, 1fr)); height: auto; grid-auto-rows: 100px; }
+}
+
+/* Ajustes tras revisión visual (Etapa 4) */
+.hero-funnel-side-card { max-height: min(62vh, 540px); }
+.hero-funnel-side-card--left .hero-funnel-side-card__text { font-size: 0.78rem; }
+.peotdu-resumen__portada .peotdu-cta { flex-direction: column; }
+.peotdu-resumen__portada .peotdu-cta__btn { flex: 0 0 auto; }
+.vinc-modal__siglas { flex-basis: 100%; font-size: 0.74rem; color: #6B7280; }
+.hero-fase0-mun-img .image-slot__hint { font-size: 0.55rem; right: 4px; word-break: break-all; }
+
+/* Portada del PEOTDU completa, sin recorte. El ancho se deriva de la altura
+   disponible para que la proporción (718 x 934) nunca choque con max-height;
+   y el selector gana a `.image-slot > img` (cover), que se carga después. */
+.peotdu-resumen__portada .peotdu-portada {
+  aspect-ratio: 718 / 934;
+  width: min(100%, calc(46vh * 718 / 934));
+  max-height: none;
+  margin: 0 auto;
+}
+.peotdu-resumen__portada .peotdu-portada.image-slot > img { object-fit: contain; }

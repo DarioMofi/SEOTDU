@@ -44,7 +44,7 @@ const SERVIDAS_DEL_ARCHIVO_VIEJO: Record<string, string> = {
  * Normaliza para comparar ids entre generaciones: la entrega nueva bajó los
  * nombres a minúscula y les quitó los acentos.
  */
-function norm(id: string): string {
+export function norm(id: string): string {
   return id
     .normalize('NFKD')
     .replace(/[̀-ͯ]/g, '')
@@ -168,4 +168,23 @@ export async function getEstiloModulo(archivo: string): Promise<any> {
   const res = await fetch(`/estilos/${archivo}`)
   if (!res.ok) throw new Error(`Estilo no encontrado: ${archivo}`)
   return res.json()
+}
+
+/**
+ * Capas de diagnóstico (Desempeño territorial) publicadas en el geovisor:
+ * id normalizado -> id del catálogo y módulo donde se encienden. Así la
+ * página de inicio solo ofrece enlaces a capas que el geovisor sí dibuja.
+ */
+export async function getCapasDesempeno(): Promise<Map<string, { id: string; modulo: string }>> {
+  const catalogo = await leerCatalogo()
+  const out = new Map<string, { id: string; modulo: string }>()
+  if (!catalogo) return out
+  for (const mapa of catalogo.mapas) {
+    for (const seccion of mapa.secciones) {
+      for (const capa of seccion.capas) {
+        if (capa.categoria === 'Diagnostico') out.set(norm(capa.id), { id: capa.id, modulo: mapa.id })
+      }
+    }
+  }
+  return out
 }

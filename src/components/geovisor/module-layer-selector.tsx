@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect, useRef } from 'react'
+import { useState, useEffect, useLayoutEffect, useRef, useMemo } from 'react'
 
 interface Layer {
   id: string
@@ -45,8 +45,11 @@ interface Entrada {
   esGrupo: boolean
 }
 
+import { nombreCapaLegible } from '../../lib/textoLegible'
 import { appConfig } from '../../config/appConfig'
 import { getCapasDisponibles, getCategoriasDeCapas, getEstiloModulo } from '../../lib/cartografia'
+import { getIncidenciasCartografia, type CompletitudCapa, type IncidenciaCapa } from '../../lib/datosPrograma'
+import { ORDEN_MONITORES } from '../../data/paradigmaPeotdu'
 
 function getModuleIcon(iconName: string) {
   switch(iconName) {
@@ -206,7 +209,8 @@ function extractLayersFromNewStyle(json: any, availableLayers: string[]): Layer[
     if (availableLayers.length > 0 && !availableLayers.includes(id)) return []
     if (appConfig.EXCLUDED_LAYERS.includes(id)) return []
 
-    const cleanLabel = String(capa.nombre ?? id).replace(/^C\d+_/, '').replace(/_/g, ' ')
+    // Sin prefijo, siglas de fuente ni abreviaturas: ver lib/textoLegible
+    const cleanLabel = nombreCapaLegible(String(capa.nombre ?? id))
     return [{
       id,
       label: appConfig.LAYER_ALIASES[id] || cleanLabel,
@@ -244,7 +248,7 @@ function extractLayersFromStyle(node: StyleNode, availableLayers: string[] = [])
     const isFixed = appConfig.FIXED_LAYERS.includes(realId) || appConfig.FIXED_LAYERS.includes(node.nombre)
 
     // Formatear etiqueta limpia para la UI y aplicar ALIAS de configuración si existe
-    const cleanLabel = node.nombre.replace(/^C\d+_/, '').replace(/_/g, ' ')
+    const cleanLabel = nombreCapaLegible(node.nombre)
     const label = appConfig.LAYER_ALIASES[realId] || appConfig.LAYER_ALIASES[node.nombre] || cleanLabel
     
     result.push({
@@ -333,6 +337,19 @@ interface Props {
   activeLayers: string[]
   onChangeLayers: (layers: string[]) => void
   initialModule?: string | null
+  /** Capa única con la que arranca el módulo inicial (llegada desde un proyecto) */
+  /** Capa(s) pedidas por URL: el módulo arranca solo con ellas */
+  initialLayer?: string | string[] | null
+  /** Vista pedida por URL: manda sobre la detectada y filtra las capas iniciales */
+  vistaInicial?: 'desempeno' | 'estrategia'
+  /** Activación pedida desde el diagrama radial; `n` cambia en cada petición */
+  moduloSolicitado?: { id: string; n: number } | null
+  /** Vista del diagrama: filtra las ramas Desempeño / Estrategia del árbol */
+  vista?: 'desempeno' | 'estrategia'
+  /** Avisa qué módulo quedó activo (para resaltarlo en el diagrama) */
+  onModuloActivo?: (id: string) => void
+  /** Vista a la que pertenecen las capas con que arrancó el módulo inicial */
+  onVistaDetectada?: (v: 'desempeno' | 'estrategia') => void
   layerOpacity: Record<string, number>
   onChangeOpacity: (layerId: string, opacity: number) => void
   layerOrder: string[]
@@ -341,19 +358,32 @@ interface Props {
   onStylesLoaded?: (styles: Record<string, any>, labels: Record<string, string>) => void
   onInfoClick?: (entrada: Entrada) => void
   onActiveModuleChange?: (title: string) => void
+  /** Pestañas del panel con contenido por capa (id normalizado) */
+  completitud?: Map<string, CompletitudCapa>
+  /** Rama de cada capa (id normalizado): Desempeño o Estrategia territorial */
+  onVistasCapas?: (vistas: Map<string, 'desempeno' | 'estrategia'>) => void
 }
+
 
 export default function ModuleLayerSelector({
   activeLayers,
   onChangeLayers,
   initialModule,
+  initialLayer,
+  vistaInicial,
+  moduloSolicitado,
+  vista,
+  onModuloActivo,
+  onVistaDetectada,
   layerOpacity,
   onChangeOpacity,
   layerOrder,
   onChangeOrder,
   onStylesLoaded,
   onInfoClick,
-  onActiveModuleChange
+  onActiveModuleChange,
+  completitud,
+  onVistasCapas
 }: Props) {
   // Módulo activo: sus capas son las que están dibujadas. Solo uno a la vez.
   // Es independiente del acordeón, aunque ambos arranquen en el mismo módulo.
@@ -365,6 +395,19 @@ export default function ModuleLayerSelector({
     initialModule ?? appConfig.DEFAULT_MODULE
   )
   const [modules, setModules] = useState<Module[]>([])
+  // Rama de cada capa, leída del árbol: decide qué pestañas del panel le tocan
+  const vistaPorCapa = useMemo(() => {
+    const m = new Map<string, 'desempeno' | 'estrategia'>()
+    for (const mod of modules) {
+      for (const rama of mod.arbol ?? []) {
+        const v = /desempe/i.test(rama.label) ? 'desempeno' : 'estrategia'
+        const ids = 'lineas' in rama && rama.lineas ? rama.lineas.flatMap((l) => l.layers) : (rama.layers ?? [])
+        for (const id of ids) m.set(norm(id), v)
+      }
+    }
+    return m
+  }, [modules])
+  useEffect(() => { onVistasCapas?.(vistaPorCapa) }, [vistaPorCapa]) // eslint-disable-line react-hooks/exhaustive-deps
   /* Secciones abiertas del árbol (MOT). La clave es la ruta completa, así una
      línea de E1 y otra de E4 con el mismo nombre no se abren juntas. */
   const [ramasAbiertas, setRamasAbiertas] = useState<string[]>([])
@@ -530,8 +573,33 @@ export default function ModuleLayerSelector({
       const inicial = loadedModules.find((m) => m.id === activeModule)
       if (inicial) {
         const ids = capasEncendidas(inicial)
-        onChangeLayers(ids)
-        onChangeOrder(ids)
+        // Si se pidió una capa concreta, el módulo arranca solo con ella. Se
+        // resuelve aquí, en la misma activación, y no después desde fuera:
+        // corregirlo a posteriori competía con esta carga asíncrona.
+        const todas = agruparContiguas(inicial.layers.map((l) => l.id), inicial.groups)
+        const pedidasNorm = new Set((Array.isArray(initialLayer) ? initialLayer : initialLayer ? [initialLayer] : []).map(norm))
+        const pedidas = todas.filter((id) => pedidasNorm.has(norm(id)))
+        // Con una vista pedida y sin capas concretas, solo se encienden las
+        // capas por omisión que pertenecen a esa rama del monitor.
+        let base = ids
+        if (pedidas.length === 0 && vistaInicial && inicial.arbol) {
+          const deRama = new Set(
+            inicial.arbol
+              .filter((e) => /desempe/i.test(e.label) === (vistaInicial === 'desempeno'))
+              .flatMap((e) => ('lineas' in e && e.lineas ? e.lineas.flatMap((l) => l.layers) : (e.layers ?? [])))
+              .map(norm)
+          )
+          base = ids.filter((id) => deRama.has(norm(id)))
+        }
+        onChangeLayers(pedidas.length > 0 ? pedidas : base)
+        onChangeOrder(pedidas.length > 0 ? [...pedidas, ...todas.filter((id) => !pedidas.includes(id))] : ids)
+        // El diagrama arranca en la vista donde están las capas encendidas,
+        // salvo que la URL la haya fijado.
+        const primera = pedidas[0] ?? base[0]
+        const rama = inicial.arbol?.find((e) =>
+          ('lineas' in e && e.lineas ? e.lineas.flatMap((l) => l.layers) : (e.layers ?? [])).includes(primera)
+        )
+        if (rama && !vistaInicial) onVistaDetectada?.(/desempe/i.test(rama.label) ? 'desempeno' : 'estrategia')
         if (onActiveModuleChange) onActiveModuleChange(inicial.title)
       }
     }
@@ -591,6 +659,59 @@ export default function ModuleLayerSelector({
     onChangeOrder(ids)
     if (onActiveModuleChange) onActiveModuleChange(modulo.title)
   }
+
+  // ─── Control desde el diagrama radial ─────────────────────────────────
+  useEffect(() => {
+    if (!moduloSolicitado || modules.length === 0) return
+    if (moduloSolicitado.id === activeModule) setExpandedModule(moduloSolicitado.id)
+    else selectModule(moduloSolicitado.id)
+  }, [moduloSolicitado?.n, modules.length]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => { onModuloActivo?.(activeModule) }, [activeModule]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  /** ¿La rama del árbol corresponde a la vista elegida? */
+  const ramaEnVista = (label: string) =>
+    !vista || (vista === 'desempeno' ? /desempe/i.test(label) : !/desempe/i.test(label))
+
+  /**
+   * ¿La capa se lista en la vista elegida?
+   * - Desempeño: capas de diagnóstico con Narrativa y Analítica en la
+   *   trazabilidad modular (tema → sección temática → monitor).
+   * - Estrategia: capas de las ramas de estrategia, más las sueltas del módulo
+   *   (el propio Modelo de Ordenamiento Territorial).
+   * El Mapa Base no se filtra.
+   */
+  const visibleEnVista = (moduloId: string, id: string) => {
+    if (moduloId === 'mapa_base' || !vista) return true
+    const n = norm(id)
+    const rama = vistaPorCapa.get(n)
+    if (vista === 'desempeno') {
+      const c = completitud?.get(n)
+      return rama === 'desempeno' && !!c?.narrativa && !!c?.analitica
+    }
+    return rama !== 'desempeno'
+  }
+
+  // Capas citadas que aún no se pueden desplegar (tabla de incidencias)
+  const [incidencias, setIncidencias] = useState<IncidenciaCapa[]>([])
+  useEffect(() => { getIncidenciasCartografia().then(setIncidencias).catch(() => setIncidencias([])) }, [])
+
+  // Al cambiar de vista: se abren las ramas de esa vista y se apagan las capas
+  // de las ramas que dejan de verse (las sueltas del módulo se conservan).
+  // Igual al cambiar de monitor desde el diagrama: el monitor nuevo se muestra
+  // en la vista vigente. La carga inicial no se filtra (la vista se ajusta a
+  // las capas con que arrancó, ver onVistaDetectada).
+  // Cada caja muestra solo las capas de la vista elegida y nada oculto queda
+  // encendido: al cambiar de vista o de monitor, y cuando llega la
+  // completitud de la trazabilidad, se apagan las capas que dejan de verse.
+  useEffect(() => {
+    const modulo = modules.find((m) => m.id === activeModule)
+    if (!modulo || modulo.id === 'mapa_base') return
+    if (modulo.arbol) setRamasAbiertas(modulo.arbol.filter((e) => ramaEnVista(e.label)).map((e) => e.label))
+    const delModulo = new Set(modulo.layers.map((l) => l.id))
+    const ocultas = activeLayers.filter((id) => delModulo.has(id) && !modulo.layers.find((l) => l.id === id)?.isFixed && !visibleEnVista(modulo.id, id))
+    if (ocultas.length > 0) onChangeLayers(activeLayers.filter((id) => !ocultas.includes(id)))
+  }, [vista, activeModule, modules.length, completitud]) // eslint-disable-line react-hooks/exhaustive-deps
 
   /** Prende o apaga una entrada completa: un grupo viaja con todas sus capas. */
   const toggleEntrada = (ids: string[]) => {
@@ -704,7 +825,9 @@ export default function ModuleLayerSelector({
   }
 
   const mapaBaseModule = modules.find(m => m.id === 'mapa_base')
-  const tematicosModules = modules.filter(m => m.id !== 'mapa_base')
+  // Orden de los monitores: el mismo de los larguillos de la página de inicio
+  const posicion = (id: string) => { const i = ORDEN_MONITORES.indexOf(id); return i < 0 ? 99 : i }
+  const tematicosModules = modules.filter(m => m.id !== 'mapa_base').sort((a, b) => posicion(a.id) - posicion(b.id))
 
   const renderModule = (module: Module) => {
     const isExpanded = expandedModule === module.id
@@ -835,6 +958,7 @@ export default function ModuleLayerSelector({
                             {entrada.label}
                           </label>
 
+
                           <button
                             onClick={(e) => {
                               e.stopPropagation();
@@ -935,11 +1059,34 @@ export default function ModuleLayerSelector({
                           e.lineas ? e.lineas.flatMap((l) => l.layers) : (e.layers ?? [])
                         )
                       )
-                      const sueltas = entradas.filter((e) => !e.ids.some((id) => enArbol.has(id)))
+                      const visible = (e: Entrada) => e.ids.some((id) => visibleEnVista(module.id, id))
+                      const sueltas = entradas.filter((e) => !e.ids.some((id) => enArbol.has(id)) && visible(e))
+                      const pendientes = (
+                        <CapasPendientes
+                          lista={incidencias.filter(
+                            (x) => x.modulo === module.id && x.vista === vista &&
+                              !(x.capaNorm && module.layers.some((l) => norm(l.id) === x.capaNorm))
+                          )}
+                        />
+                      )
+                      // Monitores: sus dos ramas son Desempeño / Estrategia. La
+                      // caja ya muestra solo la vista elegida, así que la rama
+                      // no lleva encabezado: las capas van en una sola lista.
+                      if (module.arbol.every((e) => /territorial/i.test(e.label))) {
+                        const visibles = entradas.filter(visible)
+                        return (
+                          <div className="flex flex-col gap-2">
+                            {visibles.length > 0 ? renderCategory(visibles, null) : <CajaVacia vista={vista} />}
+                            {pendientes}
+                          </div>
+                        )
+                      }
+                      const hayRamas = module.arbol.some((e) => ramaEnVista(e.label))
                       return (
                         <div className="flex flex-col gap-1">
                           {sueltas.length > 0 && renderCategory(sueltas, null)}
-                          {module.arbol.map((estrategia) => {
+                          {sueltas.length === 0 && !hayRamas && <CajaVacia vista={vista} />}
+                          {module.arbol.filter((e) => ramaEnVista(e.label)).map((estrategia) => {
                             const claveEst = estrategia.label
                             const abiertaEst = ramasAbiertas.includes(claveEst)
                             // Una rama con `lineas` abre otro nivel; una con
@@ -984,7 +1131,7 @@ export default function ModuleLayerSelector({
                                     {!estrategia.lineas &&
                                       renderCategory(
                                         entradas.filter((e) =>
-                                          e.ids.some((id) => capasEst.has(id))
+                                          e.ids.some((id) => capasEst.has(id)) && visible(e)
                                         ),
                                         null
                                       )}
@@ -992,7 +1139,7 @@ export default function ModuleLayerSelector({
                                       const claveLinea = `${claveEst}//${linea.label}`
                                       const abiertaLinea = ramasAbiertas.includes(claveLinea)
                                       const suyas = entradas.filter((e) =>
-                                        e.ids.some((id) => linea.layers.includes(id))
+                                        e.ids.some((id) => linea.layers.includes(id)) && visible(e)
                                       )
                                       if (suyas.length === 0) return null
                                       return (
@@ -1023,6 +1170,7 @@ export default function ModuleLayerSelector({
                               </div>
                             )
                           })}
+                          {pendientes}
                         </div>
                       )
                     }
@@ -1046,16 +1194,6 @@ export default function ModuleLayerSelector({
           <div className="text-center p-4 text-xs text-gray-500">Cargando capas...</div>
         ) : (
           <>
-            {/* Sección Mapa Base */}
-            {mapaBaseModule && (
-              <div className="mb-4">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2 mt-2 px-1">
-                  Mapa Base
-                </h3>
-                {renderModule(mapaBaseModule)}
-              </div>
-            )}
-
             {/* Sección Módulos Temáticos */}
             {tematicosModules.length > 0 && (
               <div className="flex flex-col gap-2">
@@ -1065,9 +1203,50 @@ export default function ModuleLayerSelector({
                 {tematicosModules.map(renderModule)}
               </div>
             )}
+
+            {/* Mapa Base al final: es referencia, no arranca encendido */}
+            {mapaBaseModule && (
+              <div className="mt-4">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2 mt-2 px-1">
+                  Mapa Base
+                </h3>
+                {renderModule(mapaBaseModule)}
+              </div>
+            )}
           </>
         )}
       </div>
     </div>
+  )
+}
+
+/** Caja sin capas en la vista elegida */
+function CajaVacia({ vista }: { vista?: 'desempeno' | 'estrategia' }) {
+  return (
+    <p className="caja-vacia">
+      {vista === 'desempeno'
+        ? 'Este monitor aún no tiene capas de diagnóstico con narrativa y analítica publicadas.'
+        : 'Este monitor no tiene capas de estrategia publicadas.'}
+    </p>
+  )
+}
+
+/** Capas citadas en el PEOTDU que aún no se pueden desplegar (tabla de incidencias) */
+function CapasPendientes({ lista }: { lista: IncidenciaCapa[] }) {
+  if (lista.length === 0) return null
+  return (
+    <details className="capas-pendientes">
+      <summary>
+        Capas pendientes de publicar <span>{lista.length}</span>
+      </summary>
+      <ul>
+        {lista.map((x, i) => (
+          <li key={i} title={[x.incidencia, x.observaciones].filter(Boolean).join(' · ')}>
+            <strong>{x.nombre}</strong>
+            <small>{[x.tematica, x.estatus].filter(Boolean).join(' · ')}</small>
+          </li>
+        ))}
+      </ul>
+    </details>
   )
 }

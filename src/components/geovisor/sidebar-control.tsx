@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { CAMPECHE_GEOJSON, MunicipioProperties } from '../../data/campecheData'
 import { getCapaGeoJSON } from '../../lib/cartografia'
+import { etiquetaCampo, valorLegible } from '../../lib/textoLegible'
 
 /**
  * La ficha tecnica de una capa, campo por campo.
@@ -35,7 +36,8 @@ const VALORES_LEGIBLES: Record<string, string> = {
 function legible(valor: unknown): string {
   if (valor === null || valor === undefined || valor === '') return 'No disponible'
   const texto = String(valor)
-  return VALORES_LEGIBLES[texto] ?? texto.replace(/_/g, ' ')
+  // Sin abreviaturas ni siglas sueltas: ver lib/textoLegible
+  return VALORES_LEGIBLES[texto] ?? valorLegible('', texto)
 }
 
 /**
@@ -587,8 +589,8 @@ export default function SidebarControl({
                                 <tbody>
                                   {atributosDelElemento.map(([k, v]) => (
                                     <tr key={k} className="border-b border-gray-100 last:border-0">
-                                      <td className="py-1.5 pr-3 font-bold text-gray-600">{k}</td>
-                                      <td className="py-1.5 text-gray-800 break-words">{String(v ?? '-')}</td>
+                                      <td className="py-1.5 pr-3 font-bold text-gray-600" title={k}>{etiquetaCampo(k)}</td>
+                                      <td className="py-1.5 text-gray-800 break-words">{valorLegible(k, v)}</td>
                                     </tr>
                                   ))}
                                 </tbody>
